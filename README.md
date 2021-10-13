@@ -65,8 +65,10 @@ $$\ket{\text{tossed coin}} = p\cdot\ket{\text{heads}} + (1-p)\cdot\ket{\text{tai
 
 Note how we multiply multiple ket vectors with real numbers and add those together - just like you'd say "three apples and two bananas". It's not witchcraft, but if you haven't seen this yet make sure you accept this crucial concept.
 
+### Bra-vectors
 Before we talk about actual measurement, let's finally properly introduce a very convenient tool: The **_bra_ vector** $$\bra{\Psi}$$, which is the _dual_ vector to the _ket_ vector $$\ket{\Psi}$$. The term **"duality"** indicates that for each ket vector there exists precisely one unique "partnering" bra vector and vice versa - a very important concept. Since the entirety of ket vectors is called vector space, its dual counterpart (the entirety of bra vectors) is called a **dual (vector) space**. What is it good for? Just like real numbers, we can also combine bra vectors with ket vectors, e.g. $$\bra{\text{heads}}\cdot\ket{\text{tails}}$$, or more concise as a so-called _bra-ket_ $$\braket{\text{heads}\vert\text{tails}}$$. The bra vectors are constructed by definition such that a bra-ket term is a so-called _inner product_, which yields a scalar number.
 
+### Norms
 More specifically, the bra-ket of a vector with itself, $$\braket{\Psi\vert\Psi} =: \Vert\Psi\Vert^2 \ge 0$$ is a positive number or zero and its (positive) square-root $$\sqrt{\braket{\Psi\vert\Psi}}=\Vert\Psi\Vert=:\Psi$$ called its **_norm_**. We have also introduced some mathematical notations here:
 
 * $$=:$$ means the term right to the colon is defined to be equal the term left of the equals sign. The other direction $$:=$$ is also possible. This is a helpful notation to introduce abbreviations or new definitions
@@ -76,6 +78,9 @@ More specifically, the bra-ket of a vector with itself, $$\braket{\Psi\vert\Psi}
 It is convention to use $$\ket 0$$ to denote the[^uniqueZero] "smallest" vector with vanishing norm $$\Vert0\Vert=0$$. Vectors $$\ket e$$ with a norm $$\Vert e\Vert=1$$ of one are called **unit vectors**. All vectors $$\ket\Psi$$ with a _finite_ norm $$\Psi=\Vert\Psi\Vert<\infty$$ (where $$\infty$$ denotes _infinity_) can be _normalized_ to a unit vector via division $$\ket{e_\Psi} := \frac1{\Psi}\ket\Psi$$. Since that unit vector only has to be multiplied by the original norm in order to obtain the original vector, it can be considered "pointing into $$\ket\Psi$$'s direction". Note that there can exist vectors of _infinite_ norm which are also called _non-normalizable_.
 
 [^uniqueZero]: _The_ vector and not _a_ vector, since it turns out for a given vector space the vector of norm zero is unique - but that is a #TODO for later.
+
+### Inner product - and complex numbers
+The inner product $$\braket{\Psi\vert\Phi}$$ of two vectors $$\ket\Psi$$ and $$\ket\Phi$$ (the greek letter Phi) can be _any_ number, not just a non-negative one but even a so-called **_complex number_**. For now, let's just say complex numbers are a pair of _two_ real numbers, one denoting a positive length and the other an angle for a direction. The "usual" real numbers are either positive, which means an angle of 0°, or negative, which means an angle of 180° (but still a _positive_ length!). The inner product is a measure of the _similarity_ of two vectors. If it is zero the two vectors have nothing in common and are called **_orthogonal_** or _perpendicular_. For two unit vectors, the length of the inner product is always $$\le1$$ and only exactly equal to one of the vectors are parallel or anti-parallel.
 
 ---
 
