@@ -23,7 +23,7 @@ Let's see where this leads to… Consider yourself lucky I woke up way too early
 
 # Getting started
 ## Name it to tame it
-First of all, always writing something like "life, the universe and everything" is quite tedious. It is _very_ convenient to use single-letter[^variables] variables as abbreviations instead, such as $$t$$ for a time. For various reasons, not only Latin letters are used, but sometimes also Greek ones. In order determine the _state_ of a system, the letter Psi $$\Psi$$ (or it's lowercase version $$\psi$$) is a very typical choice. And in order to indicate that it's a state, it is surrounded by a bar $$|$$ and an angle bracket $$\rangle$$ as $$\ket\Psi$$. Since this is using the right half of an angle bracket pair, this is called a _ket_ vector. And yes, we'll later also encounter the left bracket counterpart $$\bra\Psi$$, called a _bra_ vector[^bra-ket]. Such a ket-vector can describe things as complicated as "life, the universe and everything" and as simple as a tossed coin. Now if multiple states are considered, some options occur:
+First of all, always writing something like "life, the universe and everything" is quite tedious. It is _very_ convenient to use single-letter[^variables] variables as abbreviations instead, such as $$t$$ for a time. For various reasons, not only Latin letters are used, but sometimes also Greek ones. In order determine the **_state_** of a system, the letter Psi $$\Psi$$ (or it's lowercase version $$\psi$$) is a very typical choice. And in order to indicate that it's a state, it is surrounded by a bar $$|$$ and an angle bracket $$\rangle$$ as $$\ket\Psi$$. Since this is using the right half of an angle bracket pair, this is called a **_ket_ vector**. And yes, we'll later also encounter the left bracket counterpart $$\bra\Psi$$, called a _bra_ vector[^bra-ket]. Such a ket-vector can describe things as complicated as "life, the universe and everything" and as simple as a tossed coin. The entirety of all possible _ket_ vectors is called a **vector space**. Now if multiple states are considered, some options occur:
 
 * Just use different letters, such as Phi $$\Phi$$ (lowercase $$\phi$$ or sometime $$\varphi$$ though that usually rather denotes an angle),
 * Add indices as subscripts, e.g. $$\ket{\Psi_{\text{in}}}$$,
@@ -32,13 +32,6 @@ First of all, always writing something like "life, the universe and everything" 
 [^variables]: Programmers actually frown upon this, and indeed when programming there's often too many variables to still keep an overview, so they use _descriptive_ variable names instead. In physics, formulae such as "velocity = (elapsed distance) / (elapsed time)" instead of $$v =\frac{\Delta x}{\Delta t}$$ would get quite messy quickly, especially when doing maths by hand.
 
 [^bra-ket]:  For more information feel free to consult the Wikipedia article on the [bra-ket notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation), but be advised it is _heavy_ on maths and will quickly invoke terms such as _Hilbert space_ – a very important concept, but way too soon to explain here.
-
-## Transition: [Time keeps on slippin'](https://youtu.be/9gF2UySGZAU "Fly Like An Eagle")
-Now basically $$\ket{42}$$ encodes _everything forever_. But being beings that perceive time in a linear fashion we're typically interested in transitions between states, such as the question how a state evolves over time. Interactions between systems are of interest as well. Let's take the coin example again:
-
-$$\ket{\text{coin}} \to \ket{\text{tossed coin}}$$
-
-The arrow $$\to$$ just denotes this transition. #TODO: get to operators...
 
 # Observation: _(Insert witty headline here)_
 So describing the entirety of existence as $$\ket{42}$$ is all fun and games until you try to actually work with it. To get more serious, reality and theory must meet somewhere. 
@@ -49,6 +42,24 @@ If $$\ket{42}$$ is known, you're omniscient and don't need to read on (since you
 $$\ket{42} = \begin{pmatrix}\ket{\text{coin}} \\ \ket{\text{everything else}}\end{pmatrix}.$$
 
 IIRC there are many ways of notation for composite systems, one #TODO for me is [making sure I choose a sensible one / don't mix up various concepts I learned too long ago...](https://physics.stackexchange.com/q/671433/97)
+
+As mentioned before, the split should be made in such a way that $\ket{\text{everything else}}$ does not interfere much, at least for a while. Now, when we say "a while" so nonchalantly, we are very much ignoring that we have not even defined the passage of time so far. Let's fix this next.
+
+## Transition: [Time keeps on slippin'](https://youtu.be/9gF2UySGZAU "Fly Like An Eagle")
+Basically $$\ket{42}$$ encodes _everything forever_. But being beings that perceive time in a linear fashion we're typically interested in transitions between states, such as the question how a state evolves over time. Interactions between systems are of interest as well. Let's take the coin example again:
+
+$$\ket{\text{coin}} \to \ket{\text{tossed coin}}$$
+
+The arrow $$\to$$ just denotes this transition. #TODO: get to operators...
+
+## Projection: [What you perceive is what you believe](https://en.wikipedia.org/wiki/Psychological_projection "forms the basis of empathy by the projection of personal experiences to understand someone else's subjective world")
+In the coin example, the outcome can be either[^klugscheisserCoin] $\ket{\text{heads}}$ or $\ket{\text{tails}}$. If the probability of $\ket{\text{heads}}$ is $p$ (ideally 50% for a fair coin tossed fairly), then the probability of $\ket{\text{tails}}$ is $1-p$. Before the result of the toss is checked, or "measured", we hence have
+
+$$\ket{\text{tossed coin}} = p\cdot\ket{\text{heads}} + (1-p)\cdot\ket{\text{tails}}.$$
+
+Before we talk about actual measurement, let's finally properly introduce a very convenient tool: The **_bra_ vector** $\bra{\Psi}$, which is the _dual_ vector to the _ket_ vector $\ket{\Psi}$. The term **"duality"** indicates that for each ket vector there exists precisely one "partnering" bra vector and vice versa - a very important concept, it is (#TODO, for now c.f. https://math.stackexchange.com/q/2470393/163) probably worth a first more mathematical excursion to prove this uniqueness in duality (though more precisely that's not something to proof but rather "by definition"). Since the entirety of ket vectors is called vector space, its dual counterpart (the entirety of bra vectors) is called a **dual (vector) space**.
+
+[^klugscheisserCoin]: Yes, yes, it could also be $\ket{\text{picked by a bird mid-air}}$ and the likes, but remember KISS?
 
 ---
 
