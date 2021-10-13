@@ -43,7 +43,7 @@ $$\ket{42} = \begin{pmatrix}\ket{\text{coin}} \\ \ket{\text{everything else}}\en
 
 IIRC there are many ways of notation for composite systems, one #TODO for me is [making sure I choose a sensible one / don't mix up various concepts I learned too long ago...](https://physics.stackexchange.com/q/671433/97)
 
-As mentioned before, the split should be made in such a way that $\ket{\text{everything else}}$ does not interfere much, at least for a while. Now, when we say "a while" so nonchalantly, we are very much ignoring that we have not even defined the passage of time so far. Let's fix this next.
+As mentioned before, the split should be made in such a way that $$\ket{\text{everything else}}$$ does not interfere much, at least for a while. Now, when we say "a while" so nonchalantly, we are very much ignoring that we have not even defined the passage of time so far. Let's fix this next.
 
 ## Transition: [Time keeps on slippin'](https://youtu.be/9gF2UySGZAU "Fly Like An Eagle")
 Basically $$\ket{42}$$ encodes _everything forever_. But being beings that perceive time in a linear fashion we're typically interested in transitions between states, such as the question how a state evolves over time. Interactions between systems are of interest as well. Let's take the coin example again:
@@ -53,13 +53,15 @@ $$\ket{\text{coin}} \to \ket{\text{tossed coin}}$$
 The arrow $$\to$$ just denotes this transition. #TODO: get to operators...
 
 ## Projection: [What you perceive is what you believe](https://en.wikipedia.org/wiki/Psychological_projection "forms the basis of empathy by the projection of personal experiences to understand someone else's subjective world")
-In the coin example, the outcome can be either[^klugscheisserCoin] $\ket{\text{heads}}$ or $\ket{\text{tails}}$. If the probability of $\ket{\text{heads}}$ is $p$ (ideally 50% for a fair coin tossed fairly), then the probability of $\ket{\text{tails}}$ is $1-p$. Before the result of the toss is checked, or "measured", we hence have
+In the coin example, the outcome can be either[^klugscheisserCoin] $$\ket{\text{heads}}$$ or $$\ket{\text{tails}}$$. If the probability of $$\ket{\text{heads}}$$ is $$p$$ (ideally 50% for a fair coin tossed fairly), then the probability of $$\ket{\text{tails}}$$ is $$1-p$$. Before the result of the toss is checked, or "measured", we hence have
 
 $$\ket{\text{tossed coin}} = p\cdot\ket{\text{heads}} + (1-p)\cdot\ket{\text{tails}}.$$
 
-Before we talk about actual measurement, let's finally properly introduce a very convenient tool: The **_bra_ vector** $\bra{\Psi}$, which is the _dual_ vector to the _ket_ vector $\ket{\Psi}$. The term **"duality"** indicates that for each ket vector there exists precisely one "partnering" bra vector and vice versa - a very important concept, it is (#TODO, for now c.f. https://math.stackexchange.com/q/2470393/163) probably worth a first more mathematical excursion to prove this uniqueness in duality (though more precisely that's not something to proof but rather "by definition"). Since the entirety of ket vectors is called vector space, its dual counterpart (the entirety of bra vectors) is called a **dual (vector) space**.
+Note how we multiply multiple ket vectors with real numbers and add those together - just like you'd say "three apples and two bananas". It's not witchcraft, but if you haven't seen this yet make sure you accept this crucial concept.
 
-[^klugscheisserCoin]: Yes, yes, it could also be $\ket{\text{picked by a bird mid-air}}$ and the likes, but remember KISS?
+Before we talk about actual measurement, let's finally properly introduce a very convenient tool: The **_bra_ vector** $$\bra{\Psi}$$, which is the _dual_ vector to the _ket_ vector $$\ket{\Psi}$$. The term **"duality"** indicates that for each ket vector there exists precisely one unique "partnering" bra vector and vice versa - a very important concept. Since the entirety of ket vectors is called vector space, its dual counterpart (the entirety of bra vectors) is called a **dual (vector) space**. What is it good for? Just like real numbers, we can also combine bra vectors with ket vectors, e.g. $$\bra{\text{heads}}\cdot\ket{\text{tails}}$$, or more concise as a so-called _bra-ket_ $$\braket{\text{heads}\vert\text{tails}}$$.
+
+[^klugscheisserCoin]: Yes, yes, it could also be $$\ket{\text{picked by a bird mid-air}}$$ and the likes, but remember KISS?
 
 ---
 
