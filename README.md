@@ -39,9 +39,13 @@ So describing the entirety of existence as $$\ket{42}$$ is all fun and games unt
 ## Subsystems: [Divide and Conquer!](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm "Veni, vidi, vici")
 If $$\ket{42}$$ is known, you're omniscient and don't need to read on (since you already know _everything_ including this very text. #TODO: try and proof whether omniscience is impossible?). Most mortals however don't, and it is infeasible to try and know everything about the entire universe at all times. Let us therefore split $$\ket{42}$$ into smaller parts that ideally don't interact too strongly with one another, e.g.
 
-$$\ket{42} = \begin{pmatrix}\ket{\text{coin}} \\ \ket{\text{everything else}}\end{pmatrix}.$$
+$$\ket{42} = \ket{\text{coin}, \text{everything else}}.$$
 
-IIRC there are many ways of notation for composite systems, one #TODO for me is [making sure I choose a sensible one / don't mix up various concepts I learned too long ago...](https://physics.stackexchange.com/q/671433/97)
+There are multiple kinds of notation for this, another form omits the comma, and sometimes one encounters the form
+
+$$\ket{42} = \ket{\text{coin}} \otimes \ket{\text{everything else}}$$
+
+where the $$\otimes$$ denotes a so-called _tensor product_. Don't worry about the details for now, it's just mathematical notation for the composition. The $$\otimes$$ makes it more clear that the state is considered to combine to partial states.
 
 As mentioned before, the split should be made in such a way that $$\ket{\text{everything else}}$$ does not interfere much, at least for a while. Now, when we say "a while" so nonchalantly, we are very much ignoring that we have not even defined the passage of time so far. Let's fix this next.
 
