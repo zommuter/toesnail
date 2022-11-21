@@ -21,9 +21,9 @@ $$
 But that's too verbose for now. Let's instead consider the time evolution of the specific energy:
 
 $$
-  e = \frac12\dot x^2 + \frac{\omega^2}2 x^2
+  e = \frac12\dot x^2 + \frac{\omega^2}2 x^2,
 \\ \dot e = \dot x\cdot(\underbrace{\ddot x}_{=-2\beta\dot x-\omega^2(x-y)} + \omega^2 x) = \dot x\cdot(-2\beta\dot x + \omega^2 y  )
-\\ = \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e + \omega^2(2\beta x^2 - \dot x y)
+\\ = \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e - \omega^2(2\beta x^2 - \dot x y)
 $$
 
 Even without the analytical solution it would be clear that a free oscillator ($y=0$) would permanently loose energy for $\beta\neq0$. Now one interesting question is what kind of drive $y$ is needed in order to keep the energy constant, i.e. $\dot e=0$. Since $\dot x\neq 0$ that means
@@ -35,7 +35,7 @@ $$
 There is one solution independent of $\dot x$:
 
 $$
-  \dot y = 2\frac{\beta}{\omega^2}\ddot x = -4\frac{\beta^2}{\omega^2}\dot x - 2\beta(x-y) = -2\beta y -2\beta(x-y) = -2\beta x
+  \dot y = 2\frac{\beta}{\omega^2}\ddot x = -4\frac{\beta^2}{\omega^2}\dot x - 2\beta(x-y) = -2\beta y -2\beta(x-y) = -2\beta x,
 \\ \ddot y = -2\beta\dot x = -\omega^2 y
 $$
 
