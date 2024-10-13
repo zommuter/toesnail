@@ -29,3 +29,27 @@ $$Z_B = \frac{1-Z_1^2}{1-Z_1} = 1+Z_1,
 \\ \langle k\rangle = E/E_1 = \frac{-2Z_1^2+Z_1(1+Z_1)}{1-Z_1^2} = \frac{Z_1-Z_1^2}{1-Z_1^2} = \frac{Z_1}{1+Z_1} = \frac1{e^{\beta E_1} + 1} = p_1,$$
 
 which is the Fermi-Dirac (FD) statistics for a fermionic system, where each level can only be populated once.
+
+---
+
+Now, let's try to determine $E_1$ from $E$. For one approach, note
+
+$$ E = \pm\partial_\beta\ln(1\mp e^{-\beta E_1}) $$
+
+and integrate over $\beta$ to obtain
+
+$$ e^{-\beta E_1} = \mp\left(\exp\left\{\mp\int_\beta^\infty E\,d\beta\right\}-1\right). $$
+
+However, let's try a different approach by directly solving $E$ for $E_1$. Since $E_1$ occurs both by itself as well as in an exponential, chances are this will involve the Lambert $W$ function:
+
+$$\begin{align}
+  \beta E &= \frac{\beta E_1}{e^{\beta E_1}\mp 1} \quad\Big\vert\quad \beta E_1 =: x,\ \beta E =: y
+\\\Leftrightarrow y &= \frac{x}{e^x\mp 1}
+\\ y e^x &= x \pm y \quad\Big\vert\quad x \to x\mp y
+\\ ye^{\mp y} e^x &= x
+\\ -ye^{\mp y} &= -x e^{-x}
+\\\Rightarrow x &= -W(-ye^{\mp y})
+\\\Rightarrow \beta E_1 &= -W(-\beta E\cdot e^{\mp\beta E}) \mp \beta E
+\\ e^{\beta E_1} &= e^{\mp\beta E}\cdot e^{-W(...)}
+\\ &= e^{\mp\beta E}\frac{W(...)}{-\beta E e^{\mp\beta E}} = -\frac1\beta W\left(-\beta E\cdot e^{\mp\beta E}\right)
+\end{align}$$
