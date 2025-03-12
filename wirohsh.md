@@ -100,22 +100,81 @@ is required, i.e. the directional base functions must obey the $(d-1)$-dimension
 
 Now the peculiar thing about this approach is that by applying the Wick rotation to turn the $d$-dimensional wave equation into a $(d+1)$-dimensional Laplace equation
 
-$$ (\Delta + \partial_\tau^2) f(\vec x, \tau) = 0$$
+$$ (\Delta + \partial_\tau^2) f(\vec x, \tau) = 0 \tag{Laplace}$$
 
-the just-derived solution can also be applied. In other words, the Laplace equation can be solved as the superposition of solutions two dimensions lower! So more formally, let $\vec x_{\bar k}$ denote $\vec x$ with component $x_k$ dropped (i.e. one dimension lower).Then the solution to the $d$-dimensional Laplace equation
+the just-derived solution can also be applied. In other words, the Laplace equation can be solved as the superposition of solutions two dimensions lower!
 
-$$ \Delta f(\vec x) = 0 \tag{Laplace} $$
-
-is
+Without loss of generality, let's pick the last dimension as direction to eliminate via Wick-Rotation and let $\vec x_{d+1} = (\vec x, \tau)$. Then _(Laplace)_ is solved by
 
 $$\begin{align*}
-  f(\vec x) &= \sum_{k=1}^d \oint_{\substack{|\vec e|=1,\\\vec e\in\mathbb R^{d-1}}} f_{\vec e}(\vec x_{\bar k} + i\vec e x_k)
-\\\text{where}\ 0 &= \Delta_{\vec e} f_{\vec e}(\vec x_{\bar k})
+  f(\vec x, \tau) &= \oint_{|\vec e|=1} f_{\vec e}(\vec x + i\vec e \tau)
+\\\text{where}\ 0 &= \Delta_{\vec e} f_{\vec e}(\vec x)
 \end{align*}$$
 
-with $\Delta_{\vec e}$ denoting the $(d-2)$-dimensional Laplacian tangential to $\vec e$ (with $x_k$ already dropped). For readability let's consider $k=d-1$ and $\vec e = \vec e_d$ and denote $\vec x' = (x_1, ..., x_{d-2})$ to simplfy this to
+with $\Delta_{\vec e} = \Delta - (\vec e\cdot\vec\nabla)^2$ denoting the $(d-1)$-dimensional Laplacian tangential to $\vec e$. Let's consider $\vec e = \vec e_d$ and denote $\vec x = (\vec x', x_d)$.
 
-$$ \Delta' f_d(\vec x') = 0.$$
+---
+
+Let's see how this work. For the 2D Laplace equation
+
+$$(\partial_x^2+\partial_y^2) f(x,y) = 0$$
+
+Wick-rotate $y$ to obtain
+
+$$\begin{align*}
+  f(x,y) &= \sum_{e = \pm 1} f_e(x + iey)
+\end{align*}$$
+
+Note how in this case $f_e(x)$ would have to solve the zero-dimensional Laplace equation, which is trivially fulfilled, so any $f_e$ is acceptable and the solution from before the generalization is obtained.
+
+Next, let's consider 3D
+
+$$(\partial_x^2 + \partial_y^2 + \partial_z^2) f(x,y,z) = 0$$
+
+and eliminate the $z$ coordinate to obtain
+
+$$\begin{align*}
+  f(x,y,z) &= \int_0^{2\pi}d\phi\ f_\phi\Big(\underbrace{\begin{pmatrix}x\\y\end{pmatrix}}_{=:\vec x} + iz\underbrace{\begin{pmatrix}\cos\phi \\ \sin\phi\end{pmatrix}}_{=:\vec e_\phi}\Big)
+\end{align*}$$
+
+First, consider $\phi=\frac\pi2$ to obtain
+
+$$\begin{align*}
+  \partial_x^2 f_{\frac\pi2}(x,y) &= 0 \Rightarrow f_{\frac\pi2}(x,y) = a_{\frac\pi2}(y)+b_{\frac\pi2}(y)\cdot x
+\end{align*}$$
+
+Let $x_\phi := \vec e_\phi\cdot \vec x = x\cos\phi + y\sin\phi$ and $x_{\bar\phi} := x\sin\phi - y\cos\phi$ (and $\vec e_{\bar\phi} = (\sin\phi, -\cos\phi)$). Note how 
+
+$$\begin{align*}
+  \Delta_\phi &= \Delta - \partial_\phi^2 = \partial_x^2 + \partial_y^2 - (\partial_x\cos\phi + \partial_y\sin\phi)^2
+\\ &= \partial_x^2\sin^2\phi + \partial_y^2\cos^2\phi - 2\partial_x\partial_y\cos\phi\sin\phi
+\\ &= (\partial_x\sin\phi - \partial_y\cos\phi)^2 = \partial_{\bar\phi}^2
+\end{align*}$$
+
+to obtain
+
+$$f_\phi(\vec x) = a_\phi(x_\phi) + b_\phi(x_\phi)\cdot x_{\bar\phi},$$
+
+i.e. $f_\phi$ must be linear in the tangential direction but can be arbitrary in the parallel direction. Next note
+
+$$\begin{align*}
+  (\vec x + iz\vec e_\phi)_\phi &= x_\phi + iz,
+\\ (\vec x +iz\vec e_\phi)_{\bar\phi} &= x_{\bar\phi}
+\end{align*}$$
+
+Thus
+
+$$\begin{align*}
+  f_\phi\left(\begin{pmatrix}x+iz\cos\phi \\ y + iz\sin\phi\end{pmatrix}\right) &= a_\phi(x_\phi+iz) + b_\phi(x_\phi+iz)\cdot x_{\bar\phi}
+\end{align*}$$
+
+and finally
+
+$$\begin{align*}
+  f(x,y,z) &= \int_0^{2\pi}d\phi\ \Big(\Big)
+\end{align*}$$
+
+$$\begin{align*}
+\end{align*}$$
 
 ### Refraction
-
