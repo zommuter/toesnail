@@ -88,7 +88,6 @@ For now, let's just say complex numbers are a pair of _two_ real numbers, one de
 The angles of 90° and 270° yield _imaginary_ numbers, which have the peculiar property of squaring to negative numbers - something deemed impossible for real numbers, hence the name. Just like $1$ denotes the positive unit of real numbers, i.e. a number of length one and angle 0°, and $-1$ the negative unit, we use the letter $i$ to denote the imaginary unit of length one and angle 90° (and similarly $-i$ has the angle 270°, which is actually just a combination $(-1)\cdot i$). Complex numbers with arbitrary angles can be considered a linear combination of a real and an imaginary number, such as $3+4i$, which has the length $\sqrt{3^2+4^2}=5$ and angle slightly below 37°. Complex numbers have many important properties and benefits compared to "mere" real numbers, which we'll learn more about later. For now it should suffice to say that there is also one significant drawback to complex numbers: They can't be ordered! There is no unique way to determine which of two complex numbers is "greater" or "smaller" than the other, e.g. $i \not>1$ but $i \not<1$ as well.
 
 ---
-}
 
 The inner product fulfills the following properties:
 
