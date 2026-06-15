@@ -2,7 +2,7 @@
 
 ## Current
 
-- [ ] Relay: 1 open ROADMAP item (HARD — strong model only); 2 ROUTINE items done (fca7 Makefile, 9868 CI). Confirm CI run green on GitHub after push (id:9868 done-check). <!-- id:e27e -->
+- [ ] Relay: 1 open ROADMAP item (HARD — strong model only: id:3317 Lean); 0 ROUTINE open (fca7 Makefile, 9868 CI done). Confirm CI run green on GitHub after push (id:9868 done-check). edot/cval verify instruments re-pinned ✗→✓ (2026-06-15 /relay review, id:9135 follow-up #1). Remaining open: owner-only cval c-narrative prose (REVIEW_ME). <!-- id:e27e -->
 
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted

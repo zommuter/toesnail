@@ -2,14 +2,19 @@
 # requires-python = ">=3.10"
 # dependencies = ["sympy"]
 # ///
-"""verify:numeric [cval] — the canonical pilot target: determine c.
+"""verify:numeric [cval] — the canonical pilot target: the free-oscillator energy.
 
-Claim (physics/Resogram.md, handle `cval`):
-    "e ∝ (c + cos²(Ωt+φ)) e^{−2βt};  too lazy to check whether c = 0."
+Claim (physics/Resogram.md, handle `cval`) — owner-ratified exact form (2026-06-15):
+    e = (A²ω/2) e^{−2βt} (ω + β·cos(2(Ωt+φ) − δ)),   δ = atan2(Ω,β).
 
 We compute the exact specific energy of the FREE underdamped oscillator
     x(t) = A cos(Ωt+φ) e^{−βt},   Ω = √(ω²−β²),  y = 0
-and test whether it has the claimed form.
+and confirm it equals the adopted phase-shifted form.
+
+History: the pilot answered the doc's open "is c=0?" question — c ≠ 0; the old
+template (c + cos²θ) e^{−2βt} silently dropped a sin(2θ) term. The owner ratified
+ADOPTING the exact phase-shifted form via /relay human on 2026-06-15 and the
+source now states it. This instrument verifies that exact form (VERDICT ✓).
 
 Ω is carried as an INDEPENDENT positive symbol with ω² = Ω² + β² so SymPy can
 crunch the double-angle algebra without a nested square root.
@@ -18,11 +23,12 @@ Run:  uv run verify/resogram_cval.py
 Emits a finding only; it never edits the theory.
 """
 import hashlib
-from sympy import (symbols, srepr, simplify, cos, sin, exp, diff,
-                   Rational, expand_trig, expand)
+from sympy import (symbols, srepr, simplify, cos, sin, exp, diff, sqrt,
+                   Rational, expand_trig, expand, atan2)
 
 t, A, phi, beta, Omega = symbols("t A phi beta Omega", positive=True)
 omega_sq = Omega**2 + beta**2            # ω² = Ω² + β²
+omega = sqrt(omega_sq)
 theta = Omega * t + phi
 
 x = A * cos(theta) * exp(-beta * t)
@@ -39,26 +45,27 @@ target = omega_sq + beta**2 * cos(2 * theta) + beta * Omega * sin(2 * theta)
 # simplify() applies cos²+sin²=1 to the leftover Ω²(cos²θ+sin²θ−1) residual.
 decomp_ok = simplify(expand(bracket) - expand_trig(target)) == 0
 
-# The claimed template κ(c + cos²θ) = κc + κ/2 + (κ/2)cos(2θ) has NO sin(2θ) term.
-# Coefficient of sin(2θ) in the true bracket is βΩ ≠ 0 for β,Ω > 0  ⇒  no exact fit.
-sin_coeff = beta * Omega
-# Matching the cos(2θ) coefficient anyway: κ/2 = β² ⇒ κ = 2β²; constant κc+κ/2 = ω²:
-kappa = 2 * beta**2
-c_value = simplify((omega_sq - kappa / 2) / kappa)   # = Ω²/(2β²)
+# Owner-ratified ADOPTED form: collapse β²cos2θ + βΩsin2θ = βω·cos(2θ−δ), δ=atan2(Ω,β),
+# so the bracket = ω² + βω·cos(2θ−δ) = ω(ω + β·cos(2θ−δ)).  Hence
+#     e = (A²ω/2) e^{−2βt} (ω + β·cos(2(Ωt+φ) − δ)).
+delta = atan2(Omega, beta)
+adopted_bracket = omega * (omega + beta * cos(2 * theta - delta))
+# R·cos(2θ−δ) with R=βω, δ=atan2(Ω,β) expands to R(cosδ cos2θ + sinδ sin2θ)
+# = βω(β/ω cos2θ + Ω/ω sin2θ) = β²cos2θ + βΩsin2θ — equal to `target − ω²`.
+adopted_ok = simplify(expand_trig(adopted_bracket) - expand_trig(target)) == 0
 
-print("exact decomposition ω²+β²cos2θ+βΩsin2θ :", decomp_ok)
-print("coefficient of sin(2θ) (must be 0 for the claimed form) :", sin_coeff, " ≠ 0")
-print("c forced by matching the cos(2θ) coefficient            :", c_value, " = Ω²/(2β²)")
+print("exact decomposition ω²+β²cos2θ+βΩsin2θ          :", decomp_ok)
+print("adopted phase-shifted form ω(ω+β·cos(2θ−δ)) ok  :", adopted_ok)
 print()
-print("VERDICT: ✗  located discrepancy — the claimed form is not exact for β ≠ 0.")
-print("  • The true energy carries a sin(2θ) term (coeff βΩ ≠ 0); the template (c + cos²θ)")
-print("    has a zero-phase cos(2θ) only, so NO constant c reproduces it exactly.")
-print("  • Even forcing a match on the cos(2θ) coefficient gives c = Ω²/(2β²) ≠ 0, not c = 0.")
-print("  • The clean exact statement (phase-shifted form) is")
-print("      e = (A²ω/2) e^{−2βt} (ω + β·cos(2(Ωt+φ) − δ)),  δ = atan2(Ω,β),")
-print("    since β²cos2θ + βΩsin2θ = βω·cos(2θ−δ) with amplitude √(β⁴+β²Ω²) = βω.")
-print("  • So the honest answer to 'is c=0?' is NO — and the stated form needs a phase term.")
+if decomp_ok and adopted_ok:
+    print("VERDICT: ✓  free-oscillator energy matches the adopted exact form")
+    print("  e = (A²ω/2) e^{−2βt} (ω + β·cos(2(Ωt+φ) − δ)),  δ = atan2(Ω,β).")
+    print("  (Resolves the doc's old 'is c=0?': c ≠ 0 — the superseded template")
+    print("   (c + cos²θ) e^{−2βt} dropped a sin(2θ) term; no constant c reproduces it.)")
+else:
+    print("VERDICT: ✗  adopted form does not match the energy — re-check Resogram.md handle cval")
 
-# No attestation hash: this claim is a located discrepancy (✗); it stays a verify: marker.
-print("\nCLAIM_SREPR (verified decomposition) :", srepr(target))
-print("CLAIM_HASH8 :", hashlib.sha256(srepr(target).encode()).hexdigest()[:8])
+# Attestation hash for the adopted bracket ω(ω + β·cos(2θ−δ)).
+CLAIM = adopted_bracket
+print("\nCLAIM_SREPR (adopted exact form) :", srepr(CLAIM))
+print("CLAIM_HASH8 :", hashlib.sha256(srepr(CLAIM).encode()).hexdigest()[:8])

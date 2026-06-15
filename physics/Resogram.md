@@ -34,12 +34,12 @@ $$
 \end{aligned} \ltag{edot}
 $$
 
+<!-- verified:sympy [edot] claim=b575864e by=resogram_edot.py@54710d91 -->
 <!-- verify:sympy [edot] energy-rate chain: ė=ẋ(ẍ+ω²x)=−2βẋ²+ω²ẋy = −4βe+ω²(2βx²+ẋy). inst=verify/resogram_edot.py.
      RESOLVED 2026-06-15 (owner-ratified via /relay human): the located sign discrepancy on the SECOND
-     equality was confirmed and the source corrected to ė = −4βe + ω²(2βx² + ẋy). Instrument re-pin
-     pending next /relay review: resogram_edot.py still transcribes the old form (verdict ✗) and
-     test_verify.sh still pins edot=✗ — the next review re-derives the instrument + flips the pin to ✓
-     and may add a verified: attestation. See docs/rigor-debt.md. -->
+     equality was confirmed and the source corrected to ė = −4βe + ω²(2βx² + ẋy). Instrument RE-PINNED
+     2026-06-15 (/relay review): resogram_edot.py now verifies the corrected closed form end-to-end
+     (verdict ✓) and test_verify.sh pins edot=✓ with the attestation above. See docs/rigor-debt.md. -->
 
 Even without the analytical solution it would be clear that a free oscillator ($y=0$) would permanently loose energy for $\beta\neq0$. Now one interesting question is what kind of drive $y$ is needed in order to keep the energy constant, i.e. $\dot e=0$. Since $\dot x\neq 0$ that means
 
@@ -72,15 +72,16 @@ $$
   e = \frac{A^2\omega}{2}e^{-2\beta t}\Big(\omega + \beta\cos\big(2(\Omega t+\phi)-\delta\big)\Big),\qquad \delta=\operatorname{atan2}(\Omega,\beta) \ltag{cval}
 $$
 
+<!-- verified:numeric [cval] claim=18d3f7a7 by=resogram_cval.py@a64cfdc0 -->
 <!-- verify:numeric [cval] e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ)), δ=atan2(Ω,β). inst=verify/resogram_cval.py.
      RESOLVED 2026-06-15 (owner-ratified via /relay human): the located discrepancy ("is c=0?" → c≠0;
      the (c+cos²θ) form drops a sin(2θ) term) was confirmed and the source now states the exact
-     phase-shifted form. TWO follow-ups for the next /relay review / owner pass:
-       (1) [next review] resogram_cval.py still prints ✗ unconditionally and test_verify.sh pins cval=✗;
-           re-derive the instrument to confirm the adopted exact form and flip the pin to ✓;
-       (2) [owner narrative — AI must not edit] the surrounding prose still references the now-removed
-           constant c ("varies between zero and −4βe … averaging" ¶ above; "too lazy to check whether
-           c=0" ¶ below). Reconcile the c-narrative with the exact form. See docs/rigor-debt.md. -->
+     phase-shifted form.
+       (1) [DONE — /relay review 2026-06-15] resogram_cval.py re-derived: it now verifies the adopted
+           exact phase-shifted form (verdict ✓); test_verify.sh pins cval=✓ with the attestation above.
+       (2) [STILL OPEN — owner narrative; AI must not edit] the surrounding prose still references the
+           now-removed constant c ("varies between zero and −4βe … averaging" ¶ above; "too lazy to check
+           whether c=0" ¶ below). Reconcile the c-narrative with the exact form. See docs/rigor-debt.md. -->
 
 I'm too lazy to check whether $c=0$, doesn't matter anyway. The point is that this hints at a sensible sliding average:
 
