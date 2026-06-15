@@ -15,14 +15,14 @@ $$
 It is of course possible to solve $\eqref{eom}$ with some analysis:
 
 $$
-x(t) = A\cos\Big(\underbrace{\sqrt{\omega^2-\beta^2}}_{=:\Omega}t+\phi\Big)e^{-\beta t} + \int_{-\infty}^t\frac{\omega^2}{\Omega}\sin(\Omega (t-t')e^{-\beta(t-t')} y(t')\, dt' \ltag{sol}
+x(t) = A\cos\Big(\underbrace{\sqrt{\omega^2-\beta^2}}_{=:\Omega}t+\phi\Big)e^{-\beta t} + \int_{-\infty}^t\frac{\omega^2}{\Omega}\sin(\Omega (t-t'))e^{-\beta(t-t')} y(t')\, dt' \ltag{sol}
 $$
 
 <!-- verify:sympy [sol] the solution x(t) solves eom; Ω:=√(ω²−β²). inst=verify/resogram_sol.py.
      Finding (✓ partial): x_h solves the homogeneous ODE and the convolution kernel satisfies
      K(0)=0, K'(0)=ω², K''+2βK'+ω²K=0, so by the Leibniz rule ẍ+2βẋ+ω²(x−y)=0 — see docs/rigor-debt.md.
-     NOTE for owner: the rendered integrand has an unbalanced paren `\sin(\Omega (t-t')e^{...}` (missing
-     `)` after `(t-t')`); the verified kernel is sin(Ω(t−t'))·e^{−β(t−t')}. Surfaced, not edited. -->
+     NOTE for owner: the integrand paren-balance typo (missing `)` after `(t-t')`) was owner-ratified
+     and fixed 2026-06-15 via /relay human; the integrand now reads sin(Ω(t−t'))·e^{−β(t−t')}. -->
 
 But that's too verbose for now. Let's instead consider the time evolution of the specific energy:
 
@@ -30,14 +30,16 @@ $$
 \begin{aligned}
   e &= \frac12\dot x^2 + \frac{\omega^2}2 x^2, \\
   \dot e &= \dot x\cdot(\underbrace{\ddot x}_{=-2\beta\dot x-\omega^2(x-y)} + \omega^2 x) = \dot x\cdot(-2\beta\dot x + \omega^2 y) \\
-  &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e - \omega^2(2\beta x^2 - \dot x y)
+  &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e + \omega^2(2\beta x^2 + \dot x y)
 \end{aligned} \ltag{edot}
 $$
 
-<!-- verify:sympy [edot] energy-rate chain: ė=ẋ(ẍ+ω²x)=−2βẋ²+ω²ẋy = −4βe−ω²(2βx²−ẋy). inst=verify/resogram_edot.py.
-     Finding (✗ located discrepancy): the FIRST equality holds, but the SECOND is off by −4βω²x²;
-     the correct closed form is ė = −4βe + ω²(2βx² + ẋy) (sign on the ω²-bracket). Surfaced, not edited;
-     owner decides — see docs/rigor-debt.md. -->
+<!-- verify:sympy [edot] energy-rate chain: ė=ẋ(ẍ+ω²x)=−2βẋ²+ω²ẋy = −4βe+ω²(2βx²+ẋy). inst=verify/resogram_edot.py.
+     RESOLVED 2026-06-15 (owner-ratified via /relay human): the located sign discrepancy on the SECOND
+     equality was confirmed and the source corrected to ė = −4βe + ω²(2βx² + ẋy). Instrument re-pin
+     pending next /relay review: resogram_edot.py still transcribes the old form (verdict ✗) and
+     test_verify.sh still pins edot=✗ — the next review re-derives the instrument + flips the pin to ✓
+     and may add a verified: attestation. See docs/rigor-debt.md. -->
 
 Even without the analytical solution it would be clear that a free oscillator ($y=0$) would permanently loose energy for $\beta\neq0$. Now one interesting question is what kind of drive $y$ is needed in order to keep the energy constant, i.e. $\dot e=0$. Since $\dot x\neq 0$ that means
 
@@ -67,14 +69,18 @@ So, by swinging at exactly the free frequency $\omega$ (and not the eigenfrequen
 Another question is how much change of energy does the external force contribute. Without the analytical solution there might be some handwaving about how $\dot e$ varies between zero and $-4\beta e$ in the absence of external forces, thus averaging to $\dot e\approx -2\beta e$. But I'll just use the analytical solution now, which boils down to confirming that:
 
 $$
-  e\propto (c+\cos^2(\Omega t+\phi))e^{-2\beta t} \ltag{cval}
+  e = \frac{A^2\omega}{2}e^{-2\beta t}\Big(\omega + \beta\cos\big(2(\Omega t+\phi)-\delta\big)\Big),\qquad \delta=\operatorname{atan2}(\Omega,\beta) \ltag{cval}
 $$
 
-<!-- verify:numeric [cval] "e ∝ (c+cos²(Ωt+φ))e^{−2βt}; too lazy to check whether c=0." inst=verify/resogram_cval.py.
-     Finding (✗ located discrepancy): c ≠ 0. The free-oscillator energy is
-     e = (A²/2)e^{−2βt}(ω² + β²cos2θ + βΩ sin2θ) = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ)), δ=atan2(Ω,β):
-     it carries a sin(2θ) term, so no constant c fits the stated form exactly; forcing the cos(2θ) match
-     gives c=Ω²/(2β²) (≠0). Surfaced, not edited — owner decides; see docs/rigor-debt.md. -->
+<!-- verify:numeric [cval] e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ)), δ=atan2(Ω,β). inst=verify/resogram_cval.py.
+     RESOLVED 2026-06-15 (owner-ratified via /relay human): the located discrepancy ("is c=0?" → c≠0;
+     the (c+cos²θ) form drops a sin(2θ) term) was confirmed and the source now states the exact
+     phase-shifted form. TWO follow-ups for the next /relay review / owner pass:
+       (1) [next review] resogram_cval.py still prints ✗ unconditionally and test_verify.sh pins cval=✗;
+           re-derive the instrument to confirm the adopted exact form and flip the pin to ✓;
+       (2) [owner narrative — AI must not edit] the surrounding prose still references the now-removed
+           constant c ("varies between zero and −4βe … averaging" ¶ above; "too lazy to check whether
+           c=0" ¶ below). Reconcile the c-narrative with the exact form. See docs/rigor-debt.md. -->
 
 I'm too lazy to check whether $c=0$, doesn't matter anyway. The point is that this hints at a sensible sliding average:
 

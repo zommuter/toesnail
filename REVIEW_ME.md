@@ -11,19 +11,39 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## Resogram verify-pilot — located discrepancies (collectively TODO `id:9135`)
 
-- [ ] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
+- [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by
   `−4βω²x²`); SymPy confirms the correct closed form is `ė = −4βe + ω²(2βx² + ẋy)` (sign on
   the ω²-bracket). **Owner:** confirm the correction (then fix `physics/Resogram.md`) or
   re-derive. AI will not edit the math.
-- [ ] `verify/resogram_cval.py` (handle `cval`) — **"is c=0?" answered: c ≠ 0.** The free
+  **RESOLVED 2026-06-15 (owner-ratified, /relay human):** owner confirmed the sign correction;
+  source `edot` block now reads `−4βe + ω²(2βx² + ẋy)`. Re-check: `git show` on `physics/Resogram.md`
+  handle `edot`; `verify/resogram_edot.py` already derives this as `correct_second`. Instrument re-pin
+  (✗→✓) + attestation deferred to next `/relay review`.
+- [x] `verify/resogram_cval.py` (handle `cval`) — **"is c=0?" answered: c ≠ 0.** The free
   oscillator's energy is phase-shifted: `e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ) − δ))`,
   `δ=atan2(Ω,β)`; the stated `(c+cos²(Ωt+φ))e^{−2βt}` form omits a `sin(2θ)` term, and
   forcing a cos(2θ) match gives `c = Ω²/(2β²) ≠ 0`. **Owner:** confirm the finding and the
   preferred framing (keep the approximate form with a note, or adopt the exact one).
-- [ ] `physics/Resogram.md` (handle `sol`) — **integrand typo.** The rendered solution has
+  **RESOLVED 2026-06-15 (owner-ratified, /relay human): ADOPT THE EXACT FORM.** Source `cval`
+  equation now states `e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ))`, `δ=atan2(Ω,β)`. Re-check:
+  `physics/Resogram.md` handle `cval`; `verify/resogram_cval.py` derives this exact decomposition.
+  **TWO follow-ups left OPEN (see new boxes below):** instrument re-pin (next review) and the
+  surrounding c-narrative reconciliation (owner-only prose).
+- [x] `physics/Resogram.md` (handle `sol`) — **integrand typo.** The rendered solution has
   an unbalanced paren `\sin(\Omega (t-t')e^{-\beta(t-t')}` (missing `)` after `(t-t')`); the
   SymPy-verified kernel is `sin(Ω(t−t'))·e^{−β(t−t')}`. **Owner:** confirm the one-char fix.
+  **RESOLVED 2026-06-15 (owner-ratified, /relay human):** one-char fix applied; integrand now reads
+  `\sin(\Omega (t-t'))e^{-\beta(t-t')}`. Pure render fix — no verdict/instrument change (sol stays ✓).
+
+## Narrative follow-up from the cval exact-form adoption (owner-only prose)
+
+- [ ] `physics/Resogram.md` (handle `cval`, prose) — **c-narrative reconciliation.** Adopting the
+  exact phase-shifted `cval` form (2026-06-15) removed the constant `c`, but the surrounding prose
+  still references it: the ¶ above ("$\dot e$ varies between zero and $-4\beta e$ … averaging to
+  $\dot e\approx -2\beta e$") and the ¶ below ("I'm too lazy to check whether $c=0$, doesn't matter
+  anyway"). **Owner:** rewrite/trim this narrative to match the exact form (AI must not edit the
+  theory prose). Until then the section is internally inconsistent by design — flagged, not hidden.
 
 ## Visual / manual (run these — never auto-ticked)
 
