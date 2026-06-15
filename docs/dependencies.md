@@ -88,9 +88,65 @@ pre-save) OR when `.mw` ships a headless front-end⇄core protocol seam.
      *at edit time, pre-save* — "this paragraph still references `c`, which your edit removed." This is a
      concrete instance of the revisit-tripwire ("liveness becomes a real need").
 
+## Current tool-capability map & the two-tier detection proposal (2026-06-15)
+
+Grounded snapshot of what each sibling can do for toesnail **today** (read from the repos 2026-06-15,
+after the Resogram energy-chain episode), and the proposal that fell out of it. **Meeting task queued for
+next session — see TODO id:d8bf.** This is design analysis, not a committed plan.
+
+### `.mw` today (v0.3.0) — the HARD / deterministic tier
+- **Usable now, headless library:** parser + SymPy evaluator + content-addressed cache + a dependency-DAG
+  with 3-state staleness (PENDING/PROVEN/STALE). `stale_after_edit(old, new)` returns the stale fragment set.
+- **Proven on this content:** `examples/resogram_cval.mw` + `tests/test_resogram_cval_staleness.py` pass —
+  the differentiator works on the real Resogram episode (edit `esol` → its inline `$e$` citation + the
+  downstream `ē` average flag stale; unrelated `y` untouched).
+- **Caveats:** (1) **No Markdown importer** → can't lift `physics/Resogram.md` losslessly; using it means a
+  hand-maintained `.mw` *mirror* (double-entry — the D2 decoupling tax; cheap for one section, not repo-wide).
+  (2) **No preview / no Lean / no dispatcher** (all deferred HARD). (3) **Dangling-symbol gap** `xfail id:b7b1`:
+  it keys on *changed* definitions, not *removed* symbols — so it would NOT have caught the `c`-removal orphan
+  (the origin of this episode). Owner design call pending in `.mw`, blocking a merge there.
+
+### collAIb today (v0.2.0) — the SOFT / advisory tier
+- **Runnable PWA, observer loop live:** local-LLM (Ollama/OpenAI-compatible) streams brief observations on a
+  2s-idle debounce. Works now.
+- **But:** watches only its **in-browser Tiptap buffer** — **no filesystem access**, no verify-marker
+  awareness, no diff-aware "you removed `c`" check wired. So it **cannot watch `Resogram.md` today**; the only
+  current path is copy-paste a section for generic prose feedback (low value for physics-specific needs).
+- **The 80%-built valuable use:** `change-tracker.js` (detects deleted spans) + `observation.js` (typed,
+  confidence-thresholded, exact-substring-anchored observations) already exist and are tested but **unwired**.
+  The tripwire use-case ("flag the dangling-`c` at edit time, pre-save") needs file-I/O + a prompt tweak +
+  wiring those two — a ~2–3 day feature build (the parked runtime Q; tripwire HIT this episode, see above).
+
+### The synthesis: two complementary detection tiers on the same commit-diff
+The episode's manual hunt split cleanly into what each sibling automates:
+
+| | HARD tier (deterministic) | SOFT tier (advisory) |
+|---|---|---|
+| tool | `.mw` DAG (`stale_after_edit`) | collAIb's observer *brain* (prompt + local LLM) |
+| catches | changed-definition staleness (`esol`→`ē`) | dangling refs (`c`), exposition, "asserted-not-shown" |
+| usable today as | headless library (needs a `.mw` mirror) | headless script (needs prompt + Ollama) |
+| output | machine-checked stale-set | advisory notes (never a badge) |
+
+### Proposal — a **relay-aware commit-hook** (NOT yet decided; meeting topic id:d8bf)
+Both tiers fire on the **commit diff**, emit findings into REVIEW_ME / inline `🚧` callouts, and the owner
+responds with the `**re** (status:)` vocabulary — the full **detect → respond** loop, automating most of this
+session's manual hunt. Key realization: **you don't need either sibling's heavy shell** — not `.mw`'s importer
+nor collAIb's PWA file-I/O. You need `.mw`'s DAG *as a library* (= toesnail's deferred `id:04bb` staleness
+checker) and collAIb's *brain* as a headless diff-observer script. toesnail's git-commit workflow (not
+live-typing) makes the commit-hook the right trigger, not an editor.
+
+**"Relay-aware"** = the hook must NOT fire/interfere during relay executor or pool **worktree** commits (they
+commit in worktrees outside the repo tree; the hook would either double-run or fight the integrator). Gate it
+on: not inside a relay worktree, no live lease held, or an explicit skip env flag. Open design questions for
+the meeting: pre-commit vs post-commit vs post-merge; the `.mw`-mirror double-entry cost vs waiting for an
+importer; soft-tier noise control / confidence threshold; and **whether `id:b7b1` (dangling-symbol detection)
+should be routed to this soft tier rather than `.mw`'s deterministic core** (this episode argues yes). Weigh
+against the *observe-before-preventing* heuristic — this episode is N=1; the hook is partly its own logger.
+
 ## What to watch
 
 1. Keep toesnail's outgoing edges **weak on purpose** — if toesnail ever *requires* `.mw` to make progress,
-   the decoupling decision (prior D2) has been violated; revisit deliberately, don't drift into it.
+   the decoupling decision (prior D2) has been violated; revisit deliberately, don't drift into it. The
+   commit-hook proposal (id:d8bf) must preserve this: `.mw`/collAIb stay *optional* assists, never a gate.
 2. If this map proves useful, mirror a one-line pointer to it from `.mw`'s and collAIb's `CLAUDE.md`
    (not yet done — observe-first; do it when the relationship is confirmed stable).

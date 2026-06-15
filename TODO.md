@@ -33,6 +33,14 @@
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->
+- [ ] `[MEETING — next session]` Two-tier **relay-aware commit-hook** for automated detection: (a) HARD tier
+  = `.mw` DAG `stale_after_edit` as a library (= the deferred `id:04bb` staleness checker) on a one-section
+  Resogram `.mw` mirror; (b) SOFT tier = collAIb's observer *brain* (prompt + local Ollama) as a headless
+  diff-observer. Both fire on commit-diff, emit into REVIEW_ME/`🚧` callouts, owner responds via `**re**
+  (status:)`. Design Qs: pre/post-commit vs post-merge; relay-awareness (skip in pool worktrees / lease held /
+  skip-flag); `.mw`-mirror double-entry vs importer wait; soft-tier noise/confidence; route `.mw` id:b7b1
+  dangling-symbol detection to the soft tier?; weigh vs observe-before-preventing (N=1). Full analysis in
+  docs/dependencies.md "Current tool-capability map" (2026-06-15). <!-- id:d8bf -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
   in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
