@@ -27,13 +27,16 @@ $$
 But that's too verbose for now. Let's instead consider the time evolution of the specific energy:
 
 $$
+  e = \frac12\dot x^2 + \frac{\omega^2}2 x^2 \ltag{e}
+$$
+
+$$
 \begin{aligned}
-  e &= \frac12\dot x^2 + \frac{\omega^2}2 x^2, \ltag{e} \\
   \dot e &= \dot x\cdot(\underbrace{\ddot x}_{=-2\beta\dot x-\omega^2(x-y)} + \omega^2 x) %\ltag{edot.1}
   \\ &= \dot x\cdot(-2\beta\dot x + \omega^2 y) %\ltag{edot.2}
   \\ &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y %\ltag{edot.3}
   \\ &= -4\beta e + \omega^2(2\beta x^2 + \dot x y) %\ltag{edot.4}
-\end{aligned}
+\end{aligned} \ltag{edot}
 $$
 
 <!-- verified:sympy [edot] claim=b575864e by=resogram_edot.py@54710d91 -->

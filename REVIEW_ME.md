@@ -79,17 +79,19 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## Spun out of the owner's `236fa1b` edits (tooling / render — AI-eligible)
 
-- [ ] `physics/Resogram.md` energy block — **render regression: `\tag` inside `aligned` → MathJax `merror`.**
-  The owner moved `\ltag{e}` *inside* the `\begin{aligned}` env; `\tag` is only valid on the outer `$$`
-  block, so `test_mathjax.cjs` (MathJax 3) fails on that block (**suite RED; CI red on `236fa1b`**). KaTeX
-  tolerates it, hence the VS Code preview ≠ site mismatch. Fix is rendering-mechanics (no math change) but
-  lives in the theory file — owner to confirm the approach (interim single block tag vs. land id:d2f4). <!-- id:3b4c -->
+- [x] `physics/Resogram.md` energy block — **render regression — FIXED (owner-confirmed, 2026-06-15).** The
+  `\ltag{e}`-inside-`aligned` → MathJax `merror` was un-broken by splitting into two `$$` blocks (`e` tagged
+  `\ltag{e}`; the ė-chain `aligned` tagged `\ltag{edot}` on the outer block). No math changed. `tests/run.sh`
+  green again (MathJax + KaTeX both render); CI green on the fix commit. Owner picked the split over an
+  interim single tag. <!-- id:3b4c -->
 
 - [ ] **Wishlist: automated subequation dot-numbering** — derive `(edot.1)…(edot.4)` handles from a parent
   handle so per-line tags render (amsmath `subequations`/`align` style), letting the owner cite individual
-  derivation steps. The owner currently has them commented out (`%\ltag{edot.N}`). Also resolves the handle
-  drift: the `[edot]` verify marker no longer has an active `\ltag{edot}` (block now carries `\ltag{e}` +
-  commented subequation tags). Relates to ROADMAP R2/R3 (id:445e) and `.mw`. <!-- id:d2f4 -->
+  derivation steps. The owner currently has them commented out (`%\ltag{edot.N}`). Nice-to-have (owner, sugar):
+  re-align the `=` signs of `(e)` and `(edot)` across the now-split blocks — the two-`$$` split (render fix
+  id:3b4c) aligns each block independently; owner notes `.mw` may make this moot. (Handle drift is RESOLVED by
+  the split: `\ltag{e}` on the energy block, `\ltag{edot}` on the ė-chain's outer block re-attaches the
+  `[edot]` marker.) Relates to ROADMAP R2/R3 (id:445e) and `.mw`. <!-- id:d2f4 -->
 
 ## Visual / manual (run these — never auto-ticked)
 

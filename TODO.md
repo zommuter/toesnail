@@ -27,10 +27,9 @@
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
 - [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
   VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). <!-- id:6501 -->
-- [ ] **Resogram energy block: render regression — `\tag` inside `aligned` → MathJax `merror`, suite RED /
-  CI red on `236fa1b`.** Owner moved `\ltag{e}` inside the aligned env (valid only on the outer `$$`). KaTeX
-  tolerates it; MathJax (the site) does not. Owner to confirm fix approach (interim single block tag vs.
-  land subequation numbering id:d2f4). Tooling/render fix, but in the theory file. <!-- id:3b4c -->
+- [x] Resogram energy block render regression (`\tag` inside `aligned` → MathJax `merror`) — FIXED 2026-06-15
+  by splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed; suite green,
+  covered by `tests/test_mathjax.cjs`. <!-- id:3b4c -->
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->

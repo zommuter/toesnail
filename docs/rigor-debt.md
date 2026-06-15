@@ -57,8 +57,8 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
 - **sliding-average window (id:3999) ✓.** Corrected `2Ω∫₀^{1/2Ω}` → `(Ω/π)∫₀^{π/Ω}` (full-period average).
 
 **NEW, spun out of `236fa1b` (tooling/render — AI-eligible):**
-- **render regression (id:3b4c).** `\ltag{e}` moved *inside* `\begin{aligned}`; `\tag` is valid only on the
-  outer `$$` → MathJax `merror`, suite RED / CI red. Owner to confirm fix approach.
+- **render regression (id:3b4c) ✓ FIXED.** `\ltag{e}` inside `\begin{aligned}` → MathJax `merror`; fixed by
+  splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed. Suite green.
 - **subequation auto-numbering (id:d2f4, wishlist).** Auto-derive `(edot.1)…(edot.4)` handles so per-line
   tags render; also resolves the `[edot]` marker losing its active `\ltag{edot}`. Relates to R2/R3, `.mw`.
 
