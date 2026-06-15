@@ -6,6 +6,15 @@ permalink: /Resogramm
 Kinda part of my [Theory of Everything - Some Novel Approach Including Love ❤️ – Math on Demand Edition](./)
 [![](img/cc-by-nc-sa-88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+<!-- Equation-handle macros, defined in-document so BOTH the KaTeX-based VS Code
+     preview and the site's MathJax render \ltag / \eqref (see CONVENTIONS.md §1).
+     TODO: a \label/\href version for clickable cross-refs — KaTeX lacks \label, so
+     this fallback renders refs as plain "(id)" text, matching physics/toesnail.md. -->
+$
+\gdef\ltag#1{\tag{#1}}
+\gdef\eqref#1{(\text{#1})}
+$
+
 Consider a simple mass on a spring system, yielding a driven harmonic oscillator
 
 $$

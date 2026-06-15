@@ -9,26 +9,41 @@ few conventions so that an eventual `.mw` migration is mechanical. Every convent
 ## 1. Stable equation handles
 
 Every referenceable equation gets a stable, human-readable id; prose cites it rather than repeating it.
-As of the Resogram pilot (2026-06-15) the mechanism is a **MathJax 3** macro, configured once site-wide in
-`_includes/custom-head.html` (`tex: { tags: 'ams', macros: { ltag: ['\\tag{#1}\\label{#1}', 1] } }`):
+As of the Resogram pilot (2026-06-15) the mechanism is a pair of **in-document `\gdef` macros** at the top of
+each physics doc (mirroring `physics/toesnail.md`):
 
 ```latex
-$$ ... \ltag{t1} $$      % tags the display equation `t1` and registers a \label anchor
-... as shown in $\eqref{t1}$ ...   % prose reference to it (built-in AMS \eqref)
+$
+\gdef\ltag#1{\tag{#1}}
+\gdef\eqref#1{(\text{#1})}
+$
 ```
 
-- `\ltag{id}` renders `id` as the equation's tag **and** registers a `\label{id}`, so the built-in AMS
-  `\eqref{id}` cross-references it.
+then used as:
+
+```latex
+$$ ... \ltag{t1} $$      % tags the display equation `t1`
+... as shown in $\eqref{t1}$ ...   % prose reference to it
+```
+
+- `\ltag{id}` renders `id` as the equation's tag; `\eqref{id}` renders the reference as `(id)`.
 - Ids are **content-meaningful and stable** (`eom`, `edot`, `conjugate-symmetry`), never positional —
   reflowing the document must not change them.
-- **Display vs inline:** handles need a *display* equation (`$$ … $$`); `\tag`/`\label` do not apply to
-  inline `$ … $` math. Handle **where a claim is marked** (see §2); unmarked equations are not tagged on spec.
-- **Standalone value:** cross-references work in the rendered Jekyll site.
+- **Display vs inline:** handles need a *display* equation (`$$ … $$`); `\tag` does not apply to inline
+  `$ … $` math. Handle **where a claim is marked** (see §2); unmarked equations are not tagged on spec.
+- **Why in-document, not the MathJax config:** the macros must work in **both** renderers — the live site
+  (MathJax 3) *and* the VS Code markdown preview (KaTeX). KaTeX never sees `_includes/custom-head.html`, so a
+  macro defined only there breaks the preview ("Undefined control sequence: \ltag"). A `\gdef` block in the
+  source is honoured by both.
+- **No clickable cross-refs (yet):** real `\label`/`\eqref` *linking* needs `\label`, which **KaTeX does not
+  support** — so the fallback above renders refs as plain `(id)` text. A `\label`/`\href` upgrade for the site
+  is a known future task (see the commented block in `physics/toesnail.md`).
 - **`.mw` value:** a handle *is* `.mw`'s typed-handle / DAG-node concept in embryo; migration reuses the id.
 
 > The site renders math with MathJax 3 (not KaTeX — the earlier claim of "KaTeX macros at the top of
-> `README.md`" was found false during the pilot; no such macros existed). For MathJax 3 to typeset the
-> `$`/`$$` delimiters, kramdown is told to leave them alone (`kramdown: { math_engine: null }` in `_config.yml`).
+> `README.md`" was found false during the pilot; no such macros existed). `_includes/custom-head.html` carries
+> the MathJax 3 config (delimiters, `tags:'ams'`), and `_config.yml` sets `kramdown: { math_engine: null }`
+> so kramdown leaves the `$`/`$$` delimiters for MathJax to typeset.
 
 ## 2. Tier-tagged rigor-debt markers
 

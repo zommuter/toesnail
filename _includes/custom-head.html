@@ -3,18 +3,15 @@
 // Established by the Resogram verify-marker pilot (2026-06-15) as the repo's
 // first real equation-handle mechanism — see CONVENTIONS.md §1 and
 // docs/meeting-notes/2026-06-15-1409-resogram-verify-pilot-scope.md (D5).
+// The equation-handle macros (\ltag, \eqref) are defined IN-DOCUMENT via \gdef
+// at the top of each physics doc, so the KaTeX-based VS Code preview renders them
+// too (KaTeX never sees this config). See CONVENTIONS.md §1.
 window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true,
-    tags: 'ams',
-    macros: {
-      // \ltag{id}: stable, content-meaningful equation handle.
-      // Renders the id as the equation tag AND registers a \label so prose
-      // can cross-reference it with the built-in AMS \eqref{id}.
-      ltag: ['\\tag{#1}\\label{#1}', 1]
-    }
+    tags: 'ams'
   }
 };
 </script>
