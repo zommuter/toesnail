@@ -28,10 +28,12 @@ But that's too verbose for now. Let's instead consider the time evolution of the
 
 $$
 \begin{aligned}
-  e &= \frac12\dot x^2 + \frac{\omega^2}2 x^2, \\
-  \dot e &= \dot x\cdot(\underbrace{\ddot x}_{=-2\beta\dot x-\omega^2(x-y)} + \omega^2 x) = \dot x\cdot(-2\beta\dot x + \omega^2 y) \\
-  &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e + \omega^2(2\beta x^2 + \dot x y)
-\end{aligned} \ltag{edot}
+  e &= \frac12\dot x^2 + \frac{\omega^2}2 x^2, \ltag{e} \\
+  \dot e &= \dot x\cdot(\underbrace{\ddot x}_{=-2\beta\dot x-\omega^2(x-y)} + \omega^2 x) %\ltag{edot.1}
+  \\ &= \dot x\cdot(-2\beta\dot x + \omega^2 y) %\ltag{edot.2}
+  \\ &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y %\ltag{edot.3}
+  \\ &= -4\beta e + \omega^2(2\beta x^2 + \dot x y) %\ltag{edot.4}
+\end{aligned}
 $$
 
 <!-- verified:sympy [edot] claim=b575864e by=resogram_edot.py@54710d91 -->
@@ -41,7 +43,7 @@ $$
      2026-06-15 (/relay review): resogram_edot.py now verifies the corrected closed form end-to-end
      (verdict ✓) and test_verify.sh pins edot=✓ with the attestation above. See docs/rigor-debt.md. -->
 
-Even without the analytical solution it would be clear that a free oscillator ($y=0$) would permanently loose energy for $\beta\neq0$. Now one interesting question is what kind of drive $y$ is needed in order to keep the energy constant, i.e. $\dot e=0$. Since $\dot x\neq 0$ that means
+Even without the analytical solution it would be clear from (edot.3) that a free oscillator ($y=0$) would permanently loose energy for $\beta\neq0$. Now one interesting question is what kind of drive $y$ is needed in order to keep the energy constant, i.e. $\dot e=0$. Since $\dot x\neq 0$ that means
 
 $$
   y = 2\frac{\beta}{\omega^2}\dot x \ltag{ymaint}
@@ -67,12 +69,14 @@ So, by swinging at exactly the free frequency $\omega$ (and not the eigenfrequen
      inst=verify/resogram_eincr.py. Finding (✓): confirmed. -->
 
 > 🚧 **Located rigor-debt** (flagged via `/meeting` 2026-06-15; tracked in `REVIEW_ME.md`) — two items in the energy-method chain above:
-> 1. The opening claim that a free oscillator *"would permanently loose energy"* is asserted as obvious, but the cited closed form `edot` (ė = −4βe + ω²(2βx² + ẋy)) is **not manifestly** ≤ 0. *Finding (owner to confirm):* the **first** form ė = −2βẋ² (at y=0) **is** manifestly ≤ 0 — the wording should lean on that form.
-> 2. The `ymaint` / `yfree` derivation skips steps. Their **results are machine-verified ✓** by `verify/resogram_drive.py` and are unaffected by the `edot` sign fix (which changed only edot's *second* equality, not the first form they derive from) — so this is an **exposition** gap, not a correctness one.
+> 1. The opening claim that a free oscillator *"would permanently loose energy"* is asserted as obvious, but the cited closed form `edot` (ė = −4βe + ω²(2βx² + ẋy)) is **not manifestly** ≤ 0. *Finding (owner to confirm):* the **first** form ė = −2βẋ² (at y=0) **is** manifestly ≤ 0 — the wording should lean on that form.  
+>   **re** okay, explicitly mentioned (edot.3) though we need to fix the `ParseError: KaTeX parse error: Multiple \tag` in an aligned env, and automated dot-numbering of subequation should be on the wishlist...
+> 2. The `ymaint` / `yfree` derivation skips steps. Their **results are machine-verified ✓** by `verify/resogram_drive.py` and are unaffected by the `edot` sign fix (which changed only edot's *second* equality, not the first form they derive from) — so this is an **exposition** gap, not a correctness one.  
+>   **re** same
 >
 > *AI flags only — the owner resolves; the math/prose stays untouched.*
 
-Another question is how much change of energy does the external force contribute. Without the analytical solution there might be some handwaving about how $\dot e$ varies between zero and $-4\beta e$ in the absence of external forces, thus averaging to $\dot e\approx -2\beta e$. But I'll just use the analytical solution now, which boils down to confirming that:
+Another question is how much change of energy does the external force contribute. Without the analytical solution there might be some handwaving about how $\dot e$ varies between zero and $-4\beta e$ in the absence of external forces, thus averaging to $\dot e\approx -2\beta e$. But I'll just use the analytical solution now, which boils down to:
 
 $$
   e = \frac{A^2\omega}{2}e^{-2\beta t}\Big(\omega + \beta\cos\big(2(\Omega t+\phi)-\delta\big)\Big),\qquad \delta=\operatorname{atan2}(\Omega,\beta) \ltag{esol}
@@ -94,16 +98,8 @@ $$
            whether c=0" ¶ below). Reconcile the c-narrative with the exact form. See docs/rigor-debt.md and
            the located-discrepancy callouts flagged in this file (/meeting 2026-06-15). -->
 
-> 🚧 **Located rigor-debt** (flagged via `/meeting` 2026-06-15; tracked in `REVIEW_ME.md`) — **c-narrative inconsistency.** The exact form `esol` above contains no constant `c`, yet the sentence below (*"too lazy to check whether c=0"*) and the ¶ before `esol` (*"ė varies between zero and −4βe … averaging to ė ≈ −2βe"*) still reason in terms of the removed `c`. *Finding (owner to confirm):* the exact form's period-average plausibly reproduces the −2β rate the handwaving guessed — promoting it from guess to result.
->
-> *AI flags only — the owner authors the reconciled prose.*
-
-I'm too lazy to check whether $c=0$, doesn't matter anyway. The point is that this hints at a sensible sliding average:
+This hints at a sensible sliding average:
 
 $$
-  \bar e(t) := 2\Omega\int_0^{\frac1{2\Omega}} e(t-t')e^{+2\beta t'}\,dt'
+  \bar e(t) := \frac\Omega\pi \int_0^{\frac\pi\Omega} e(t-t')e^{+2\beta t'}\,dt'
 $$
-
-> 🚧 **Located rigor-debt** (flagged via `/meeting` 2026-06-15; tracked in `REVIEW_ME.md`) — **suspect averaging window.** The upper limit `1/(2Ω)` above is ≈ 0.16 of the `β cos` term's period `π/Ω`, so it is not an obvious full-period average. `git blame`: this line dates to the original commit `0249a41` at **2021-01-31 00:56** (just before 1 AM) and has been carried unchanged since — consistent with the late-night-error hypothesis. Owner to re-derive the intended window.
->
-> *AI flags only.*
