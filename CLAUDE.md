@@ -39,6 +39,23 @@ decides every resolution.
 ## Jekyll notes
 - Permalinks are explicit per-file in front-matter → moving a source file does **not** change its public URL.
 - Internal links (`](./)`, `](img/…)`) resolve against the rendered permalink, not the source path.
+- **Layout default:** `_config.yml` applies `layout: page` site-wide via `defaults`. Pages declare only
+  `title`+`permalink`; without the default they'd render headless (no `<head>` → no MathJax). Don't drop it.
+- **Math pipeline (MathJax 3):** `_config.yml` sets `kramdown: { math_engine: null }` so kramdown leaves
+  `$`/`$$` delimiters for MathJax to typeset (its default rewrites them to MathJax-2 `math/tex` script tags
+  MathJax 3 ignores). MathJax config (delimiters, `tags:'ams'`) lives in `_includes/custom-head.html`.
+- **Equation handles:** `\ltag`/`\eqref` are defined **in-document** via a `\gdef` block at the top of each
+  physics doc (not in the MathJax config) so the KaTeX-based VS Code preview renders them too. KaTeX has no
+  `\label`, so refs are plain `(id)` text; clickable linking is a known TODO. See `CONVENTIONS.md` §1.
+
+## Local build & tests
+- **Build:** Ruby + Jekyll (no sudo): `pamac install ruby`; `gem install --user-install bundler jekyll`;
+  `bundle install` (Gemfile pins jekyll 4 + minima + plugins; `vendor/`, `_site/` gitignored). Then
+  `bundle exec jekyll serve` → `http://localhost:4000/`. The live site builds remotely on GitHub Pages.
+- **Tests (`tests/`):** relay-style TDD discipline (tests are the spec; never weaken a test to pass), no
+  `/relay` handoff. `bash tests/run.sh` runs `test_verify.sh` (SymPy verdicts + `verified:` attestation
+  non-drift, needs `uv`) and `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without the Ruby
+  toolchain). `tests/HUMAN-integration.md` holds the `[HUMAN]` visual checks MathJax's client-side render needs.
 
 ## Related projects
 - [`mathematical-writing`](../mathematical-writing/) — the `.mw` literate format/tool this repo is the

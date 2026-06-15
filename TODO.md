@@ -6,8 +6,9 @@
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
   2026-06-15 (docs/meeting-notes/2026-06-15-1409-resogram-verify-pilot-scope.md); decomposed below.
   **Cheap half done 2026-06-15** (SymPy: 3 ✓ / 2 ✗ located discrepancies); only Lean (3317) remains. <!-- id:01a7 -->
-  - [x] Establish MathJax handle mechanism (`tex:{tags:'ams',macros}`) in `_includes/custom-head.html` + handles
-    on the ~5 marked Resogram claims. (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
+  - [x] Establish MathJax handle mechanism (`tex:{tags:'ams'}` + in-document `\gdef` macros) in
+    `_includes/custom-head.html` + handles on the ~5 marked Resogram claims. Pipeline verified by
+    `tests/test_render.sh` (local Jekyll build). (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
   - [x] Author inline `verify:` markers (instrument pointers) on the five Resogram claims, `physics/Resogram.md`.
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:d0bf -->
   - [x] Write `verify/` SymPy scripts (one per claim) + `verify/README.md`; run all five, capture ✓/✗/inconclusive.
@@ -25,8 +26,15 @@
 - [ ] Owner review: Resogram pilot findings — (a) `edot` 2nd equality wrong, correct is `ė=−4βe+ω²(2βx²+ẋy)`;
   (b) `cval` c≠0 (`c=Ω²/(2β²)`, energy phase-shifted); (c) `sol` integrand unbalanced paren. AI surfaced,
   did not edit; owner decides each. (docs/rigor-debt.md) <!-- id:9135 -->
+- [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md` in a browser + VS Code preview (MathJax
+  renders client-side; the automated suite can't "see" it). <!-- id:6501 -->
 
 ## Done
+
+- [x] Local Jekyll toolchain + relay-style TDD: `Gemfile` (jekyll 4 + minima + plugins), `tests/` suite
+  (`test_verify.sh`, `test_render.sh`, `run.sh` — all green), `tests/HUMAN-integration.md`. Building the site
+  locally root-caused + fixed two latent render bugs: **no page had a `layout`** (→ headless, no MathJax) and
+  kramdown's default math engine (→ MathJax-2 `math/tex` tags MathJax 3 ignores). 2026-06-15. <!-- id:d1da -->
 
 - [x] Scoping session — collAIb × toesnail × `.mw` three-repo relationship: content-layer edge resolved
   (siblings via toesnail-owned marker schema); runtime-layer couplings parked as questions routed to `.mw`

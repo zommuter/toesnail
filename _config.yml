@@ -8,3 +8,13 @@ description: &description
 # that MathJax 3 does not process. Established by the 2026-06-15 verify pilot.
 kramdown:
   math_engine: null
+
+# Every page declared a title + permalink but no `layout`, so Jekyll emitted bare
+# content fragments — no <head>, hence MathJax never loaded and no math rendered.
+# Apply minima's `page` layout site-wide (a page may still override in its own
+# front matter). Discovered via local `bundle exec jekyll build` + tests/.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page

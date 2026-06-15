@@ -1,0 +1,12 @@
+# Jekyll local build/test toolchain (see Gemfile, tests/)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+# git-diary-workflow parallel-session lock
+.git-lock-push.lock
+
+# diary workflow temp files
+.diary-entry.*
