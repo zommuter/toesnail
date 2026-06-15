@@ -1,0 +1,10 @@
+{
+  // Equation-handle macros for the built-in Markdown math preview (KaTeX).
+  // The live site (MathJax) gets the same handles from _includes/custom-head.html.
+  // KaTeX has no \label/\eqref linking, so \eqref renders as plain "(id)" text here;
+  // on the site it is a clickable cross-reference. See CONVENTIONS.md §1.
+  "markdown.math.macros": {
+    "\\ltag": "\\tag{#1}",
+    "\\eqref": "(\\text{#1})"
+  }
+}

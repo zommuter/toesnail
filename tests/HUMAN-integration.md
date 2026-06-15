@@ -1,11 +1,11 @@
 # Human integration checks `[HUMAN]`
 
-The automated suite (`tests/run.sh`) proves the **HTML is correct**: the page has a
-head, MathJax loads, kramdown left the delimiters alone, handles/markers survived.
-It **cannot** prove the page *looks right* — MathJax and KaTeX typeset client-side in
-a browser, so a machine grep can't "see" a rendered equation. These checks are
-`[HUMAN]` by nature: a person looks and confirms. Re-run after any change to
-`_includes/custom-head.html`, `_config.yml`, the `\gdef` macro block, or equation markup.
+The automated suite (`tests/run.sh`) now proves a lot: the HTML is correct **and** every
+equation actually renders under MathJax 3 and KaTeX with `\eqref` resolving
+(`test_mathjax.cjs`). What it still can't prove is that the page *looks right in a real
+browser/editor* — final typography, layout, and that VS Code actually picks up
+`.vscode/settings.json`. Those are `[HUMAN]` by nature. Re-run after any change to
+`_includes/custom-head.html`, `_config.yml`, `.vscode/settings.json`, or equation markup.
 
 To serve locally:
 
@@ -15,26 +15,22 @@ bundle exec jekyll serve   # then open http://localhost:4000/Resogramm
 
 ## Checklist
 
-- [ ] `[HUMAN]` **Live site — equations render.** Open `/Resogramm`. The six display
-  equations (`eom`, `sol`, `edot`, `ymaint`, `yfree`, `cval`) typeset as math, not raw
-  LaTeX source. No red MathJax error boxes.
-- [ ] `[HUMAN]` **Live site — handles + cross-ref.** Each marked equation shows its tag
-  on the right, e.g. `(edot)`. The inline `\eqref{eom}` in the first paragraph renders
-  as `(eom)` (plain text — clickable linking is a known TODO, not a regression).
-- [ ] `[HUMAN]` **Live site — no leaked markers.** The `verify:`/`verified:` comments are
-  invisible in the page body (they live only in the HTML source).
-- [ ] `[HUMAN]` **VS Code preview parity.** Open `physics/Resogram.md` preview. No
-  "Undefined control sequence: \ltag / \eqref" errors; equations and `(id)` refs render.
-  (This is the regression the in-document `\gdef` block fixed — keep it covered.)
-- [ ] `[HUMAN]` **Spine page sanity.** Open `/toesnail` — its math still renders (the
-  site-wide `layout: page` default and MathJax config did not regress it).
-- [ ] `[HUMAN]` **Cross-browser glance (optional).** Confirm one Chromium + one Firefox
-  render the heaviest page (`/toesnail`) without layout breakage.
+- [ ] `[HUMAN]` **Live site — visual sanity.** Open `/Resogramm` and `/toesnail`. Equations
+  typeset cleanly (no red error boxes), tags like `(edot)` sit on the right, the inline
+  `\eqref{eom}` is a clickable `(eom)`, and the `verify:`/`verified:` comments are invisible
+  in the body. (Render *correctness* is already machine-checked; this is the eyeball pass.)
+- [ ] `[HUMAN]` **VS Code preview actually applies the macros.** Open `physics/Resogram.md`
+  preview in VS Code itself (not raw KaTeX): no "Undefined control sequence: \ltag" errors,
+  `(id)` refs render. This confirms VS Code reads `.vscode/settings.json` →
+  `markdown.math.macros` (the test exercises KaTeX directly, not the VS Code integration).
+- [ ] `[HUMAN]` **Cross-browser glance (optional).** One Chromium + one Firefox render the
+  heaviest page (`/toesnail`) without layout breakage.
 
 ## Why these aren't automated
 
-A headless-browser render test (Playwright + screenshot/DOM-after-MathJax assertion)
-*could* automate most of the "render" rows — but that pulls a Node/browser dependency
-into a Ruby+Python repo for a site that builds remotely on GitHub Pages. Deferred until
-there's a second consumer that justifies the toolchain (cf. the N=2 rule the project
-already uses for the verify-marker staleness checker). Until then: a human looks.
+`test_mathjax.cjs` already renders every equation through MathJax 3 and KaTeX headlessly —
+so "do the equations render / does `\eqref` resolve" *is* automated now. What's left is
+genuinely visual (typography, layout) or an editor-integration detail (VS Code reading its
+settings). A full headless-browser screenshot test (Playwright) could close even that, but
+it's deferred until a second consumer justifies the browser toolchain (the project's N=2
+rule). Until then: a human glances.

@@ -11,6 +11,16 @@ for t in test_verify.sh test_render.sh; do
   bash "$here/$t" || rc=1
   echo
 done
+
+echo "============================================================"
+echo "RUN test_mathjax.cjs"
+echo "============================================================"
+if command -v node >/dev/null 2>&1; then
+  node "$here/test_mathjax.cjs" || rc=1
+else
+  echo "[test_mathjax] SKIP — node not installed"
+fi
+echo
 echo "============================================================"
 if [ "$rc" -eq 0 ]; then
   echo "SUITE: PASS"

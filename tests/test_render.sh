@@ -36,6 +36,9 @@ have '<head'                "$R" && pass "page has <head>"                || bad
 have 'MathJax-script'       "$R" && pass "MathJax 3 script loads"          || bad "MathJax not loaded"
 have 'window.MathJax'       "$R" && pass "window.MathJax config present"   || bad "no MathJax config"
 have "tags: 'ams'"          "$R" && pass "tags:'ams' configured"           || bad "tags:'ams' missing"
+have 'ltag:'                "$R" && pass "\\ltag macro in MathJax config"  || bad "\\ltag macro missing from config"
+# MathJax rejects in-document \gdef; it must not reappear in a rendered math block.
+if grep -qE '\\g?def\\(ltag|eqref)' "$R"; then bad "in-document \\gdef macro def leaked into body"; else pass "no in-document \\gdef in body"; fi
 
 echo "[test_render] kramdown left math for MathJax"
 [ "$(grep -c 'math/tex' "$R")" -eq 0 ] && pass "zero <script type=math/tex> tags" || bad "kramdown converted math (math_engine not null?)"
@@ -44,7 +47,6 @@ echo "[test_render] handles + delimiters survived"
 have '\$\$'        "$R" 6 && pass "\$\$ display blocks present"   || bad "\$\$ blocks missing"
 have 'ltag{eom}'   "$R"   && pass "\\ltag{eom} handle present"    || bad "ltag handle missing"
 have 'eqref{eom}'  "$R"   && pass "\\eqref{eom} cross-ref present"|| bad "eqref cross-ref missing"
-have 'gdef'        "$R" 2 && pass "\\gdef macro block present"    || bad "gdef macro block missing"
 
 echo "[test_render] markers stay HTML comments"
 have '<!-- verify:'   "$R" && pass "verify: markers are comments"    || bad "verify: not in a comment"

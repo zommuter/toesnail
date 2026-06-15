@@ -7,18 +7,9 @@ author: Zommuter
 Theory of Everything - Some Novel Approach Including Love ❤️ – Math on Demand Edition
 [![](img/cc-by-nc-sa-88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-<!-- TODO: also \label and \eqref properly -->
-<!--
-$
-\gdef\label#1{\htmlId{#1}}
-\gdef\ltag#1{\tag{#1}\label{#1}}
-\gdef\eqref#1{\href{\##1}{(\text{#1})}}
-$ -->
-
-$
-\gdef\ltag#1{\tag{#1}}
-\gdef\eqref#1{(\text{#1})}
-$
+<!-- \ltag / \eqref are defined centrally now (MathJax: _includes/custom-head.html;
+     KaTeX/VS Code preview: .vscode/settings.json) — see CONVENTIONS.md §1. The old
+     in-document \gdef block was removed: MathJax rejects \gdef (# parameter char). -->
 
 # About
 Doesn't [Theory of Everything (TOE)](https://en.wikipedia.org/wiki/Theory_of_everything) sound just great? So that's the general idea. A theory explaining [life, the universe and everything](https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#The_Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything_is_42). And since I was looking for an unused acronym starting with TOE that is sufficiently easy to pronounce I thought of TOENAIL. Then I thought better of potential internet search results and added the 🐌S. And since [all is full of love](https://youtu.be/u0cS1FaKPWY) and [all you need is love](https://youtu.be/_7xMfIp-irg), that's obviously what a theory of _everything_ must include. Well, that's the theory at least, let's see where we really end up…

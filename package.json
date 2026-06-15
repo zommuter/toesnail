@@ -1,0 +1,12 @@
+{
+  "name": "toesnail-tests",
+  "private": true,
+  "description": "Test-only Node deps: render the actual equations through MathJax (site) and KaTeX (VS Code preview) to catch client-side errors that HTML-grep misses. Not used by the site (GitHub Pages builds with Jekyll).",
+  "scripts": {
+    "test:math": "node tests/test_mathjax.cjs"
+  },
+  "devDependencies": {
+    "mathjax-full": "^3.2.2",
+    "katex": "^0.16.11"
+  }
+}

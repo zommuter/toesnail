@@ -5,6 +5,9 @@ _site/
 .bundle/
 vendor/
 
+# Node test-only deps (see package.json, tests/test_mathjax.cjs)
+node_modules/
+
 # git-diary-workflow parallel-session lock
 .git-lock-push.lock
 

@@ -9,35 +9,31 @@ few conventions so that an eventual `.mw` migration is mechanical. Every convent
 ## 1. Stable equation handles
 
 Every referenceable equation gets a stable, human-readable id; prose cites it rather than repeating it.
-As of the Resogram pilot (2026-06-15) the mechanism is a pair of **in-document `\gdef` macros** at the top of
-each physics doc (mirroring `physics/toesnail.md`):
+As of the Resogram pilot (2026-06-15) `\ltag` is a single macro defined **centrally, per renderer** — there
+is no in-document macro block (MathJax rejects in-document `\gdef`: it errors on the `#` parameter char, and
+KaTeX vs MathJax can't share one cross-block definition). Used as:
 
 ```latex
-$
-\gdef\ltag#1{\tag{#1}}
-\gdef\eqref#1{(\text{#1})}
-$
-```
-
-then used as:
-
-```latex
-$$ ... \ltag{t1} $$      % tags the display equation `t1`
+$$ ... \ltag{t1} $$      % tags the display equation `t1` (+ \label on the site)
 ... as shown in $\eqref{t1}$ ...   % prose reference to it
 ```
 
-- `\ltag{id}` renders `id` as the equation's tag; `\eqref{id}` renders the reference as `(id)`.
+Where it's defined:
+
+| renderer | used by | definition | `\eqref{id}` result |
+|---|---|---|---|
+| **MathJax 3** | the live GitHub-Pages site | `_includes/custom-head.html` → `macros: { ltag: ['\\tag{#1}\\label{#1}', 1] }` | **clickable** ref (built-in AMS `\eqref` + the `\label`) |
+| **KaTeX** | VS Code Markdown preview | `.vscode/settings.json` → `markdown.math.macros` (`\ltag`→`\tag{#1}`, `\eqref`→`(\text{#1})`) | plain `(id)` text (KaTeX has no `\label`) |
+
+- `\ltag{id}` renders `id` as the equation's tag (and, on the site, registers a `\label` so `\eqref` links).
 - Ids are **content-meaningful and stable** (`eom`, `edot`, `conjugate-symmetry`), never positional —
   reflowing the document must not change them.
 - **Display vs inline:** handles need a *display* equation (`$$ … $$`); `\tag` does not apply to inline
   `$ … $` math. Handle **where a claim is marked** (see §2); unmarked equations are not tagged on spec.
-- **Why in-document, not the MathJax config:** the macros must work in **both** renderers — the live site
-  (MathJax 3) *and* the VS Code markdown preview (KaTeX). KaTeX never sees `_includes/custom-head.html`, so a
-  macro defined only there breaks the preview ("Undefined control sequence: \ltag"). A `\gdef` block in the
-  source is honoured by both.
-- **No clickable cross-refs (yet):** real `\label`/`\eqref` *linking* needs `\label`, which **KaTeX does not
-  support** — so the fallback above renders refs as plain `(id)` text. A `\label`/`\href` upgrade for the site
-  is a known future task (see the commented block in `physics/toesnail.md`).
+- **Why per-renderer, not in-document:** a single in-document `\gdef` block looked tempting (KaTeX honours it)
+  but **MathJax errors on it**, and `\def` doesn't persist across separate `$$` blocks in either engine — so
+  the only thing that works in both is each engine's native macro registry. Verified with `mathjax-full` +
+  `katex` under Node (see `tests/test_mathjax.cjs`).
 - **`.mw` value:** a handle *is* `.mw`'s typed-handle / DAG-node concept in embryo; migration reuses the id.
 
 > The site renders math with MathJax 3 (not KaTeX — the earlier claim of "KaTeX macros at the top of

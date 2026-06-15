@@ -44,9 +44,10 @@ decides every resolution.
 - **Math pipeline (MathJax 3):** `_config.yml` sets `kramdown: { math_engine: null }` so kramdown leaves
   `$`/`$$` delimiters for MathJax to typeset (its default rewrites them to MathJax-2 `math/tex` script tags
   MathJax 3 ignores). MathJax config (delimiters, `tags:'ams'`) lives in `_includes/custom-head.html`.
-- **Equation handles:** `\ltag`/`\eqref` are defined **in-document** via a `\gdef` block at the top of each
-  physics doc (not in the MathJax config) so the KaTeX-based VS Code preview renders them too. KaTeX has no
-  `\label`, so refs are plain `(id)` text; clickable linking is a known TODO. See `CONVENTIONS.md` §1.
+- **Equation handles:** `\ltag` is defined **centrally, per renderer** (MathJax rejects in-document `\gdef`):
+  the site (MathJax) gets it from `_includes/custom-head.html` `macros`; the VS Code preview (KaTeX) from
+  `.vscode/settings.json` `markdown.math.macros`. `\eqref` links on the site, is plain `(id)` in preview
+  (KaTeX has no `\label`). Do **not** add an in-document `\gdef` block — it breaks the site. See `CONVENTIONS.md` §1.
 
 ## Local build & tests
 - **Build:** Ruby + Jekyll (no sudo): `pamac install ruby`; `gem install --user-install bundler jekyll`;
@@ -54,8 +55,11 @@ decides every resolution.
   `bundle exec jekyll serve` → `http://localhost:4000/`. The live site builds remotely on GitHub Pages.
 - **Tests (`tests/`):** relay-style TDD discipline (tests are the spec; never weaken a test to pass), no
   `/relay` handoff. `bash tests/run.sh` runs `test_verify.sh` (SymPy verdicts + `verified:` attestation
-  non-drift, needs `uv`) and `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without the Ruby
-  toolchain). `tests/HUMAN-integration.md` holds the `[HUMAN]` visual checks MathJax's client-side render needs.
+  non-drift, needs `uv`), `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without Ruby), and
+  `test_mathjax.cjs` (renders every equation through MathJax 3 **and** KaTeX — the client-side check HTML-grep
+  can't do; needs `npm install`, SKIPs without it). `tests/HUMAN-integration.md` holds the residual `[HUMAN]`
+  visual checks. **Lesson:** HTML-grep gave false confidence (the `\gdef` bug rendered fine in source) — test
+  the actual render.
 
 ## Related projects
 - [`mathematical-writing`](../mathematical-writing/) — the `.mw` literate format/tool this repo is the

@@ -26,15 +26,18 @@
 - [ ] Owner review: Resogram pilot findings — (a) `edot` 2nd equality wrong, correct is `ė=−4βe+ω²(2βx²+ẋy)`;
   (b) `cval` c≠0 (`c=Ω²/(2β²)`, energy phase-shifted); (c) `sol` integrand unbalanced paren. AI surfaced,
   did not edit; owner decides each. (docs/rigor-debt.md) <!-- id:9135 -->
-- [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md` in a browser + VS Code preview (MathJax
-  renders client-side; the automated suite can't "see" it). <!-- id:6501 -->
+- [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
+  VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). <!-- id:6501 -->
 
 ## Done
 
-- [x] Local Jekyll toolchain + relay-style TDD: `Gemfile` (jekyll 4 + minima + plugins), `tests/` suite
-  (`test_verify.sh`, `test_render.sh`, `run.sh` — all green), `tests/HUMAN-integration.md`. Building the site
-  locally root-caused + fixed two latent render bugs: **no page had a `layout`** (→ headless, no MathJax) and
-  kramdown's default math engine (→ MathJax-2 `math/tex` tags MathJax 3 ignores). 2026-06-15. <!-- id:d1da -->
+- [x] Local Jekyll toolchain + relay-style TDD: `Gemfile` (jekyll 4 + minima + plugins), `package.json`
+  (test-only mathjax-full + katex), `tests/` suite (`test_verify.sh`, `test_render.sh`, `test_mathjax.cjs`,
+  `run.sh` — all green), `tests/HUMAN-integration.md`. Building + rendering locally root-caused + fixed THREE
+  latent render bugs: (1) **no page had a `layout`** (→ headless, no MathJax); (2) kramdown default math engine
+  (→ MathJax-2 `math/tex` tags MathJax 3 ignores); (3) **in-document `\gdef` macros break MathJax** (KaTeX-only)
+  → moved `\ltag` to MathJax config + `.vscode/settings.json`; removed `\gdef` from Resogram + toesnail.
+  2026-06-15. <!-- id:d1da -->
 
 - [x] Scoping session — collAIb × toesnail × `.mw` three-repo relationship: content-layer edge resolved
   (siblings via toesnail-owned marker schema); runtime-layer couplings parked as questions routed to `.mw`
