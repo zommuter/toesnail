@@ -18,8 +18,9 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   re-derive. AI will not edit the math.
   **RESOLVED 2026-06-15 (owner-ratified, /relay human):** owner confirmed the sign correction;
   source `edot` block now reads `−4βe + ω²(2βx² + ẋy)`. Re-check: `git show` on `physics/Resogram.md`
-  handle `edot`; `verify/resogram_edot.py` already derives this as `correct_second`. Instrument re-pin
-  (✗→✓) + attestation deferred to next `/relay review`.
+  handle `edot`; `verify/resogram_edot.py` derives this end-to-end. **Instrument re-pinned 2026-06-15
+  (/relay review):** `resogram_edot.py` verdict ✗→✓, `test_verify.sh` pins edot=✓, `verified:sympy [edot]
+  claim=b575864e by=resogram_edot.py@54710d91` attestation added.
 - [x] `verify/resogram_cval.py` (handle `cval`) — **"is c=0?" answered: c ≠ 0.** The free
   oscillator's energy is phase-shifted: `e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ) − δ))`,
   `δ=atan2(Ω,β)`; the stated `(c+cos²(Ωt+φ))e^{−2βt}` form omits a `sin(2θ)` term, and
@@ -27,9 +28,10 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   preferred framing (keep the approximate form with a note, or adopt the exact one).
   **RESOLVED 2026-06-15 (owner-ratified, /relay human): ADOPT THE EXACT FORM.** Source `cval`
   equation now states `e = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ))`, `δ=atan2(Ω,β)`. Re-check:
-  `physics/Resogram.md` handle `cval`; `verify/resogram_cval.py` derives this exact decomposition.
-  **TWO follow-ups left OPEN (see new boxes below):** instrument re-pin (next review) and the
-  surrounding c-narrative reconciliation (owner-only prose).
+  `physics/Resogram.md` handle `cval`; `verify/resogram_cval.py` derives this exact form.
+  **Instrument re-pinned 2026-06-15 (/relay review):** `resogram_cval.py` verdict ✗→✓, `test_verify.sh`
+  pins cval=✓, `verified:numeric [cval] claim=18d3f7a7 by=resogram_cval.py@a64cfdc0` attestation added.
+  **ONE follow-up STILL OPEN (box below):** the surrounding c-narrative reconciliation (owner-only prose).
 - [x] `physics/Resogram.md` (handle `sol`) — **integrand typo.** The rendered solution has
   an unbalanced paren `\sin(\Omega (t-t')e^{-\beta(t-t')}` (missing `)` after `(t-t')`); the
   SymPy-verified kernel is `sin(Ω(t−t'))·e^{−β(t−t')}`. **Owner:** confirm the one-char fix.

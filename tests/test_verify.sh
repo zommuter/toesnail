@@ -5,7 +5,8 @@
 #
 # Contract (relay-TDD: never weaken a test to make it pass):
 #   • each instrument runs under `uv run` and prints exactly one VERDICT line;
-#   • verdicts are the pinned pilot outcome: sol/drive/eincr ✓, edot/cval ✗;
+#   • verdicts are the pinned pilot outcome: all five ✓ (edot/cval re-pinned
+#     2026-06-15 after the owner ratified the located corrections via /relay human);
 #   • every verified: attestation in Resogram.md matches its instrument's
 #     current claim-hash AND file-hash (no drift) — a stale attestation fails.
 set -u
@@ -15,7 +16,7 @@ pass() { printf '  ok   %s\n' "$1"; }
 bad()  { printf '  FAIL %s\n' "$1"; fail=1; }
 
 echo "[test_verify] instrument verdicts"
-declare -A want=( [sol]=✓ [drive]=✓ [eincr]=✓ [edot]=✗ [cval]=✗ )
+declare -A want=( [sol]=✓ [drive]=✓ [eincr]=✓ [edot]=✓ [cval]=✓ )
 declare -A out
 for h in sol drive eincr edot cval; do
   v=$(uv run --quiet "verify/resogram_${h}.py" 2>/dev/null)
@@ -24,11 +25,12 @@ for h in sol drive eincr edot cval; do
   if [ "$got" = "${want[$h]}" ]; then pass "$h → ${got}"; else bad "$h → got '${got}', want '${want[$h]}'"; fi
 done
 
-echo "[test_verify] attestation non-drift (drive, eincr)"
-for h in drive eincr; do
+echo "[test_verify] attestation non-drift (drive, eincr, edot, cval)"
+for h in drive eincr edot cval; do
   claim=$(printf '%s\n' "${out[$h]}" | grep -oP 'CLAIM_HASH8\s*:\s*\K\w+')
   file=$(sha256sum "verify/resogram_${h}.py" | cut -c1-8)
-  marker=$(grep -oE "verified:sympy \[${h}\] claim=\w+ by=resogram_${h}\.py@\w+" physics/Resogram.md)
+  # marker type is sympy or numeric (cval is numeric); match either.
+  marker=$(grep -oE "verified:(sympy|numeric) \[${h}\] claim=\w+ by=resogram_${h}\.py@\w+" physics/Resogram.md)
   if [ -z "$marker" ]; then bad "$h: no verified: marker in Resogram.md"; continue; fi
   if printf '%s' "$marker" | grep -q "claim=${claim} " && printf '%s' "$marker" | grep -q "@${file}"; then
     pass "$h attestation matches (claim=${claim} @${file})"
