@@ -2,9 +2,13 @@
 # requires-python = ">=3.10"
 # dependencies = ["sympy"]
 # ///
-"""verify:numeric [cval] — the canonical pilot target: the free-oscillator energy.
+"""verify:numeric [esol] — the canonical pilot target: the free-oscillator energy.
 
-Claim (physics/Resogram.md, handle `cval`) — owner-ratified exact form (2026-06-15):
+Handle renamed cval→esol (2026-06-15, /meeting): the old `cval` name encoded the
+now-answered "find the constant c" question; the equation is the analytical energy
+SOLUTION, so `esol` (e-solution) is the content-meaningful handle.
+
+Claim (physics/Resogram.md, handle `esol`) — owner-ratified exact form (2026-06-15):
     e = (A²ω/2) e^{−2βt} (ω + β·cos(2(Ωt+φ) − δ)),   δ = atan2(Ω,β).
 
 We compute the exact specific energy of the FREE underdamped oscillator
@@ -19,7 +23,7 @@ source now states it. This instrument verifies that exact form (VERDICT ✓).
 Ω is carried as an INDEPENDENT positive symbol with ω² = Ω² + β² so SymPy can
 crunch the double-angle algebra without a nested square root.
 
-Run:  uv run verify/resogram_cval.py
+Run:  uv run verify/resogram_esol.py
 Emits a finding only; it never edits the theory.
 """
 import hashlib
@@ -63,7 +67,7 @@ if decomp_ok and adopted_ok:
     print("  (Resolves the doc's old 'is c=0?': c ≠ 0 — the superseded template")
     print("   (c + cos²θ) e^{−2βt} dropped a sin(2θ) term; no constant c reproduces it.)")
 else:
-    print("VERDICT: ✗  adopted form does not match the energy — re-check Resogram.md handle cval")
+    print("VERDICT: ✗  adopted form does not match the energy — re-check Resogram.md handle esol")
 
 # Attestation hash for the adopted bracket ω(ω + β·cos(2θ−δ)).
 CLAIM = adopted_bracket

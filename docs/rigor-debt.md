@@ -36,14 +36,30 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
 - **[`drive`] `verify:sympy` — ✓ (attested `claim=67223e71`).** From `ė=0, ẋ≠0` ⟹ `y = 2(β/ω²)ẋ`, and the
   ẋ-independent solution `ẏ=−2βx`, `ÿ = −ω²y` (drive at the *free* frequency ω, not the eigenfrequency Ω).
   `verify/resogram_drive.py`.
-- **[`cval`] `verify:numeric` — ✗ located discrepancy (canonical pilot target).** *"e ∝ (c + cos²(Ωt+φ))e^{−2βt};
+- **[`esol`] (was `cval`) `verify:numeric` — ✗→✓ RESOLVED + handle renamed.** *"e ∝ (c + cos²(Ωt+φ))e^{−2βt};
   too lazy to check whether c=0."* Answer: **c ≠ 0.** The free-oscillator energy is
   `e = (A²/2)e^{−2βt}(ω² + β²cos2θ + βΩ sin2θ) = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ))`, `δ=atan2(Ω,β)`. It
   carries a **sin(2θ) term**, so the stated zero-phase `(c+cos²θ)` form is not exact for `β≠0`; forcing a
-  match on the cos(2θ) coefficient gives `c = Ω²/(2β²) ≠ 0`. `verify/resogram_cval.py`.
+  match on the cos(2θ) coefficient gives `c = Ω²/(2β²) ≠ 0`. Owner adopted the exact form (`/relay human`
+  2026-06-15); instrument re-pinned ✓. Handle renamed `cval`→`esol` (`/meeting` 2026-06-15) — old name
+  encoded the now-answered "find c" question. `verify/resogram_esol.py`.
 - **[`eincr`] `verify:sympy` — ✓ (attested `claim=d4c18e3b`).** The energy-increase condition
   `|y| > 2(β/ω²)|ẋ|` with `sign(y)=sign(ẋ)` is equivalent to `ė>0` and confirmed on both sign branches.
   `verify/resogram_eincr.py`.
+
+**Cluster opened by the `esol` adoption (`/meeting` 2026-06-15) — owner-only prose/derivation, flagged in
+place with `🚧` callouts in `physics/Resogram.md`, tracked as REVIEW_ME boxes:**
+- **energy-loss claim (id:559c).** "Free oscillator permanently loses energy" cites `edot`
+  (`ė=−4βe+ω²(2βx²+ẋy)`), which is *not* manifestly ≤0; the first form `ė=−2βẋ²` (y=0) is. Wording should
+  cite that form. Owner to fix.
+- **`ymaint`/`yfree` exposition (id:0cb5).** Derivation skips steps; **results machine-verified ✓**
+  (`resogram_drive.py`) and unaffected by the `edot` sign fix (it touched only edot's *second* equality).
+  Exposition gap, not correctness.
+- **c-narrative (id:f9fe).** Prose still references the removed `c` (¶s around `esol`). Owner rewrites; the
+  exact form's period-average plausibly reproduces the `−2β` rate the handwaving guessed.
+- **sliding-average window (id:3999).** Upper limit `1/(2Ω)` ≈ 0.16 of the `β cos` period `π/Ω`; not an
+  obvious full-period average. `git blame` → original commit `0249a41` at 2021-01-31 **00:56** (late-night).
+  Owner re-derives.
 
 **Pilot scorecard:** 5 claims run · 3 ✓ (`sol` partial, `drive`, `eincr`) · 2 ✗ located discrepancies
 (`edot`, `cval`). The loop ran end-to-end and survived two real errors — which was the point. No `verify:lean`

@@ -13,7 +13,7 @@ dependencies, so `uv` provisions SymPy automatically:
 
 ```sh
 uv run verify/resogram_edot.py        # one claim
-for f in sol edot drive eincr cval; do uv run verify/resogram_$f.py; done   # all five
+for f in sol edot drive eincr esol; do uv run verify/resogram_$f.py; done   # all five
 ```
 
 Every script prints a `VERDICT:` line (`✓` / `✗` / inconclusive) and, for confirmed
@@ -27,7 +27,9 @@ claims, a `CLAIM_HASH8`.
 | `edot`  | sympy | `resogram_edot.py`    | ✗ | second equality off by `−4βω²x²`; correct: `ė = −4βe + ω²(2βx² + ẋy)` |
 | `drive` | sympy | `resogram_drive.py`   | ✓ | `y=2(β/ω²)ẋ`, and `ẏ=−2βx`, `ÿ=−ω²y` (free-frequency drive) |
 | `eincr` | sympy | `resogram_eincr.py`   | ✓ | `ė>0 ⟺ |y|>2(β/ω²)|ẋ|` with `sign(y)=sign(ẋ)` |
-| `cval`  | numeric | `resogram_cval.py`  | ✗ | `c ≠ 0` (`c=Ω²/(2β²)`); energy is phase-shifted: `e=(A²ω/2)e^{−2βt}(ω+β cos(2(Ωt+φ)−δ))` |
+| `esol`¹ | numeric | `resogram_esol.py`  | ✗→✓ | `c ≠ 0` (`c=Ω²/(2β²)`); energy is phase-shifted: `e=(A²ω/2)e^{−2βt}(ω+β cos(2(Ωt+φ)−δ))`. Re-pinned ✓ after owner adopted the exact form. |
+
+¹ Handle renamed `cval`→`esol` (2026-06-15, /meeting): the old name encoded the now-answered "find the constant c" question; `esol` = the analytical energy SOLUTION.
 
 The two `✗` are **located discrepancies, not edits**: per the working contract the AI
 surfaces them (here and in `docs/rigor-debt.md`) and leaves `Resogram.md`'s math untouched —

@@ -38,18 +38,45 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   **RESOLVED 2026-06-15 (owner-ratified, /relay human):** one-char fix applied; integrand now reads
   `\sin(\Omega (t-t'))e^{-\beta(t-t')}`. Pure render fix — no verdict/instrument change (sol stays ✓).
 
-## Narrative follow-up from the cval exact-form adoption (owner-only prose)
+## Resogram energy-method chain — located discrepancies (`/meeting` 2026-06-15)
 
-- [ ] `physics/Resogram.md` (handle `cval`, prose) — **c-narrative reconciliation.** Adopting the
-  exact phase-shifted `cval` form (2026-06-15) removed the constant `c`, but the surrounding prose
-  still references it: the ¶ above ("$\dot e$ varies between zero and $-4\beta e$ … averaging to
-  $\dot e\approx -2\beta e$") and the ¶ below ("I'm too lazy to check whether $c=0$, doesn't matter
-  anyway"). **Owner:** rewrite/trim this narrative to match the exact form (AI must not edit the
-  theory prose). Until then the section is internally inconsistent by design — flagged, not hidden.
-  **ROUTED 2026-06-15 (owner call, /relay human):** owner chose to resolve this in a `/meeting --cross`
-  prose-reconciliation session; box stays OPEN until then. Concrete seam: line 86 of `physics/Resogram.md`
-  ("too lazy to check whether $c=0$") dangles the removed constant `c`; the line 69 pre-solution
-  handwaving ¶ ($-4\beta e$ … averaging $-2\beta e$) may be tolerable as framed.
+> The c-narrative reconciliation (routed here via `/relay human`) opened into a small **cluster**: the
+> `edot` sign fix propagates through the energy-method section, and a late-night averaging window looks
+> suspect. Per the owner's call (`/meeting` 2026-06-15) each discrepancy is now **flagged in place** with a
+> visible `🚧 located rigor-debt` callout in `physics/Resogram.md` until the owner fixes it. **AI flags
+> only — the owner authors every physics/prose fix (the vibe-veto holds).** This is the canonical `.mw`
+> motivating example: a single sign correction with no consistency-checker to catch the fallout.
+
+- [x] `verify/resogram_cval.py` → `resogram_esol.py`, handle `cval`→`esol` — **rename DONE (`/meeting` 2026-06-15).**
+  The old `cval` ("find the constant c") name was answered and obsolete; `esol` = the analytical energy
+  SOLUTION. Mechanical sweep across `\ltag`, the `[esol]` verify/verified markers, the instrument file,
+  `test_verify.sh`, and `verify/README.md`; attestation re-pinned `by=resogram_esol.py@e6722a73`
+  (claim hash unchanged `18d3f7a7`). `tests/test_verify.sh` green (5✓/0✗, esol pinned ✓). <!-- id:adfc -->
+
+- [ ] `physics/Resogram.md` (¶ before `ymaint`) — **energy-loss claim cites the wrong form.** "A free
+  oscillator would permanently loose energy" is stated as obvious, but the cited `edot`
+  (ė = −4βe + ω²(2βx² + ẋy)) is not manifestly ≤ 0. *Finding (owner to confirm):* the first form
+  ė = −2βẋ² (at y=0) **is** manifestly ≤ 0 — lean the wording on that. Owner edits prose; AI flags only. <!-- id:559c -->
+
+- [ ] `physics/Resogram.md` (handles `ymaint`/`yfree`) — **terse derivation, possibly post-`edot`-fix.**
+  Owner flagged skipped steps and worried the sign fix broke the chain. *Finding (owner to confirm):* the
+  **results** are machine-verified ✓ (`verify/resogram_drive.py`) and unaffected by the fix (which touched
+  only `edot`'s second equality, not the first form they derive from) — so this is an **exposition** gap,
+  not a correctness one. Owner decides whether to expand the shown steps. <!-- id:0cb5 -->
+
+- [ ] `physics/Resogram.md` (handle `esol`, prose) — **c-narrative reconciliation.** The exact `esol` form
+  removed the constant `c`, but the ¶ above ("$\dot e$ varies between zero and $-4\beta e$ … averaging to
+  $\dot e\approx -2\beta e$") and the ¶ below ("too lazy to check whether $c=0$") still reason in terms of
+  the removed `c`. *Finding (owner to confirm):* the exact form's period-average plausibly reproduces the
+  $-2\beta$ rate the handwaving guessed — promoting guess→result. **Owner rewrites the prose; AI must not.**
+  (Routed here via `/relay human`, then opened into this cluster at `/meeting` 2026-06-15. Successor to the
+  pilot follow-up id:9135; summary tracked under id:e27e.) <!-- id:f9fe -->
+
+- [ ] `physics/Resogram.md` (handle for the sliding average $\bar e$) — **suspect averaging window.** The
+  upper limit $\frac{1}{2\Omega}$ is ≈ 0.16 of the `β cos` term's period $\pi/\Omega$, so it is not an
+  obvious full-period average. `git blame`: the line dates to the original commit `0249a41` at
+  **2021-01-31 00:56** (just before 1 AM), carried unchanged since — consistent with the owner's
+  late-night-error hypothesis. **Owner:** re-derive the intended window. <!-- id:3999 -->
 
 ## Visual / manual (run these — never auto-ticked)
 
