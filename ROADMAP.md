@@ -23,7 +23,7 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
   - **Context**: wrap the existing `tests/run.sh`; the Ruby toolchain lives on the user
     gem path (see `CLAUDE.md` → Local build & tests). Pure convenience target; no new deps.
 
-- [ ] Add GitHub Actions CI running the test suite on push/PR [ROUTINE] <!-- id:9868 -->
+- [x] Add GitHub Actions CI running the test suite on push/PR [ROUTINE] <!-- id:9868 -->
   - **Acceptance**: `.github/workflows/ci.yml` installs `uv`, Ruby+`bundle`, and Node, then
     runs the three test layers (verify / render / mathjax). It is the safety net for the
     render regressions that bit us locally (headless pages, kramdown math, `\gdef`).
