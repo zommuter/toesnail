@@ -17,3 +17,7 @@ Review of 4 commits since relay-ckpt-20260615-1613. Trust-but-verify + test-inte
 ## 2026-06-15 16:55 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 Review: fca7/9868 ROUTINE genuinely green (no weakened tests); re-pinned edot/cval verify instruments ✗→✓ per owner-ratified corrections (id:9135 #1); routine_open=0.
+
+## 2026-06-15 20:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: docs-only window (cval/.mw dependency notes id:921b→b7b1/d80d) — no code/test changes, verify instruments green (5/5+4/4), roadmap clean, 0 ROUTINE open
