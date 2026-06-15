@@ -60,6 +60,25 @@ questions, each routed to the owner repo (toesnail does **not** decide these):
 **Tripwire to revisit 1 & 2:** when *liveness* becomes a real need (collAIb flagging a marker stale on edit,
 pre-save) OR when `.mw` ships a headless front-end⇄core protocol seam.
 
+## Witnessed instances (real evidence for the parked scoping, `id:921b`)
+
+- **2026-06-15 — `/relay human` Resogram triage exercised the `.mw → toesnail` STRONG edge live.**
+  Owner ratified three SymPy-located discrepancies; applying them produced exactly the two things
+  `.mw`/collAIb exist to automate:
+  1. **Prose↔computation staleness.** Adopting the exact `cval` form *changed a claim* and orphaned the
+     surrounding prose still citing the now-removed constant `c` — a human had to hand-detect it and open
+     a REVIEW_ME box. This is verbatim `.mw`'s id:dae5 differentiator (shipped the same day): *editing a
+     definition marks the claim AND the prose citation that desugars from it STALE, unrelated prose
+     untouched.* The `cval` case is a ready-made acceptance witness for that DAG.
+  2. **verify→verified re-pin cascade.** Correcting the `edot`/`cval` source left the verify instruments +
+     pinned `test_verify.sh` verdicts + attestations stale; re-deriving them was deferred to "next review"
+     **by hand**. `.mw`'s eval-core + staleness would re-run the verification fragment and flip the badge
+     automatically (toesnail's own `id:04bb` staleness-checker is the plain-markdown stopgap for this).
+  3. **collAIb tripwire HIT.** The parked runtime Q2 (collAIb LLM observer as an optional tier-0 advisory
+     plugin) and the "live verify: assist UI" edge both describe precisely what would have surfaced (1)
+     *at edit time, pre-save* — "this paragraph still references `c`, which your edit removed." This is a
+     concrete instance of the revisit-tripwire ("liveness becomes a real need").
+
 ## What to watch
 
 1. Keep toesnail's outgoing edges **weak on purpose** — if toesnail ever *requires* `.mw` to make progress,
