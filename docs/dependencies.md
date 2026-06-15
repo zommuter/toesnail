@@ -69,7 +69,11 @@ pre-save) OR when `.mw` ships a headless front-end⇄core protocol seam.
      surrounding prose still citing the now-removed constant `c` — a human had to hand-detect it and open
      a REVIEW_ME box. This is verbatim `.mw`'s id:dae5 differentiator (shipped the same day): *editing a
      definition marks the claim AND the prose citation that desugars from it STALE, unrelated prose
-     untouched.* The `cval` case is a ready-made acceptance witness for that DAG.
+     untouched.* The `cval` case is a ready-made acceptance witness for that DAG — **now realized** in
+     `.mw` as `examples/resogram_cval.mw` + `tests/test_resogram_cval_staleness.py` (`.mw` id:b7b1):
+     the differentiator passes on this real content, and an xfail(strict) RED-specs a *gap* the episode
+     exposed — `stale_after_edit` catches a changed definition (`$e$` citation + downstream average go
+     stale) but NOT a *dangling* citation (the removed constant `c` orphans its `$c$` prose citation).
   2. **verify→verified re-pin cascade.** Correcting the `edot`/`cval` source left the verify instruments +
      pinned `test_verify.sh` verdicts + attestations stale; re-deriving them was deferred to "next review"
      **by hand**. `.mw`'s eval-core + staleness would re-run the verification fragment and flip the badge
