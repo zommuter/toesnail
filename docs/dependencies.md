@@ -74,6 +74,11 @@ pre-save) OR when `.mw` ships a headless front-end⇄core protocol seam.
      the differentiator passes on this real content, and an xfail(strict) RED-specs a *gap* the episode
      exposed — `stale_after_edit` catches a changed definition (`$e$` citation + downstream average go
      stale) but NOT a *dangling* citation (the removed constant `c` orphans its `$c$` prose citation).
+     Authoring that witness *also* surfaced a second, unrelated `.mw` fix (id:d80d): the eval/DAG
+     namespace treated every SymPy-callable name as a function, so the physics variable `beta` resolved
+     to SymPy's Beta function (`int * FunctionClass`). Fixed by a call-position rule (a name is a
+     function only where applied, `name(…)`), so `beta`/`gamma`/`zeta` are usable symbols. → real
+     dogfooding moves the tool, not just validates it.
   2. **verify→verified re-pin cascade.** Correcting the `edot`/`cval` source left the verify instruments +
      pinned `test_verify.sh` verdicts + attestations stale; re-deriving them was deferred to "next review"
      **by hand**. `.mw`'s eval-core + staleness would re-run the verification fragment and flip the badge
