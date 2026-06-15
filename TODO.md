@@ -2,6 +2,8 @@
 
 ## Current
 
+- [ ] Relay: 3 open ROADMAP items (2 ROUTINE, 1 HARD) — executor queue, tooling only; physics is human-only (REVIEW_ME.md / `/relay human`). See `ROADMAP.md`. <!-- id:e27e -->
+
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
   2026-06-15 (docs/meeting-notes/2026-06-15-1409-resogram-verify-pilot-scope.md); decomposed below.
