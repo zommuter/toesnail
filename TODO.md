@@ -10,6 +10,8 @@
 
 ## Done
 
+- [x] Split spine from portal: move README → `physics/toesnail.md` (`/toesnail`); new portal README at `/`. — committed 715a11d on 2026-06-15
+- [x] Cross-project dependency map `docs/dependencies.md` (toesnail × .mw × collAIb, direction + strength). — committed 715a11d on 2026-06-15
 - [x] Re-tree repo per D1 (`physics/`, `essays/`, README root index); permalinks unchanged.
   (docs/meeting-notes/2026-06-15-1257-repo-topology-and-mw-aligned-authoring.md) <!-- id:8676 -->
 - [x] Write one-page `CONVENTIONS.md` per D2.
