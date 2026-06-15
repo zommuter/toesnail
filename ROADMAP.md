@@ -13,7 +13,7 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
 
 ## Items
 
-- [ ] Add a `Makefile` with `build`, `serve`, `test` targets [ROUTINE] <!-- id:fca7 -->
+- [x] Add a `Makefile` with `build`, `serve`, `test` targets [ROUTINE] <!-- id:fca7 -->
   - **Acceptance**: `make test` runs all three test layers (`tests/run.sh`) and exits 0;
     `make build` runs `bundle exec jekyll build`; `make serve` runs `bundle exec jekyll
     serve`. Targets are tooling wrappers only — they do not touch content.
