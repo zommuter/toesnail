@@ -17,6 +17,7 @@ It is of course possible to solve $\eqref{eom}$ with some analysis:
 $$
 x(t) = A\cos\Big(\underbrace{\sqrt{\omega^2-\beta^2}}_{=:\Omega}t+\phi\Big)e^{-\beta t} + \int_{-\infty}^t\frac{\omega^2}{\Omega}\sin(\Omega (t-t')e^{-\beta(t-t')} y(t')\, dt' \ltag{sol}
 $$
+
 <!-- verify:sympy [sol] the solution x(t) solves eom; Ω:=√(ω²−β²). inst=verify/resogram_sol.py.
      Finding (✓ partial): x_h solves the homogeneous ODE and the convolution kernel satisfies
      K(0)=0, K'(0)=ω², K''+2βK'+ω²K=0, so by the Leibniz rule ẍ+2βẋ+ω²(x−y)=0 — see docs/rigor-debt.md.
@@ -32,6 +33,7 @@ $$
   &= \underbrace{-2\beta\dot x^2}_{\le 0} + \omega^2\dot x y = -4\beta e - \omega^2(2\beta x^2 - \dot x y)
 \end{aligned} \ltag{edot}
 $$
+
 <!-- verify:sympy [edot] energy-rate chain: ė=ẋ(ẍ+ω²x)=−2βẋ²+ω²ẋy = −4βe−ω²(2βx²−ẋy). inst=verify/resogram_edot.py.
      Finding (✗ located discrepancy): the FIRST equality holds, but the SECOND is off by −4βω²x²;
      the correct closed form is ė = −4βe + ω²(2βx² + ẋy) (sign on the ω²-bracket). Surfaced, not edited;
@@ -42,6 +44,7 @@ Even without the analytical solution it would be clear that a free oscillator ($
 $$
   y = 2\frac{\beta}{\omega^2}\dot x \ltag{ymaint}
 $$
+
 <!-- verified:sympy [drive] claim=67223e71 by=resogram_drive.py@9fe74c88 -->
 <!-- verify:sympy [drive] energy-maintaining drive y=2(β/ω²)ẋ and its ẋ-independent solution ẏ=−2βx, ÿ=−ω²y
      (eq ymaint + yfree). inst=verify/resogram_drive.py. Finding (✓): confirmed — drive at the free
@@ -66,6 +69,7 @@ Another question is how much change of energy does the external force contribute
 $$
   e\propto (c+\cos^2(\Omega t+\phi))e^{-2\beta t} \ltag{cval}
 $$
+
 <!-- verify:numeric [cval] "e ∝ (c+cos²(Ωt+φ))e^{−2βt}; too lazy to check whether c=0." inst=verify/resogram_cval.py.
      Finding (✗ located discrepancy): c ≠ 0. The free-oscillator energy is
      e = (A²/2)e^{−2βt}(ω² + β²cos2θ + βΩ sin2θ) = (A²ω/2)e^{−2βt}(ω + β cos(2(Ωt+φ)−δ)), δ=atan2(Ω,β):

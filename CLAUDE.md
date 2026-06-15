@@ -41,6 +41,10 @@ decides every resolution.
 - Internal links (`](./)`, `](img/…)`) resolve against the rendered permalink, not the source path.
 - **Layout default:** `_config.yml` applies `layout: page` site-wide via `defaults`. Pages declare only
   `title`+`permalink`; without the default they'd render headless (no `<head>` → no MathJax). Don't drop it.
+- **Blank line after `$$`:** a `$$…$$` block must be separated by a blank line from anything that follows
+  (incl. a `<!-- verify: -->` comment) — otherwise kramdown folds it into a paragraph and emits *inline*
+  single-`$` math, which MathJax renders left-aligned with the `\tag` suppressed (the equation handle vanishes).
+  `tests/test_render.sh` guards this (no `\ltag` in an inline `kdmath` span).
 - **Math pipeline (MathJax 3):** `_config.yml` sets `kramdown: { math_engine: null }` so kramdown leaves
   `$`/`$$` delimiters for MathJax to typeset (its default rewrites them to MathJax-2 `math/tex` script tags
   MathJax 3 ignores). MathJax config (delimiters, `tags:'ams'`) lives in `_includes/custom-head.html`.
