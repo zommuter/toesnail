@@ -27,15 +27,23 @@
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
 - [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
   VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). <!-- id:6501 -->
-- [ ] Resogram energy-chain located-discrepancy cluster (owner-only physics/prose; flagged in place with `🚧`
-  callouts, see REVIEW_ME + docs/rigor-debt.md; /meeting 2026-06-15 docs/meeting-notes/2026-06-15-2111-resogram-energy-chain-reconciliation.md):
-  energy-loss claim cites wrong form (id:559c); `ymaint`/`yfree` terse derivation (results ✓-verified) (id:0cb5);
-  c-narrative reconciliation (id:f9fe, successor to 9135); sliding-average window `1/(2Ω)` suspect, blame→2021-01-31 00:56 (id:3999). <!-- id:f9fe -->
+- [ ] **Resogram energy block: render regression — `\tag` inside `aligned` → MathJax `merror`, suite RED /
+  CI red on `236fa1b`.** Owner moved `\ltag{e}` inside the aligned env (valid only on the outer `$$`). KaTeX
+  tolerates it; MathJax (the site) does not. Owner to confirm fix approach (interim single block tag vs.
+  land subequation numbering id:d2f4). Tooling/render fix, but in the theory file. <!-- id:3b4c -->
+- [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
+  so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
+  (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
   in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
 
 ## Done
+- [x] Resogram energy-chain located-discrepancy cluster — RESOLVED in-document by owner (commit `236fa1b`,
+  reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
+  exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window
+  corrected to `(Ω/π)∫₀^{π/Ω}` (id:3999). Spun out 2 tooling items (id:3b4c render regression, id:d2f4
+  subequation numbering). Ticks re-checked by next /relay review. <!-- id:f9fe -->
 - [x] Rename Resogram energy handle `cval`→`esol` (analytical energy SOLUTION; old name encoded the answered
   "find c" question) — source `\ltag`/markers, `verify/resogram_esol.py`, `test_verify.sh`, `verify/README.md`;
   attestation re-pinned `@e6722a73` (claim `18d3f7a7` unchanged); test_verify green 5✓ — /meeting 2026-06-15,

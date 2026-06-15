@@ -47,19 +47,20 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
   `|y| > 2(β/ω²)|ẋ|` with `sign(y)=sign(ẋ)` is equivalent to `ė>0` and confirmed on both sign branches.
   `verify/resogram_eincr.py`.
 
-**Cluster opened by the `esol` adoption (`/meeting` 2026-06-15) — owner-only prose/derivation, flagged in
-place with `🚧` callouts in `physics/Resogram.md`, tracked as REVIEW_ME boxes:**
-- **energy-loss claim (id:559c).** "Free oscillator permanently loses energy" cites `edot`
-  (`ė=−4βe+ω²(2βx²+ẋy)`), which is *not* manifestly ≤0; the first form `ė=−2βẋ²` (y=0) is. Wording should
-  cite that form. Owner to fix.
-- **`ymaint`/`yfree` exposition (id:0cb5).** Derivation skips steps; **results machine-verified ✓**
-  (`resogram_drive.py`) and unaffected by the `edot` sign fix (it touched only edot's *second* equality).
-  Exposition gap, not correctness.
-- **c-narrative (id:f9fe).** Prose still references the removed `c` (¶s around `esol`). Owner rewrites; the
-  exact form's period-average plausibly reproduces the `−2β` rate the handwaving guessed.
-- **sliding-average window (id:3999).** Upper limit `1/(2Ω)` ≈ 0.16 of the `β cos` period `π/Ω`; not an
-  obvious full-period average. `git blame` → original commit `0249a41` at 2021-01-31 **00:56** (late-night).
-  Owner re-derives.
+**Cluster opened by the `esol` adoption (`/meeting` 2026-06-15) — RESOLVED in-document by the owner
+(commit `236fa1b`, reconciled to REVIEW_ME 2026-06-15). Ticks are CLAIMs the next `/relay review` re-checks:**
+- **energy-loss claim (id:559c) ✓.** ¶ now cites `(edot.3)` — the manifestly-≤0 first form `ė=−2βẋ²`.
+- **`ymaint`/`yfree` exposition (id:0cb5) ✓ (acknowledged).** Owner accepted as exposition; results ✓
+  (`resogram_drive.py`). Fuller steps deferred to subequation numbering (id:d2f4).
+- **c-narrative (id:f9fe) ✓.** Owner removed the dangling "too lazy to check whether c=0" sentence; kept the
+  pre-solution handwaving ¶ as framed.
+- **sliding-average window (id:3999) ✓.** Corrected `2Ω∫₀^{1/2Ω}` → `(Ω/π)∫₀^{π/Ω}` (full-period average).
+
+**NEW, spun out of `236fa1b` (tooling/render — AI-eligible):**
+- **render regression (id:3b4c).** `\ltag{e}` moved *inside* `\begin{aligned}`; `\tag` is valid only on the
+  outer `$$` → MathJax `merror`, suite RED / CI red. Owner to confirm fix approach.
+- **subequation auto-numbering (id:d2f4, wishlist).** Auto-derive `(edot.1)…(edot.4)` handles so per-line
+  tags render; also resolves the `[edot]` marker losing its active `\ltag{edot}`. Relates to R2/R3, `.mw`.
 
 **Pilot scorecard:** 5 claims run · 3 ✓ (`sol` partial, `drive`, `eincr`) · 2 ✗ located discrepancies
 (`edot`, `cval`). The loop ran end-to-end and survived two real errors — which was the point. No `verify:lean`

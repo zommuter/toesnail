@@ -42,10 +42,14 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 > The c-narrative reconciliation (routed here via `/relay human`) opened into a small **cluster**: the
 > `edot` sign fix propagates through the energy-method section, and a late-night averaging window looks
-> suspect. Per the owner's call (`/meeting` 2026-06-15) each discrepancy is now **flagged in place** with a
-> visible `🚧 located rigor-debt` callout in `physics/Resogram.md` until the owner fixes it. **AI flags
-> only — the owner authors every physics/prose fix (the vibe-veto holds).** This is the canonical `.mw`
-> motivating example: a single sign correction with no consistency-checker to catch the fallout.
+> suspect. Per the owner's call (`/meeting` 2026-06-15) each discrepancy was **flagged in place** with a
+> visible `🚧 located rigor-debt` callout in `physics/Resogram.md`. **AI flags only — the owner authors
+> every physics/prose fix (the vibe-veto holds).** Canonical `.mw` motivating example.
+>
+> **Owner resolved the cluster in-document (commit `236fa1b` "re: resogram", reconciled here 2026-06-15):**
+> responses given as inline `**re**` notes against the callouts; boxes ticked below from those edits. Ticks
+> are CLAIMs the next `/relay review` re-derives. **Two NEW items spun out of the owner's edits** (render
+> regression + subequation numbering — see bottom).
 
 - [x] `verify/resogram_cval.py` → `resogram_esol.py`, handle `cval`→`esol` — **rename DONE (`/meeting` 2026-06-15).**
   The old `cval` ("find the constant c") name was answered and obsolete; `esol` = the analytical energy
@@ -53,30 +57,39 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   `test_verify.sh`, and `verify/README.md`; attestation re-pinned `by=resogram_esol.py@e6722a73`
   (claim hash unchanged `18d3f7a7`). `tests/test_verify.sh` green (5✓/0✗, esol pinned ✓). <!-- id:adfc -->
 
-- [ ] `physics/Resogram.md` (¶ before `ymaint`) — **energy-loss claim cites the wrong form.** "A free
-  oscillator would permanently loose energy" is stated as obvious, but the cited `edot`
-  (ė = −4βe + ω²(2βx² + ẋy)) is not manifestly ≤ 0. *Finding (owner to confirm):* the first form
-  ė = −2βẋ² (at y=0) **is** manifestly ≤ 0 — lean the wording on that. Owner edits prose; AI flags only. <!-- id:559c -->
+- [x] `physics/Resogram.md` (¶ before `ymaint`) — **energy-loss claim — RESOLVED by owner (`236fa1b`).** The
+  ¶ now reads "it would be clear **from (edot.3)** that a free oscillator … would permanently loose energy",
+  citing the manifestly-≤0 first form `ė = −2βẋ²`. Owner `**re**`: "okay, explicitly mentioned (edot.3)".
+  ⚠️ The `(edot.3)` reference depends on the subequation tags that don't yet render — see id:3b4c / id:d2f4. <!-- id:559c -->
 
-- [ ] `physics/Resogram.md` (handles `ymaint`/`yfree`) — **terse derivation, possibly post-`edot`-fix.**
-  Owner flagged skipped steps and worried the sign fix broke the chain. *Finding (owner to confirm):* the
-  **results** are machine-verified ✓ (`verify/resogram_drive.py`) and unaffected by the fix (which touched
-  only `edot`'s second equality, not the first form they derive from) — so this is an **exposition** gap,
-  not a correctness one. Owner decides whether to expand the shown steps. <!-- id:0cb5 -->
+- [x] `physics/Resogram.md` (handles `ymaint`/`yfree`) — **terse derivation — ACKNOWLEDGED by owner (`236fa1b`).**
+  Owner `**re** same`: accepted as an exposition gap (results machine-verified ✓ by `resogram_drive.py`,
+  unaffected by the `edot` sign fix). Fuller step-by-step exposition is deferred to the subequation
+  auto-numbering wishlist (id:d2f4). <!-- id:0cb5 -->
 
-- [ ] `physics/Resogram.md` (handle `esol`, prose) — **c-narrative reconciliation.** The exact `esol` form
-  removed the constant `c`, but the ¶ above ("$\dot e$ varies between zero and $-4\beta e$ … averaging to
-  $\dot e\approx -2\beta e$") and the ¶ below ("too lazy to check whether $c=0$") still reason in terms of
-  the removed `c`. *Finding (owner to confirm):* the exact form's period-average plausibly reproduces the
-  $-2\beta$ rate the handwaving guessed — promoting guess→result. **Owner rewrites the prose; AI must not.**
-  (Routed here via `/relay human`, then opened into this cluster at `/meeting` 2026-06-15. Successor to the
-  pilot follow-up id:9135; summary tracked under id:e27e.) <!-- id:f9fe -->
+- [x] `physics/Resogram.md` (`esol` prose) — **c-narrative — RESOLVED by owner (`236fa1b`).** The dangling
+  "I'm too lazy to check whether $c=0$, doesn't matter anyway" sentence was removed (now just "This hints at
+  a sensible sliding average:"); the pre-solution handwaving ¶ ($-2\beta e$ averaging) was kept as framed.
+  Successor to id:9135; summary id:e27e. <!-- id:f9fe -->
 
-- [ ] `physics/Resogram.md` (handle for the sliding average $\bar e$) — **suspect averaging window.** The
-  upper limit $\frac{1}{2\Omega}$ is ≈ 0.16 of the `β cos` term's period $\pi/\Omega$, so it is not an
-  obvious full-period average. `git blame`: the line dates to the original commit `0249a41` at
-  **2021-01-31 00:56** (just before 1 AM), carried unchanged since — consistent with the owner's
-  late-night-error hypothesis. **Owner:** re-derive the intended window. <!-- id:3999 -->
+- [x] `physics/Resogram.md` (sliding average $\bar e$) — **window — RESOLVED by owner (`236fa1b`).** Corrected
+  from $2\Omega\int_0^{1/2\Omega}$ to $\frac{\Omega}{\pi}\int_0^{\pi/\Omega}$ — a proper full-period average
+  over the `β cos` term's period $\pi/\Omega$. The late-night `1/(2Ω)` (blame: `0249a41` 2021-01-31 00:56)
+  is fixed. <!-- id:3999 -->
+
+## Spun out of the owner's `236fa1b` edits (tooling / render — AI-eligible)
+
+- [ ] `physics/Resogram.md` energy block — **render regression: `\tag` inside `aligned` → MathJax `merror`.**
+  The owner moved `\ltag{e}` *inside* the `\begin{aligned}` env; `\tag` is only valid on the outer `$$`
+  block, so `test_mathjax.cjs` (MathJax 3) fails on that block (**suite RED; CI red on `236fa1b`**). KaTeX
+  tolerates it, hence the VS Code preview ≠ site mismatch. Fix is rendering-mechanics (no math change) but
+  lives in the theory file — owner to confirm the approach (interim single block tag vs. land id:d2f4). <!-- id:3b4c -->
+
+- [ ] **Wishlist: automated subequation dot-numbering** — derive `(edot.1)…(edot.4)` handles from a parent
+  handle so per-line tags render (amsmath `subequations`/`align` style), letting the owner cite individual
+  derivation steps. The owner currently has them commented out (`%\ltag{edot.N}`). Also resolves the handle
+  drift: the `[edot]` verify marker no longer has an active `\ltag{edot}` (block now carries `\ltag{e}` +
+  commented subequation tags). Relates to ROADMAP R2/R3 (id:445e) and `.mw`. <!-- id:d2f4 -->
 
 ## Visual / manual (run these — never auto-ticked)
 
