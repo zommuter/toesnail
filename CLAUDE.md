@@ -57,8 +57,8 @@ decides every resolution.
 - **Build:** Ruby + Jekyll (no sudo): `pamac install ruby`; `gem install --user-install bundler jekyll`;
   `bundle install` (Gemfile pins jekyll 4 + minima + plugins; `vendor/`, `_site/` gitignored). Then
   `bundle exec jekyll serve` → `http://localhost:4000/`. The live site builds remotely on GitHub Pages.
-- **Tests (`tests/`):** relay-style TDD discipline (tests are the spec; never weaken a test to pass), no
-  `/relay` handoff. `bash tests/run.sh` runs `test_verify.sh` (SymPy verdicts + `verified:` attestation
+- **Tests (`tests/`):** relay-style TDD discipline (tests are the spec; never weaken a test to pass).
+  `bash tests/run.sh` runs `test_verify.sh` (SymPy verdicts + `verified:` attestation
   non-drift, needs `uv`), `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without Ruby), and
   `test_mathjax.cjs` (renders every equation through MathJax 3 **and** KaTeX — the client-side check HTML-grep
   can't do; needs `npm install`, SKIPs without it). `tests/HUMAN-integration.md` holds the residual `[HUMAN]`
@@ -70,3 +70,28 @@ decides every resolution.
   north-star use-case for. toesnail's `physics/` docs are the eventual `.mw` migration target.
 - `~/src/collaib` — local-LLM "calm co-author" observer PWA; a candidate live UI for the `verify:` rigor-debt
   assist role (three-repo relationship flagged for a dedicated scoping session).
+
+## Relay contract <!-- relay-executor contract v4 -->
+
+This repo is managed by a reviewer/executor relay. Load `/relay executor` before
+working on any item, then follow its rules exactly.
+
+### Repo-specific scope guard — executors NEVER touch the theory
+
+This is owner-dictated theoretical-physics PROSE, not ordinary code. The hard constraint
+(see top of this file + `CONVENTIONS.md` "Working contract") binds executors absolutely:
+
+- **Executor-eligible (`[ROUTINE]`) = TOOLING ONLY:** the Jekyll build, `_config.yml`,
+  `_includes/`, `tests/`, `Gemfile`/`package.json`, `Makefile`, CI, and the *mechanics* of
+  the `verify/` harness (script plumbing, runners) — never the physics it checks.
+- **Human-only — NEVER in the executor queue:** all physics/maths content and narrative
+  (`physics/*.md`, `essays/*.md`), the *direction* of the theory, which claims to mark,
+  and the **resolution of any `verify:` ✗ finding**. The AI emits findings; it never edits
+  the theory. These live in `TODO.md` + `docs/rigor-debt.md` + `REVIEW_ME.md`, dispatched
+  via `/relay human` or `/meeting`, ratified by the owner.
+- A `verify:` finding (e.g. a located algebra discrepancy) is **surfaced**, never silently
+  "fixed". Correcting owner math is the owner's call (a `.mw`/collAIb tool may later
+  *suggest* a fix, but a human ratifies it).
+
+If a ROADMAP item would require editing physics content to satisfy a test, STOP and treat
+it as a HANDBACK / `REVIEW_ME` item — it was mis-tagged.
