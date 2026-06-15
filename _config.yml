@@ -1,3 +1,10 @@
 theme: minima
 title: 🦶TOESNAIL-MODE🐌
 description: &description
+
+# Leave math delimiters ($ … $, $$ … $$) untouched in the rendered HTML so
+# MathJax 3 (loaded in _includes/custom-head.html) can scan and typeset them.
+# Without this, kramdown emits MathJax-2-style <script type="math/tex"> tags
+# that MathJax 3 does not process. Established by the 2026-06-15 verify pilot.
+kramdown:
+  math_engine: null
