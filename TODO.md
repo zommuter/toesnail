@@ -5,11 +5,12 @@
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2.
   (docs/meeting-notes/2026-06-15-1257-repo-topology-and-mw-aligned-authoring.md) <!-- id:01a7 -->
-- [ ] Forward-flag — dedicated scoping session for the collAIb × toesnail × `.mw` three-repo relationship.
-  (docs/meeting-notes/2026-06-15-1257-repo-topology-and-mw-aligned-authoring.md) <!-- id:921b -->
 
 ## Done
 
+- [x] Scoping session — collAIb × toesnail × `.mw` three-repo relationship: content-layer edge resolved
+  (siblings via toesnail-owned marker schema); runtime-layer couplings parked as questions routed to `.mw`
+  + collAIb. (docs/meeting-notes/2026-06-15-1351-mw-collaib-frontend-scoping.md) <!-- id:921b -->
 - [x] Split spine from portal: move README → `physics/toesnail.md` (`/toesnail`); new portal README at `/`. — committed 715a11d on 2026-06-15
 - [x] Cross-project dependency map `docs/dependencies.md` (toesnail × .mw × collAIb, direction + strength). — committed 715a11d on 2026-06-15
 - [x] Re-tree repo per D1 (`physics/`, `essays/`, README root index); permalinks unchanged.
