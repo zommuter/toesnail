@@ -50,7 +50,7 @@ Two kinds of entry are kept distinct:
 - ⚠ **modeling tension (owner-territory):** the qualitative cooling/heating argument (red-shifted absorption
   ⟹ net cooling) is a physical-direction claim — the owner's to develop; AI verifies only once it's a formula.
 
-## README.md  *(the QM spine)*
+## physics/toesnail.md  *(the QM spine)*
 
 - `verify:lean` — uniqueness of the zero vector `|0⟩` ("for a given vector space the vector of norm zero is
   unique", footnote `uniqueZero`, marked "#TODO for later").

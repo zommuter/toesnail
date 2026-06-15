@@ -60,7 +60,8 @@ already stated — never inventing the claim.)
 
 ## Tree
 
-- `README.md` (root, `permalink: /`) — the TOESNAIL spine: QM-from-scratch "math on demand" TOE narrative.
+- `README.md` (root, `permalink: /`) — project portal / site landing page (navigation, not content).
+- `physics/toesnail.md` (`permalink: /toesnail`) — the TOESNAIL spine: QM-from-scratch "math on demand" TOE narrative.
 - `physics/` — topic explorations: `lasercool.md`, `acoustics.md`, `Resogram.md`.
 - `essays/` — non-mathematical wing: `Narrativium.md`.
 - Permalinks are explicit in each file's front-matter, so file location is independent of public URL.

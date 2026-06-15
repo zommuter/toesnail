@@ -16,7 +16,10 @@ claims. It **emits findings; it never edits the theory.** Discrepancies are loca
 decides every resolution.
 
 ## Structure
-- `README.md` (`permalink: /`) — the TOESNAIL spine (QM-from-scratch narrative; the site index).
+- `README.md` (`permalink: /`) — project portal / site landing page: what toesnail is, the `.mw`
+  relationship, and navigation into the content. **Not** the physics content itself.
+- `physics/toesnail.md` (`permalink: /toesnail`) — the **TOESNAIL spine**: QM-from-scratch "math on demand"
+  narrative; the flagship everything else branches off. (Was `README.md` until 2026-06-15.)
 - `physics/` — topic explorations: `lasercool.md` (laser cooling), `acoustics.md` (Navier–Stokes/acoustics),
   `Resogram.md` (driven harmonic oscillator energy method).
 - `essays/` — non-mathematical wing: `Narrativium.md`.
@@ -24,6 +27,7 @@ decides every resolution.
 - `CONVENTIONS.md` — authoring conventions (equation handles, `verify:` markers, source-stays-plain) + the
   AI working contract.
 - `docs/rigor-debt.md` — the tier-tagged inventory of hand-waved / unchecked claims (triage menu).
+- `docs/dependencies.md` — how toesnail, `.mw`, and collAIb depend on each other and how strongly.
 - `docs/meeting-notes/` — design-decision records.
 
 ## Authoring conventions (see `CONVENTIONS.md` for detail)

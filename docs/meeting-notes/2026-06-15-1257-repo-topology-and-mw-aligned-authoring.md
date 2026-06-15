@@ -58,6 +58,12 @@ observations — "calm co-author over your shoulder") might integrate with toesn
 theory-untouched), and it overlaps `.mw`'s future authoring surface. **A genuine three-repo architecture
 question (toesnail × `.mw` × collAIb) — too big for an amendment; flagged for a dedicated scoping session.**
 
+## Post-meeting refinement (same session)
+Owner refined D1: the TOESNAIL spine (the QM-from-scratch narrative, formerly `README.md`, `permalink: /`)
+**moves to `physics/toesnail.md`** (`permalink: /toesnail`); a proper portal/landing `README.md` (`permalink: /`)
+now explains the project, the `.mw` relationship, and navigation. Also added `docs/dependencies.md` tracking
+the toesnail × `.mw` × collAIb dependency edges + strengths (the tracking artifact for action item 5).
+
 ## Action items
 1. Re-tree toesnail per D1 (`physics/`, `essays/`, README at root); verify permalinks unchanged. **[done this session]** <!-- id:8676 -->
 2. Write one-page `CONVENTIONS.md` per D2. **[done this session]** <!-- id:e3af -->
