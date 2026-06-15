@@ -46,6 +46,10 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   $\dot e\approx -2\beta e$") and the ¶ below ("I'm too lazy to check whether $c=0$, doesn't matter
   anyway"). **Owner:** rewrite/trim this narrative to match the exact form (AI must not edit the
   theory prose). Until then the section is internally inconsistent by design — flagged, not hidden.
+  **ROUTED 2026-06-15 (owner call, /relay human):** owner chose to resolve this in a `/meeting --cross`
+  prose-reconciliation session; box stays OPEN until then. Concrete seam: line 86 of `physics/Resogram.md`
+  ("too lazy to check whether $c=0$") dangles the removed constant `c`; the line 69 pre-solution
+  handwaving ¶ ($-4\beta e$ … averaging $-2\beta e$) may be tolerable as framed.
 
 ## Visual / manual (run these — never auto-ticked)
 
