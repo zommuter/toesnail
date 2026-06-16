@@ -24,11 +24,23 @@ format that keeps prose, computation, and machine-checked proofs mutually consis
   "maybe-save-the-planet-from-AI-training-heat" fascination.
 - **[Acoustics](Accoustics)** (`physics/acoustics.md`) — Navier–Stokes / acoustics derivations.
 - **[Resogramm](Resogramm)** (`physics/Resogram.md`) — driven harmonic oscillator energy methods.
+- **[Entropy](Entropy)** (`physics/entropy.md`) — Boltzmann/Bose–Einstein/Fermi–Dirac statistics; Lambert-W
+  for the base energy $E_1$.
+- **[WiRoHSH](WiRoHSH)** (`physics/wirohsh.md`) — Wick-rotated hyper-spherical harmonics; Laplace operator.
+- **[Photon](Photon)** (`physics/photon.md`) — single-photon wave-equation Ansatz in Lorenz gauge. *Rough
+  stub — owner to confirm portal surfacing (REVIEW_ME).*
+
+## Crypto — `crypto/`
+
+- **[FHE](FHE)** (`crypto/fhe.md`) — fully-homomorphic-encryption notes (FHE is maths, not physics, hence a
+  separate top-level wing).
 
 ## Essays — `essays/`
 
 - **[Narrativium](Narrativium)** (`essays/Narrativium.md`) — the non-mathematical wing: storytelling as the
   "love" in the theory of everything. Zero math; out of scope for verification.
+- **[Productivity](Productivity)** (`essays/productivity.md`) — reflections on productivity.
+- **[The perfect supertool](Supertool)** (`essays/supertool.md`) — on the ideal tool.
 
 ## How this repo works
 

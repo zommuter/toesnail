@@ -77,7 +77,8 @@ client-side; a grep can't see it). **Lesson:** HTML-grep gave false confidence â
 ## 4. Repo topology
 
 `README.md` (`/`) = portal; `physics/toesnail.md` (`/toesnail`) = the QM spine; `physics/`
-= topic explorations; `essays/` = non-mathematical wing. Permalinks are explicit per file,
-so moving a source file does not change its URL. Cross-project dependency map:
-`docs/dependencies.md`. Topology rationale:
+= topic explorations; `essays/` = non-mathematical wing; `crypto/` = maths-not-physics wing
+(FHE; added by the 2026-06-16 cartmanjaro divergent-main recovery merge `c1e20b4`).
+Permalinks are explicit per file, so moving a source file does not change its URL.
+Cross-project dependency map: `docs/dependencies.md`. Topology rationale:
 `docs/meeting-notes/2026-06-15-1257-repo-topology-and-mw-aligned-authoring.md`.
