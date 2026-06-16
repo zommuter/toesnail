@@ -177,3 +177,7 @@ review toesnail: 3-commit window green (entropy align* typesetting + owner topol
 
 Worked id:fed0 — added `exclude:` block to `_config.yml` covering `crypto/fhe.ipynb`, `crypto/fhe.py`, `crypto/fhe.ods`; wired `tests/test_crypto_exclude.sh` into `tests/run.sh`; ticked ROADMAP checkbox. `bash tests/test_crypto_exclude.sh` PASS; full `bash tests/run.sh` SUITE: PASS.
 Friction: none.
+
+## 2026-06-16 22:49 — executor (sonnet, relay-loop)
+
+executor: id:fed0 done — exclude crypto/ companions from Jekyll build; full suite PASS; 0 ROUTINE open
