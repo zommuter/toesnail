@@ -25,3 +25,7 @@ review: docs-only window (cval/.mw dependency notes id:921b→b7b1/d80d) — no 
 ## 2026-06-16 07:43 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 relay review toesnail: 7-commit window green (esol rename clean, id:3b4c mathjax fix genuine impl-only); fixed cval→esol drift in ARCHITECTURE + relay summary (id:e27e); 0 ROUTINE open, 1 HARD (3317)
+
+## 2026-06-16 08:21 — reviewer (claude-opus-4-8)
+
+handoff: commit-hook cluster (id:d8bf → 0e63 .mw mirror, 8757 post-commit hook, d5f9 git-config; C3 red tests = 211c); 2 REVIEW_ME judgment boxes
