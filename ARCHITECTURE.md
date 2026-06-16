@@ -66,7 +66,7 @@ which assert anything about the *correctness of the physics* (that's human-only)
 
 | layer | engine | pins |
 |---|---|---|
-| `test_verify.sh` | `uv`/SymPy | instrument verdicts (5 ✓ — edot/cval re-pinned ✗→✓ after the 2026-06-15 owner-ratified corrections) + `verified:` attestation non-drift |
+| `test_verify.sh` | `uv`/SymPy | instrument verdicts (5 ✓ — edot/esol [handle renamed from `cval` 2026-06-15] re-pinned ✗→✓ after the 2026-06-15 owner-ratified corrections) + `verified:` attestation non-drift |
 | `test_render.sh` | Ruby/Jekyll | build succeeds, head/MathJax present, kramdown left delimiters, handles in block math |
 | `test_mathjax.cjs` | Node/MathJax+KaTeX | every `$$` block renders in both engines, `\eqref` resolves |
 
