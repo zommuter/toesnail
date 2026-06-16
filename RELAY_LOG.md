@@ -109,3 +109,7 @@ bare `…d`/`…dd` count is ambiguous — `x_x`, `x_xx`, `x_xt`, …). Proof un
 (`subst eom; ring`), rebuild green, no `sorry`. **`Resogram.lean` filehash b98f0e42 →
 3c516103** — id:1335's `verified:sympy+lean` marker must use `3c516103`. README snippet
 updated to match.
+
+## 2026-06-16 15:12 — reviewer (claude-opus-4-8)
+
+review: id:3317 Lean edot proof builds green (lake build exit 0, no sorry/admit/axiom, filehash 3c516103 matches id:1335 dep); id:0e63 .mw mirror fidelity owner-ratified (/meeting D3). gaming-scan clean. 3 ROUTINE items (id:5776/1335/3275) now unblocked.
