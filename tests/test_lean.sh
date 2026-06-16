@@ -18,11 +18,11 @@ bad()  { printf '  FAIL %s\n' "$1"; fail=1; }
 
 command -v lake >/dev/null || { echo "[test_lean] SKIP — lake not on PATH (install lean4/elan)"; exit 0; }
 
-echo "[test_lean] lake build"
-if (cd verify && lake build 2>/tmp/lake-build.log); then
+echo "[test_lean] lake build (with cache prefetch)"
+if (cd verify && lake exe cache get 2>/tmp/lake-cache-get.log && lake build 2>/tmp/lake-build.log); then
   pass "lake build"
 else
-  bad "lake build failed (see /tmp/lake-build.log)"
+  bad "lake build failed (see /tmp/lake-build.log; cache get: /tmp/lake-cache-get.log)"
   tail -10 /tmp/lake-build.log
 fi
 
