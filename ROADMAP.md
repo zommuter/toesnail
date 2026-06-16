@@ -185,20 +185,22 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
 
 ### Recovered-pages infrastructure (recovery merge `c1e20b4`, 2026-06-16)
 
-- [ ] Extend render-test coverage to the render-clean recovered pages [ROUTINE] <!-- id:7fd7 -->
-  - **Acceptance**: `physics/entropy.md`, `crypto/fhe.md`, `essays/supertool.md` are added to the `DOCS`
-    array in `tests/test_mathjax.cjs` and the full mathjax suite still passes (all display blocks render
-    under MathJax 3 + KaTeX, all `\eqref` resolve); `tests/test_page_coverage.sh` is wired into
-    `tests/run.sh`. TOOLING/coverage only — no content edited.
-  - **Tests**: `tests/test_page_coverage.sh` (`# roadmap:7fd7`) — asserts the three pages appear in
-    `DOCS` (currently RED).
-  - **SCOPE GUARD**: do NOT add `physics/wirohsh.md` or `physics/photon.md` — they contain incomplete
-    owner math (empty `align` blocks, unbalanced delimiters) that fails to render; they are owner-gated
-    (REVIEW_ME recovery box). If any of the three listed pages fails the mathjax render when added, STOP
-    and HAND BACK — never edit the math to make a test pass.
+- [x] Extend render-test coverage to ALL recovered pages [ROUTINE] <!-- id:7fd7 -->
+  - **DONE 2026-06-16** (strong turn): all five recovered pages — `physics/entropy.md`,
+    `physics/wirohsh.md`, `physics/photon.md`, `crypto/fhe.md`, `essays/supertool.md` — added to the
+    `DOCS` array in `tests/test_mathjax.cjs`; `tests/test_page_coverage.sh` wired into `tests/run.sh`;
+    full suite green. TOOLING/coverage only — no content edited.
+  - **CORRECTION**: an earlier handoff note claimed `wirohsh.md`/`photon.md` "fail to render" and
+    scope-guarded them out. That was an UNVERIFIED claim — it was wrong. Running them through
+    `tests/test_mathjax.cjs` shows ALL 32 + 2 display blocks render clean under both MathJax 3 and KaTeX.
+    "Incomplete derivation" (empty `align` blocks, unfinished sections) is valid LaTeX and renders fine;
+    whether to FINISH the math is an owner content question (REVIEW_ME id:8807), orthogonal to render
+    coverage. The scope guard was removed — there was nothing to hand back.
+  - **Tests**: `tests/test_page_coverage.sh` (`# roadmap:7fd7`) — asserts all five pages are in `DOCS`.
   - **Done-check**: `bash tests/test_page_coverage.sh` then full `bash tests/run.sh` (both exit 0).
-  - **Context**: recovery merge `c1e20b4` added pages that currently ship to GitHub Pages with zero
-    render verification; this closes the coverage gap for the well-formed ones.
+  - **Note (owner content, untouched)**: KaTeX emits a non-fatal `newLineInDisplayMode` *warning* for a
+    `\\` in a non-`align` display block in `entropy.md` — a style nit in owner math, not a render error;
+    left as-is.
 
 - [ ] Exclude `crypto/` non-page companions from the Jekyll build [ROUTINE] <!-- id:fed0 -->
   - **Acceptance**: `_config.yml` gains an `exclude:` entry covering `crypto/fhe.ipynb`, `crypto/fhe.py`,

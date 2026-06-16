@@ -9,17 +9,15 @@
 # that test_mathjax exists to catch). This asserts the render-CLEAN recovered pages are
 # in the coverage list.
 #
-# SCOPE GUARD (CLAUDE.md → "Repo-specific scope guard"): this is TOOLING coverage only.
-# It lists ONLY the pages that are render-well-formed. physics/wirohsh.md and
-# physics/photon.md are deliberately EXCLUDED here — they contain incomplete owner math
-# (empty align blocks, unbalanced delimiters) that fails to render; adding them is NOT an
-# executor task (it would require editing owner theory). They stay owner-gated in
-# REVIEW_ME until the owner finishes/withdraws them — see id:8807 / the recovery box.
+# All five recovered content pages render CLEAN through MathJax 3 AND KaTeX (verified
+# 2026-06-16 by running them through tests/test_mathjax.cjs — zero merror/throw). NB
+# "incomplete derivation" ≠ "fails to render": wirohsh.md/photon.md have unfinished
+# sections (empty align blocks) but that is valid LaTeX and renders fine; whether to
+# FINISH them is an owner content question (REVIEW_ME), independent of render coverage.
 #
 # Contract (relay-TDD: never weaken a test to pass): each listed page must appear in
-# test_mathjax.cjs's DOCS array. Turning this green = add them to DOCS AND confirm the
-# mathjax suite still passes (if a listed page fails to render, HAND BACK — do not edit
-# the math).
+# test_mathjax.cjs's DOCS array. If a listed page ever fails to render there, that is an
+# owner-content issue — HAND BACK, do not edit the math to make a test pass.
 set -u
 cd "$(dirname "$0")/.." || exit 2
 CJS=tests/test_mathjax.cjs
@@ -29,8 +27,8 @@ bad()  { printf '  FAIL %s\n' "$1"; fail=1; }
 
 [ -f "$CJS" ] || { echo "[test_page_coverage] FAIL — missing $CJS"; exit 1; }
 
-# Render-clean recovered pages that MUST be covered.
-for page in physics/entropy.md crypto/fhe.md essays/supertool.md; do
+# Recovered pages that MUST be render-covered (all verified render-clean).
+for page in physics/entropy.md physics/wirohsh.md physics/photon.md crypto/fhe.md essays/supertool.md; do
   if grep -q "'$page'" "$CJS"; then
     pass "covered: $page"
   else

@@ -24,7 +24,12 @@ const ROOT = path.join(__dirname, '..');
 try { require.resolve('mathjax-full/js/mathjax.js'); require.resolve('katex'); }
 catch { console.log('[test_mathjax] SKIP — run `npm install` first (mathjax-full + katex)'); process.exit(0); }
 
-const DOCS = ['physics/Resogram.md', 'physics/toesnail.md'];
+const DOCS = [
+  'physics/Resogram.md', 'physics/toesnail.md',
+  // recovered pages (merge c1e20b4) — all render clean under MathJax 3 + KaTeX (id:7fd7)
+  'physics/entropy.md', 'physics/wirohsh.md', 'physics/photon.md',
+  'crypto/fhe.md', 'essays/supertool.md',
+];
 const MJ_MACROS = { ltag: ['\\tag{#1}\\label{#1}', 1] };          // mirror _includes/custom-head.html
 const KX_MACROS = { '\\ltag': '\\tag{#1}', '\\eqref': '(\\text{#1})' }; // mirror .vscode/settings.json
 

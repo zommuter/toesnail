@@ -44,8 +44,9 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     that the spreadsheet IS the worked computation — a perfect attestation target).
   - **`verify:sympy`/`lean` — `physics/wirohsh.md`** (PARTIAL — mark only the complete identities): the
     tangential-Laplacian reduction `Δ_φ = (∂_x sinφ − ∂_y cosφ)² = ∂_{φ̄}²` and the 1D back-rotation
-    `f = f⁺(x−ct) + f⁺(x+ct)`. NOTE the page also has unfinished sections (empty `align` blocks) — those
-    are not yet markable; this dovetails with the render-coverage scope guard (ROADMAP id:7fd7).
+    `f = f⁺(x−ct) + f⁺(x+ct)`. NOTE the page has unfinished sections (empty `align` blocks) — those are
+    not yet markable as `verify:` claims (no closed result). They render fine, though — the page IS in the
+    render-test coverage (id:7fd7); "unfinished derivation" is a separate, owner content question.
   - **`physics/photon.md`** carries no closed result yet (Ansatz only) — no pilot until the owner develops it.
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
