@@ -76,9 +76,18 @@ non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, nev
 - **Two git-config settings (id:d5f9).** Repo config MUST set
   `notes.rewriteRef = refs/notes/verify` (carry notes across rebase/amend) and
   `notes.rewriteMode = concatenate` (default `overwrite` silently drops merged notes on squash).
-- **Hook install — TRACKED, never an untracked `.git/hooks/` file.** Use a checked-in `hooks/post-commit`
-  + `git config core.hooksPath hooks` (the `core.hooksPath` setup folds into id:d5f9), or a
-  `make install-hooks` target. Document the exact install command here when implemented.
+- **Hook install — TRACKED, never an untracked `.git/hooks/` file.** The hook lives at
+  `hooks/post-commit` (tracked). Run `make install-hooks` (or the equivalent commands below)
+  after a fresh clone to wire it in:
+  ```
+  make install-hooks
+  # which runs:
+  git config core.hooksPath hooks
+  git config notes.rewriteRef refs/notes/verify
+  git config notes.rewriteMode concatenate
+  ```
+  These are **local repo config** settings (never global). `core.hooksPath hooks` tells git
+  to use the tracked `hooks/` directory instead of `.git/hooks/`.
 - **Invariants (the executor must honour all four):**
   1. **`.mw` is OPTIONAL, never a commit gate (D6).** If `.mw` is unreachable/uninstalled/errors, the HARD
      tier no-ops (log "skipped: .mw unavailable") and the commit STILL SUCCEEDS. The hook must never

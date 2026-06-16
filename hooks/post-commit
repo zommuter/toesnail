@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+# hooks/post-commit — relay-aware verify hook (HARD tier only, v1)
+#
+# Design: docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md (D1–D6)
+#
+# Invariants:
+#   1. .mw is OPTIONAL — if unreachable/errors, HARD tier no-ops; commit ALWAYS succeeds.
+#   2. NEVER calls an LLM — deterministic only (the SOFT/LLM tier lives in /relay review).
+#   3. Relay-skip — RELAY_SKIP=1 (authoritative) or /worktrees/ in git-dir → no-op (no note).
+#   4. HARD tier reads verify/mirror/resogram_esol.mw via mathematical_writing.dag.stale_after_edit.
+#
+# The hook's exit code is ignored by git (post-commit), so it can never block a commit.
+
+set -u
+
+NOTES_REF="refs/notes/verify"
+MW_REPO="${MW_REPO:-/home/tobias/src/mathematical-writing}"
+MIRROR="verify/mirror/resogram_esol.mw"
+
+# --- relay-skip check -------------------------------------------------------
+# RELAY_SKIP=1 is authoritative. No note is written in relay context.
+if [ "${RELAY_SKIP:-}" = "1" ]; then
+  exit 0
+fi
+# Fallback: detect linked-worktree git-dir (contains /worktrees/).
+git_dir=$(git rev-parse --git-dir 2>/dev/null || true)
+case "$git_dir" in
+  *"/worktrees/"*) exit 0 ;;
+esac
+
+# --- HARD tier: run DAG staleness over the .mw mirror (optional) -----------
+repo_root=$(git rev-parse --show-toplevel 2>/dev/null || true)
+mirror="$repo_root/$MIRROR"
+hard_status="skipped"
+findings=""
+
+if ! command -v uv >/dev/null 2>&1 || [ ! -d "$MW_REPO" ]; then
+  hard_status="skipped: .mw unavailable"
+elif [ ! -f "$mirror" ]; then
+  hard_status="skipped: mirror not found"
+else
+  hard_findings=$(MIRROR_PATH="$mirror" uv run --quiet --project "$MW_REPO" python - <<'PY' 2>/dev/null
+import os, re, sys
+try:
+    from mathematical_writing.parser import parse
+    from mathematical_writing.dag import stale_after_edit
+except ImportError:
+    print("skipped: import error")
+    sys.exit(0)
+
+mirror_path = os.environ["MIRROR_PATH"]
+try:
+    src = open(mirror_path, encoding="utf-8").read()
+except OSError:
+    print("skipped: mirror read error")
+    sys.exit(0)
+
+frags = parse(src)
+
+def find(type_, granularity, pred):
+    for fr in frags:
+        if fr.type == type_ and fr.granularity == granularity and pred(fr.content):
+            return fr
+    return None
+
+e_def = find("computation", "block", lambda c: re.match(r"\s*e\s*=", c))
+if e_def is None:
+    print("skipped: mirror structure unexpected")
+    sys.exit(0)
+
+# Simulate editing the e-definition to discover DAG dependents.
+new_src = src.replace(e_def.content, e_def.content + " + 0  # probe")
+stale = stale_after_edit(frags, parse(new_src))
+
+if stale:
+    print(f"stale handles after e-edit: {sorted(stale)}")
+else:
+    print("none")
+PY
+) || true
+
+  if [ -z "$hard_findings" ]; then
+    hard_status="skipped: .mw error"
+  else
+    case "$hard_findings" in
+      "skipped:"*)
+        hard_status="$hard_findings"
+        ;;
+      *)
+        hard_status="ok"
+        findings="$hard_findings"
+        ;;
+    esac
+  fi
+fi
+
+# --- Write the status:pending note (append-only, never deletes) -------------
+sha=$(git rev-parse HEAD 2>/dev/null || echo "unknown")
+note_body="status:pending
+hook=post-commit tier=HARD ts=$(date -u +%Y-%m-%dT%H:%M:%SZ) sha=$sha hard_tier=$hard_status"
+if [ -n "$findings" ]; then
+  note_body="$note_body
+findings=$findings"
+fi
+
+git notes --ref="$NOTES_REF" append -m "$note_body" HEAD 2>/dev/null || true
+
+exit 0

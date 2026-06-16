@@ -37,3 +37,12 @@ Review of 2 commits since relay-ckpt-20260616-0821 (865a213 cross-project triad 
 ## 2026-06-16 09:36 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 relay review toesnail: ledger-only window (2 commits, no code/test), audit clean; reverse-handoff promoted Lean edot cluster to ROADMAP (3317 HARD+INTENSIVE, 5776/1335/3275 ROUTINE), reused TODO ids; routine_open=6
+
+## 2026-06-16 — executor (claude-sonnet-4-6)
+
+Worked id:0e63 — created `verify/mirror/resogram_esol.mw` faithfully transcribing the `esol` energy form, sliding-average consumer `ebar`, and maintenance drive `y` from `physics/Resogram.md`; DAG staleness split correct (editing `e` stales `$e$` citation + `ebar`; `y` untouched). `tests/test_mw_mirror.sh` PASS.
+Worked id:8757 — implemented `hooks/post-commit` (HARD tier only): writes `status:pending` note on owner commits; no-ops under `RELAY_SKIP=1` or `/worktrees/` git-dir; degrades gracefully if `.mw` unavailable; never calls an LLM. All 6 cases in `tests/test_verify_hook.sh` PASS.
+Worked id:d5f9 — set `notes.rewriteRef=refs/notes/verify`, `notes.rewriteMode=concatenate`, `core.hooksPath=hooks` in repo git config; added `make install-hooks` target to Makefile; documented exact install commands in `CLAUDE.md`. Squash-concatenate case confirmed.
+Worked id:211c — fulfilled (tests were already authored by handoff; this executor made them GREEN).
+Remaining open ROUTINE: id:5776, id:1335, id:3275 — all blocked on HARD id:3317 (first Mathlib extract).
+Friction: none.

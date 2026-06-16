@@ -1,0 +1,19 @@
+# Resogram — analytical energy solution (esol section)
+
+The specific energy $e$ of the driven oscillator is given by the analytical solution:
+
+```computation
+e = (A**2 * omega / 2) * exp(-2*beta*t) * (omega + beta*cos(2*(Omega*t + phi) - delta))
+```
+
+The sliding average over a half-period uses $e$ directly:
+
+```computation
+ebar = Omega/pi * e
+```
+
+The energy-maintaining drive is set independently of $e$:
+
+```computation
+y = 2 * beta / omega**2 * xd
+```
