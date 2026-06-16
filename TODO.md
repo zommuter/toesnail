@@ -19,7 +19,6 @@
     grammar + §3 carve-out. (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:3f57 -->
 - [ ] Automated `verify:`/`verified:` staleness checker (walks source, recomputes hashes, flags drift). GATED:
 - [ ] Automated `verify:`/`verified:` staleness checker (walks source, recomputes hashes, flags drift). GATED: acoustics pilot #2 supplies the N=2 second consumer. **Corroborating instance 2026-06-15 (`/relay human`):** the edot/cval instrument re-pin (✗→✓ + attestation re-derivation after the owner corrected the source) had to be deferred to "next review" BY HAND — exactly the drift this checker would flag. NB `.mw` shipped id:dae5 the same day (headless dependency-DAG + 3-state staleness propagation over fragment handles); when this checker is built, REUSE that DAG rather than reinventing hash-walking — it already does prose-citation-stale propagation. (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:04bb -->
-- [x] Owner review: Resogram pilot findings — (a) `edot` 2nd equality wrong, correct is `ė=−4βe+ω²(2βx²+ẋy)`;
   (b) `cval` c≠0 (`c=Ω²/(2β²)`, energy phase-shifted); (c) `sol` integrand unbalanced paren. AI surfaced,
   did not edit; owner decides each. (docs/rigor-debt.md) **RESOLVED 2026-06-15 (owner-ratified via /relay
   human):** (a) sign correction applied; (b) exact phase-shifted form adopted; (c) one-char paren fix
@@ -27,13 +26,11 @@
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
 - [ ] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
   VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). <!-- id:6501 -->
-- [x] Resogram energy block render regression (`\tag` inside `aligned` → MathJax `merror`) — FIXED 2026-06-15
   by splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed; suite green,
   covered by `tests/test_mathjax.cjs`. <!-- id:3b4c -->
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->
-- [x] `[MEETING]` Two-tier **relay-aware commit-hook** — DESIGN RESOLVED 2026-06-16
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md). Split decided: HARD tier (deterministic
   `.mw` DAG) → non-blocking **post-commit hook** writing ephemeral `git notes` on `refs/notes/verify`
   (`pending`→`triaged`→`processed`, never deleted = observe-first logger); SOFT tier (LLM, incl. b7b1
@@ -58,12 +55,10 @@
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
 
 ## Done
-- [x] Resogram energy-chain located-discrepancy cluster — RESOLVED in-document by owner (commit `236fa1b`,
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
   exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window
   corrected to `(Ω/π)∫₀^{π/Ω}` (id:3999). Spun out 2 tooling items (id:3b4c render regression, id:d2f4
   subequation numbering). Ticks re-checked by next /relay review. <!-- id:f9fe -->
-- [x] Rename Resogram energy handle `cval`→`esol` (analytical energy SOLUTION; old name encoded the answered
   "find c" question) — source `\ltag`/markers, `verify/resogram_esol.py`, `test_verify.sh`, `verify/README.md`;
   attestation re-pinned `@e6722a73` (claim `18d3f7a7` unchanged); test_verify green 5✓ — /meeting 2026-06-15,
   covered by `tests/test_verify.sh`. <!-- id:adfc -->

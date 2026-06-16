@@ -14,3 +14,8 @@
 - [x] Re-tree repo per D1 (`physics/`, `essays/`, README root index); permalinks unchanged.
 - [x] Write one-page `CONVENTIONS.md` per D2.
 - [x] Deliverable #0 — rigor-debt inventory (`docs/rigor-debt.md`), tier-tagged, no resolutions.
+- [x] Owner review: Resogram pilot findings — (a) `edot` 2nd equality wrong, correct is `ė=−4βe+ω²(2βx²+ẋy)`;
+- [x] Resogram energy block render regression (`\tag` inside `aligned` → MathJax `merror`) — FIXED 2026-06-15
+- [x] `[MEETING]` Two-tier **relay-aware commit-hook** — DESIGN RESOLVED 2026-06-16
+- [x] Resogram energy-chain located-discrepancy cluster — RESOLVED in-document by owner (commit `236fa1b`,
+- [x] Rename Resogram energy handle `cval`→`esol` (analytical energy SOLUTION; old name encoded the answered
