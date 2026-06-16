@@ -86,3 +86,7 @@ review: 1 doc-only commit (04f0361, REVIEW_ME d2f4 deferral note) audited clean 
 ## 2026-06-16 13:45 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: doc-only d2f4-deferral commit audited clean; D2-ticked TODO id:8757/d5f9/211c; routine_open=0 (3 ROUTINE all gated on unbuilt [HARD][INTENSIVE] id:3317)
+
+## 2026-06-16 14:03 — executor (sonnet, relay-loop)
+
+no-op: all 3 open ROUTINE items (id:5776/id:1335/id:3275) remain blocked on HARD+INTENSIVE id:3317 (verify/ lake project not yet built)
