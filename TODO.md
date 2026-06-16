@@ -2,7 +2,7 @@
 
 ## Current
 
-- [ ] Relay: 1 open ROADMAP item (HARD — strong model only: id:3317 Lean); 0 ROUTINE open (fca7 Makefile, 9868 CI done). Confirm CI run green on GitHub after push (id:9868 done-check). edot/cval verify instruments re-pinned ✗→✓ (2026-06-15 /relay review, id:9135 follow-up #1). Remaining open: owner-only cval c-narrative prose (REVIEW_ME) — ROUTED 2026-06-15 to /meeting --cross (owner call, /relay human). <!-- id:e27e -->
+- [ ] Relay: 1 open ROADMAP item (HARD — strong model only: id:3317 Lean); 0 ROUTINE open (fca7 Makefile, 9868 CI done). Confirm CI run green on GitHub after push (id:9868 done-check). edot/esol (handle renamed from `cval` 2026-06-15) verify instruments re-pinned ✗→✓ + verified green (2026-06-16 /relay review, id:9135 closed). Resogram c-narrative + energy-chain cluster RESOLVED by owner in-document (236fa1b: id:559c/0cb5/f9fe/3999, all REVIEW_ME boxes ticked). Open owner/design work: subequation numbering (id:d2f4), R2/R3 verify-emoji (id:445e), relay-aware commit-hook meeting (id:d8bf), HUMAN-integration walk (id:6501). <!-- id:e27e -->
 
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
