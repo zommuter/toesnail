@@ -9,7 +9,20 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 > `.mw`/collAIb tool may later *pre-fill a suggested fix* for a sufficiently-clear item,
 > but a human still accepts it — the suggestion is a draft, not a merge.
 
-## Resogram verify-pilot — located discrepancies (collectively TODO `id:9135`)
+## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
+
+- [ ] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
+  cartmanjaro divergent-main recovery merge `c1e20b4` refiled 7 owner-authored pages into the
+  post-restructure dirs: `physics/entropy.md`, `physics/wirohsh.md`, `physics/photon.md`,
+  `crypto/fhe.md` (NEW top-level wing), `essays/productivity.md`, `essays/supertool.md`. This
+  /relay review added them to the `README.md` portal index and recorded the new `crypto/` wing in
+  `ARCHITECTURE.md §4` (navigation/topology bookkeeping only — NO content edited). **Owner:**
+  (a) confirm these belong on the portal now — `physics/photon.md` is a self-described "rough stub"
+  (currently listed as such); pull it from the portal if it isn't ready; (b) confirm `crypto/` is the
+  intended home for FHE (vs `physics/` or an essay); (c) the `fhe.{ipynb,py,ods}` computational
+  companions were intentionally NOT carried into the merge tree (source-stays-plain-markdown) — confirm
+  that's correct or request they be wired in. The 3 `img/craiyon_*.png` AI-art assets are recovered but
+  unwired (no page references them) — confirm intended target page or leave orphaned.
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by
