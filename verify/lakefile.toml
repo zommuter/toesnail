@@ -1,0 +1,15 @@
+name = "verify"
+version = "0.1.0"
+keywords = ["math", "physics"]
+defaultTargets = ["Resogram"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.30.0-rc2"
+
+[[lean_lib]]
+name = "Resogram"

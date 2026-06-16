@@ -118,7 +118,7 @@ shared 415 MB `~/.cache/mathlib` download cache) — the HANDBACK-if-no-toolchai
 binds: this is `verify/` plumbing + tests + attestation-marker bookkeeping ONLY — NO executor edits any
 physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed* claim (allowed).
 
-- [ ] Stand up `verify/` lake project pinned `v4.30.0-rc2` + prove `edot_first_line` [HARD — strong model] [INTENSIVE — lean-build] <!-- id:3317 -->
+- [x] Stand up `verify/` lake project pinned `v4.30.0-rc2` + prove `edot_first_line` [HARD — strong model] [INTENSIVE — lean-build] <!-- id:3317 -->
   - **Why HARD + INTENSIVE**: first Mathlib extract is a heavy build (~6.6 GB, minutes even with the warm
     415 MB cache via `lake exe cache get`) — must run serially-alone (`--allow-intensive`), never inside a
     parallel wave (OOM risk, conventions §id:8d52). The proof itself is a one-liner (`subst; ring`); the cost

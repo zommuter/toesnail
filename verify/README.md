@@ -64,8 +64,39 @@ sha256sum verify/resogram_drive.py | cut -c1-8            # instrument hash
 > deliberately **not** built yet (`TODO.md` id `04bb`, gated on the acoustics pilot as the
 > second consumer). The grammar above is fixed now so that checker is mechanical to add later.
 
-## No Lean yet
+## Lean tier — `Resogram.lean` (id:3317)
 
-Resogram has **no `verify:lean` target** — its claims are algebra (SymPy's job). The Lean
-harness (Lean4 + Mathlib via `lake`) is scoped as a separate, heavier session (`TODO.md` id
-`3317`); the first real Lean consumer is the spine's Cauchy–Schwarz, not Resogram.
+The first `verify:lean` target lives here as a `lake` project pinned to
+`leanprover/lean4:v4.30.0-rc2` + Mathlib (rev `v4.30.0-rc2`). It discharges ONE
+owner-stated, SymPy-confirmed claim — the *algebraic* first-line energy-rate identity
+(handle `edot`):
+
+```lean
+theorem edot_first_line (x ẋ ẍ y β ω : ℝ) (eom : ẍ = -2*β*ẋ - ω^2*(x-y)) :
+    ẋ*(ẍ + ω^2*x) = -2*β*ẋ^2 + ω^2*ẋ*y := by
+  subst eom; ring
+```
+
+This is the Lean tier of `resogram_edot.py`'s SymPy ✓ (same claim, stronger assurance
+floor). The *derivative* step (that `ė` of `e = ½ẋ²+½ω²x²` is genuinely `ẋ(ẍ+ω²x)`, via
+Mathlib `deriv`/chain-rule) is SEPARATE debt (ROADMAP id:b9bc), NOT proven here.
+
+### Canonical build (clean clone)
+
+```sh
+cd verify
+lake exe cache get      # pull precompiled Mathlib oleans (warm ~/.cache/mathlib if present)
+lake build              # exits 0, no `sorry`
+```
+
+`lake exe cache get` downloads the precompiled Mathlib `.olean`s instead of building
+Mathlib from source (minutes vs. ~an hour). `tests/test_lean.sh` (SKIP-without-`lake`)
+gates this in `tests/run.sh`.
+
+> **Optional local space footnote (btrfs).** On a btrfs filesystem the `.lake/packages`
+> tree can be deduplicated against another checkout with `cp --reflink=auto` — a
+> *space* optimization only, **not** a build step and **not** a symlink. Skip it on any
+> other filesystem; the canonical build above never needs it.
+
+`.lake/` is git-ignored; the pinned `lake-manifest.json` + `lean-toolchain` are tracked
+so a clean clone resolves the exact same dependency revisions.

@@ -8,6 +8,9 @@ vendor/
 # Node test-only deps (see package.json, tests/test_mathjax.cjs)
 node_modules/
 
+# Lean/lake build artifacts (verify/ lake project; see id:3317)
+.lake/
+
 # git-diary-workflow parallel-session lock
 .git-lock-push.lock
 
