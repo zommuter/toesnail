@@ -104,7 +104,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 > contract-shape check. Resolved via `/relay human` / `/meeting`; the executor proceeds
 > against the red tests meanwhile.
 
-- [ ] `tests/test_mw_mirror.sh` (roadmap:0e63) — **does the one-section `.mw` mirror
+- [x] `tests/test_mw_mirror.sh` (roadmap:0e63) — **does the one-section `.mw` mirror
   faithfully match the Resogram source section?** The mirror (`verify/mirror/resogram_esol.mw`)
   is a DERIVED artifact transcribing `physics/Resogram.md` handles `esol`/`e`/`ymaint` into
   `.mw` fragment syntax. Faithful transcription is theory-adjacent — the AI must NOT alter

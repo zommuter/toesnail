@@ -58,7 +58,7 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
     in `mathematical_writing.dag`; `parse()` in `mathematical_writing.parser`. FIDELITY is a judgment call —
     REVIEW_ME box (1) asks the owner to confirm the mirror matches the source section. N=2 guard: mirror ONE
     section only.
-  - [ ] **FIDELITY FIX follow-up [HARD — strong model] — owner-directed 2026-06-16 (/relay human).** The
+  - [x] **FIDELITY FIX follow-up [HARD — strong model] — RESOLVED 2026-06-16 (/meeting D3, owner-ratified): faithful four-block mirror (delta own fragment, ebar integral form); test green.** The
     DAG-mechanics test is green but the owner REJECTED the transcription fidelity (REVIEW_ME box 0e63). Two
     faithful-transcription corrections: (a) replace `ebar = Omega/pi * e` with the faithful half-period
     convolution `\bar e = (Ω/π)∫₀^{π/Ω} e(t-t')·e^{+2βt'} dt'` in `.mw` computation syntax (no scalar-multiply

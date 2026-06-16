@@ -1,15 +1,21 @@
 # Resogram — analytical energy solution (esol section)
 
+The phase shift $\delta$ is derived from the oscillator parameters:
+
+```computation
+delta = atan2(Omega, beta)
+```
+
 The specific energy $e$ of the driven oscillator is given by the analytical solution:
 
 ```computation
 e = (A**2 * omega / 2) * exp(-2*beta*t) * (omega + beta*cos(2*(Omega*t + phi) - delta))
 ```
 
-The sliding average over a half-period uses $e$ directly:
+The sliding average of $e$ over a half-period uses an exponential growth kernel:
 
 ```computation
-ebar = Omega/pi * e
+ebar = Omega/pi * Integral(e.subs(t, t - tp) * exp(2*beta*tp), (tp, 0, pi/Omega))
 ```
 
 The energy-maintaining drive is set independently of $e$:

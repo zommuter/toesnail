@@ -60,7 +60,7 @@
 - [x] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
   `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash).
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:d5f9 -->
-- [ ] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
+- [x] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
   `.mw` DAG-as-library; mirror ONE section only — N=2 guard).
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:0e63 -->
 - [x] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
