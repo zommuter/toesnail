@@ -43,7 +43,7 @@ red suite is `tests/test_verify_hook.sh` (+ `tests/test_mw_mirror.sh` for the `.
 **id:211c's deliverable** — already AUTHORED by this handoff; the executor's job is to make them GREEN, not
 to write them. Do NOT mint new ids; do NOT touch physics content.
 
-- [ ] Stand up a one-section Resogram `.mw` mirror the HARD tier reads [ROUTINE] <!-- id:0e63 -->
+- [x] Stand up a one-section Resogram `.mw` mirror the HARD tier reads [ROUTINE] <!-- id:0e63 -->
   - **Acceptance**: a checked-in `.mw` file (e.g. `verify/mirror/resogram_esol.mw`) FAITHFULLY transcribes
     ONE Resogram section's equations into `.mw` fragment syntax — the `esol` energy form (handle `e`), a
     sliding-average consumer of `e` (handle `ebar`), and the independent maintenance drive (handle `y`).
@@ -59,7 +59,7 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
     REVIEW_ME box (1) asks the owner to confirm the mirror matches the source section. N=2 guard: mirror ONE
     section only.
 
-- [ ] Implement the v1 `post-commit` hook (deterministic HARD tier) [ROUTINE] <!-- id:8757 -->
+- [x] Implement the v1 `post-commit` hook (deterministic HARD tier) [ROUTINE] <!-- id:8757 -->
   - **Acceptance**: a TRACKED `hooks/post-commit` (installed via `core.hooksPath hooks`, set in id:d5f9)
     that, on an OWNER commit, runs the HARD tier (`stale_after_edit` over the id:0e63 mirror) and appends a
     `git notes --ref=refs/notes/verify` note carrying `status:pending` + findings (append-only, never
@@ -75,7 +75,7 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
     `.mw`-optional, relay-skip — see `CLAUDE.md` → "Verify commit-hook". REVIEW_ME box (2) asks the owner to
     confirm the note schema/field set. Hook is the observe-first logger; SOFT/LLM tier is NOT here.
 
-- [ ] Set git config + document the hook install in `CLAUDE.md` [ROUTINE] <!-- id:d5f9 -->
+- [x] Set git config + document the hook install in `CLAUDE.md` [ROUTINE] <!-- id:d5f9 -->
   - **Acceptance**: repo git config sets `notes.rewriteRef = refs/notes/verify` and
     `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash) and
     `core.hooksPath = hooks` (tracked-hook install). A squash of two noted commits preserves BOTH findings.
@@ -87,7 +87,7 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
   - **Context**: the `core.hooksPath` setup is folded in here (per the meeting note's hook-install
     decision). Config is local-repo, never global.
 
-- [ ] **Test suite for the hook cluster** — `tests/test_verify_hook.sh` + `tests/test_mw_mirror.sh` <!-- id:211c -->
+- [x] **Test suite for the hook cluster** — `tests/test_verify_hook.sh` + `tests/test_mw_mirror.sh` <!-- id:211c -->
   - This id is fulfilled by the C3 red suite this handoff already AUTHORED. The executor does NOT write these
     tests — its job across id:0e63/8757/d5f9 is to make them go GREEN. Recorded here for id-continuity only.
 
