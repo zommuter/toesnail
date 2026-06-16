@@ -39,7 +39,6 @@ format that keeps prose, computation, and machine-checked proofs mutually consis
 
 - **[Narrativium](Narrativium)** (`essays/Narrativium.md`) — the non-mathematical wing: storytelling as the
   "love" in the theory of everything. Zero math; out of scope for verification.
-- **[Productivity](Productivity)** (`essays/productivity.md`) — reflections on productivity.
 - **[The perfect supertool](Supertool)** (`essays/supertool.md`) — on the ideal tool.
 
 ## How this repo works

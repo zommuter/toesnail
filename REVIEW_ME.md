@@ -12,17 +12,41 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
 - [ ] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
-  cartmanjaro divergent-main recovery merge `c1e20b4` refiled 7 owner-authored pages into the
+  cartmanjaro divergent-main recovery merge `c1e20b4` refiled owner-authored pages into the
   post-restructure dirs: `physics/entropy.md`, `physics/wirohsh.md`, `physics/photon.md`,
-  `crypto/fhe.md` (NEW top-level wing), `essays/productivity.md`, `essays/supertool.md`. This
+  `crypto/fhe.md` (NEW top-level wing), `essays/supertool.md`. This
   /relay review added them to the `README.md` portal index and recorded the new `crypto/` wing in
   `ARCHITECTURE.md §4` (navigation/topology bookkeeping only — NO content edited). **Owner:**
   (a) confirm these belong on the portal now — `physics/photon.md` is a self-described "rough stub"
   (currently listed as such); pull it from the portal if it isn't ready; (b) confirm `crypto/` is the
-  intended home for FHE (vs `physics/` or an essay); (c) the `fhe.{ipynb,py,ods}` computational
-  companions were intentionally NOT carried into the merge tree (source-stays-plain-markdown) — confirm
-  that's correct or request they be wired in. The 3 `img/craiyon_*.png` AI-art assets are recovered but
-  unwired (no page references them) — confirm intended target page or leave orphaned.
+  intended home for FHE (vs `physics/` or an essay). The 3 `img/craiyon_*.png` AI-art assets are
+  recovered but unwired (no page references them) — confirm intended target page or leave orphaned.
+  - **UPDATE 2026-06-16 (later same session — supersedes the original (c) + the productivity entry):**
+    (i) `essays/productivity.md` was a **dated personal journal**; it has been **scrubbed from git
+    history** (owner privacy call) into gitignored `private/productivity.md`, and its `README` portal
+    link removed (forward commit, no force-push) — it is no longer a recovered/portal page.
+    (ii) the `fhe.{ipynb,py,ods}` companions **were restored** into `crypto/` (a comparison found
+    `crypto/fhe.ods` holds the unique 368-cell enumeration the `.md` only abbreviates); the open
+    question is now only whether they should be **published on the site** — default is source-only
+    (excluded via `_config.yml`, ROADMAP id:fed0); say if you want the `.ods` downloadable.
+
+- [ ] **`verify:` pilot candidates in the recovered pages — owner picks which claims to mark.**
+  The recovered derivations carry clean, self-contained results that are natural `verify:` pilots.
+  Per the working contract the AI does **not** choose which claims to mark — surfacing candidates only;
+  once the owner marks a claim with a `verify:sympy|numeric|lean` comment, the mechanical instrument
+  plumbing becomes `[ROUTINE]` (cf. the Human-only note in `ROADMAP.md`). Candidates by tier:
+  - **`verify:sympy` — `physics/entropy.md`** (cleanest pilot): the `N→∞` limit collapsing to
+    Bose–Einstein `⟨k⟩ = 1/(e^{βE₁}−1)` and the `N=2` case to Fermi–Dirac `1/(e^{βE₁}+1)`; and the
+    Lambert-W inversion `E₁ = −(1/β)·W(−βE·e^{∓βE})`. All are symbolic identities SymPy can re-derive.
+  - **`verify:numeric` — `crypto/fhe.md` + `crypto/fhe.ods`**: the enumeration closure — `Πₙ = log₂((2ⁿ)!)`
+    Stirling expansion, the `binom(2ⁿ, 2^{n−1})` semi-destructive count, and the 24-row `n=2` bijective
+    table. A numeric instrument can regenerate the tables and cross-check the `.ods` (the dogfood here is
+    that the spreadsheet IS the worked computation — a perfect attestation target).
+  - **`verify:sympy`/`lean` — `physics/wirohsh.md`** (PARTIAL — mark only the complete identities): the
+    tangential-Laplacian reduction `Δ_φ = (∂_x sinφ − ∂_y cosφ)² = ∂_{φ̄}²` and the 1D back-rotation
+    `f = f⁺(x−ct) + f⁺(x+ct)`. NOTE the page also has unfinished sections (empty `align` blocks) — those
+    are not yet markable; this dovetails with the render-coverage scope guard (ROADMAP id:7fd7).
+  - **`physics/photon.md`** carries no closed result yet (Ansatz only) — no pilot until the owner develops it.
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by

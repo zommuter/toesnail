@@ -183,6 +183,34 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
     (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
 
+### Recovered-pages infrastructure (recovery merge `c1e20b4`, 2026-06-16)
+
+- [ ] Extend render-test coverage to the render-clean recovered pages [ROUTINE] <!-- id:7fd7 -->
+  - **Acceptance**: `physics/entropy.md`, `crypto/fhe.md`, `essays/supertool.md` are added to the `DOCS`
+    array in `tests/test_mathjax.cjs` and the full mathjax suite still passes (all display blocks render
+    under MathJax 3 + KaTeX, all `\eqref` resolve); `tests/test_page_coverage.sh` is wired into
+    `tests/run.sh`. TOOLING/coverage only — no content edited.
+  - **Tests**: `tests/test_page_coverage.sh` (`# roadmap:7fd7`) — asserts the three pages appear in
+    `DOCS` (currently RED).
+  - **SCOPE GUARD**: do NOT add `physics/wirohsh.md` or `physics/photon.md` — they contain incomplete
+    owner math (empty `align` blocks, unbalanced delimiters) that fails to render; they are owner-gated
+    (REVIEW_ME recovery box). If any of the three listed pages fails the mathjax render when added, STOP
+    and HAND BACK — never edit the math to make a test pass.
+  - **Done-check**: `bash tests/test_page_coverage.sh` then full `bash tests/run.sh` (both exit 0).
+  - **Context**: recovery merge `c1e20b4` added pages that currently ship to GitHub Pages with zero
+    render verification; this closes the coverage gap for the well-formed ones.
+
+- [ ] Exclude `crypto/` non-page companions from the Jekyll build [ROUTINE] <!-- id:fed0 -->
+  - **Acceptance**: `_config.yml` gains an `exclude:` entry covering `crypto/fhe.ipynb`, `crypto/fhe.py`,
+    `crypto/fhe.ods` so they are NOT copied into `_site`; the FHE page (`crypto/fhe.md` → `/FHE`) still
+    renders; `tests/test_crypto_exclude.sh` is wired into `tests/run.sh`. Do NOT delete the companions
+    from the repo (the `.ods` holds unique 368-cell enumeration work).
+  - **Tests**: `tests/test_crypto_exclude.sh` (`# roadmap:fed0`) — builds and asserts the companions are
+    absent from `_site/` while `_site/FHE.html` exists (SKIPs without Ruby; currently RED).
+  - **Done-check**: `bash tests/test_crypto_exclude.sh` then full `bash tests/run.sh`.
+  - **Owner-flag**: default keeps these source-only (source-stays-plain). If the owner wants the `.ods`
+    downloadable from the site, that's a one-line re-include — tracked under the verify-pilot box (id:8807).
+
 ## Human-only — NOT in the executor queue
 
 The research itself is the owner's. These are tracked in `TODO.md` (design ledger) and
