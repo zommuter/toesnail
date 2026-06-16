@@ -123,8 +123,11 @@ cited source (or leave a note under the item) and the next review re-derives. Re
        separate `delta = atan2(Omega, beta)` computation block that the `e` block then references —
        rather than inlining it. This gives a `δ → e → ebar` dependency chain in the DAG (editing `δ`
        stales `e`, transitively `ebar`), which the mirror should exercise faithfully.
-  Tracked as a tooling re-transcription under the SAME id:0e63 (ROADMAP follow-up bullet); owner
-  re-confirms fidelity once the integral form + δ-result land. <!-- id:0e63 -->.
+  Tracked as a re-transcription under the SAME id:0e63 (ROADMAP follow-up bullet), tagged
+  **[HARD — strong model]** (reclassified 2026-06-16): `test_mw_mirror.sh` gives no fidelity signal
+  (`.mw` keys DAG edges on regex symbol refs — green for faithful AND unfaithful RHS alike), and
+  expressing `e(t-t')` faithfully needs `.mw` computation-semantics judgment (`e` is a data `Expr`, not
+  callable) that may spill cross-repo. Owner re-confirms fidelity once the integral form + δ-fragment land. <!-- id:0e63 -->.
 
 - [x] `tests/test_verify_hook.sh` (roadmap:8757/d5f9) — **is the chosen `git notes` schema
   the right contract?** v1 writes `status:pending findings:…` on `refs/notes/verify`

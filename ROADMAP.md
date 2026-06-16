@@ -58,15 +58,24 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
     in `mathematical_writing.dag`; `parse()` in `mathematical_writing.parser`. FIDELITY is a judgment call —
     REVIEW_ME box (1) asks the owner to confirm the mirror matches the source section. N=2 guard: mirror ONE
     section only.
-  - [ ] **FIDELITY FIX follow-up [ROUTINE] — owner-directed 2026-06-16 (/relay human).** The DAG-mechanics
-    test is green but the owner REJECTED the transcription fidelity (REVIEW_ME box 0e63). Two faithful-
-    transcription corrections, both keeping `test_mw_mirror.sh` GREEN (the `e`→`ebar` staleness edge must
-    survive — `ebar`'s RHS still references `e`): (a) replace `ebar = Omega/pi * e` with the faithful
-    half-period convolution `\bar e = (Ω/π)∫₀^{π/Ω} e(t-t')·e^{+2βt'} dt'` in `.mw` computation syntax
-    (no scalar-multiply reduction); (b) add a SEPARATE `delta = atan2(Omega, beta)` fragment/cache item
-    that the `e` block references (gives a `δ→e→ebar` DAG chain), instead of leaving `delta` a dangling
-    symbol. Mechanical transcription of owner-authored source equations — owner re-confirms fidelity on the
-    new mirror before this + the parent box close. Same id (single-id-two-views). <!-- id:0e63 -->.
+  - [ ] **FIDELITY FIX follow-up [HARD — strong model] — owner-directed 2026-06-16 (/relay human).** The
+    DAG-mechanics test is green but the owner REJECTED the transcription fidelity (REVIEW_ME box 0e63). Two
+    faithful-transcription corrections: (a) replace `ebar = Omega/pi * e` with the faithful half-period
+    convolution `\bar e = (Ω/π)∫₀^{π/Ω} e(t-t')·e^{+2βt'} dt'` in `.mw` computation syntax (no scalar-multiply
+    reduction); (b) add a SEPARATE `delta = atan2(Omega, beta)` fragment/cache item that the `e` block
+    references (gives a `δ→e→ebar` DAG chain), not a dangling symbol.
+    **Why HARD, not ROUTINE (reclassified 2026-06-16, grounded in `.mw` source):**
+      (1) `test_mw_mirror.sh` gives ZERO fidelity signal — `mathematical_writing.dag` keys edges on REGEX
+          symbol references (`_extract_defines_uses`/`_data_symbols`), so the `e→ebar` edge holds for ANY RHS
+          merely containing `e`; the test is green for both the unfaithful `Omega/pi*e` AND a faithful
+          integral (that's why the bug shipped green). An executor gated on "test passes" has no pressure
+          toward faithfulness — owner-judged fidelity is the real gate and lives OUTSIDE the test.
+      (2) Faithfully expressing `e(t-t')` is `.mw`-modeling judgment: the mirror defines `e` as a SymPy data
+          symbol (`Expr`), but the convolution needs it evaluated at a SHIFTED argument. The eval/attestation
+          core treats `e` as data, not callable — so the time-shift (`subs(t, t-tp)`? `Function`? `lambdify`?)
+          needs `.mw` computation-semantics knowledge and may surface a `.mw` capability gap (cross-repo).
+    The transcription TARGET is owner-settled; the IMPLEMENTATION needs strong-model sizing + the owner
+    re-confirms fidelity (the test can't). Same id (single-id-two-views). <!-- id:0e63 -->.
 
 - [x] Implement the v1 `post-commit` hook (deterministic HARD tier) [ROUTINE] <!-- id:8757 -->
   - **Acceptance**: a TRACKED `hooks/post-commit` (installed via `core.hooksPath hooks`, set in id:d5f9)
