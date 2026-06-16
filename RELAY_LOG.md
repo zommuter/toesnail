@@ -173,3 +173,7 @@ Review of 3 commits since relay-ckpt-20260616-2214 (6e93a7c entropy align* types
 ## 2026-06-16 22:45 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review toesnail: 3-commit window green (entropy align* typesetting + owner topology ratify + 17-item archive); gaming-scan clean, full suite PASS (real lake build, no sorry); routine_open=1 (id:fed0)
+## 2026-06-16 — executor (claude-sonnet-4-6)
+
+Worked id:fed0 — added `exclude:` block to `_config.yml` covering `crypto/fhe.ipynb`, `crypto/fhe.py`, `crypto/fhe.ods`; wired `tests/test_crypto_exclude.sh` into `tests/run.sh`; ticked ROADMAP checkbox. `bash tests/test_crypto_exclude.sh` PASS; full `bash tests/run.sh` SUITE: PASS.
+Friction: none.

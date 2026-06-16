@@ -202,7 +202,7 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
     `\\` in a non-`align` display block in `entropy.md` — a style nit in owner math, not a render error;
     left as-is.
 
-- [ ] Exclude `crypto/` non-page companions from the Jekyll build [ROUTINE] <!-- id:fed0 -->
+- [x] Exclude `crypto/` non-page companions from the Jekyll build [ROUTINE] <!-- id:fed0 -->
   - **Acceptance**: `_config.yml` gains an `exclude:` entry covering `crypto/fhe.ipynb`, `crypto/fhe.py`,
     `crypto/fhe.ods` so they are NOT copied into `_site`; the FHE page (`crypto/fhe.md` → `/FHE`) still
     renders; `tests/test_crypto_exclude.sh` is wired into `tests/run.sh`. Do NOT delete the companions
