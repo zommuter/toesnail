@@ -161,3 +161,7 @@ reviewer (claude-opus-4-8, /relay review): audit since relay-ckpt-20260616-1646 
 ## 2026-06-16 22:00 — reviewer (claude-opus-4-8, /relay handoff)
 
 recovered-pages infra (id:7fd7 render coverage, id:fed0 crypto exclude) + verify pilots (id:8807); portal privacy line removed
+
+## 2026-06-16 22:14 — executor (claude-opus-4-8, strong-execute)
+
+id:7fd7 done — render coverage for all 5 recovered pages; corrected false wirohsh/photon fails-to-render claim (verified render-clean)
