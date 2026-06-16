@@ -157,3 +157,7 @@ id:5776 done — confirmed lake-build done-check (cache get + build exit 0, no s
 ## 2026-06-16 21:24 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 reviewer (claude-opus-4-8, /relay review): audit since relay-ckpt-20260616-1646 — recovery merge c1e20b4 + 7 owner commits; tests green, gaming-scan clean; ticked cross-ledger TODO 5776/1335/3275, portal/topology drift fixed, 1 REVIEW_ME
+
+## 2026-06-16 22:00 — reviewer (claude-opus-4-8, /relay handoff)
+
+recovered-pages infra (id:7fd7 render coverage, id:fed0 crypto exclude) + verify pilots (id:8807); portal privacy line removed
