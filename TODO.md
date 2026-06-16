@@ -33,14 +33,26 @@
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->
-- [ ] `[MEETING — next session]` Two-tier **relay-aware commit-hook** for automated detection: (a) HARD tier
-  = `.mw` DAG `stale_after_edit` as a library (= the deferred `id:04bb` staleness checker) on a one-section
-  Resogram `.mw` mirror; (b) SOFT tier = collAIb's observer *brain* (prompt + local Ollama) as a headless
-  diff-observer. Both fire on commit-diff, emit into REVIEW_ME/`🚧` callouts, owner responds via `**re**
-  (status:)`. Design Qs: pre/post-commit vs post-merge; relay-awareness (skip in pool worktrees / lease held /
-  skip-flag); `.mw`-mirror double-entry vs importer wait; soft-tier noise/confidence; route `.mw` id:b7b1
-  dangling-symbol detection to the soft tier?; weigh vs observe-before-preventing (N=1). Full analysis in
-  docs/dependencies.md "Current tool-capability map" (2026-06-15). <!-- id:d8bf -->
+- [x] `[MEETING]` Two-tier **relay-aware commit-hook** — DESIGN RESOLVED 2026-06-16
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md). Split decided: HARD tier (deterministic
+  `.mw` DAG) → non-blocking **post-commit hook** writing ephemeral `git notes` on `refs/notes/verify`
+  (`pending`→`triaged`→`processed`, never deleted = observe-first logger); SOFT tier (LLM, incl. b7b1
+  dangling-symbol) → `/relay review` where Claude Code is the model (no ToS issue). REVIEW_ME stays the
+  durable record; `/relay human` owns the `valid|noise` verdict. Coupling kept LOOSE (graceful-degrade,
+  never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
+- [ ] Implement v1 `post-commit` hook: deterministic HARD tier (`.mw` DAG library over a one-section Resogram
+  `.mw` mirror) → `git notes --ref=refs/notes/verify append` `status:pending`; relay-context no-op (`RELAY_SKIP`
+  authoritative + `/worktrees/` path fallback); graceful-degrade when `.mw` unavailable; **never calls an LLM**.
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:8757 -->
+- [ ] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
+  `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash).
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:d5f9 -->
+- [ ] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
+  `.mw` DAG-as-library; mirror ONE section only — N=2 guard).
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:0e63 -->
+- [ ] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
+  concatenate-on-squash, loose-note detection via `merge-base --is-ancestor`.
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:211c -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
   in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
