@@ -140,3 +140,7 @@ Friction: id:5776 — worktree lacked `.lake/build`; background `lake build` sta
 get` and was still in progress at session end. A reviewer/next-executor can tick the box by running
 `bash tests/test_lean.sh` in the worktree after the background build completes or after a fresh `lake exe
 cache get`.
+
+## 2026-06-16 16:38 — executor (sonnet, relay-loop)
+
+feat: id:1335+3275 done; id:5776 implemented (test_lean.sh + run.sh wire) pending lake-build done-check confirmation
