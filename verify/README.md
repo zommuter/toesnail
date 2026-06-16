@@ -72,8 +72,10 @@ owner-stated, SymPy-confirmed claim — the *algebraic* first-line energy-rate i
 (handle `edot`):
 
 ```lean
-theorem edot_first_line (x ẋ ẍ y β ω : ℝ) (eom : ẍ = -2*β*ẋ - ω^2*(x-y)) :
-    ẋ*(ẍ + ω^2*x) = -2*β*ẋ^2 + ω^2*ẋ*y := by
+-- x_t ↔ ẋ, x_tt ↔ ẍ  (Lean rejects ẋ/ẍ as identifiers; the `_<var>` subscript
+-- scales to PDEs mixing spatial/temporal derivatives — x_x, x_xt, …)
+theorem edot_first_line (x x_t x_tt y β ω : ℝ) (eom : x_tt = -2*β*x_t - ω^2*(x-y)) :
+    x_t*(x_tt + ω^2*x) = -2*β*x_t^2 + ω^2*x_t*y := by
   subst eom; ring
 ```
 

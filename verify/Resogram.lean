@@ -27,11 +27,14 @@ import Mathlib
     the `ω²x` cross-term cancels and the rate is `−2βẋ² + ω²ẋy`. Pure algebra.
 
     Identifier mapping (Lean rejects the combining-dot Latin letters `ẋ`/`ẍ` as
-    identifier characters, so the time derivatives are spelled ASCII):
-      `xd`  ↔ ẋ   (first derivative),
-      `xdd` ↔ ẍ   (second derivative).
+    identifier characters, so derivatives are spelled ASCII with a `_<var>` subscript
+    naming the differentiation variable — this scales to PDEs mixing spatial/temporal
+    derivatives, where a bare `…d`/`…dd` count would be ambiguous):
+      `x_t`  ↔ ẋ   (first  time derivative ∂ₜx),
+      `x_tt` ↔ ẍ   (second time derivative ∂ₜₜx).
+    Future spatial / mixed derivatives follow the same scheme (`x_x`, `x_xx`, `x_xt`, …).
     `x y β ω` are spelled as in the doc (`β`, `ω` are valid Lean identifiers). The
     statement is otherwise the doc's `edot` first line verbatim. -/
-theorem edot_first_line (x xd xdd y β ω : ℝ) (eom : xdd = -2*β*xd - ω^2*(x-y)) :
-    xd*(xdd + ω^2*x) = -2*β*xd^2 + ω^2*xd*y := by
+theorem edot_first_line (x x_t x_tt y β ω : ℝ) (eom : x_tt = -2*β*x_t - ω^2*(x-y)) :
+    x_t*(x_tt + ω^2*x) = -2*β*x_t^2 + ω^2*x_t*y := by
   subst eom; ring

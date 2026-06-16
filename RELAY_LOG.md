@@ -99,3 +99,13 @@ no-op: all 3 open ROUTINE items (id:5776/id:1335/id:3275) remain blocked on HARD
 
 Worked id:3317 [HARD — strong model] [INTENSIVE — lean-build] — stood up the `verify/` lake project (pinned `leanprover/lean4:v4.30.0-rc2` + Mathlib rev `v4.30.0-rc2`) and discharged the algebraic `edot` first-line identity. Tracked: `verify/{lakefile.toml, lean-toolchain, lake-manifest.json, Resogram.lean}`; `.gitignore += .lake/`; `verify/README.md` "No Lean yet" section replaced with the Lean-tier + canonical-build + btrfs-reflink-footnote docs. Done-checks green: `cd verify && lake build` exit 0, `grep -L sorry verify/Resogram.lean` lists the file (no `sorry`/`admit`), full `bash tests/run.sh` PASS. `Resogram.lean` filehash `b98f0e42` (for the downstream id:1335 `verified:sympy+lean` marker upgrade).
 Friction: the acceptance's literal theorem statement uses the physics-notation identifiers `ẋ`/`ẍ` (combining-dot Latin letters), which Lean 4 rejects as identifier characters ("expected token" at the binder). Spelled the derivatives ASCII as `xd`/`xdd` (mapping documented in the file's docstring); `x y β ω` unchanged. The claim/statement is otherwise verbatim. Bring-up reused the warm `~/.cache/mathlib` via `lake exe cache get` (clone of Mathlib source was the only real cost; oleans decompressed from local cache, no source rebuild). Owner note: on btrfs a `cp --reflink=auto` of a sibling checkout's `.lake` is an instant zero-space local alternative to `cache get` (kept `cache get` as the documented portable path).
+
+## 2026-06-16 — strong-execute (opus, /relay executor --afk) — followup
+
+Owner naming-convention correction (same session): replaced the `xd`/`xdd` derivative
+identifiers in `verify/Resogram.lean` with `x_t`/`x_tt` (subscript names the
+differentiation variable; scales to PDEs mixing spatial/temporal derivatives where a
+bare `…d`/`…dd` count is ambiguous — `x_x`, `x_xx`, `x_xt`, …). Proof unchanged
+(`subst eom; ring`), rebuild green, no `sorry`. **`Resogram.lean` filehash b98f0e42 →
+3c516103** — id:1335's `verified:sympy+lean` marker must use `3c516103`. README snippet
+updated to match.
