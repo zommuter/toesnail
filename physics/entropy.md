@@ -30,8 +30,10 @@ which is just the Bose-Einstein (BE) statistics for a bosonic two-level system o
 
 On the other hand, take $N=2$ to obtain
 
-$$Z_B = \frac{1-Z_1^2}{1-Z_1} = 1+Z_1,
-\\ \langle k\rangle = E/E_1 = \frac{-2Z_1^2+Z_1(1+Z_1)}{1-Z_1^2} = \frac{Z_1-Z_1^2}{1-Z_1^2} = \frac{Z_1}{1+Z_1} = \frac1{e^{\beta E_1} + 1} = p_1,$$
+$$\begin{align*}
+Z_B &= \frac{1-Z_1^2}{1-Z_1} = 1+Z_1, \\
+\langle k\rangle = E/E_1 &= \frac{-2Z_1^2+Z_1(1+Z_1)}{1-Z_1^2} = \frac{Z_1-Z_1^2}{1-Z_1^2} = \frac{Z_1}{1+Z_1} = \frac1{e^{\beta E_1} + 1} = p_1,
+\end{align*}$$
 
 which is the Fermi-Dirac (FD) statistics for a fermionic system, where each level can only be populated once.
 
