@@ -53,17 +53,17 @@
   dangling-symbol) → `/relay review` where Claude Code is the model (no ToS issue). REVIEW_ME stays the
   durable record; `/relay human` owns the `valid|noise` verdict. Coupling kept LOOSE (graceful-degrade,
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
-- [ ] Implement v1 `post-commit` hook: deterministic HARD tier (`.mw` DAG library over a one-section Resogram
+- [x] Implement v1 `post-commit` hook: deterministic HARD tier (`.mw` DAG library over a one-section Resogram
   `.mw` mirror) → `git notes --ref=refs/notes/verify append` `status:pending`; relay-context no-op (`RELAY_SKIP`
   authoritative + `/worktrees/` path fallback); graceful-degrade when `.mw` unavailable; **never calls an LLM**.
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:8757 -->
-- [ ] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
+- [x] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
   `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash).
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:d5f9 -->
 - [ ] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
   `.mw` DAG-as-library; mirror ONE section only — N=2 guard).
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:0e63 -->
-- [ ] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
+- [x] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
   concatenate-on-squash, loose-note detection via `merge-base --is-ancestor`.
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:211c -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
