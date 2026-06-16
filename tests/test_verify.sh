@@ -30,15 +30,26 @@ echo "[test_verify] attestation non-drift (drive, eincr, edot, esol)"
 for h in drive eincr edot esol; do
   claim=$(printf '%s\n' "${out[$h]}" | grep -oP 'CLAIM_HASH8\s*:\s*\K\w+')
   file=$(sha256sum "verify/resogram_${h}.py" | cut -c1-8)
-  # marker type is sympy or numeric (esol is numeric); match either.
-  marker=$(grep -oE "verified:(sympy|numeric) \[${h}\] claim=\w+ by=resogram_${h}\.py@\w+" physics/Resogram.md)
+  # marker type is sympy, numeric, or a multi-tier like sympy+lean; match all.
+  marker=$(grep -oE "verified:(sympy\+lean|sympy|numeric) \[${h}\] claim=\w+ by=\S+" physics/Resogram.md)
   if [ -z "$marker" ]; then bad "$h: no verified: marker in Resogram.md"; continue; fi
-  if printf '%s' "$marker" | grep -q "claim=${claim} " && printf '%s' "$marker" | grep -q "@${file}"; then
+  if printf '%s' "$marker" | grep -q "claim=${claim}" && printf '%s' "$marker" | grep -q "resogram_${h}\.py@${file}"; then
     pass "$h attestation matches (claim=${claim} @${file})"
   else
     bad "$h DRIFT: instrument claim=${claim} file=${file} vs marker '${marker}'"
   fi
 done
+
+echo "[test_verify] edot multi-tier by= list"
+lean_file=$(sha256sum verify/Resogram.lean | cut -c1-8)
+edot_marker=$(grep -oE "verified:sympy\+lean \[edot\] claim=\w+ by=\S+" physics/Resogram.md)
+if [ -z "$edot_marker" ]; then
+  bad "edot: no sympy+lean marker in Resogram.md"
+elif printf '%s' "$edot_marker" | grep -q "Resogram\.lean@${lean_file}"; then
+  pass "edot Lean tier pointer present (Resogram.lean@${lean_file})"
+else
+  bad "edot Lean tier pointer missing or stale (want Resogram.lean@${lean_file}); marker: '${edot_marker}'"
+fi
 
 [ "$fail" -eq 0 ] && echo "[test_verify] PASS" || echo "[test_verify] FAIL"
 exit "$fail"

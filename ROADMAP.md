@@ -145,7 +145,7 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
     on this host (lake present) it runs the real `lake build` + `grep`.
   - **Context**: optional-tool-SKIP is the ".mw optional, never a gate" invariant mirrored to Lean.
 
-- [ ] Escalate `edot` to the compressed multi-tier `verified:` marker + grammar doc [ROUTINE] <!-- id:1335 -->
+- [x] Escalate `edot` to the compressed multi-tier `verified:` marker + grammar doc [ROUTINE] <!-- id:1335 -->
   - **Acceptance** (D5): in `physics/Resogram.md:42`, rewrite the existing attestation **HTML comment** ONLY
     (NOT any prose/math) from `verified:sympy [edot] claim=b575864e by=resogram_edot.py@54710d91` to
     `verified:sympy+lean [edot] claim=b575864e by=resogram_edot.py@54710d91,Resogram.lean@<h8>` (same
@@ -161,7 +161,7 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Context**: keep the `srepr` claim-hash byte-identical across tiers; only the per-instrument filehash
     differs. The automated staleness checker (id:04bb) stays N=2-gated — out of scope.
 
-- [ ] Annotate `docs/rigor-debt.md`: edot lean-attested + SymPy-as-gate datapoint [ROUTINE] <!-- id:3275 -->
+- [x] Annotate `docs/rigor-debt.md`: edot lean-attested + SymPy-as-gate datapoint [ROUTINE] <!-- id:3275 -->
   - **Acceptance** (D5): update the `[edot]` row in `docs/rigor-debt.md` to record that the algebraic
     first-line identity is now **lean-attested** (tier `sympy+lean`), with both instrument pointers
     (`resogram_edot.py`, `Resogram.lean`), AND record the per-tier outcome for the SymPy-as-gate dataset

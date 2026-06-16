@@ -29,10 +29,15 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
   than one end-to-end symbolic substitution, and (b) **the rendered integrand has an unbalanced paren**
   (`\sin(\Omega (t-t')e^{…}` — missing `)` after `(t-t')`); the verified kernel is `sin(Ω(t−t'))·e^{−β(t−t')}`.
   Surfaced for the owner; not edited.
-- **[`edot`] `verify:sympy` — ✗ located discrepancy.** Energy-rate chain `ė = ẋ(ẍ+ω²x) = −2βẋ² + ω²ẋy`:
-  the **first** equality holds. The **second**, as written `ė = −4βe − ω²(2βx² − ẋy)`, is **wrong** — it is
-  off by `−4βω²x²`. The candidate flagged at inventory time is confirmed: expanding `−4βe = −2βẋ² − 2βω²x²`,
-  the correct closed form is `ė = −4βe + ω²(2βx² + ẋy)` (sign error on the ω²-bracket). `verify/resogram_edot.py`.
+- **[`edot`] `verify:sympy` — ✗→✓ RESOLVED; `verify:lean` — ✓ lean-attested (tier `sympy+lean`).**
+  Energy-rate chain `ė = ẋ(ẍ+ω²x) = −2βẋ² + ω²ẋy`: the **first** equality holds. The **second**, as
+  written `ė = −4βe − ω²(2βx² − ẋy)`, was **wrong** — off by `−4βω²x²`; corrected to
+  `ė = −4βe + ω²(2βx² + ẋy)` (owner-ratified 2026-06-15). The algebraic substitution step
+  (`ẋ(ẍ+ω²x)` with `ẍ = −2βẋ − ω²(x−y)`) is now attested at two tiers:
+  `resogram_edot.py@54710d91` (SymPy, `claim=b575864e`) and `Resogram.lean@3c516103` (Lean4+Mathlib,
+  same claim-hash — kernel-checked). SymPy-as-gate dataset: SymPy ✓ correctly predicted the
+  lean-provable claim; this is one datapoint supporting SymPy as a cheap pre-filter for Lean targets.
+  Attestation: `verified:sympy+lean [edot] claim=b575864e by=resogram_edot.py@54710d91,Resogram.lean@3c516103`.
 - **[`drive`] `verify:sympy` — ✓ (attested `claim=67223e71`).** From `ė=0, ẋ≠0` ⟹ `y = 2(β/ω²)ẋ`, and the
   ẋ-independent solution `ẏ=−2βx`, `ÿ = −ω²y` (drive at the *free* frequency ω, not the eigenfrequency Ω).
   `verify/resogram_drive.py`.
@@ -62,9 +67,10 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
 - **subequation auto-numbering (id:d2f4, wishlist).** Auto-derive `(edot.1)…(edot.4)` handles so per-line
   tags render; also resolves the `[edot]` marker losing its active `\ltag{edot}`. Relates to R2/R3, `.mw`.
 
-**Pilot scorecard:** 5 claims run · 3 ✓ (`sol` partial, `drive`, `eincr`) · 2 ✗ located discrepancies
-(`edot`, `cval`). The loop ran end-to-end and survived two real errors — which was the point. No `verify:lean`
-target here (algebra is SymPy's job); Lean is scoped separately (`TODO.md` id `3317`).
+**Pilot scorecard:** 5 claims run · 5 ✓ (`sol` partial, `drive`, `eincr`, `edot`, `esol`) · 2 ✗ located,
+owner-resolved (`edot` sign error, `esol`/`cval` c≠0). The loop ran end-to-end and survived two real errors
+— which was the point. `[edot]` now carries a `verify:lean` attestation tier too (Lean4+Mathlib kernel-checked,
+Resogram.lean@3c516103) — the algebraic step is the first `sympy+lean` dual-attested claim in this repo.
 
 ## physics/acoustics.md  *(pilot #2)*
 
