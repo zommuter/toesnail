@@ -7,16 +7,16 @@
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
   2026-06-15 (docs/meeting-notes/2026-06-15-1409-resogram-verify-pilot-scope.md); decomposed below.
-  **Cheap half done 2026-06-15** (SymPy: 3 ✓ / 2 ✗ located discrepancies); only Lean (3317) remains. <!-- id:01a7 -->
+  **Cheap half done 2026-06-15** (SymPy: 3 ✓ / 2 ✗ located discrepancies); Lean tier landed 2026-06-16 (id:3317 `edot` first-line proof). Remaining: the ROUTINE follow-ons id:5776/1335/3275 (test wiring, marker upgrade, rigor-debt annotation). <!-- id:01a7 -->
     `_includes/custom-head.html` + handles on the ~5 marked Resogram claims. Pipeline verified by
     `tests/test_render.sh` (local Jekyll build). (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:d0bf -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:9b2d -->
-  - [ ] Stand up `verify/` lake project pinned `v4.30.0-rc2` (lakefile.toml + lean-toolchain + lake-manifest.json
+  - [x] Stand up `verify/` lake project pinned `v4.30.0-rc2` (lakefile.toml + lean-toolchain + lake-manifest.json
     committed; `.gitignore` += `.lake/`; `verify/README.md` lake-build + optional btrfs-reflink footnote) and
     prove `edot_first_line` in `verify/Resogram.lean` via `subst; ring`. SCOPED 2026-06-16 (D1/D2; toolchain
     present, Mathlib pinned to research_lean's cached rev → fast `cache get`). Contract: `cd verify && lake build`
-    exits 0, no `sorry`. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3317 -->
+    exits 0, no `sorry`. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) **DONE 2026-06-16** (strong-execute opus, /relay executor --afk; `lake build` exit 0 + no `sorry` + full `tests/run.sh` PASS + CI green; ẋ/ẍ→xd/xdd Lean-identifier rename; `Resogram.lean` filehash b98f0e42 for id:1335). id:5776/1335/3275 now UNBLOCKED. <!-- id:3317 -->
   - [ ] Add `tests/test_lean.sh` (SKIP w/o lake; else `lake build` + `grep -L sorry`) wired into `tests/run.sh`;
     CI stays SKIP (D4). Contract: `bash tests/run.sh` PASSes; SKIPs cleanly where lake absent.
     (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:5776 -->
