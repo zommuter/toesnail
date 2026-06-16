@@ -18,3 +18,11 @@ defaults:
       path: ""
     values:
       layout: page
+
+# Exclude non-page companions from the rendered site (id:fed0).
+# The .ods holds unique 368-cell enumeration — do NOT delete from repo.
+# The FHE page (crypto/fhe.md → permalink /FHE) still renders.
+exclude:
+  - crypto/fhe.ipynb
+  - crypto/fhe.py
+  - crypto/fhe.ods

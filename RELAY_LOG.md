@@ -165,3 +165,8 @@ recovered-pages infra (id:7fd7 render coverage, id:fed0 crypto exclude) + verify
 ## 2026-06-16 22:14 — executor (claude-opus-4-8, strong-execute)
 
 id:7fd7 done — render coverage for all 5 recovered pages; corrected false wirohsh/photon fails-to-render claim (verified render-clean)
+
+## 2026-06-16 — executor (claude-sonnet-4-6)
+
+Worked id:fed0 — added `exclude:` block to `_config.yml` covering `crypto/fhe.ipynb`, `crypto/fhe.py`, `crypto/fhe.ods`; wired `tests/test_crypto_exclude.sh` into `tests/run.sh`; ticked ROADMAP checkbox. `bash tests/test_crypto_exclude.sh` PASS; full `bash tests/run.sh` SUITE: PASS.
+Friction: none.
