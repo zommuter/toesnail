@@ -82,3 +82,7 @@ no-op: all 3 open ROUTINE items (id:5776/id:1335/id:3275) remain blocked on HARD
 ## 2026-06-16 11:22 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: 1 doc-only commit (04f0361, REVIEW_ME d2f4 deferral note) audited clean since relay-ckpt-20260616-1321 — gaming-scan clean, no test/code changes in window. Suites re-run: test_verify (5✓/0✗), test_verify_hook (6/6), test_mw_mirror green; test_render FAILs only on a host gem-materialization gap (Bundler::GemNotFound — env artifact, NOT a window regression, render files untouched); test_mathjax SKIP (npm). Contract pointer v4 == canonical v4. D2 fix: ticked TODO lines for id:8757/id:d5f9/id:211c (closed [x] in ROADMAP, left [ ] in TODO — multi-line wrap hid them from orphan-scan --cross-ledger which exits clean); id:0e63 correctly stays open in TODO (HARD fidelity-fix follow-up). routine_open=0: the 3 open [ROUTINE] (id:5776/1335/3275) are ALL gated on unbuilt [HARD][INTENSIVE — lean-build] id:3317 (needs --allow-intensive, not auto-run) — reporting 0 to avoid the doomed-no-op execute re-enqueue the 12:32–13:21 log shows.
+
+## 2026-06-16 13:45 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: doc-only d2f4-deferral commit audited clean; D2-ticked TODO id:8757/d5f9/211c; routine_open=0 (3 ROUTINE all gated on unbuilt [HARD][INTENSIVE] id:3317)
