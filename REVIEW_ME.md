@@ -11,7 +11,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
-- [ ] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
+- [x] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
   cartmanjaro divergent-main recovery merge `c1e20b4` refiled owner-authored pages into the
   post-restructure dirs: `physics/entropy.md`, `physics/wirohsh.md`, `physics/photon.md`,
   `crypto/fhe.md` (NEW top-level wing), `essays/supertool.md`. This
@@ -29,6 +29,14 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     `crypto/fhe.ods` holds the unique 368-cell enumeration the `.md` only abbreviates); the open
     question is now only whether they should be **published on the site** — default is source-only
     (excluded via `_config.yml`, ROADMAP id:fed0); say if you want the `.ods` downloadable.
+  - **RESOLVED 2026-06-16 (owner-ratified, /relay human):** all three topology/portal calls confirmed —
+    (a) **keep `physics/photon.md` on the portal, labelled *Rough stub*** (no change; already listed as
+    such at `README.md:30`); (b) **`crypto/` is the confirmed home for FHE** (keep the top-level wing +
+    `ARCHITECTURE.md §4` entry — no change); (c) **`crypto/fhe.ods` stays source-only** (default — `_config.yml`
+    exclude / ROADMAP id:fed0 stand, NOT published downloadable). The 3 `img/craiyon_*.png` assets remain
+    **orphaned by default** (no page references them; owner left no target page — safe default, surface again
+    if one wants them wired). Re-check: `README.md:30` (photon stub line), `README.md:33-35` (crypto wing),
+    `_config.yml` exclude list (fhe.ods). No source content edited — bookkeeping confirmation only.
 
 - [ ] **`verify:` pilot candidates in the recovered pages — owner picks which claims to mark.**
   The recovered derivations carry clean, self-contained results that are natural `verify:` pilots.
@@ -48,6 +56,16 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     not yet markable as `verify:` claims (no closed result). They render fine, though — the page IS in the
     render-test coverage (id:7fd7); "unfinished derivation" is a separate, owner content question.
   - **`physics/photon.md`** carries no closed result yet (Ansatz only) — no pilot until the owner develops it.
+  - **OWNER SELECTION 2026-06-16 (/relay human) — box STAYS OPEN (owner places the markers).** Owner picked
+    **two pilots to mark: `physics/entropy.md` (`verify:sympy`)** and **`crypto/fhe.md` + `crypto/fhe.ods`
+    (`verify:numeric`)**; **`physics/wirohsh.md` DEFERRED** (not selected this round). Per the working contract +
+    the relay scope guard (`physics/*.md` and the FHE content source are Human-only — the AI never edits the
+    theory), **the owner adds the `<!-- verify:sympy -->` / `<!-- verify:numeric -->` comment to the chosen
+    claim(s)** — that placement is the owner's act. **Once the markers land, the instrument plumbing becomes
+    `[ROUTINE]`** (build `verify/entropy_*.py` sympy instruments + a `verify/fhe_*.py` numeric instrument that
+    cross-checks `crypto/fhe.ods`; pin verdicts + `verified:` attestations in `tests/test_verify.sh`, mirroring
+    the existing `resogram_*` pilots). Surfaced as a "you do these" owner action below; the box closes once the
+    markers are in and the next `/relay review` re-derives them.
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by
