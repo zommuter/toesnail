@@ -4,9 +4,8 @@
 
 - [ ] Relay: ALL ROUTINE + HARD bring-up CLOSED 2026-06-16 (re-verified /relay review 20260616-1957). Done: commit-hook cluster (id:8757 post-commit hook, id:d5f9 git-config+doc, id:211c red suite), Lean `edot` cluster tooling (id:5776 test_lean.sh, id:1335 multi-tier marker, id:3275 rigor-debt annotation), HARD bring-up (id:3317 Lean bring-up+proof [HARD+INTENSIVE, lean-build]), id:0e63 mirror fidelity (/meeting D3: faithful four-block .mw mirror owner-ratified + test green), fca7 Makefile, 9868 CI. ONLY OPEN: 2 deferred-HARD/gated, NOT executor work (id:b9bc derivative debt multi-day gated behind id:3317; id:9d8c CI Lean forward-flag gated). Verify-hook JUDGMENT boxes RESOLVED 2026-06-16 (/relay human, id:d8bf): git-notes schema (8757/d5f9) owner-ratified — v1 {status,findings} + forward-compat {triaged,processed,verdict,review_me} FROZEN; mirror fidelity (0e63) RESOLVED 2026-06-16 (/meeting D3, owner-ratified: faithful four-block .mw mirror). Lean cluster SCOPED + promoted to ROADMAP 2026-06-16 /relay review (meeting 0827-lean-edot; toolchain confirmed present). (fca7 Makefile, 9868 CI done). edot/esol (handle renamed from `cval` 2026-06-15) verify instruments re-pinned ✗→✓ + verified green (2026-06-16 /relay review, id:9135 closed). Resogram c-narrative + energy-chain cluster RESOLVED by owner in-document (236fa1b: id:559c/0cb5/f9fe/3999, all REVIEW_ME boxes ticked). Open owner/design work: subequation numbering (id:d2f4), R2/R3 verify-emoji (id:445e), HUMAN-integration walk (id:6501). <!-- id:e27e -->
 
-- [x] Recovered-pages infra: render-test coverage extended to ALL 5 recovered pages (entropy/wirohsh/photon/fhe/supertool — all verified render-clean; the wirohsh/photon "fails to render" claim was wrong) [ROUTINE] DONE 2026-06-16 <!-- id:7fd7 -->
 - [ ] Recovered-pages infra: exclude `crypto/` non-page companions (`fhe.ipynb`/`.py`/`.ods`) from the Jekyll build [ROUTINE] <!-- id:fed0 -->
-- [ ] `verify:` pilot candidates in recovered pages — entropy BE/FD + Lambert-W (sympy), fhe enumeration/`.ods` (numeric), wirohsh tangential-Laplacian (sympy/lean); owner picks which claims to mark → REVIEW_ME. <!-- id:8807 -->
+- [ ] `verify:` pilot candidates in recovered pages — OWNER PICKED 2026-06-16 (/relay human): mark **entropy** BE/FD+Lambert-W (sympy) + **fhe** enumeration/`.ods` (numeric); **wirohsh DEFERRED**. Owner places the `verify:` markers (physics/crypto content is Human-only); then instrument plumbing is [ROUTINE]. See REVIEW_ME. <!-- id:8807 -->
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
   2026-06-15 (docs/meeting-notes/2026-06-15-1409-resogram-verify-pilot-scope.md); decomposed below.
@@ -15,22 +14,6 @@
     `tests/test_render.sh` (local Jekyll build). (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:d0bf -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:9b2d -->
-  - [x] Stand up `verify/` lake project pinned `v4.30.0-rc2` (lakefile.toml + lean-toolchain + lake-manifest.json
-    committed; `.gitignore` += `.lake/`; `verify/README.md` lake-build + optional btrfs-reflink footnote) and
-    prove `edot_first_line` in `verify/Resogram.lean` via `subst; ring`. SCOPED 2026-06-16 (D1/D2; toolchain
-    present, Mathlib pinned to research_lean's cached rev → fast `cache get`). Contract: `cd verify && lake build`
-    exits 0, no `sorry`. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) **DONE 2026-06-16** (strong-execute opus, /relay executor --afk; `lake build` exit 0 + no `sorry` + full `tests/run.sh` PASS + CI green; ẋ/ẍ→x_t/x_tt Lean-identifier naming (owner convention, scales to PDE spatial/mixed); `Resogram.lean` filehash 3c516103 for id:1335). id:5776/1335/3275 now UNBLOCKED. <!-- id:3317 -->
-  - [x] Add `tests/test_lean.sh` (SKIP w/o lake; else `lake build` + `grep -L sorry`) wired into `tests/run.sh`;
-    CI stays SKIP (D4). Contract: `bash tests/run.sh` PASSes; SKIPs cleanly where lake absent.
-    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified green 2026-06-16 /relay review (real `lake build` exit 0, no `sorry`).
-    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:5776 -->
-  - [x] Compressed multi-tier `verified:` marker (D5): escalate `edot` → `verified:sympy+lean` in
-    `physics/Resogram.md`; add the `verified:<tiers> claim=<h8> by=<inst>@<h8>[,…]` grammar to `CONVENTIONS.md`.
-    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified 2026-06-16 /relay review (marker present at Resogram.md:42 w/ `Resogram.lean@3c516103`; grammar in CONVENTIONS.md §2; `test_verify.sh` parses green).
-    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:1335 -->
-  - [x] Annotate `docs/rigor-debt.md`: edot lean-attested; record per-tier outcome (SymPy-as-gate dataset, D5).
-    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified 2026-06-16 /relay review (`[edot]` row shows `sympy+lean` w/ both instrument pointers + SymPy-as-gate datapoint).
-    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3275 -->
 - [ ] NEW `verify:lean` debt — derivative step `ė = ẋ(ẍ+ω²x)` (differentiate `e=½ẋ²+½ω²x²` via Mathlib
   `deriv`/chain-rule, multi-day). Owner: "we can't have unverified maths dangling around" — tracked, not dropped.
   (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:b9bc -->

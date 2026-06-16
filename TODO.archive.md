@@ -32,3 +32,20 @@
 - [x] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
   concatenate-on-squash, loose-note detection via `merge-base --is-ancestor`.
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:211c -->
+- [x] Recovered-pages infra: render-test coverage extended to ALL 5 recovered pages (entropy/wirohsh/photon/fhe/supertool — all verified render-clean; the wirohsh/photon "fails to render" claim was wrong) [ROUTINE] DONE 2026-06-16 <!-- id:7fd7 -->
+  - [x] Stand up `verify/` lake project pinned `v4.30.0-rc2` (lakefile.toml + lean-toolchain + lake-manifest.json
+    committed; `.gitignore` += `.lake/`; `verify/README.md` lake-build + optional btrfs-reflink footnote) and
+    prove `edot_first_line` in `verify/Resogram.lean` via `subst; ring`. SCOPED 2026-06-16 (D1/D2; toolchain
+    present, Mathlib pinned to research_lean's cached rev → fast `cache get`). Contract: `cd verify && lake build`
+    exits 0, no `sorry`. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) **DONE 2026-06-16** (strong-execute opus, /relay executor --afk; `lake build` exit 0 + no `sorry` + full `tests/run.sh` PASS + CI green; ẋ/ẍ→x_t/x_tt Lean-identifier naming (owner convention, scales to PDE spatial/mixed); `Resogram.lean` filehash 3c516103 for id:1335). id:5776/1335/3275 now UNBLOCKED. <!-- id:3317 -->
+  - [x] Add `tests/test_lean.sh` (SKIP w/o lake; else `lake build` + `grep -L sorry`) wired into `tests/run.sh`;
+    CI stays SKIP (D4). Contract: `bash tests/run.sh` PASSes; SKIPs cleanly where lake absent.
+    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified green 2026-06-16 /relay review (real `lake build` exit 0, no `sorry`).
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:5776 -->
+  - [x] Compressed multi-tier `verified:` marker (D5): escalate `edot` → `verified:sympy+lean` in
+    `physics/Resogram.md`; add the `verified:<tiers> claim=<h8> by=<inst>@<h8>[,…]` grammar to `CONVENTIONS.md`.
+    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified 2026-06-16 /relay review (marker present at Resogram.md:42 w/ `Resogram.lean@3c516103`; grammar in CONVENTIONS.md §2; `test_verify.sh` parses green).
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:1335 -->
+  - [x] Annotate `docs/rigor-debt.md`: edot lean-attested; record per-tier outcome (SymPy-as-gate dataset, D5).
+    DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified 2026-06-16 /relay review (`[edot]` row shows `sympy+lean` w/ both instrument pointers + SymPy-as-gate datapoint).
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3275 -->
