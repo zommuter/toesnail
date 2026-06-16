@@ -39,7 +39,7 @@ $$
 \end{aligned} \ltag{edot}
 $$
 
-<!-- verified:sympy [edot] claim=b575864e by=resogram_edot.py@54710d91 -->
+<!-- verified:sympy+lean [edot] claim=b575864e by=resogram_edot.py@54710d91,Resogram.lean@3c516103 -->
 <!-- verify:sympy [edot] energy-rate chain: ė=ẋ(ẍ+ω²x)=−2βẋ²+ω²ẋy = −4βe+ω²(2βx²+ẋy). inst=verify/resogram_edot.py.
      RESOLVED 2026-06-15 (owner-ratified via /relay human): the located sign discrepancy on the SECOND
      equality was confirmed and the source corrected to ė = −4βe + ω²(2βx² + ẋy). Instrument RE-PINNED

@@ -73,7 +73,12 @@ a signature recording *that* it was checked and *by what*, never the result:
 
 ```html
 <!-- verified:<tier> claim=<srepr-hash8> by=<instrument>@<filehash8> -->
+<!-- verified:<tiers> [handle] claim=<claimhash8> by=<inst1>@<h8>[,<inst2>@<h8>] -->
 ```
+
+`<tiers>` ∈ {`sympy`, `lean`, `sympy+lean`} — a `+`-joined list when more than one tier has attested the
+same claim. Escalation adds a tier and a new instrument pointer to `by=`; the `claim=` hash stays
+byte-identical across tiers (it is pinned to the owner-stated claim, not to the instrument).
 
 - **Composite key (Nix-derivation style):** `claim=` is the first 8 hex of `sha256(srepr(<canonical sympy
   claim>))` — hashing SymPy's `srepr` of the *sympified* claim, so cosmetic LaTeX edits don't false-trigger

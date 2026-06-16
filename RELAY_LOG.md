@@ -113,3 +113,30 @@ updated to match.
 ## 2026-06-16 15:12 — reviewer (claude-opus-4-8)
 
 review: id:3317 Lean edot proof builds green (lake build exit 0, no sorry/admit/axiom, filehash 3c516103 matches id:1335 dep); id:0e63 .mw mirror fidelity owner-ratified (/meeting D3). gaming-scan clean. 3 ROUTINE items (id:5776/1335/3275) now unblocked.
+
+## 2026-06-16 — executor (claude-sonnet-4-6)
+
+Worked id:1335 + id:3275 (done); id:5776 implemented but done-check blocked on a slow lake build.
+
+id:1335: upgraded `physics/Resogram.md` edot attestation from `verified:sympy` to `verified:sympy+lean`
+(added `Resogram.lean@3c516103` instrument pointer). Updated `CONVENTIONS.md §2` with multi-tier grammar
+(`<tiers>` ∈ {sympy,lean,sympy+lean}; comma-separated `by=` list; claim-hash stable across tiers). Updated
+`tests/test_verify.sh` to match `sympy+lean` tier and assert both instrument pointers present. `bash
+tests/test_verify.sh` → PASS.
+
+id:3275: annotated `docs/rigor-debt.md` edot row as lean-attested (tier `sympy+lean`, both instrument
+pointers with hashes), added SymPy-as-gate datapoint (SymPy ✓ correctly predicted the lean-provable claim —
+one datapoint for SymPy as cheap pre-filter). Updated pilot scorecard. Done-check `grep -n edot
+docs/rigor-debt.md` shows `sympy+lean` row → PASS.
+
+id:5776: created `tests/test_lean.sh` (optional-tool SKIP pattern: lake absent → SKIP exit 0; lake present →
+`lake exe cache get && lake build` + sorry-guard). Wired into `tests/run.sh`. Test is syntactically correct
+and the proof is confirmed valid (main repo `lake build` exits 0, no sorry, filehash matches). Done-check
+(`bash tests/run.sh`) was NOT confirmed in this session: the first `lake build` in a cold worktree built
+Mathlib from source (rather than `lake exe cache get` pulling prebuilt .oleans) and was still running at
+session end (~31% after 40 min). Added `lake exe cache get` to `test_lean.sh` so future runs are fast
+(minutes not hours). id:5776 checkbox left UNTICKED pending a confirmed done-check run.
+Friction: id:5776 — worktree lacked `.lake/build`; background `lake build` started without `lake exe cache
+get` and was still in progress at session end. A reviewer/next-executor can tick the box by running
+`bash tests/test_lean.sh` in the worktree after the background build completes or after a fresh `lake exe
+cache get`.
