@@ -144,3 +144,8 @@ cache get`.
 ## 2026-06-16 16:38 — executor (sonnet, relay-loop)
 
 feat: id:1335+3275 done; id:5776 implemented (test_lean.sh + run.sh wire) pending lake-build done-check confirmation
+
+## 2026-06-16 — executor (claude-sonnet-4-6)
+
+Worked id:5776 done-check confirmation. The previous executor left the checkbox unticked because the first `lake build` ran cold without `lake exe cache get` and was still building at session end. This session ran `bash tests/test_lean.sh` in the worktree: `lake exe cache get` pulled prebuilt .oleans (decompressed 8297 files), `lake build` exited 0 in ~5.8s (Resogram only), sorry-guard passed. Full `bash tests/run.sh` SUITE: PASS. Ticked id:5776 checkbox. All ROUTINE items now closed.
+Friction: none — the warm cache path added by the prior executor (`lake exe cache get` before `lake build`) worked exactly as intended.
