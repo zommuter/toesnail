@@ -92,6 +92,10 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   id:3b4c) aligns each block independently; owner notes `.mw` may make this moot. (Handle drift is RESOLVED by
   the split: `\ltag{e}` on the energy block, `\ltag{edot}` on the ė-chain's outer block re-attaches the
   `[edot]` marker.) Relates to ROADMAP R2/R3 (id:445e) and `.mw`. <!-- id:d2f4 -->
+  — **DEFERRED pending `.mw` (owner, /relay human 2026-06-16).** Disposition decided: do NOT
+    schedule pool work now; the `.mw` motivating example may make per-line subequation numbering
+    moot. Box stays OPEN as a tracked wishlist; revisit only after `.mw` lands (then either build
+    or drop). Not "build now", not dropped.
 
 ## Verify commit-hook cluster — judgment calls (`/meeting` 2026-06-16, id:d8bf)
 
