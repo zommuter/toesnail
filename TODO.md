@@ -69,6 +69,17 @@
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
   in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
+- [ ] **Cross-project (triad):** add the owner's Diplomarbeit `.git` repo — a fully finished LaTeX project —
+  as a **second acceptance/test corpus** for the `.mw`/toesnail/collAIb triad (N=2 beyond toesnail's
+  north-star physics docs; exercises `.mw` ingest + verification on real finished LaTeX). **MIRRORED in
+  `mathematical-writing/TODO.md` under the same `id:6ab8`** — keep both copies in sync MANUALLY (no automated
+  cross-PROJECT sync: relay `--cross-ledger` is intra-repo only, inbox routing is one-way). Wherever it's
+  worked/closed, tick the twin. Likely resolved in a manual `/meeting`. <!-- id:6ab8 -->
+- [ ] **Cross-project (triad) — `/meeting`:** discuss the potentially connecting dots between **zkm
+  infrastructure** (embeddings / semantic retrieval / knowledge-mgmt) and the `.mw`/toesnail/collAIb triad.
+  toesnail is the documented hub (`docs/dependencies.md`); this would extend the dependency map with a zkm
+  node. **MIRRORED in `zkm/TODO.md` under the same `id:4159`** — keep both copies in sync MANUALLY; tick the
+  twin wherever closed. Likely a manual `/meeting`. <!-- id:4159 -->
 
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
