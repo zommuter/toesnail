@@ -14,9 +14,13 @@
     `tests/test_render.sh` (local Jekyll build). (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:d0bf -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:9b2d -->
-- [ ] NEW `verify:lean` debt — derivative step `ė = ẋ(ẍ+ω²x)` (differentiate `e=½ẋ²+½ω²x²` via Mathlib
-  `deriv`/chain-rule, multi-day). Owner: "we can't have unverified maths dangling around" — tracked, not dropped.
-  (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:b9bc -->
+- [ ] `verify:lean` debt — derivative step `edot_deriv` (`ė=ẋ(ẍ+ω²x)`). **RE-SCOPED `[ROUTINE]` + `[PILOT —
+  Sonnet-on-Lean4]` 2026-06-16 /meeting**: fidelity judgment consumed; prove a FROZEN `HasDerivAt` signature
+  in `verify/Resogram.lean` (`by` body only) + lean-only marker + rigor-debt row. See ROADMAP id:b9bc for the
+  frozen signature, proof sketch, DoD, and pilot note. (2026-06-16-2257-edot-deriv-lean-formalization.md) <!-- id:b9bc -->
+- [ ] (GATED — forward-flag) Migrate toesnail's `<!-- verify/verified -->` HTML-comment markers to the `.mw`
+  brace-attribute surface (`{#anchor}`/`{@type target}`). Gate: the `.mw` brace-attestation design (routed:e4df)
+  landing. Owner is "_strongly_ against HTML comments". (2026-06-16-2257-edot-deriv-lean-formalization.md) <!-- id:a9d2 -->
 - [ ] (Forward-flag, GATED) CI Lean/Mathlib build — parked; ~60-min cold build for one one-liner. Gate: warranted
   only if local kernel-checking proves insufficient. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:9d8c -->
     (drive + eincr attested; sol withheld pending owner paren-fix.) (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:ee36 -->

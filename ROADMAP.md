@@ -172,12 +172,43 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Context**: `docs/rigor-debt.md` is the triage menu, not a work order; this only annotates an already-
     resolved row.
 
-- [ ] (DEBT, multi-day — NOT yet executor work) Derivative step `ė=ẋ(ẍ+ω²x)` via Mathlib `deriv` [HARD — strong model] <!-- id:b9bc -->
-  - **Why deferred**: differentiating `e=½ẋ²+½ω²x²` and proving `ė=ẋ(ẍ+ω²x)` via Mathlib `deriv`/chain-rule
-    is a multi-day formalization SymPy never checked (`resogram_edot.py` only does the *algebraic* step).
-    Owner: "we can't have unverified maths dangling around" → tracked `verify:lean` debt, NOT discarded.
-    Kept open and unsized as future strong-model work; not dispatched as a `[ROUTINE]` unit.
-  - **Context**: gated behind id:3317 landing (needs the lake project + Mathlib in place first).
+- [ ] Prove `edot_deriv` (derivative step `ė=ẋ(ẍ+ω²x)`) via Mathlib `HasDerivAt` [ROUTINE] [PILOT — Sonnet-on-Lean4] <!-- id:b9bc -->
+  - **Re-scoped 2026-06-16** (/meeting `2026-06-16-2257-edot-deriv-lean-formalization.md`): the fidelity
+    judgment is consumed in the meeting; what remains is filling one proof body against a FROZEN signature,
+    which is mechanical + testable → `[ROUTINE]`. The 0827 "multi-day" estimate priced the *unscoped*
+    problem; EOM-free + `HasDerivAt.pow` reduces it to ~1 session. id:3317 (lake + Mathlib) HAS LANDED.
+  - **FROZEN signature** (D1 — owner-ratified; do NOT alter name, hypotheses, or conclusion; do NOT add
+    hypotheses). Add as a second theorem in `verify/Resogram.lean`:
+    ```
+    theorem edot_deriv (x v a : ℝ → ℝ) (ω : ℝ) (t : ℝ)
+        (hx : HasDerivAt x (v t) t)          -- ẋ = v
+        (hv : HasDerivAt v (a t) t)          -- ẍ = a
+        : HasDerivAt (fun s => (1/2)*(v s)^2 + (1/2)*ω^2*(x s)^2)
+                     (v t * (a t + ω^2 * x t)) t := by
+      sorry  -- ← fill ONLY this; see proof sketch
+    ```
+  - **Proof sketch** (~5 lines, standard Mathlib analysis): combine `hv.pow 2` (rate `2·v·a`) scaled by ½
+    with `hx.pow 2` scaled by `ω²/2`, then reconcile to `v(a+ω²x)`:
+    `(((hv.pow 2).const_mul (1/2)).add ((hx.pow 2).const_mul (ω^2/2))).congr_deriv (by ring)` — if
+    `congr_deriv` is fussy, `convert (((hv.pow 2)…).add …) using 1; ring`. Exact lemma names may need a
+    `exact?`/`apply?` nudge; the shape is fixed.
+  - **Why `HasDerivAt` not `deriv`** (D1): Mathlib `deriv` is total junk-on-failure (returns `0` off-domain),
+    a latent fidelity hole; `HasDerivAt` witnesses carry differentiability in named hyps. Do NOT switch to a
+    `deriv`-based statement.
+  - **Attestation** (D3/D4 — the allowed mechanical-plumbing carve-out, NO prose/math edits): add a
+    `<!-- verify:lean [edot_deriv] -->` HTML-comment marker near edot.1 in `physics/Resogram.md`, escalate to
+    `<!-- verified:lean [edot_deriv] claim=<h8> by=Resogram.lean@<h8> -->` once proven (lean-only tier; the
+    grammar already admits it — NO CONVENTIONS change). Add a `[edot_deriv]` row to `docs/rigor-debt.md`:
+    lean-attested + **SymPy-blind** (record as the contrast datapoint for the SymPy-as-gate eval). Interim
+    HTML-comment carrier is deliberate (corpus consistency); the brace-grammar migration is id:a9d2 (gated).
+  - **Done-check**: `cd verify && lake build` exit 0; `verify/Resogram.lean` contains `edot_deriv` with the
+    EXACT frozen signature, no added/weakened hyps; `grep -L sorry verify/Resogram.lean` clean; `bash
+    tests/run.sh` PASSes (`test_lean.sh` unchanged — second theorem in the same file is already covered).
+  - **PILOT (owner)**: this run is an n=1 measurement of how well a Sonnet executor handles a simple Lean4
+    proof. The `RELAY_LOG.md` self-report MUST record the experience honestly: clean-close / flailed /
+    needed handback / slipped a `sorry` the grep caught — feeds the question of whether simple Lean4 work
+    can be ROUTINE-dispatched to Sonnet generally. HANDBACK is a VALID outcome — if the proof resists, say
+    so in the log rather than weakening the signature or `sorry`-ing.
 
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
