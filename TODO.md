@@ -12,8 +12,24 @@
     `tests/test_render.sh` (local Jekyll build). (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:96ad -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:d0bf -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:9b2d -->
-  - [ ] Write ≥1 Lean proof (`ė` first-line identity); stand up Lean4+Mathlib via `lake`, `verify/Resogram.lean`.
-    Heaviest item; deferred to its own session. (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:3317 -->
+  - [ ] Stand up `verify/` lake project pinned `v4.30.0-rc2` (lakefile.toml + lean-toolchain + lake-manifest.json
+    committed; `.gitignore` += `.lake/`; `verify/README.md` lake-build + optional btrfs-reflink footnote) and
+    prove `edot_first_line` in `verify/Resogram.lean` via `subst; ring`. SCOPED 2026-06-16 (D1/D2; toolchain
+    present, Mathlib pinned to research_lean's cached rev → fast `cache get`). Contract: `cd verify && lake build`
+    exits 0, no `sorry`. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3317 -->
+  - [ ] Add `tests/test_lean.sh` (SKIP w/o lake; else `lake build` + `grep -L sorry`) wired into `tests/run.sh`;
+    CI stays SKIP (D4). Contract: `bash tests/run.sh` PASSes; SKIPs cleanly where lake absent.
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:5776 -->
+  - [ ] Compressed multi-tier `verified:` marker (D5): escalate `edot` → `verified:sympy+lean` in
+    `physics/Resogram.md`; add the `verified:<tiers> claim=<h8> by=<inst>@<h8>[,…]` grammar to `CONVENTIONS.md`.
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:1335 -->
+  - [ ] Annotate `docs/rigor-debt.md`: edot lean-attested; record per-tier outcome (SymPy-as-gate dataset, D5).
+    (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3275 -->
+- [ ] NEW `verify:lean` debt — derivative step `ė = ẋ(ẍ+ω²x)` (differentiate `e=½ẋ²+½ω²x²` via Mathlib
+  `deriv`/chain-rule, multi-day). Owner: "we can't have unverified maths dangling around" — tracked, not dropped.
+  (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:b9bc -->
+- [ ] (Forward-flag, GATED) CI Lean/Mathlib build — parked; ~60-min cold build for one one-liner. Gate: warranted
+  only if local kernel-checking proves insufficient. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:9d8c -->
     (drive + eincr attested; sol withheld pending owner paren-fix.) (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:ee36 -->
     (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:7340 -->
     grammar + §3 carve-out. (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:3f57 -->
