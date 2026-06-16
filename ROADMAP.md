@@ -35,6 +35,62 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
   - **Context**: mirror the local toolchain setup in `CLAUDE.md`. Do not gate `main` on it
     without the owner's say-so; start as a reporting workflow.
 
+### Verify commit-hook cluster (v1 HARD tier — TOOLING)
+
+Design spec: `docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md` (D1–D6). Order is by
+dependency: **0e63 (mirror) → 8757 (hook, depends on 0e63 + `.mw`) → d5f9 (config + doc)**. The shared
+red suite is `tests/test_verify_hook.sh` (+ `tests/test_mw_mirror.sh` for the `.mw` DAG signal); both are
+**id:211c's deliverable** — already AUTHORED by this handoff; the executor's job is to make them GREEN, not
+to write them. Do NOT mint new ids; do NOT touch physics content.
+
+- [ ] Stand up a one-section Resogram `.mw` mirror the HARD tier reads [ROUTINE] <!-- id:0e63 -->
+  - **Acceptance**: a checked-in `.mw` file (e.g. `verify/mirror/resogram_esol.mw`) FAITHFULLY transcribes
+    ONE Resogram section's equations into `.mw` fragment syntax — the `esol` energy form (handle `e`), a
+    sliding-average consumer of `e` (handle `ebar`), and the independent maintenance drive (handle `y`).
+    It invents/alters NO physics (it mirrors `physics/Resogram.md` handles `esol`/`e`/`ymaint`). Editing the
+    `e`/`esol` fragment flags its `$e$` citation + the `ebar` average STALE via `stale_after_edit`, while the
+    unrelated `y` is untouched. Model it on `~/src/mathematical-writing/examples/resogram_cval.mw`.
+  - **Tests**: `tests/test_mw_mirror.sh` (`# roadmap:0e63`) — runs `stale_after_edit` over the mirror via
+    `uv run --project /home/tobias/src/mathematical-writing` and asserts the stale/not-stale split. (RED:
+    `# unverified` until the mirror exists — see done-check; a SKIP is NOT a pass.)
+  - **Done-check**: `bash tests/test_mw_mirror.sh` (must run the `.mw` DAG, not SKIP).
+  - **Context**: `.mw` package import is `mathematical_writing` (NOT `mw`); `stale_after_edit(old, new)` is
+    in `mathematical_writing.dag`; `parse()` in `mathematical_writing.parser`. FIDELITY is a judgment call —
+    REVIEW_ME box (1) asks the owner to confirm the mirror matches the source section. N=2 guard: mirror ONE
+    section only.
+
+- [ ] Implement the v1 `post-commit` hook (deterministic HARD tier) [ROUTINE] <!-- id:8757 -->
+  - **Acceptance**: a TRACKED `hooks/post-commit` (installed via `core.hooksPath hooks`, set in id:d5f9)
+    that, on an OWNER commit, runs the HARD tier (`stale_after_edit` over the id:0e63 mirror) and appends a
+    `git notes --ref=refs/notes/verify` note carrying `status:pending` + findings (append-only, never
+    deletes). It **no-ops in a relay context** (`RELAY_SKIP=1` authoritative; `/worktrees/` substring in
+    `git rev-parse --git-dir` fallback) — no note written, commit succeeds. It **degrades gracefully** when
+    `.mw` is unavailable (HARD tier no-ops, logs "skipped: .mw unavailable", commit still succeeds). It
+    **NEVER calls an LLM** and never raises/hangs.
+  - **Tests**: `tests/test_verify_hook.sh` (`# roadmap:8757`) — pending-note-on-owner-commit,
+    `RELAY_SKIP=1` no-op, `/worktrees/` path no-op, graceful-degrade-without-`.mw`, loose-note detection via
+    `git merge-base --is-ancestor`. (currently RED)
+  - **Done-check**: `bash tests/test_verify_hook.sh`.
+  - **Context**: DEPENDS ON id:0e63 (the mirror) + `.mw` being importable. Invariants: never-an-LLM,
+    `.mw`-optional, relay-skip — see `CLAUDE.md` → "Verify commit-hook". REVIEW_ME box (2) asks the owner to
+    confirm the note schema/field set. Hook is the observe-first logger; SOFT/LLM tier is NOT here.
+
+- [ ] Set git config + document the hook install in `CLAUDE.md` [ROUTINE] <!-- id:d5f9 -->
+  - **Acceptance**: repo git config sets `notes.rewriteRef = refs/notes/verify` and
+    `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash) and
+    `core.hooksPath = hooks` (tracked-hook install). A squash of two noted commits preserves BOTH findings.
+    `CLAUDE.md` documents the exact install/config commands. Prefer a `make install-hooks` target (or a
+    committed `tests/`-runnable setup script) so the config is reproducible, not hand-typed.
+  - **Tests**: `tests/test_verify_hook.sh` (`# roadmap:d5f9`) — the `concatenate-on-squash` case asserts
+    both findings survive a squash once `notes.rewriteMode=concatenate` is set. (currently RED)
+  - **Done-check**: `bash tests/test_verify_hook.sh` (the squash case) + `git config --get notes.rewriteMode`.
+  - **Context**: the `core.hooksPath` setup is folded in here (per the meeting note's hook-install
+    decision). Config is local-repo, never global.
+
+- [ ] **Test suite for the hook cluster** — `tests/test_verify_hook.sh` + `tests/test_mw_mirror.sh` <!-- id:211c -->
+  - This id is fulfilled by the C3 red suite this handoff already AUTHORED. The executor does NOT write these
+    tests — its job across id:0e63/8757/d5f9 is to make them go GREEN. Recorded here for id-continuity only.
+
 - [ ] Lean proof of the `ė` first-line identity + stand up Lean4+Mathlib via `lake` [HARD — strong model] <!-- id:3317 -->
   - **Why HARD**: heavy toolchain bring-up (Lean4 + Mathlib via `lake`, large build) and a
     non-trivial formalization; reviewer-model + likely its own session. May HANDBACK if the
