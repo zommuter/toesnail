@@ -80,6 +80,12 @@
   toesnail is the documented hub (`docs/dependencies.md`); this would extend the dependency map with a zkm
   node. **MIRRORED in `zkm/TODO.md` under the same `id:4159`** — keep both copies in sync MANUALLY; tick the
   twin wherever closed. Likely a manual `/meeting`. <!-- id:4159 -->
+- [ ] **Comment / annotation system for the GH Pages site** (idea salvaged from the archived `gtnsd` repo,
+  see `gtnsd-archive` branch). Candidates: hypothes.is annotation overlay, staticman, `ghpages-ghcomments`,
+  or a Jekyll static-comments recipe. Ties into collAIb's "live `verify:` assist UI" (annotation = surfacing
+  rigor-debt in-page) and the `[edot]`-style handles (anchor targets). NB the gtnsd-era worry "how do
+  annotations survive content changing over time?" is the inflownistration/staleness problem (`.mw` `id:aae4`).
+  Design before wiring; low priority. <!-- id:d973 -->
 
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as

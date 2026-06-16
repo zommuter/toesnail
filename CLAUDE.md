@@ -23,6 +23,10 @@ decides every resolution.
 - `physics/` — topic explorations: `lasercool.md` (laser cooling), `acoustics.md` (Navier–Stokes/acoustics),
   `Resogram.md` (driven harmonic oscillator energy method).
 - `essays/` — non-mathematical wing: `Narrativium.md`.
+- **`gtnsd-archive` branch** (orphan, no common ancestor with `main`) — preserved full history of the
+  retired `gtnsd` repo (the ~2017 "inflownistration" / information-flow-administration origin; the standalone
+  repo was archived on GitHub + dropped 2026-06-16). Conceptually essays-wing material; its "Inflownistration"
+  section is an owner-authored essay candidate. See `.mw` `id:aae4`.
 - `img/`, `_includes/`, `_config.yml` — Jekyll site assets (theme: minima).
 - `CONVENTIONS.md` — authoring conventions (equation handles, `verify:` markers, source-stays-plain) + the
   AI working contract.
