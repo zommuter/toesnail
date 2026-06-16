@@ -19,3 +19,16 @@
 - [x] `[MEETING]` Two-tier **relay-aware commit-hook** — DESIGN RESOLVED 2026-06-16
 - [x] Resogram energy-chain located-discrepancy cluster — RESOLVED in-document by owner (commit `236fa1b`,
 - [x] Rename Resogram energy handle `cval`→`esol` (analytical energy SOLUTION; old name encoded the answered
+- [x] Implement v1 `post-commit` hook: deterministic HARD tier (`.mw` DAG library over a one-section Resogram
+  `.mw` mirror) → `git notes --ref=refs/notes/verify append` `status:pending`; relay-context no-op (`RELAY_SKIP`
+  authoritative + `/worktrees/` path fallback); graceful-degrade when `.mw` unavailable; **never calls an LLM**.
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:8757 -->
+- [x] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
+  `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash).
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:d5f9 -->
+- [x] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
+  `.mw` DAG-as-library; mirror ONE section only — N=2 guard).
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:0e63 -->
+- [x] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
+  concatenate-on-squash, loose-note detection via `merge-base --is-ancestor`.
+  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:211c -->

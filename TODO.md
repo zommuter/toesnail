@@ -2,7 +2,7 @@
 
 ## Current
 
-- [ ] Relay: open ROADMAP items — ROUTINE (commit-hook cluster: id:8757 post-commit hook, id:d5f9 git-config+doc; Lean `edot` cluster tooling: id:5776 test_lean.sh, id:1335 multi-tier marker, id:3275 rigor-debt annotation; red suite id:211c authored) + HARD (id:0e63 `.mw` mirror fidelity-fix [RECLASSIFIED ROUTINE→HARD 2026-06-16 /relay human: DAG-mechanics green but owner REJECTED transcription fidelity — ebar must carry the source half-period convolution integral (not `Omega/pi*e`) + delta=atan2(Ω,β) as its own .mw fragment→ δ→e→ebar chain; HARD because test_mw_mirror.sh gives ZERO fidelity signal (.mw keys DAG edges on regex symbol refs — green for faithful AND unfaithful alike) + faithful e(t-t') needs .mw computation-semantics judgment, maybe cross-repo], id:3317 Lean bring-up+proof [HARD+INTENSIVE, lean-build]) + 2 deferred-HARD/gated (id:b9bc derivative debt multi-day, id:9d8c CI Lean gated). Verify-hook JUDGMENT boxes RESOLVED 2026-06-16 (/relay human, id:d8bf): git-notes schema (8757/d5f9) owner-ratified — v1 {status,findings} + forward-compat {triaged,processed,verdict,review_me} FROZEN; mirror fidelity (0e63) rejected→reopened as HARD (above). Lean cluster SCOPED + promoted to ROADMAP 2026-06-16 /relay review (meeting 0827-lean-edot; toolchain confirmed present). (fca7 Makefile, 9868 CI done). edot/esol (handle renamed from `cval` 2026-06-15) verify instruments re-pinned ✗→✓ + verified green (2026-06-16 /relay review, id:9135 closed). Resogram c-narrative + energy-chain cluster RESOLVED by owner in-document (236fa1b: id:559c/0cb5/f9fe/3999, all REVIEW_ME boxes ticked). Open owner/design work: subequation numbering (id:d2f4), R2/R3 verify-emoji (id:445e), HUMAN-integration walk (id:6501). <!-- id:e27e -->
+- [ ] Relay: open ROADMAP items — ROUTINE (commit-hook cluster: id:8757 post-commit hook, id:d5f9 git-config+doc; Lean `edot` cluster tooling: id:5776 test_lean.sh, id:1335 multi-tier marker, id:3275 rigor-debt annotation; red suite id:211c authored) + HARD (id:3317 Lean bring-up+proof [HARD+INTENSIVE, lean-build]) [id:0e63 mirror fidelity RESOLVED 2026-06-16 /meeting D3: faithful four-block .mw mirror owner-ratified + test green] + 2 deferred-HARD/gated (id:b9bc derivative debt multi-day, id:9d8c CI Lean gated). Verify-hook JUDGMENT boxes RESOLVED 2026-06-16 (/relay human, id:d8bf): git-notes schema (8757/d5f9) owner-ratified — v1 {status,findings} + forward-compat {triaged,processed,verdict,review_me} FROZEN; mirror fidelity (0e63) RESOLVED 2026-06-16 (/meeting D3, owner-ratified: faithful four-block .mw mirror). Lean cluster SCOPED + promoted to ROADMAP 2026-06-16 /relay review (meeting 0827-lean-edot; toolchain confirmed present). (fca7 Makefile, 9868 CI done). edot/esol (handle renamed from `cval` 2026-06-15) verify instruments re-pinned ✗→✓ + verified green (2026-06-16 /relay review, id:9135 closed). Resogram c-narrative + energy-chain cluster RESOLVED by owner in-document (236fa1b: id:559c/0cb5/f9fe/3999, all REVIEW_ME boxes ticked). Open owner/design work: subequation numbering (id:d2f4), R2/R3 verify-emoji (id:445e), HUMAN-integration walk (id:6501). <!-- id:e27e -->
 
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
@@ -53,19 +53,6 @@
   dangling-symbol) → `/relay review` where Claude Code is the model (no ToS issue). REVIEW_ME stays the
   durable record; `/relay human` owns the `valid|noise` verdict. Coupling kept LOOSE (graceful-degrade,
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
-- [x] Implement v1 `post-commit` hook: deterministic HARD tier (`.mw` DAG library over a one-section Resogram
-  `.mw` mirror) → `git notes --ref=refs/notes/verify append` `status:pending`; relay-context no-op (`RELAY_SKIP`
-  authoritative + `/worktrees/` path fallback); graceful-degrade when `.mw` unavailable; **never calls an LLM**.
-  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:8757 -->
-- [x] Git config setup (document in `CLAUDE.md`): `notes.rewriteRef = refs/notes/verify` +
-  `notes.rewriteMode = concatenate` (default `overwrite` drops merged notes on squash).
-  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:d5f9 -->
-- [x] Stand up the one-section Resogram `.mw` mirror the HARD tier reads (realizes deferred `id:04bb` via
-  `.mw` DAG-as-library; mirror ONE section only — N=2 guard).
-  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:0e63 -->
-- [x] Tests for the hook: pending-note-on-owner-commit, relay-worktree no-op, graceful-degrade-without-`.mw`,
-  concatenate-on-squash, loose-note detection via `merge-base --is-ancestor`.
-  (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md) <!-- id:211c -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
   in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
   rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
