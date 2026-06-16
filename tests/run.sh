@@ -4,7 +4,7 @@
 set -u
 here="$(dirname "$0")"
 rc=0
-for t in test_verify.sh test_render.sh; do
+for t in test_verify.sh test_render.sh test_verify_hook.sh test_mw_mirror.sh; do
   echo "============================================================"
   echo "RUN $t"
   echo "============================================================"

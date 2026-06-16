@@ -93,6 +93,29 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   the split: `\ltag{e}` on the energy block, `\ltag{edot}` on the ė-chain's outer block re-attaches the
   `[edot]` marker.) Relates to ROADMAP R2/R3 (id:445e) and `.mw`. <!-- id:d2f4 -->
 
+## Verify commit-hook cluster — judgment calls (`/meeting` 2026-06-16, id:d8bf)
+
+> The hook itself is TOOLING (executor-eligible). These two boxes are the genuine
+> JUDGMENT CALLS the executor cannot decide: a theory-adjacent fidelity check and a
+> contract-shape check. Resolved via `/relay human` / `/meeting`; the executor proceeds
+> against the red tests meanwhile.
+
+- [ ] `tests/test_mw_mirror.sh` (roadmap:0e63) — **does the one-section `.mw` mirror
+  faithfully match the Resogram source section?** The mirror (`verify/mirror/resogram_esol.mw`)
+  is a DERIVED artifact transcribing `physics/Resogram.md` handles `esol`/`e`/`ymaint` into
+  `.mw` fragment syntax. Faithful transcription is theory-adjacent — the AI must NOT alter
+  physics. **Owner:** confirm the mirror's equations match the source section (energy form,
+  sliding-average consumer, maintenance drive), or correct the transcription. The DAG
+  staleness *mechanics* are machine-tested; this box is about FIDELITY to the owner's math.
+
+- [ ] `tests/test_verify_hook.sh` (roadmap:8757/d5f9) — **is the chosen `git notes` schema
+  the right contract?** v1 writes `status:pending findings:…` on `refs/notes/verify`
+  (append-only, never deleted). The meeting (D4) envisions later transitions
+  `pending → triaged → processed verdict:valid|noise review_me:id:XXXX` (the latter added by
+  `/relay review` + `/relay human`, not the hook). **Owner:** confirm `status` + `findings`
+  is the right v1 field set and that the `triaged`/`processed`/`verdict`/`review_me` fields are
+  the right forward-compatible extension, before executors freeze the note format.
+
 ## Visual / manual (run these — never auto-ticked)
 
 - [ ] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a

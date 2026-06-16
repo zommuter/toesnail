@@ -65,6 +65,34 @@ decides every resolution.
   visual checks. **Lesson:** HTML-grep gave false confidence (the `\gdef` bug rendered fine in source) — test
   the actual render.
 
+## Verify commit-hook (relay-aware, two-tier) — v1 HARD tier
+Design: `docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md` (decisions D1–D6) and
+`docs/dependencies.md` §"two-tier detection proposal". v1 ships the **deterministic HARD tier only** as a
+non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, never in the hook.
+
+- **Carrier — ephemeral `git notes` on `refs/notes/verify`.** The hook writes findings as notes
+  (`status:pending` + findings), append-only, **never deletes** (the note is also the observe-first log).
+  Notes are local-only, not pushed; lossy-on-rebase is acceptable (REVIEW_ME.md is the durable record).
+- **Two git-config settings (id:d5f9).** Repo config MUST set
+  `notes.rewriteRef = refs/notes/verify` (carry notes across rebase/amend) and
+  `notes.rewriteMode = concatenate` (default `overwrite` silently drops merged notes on squash).
+- **Hook install — TRACKED, never an untracked `.git/hooks/` file.** Use a checked-in `hooks/post-commit`
+  + `git config core.hooksPath hooks` (the `core.hooksPath` setup folds into id:d5f9), or a
+  `make install-hooks` target. Document the exact install command here when implemented.
+- **Invariants (the executor must honour all four):**
+  1. **`.mw` is OPTIONAL, never a commit gate (D6).** If `.mw` is unreachable/uninstalled/errors, the HARD
+     tier no-ops (log "skipped: .mw unavailable") and the commit STILL SUCCEEDS. The hook must never
+     raise/hang (post-commit's exit code is ignored by git anyway).
+  2. **The hook NEVER calls an LLM (D3).** Deterministic only — no Ollama, no API. The SOFT/LLM tier is
+     `/relay review`'s job, routed elsewhere.
+  3. **Relay-skip (D2).** Detection runs on OWNER commits only; it no-ops in a relay context. `RELAY_SKIP=1`
+     env is authoritative; a `/worktrees/` substring in `git rev-parse --git-dir` is the fallback.
+  4. **HARD tier reads a one-section `.mw` mirror (id:0e63)** via `mathematical_writing.dag.stale_after_edit`
+     over a faithful transcription of ONE Resogram section. The mirror is a DERIVED TOOLING ARTIFACT — it
+     must NOT invent or alter physics (owner confirms fidelity; see REVIEW_ME.md).
+- **`.mw` invocation:** package import name is `mathematical_writing` (NOT `mw`); run under
+  `uv run --project /home/tobias/src/mathematical-writing`. Example: `examples/resogram_cval.mw` there.
+
 ## Related projects
 - [`mathematical-writing`](../mathematical-writing/) — the `.mw` literate format/tool this repo is the
   north-star use-case for. toesnail's `physics/` docs are the eventual `.mw` migration target.
