@@ -54,3 +54,7 @@ executor: verify-hook cluster green — id:0e63 .mw mirror, id:8757 post-commit 
 ## 2026-06-16 10:08 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: doc-only window (id:d973 gtnsd archive) — no test changes, gaming-scan clean, verify/hook/mw suites green; render/mathjax env-blocked only; routine_open=3 (all gated on HARD id:3317)
+
+## 2026-06-16 11:30 — executor (sonnet, relay-loop)
+
+no-op: all 3 open ROUTINE items (id:5776/id:1335/id:3275) remain blocked on HARD id:3317 (first Mathlib extract, lean-build INTENSIVE)
