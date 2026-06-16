@@ -153,3 +153,7 @@ Friction: none — the warm cache path added by the prior executor (`lake exe ca
 ## 2026-06-16 16:46 — executor (sonnet, relay-loop)
 
 id:5776 done — confirmed lake-build done-check (cache get + build exit 0, no sorry, full suite PASS), ticked ROADMAP checkbox; all ROUTINE items now closed
+
+## 2026-06-16 21:24 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+reviewer (claude-opus-4-8, /relay review): audit since relay-ckpt-20260616-1646 — recovery merge c1e20b4 + 7 owner commits; tests green, gaming-scan clean; ticked cross-ledger TODO 5776/1335/3275, portal/topology drift fixed, 1 REVIEW_ME
