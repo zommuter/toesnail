@@ -21,3 +21,7 @@ Review: fca7/9868 ROUTINE genuinely green (no weakened tests); re-pinned edot/cv
 ## 2026-06-15 20:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: docs-only window (cval/.mw dependency notes id:921b→b7b1/d80d) — no code/test changes, verify instruments green (5/5+4/4), roadmap clean, 0 ROUTINE open
+
+## 2026-06-16 07:43 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+relay review toesnail: 7-commit window green (esol rename clean, id:3b4c mathjax fix genuine impl-only); fixed cval→esol drift in ARCHITECTURE + relay summary (id:e27e); 0 ROUTINE open, 1 HARD (3317)
