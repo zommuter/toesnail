@@ -50,3 +50,7 @@ Friction: none.
 ## 2026-06-16 09:46 — executor (sonnet, relay-loop)
 
 executor: verify-hook cluster green — id:0e63 .mw mirror, id:8757 post-commit hook, id:d5f9 git-config+docs, id:211c tests; all 6 hook cases + mw_mirror DAG staleness PASS; 3 ROUTINE remain (5776/1335/3275, all blocked on HARD id:3317)
+
+## 2026-06-16 10:08 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: doc-only window (id:d973 gtnsd archive) — no test changes, gaming-scan clean, verify/hook/mw suites green; render/mathjax env-blocked only; routine_open=3 (all gated on HARD id:3317)
