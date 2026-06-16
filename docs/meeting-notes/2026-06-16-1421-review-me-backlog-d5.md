@@ -75,8 +75,10 @@ owner eyeballs diff → tick.
   four blocks: `delta = atan2(Omega, beta)` (own fragment); `e` unchanged; `ebar` as faithful half-period
   convolution with exponential kernel; `y` unchanged. Inline `$e$` prose citation preserved. `test_mw_mirror.sh`
   green. `id:0e63` ticked in REVIEW_ME.md, ROADMAP.md (fidelity-fix sub-item), and TODO.md.
-- **Permanent finding:** `.mw` DAG is documented-blind to transcription fidelity (id:ad8c). `id:0e63` can
-  never be test-ticked; owner confirmation is the only gate. This is a durable architectural constraint.
+- **v1 limitation (id:ad8c):** Current `.mw` DAG (regex edges) is blind to transcription fidelity; owner
+  confirmation is the gate *for now*. This is a known v1 gap, not a permanent constraint — `.mw`'s goal is
+  mostly-automated fidelity checking (AST/semantic comparison or computation-level attestation). When that
+  lands, mirror fidelity boxes can be test-ticked.
 
 ## Action items
 - [x] Implement D3: rewrite `verify/mirror/resogram_esol.mw`, run `test_mw_mirror.sh` + `tests/run.sh`,
