@@ -58,6 +58,15 @@ to write them. Do NOT mint new ids; do NOT touch physics content.
     in `mathematical_writing.dag`; `parse()` in `mathematical_writing.parser`. FIDELITY is a judgment call —
     REVIEW_ME box (1) asks the owner to confirm the mirror matches the source section. N=2 guard: mirror ONE
     section only.
+  - [ ] **FIDELITY FIX follow-up [ROUTINE] — owner-directed 2026-06-16 (/relay human).** The DAG-mechanics
+    test is green but the owner REJECTED the transcription fidelity (REVIEW_ME box 0e63). Two faithful-
+    transcription corrections, both keeping `test_mw_mirror.sh` GREEN (the `e`→`ebar` staleness edge must
+    survive — `ebar`'s RHS still references `e`): (a) replace `ebar = Omega/pi * e` with the faithful
+    half-period convolution `\bar e = (Ω/π)∫₀^{π/Ω} e(t-t')·e^{+2βt'} dt'` in `.mw` computation syntax
+    (no scalar-multiply reduction); (b) add a SEPARATE `delta = atan2(Omega, beta)` fragment/cache item
+    that the `e` block references (gives a `δ→e→ebar` DAG chain), instead of leaving `delta` a dangling
+    symbol. Mechanical transcription of owner-authored source equations — owner re-confirms fidelity on the
+    new mirror before this + the parent box close. Same id (single-id-two-views). <!-- id:0e63 -->.
 
 - [x] Implement the v1 `post-commit` hook (deterministic HARD tier) [ROUTINE] <!-- id:8757 -->
   - **Acceptance**: a TRACKED `hooks/post-commit` (installed via `core.hooksPath hooks`, set in id:d5f9)

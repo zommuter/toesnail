@@ -107,14 +107,41 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   physics. **Owner:** confirm the mirror's equations match the source section (energy form,
   sliding-average consumer, maintenance drive), or correct the transcription. The DAG
   staleness *mechanics* are machine-tested; this box is about FIDELITY to the owner's math.
+  **FINDINGS surfaced 2026-06-16 (/relay human) — owner REJECTED, box STAYS OPEN.** Side-by-side
+  of mirror ↔ `physics/Resogram.md`: `esol` (`e=…`) and `ymaint` (`y=…`) transcribe EXACTLY, but
+  two infidelities remain — the DAG-mechanics test (`test_mw_mirror.sh`, green) cannot see either,
+  which is why this is a human box:
+    1. **Sliding average is reduced — UNACCEPTABLE (owner).** Mirror has `ebar = Omega/pi * e`;
+       source `Resogram.md:107` is the half-period convolution
+       `\bar e(t) := (Ω/π)∫₀^{π/Ω} e(t-t')·e^{+2βt'} dt'`. The mirror drops the integral and the
+       `e^{+2βt'}` growth kernel — collapses a convolution to a scalar multiply. Owner: "absolutely
+       inacceptable." **FIX: transcribe the integral form faithfully** (keep the `e`→`ebar`
+       staleness edge so `test_mw_mirror.sh` stays green; `ebar`'s RHS must still reference `e`).
+    2. **`δ=atan2(Ω,β)` is part of the RESULT, not a free definition (owner).** Source `esol:85`
+       carries `δ=atan2(Ω,β)` as the derived phase shift; the mirror leaves `delta` a dangling free
+       symbol. **FIX (owner 2026-06-16): model `δ` as its OWN `.mw` fragment / cache item** — a
+       separate `delta = atan2(Omega, beta)` computation block that the `e` block then references —
+       rather than inlining it. This gives a `δ → e → ebar` dependency chain in the DAG (editing `δ`
+       stales `e`, transitively `ebar`), which the mirror should exercise faithfully.
+  Tracked as a tooling re-transcription under the SAME id:0e63 (ROADMAP follow-up bullet); owner
+  re-confirms fidelity once the integral form + δ-result land. <!-- id:0e63 -->.
 
-- [ ] `tests/test_verify_hook.sh` (roadmap:8757/d5f9) — **is the chosen `git notes` schema
+- [x] `tests/test_verify_hook.sh` (roadmap:8757/d5f9) — **is the chosen `git notes` schema
   the right contract?** v1 writes `status:pending findings:…` on `refs/notes/verify`
   (append-only, never deleted). The meeting (D4) envisions later transitions
   `pending → triaged → processed verdict:valid|noise review_me:id:XXXX` (the latter added by
   `/relay review` + `/relay human`, not the hook). **Owner:** confirm `status` + `findings`
   is the right v1 field set and that the `triaged`/`processed`/`verdict`/`review_me` fields are
   the right forward-compatible extension, before executors freeze the note format.
+  **RESOLVED 2026-06-16 (owner-ratified, /relay human): CONFIRM BOTH v1 + extension.** Owner
+  confirmed the two-field v1 set `{status, findings}` is the right minimal contract AND that the
+  forward-compat extension `{triaged, processed, verdict:valid|noise, review_me:id:XXXX}` (added
+  by `/relay review` + `/relay human`, never the hook) is the right shape. Executors may freeze
+  the note format. Re-check: `hooks/post-commit:97-103` writes `status:pending` + `findings:…`;
+  `tests/test_verify_hook.sh` cases 1+5 pin pending-note + concatenate-on-squash. No code change
+  (this is a contract ratification, not an implementation edit). <!-- id:8757 -->
+  <!-- relay:human auto-flow: ROADMAP id:8757/d5f9 implementation already [x]; this box was the
+       separate schema-CONTRACT judgment, now owner-ratified. No new pool work unblocked. -->.
 
 ## Visual / manual (run these — never auto-ticked)
 
