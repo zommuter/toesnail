@@ -28,7 +28,7 @@ command -v bundle >/dev/null || { echo "[test_render] SKIP — bundler not on PA
 echo "[test_render] build"
 if bundle exec jekyll build --quiet 2>/tmp/jekyll-build.log; then pass "jekyll build"; else bad "jekyll build (see /tmp/jekyll-build.log)"; tail -5 /tmp/jekyll-build.log; fi
 
-R=_site/Resogramm.html
+R=_site/Resogram.html
 [ -f "$R" ] || { bad "missing $R"; echo "[test_render] FAIL"; exit 1; }
 
 echo "[test_render] head / MathJax"

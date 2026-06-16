@@ -208,6 +208,10 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## Visual / manual (run these — never auto-ticked)
 
-- [ ] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a
+- [x] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a
   real browser + VS Code preview applies `.vscode/settings.json`. Render *correctness* is
   machine-checked (`test_mathjax.cjs`); this is the visual/editor-integration last mile.
+  **DONE 2026-06-16 (owner-walked, /relay human):** all 3 `[HUMAN]` boxes in
+  `tests/HUMAN-integration.md` ticked by the owner (live-site visual sanity, VS Code macro
+  pickup, cross-browser glance). Re-run after any change to `_includes/custom-head.html`,
+  `_config.yml`, `.vscode/settings.json`, or equation markup.

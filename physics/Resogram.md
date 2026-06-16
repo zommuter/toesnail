@@ -1,6 +1,6 @@
 ---
-title: Resogramm
-permalink: /Resogramm
+title: Resogram
+permalink: /Resogram
 ---
 
 Kinda part of my [Theory of Everything - Some Novel Approach Including Love ❤️ – Math on Demand Edition](./)

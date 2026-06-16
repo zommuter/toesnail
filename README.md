@@ -23,7 +23,7 @@ format that keeps prose, computation, and machine-checked proofs mutually consis
 - **[Lasercold](Lasercold)** (`physics/lasercool.md`) — laser cooling, photon–matter interaction. The
   "maybe-save-the-planet-from-AI-training-heat" fascination.
 - **[Acoustics](Accoustics)** (`physics/acoustics.md`) — Navier–Stokes / acoustics derivations.
-- **[Resogramm](Resogramm)** (`physics/Resogram.md`) — driven harmonic oscillator energy methods.
+- **[Resogram](Resogram)** (`physics/Resogram.md`) — driven harmonic oscillator energy methods.
 - **[Entropy](Entropy)** (`physics/entropy.md`) — Boltzmann/Bose–Einstein/Fermi–Dirac statistics; Lambert-W
   for the base energy $E_1$.
 - **[WiRoHSH](WiRoHSH)** (`physics/wirohsh.md`) — Wick-rotated hyper-spherical harmonics; Laplace operator.

@@ -10,20 +10,20 @@ browser/editor* — final typography, layout, and that VS Code actually picks up
 To serve locally:
 
 ```sh
-bundle exec jekyll serve   # then open http://localhost:4000/Resogramm
+bundle exec jekyll serve   # then open http://localhost:4000/Resogram
 ```
 
 ## Checklist
 
-- [ ] `[HUMAN]` **Live site — visual sanity.** Open `/Resogramm` and `/toesnail`. Equations
+- [x] `[HUMAN]` **Live site — visual sanity.** Open `/Resogram` and `/toesnail`. Equations
   typeset cleanly (no red error boxes), tags like `(edot)` sit on the right, the inline
   `\eqref{eom}` is a clickable `(eom)`, and the `verify:`/`verified:` comments are invisible
   in the body. (Render *correctness* is already machine-checked; this is the eyeball pass.)
-- [ ] `[HUMAN]` **VS Code preview actually applies the macros.** Open `physics/Resogram.md`
+- [x] `[HUMAN]` **VS Code preview actually applies the macros.** Open `physics/Resogram.md`
   preview in VS Code itself (not raw KaTeX): no "Undefined control sequence: \ltag" errors,
   `(id)` refs render. This confirms VS Code reads `.vscode/settings.json` →
   `markdown.math.macros` (the test exercises KaTeX directly, not the VS Code integration).
-- [ ] `[HUMAN]` **Cross-browser glance (optional).** One Chromium + one Firefox render the
+- [x] `[HUMAN]` **Cross-browser glance (optional).** One Chromium + one Firefox render the
   heaviest page (`/toesnail`) without layout breakage.
 
 ## Why these aren't automated
