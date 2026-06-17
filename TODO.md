@@ -7,7 +7,7 @@
 - [ ] (MEETING candidate) Better workflow for math/Lean-formalization design sessions — e.g. meeting-rpg with
   in-session formula rendering (so equation-heavy decisions like id:b9bc's HasDerivAt signature are legible
   during discussion), or possibly a collAIb regime instead. To be scoped in a dedicated /meeting. <!-- id:2f99 -->
-- [ ] Recovered-pages infra: exclude `crypto/` non-page companions (`fhe.ipynb`/`.py`/`.ods`) from the Jekyll build [ROUTINE] <!-- id:fed0 -->
+- [x] Recovered-pages infra: exclude `crypto/` non-page companions (`fhe.ipynb`/`.py`/`.ods`) from the Jekyll build [ROUTINE] — closed in ROADMAP; TODO ticked /relay review 2026-06-17 (_config.yml excludes all 3 companions per acceptance; test_crypto_exclude.sh wired, SKIPs without Ruby by design). <!-- id:fed0 -->
 - [ ] `verify:` pilot candidates in recovered pages — OWNER PICKED 2026-06-16 (/relay human): mark **entropy** BE/FD+Lambert-W (sympy) + **fhe** enumeration/`.ods` (numeric); **wirohsh DEFERRED**. Owner places the `verify:` markers (physics/crypto content is Human-only); then instrument plumbing is [ROUTINE]. See REVIEW_ME. <!-- id:8807 -->
 - [ ] Deliverable #1 — pilot Resogram end-to-end: equation handles + `verify:` markers + real SymPy/Lean
   checks of its energy derivation and the "is c=0?" question. Acoustics = pilot #2. Scoped + contracted
