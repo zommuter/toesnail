@@ -38,3 +38,40 @@ import Mathlib
 theorem edot_first_line (x x_t x_tt y β ω : ℝ) (eom : x_tt = -2*β*x_t - ω^2*(x-y)) :
     x_t*(x_tt + ω^2*x) = -2*β*x_t^2 + ω^2*x_t*y := by
   subst eom; ring
+
+/-- Derivative step for the Resogram energy rate (handle `edot_deriv`, ROADMAP id:b9bc):
+    the specific energy `e = ½v² + ½ω²x²` has time derivative `ė = v(a + ω²x)`.
+
+    No equation of motion is used here — this is the pure calculus step: if `x` has
+    derivative `v` (velocity) and `v` has derivative `a` (acceleration), then `e`
+    has the stated derivative by the chain rule.  The algebraic step (substituting the
+    EOM into `v(a + ω²x)`) is the separate `edot_first_line` theorem above.
+
+    Identifier mapping (consistent with `edot_first_line`):
+      `x`, `v`, `a` are real-valued functions of time,
+      `v t` ↔ ẋ, `a t` ↔ ẍ (at time `t`).
+    `ω` is the angular frequency (real). -/
+theorem edot_deriv (x v a : ℝ → ℝ) (ω : ℝ) (t : ℝ)
+    (hx : HasDerivAt x (v t) t)          -- ẋ = v
+    (hv : HasDerivAt v (a t) t)          -- ẍ = a
+    : HasDerivAt (fun s => (1/2)*(v s)^2 + (1/2)*ω^2*(x s)^2)
+                 (v t * (a t + ω^2 * x t)) t := by
+  -- Build HasDerivAt for each summand, then combine with congr_deriv
+  have hv2 : HasDerivAt (fun s => (1/2 : ℝ) * v s ^ 2) (1/2 * (2 * v t ^ 1 * a t)) t :=
+    (hv.pow 2).const_mul _
+  have hx2 : HasDerivAt (fun s => (ω^2/2 : ℝ) * x s ^ 2) (ω^2/2 * (2 * x t ^ 1 * v t)) t :=
+    (hx.pow 2).const_mul _
+  -- Rewrite derivative values; note x t^1 = x t, v t^1 = v t by ring
+  have hv2' : HasDerivAt (fun s => (1/2 : ℝ) * v s ^ 2) (v t * a t) t :=
+    hv2.congr_deriv (by ring)
+  have hx2' : HasDerivAt (fun s => (ω^2/2 : ℝ) * x s ^ 2) (ω^2 * x t * v t) t :=
+    hx2.congr_deriv (by ring)
+  -- Add: hadd.f is (fun s => 1/2 * v s^2 + ω^2/2 * x s^2) and
+  -- hadd.f' is v t * a t + ω^2 * x t * v t  =  v t * (a t + ω^2 * x t)
+  have hadd := hv2'.add hx2'
+  -- The function in hadd is Pi.add-based; our target differs by ring rewrites.
+  -- Separate the two conversion goals explicitly.
+  convert hadd using 1
+  · -- function equality: (fun s => ...) = Pi.add ...
+    funext s; simp only [Pi.add_apply]; ring
+  · ring

@@ -34,10 +34,17 @@ and leaves `Resogram.md`'s math untouched — every resolution below is the owne
   written `ė = −4βe − ω²(2βx² − ẋy)`, was **wrong** — off by `−4βω²x²`; corrected to
   `ė = −4βe + ω²(2βx² + ẋy)` (owner-ratified 2026-06-15). The algebraic substitution step
   (`ẋ(ẍ+ω²x)` with `ẍ = −2βẋ − ω²(x−y)`) is now attested at two tiers:
-  `resogram_edot.py@54710d91` (SymPy, `claim=b575864e`) and `Resogram.lean@3c516103` (Lean4+Mathlib,
+  `resogram_edot.py@54710d91` (SymPy, `claim=b575864e`) and `Resogram.lean@a036b80d` (Lean4+Mathlib,
   same claim-hash — kernel-checked). SymPy-as-gate dataset: SymPy ✓ correctly predicted the
   lean-provable claim; this is one datapoint supporting SymPy as a cheap pre-filter for Lean targets.
-  Attestation: `verified:sympy+lean [edot] claim=b575864e by=resogram_edot.py@54710d91,Resogram.lean@3c516103`.
+  Attestation: `verified:sympy+lean [edot] claim=b575864e by=resogram_edot.py@54710d91,Resogram.lean@a036b80d`.
+- **[`edot_deriv`] `verify:lean` — ✓ lean-attested (tier `lean` only, SymPy-blind).**
+  Derivative step: `e = ½v² + ½ω²x²` has time derivative `ė = v(a + ω²x)` — the pure calculus step
+  (chain rule / product rule), with no equation of motion assumed. Proven in Lean4+Mathlib via
+  `HasDerivAt.pow` + `HasDerivAt.const_mul` + `HasDerivAt.add` (`Resogram.lean@a036b80d`,
+  `claim=f359c0bf`). **SymPy-blind**: this is the contrast datapoint for the SymPy-as-gate eval —
+  SymPy handles algebra symbolically but `HasDerivAt` (differentiability witness) is purely a
+  Lean/Mathlib concern. Attestation: `verified:lean [edot_deriv] claim=f359c0bf by=Resogram.lean@a036b80d`.
 - **[`drive`] `verify:sympy` — ✓ (attested `claim=67223e71`).** From `ė=0, ẋ≠0` ⟹ `y = 2(β/ω²)ẋ`, and the
   ẋ-independent solution `ẏ=−2βx`, `ÿ = −ω²y` (drive at the *free* frequency ω, not the eigenfrequency Ω).
   `verify/resogram_drive.py`.
