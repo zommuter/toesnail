@@ -172,7 +172,7 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Context**: `docs/rigor-debt.md` is the triage menu, not a work order; this only annotates an already-
     resolved row.
 
-- [ ] Prove `edot_deriv` (derivative step `ė=ẋ(ẍ+ω²x)`) via Mathlib `HasDerivAt` [ROUTINE] [PILOT — Sonnet-on-Lean4] <!-- id:b9bc -->
+- [x] Prove `edot_deriv` (derivative step `ė=ẋ(ẍ+ω²x)`) via Mathlib `HasDerivAt` [ROUTINE] [PILOT — Sonnet-on-Lean4] <!-- id:b9bc -->
   - **Re-scoped 2026-06-16** (/meeting `2026-06-16-2257-edot-deriv-lean-formalization.md`): the fidelity
     judgment is consumed in the meeting; what remains is filling one proof body against a FROZEN signature,
     which is mechanical + testable → `[ROUTINE]`. The 0827 "multi-day" estimate priced the *unscoped*

@@ -189,3 +189,8 @@ Review of 3 commits since relay-ckpt-20260616-2249 (62e2375 Resogramm→Resogram
 ## 2026-06-17 11:59 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review toesnail: 3-commit docs/meeting/rename window green; gaming-scan clean, full suite PASS; id:6501 HUMAN-walk closed, §5b qualified (b9bc routine, 2f99 meeting, a9d2 gated); routine_open=1 (id:b9bc)
+
+## 2026-06-17 — executor (claude-sonnet-4-6)
+
+Worked id:b9bc [ROUTINE] [PILOT — Sonnet-on-Lean4] — proved `edot_deriv` theorem in `verify/Resogram.lean`: `HasDerivAt (fun s => (1/2)*(v s)^2 + (1/2)*ω^2*(x s)^2) (v t * (a t + ω^2 * x t)) t` given `HasDerivAt x (v t) t` and `HasDerivAt v (a t) t`. Proof uses `(hv.pow 2).const_mul`, `(hx.pow 2).const_mul`, `.add`, then `convert ... using 1` with `funext s; simp only [Pi.add_apply]; ring` to bridge the Pi.add form to the pointwise sum form, plus `ring` for the derivative value. `lake build` exits 0, no `sorry`. Updated `physics/Resogram.md` edot attestation Lean-tier hash (`3c516103` → `a036b80d`) + added `verified:lean [edot_deriv] claim=f359c0bf by=Resogram.lean@a036b80d`. Added `[edot_deriv]` row to `docs/rigor-debt.md` (lean-only, SymPy-blind contrast datapoint). Full `bash tests/run.sh` SUITE: PASS.
+Friction: the `convert ... using 1` approach left a function equality goal about Pi.add that `ring` alone cannot discharge — needed `funext s; simp only [Pi.add_apply]; ring`. The proof sketch in ROADMAP (`congr_deriv` one-liner) did not work directly because the `.add` combinator returns a `HasDerivAt` whose `f` is a Pi.add (not a lambda), and `congr_deriv` only rewrites the derivative VALUE (not the function). Took ~5 iterations to find the right combinator pattern. Clean close — no `sorry`, no weakened hypotheses.
