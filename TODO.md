@@ -36,10 +36,6 @@
   human):** (a) sign correction applied; (b) exact phase-shifted form adopted; (c) one-char paren fix
   applied. Two follow-ups left open (REVIEW_ME): next-`/relay review` instrument re-pin for edot+cval
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
-- [x] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
-  VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). DONE 2026-06-16 (owner-walked all 3 [HUMAN] boxes, /relay human). <!-- id:6501 -->
-  by splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed; suite green,
-  covered by `tests/test_mathjax.cjs`. <!-- id:3b4c -->
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->

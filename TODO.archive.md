@@ -49,3 +49,7 @@
   - [x] Annotate `docs/rigor-debt.md`: edot lean-attested; record per-tier outcome (SymPy-as-gate dataset, D5).
     DONE 2026-06-16 (executor; ROADMAP `[x]`); re-verified 2026-06-16 /relay review (`[edot]` row shows `sympy+lean` w/ both instrument pointers + SymPy-as-gate datapoint).
     (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:3275 -->
+- [x] `[HUMAN]` integration pass — walk `tests/HUMAN-integration.md`: visual sanity in a browser + confirm
+  VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). DONE 2026-06-16 (owner-walked all 3 [HUMAN] boxes, /relay human). <!-- id:6501 -->
+  by splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed; suite green,
+  covered by `tests/test_mathjax.cjs`. <!-- id:3b4c -->
