@@ -198,3 +198,7 @@ Friction: the `convert ... using 1` approach left a function equality goal about
 ## 2026-06-17 13:22 — executor (sonnet, relay-loop)
 
 feat(verify): prove edot_deriv via HasDerivAt — ROUTINE id:b9bc (Sonnet-on-Lean4 pilot, clean close, no sorry)
+
+## 2026-06-17 22:03 — reviewer (claude-opus-4-8)
+
+review: cross-repo sweep — TODO-archive window audited clean (gaming-scan clean, doc-only bookkeeping); reconciled 1 cross-ledger drift tick (fed0); routine_open=0; open work all owner/design-gated (8807 verify markers, b9bc Lean pilot, d2f4/445e design)
