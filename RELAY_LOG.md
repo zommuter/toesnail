@@ -214,3 +214,7 @@ id:e0b7 \veq{h}\tier badge-in-tag (final owner-approved form) + deferred TODOs a
 ## 2026-06-18 11:06 — strong-execute (claude-opus-4-8)
 
 id:a138 \veq* star variant (display+inline, both engines); align-in-same-block residual documented (MathJax \@ifstar label quirk)
+
+## 2026-06-18 11:32 — strong-execute (claude-opus-4-8)
+
+a9d2 migration: Resogram on \veq/\veqs + Resogram.toml sidecar; \definition/\assumption pilots; \veq* infeasible→\veqs (id:dce9/a9d2/a138)
