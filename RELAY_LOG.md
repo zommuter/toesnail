@@ -206,3 +206,7 @@ review: cross-repo sweep — TODO-archive window audited clean (gaming-scan clea
 ## 2026-06-18 10:14 — strong-execute (claude-opus-4-8)
 
 id:e0b7 \veq macro family (form d) — \@ifstar + verify-tier badge macros, both engines green; a9d2 gates cleared
+
+## 2026-06-18 10:52 — strong-execute (claude-opus-4-8)
+
+id:e0b7 \veq{h}\tier badge-in-tag (final owner-approved form) + deferred TODOs a138/feb8/7743/8ddc
