@@ -25,6 +25,12 @@ bundle exec jekyll serve   # then open http://localhost:4000/Resogram
   `markdown.math.macros` (the test exercises KaTeX directly, not the VS Code integration).
 - [x] `[HUMAN]` **Cross-browser glance (optional).** One Chromium + one Firefox render the
   heaviest page (`/toesnail`) without layout breakage.
+- [ ] `[HUMAN]` **`\veq` tier-badge glyphs read correctly (id:e0b7).** The new `\veq{h}\tier`
+  badges render with adequate, distinguishable glyphs next to the equation number — chosen
+  by tooling, pending owner eyeball: `\sorry`→`?`, `\sympy`→`○`, `\numeric`→`△`, `\lean`→`✓`,
+  `\sympylean`→`✓✓`. Confirm the glyphs/placement are acceptable (or pick replacements); the
+  test only asserts they RENDER, not that they look right. Add a `\veq{...}\lean` to a scratch
+  display equation to view, or wait for the a9d2 migration (id:dce9) to surface real ones.
 
 ## Why these aren't automated
 
