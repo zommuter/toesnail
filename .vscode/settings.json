@@ -24,6 +24,12 @@
     "\\numeric":  "\\triangle",
     "\\lean":     "\\checkmark",
     "\\sympylean": "\\checkmark\\!\\checkmark",
+    // Open-debt badges naming the DESIRED-but-unverified tier (id:feb8 resolved): tier glyph +
+    // superscript ? . Swap \sympyc → \sympy once the instrument greens + the sidecar attests.
+    "\\sympyc":    "\\circ^{?}",
+    "\\numericc":  "\\triangle^{?}",
+    "\\leanc":     "\\checkmark^{?}",
+    "\\sympyleanc": "{\\checkmark\\!\\checkmark}^{?}",
     // Annotation-KIND macros (pilot — id:8ddc/.mw id:358f open-enum kinds): \definition (:=),
     // \assumption (premise). Full kind taxonomy is a later /meeting.
     "\\definition": "\\mathrm{def}",

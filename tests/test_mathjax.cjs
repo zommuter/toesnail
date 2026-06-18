@@ -55,6 +55,11 @@ const MJ_MACROS = {
   numeric:  '\\triangle',
   lean:     '\\checkmark',
   sympylean: '\\checkmark\\!\\checkmark',
+  // open-debt-naming-desired-tier badges (id:feb8) — tier glyph + superscript ?
+  sympyc:    '\\circ^{?}',
+  numericc:  '\\triangle^{?}',
+  leanc:     '\\checkmark^{?}',
+  sympyleanc: '{\\checkmark\\!\\checkmark}^{?}',
   // annotation-KIND pilot macros (id:8ddc) — not verification tiers
   definition: '\\mathrm{def}',
   assumption: '\\mathrm{ass}',
@@ -72,6 +77,11 @@ const KX_MACROS = {
   '\\numeric':  '\\triangle',
   '\\lean':     '\\checkmark',
   '\\sympylean': '\\checkmark\\!\\checkmark',
+  // open-debt-naming-desired-tier badges (id:feb8)
+  '\\sympyc':    '\\circ^{?}',
+  '\\numericc':  '\\triangle^{?}',
+  '\\leanc':     '\\checkmark^{?}',
+  '\\sympyleanc': '{\\checkmark\\!\\checkmark}^{?}',
   // annotation-KIND pilot macros (id:8ddc)
   '\\definition': '\\mathrm{def}',
   '\\assumption': '\\mathrm{ass}',
@@ -132,6 +142,8 @@ const VEQ_CASES = [
   { name: '\\veq{esol}\\numeric',              expr: '\\veq{esol}\\numeric' },
   { name: '\\veq{edot}\\lean',                 expr: '\\veq{edot}\\lean' },
   { name: '\\veq{edot}\\sympylean (combined)', expr: '\\veq{edot}\\sympylean' },
+  { name: '\\veq{be}\\sympyc (open-debt tier, id:feb8)',   expr: '\\veq{be}\\sympyc' },
+  { name: '\\veq{lambertw}\\numericc (open-debt tier)',    expr: '\\veq{lambertw}\\numericc' },
   { name: '\\veq{e}\\definition (kind pilot)',  expr: '\\veq{e}\\definition' },
   { name: '\\veq{eom}\\assumption (kind pilot)', expr: '\\veq{eom}\\assumption' },
 ];

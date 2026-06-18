@@ -184,6 +184,20 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     cross-checks `crypto/fhe.ods`; pin verdicts + `verified:` attestations in `tests/test_verify.sh`, mirroring
     the existing `resogram_*` pilots). Surfaced as a "you do these" owner action below; the box closes once the
     markers are in and the next `/relay review` re-derives them.
+  - **ENTROPY markers PLACED 2026-06-18 (owner-directed walkthrough) — eyeball the fidelity.** Per your
+    selection, `physics/entropy.md` now tags four claims, all as `\sympyc` (OPEN-DEBT: desired SymPy, NOT yet
+    verified — id:feb8 resolved): `\veq{meanE}\sympyc` (the `E/E₁` summation→closed-form chain, l.22),
+    `\veq{be}\sympyc` (Bose–Einstein `N→∞` limit `1/(e^{βE₁}−1)`, l.27), `\veq{fd}\sympyc` (Fermi–Dirac `N=2`
+    `1/(e^{βE₁}+1)`, l.35), `\veq{lambertw}\sympyc` (Lambert-W inversion `βE₁=−W(−βE·e^{∓βE})∓βE`, l.59). **Only
+    tag/label tokens were appended — no math edited.** Confirm the four handles sit on the claims you intended
+    (esp. `meanE` on l.22 vs the earlier chain lines, and `lambertw` on l.59 vs the `e^{βE₁}` form on l.61–62).
+
+- [ ] **FINDING — `lambertw` tier: SymPy can't symbolically verify a transcendental inversion.** You marked
+  the Lambert-W inversion for `\sympy`, but `W` is transcendental: the faithful mechanical check is **numeric**
+  (substitute sample `βE` values, confirm `y = x/(e^x∓1)` holds for BOTH ∓ branches with `x = −W(−y e^{∓y})∓y`),
+  not a pure-symbolic SymPy identity. Recommend its verified tier be `\numeric` (open-debt `\numericc`), not
+  `\sympy` — the badge family already supports it. **Owner decides** the tier; if you agree I swap
+  `\veq{lambertw}\sympyc`→`\veq{lambertw}\numericc` and build a numeric instrument. (Surfaced 2026-06-18.)
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by

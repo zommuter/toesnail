@@ -33,8 +33,6 @@ window.MathJax = {
       //   So both forms are DIRECT macros (no \@ifstar), and the unnumbered one is a distinct
       //   name \veqs (not \veq*). The Resogram edot block uses \veqs for its sub-steps + a
       //   manual \tag{edot} for the number (a9d2). See id:a138.
-      // TODO id:feb8 — \tier* open-debt notation (e.g. \sympy* = wants-sympy-but-unverified):
-      //   the trailing `*` orphans with the single-token 2nd arg; needs a distinct mechanism.
       veq:     ['\\tag{#1\\,$#2$}\\label{#1}', 2],
       veqs:    ['\\label{#1}\\quad #2', 2],
       // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
@@ -44,6 +42,14 @@ window.MathJax = {
       numeric:  '\\triangle',
       lean:     '\\checkmark',
       sympylean: '\\checkmark\\!\\checkmark',
+      // Open-debt-naming-the-DESIRED-tier badges (id:feb8 RESOLVED — the `\tier*` orphan bug is
+      // dodged by a letter-suffixed control word `\<tier>c`, c=claim/pending). The achieved tier
+      // glyph carries a superscript `?` = "this verifier is intended but NOT yet run". On green,
+      // swap `\sympyc` → `\sympy` and pin the attestation in the <stem>.toml sidecar.
+      sympyc:    '\\circ^{?}',
+      numericc:  '\\triangle^{?}',
+      leanc:     '\\checkmark^{?}',
+      sympyleanc: '{\\checkmark\\!\\checkmark}^{?}',
       // Annotation-KIND macros (not verification tiers): PILOT of the open annotation family
       // (id:8ddc / .mw id:358f open-enum {@<kind>}). \definition = a defining equation (:=),
       // \assumption = a premise/given. Full kind taxonomy is a later /meeting; these two are
