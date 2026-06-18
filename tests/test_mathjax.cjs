@@ -36,10 +36,9 @@ const DOCS = [
 // Keep these in sync with the source configs whenever macros are added or changed.
 const MJ_MACROS = {
   ltag:     ['\\tag{#1}\\label{#1}', 1],
-  // \veq family — numbered/unnumbered handle + verification-tier badges.
-  veq:      ['\\@ifstar\\veqStar\\veqNum', 0],
-  veqNum:   ['\\tag{#1}\\label{#1}', 1],
-  veqStar:  ['\\label{#1}', 1],
+  // \veq{h}\tier — handle + verification badge together in the (tag); 2nd arg is a
+  // single-token tier macro, $...$-wrapped inside the text-mode tag (renders in both engines).
+  veq:      ['\\tag{#1\\,$#2$}\\label{#1}', 2],
   // Verification-tier badge macros (LaTeX symbols, not raw emoji — no metric warnings).
   //   \sorry    → \mathbf{?}           (open debt)
   //   \sympy    → \circ                (SymPy / CAS check)
@@ -55,10 +54,8 @@ const MJ_MACROS = {
 const KX_MACROS = {
   '\\ltag':     '\\tag{#1}',
   '\\eqref':    '(\\text{#1})',
-  // \veq family — KaTeX has no \label so \veqStar just consumes the arg.
-  '\\veq':      '\\@ifstar\\veqStar\\veqNum',
-  '\\veqNum':   '\\tag{#1}',
-  '\\veqStar':  '',
+  // \veq{h}\tier — KaTeX has no \label; handle is the visible (tag), badge $...$-wrapped.
+  '\\veq':      '\\tag{#1\\,$#2$}',
   // Verification-tier badge macros.
   '\\sorry':    '\\mathbf{?}',
   '\\sympy':    '\\circ',
@@ -108,16 +105,17 @@ const { AllPackages } = require('mathjax-full/js/input/tex/AllPackages.js');
 const adaptor = liteAdaptor(); RegisterHTMLHandler(adaptor);
 
 // ---- \veq family: dedicated assertions in both engines ----
-// Tests that \veq{h}, \veq*{h}, and trailing tier badges all render without errors,
+// Tests that \veq{h}\tier (handle + badge-in-tag) renders without errors in both engines,
 // and that \eqref{h} resolves cleanly (no tier leaks into the handle) under MathJax.
+// (\veq* unnumbered/sub-step variant is deferred — id:a138.)
 console.log('[test_mathjax] \\veq macro family');
 
 const VEQ_CASES = [
-  { name: '\\veq{edot} numbered',               expr: '\\veq{edot}' },
-  { name: '\\veq*{edot} unnumbered',             expr: '\\veq*{edot}' },
-  { name: '\\veq{edot}\\lean',                   expr: '\\veq{edot}\\lean' },
-  { name: '\\veq{edot}\\sorry',                  expr: '\\veq{edot}\\sorry' },
-  { name: '\\veq{edot}\\sympy\\lean composed',   expr: '\\veq{edot}\\sympy\\lean' },
+  { name: '\\veq{edot}\\sorry (open debt)',    expr: '\\veq{edot}\\sorry' },
+  { name: '\\veq{edot}\\sympy',                expr: '\\veq{edot}\\sympy' },
+  { name: '\\veq{esol}\\numeric',              expr: '\\veq{esol}\\numeric' },
+  { name: '\\veq{edot}\\lean',                 expr: '\\veq{edot}\\lean' },
+  { name: '\\veq{edot}\\sympylean (combined)', expr: '\\veq{edot}\\sympylean' },
 ];
 
 // MathJax \veq assertions — fresh doc per case to avoid "label multiply defined" errors

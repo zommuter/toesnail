@@ -11,7 +11,18 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## `\veq` carrier syntax — feasibility-gate result (`id:e0b7` pilot, 2026-06-18)
 
-- [x] **PICK the `\veq` in-prose syntax — RATIFIED (d) by owner 2026-06-18** (the meeting's preferred `\veq[tier]{h}` was INFEASIBLE; owner chose form (d), see decision note below).
+- [x] **PICK the `\veq` in-prose syntax — RATIFIED + IMPLEMENTED 2026-06-18.**
+  **FINAL FORM (owner-approved visual, both engines green): `\veq{h}\tier`** — the handle and the verification
+  badge render TOGETHER inside the right-aligned `(tag)`, e.g. `\veq{edot}\lean` → `(edot ✓)`. The tier is a
+  single-token macro so no braces are needed (`\veq{edot}\lean` ≡ `\veq{edot}{\lean}`; the owner disliked the
+  forced double-brace, and the single-brace `\veq{edot\lean}` fails in KaTeX + pollutes the label). `\label`/
+  `\eqref` key on the clean handle `#1`; the badge is `$...$`-wrapped so the math glyph survives the tag's text
+  mode in both engines. Implemented in `_includes/custom-head.html` + `.vscode/settings.json` + `test_mathjax.cjs`
+  (`veq: \tag{#1\,$#2$}\label{#1}`, tiers `\sorry`→? `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓). `\ltag`
+  kept for not-yet-migrated handles. **Deferred (owner, non-blocking):** `\veq*` unnumbered/sub-step/inline
+  variant (`id:a138`), `\tier*` open-debt notation (`id:feb8`), autolabel-suggestion (`id:7743`),
+  notation-implies-annotation sanity checks (`id:8ddc`). The full decision history (rounds 1–6) is below.
+
   The `id:e0b7` KaTeX/MathJax feasibility spike (run 2026-06-18, this `/relay --afk` turn) settled the
   D7 gate empirically. Matrix (KaTeX 0.16.47 + MathJax 3, both engines this repo renders through):
 

@@ -16,19 +16,21 @@ window.MathJax = {
     tags: 'ams',
     macros: {
       ltag: ['\\tag{#1}\\label{#1}', 1],
-      // \veq{h} — numbered display tag + label (drop-in superset of \ltag).
-      // \veq*{h} — unnumbered variant (label only, no \tag number) via \@ifstar.
-      // Trailing annotation macros (verification tiers — see CONVENTIONS.md §2):
-      //   \sorry    → \mathbf{?}     (open debt, unverified)
-      //   \sympy    → \circ          (SymPy / CAS check)
-      //   \numeric  → \triangle      (numeric / evaluation check)
-      //   \lean     → \checkmark     (Lean4 kernel-checked proof)
-      //   \sympylean → \checkmark\!\checkmark  (SymPy + Lean)
-      // Absence of a trailing macro = implicit open debt (no badge rendered).
-      veq:     ['\\@ifstar\\veqStar\\veqNum', 0],
-      veqNum:  ['\\tag{#1}\\label{#1}', 1],
-      veqStar: ['\\label{#1}', 1],
+      // \veq{h}\tier — numbered display tag carrying the handle AND the verification
+      //   badge together in the (tag) at the right margin, e.g. \veq{edot}\lean -> (edot ✓).
+      //   The 2nd arg is a tier macro; it is a single token so NO braces are needed
+      //   (\veq{edot}\lean == \veq{edot}{\lean}). \label/\eqref key on the clean handle #1.
+      //   The badge is $...$-wrapped inside the tag (text mode) so the math glyph renders
+      //   in BOTH MathJax and KaTeX. (\ltag stays for not-yet-migrated handles; a9d2 id:dce9.)
+      //   Tier macros (verification state — see CONVENTIONS.md §2):
+      //     \sorry → ?   \sympy → ∘   \numeric → △   \lean → ✓   \sympylean → ✓✓
+      // TODO id:a138 — \veq* (unnumbered sub-step / inline-math variant: \quad badge, no \tag).
+      //   Deferred: multitag-in-align + KaTeX 2-arg-needs-#1 + text-vs-math badge-mode issues.
+      // TODO id:feb8 — \tier* open-debt notation (e.g. \sympy* = wants-sympy-but-unverified):
+      //   the trailing `*` orphans with the single-token 2nd arg; needs a distinct mechanism.
+      veq:     ['\\tag{#1\\,$#2$}\\label{#1}', 2],
       // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
+      // Plain (un-$-wrapped) here; \veq wraps the badge in $...$ when it places it in the tag.
       sorry:    '\\mathbf{?}',
       sympy:    '\\circ',
       numeric:  '\\triangle',

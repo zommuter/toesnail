@@ -6,12 +6,13 @@
   "markdown.math.macros": {
     "\\ltag": "\\tag{#1}",
     "\\eqref": "(\\text{#1})",
-    // \veq{h} — numbered display tag (drop-in superset of \ltag; KaTeX has no \label).
-    // \veq*{h} — unnumbered variant via \@ifstar (KaTeX: just consumes the arg, no output).
-    // Trailing annotation macros: \sorry \sympy \numeric \lean \sympylean (see CONVENTIONS.md §2).
-    "\\veq":      "\\@ifstar\\veqStar\\veqNum",
-    "\\veqNum":   "\\tag{#1}",
-    "\\veqStar":  "",
+    // \veq{h}\tier — numbered tag carrying handle + verification badge, e.g. (edot ✓).
+    //   2nd arg is a single-token tier macro (no braces needed). KaTeX has no \label, so
+    //   the handle is just the visible (tag); the badge is $...$-wrapped so the math glyph
+    //   renders inside the text-mode tag. (\ltag stays for not-yet-migrated handles.)
+    // TODO id:a138 — \veq* unnumbered/sub-step/inline variant (deferred; see custom-head.html).
+    // TODO id:feb8 — \tier* open-debt notation (deferred).
+    "\\veq":      "\\tag{#1\\,$#2$}",
     // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid KaTeX metric warnings).
     "\\sorry":    "\\mathbf{?}",
     "\\sympy":    "\\circ",
