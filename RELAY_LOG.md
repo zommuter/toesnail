@@ -210,3 +210,7 @@ id:e0b7 \veq macro family (form d) — \@ifstar + verify-tier badge macros, both
 ## 2026-06-18 10:52 — strong-execute (claude-opus-4-8)
 
 id:e0b7 \veq{h}\tier badge-in-tag (final owner-approved form) + deferred TODOs a138/feb8/7743/8ddc
+
+## 2026-06-18 11:06 — strong-execute (claude-opus-4-8)
+
+id:a138 \veq* star variant (display+inline, both engines); align-in-same-block residual documented (MathJax \@ifstar label quirk)
