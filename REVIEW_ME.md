@@ -56,19 +56,36 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     (verified): `.vscode` `"\\veq":"\\tag{#1}\\,{\\scriptstyle #2}"`, `custom-head.html` `veq:['\\tag{#1}\\,#2',2]`,
     with per-tier badge string macros `\sorryB`→`{?}`, `\leanB`→`\checkmark` (LaTeX symbols, no metric warning).
 
-  **Net:** in KaTeX you cannot get *both* a clean label AND a tier badge from a colon string (splitting forbids
-  braces; badging needs a macro-token arg); and the delimited `\def` alternative, while it answers every
-  sub-question at the raw-engine level, **can't deploy through this repo's JSON/no-in-doc-def config on the
-  KaTeX/VS-Code side**. Both point to the same place: the **2-brace `\veq{h}{\tierbadge}`** form — the only one
-  satisfying the full requirement (clean `\eqref`, tier badge, both engines, central-config-deployable, no
-  `\ifx`, no colon-collision). **Owner decision still needed** (this REVISES meeting D7's colon default):
-  ratify (a) 2-mandatory `\veq{h}{\tierbadge}` — *evidence-recommended*; or (b) accept the colon form's
-  limitations (bare `\veq h:tier;` authoring + no portable emoji badge); or (c) keep `\ltag` for plain tags and
-  introduce `\veq{h}{\tierbadge}` only on verify-marked equations. This GATES the `id:a9d2`/`id:dce9` corpus
-  migration AND the `.mw` grammar (`mathematical-writing` `id:358f`, whose math-frontend lowering must match).
-  **No macro committed** — picking the carrier syntax is an owner call (no-AI-vibe-thinking; D7 made it a gate).
-  Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax `TeX({macros})` — see this turn's diary entry.
-  (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
+  **Round-4 pilot (2026-06-18, owner idea): `\veq{h}` as a 1-arg `\ltag` drop-in FOLLOWED BY a standalone
+  badge macro** — `\veq{edot}\lean`, where `\lean`/`\sympy`/`\sorry` are their own simple string macros and
+  ABSENCE of a trailing badge = implicit open-debt ("to be updated by `.mw`"). Piloted in both engines:
+  - `\veq{edot}` alone → clean `(edot)` tag; `\veq{edot}\lean` → `✓(edot)` (✓ adjacent to the number) in BOTH
+    engines; `\eqref{edot}` resolves cleanly after `\veq{edot}\lean` (no tier leak).
+  - BOTH `\veq` AND the badge macros are SIMPLE STRING macros → JSON-deployable in `.vscode/settings.json` and
+    `custom-head.html`, ZERO per-`.md` line (same central-def model as `\ltag` today — note: a global central def
+    is needed either way; it is ONE site/editor def, NOT a per-document init line).
+  - **Advantages over the 2-brace form:** migration is a pure rename (`\ltag{h}`→`\veq{h}`, 1-arg→1-arg; badges
+    added separately, not retrofitted onto every handle); the badge is a SEPARATE token the tool inserts/updates
+    without touching the equation/handle (badge=tooling, equation=human, D4); maps closely to D6's
+    `{#h}{@verify tier}` brace (trailing badge ≈ the annotation fragment adjacent to the handle fragment).
+  - **Open sub-points:** the badge renders adjacent to, not welded onto, the number (owner judges visual);
+    `\veq*` unnumbered still needs `\@ifstar` (a `\def`, not JSON-able) or a separate `\veqs` macro — minor; the
+    `.mw` lowering + tool must associate the trailing badge token with the preceding `\veq{h}` (manageable).
+
+  **Net:** the colon form can't give clean-label-plus-badge in KaTeX; the delimited `\def`, though it answers
+  every raw-engine sub-question, can't deploy through this repo's JSON/no-in-doc-def config on the KaTeX/VS-Code
+  side. The two forms that DO deploy through the existing simple-string central config in both engines are
+  **(a) 2-brace `\veq{h}{\tierbadge}`** and **(d) `\veq{h}` + trailing `\tier` badge macro** (owner's round-4
+  idea). **Owner decision needed** (REVISES meeting D7's colon default) — ratify one of:
+  (a) 2-brace `\veq{h}{\tierbadge}` (one token, always 2 args, retrofit `{\sorryB}` onto every handle);
+  (d) `\veq{h}` 1-arg drop-in + standalone trailing badge macro, absence=implicit sorry — *evidence-favoured*
+  (cleanest migration + tool/.mw separation); (b) colon `\veq{h:tier}` (bare `\veq h:tier;` authoring, no
+  portable emoji badge); or (c) keep `\ltag` for plain tags and add the verify macro only on marked equations.
+  This GATES the `id:a9d2`/`id:dce9` corpus migration AND the `.mw` grammar (`mathematical-writing` `id:358f`,
+  whose math-frontend lowering must match). **No macro committed** — picking the carrier syntax is an owner call
+  (no-AI-vibe-thinking; D7 made it a gate). Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax
+  `TeX({macros})` — see this turn's diary entries. (toesnail `id:e0b7`; meeting
+  `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
 
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
