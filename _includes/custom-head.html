@@ -15,7 +15,25 @@ window.MathJax = {
     processEscapes: true,
     tags: 'ams',
     macros: {
-      ltag: ['\\tag{#1}\\label{#1}', 1]
+      ltag: ['\\tag{#1}\\label{#1}', 1],
+      // \veq{h} — numbered display tag + label (drop-in superset of \ltag).
+      // \veq*{h} — unnumbered variant (label only, no \tag number) via \@ifstar.
+      // Trailing annotation macros (verification tiers — see CONVENTIONS.md §2):
+      //   \sorry    → \mathbf{?}     (open debt, unverified)
+      //   \sympy    → \circ          (SymPy / CAS check)
+      //   \numeric  → \triangle      (numeric / evaluation check)
+      //   \lean     → \checkmark     (Lean4 kernel-checked proof)
+      //   \sympylean → \checkmark\!\checkmark  (SymPy + Lean)
+      // Absence of a trailing macro = implicit open debt (no badge rendered).
+      veq:     ['\\@ifstar\\veqStar\\veqNum', 0],
+      veqNum:  ['\\tag{#1}\\label{#1}', 1],
+      veqStar: ['\\label{#1}', 1],
+      // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
+      sorry:    '\\mathbf{?}',
+      sympy:    '\\circ',
+      numeric:  '\\triangle',
+      lean:     '\\checkmark',
+      sympylean: '\\checkmark\\!\\checkmark'
     }
   }
 };

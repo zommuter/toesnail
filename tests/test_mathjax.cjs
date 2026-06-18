@@ -30,8 +30,42 @@ const DOCS = [
   'physics/entropy.md', 'physics/wirohsh.md', 'physics/photon.md',
   'crypto/fhe.md', 'essays/supertool.md',
 ];
-const MJ_MACROS = { ltag: ['\\tag{#1}\\label{#1}', 1] };          // mirror _includes/custom-head.html
-const KX_MACROS = { '\\ltag': '\\tag{#1}', '\\eqref': '(\\text{#1})' }; // mirror .vscode/settings.json
+// Mirrors of the central per-renderer macro configs.
+// MJ_MACROS mirrors _includes/custom-head.html macros:{…}
+// KX_MACROS mirrors .vscode/settings.json markdown.math.macros:{…}
+// Keep these in sync with the source configs whenever macros are added or changed.
+const MJ_MACROS = {
+  ltag:     ['\\tag{#1}\\label{#1}', 1],
+  // \veq family — numbered/unnumbered handle + verification-tier badges.
+  veq:      ['\\@ifstar\\veqStar\\veqNum', 0],
+  veqNum:   ['\\tag{#1}\\label{#1}', 1],
+  veqStar:  ['\\label{#1}', 1],
+  // Verification-tier badge macros (LaTeX symbols, not raw emoji — no metric warnings).
+  //   \sorry    → \mathbf{?}           (open debt)
+  //   \sympy    → \circ                (SymPy / CAS check)
+  //   \numeric  → \triangle            (numeric / evaluation)
+  //   \lean     → \checkmark           (Lean4 proof)
+  //   \sympylean → \checkmark\!\checkmark  (SymPy + Lean)
+  sorry:    '\\mathbf{?}',
+  sympy:    '\\circ',
+  numeric:  '\\triangle',
+  lean:     '\\checkmark',
+  sympylean: '\\checkmark\\!\\checkmark',
+};
+const KX_MACROS = {
+  '\\ltag':     '\\tag{#1}',
+  '\\eqref':    '(\\text{#1})',
+  // \veq family — KaTeX has no \label so \veqStar just consumes the arg.
+  '\\veq':      '\\@ifstar\\veqStar\\veqNum',
+  '\\veqNum':   '\\tag{#1}',
+  '\\veqStar':  '',
+  // Verification-tier badge macros.
+  '\\sorry':    '\\mathbf{?}',
+  '\\sympy':    '\\circ',
+  '\\numeric':  '\\triangle',
+  '\\lean':     '\\checkmark',
+  '\\sympylean': '\\checkmark\\!\\checkmark',
+};
 
 let fail = 0;
 const pass = (m) => console.log('  ok   ' + m);
@@ -73,6 +107,54 @@ const { RegisterHTMLHandler } = require('mathjax-full/js/handlers/html.js');
 const { AllPackages } = require('mathjax-full/js/input/tex/AllPackages.js');
 const adaptor = liteAdaptor(); RegisterHTMLHandler(adaptor);
 
+// ---- \veq family: dedicated assertions in both engines ----
+// Tests that \veq{h}, \veq*{h}, and trailing tier badges all render without errors,
+// and that \eqref{h} resolves cleanly (no tier leaks into the handle) under MathJax.
+console.log('[test_mathjax] \\veq macro family');
+
+const VEQ_CASES = [
+  { name: '\\veq{edot} numbered',               expr: '\\veq{edot}' },
+  { name: '\\veq*{edot} unnumbered',             expr: '\\veq*{edot}' },
+  { name: '\\veq{edot}\\lean',                   expr: '\\veq{edot}\\lean' },
+  { name: '\\veq{edot}\\sorry',                  expr: '\\veq{edot}\\sorry' },
+  { name: '\\veq{edot}\\sympy\\lean composed',   expr: '\\veq{edot}\\sympy\\lean' },
+];
+
+// MathJax \veq assertions — fresh doc per case to avoid "label multiply defined" errors
+// (each equation is a self-contained assertion; labels accumulate across doc.convert calls,
+//  so shared-doc renders of the same handle id would fail on the second call).
+for (const { name, expr } of VEQ_CASES) {
+  const tex = new TeX({ packages: AllPackages, tags: 'ams', macros: MJ_MACROS });
+  const doc = mathjax.document('', { InputJax: tex, OutputJax: new SVG() });
+  const html = adaptor.innerHTML(doc.convert(expr, { display: true }));
+  if (html.includes('merror')) bad(`MathJax \\veq: merror in ${name}`);
+  else pass(`MathJax \\veq: ${name}`);
+}
+// \eqref{edot} must resolve cleanly — no tier leak into the handle.
+// A shared doc is intentional here: render \veq{edot}\lean first to register the label,
+// then resolve the cross-ref in the same doc.
+{
+  const tex = new TeX({ packages: AllPackages, tags: 'ams', macros: MJ_MACROS });
+  const doc = mathjax.document('', { InputJax: tex, OutputJax: new SVG() });
+  doc.convert('\\veq{edot}\\lean', { display: true });
+  const refHtml = adaptor.innerHTML(doc.convert('\\eqref{edot}', { display: false }));
+  if (refHtml.includes('???')) bad('MathJax \\veq: \\eqref{edot} unresolved (???) after \\veq{edot}\\lean');
+  else pass('MathJax \\veq: \\eqref{edot} resolves cleanly (no tier leak) after \\veq{edot}\\lean');
+}
+
+// KaTeX \veq assertions — require katex (also used for the per-doc renders below).
+const katex = require('katex');
+{
+  for (const { name, expr } of VEQ_CASES) {
+    try {
+      katex.renderToString(expr, { macros: { ...KX_MACROS }, displayMode: true, throwOnError: true });
+      pass(`KaTeX \\veq: ${name}`);
+    } catch (e) {
+      bad(`KaTeX \\veq: ${name} → ${e.message.split('\n')[0]}`);
+    }
+  }
+}
+
 for (const d of DOCS) {
   const src = read(d);
   const tex = new TeX({ packages: AllPackages, tags: 'ams', macros: MJ_MACROS });
@@ -91,7 +173,6 @@ for (const d of DOCS) {
 
 // ---- KaTeX: render the handles with the .vscode preview macros ----
 console.log('[test_mathjax] KaTeX (VS Code preview) render');
-const katex = require('katex');
 for (const d of DOCS) {
   const src = read(d);
   let errs = 0;
