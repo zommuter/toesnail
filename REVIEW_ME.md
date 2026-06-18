@@ -9,6 +9,28 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 > `.mw`/collAIb tool may later *pre-fill a suggested fix* for a sufficiently-clear item,
 > but a human still accepts it — the suggestion is a draft, not a merge.
 
+## `\veq` carrier syntax — feasibility-gate result (`id:e0b7` pilot, 2026-06-18)
+
+- [ ] **PICK the `\veq` in-prose syntax — the meeting's preferred `\veq[tier]{h}` is INFEASIBLE; choose a fallback.**
+  The `id:e0b7` KaTeX/MathJax feasibility spike (run 2026-06-18, this `/relay --afk` turn) settled the
+  D7 gate empirically. Matrix (KaTeX 0.16.47 + MathJax 3, both engines this repo renders through):
+
+  | in-prose form | KaTeX | MathJax | note |
+  |---|---|---|---|
+  | `\veq[tier]{h}` (optional-arg — meeting D3/D7 **preferred**) | ❌ FAIL | ✅ | KaTeX has **no** optional-argument macro support (`\newcommand{\veq}[2][sorry]{…}` → `Expected '}', got '#'`). |
+  | `\veq{h:tier}` (colon, 1 mandatory arg — D7's pre-named fallback) | ✅ | ✅ | tier is part of the single arg → `\tag{h:tier}`/`\label{h:tier}`; `\eqref` must then target `h:tier` (KaTeX macros can't string-split on `:`). |
+  | `\veq{h}{tier}` (2 mandatory args) | ✅ | ✅ | `#1`=handle stays the clean `\tag{#1}\label{#1}` (so `\eqref{h}` is clean); `#2`=tier drives the badge; open-debt needs a `sorry` sentinel, and there is no bare 1-arg `\veq{h}` (always 2 args, or define a 2nd macro). |
+
+  **Owner decision needed** (this REVISES meeting D7, which pre-chose the colon form *without* the feasibility
+  data): adopt (a) colon `\veq{h:tier}` (D7 default; but the tier leaks into the `\eqref` handle on the site —
+  verify acceptable), or (b) 2-mandatory `\veq{h}{tier}` (clean `\eqref{h}`, costs a `sorry` sentinel / no bare
+  1-arg form), or (c) keep `\ltag` for plain tags + a separate `\veq{h}{tier}` only for verify-marked equations.
+  This choice GATES the `id:a9d2`/`id:dce9` corpus migration AND the `.mw` grammar (`mathematical-writing` `id:358f`,
+  whose math-frontend lowering must match the chosen form). **No macro was committed** — picking the carrier
+  syntax is an owner call (the no-AI-vibe-thinking constraint; D7 made it a gate precisely so the owner ratifies).
+  Reproducer: re-run the spike inline (KaTeX `renderToString` with `macros:{veq:[…]}` / MathJax `TeX({macros})`),
+  or see this turn's diary entry. (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
+
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
 - [x] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
