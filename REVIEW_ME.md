@@ -11,7 +11,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## `\veq` carrier syntax — feasibility-gate result (`id:e0b7` pilot, 2026-06-18)
 
-- [ ] **PICK the `\veq` in-prose syntax — the meeting's preferred `\veq[tier]{h}` is INFEASIBLE; choose a fallback.**
+- [x] **PICK the `\veq` in-prose syntax — RATIFIED (d) by owner 2026-06-18** (the meeting's preferred `\veq[tier]{h}` was INFEASIBLE; owner chose form (d), see decision note below).
   The `id:e0b7` KaTeX/MathJax feasibility spike (run 2026-06-18, this `/relay --afk` turn) settled the
   D7 gate empirically. Matrix (KaTeX 0.16.47 + MathJax 3, both engines this repo renders through):
 
@@ -96,18 +96,19 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   every raw-engine sub-question, can't deploy through this repo's JSON/no-in-doc-def config on the KaTeX/VS-Code
   side. The two forms that DO deploy through the existing simple-string central config in both engines are
   **(a) 2-brace `\veq{h}{\tierbadge}`** and **(d) `\veq{h}` + trailing annotation macro(s)** (owner's idea).
-  Owner has stated a preference for **(d) + `\@ifstar` + an open annotation-kind family** (rounds 4–5).
-  **Owner decision needed** (REVISES meeting D7's colon default) — ratify one of:
-  (a) 2-brace `\veq{h}{\tierbadge}` (one token, always 2 args, retrofit `{\sorryB}` onto every handle);
-  (d) `\veq{h}` 1-arg drop-in + standalone trailing annotation macro(s) + `\@ifstar`, absence=implicit/unannotated
-  — *owner-favoured, evidence-supported* (cleanest migration + tool/.mw separation + extends to non-verify kinds);
-  (b) colon `\veq{h:tier}` (bare `\veq h:tier;` authoring, no portable emoji badge); or (c) keep `\ltag` for plain
-  tags and add annotation macros only on marked equations.
-  This GATES the `id:a9d2`/`id:dce9` corpus migration AND the `.mw` grammar (`mathematical-writing` `id:358f`,
-  whose math-frontend lowering must match). **No macro committed** — picking the carrier syntax is an owner call
-  (no-AI-vibe-thinking; D7 made it a gate). Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax
-  `TeX({macros})` — see this turn's diary entries. (toesnail `id:e0b7`; meeting
-  `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
+  **OWNER RATIFIED 2026-06-18 (this conversation): form (d) — `\veq[*]{label}[\tier]`-style** = `\veq{h}` (1-arg
+  `\ltag` drop-in) + `\@ifstar` for the unnumbered `\veq*{h}` + optional trailing annotation macro(s), absence =
+  implicit/unannotated. This REVISES meeting D7's colon default. **Name check (round-6):** `\veq` and the tier
+  macros `\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` are all FREE (undefined) in BOTH KaTeX and MathJax —
+  no builtin collision (real-LaTeX-package collision only matters if the corpus is ever `latex`-compiled; none of
+  siunitx/physics/mathtools/unicode-math defines `\veq` — low-priority caveat). **Deferred as a bonus (owner):**
+  a custom active-char shorthand `@{edot}`/`@{edot}@lean` instead of `\veq` — infeasible via the central config
+  anyway (active chars need catcode/`\def`, not a JSON string-map). **NOT a blocker (owner):** the annotation
+  *taxonomy* (definition/assumption/… beyond verify) + final macro NAME + per-glyph choices are a SEPARATE
+  `/meeting`, not gating this. Implementation proceeds with the verify tiers now, extensibly.
+  Remaining gates for the `id:a9d2`/`id:dce9` corpus migration: the `.mw` side (`mathematical-writing` `id:358f`).
+  Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax `TeX({macros})` — see this turn's diary entries.
+  (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
 
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
