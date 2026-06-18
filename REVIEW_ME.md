@@ -192,12 +192,15 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     tag/label tokens were appended — no math edited.** Confirm the four handles sit on the claims you intended
     (esp. `meanE` on l.22 vs the earlier chain lines, and `lambertw` on l.59 vs the `e^{βE₁}` form on l.61–62).
 
-- [ ] **FINDING — `lambertw` tier: SymPy can't symbolically verify a transcendental inversion.** You marked
-  the Lambert-W inversion for `\sympy`, but `W` is transcendental: the faithful mechanical check is **numeric**
-  (substitute sample `βE` values, confirm `y = x/(e^x∓1)` holds for BOTH ∓ branches with `x = −W(−y e^{∓y})∓y`),
-  not a pure-symbolic SymPy identity. Recommend its verified tier be `\numeric` (open-debt `\numericc`), not
-  `\sympy` — the badge family already supports it. **Owner decides** the tier; if you agree I swap
-  `\veq{lambertw}\sympyc`→`\veq{lambertw}\numericc` and build a numeric instrument. (Surfaced 2026-06-18.)
+- [ ] **`lambertw` tier ESCALATED to Lean [HARD] (owner-ratified 2026-06-18).** SymPy CONFIRMED can't close
+  the transcendental inversion — `simplify(x/(e^x∓1))` with `x=−W(−y e^{∓y})∓y` leaves a non-reduced LambertW
+  expression (`==y` is False for BOTH ∓ branches; probe run). Numeric is **only a counter-indicator** (a
+  passing numeric check falsifies nothing — it can't attest a symbolic identity), NOT the assurance tier. So
+  the faithful tier is **Lean** and the claim is **[HARD]** (owner-physics formalization, the `edot_deriv`
+  frozen-signature treatment). Marker swapped `\veq{lambertw}\sympyc`→`\veq{lambertw}\leanc` (wants-Lean, open
+  debt). **OPEN for the scoping `/meeting`:** (a) does Mathlib even carry Lambert-W (`Real.lambertW`?) — a real
+  capability-gap risk that may block or redirect; (b) the frozen `HasDerivAt`-style signature + DoD; (c) whether
+  a cheap numeric pre-filter instrument is worth building as a counter-indicator alongside. Surfaced 2026-06-18.
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by

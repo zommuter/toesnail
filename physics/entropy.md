@@ -56,7 +56,7 @@ $$\begin{align}
 \\ ye^{\mp y} e^x &= x
 \\ -ye^{\mp y} &= -x e^{-x}
 \\\Rightarrow x &= -W(-ye^{\mp y})
-\\\Rightarrow \beta E_1 &= -W(-\beta E\cdot e^{\mp\beta E}) \mp \beta E \veq{lambertw}\sympyc
+\\\Rightarrow \beta E_1 &= -W(-\beta E\cdot e^{\mp\beta E}) \mp \beta E \veq{lambertw}\leanc
 \\ e^{\beta E_1} &= e^{\mp\beta E}\cdot e^{-W(...)}
 \\ &= e^{\mp\beta E}\frac{W(...)}{-\beta E e^{\mp\beta E}} = -\frac1\beta W\left(-\beta E\cdot e^{\mp\beta E}\right)
 \end{align}$$
