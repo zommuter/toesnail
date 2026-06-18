@@ -30,7 +30,12 @@
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
 - [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
-  (id:445e) + `.mw`. (/meeting 2026-06-15) <!-- id:d2f4 -->
+  (id:445e) + `.mw`. (/meeting 2026-06-15) **OPTION (owner obs 2026-06-18, entropy.md):** don't hand-invent
+  per-line subhandles — `\veq{h}` only the lines that need a STABLE/citeable handle and let amsmath's native
+  auto-enumeration number the ephemeral steps for free (verified: tagged line shows `(lambertw ∘?)`, untagged
+  lines keep `(12)`/`(13)` in BOTH engines; KaTeX `\veq` is `\tag`-only — no `\label` — so it's legal mid-align).
+  CAVEAT: auto-numbers are NOT stable (`\eqref`-able) — they renumber on any insertion above; so the division is
+  `\veq`=cited/verify-debt, auto-number=visible-step-only. <!-- id:d2f4 -->
   (docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md). Split decided: HARD tier (deterministic
   `.mw` DAG) → non-blocking **post-commit hook** writing ephemeral `git notes` on `refs/notes/verify`
   (`pending`→`triaged`→`processed`, never deleted = observe-first logger); SOFT tier (LLM, incl. b7b1
