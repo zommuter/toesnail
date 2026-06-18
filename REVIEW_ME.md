@@ -37,10 +37,31 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     unicode emoji ✓✅ render in KaTeX only with metric *warnings* `unknownSymbol` — badges should use LaTeX
     symbols `\checkmark`/`\bullet`/`\dagger` or `\htmlClass`, not literal emoji.)
 
+  **Round-3 pilot (2026-06-18, owner asked: is a delimited `\def` like `\veq edot;lean;` acceptable, is the
+  trailing `;` needed, does `\veq edot;`+whitespace terminate, is `\veq*` an issue?):**
+  - Delimited `\def\veq#1;#2;{…}` parses `\veq edot;lean;` in BOTH engines (tag `edot`, tier `lean`).
+  - **Trailing `;` IS required** — `\veq edot;lean` (no closing `;`) is a parse error ("expected ';' at end of
+    input"). A delimited arg ends only on its literal delimiter token, NOT on whitespace or a non-latin char.
+    (Exception: a SPACE-delimited final arg `\def\veq#1 {…}` ends on whitespace — single trailing arg only,
+    eats one space.) So an optional tier can't auto-terminate; use a MANDATORY tier with a `sorry` sentinel
+    (`\veq h;tier;`). `\@ifnextchar` optionality was fragile.
+  - **`\veq*` is NOT an issue** — `\@ifstar` works in BOTH engines (`\veq*…` → no number, `\veq …` → numbered).
+  - **BUT deployment blocker (decisive):** the project forbids in-document `\def` (the `\gdef` lesson) → macros
+    must live in central config. A delimited `\def` CANNOT be expressed in `.vscode/settings.json`
+    `markdown.math.macros` (JSON, strings only): a `\def`-string expands to garbage, a simple `#1`-string can't
+    carry the delimiter signature, and a JS FUNCTION (which DOES work in KaTeX) can't live in JSON. So the
+    delimited grammar **cannot reach the VS Code KaTeX preview** without a custom KaTeX build/extension or
+    dropping preview parity (MathJax's JS config could take a custom CommandMap; KaTeX/VS-Code is the blocker).
+    The 2-brace `\veq{h}{\tierB}` form, by contrast, DEPLOYS via plain string macros in BOTH central configs
+    (verified): `.vscode` `"\\veq":"\\tag{#1}\\,{\\scriptstyle #2}"`, `custom-head.html` `veq:['\\tag{#1}\\,#2',2]`,
+    with per-tier badge string macros `\sorryB`→`{?}`, `\leanB`→`\checkmark` (LaTeX symbols, no metric warning).
+
   **Net:** in KaTeX you cannot get *both* a clean label AND a tier badge from a colon string (splitting forbids
-  braces; badging needs a macro-token arg). This **collapses the fork onto the 2-mandatory form
-  `\veq{h}{\tierbadge}`** as the only one satisfying the full requirement in both engines, no `\ifx`, no
-  delimiters, no colon-collision. **Owner decision still needed** (this REVISES meeting D7's colon default):
+  braces; badging needs a macro-token arg); and the delimited `\def` alternative, while it answers every
+  sub-question at the raw-engine level, **can't deploy through this repo's JSON/no-in-doc-def config on the
+  KaTeX/VS-Code side**. Both point to the same place: the **2-brace `\veq{h}{\tierbadge}`** form — the only one
+  satisfying the full requirement (clean `\eqref`, tier badge, both engines, central-config-deployable, no
+  `\ifx`, no colon-collision). **Owner decision still needed** (this REVISES meeting D7's colon default):
   ratify (a) 2-mandatory `\veq{h}{\tierbadge}` — *evidence-recommended*; or (b) accept the colon form's
   limitations (bare `\veq h:tier;` authoring + no portable emoji badge); or (c) keep `\ltag` for plain tags and
   introduce `\veq{h}{\tierbadge}` only on verify-marked equations. This GATES the `id:a9d2`/`id:dce9` corpus
