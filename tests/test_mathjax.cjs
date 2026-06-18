@@ -36,15 +36,14 @@ const DOCS = [
 // Keep these in sync with the source configs whenever macros are added or changed.
 const MJ_MACROS = {
   ltag:     ['\\tag{#1}\\label{#1}', 1],
-  // \veq{h}\tier — handle + verification badge together in the (tag); dispatches via \@ifstar.
-  //   \veqNum = numbered form (tag + label); \veqStar = unnumbered (label + quad-badge, no tag).
-  //   2nd arg is a single-token tier macro, $...$-wrapped inside the text-mode tag (both engines).
-  // RESIDUAL (id:a138): \veq* and \veq in the SAME convert() call trigger MathJax's \@ifstar
-  //   label-pollution (spurious \label using the branch macro name → "Label '\veqNum' multiply
-  //   defined"). Workaround: keep \veq* and outer \veq{h}\tier in separate $$-blocks.
-  veq:      ['\\@ifstar\\veqStar\\veqNum', 0],
-  veqNum:   ['\\tag{#1\\,$#2$}\\label{#1}', 2],
-  veqStar:  ['\\label{#1}\\quad #2', 2],
+  // \veq{h}\tier — numbered: handle + verification badge in the (tag); 2nd arg is a
+  //   single-token tier macro, $...$-wrapped inside the text-mode tag (both engines).
+  // \veqs{h}\tier — unnumbered sub-step/inline: \label + \quad-badge, no \tag.
+  //   Both are DIRECT macros (NO \@ifstar): a \veq* star variant is infeasible because MathJax's
+  //   \@ifstar registers a spurious \label keyed on the branch-macro name, so the 2nd non-star
+  //   \veq in one document fails "Label '\veqNum' multiply defined" (id:a138).
+  veq:      ['\\tag{#1\\,$#2$}\\label{#1}', 2],
+  veqs:     ['\\label{#1}\\quad #2', 2],
   // Verification-tier badge macros (LaTeX symbols, not raw emoji — no metric warnings).
   //   \sorry    → \mathbf{?}           (open debt)
   //   \sympy    → \circ                (SymPy / CAS check)
@@ -56,21 +55,26 @@ const MJ_MACROS = {
   numeric:  '\\triangle',
   lean:     '\\checkmark',
   sympylean: '\\checkmark\\!\\checkmark',
+  // annotation-KIND pilot macros (id:8ddc) — not verification tiers
+  definition: '\\mathrm{def}',
+  assumption: '\\mathrm{ass}',
 };
 const KX_MACROS = {
   '\\ltag':     '\\tag{#1}',
   '\\eqref':    '(\\text{#1})',
-  // \veq{h}\tier — dispatches via \@ifstar; \veqNum = numbered (tag); \veqStar = unnumbered.
-  //   KaTeX has no \label; \veqStar shows handle visibly (cosmetic — editor-preview only).
-  '\\veq':      '\\@ifstar\\veqStar\\veqNum',
-  '\\veqNum':   '\\tag{#1\\,$#2$}',
-  '\\veqStar':  '#1\\quad #2',
+  // \veq{h}\tier — numbered (tag); \veqs{h}\tier — unnumbered (no \tag). Both DIRECT (no \@ifstar).
+  //   KaTeX has no \label; \veqs shows the handle visibly (cosmetic — editor-preview only).
+  '\\veq':      '\\tag{#1\\,$#2$}',
+  '\\veqs':     '#1\\quad #2',
   // Verification-tier badge macros.
   '\\sorry':    '\\mathbf{?}',
   '\\sympy':    '\\circ',
   '\\numeric':  '\\triangle',
   '\\lean':     '\\checkmark',
   '\\sympylean': '\\checkmark\\!\\checkmark',
+  // annotation-KIND pilot macros (id:8ddc)
+  '\\definition': '\\mathrm{def}',
+  '\\assumption': '\\mathrm{ass}',
 };
 
 let fail = 0;
@@ -114,13 +118,12 @@ const { AllPackages } = require('mathjax-full/js/input/tex/AllPackages.js');
 const adaptor = liteAdaptor(); RegisterHTMLHandler(adaptor);
 
 // ---- \veq family: dedicated assertions in both engines ----
-// Tests that \veq{h}\tier (handle + badge-in-tag) and \veq*{h}\tier (inline/sub-step badge,
+// Tests that \veq{h}\tier (handle + badge-in-tag) and \veqs{h}\tier (inline/sub-step badge,
 // no tag) render without errors in both engines, and that \eqref{h} resolves cleanly (no tier
-// leaks into the handle) under MathJax.
-// RESIDUAL (id:a138): \veq* and \veq in the SAME expression/convert()-call cause a
-// "Label '\veqNum' multiply defined" merror in MathJax (MathJax \@ifstar label-pollution quirk).
-// Workaround: keep \veq* usages and their outer \veq{h}\tier in separate $$-blocks.
-// KaTeX cosmetic: \veqStar shows the handle visibly (KaTeX has no \label; editor-preview only).
+// leaks into the handle) under MathJax. Both are DIRECT macros (no \@ifstar): a \veq* star form
+// is infeasible — MathJax's \@ifstar registers a spurious \label keyed on the branch-macro name,
+// so the 2nd non-star \veq in one document fails "Label '\veqNum' multiply defined" (id:a138).
+// KaTeX cosmetic: \veqs shows the handle visibly (KaTeX has no \label; editor-preview only).
 console.log('[test_mathjax] \\veq macro family');
 
 const VEQ_CASES = [
@@ -129,13 +132,15 @@ const VEQ_CASES = [
   { name: '\\veq{esol}\\numeric',              expr: '\\veq{esol}\\numeric' },
   { name: '\\veq{edot}\\lean',                 expr: '\\veq{edot}\\lean' },
   { name: '\\veq{edot}\\sympylean (combined)', expr: '\\veq{edot}\\sympylean' },
+  { name: '\\veq{e}\\definition (kind pilot)',  expr: '\\veq{e}\\definition' },
+  { name: '\\veq{eom}\\assumption (kind pilot)', expr: '\\veq{eom}\\assumption' },
 ];
-// \veq* cases — tested separately (fresh docs) to avoid the \@ifstar label-pollution issue.
+// \veqs (unnumbered) cases.
 const VEQ_STAR_CASES = [
-  { name: '\\veq*{ed}\\lean (display)',  expr: '\\veq*{ed}\\lean',  display: true  },
-  { name: '\\veq*{ed}\\lean (inline)',   expr: '\\veq*{ed}\\lean',  display: false },
-  { name: '\\veq*{ed}\\sorry',           expr: '\\veq*{ed}\\sorry', display: true  },
-  { name: '\\veq*{ed}\\sympy',           expr: '\\veq*{ed}\\sympy', display: true  },
+  { name: '\\veqs{ed}\\lean (display)',  expr: '\\veqs{ed}\\lean',  display: true  },
+  { name: '\\veqs{ed}\\lean (inline)',   expr: '\\veqs{ed}\\lean',  display: false },
+  { name: '\\veqs{ed}\\sorry',           expr: '\\veqs{ed}\\sorry', display: true  },
+  { name: '\\veqs{ed}\\sympy',           expr: '\\veqs{ed}\\sympy', display: true  },
 ];
 
 // MathJax \veq assertions — fresh doc per case to avoid "label multiply defined" errors
@@ -166,8 +171,8 @@ for (const { name, expr, display } of VEQ_STAR_CASES) {
   const tex = new TeX({ packages: AllPackages, tags: 'ams', macros: MJ_MACROS });
   const doc = mathjax.document('', { InputJax: tex, OutputJax: new SVG() });
   const html = adaptor.innerHTML(doc.convert(expr, { display }));
-  if (html.includes('merror')) bad(`MathJax \\veq*: merror in ${name}`);
-  else pass(`MathJax \\veq*: ${name}`);
+  if (html.includes('merror')) bad(`MathJax \\veqs: merror in ${name}`);
+  else pass(`MathJax \\veqs: ${name}`);
 }
 
 // KaTeX \veq assertions — require katex (also used for the per-doc renders below).
@@ -187,9 +192,9 @@ const katex = require('katex');
   for (const { name, expr, display } of VEQ_STAR_CASES) {
     try {
       katex.renderToString(expr, { macros: { ...KX_MACROS }, displayMode: display, throwOnError: true });
-      pass(`KaTeX \\veq*: ${name}`);
+      pass(`KaTeX \\veqs: ${name}`);
     } catch (e) {
-      bad(`KaTeX \\veq*: ${name} → ${e.message.split('\n')[0]}`);
+      bad(`KaTeX \\veqs: ${name} → ${e.message.split('\n')[0]}`);
     }
   }
 }

@@ -45,17 +45,17 @@ echo "[test_render] kramdown left math for MathJax"
 
 echo "[test_render] handles + delimiters survived"
 have '\$\$'        "$R" 6 && pass "\$\$ display blocks present"   || bad "\$\$ blocks missing"
-have 'ltag{eom}'   "$R"   && pass "\\ltag{eom} handle present"    || bad "ltag handle missing"
+have 'veq{eom}'    "$R"   && pass "\\veq{eom} handle present"     || bad "veq{eom} handle missing"
 have 'eqref{eom}'  "$R"   && pass "\\eqref{eom} cross-ref present"|| bad "eqref cross-ref missing"
 # A handle must live in a BLOCK ($$) equation. If a \ltag lands in an inline
 # kdmath span (single $), kramdown folded the $$ into a paragraph — e.g. a
 # comment glued to the closing $$ with no blank line — and MathJax then renders
 # it inline (left-aligned, \tag suppressed). Guard against that regression.
-[ "$(grep -c 'class="kdmath">\$[^$]*ltag' "$R")" -eq 0 ] && pass "all handles in block (\$\$) math" || bad "a \\ltag landed in inline math (blank line missing after \$\$?)"
+[ "$(grep -cE 'class="kdmath">\$[^$]*(ltag|veq)' "$R")" -eq 0 ] && pass "all handles in block (\$\$) math" || bad "a \\ltag/\\veq landed in inline math (blank line missing after \$\$?)"
 
 echo "[test_render] markers stay HTML comments"
 have '<!-- verify:'   "$R" && pass "verify: markers are comments"    || bad "verify: not in a comment"
-have '<!-- verified:' "$R" && pass "verified: markers are comments"  || bad "verified: not in a comment"
+# verified: attestations migrated to physics/Resogram.toml (a9d2 2026-06-18) — no longer in the .md.
 # a verify: marker must never appear as visible <p> text
 if grep -oE '<p>[^<]*verify:' "$R" | grep -q .; then bad "a verify: marker leaked into visible text"; else pass "no marker leaked into body"; fi
 

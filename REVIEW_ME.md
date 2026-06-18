@@ -19,10 +19,13 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   `\eqref` key on the clean handle `#1`; the badge is `$...$`-wrapped so the math glyph survives the tag's text
   mode in both engines. Implemented in `_includes/custom-head.html` + `.vscode/settings.json` + `test_mathjax.cjs`
   (`veq: \tag{#1\,$#2$}\label{#1}`, tiers `\sorry`→? `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓). `\ltag`
-  kept for not-yet-migrated handles. **Implemented (2026-06-18):** `\veq*` unnumbered/sub-step/inline
-  variant (`id:a138`) — display + inline work (MathJax + KaTeX green); residuals: KaTeX preview shows handle
-  (cosmetic/interim), and `\veq*` + outer `\veq{h}\tier` in the SAME `$$`-block merrors in MathJax (MathJax
-  `\@ifstar` label-pollution — workaround: separate `$$`-blocks).
+  kept for not-yet-migrated handles. **Unnumbered variant = `\veqs` (NOT `\veq*`) (`id:a138`):** a `\veq*`
+  star via `\@ifstar` is infeasible (MathJax's `\@ifstar` registers a spurious `\label` keyed on the branch-
+  macro name, so the 2nd non-star `\veq` in one document fails "Label '\veqNum' multiply defined" — it broke
+  the Resogram page). Both forms are DIRECT macros; the unnumbered one is `\veqs{h}\tier` (`\label`+`\quad`
+  badge, no `\tag`); residual: KaTeX preview shows the handle on `\veqs` (cosmetic; site/MathJax clean).
+  **The `a9d2` corpus migration is DONE** (2026-06-18, `id:dce9`): Resogram on `\veq`/`\veqs` + sidecar
+  `physics/Resogram.toml`; suite green; `+\definition`/`\assumption` kind pilots added.
   **Deferred (owner, non-blocking):** `\tier*` open-debt notation (`id:feb8`), autolabel-suggestion (`id:7743`),
   notation-implies-annotation sanity checks (`id:8ddc`). The full decision history (rounds 1–6) is below.
 

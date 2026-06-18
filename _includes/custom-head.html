@@ -24,29 +24,32 @@ window.MathJax = {
       //   in BOTH MathJax and KaTeX. (\ltag stays for not-yet-migrated handles; a9d2 id:dce9.)
       //   Tier macros (verification state — see CONVENTIONS.md §2):
       //     \sorry → ?   \sympy → ∘   \numeric → △   \lean → ✓   \sympylean → ✓✓
-      // \veq* (id:a138) — unnumbered sub-step / inline-math variant: \quad badge, NO \tag.
-      //   Use for sub-steps inside a derivation, inline math, or inside an aligned env
-      //   that already carries its own outer \veq tag. Dispatch via \@ifstar.
-      //   \veqNum = numbered form (= old \veq behaviour): \tag + \label.
-      //   \veqStar = unnumbered form: \label only (no \tag; badge \quad-ed inline).
-      //   RESIDUAL (MathJax @ifstar label-pollution quirk): when \veq* and \veq BOTH appear
-      //   in the SAME convert() call (e.g. \veq* inside an aligned env AND \veq{h}\tier on
-      //   the outer $$-block), MathJax's \@ifstar registers a spurious \label using the
-      //   non-star branch macro name (\veqNum), causing "Label '\veqNum' multiply defined".
-      //   Workaround: place \veq* usage and outer \veq{h}\tier in SEPARATE $$-blocks.
-      //   See id:a138. (Display-only + inline-only \veq* work cleanly.)
+      // \veqs{h}\tier (id:a138) — unnumbered sub-step / inline-math variant: \label only,
+      //   badge \quad-ed inline, NO \tag. Use for sub-steps inside a derivation, inline math,
+      //   or inside an aligned env that already carries an outer \tag.
+      //   NB: a \veq* STAR variant via \@ifstar is INFEASIBLE — MathJax's \@ifstar registers a
+      //   spurious \label keyed on the branch-macro name, so the 2nd non-star \veq in the SAME
+      //   document (a whole page is one MathJax doc) fails "Label '\veqNum' multiply defined".
+      //   So both forms are DIRECT macros (no \@ifstar), and the unnumbered one is a distinct
+      //   name \veqs (not \veq*). The Resogram edot block uses \veqs for its sub-steps + a
+      //   manual \tag{edot} for the number (a9d2). See id:a138.
       // TODO id:feb8 — \tier* open-debt notation (e.g. \sympy* = wants-sympy-but-unverified):
       //   the trailing `*` orphans with the single-token 2nd arg; needs a distinct mechanism.
-      veq:     ['\\@ifstar\\veqStar\\veqNum', 0],
-      veqNum:  ['\\tag{#1\\,$#2$}\\label{#1}', 2],
-      veqStar: ['\\label{#1}\\quad #2', 2],
+      veq:     ['\\tag{#1\\,$#2$}\\label{#1}', 2],
+      veqs:    ['\\label{#1}\\quad #2', 2],
       // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
       // Plain (un-$-wrapped) here; \veq wraps the badge in $...$ when it places it in the tag.
       sorry:    '\\mathbf{?}',
       sympy:    '\\circ',
       numeric:  '\\triangle',
       lean:     '\\checkmark',
-      sympylean: '\\checkmark\\!\\checkmark'
+      sympylean: '\\checkmark\\!\\checkmark',
+      // Annotation-KIND macros (not verification tiers): PILOT of the open annotation family
+      // (id:8ddc / .mw id:358f open-enum {@<kind>}). \definition = a defining equation (:=),
+      // \assumption = a premise/given. Full kind taxonomy is a later /meeting; these two are
+      // piloted now on Resogram (e := energy def; eom = the model premise).
+      definition: '\\mathrm{def}',
+      assumption: '\\mathrm{ass}'
     }
   }
 };

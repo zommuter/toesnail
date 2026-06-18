@@ -1,0 +1,49 @@
+# Resogram verify-attestation sidecar (a9d2 migration, 2026-06-18).
+# Keyed by equation handle; mirrors the .mw SidecarEntry shape (id:358f).
+#   tier_floor = lowest assurance tier intended for the claim
+#   tiers      = achieved/attested tiers (must contain the in-prose \veq badge's tier)
+#   claim      = srepr content-hash (claim identity) the instrument verifies
+#   by         = [<instrument-file>@<filehash8>, …] that produced the attestation
+# The in-prose badge is the human-facing carrier (\veq{h}\tier / \veq*{h}\tier);
+# this file holds the machine attestation. test_verify.sh joins the two by handle
+# and asserts (a) no claim/file-hash drift and (b) sidecar handles ⊆ source \veq handles.
+# Handles that are OPEN debt (sol \sorry) or annotation KINDS (eom \assumption, e
+# \definition) carry no attestation and have no entry here.
+
+[edot]
+tier_floor = "sympy"
+tiers = ["sympy+lean"]
+claim = "b575864e"
+by = ["resogram_edot.py@54710d91", "Resogram.lean@a036b80d"]
+
+[edot_deriv]
+tier_floor = "lean"
+tiers = ["lean"]
+claim = "f359c0bf"
+by = ["Resogram.lean@a036b80d"]
+
+[ymaint]
+# handle ymaint (a9d2 fork A); instrument file is resogram_drive.py
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "67223e71"
+by = ["resogram_drive.py@9fe74c88"]
+
+[yfree]
+# co-verified with ymaint by the same instrument (resogram_drive.py: "eq ymaint + yfree")
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "67223e71"
+by = ["resogram_drive.py@9fe74c88"]
+
+[eincr]
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "d4c18e3b"
+by = ["resogram_eincr.py@60891e80"]
+
+[esol]
+tier_floor = "numeric"
+tiers = ["numeric"]
+claim = "18d3f7a7"
+by = ["resogram_esol.py@e6722a73"]

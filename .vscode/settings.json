@@ -10,20 +10,23 @@
     //   2nd arg is a single-token tier macro (no braces needed). KaTeX has no \label, so
     //   the handle is just the visible (tag); the badge is $...$-wrapped so the math glyph
     //   renders inside the text-mode tag. (\ltag stays for not-yet-migrated handles.)
-    // \veq* (id:a138) — unnumbered sub-step / inline-math variant: \quad badge, NO \tag.
-    //   Dispatch via \@ifstar. \veqNum = numbered form; \veqStar = unnumbered form.
-    //   KaTeX has no \label, so \veqStar shows the handle visibly (cosmetic — editor-preview
-    //   only; the published site uses MathJax where \label works and the handle is invisible).
-    //   This is an ACCEPTED interim cosmetic: KaTeX 2-arg macros must reference both #1 and #2.
+    // \veqs{h}\tier (id:a138) — unnumbered sub-step / inline variant: badge \quad-ed, NO \tag.
+    //   A \veq* star variant is INFEASIBLE (MathJax \@ifstar breaks the 2nd \veq in a page —
+    //   see custom-head.html), so the unnumbered form is the distinct macro \veqs (both DIRECT).
+    //   KaTeX has no \label, and a 2-arg macro must reference #1, so \veqs shows the handle in
+    //   the editor preview (cosmetic — the published MathJax site uses \label, handle invisible).
     // TODO id:feb8 — \tier* open-debt notation (deferred).
-    "\\veq":      "\\@ifstar\\veqStar\\veqNum",
-    "\\veqNum":   "\\tag{#1\\,$#2$}",
-    "\\veqStar":  "#1\\quad #2",
+    "\\veq":      "\\tag{#1\\,$#2$}",
+    "\\veqs":     "#1\\quad #2",
     // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid KaTeX metric warnings).
     "\\sorry":    "\\mathbf{?}",
     "\\sympy":    "\\circ",
     "\\numeric":  "\\triangle",
     "\\lean":     "\\checkmark",
-    "\\sympylean": "\\checkmark\\!\\checkmark"
+    "\\sympylean": "\\checkmark\\!\\checkmark",
+    // Annotation-KIND macros (pilot — id:8ddc/.mw id:358f open-enum kinds): \definition (:=),
+    // \assumption (premise). Full kind taxonomy is a later /meeting.
+    "\\definition": "\\mathrm{def}",
+    "\\assumption": "\\mathrm{ass}"
   }
 }
