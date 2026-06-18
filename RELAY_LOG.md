@@ -202,3 +202,7 @@ feat(verify): prove edot_deriv via HasDerivAt — ROUTINE id:b9bc (Sonnet-on-Lea
 ## 2026-06-17 22:03 — reviewer (claude-opus-4-8)
 
 review: cross-repo sweep — TODO-archive window audited clean (gaming-scan clean, doc-only bookkeeping); reconciled 1 cross-ledger drift tick (fed0); routine_open=0; open work all owner/design-gated (8807 verify markers, b9bc Lean pilot, d2f4/445e design)
+
+## 2026-06-18 10:14 — strong-execute (claude-opus-4-8)
+
+id:e0b7 \veq macro family (form d) — \@ifstar + verify-tier badge macros, both engines green; a9d2 gates cleared
