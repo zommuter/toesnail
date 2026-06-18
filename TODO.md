@@ -21,9 +21,9 @@
   Sonnet-on-Lean4]` 2026-06-16 /meeting**: fidelity judgment consumed; prove a FROZEN `HasDerivAt` signature
   in `verify/Resogram.lean` (`by` body only) + lean-only marker + rigor-debt row. See ROADMAP id:b9bc for the
   frozen signature, proof sketch, DoD, and pilot note. (2026-06-16-2257-edot-deriv-lean-formalization.md) <!-- id:b9bc -->
-- [ ] (GATED — forward-flag) Migrate toesnail's `<!-- verify/verified -->` HTML-comment markers to the `.mw`
-  brace-attribute surface (`{#anchor}`/`{@type target}`). Gate: the `.mw` brace-attestation design (routed:e4df)
-  landing. Owner is "_strongly_ against HTML comments". (2026-06-16-2257-edot-deriv-lean-formalization.md) <!-- id:a9d2 -->
+- [ ] **(toesnail) KaTeX/MathJax `\veq[…]{…}` feasibility pilot** — define trial `\veq`/`\veq*` macro (tag+`\label`+✓-emoji by tier) in `_includes/custom-head.html` (MathJax) and `.vscode/settings.json` (KaTeX); assert `\veq[lean]{edot}`, `\veq[sorry]{edot}`, `\veq*{x}` render in BOTH via `tests/test_mathjax.cjs`. Check name against siunitx/physics/mathtools/unicode-math; if `\veq` collides use `\vtag`; if `[…]` infeasible use `\veq{edot:lean}`. Gate on `id:a9d2`. (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md D7) <!-- id:e0b7 -->
+- [ ] **(toesnail, GATED on id:e0b7 + routed:8587) Execute `a9d2` migration** — rename `\ltag`→`\veq` corpus-wide; convert 5 Resogram HTML-comment markers to `\veq[…]{…}` badges + `physics/Resogram.toml` sidecar; rewrite `tests/test_verify.sh` (join badge↔sidecar by handle, assert sidecar-handles ⊆ source-handles); update `test_render.sh` `\ltag` guard. (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md) <!-- id:dce9 -->
+- [ ] (GATED — forward-flag, gate: id:e0b7 KaTeX pilot AND routed:8587 .mw side) Migrate toesnail's `<!-- verify/verified -->` HTML-comment markers to `\veq[…]{…}` badge + per-file `<stem>.toml` sidecar (D3–D5, 2026-06-18-0729-veq-macro-verify-carrier.md). Owner is "_strongly_ against HTML comments". Original gate was routed:e4df (.mw brace design); that design is now delivered by this meeting; new gates are: (1) id:e0b7 KaTeX/MathJax `\veq[...]` feasibility pilot; (2) routed:8587 .mw side implementation. <!-- id:a9d2 -->
 - [ ] (Forward-flag, GATED) CI Lean/Mathlib build — parked; ~60-min cold build for one one-liner. Gate: warranted
   only if local kernel-checking proves insufficient. (2026-06-16-0827-lean-edot-proof-mathlib-bringup.md) <!-- id:9d8c -->
     (drive + eincr attested; sol withheld pending owner paren-fix.) (2026-06-15-1409-resogram-verify-pilot-scope.md) <!-- id:ee36 -->
@@ -45,9 +45,10 @@
   dangling-symbol) → `/relay review` where Claude Code is the model (no ToS issue). REVIEW_ME stays the
   durable record; `/relay human` owns the `valid|noise` verdict. Coupling kept LOOSE (graceful-degrade,
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
+- [ ] **(toesnail, relay-contract note)** Clarify in `CONVENTIONS.md` + relay scope that tooling MAY write the `\veq` **badge arg** (derived attestation), but the equation/claim inside `\veq{…}` stays human-only theory. (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md D4) <!-- id:9fdc -->
+- [ ] **(forward-flag)** `\veq{}` is the natural vehicle for subequation labelling (`id:d2f4`) and ✓-emoji render variants (`id:445e`); design separately, after the KaTeX pilot (`id:e0b7`). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md) <!-- id:7b2b -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible
-  in-document annotation syntax to supersede illegible HTML `verify:` comments; design before changing
-  rendered output. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
+  in-document annotation syntax to supersede illegible HTML `verify:` comments; **`\veq{}` macro is the designed vehicle** (2026-06-18-0729-veq-macro-verify-carrier.md D3); implement render variants after `id:e0b7` KaTeX pilot + `id:dce9` migration land. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md) <!-- id:445e -->
 - [ ] **Cross-project (triad):** add the owner's Diplomarbeit `.git` repo — a fully finished LaTeX project —
   as a **second acceptance/test corpus** for the `.mw`/toesnail/collAIb triad (N=2 beyond toesnail's
   north-star physics docs; exercises `.mw` ingest + verification on real finished LaTeX). **MIRRORED in
