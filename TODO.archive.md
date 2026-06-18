@@ -53,3 +53,4 @@
   VS Code applies `.vscode/settings.json` macros (render correctness is now machine-checked). DONE 2026-06-16 (owner-walked all 3 [HUMAN] boxes, /relay human). <!-- id:6501 -->
   by splitting into two `$$` blocks (`\ltag{e}` + ė-chain `\ltag{edot}` outer), owner-confirmed; suite green,
   covered by `tests/test_mathjax.cjs`. <!-- id:3b4c -->
+- [x] Recovered-pages infra: exclude `crypto/` non-page companions (`fhe.ipynb`/`.py`/`.ods`) from the Jekyll build [ROUTINE] — closed in ROADMAP; TODO ticked /relay review 2026-06-17 (_config.yml excludes all 3 companions per acceptance; test_crypto_exclude.sh wired, SKIPs without Ruby by design). <!-- id:fed0 -->
