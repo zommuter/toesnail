@@ -10,9 +10,15 @@
     //   2nd arg is a single-token tier macro (no braces needed). KaTeX has no \label, so
     //   the handle is just the visible (tag); the badge is $...$-wrapped so the math glyph
     //   renders inside the text-mode tag. (\ltag stays for not-yet-migrated handles.)
-    // TODO id:a138 — \veq* unnumbered/sub-step/inline variant (deferred; see custom-head.html).
+    // \veq* (id:a138) — unnumbered sub-step / inline-math variant: \quad badge, NO \tag.
+    //   Dispatch via \@ifstar. \veqNum = numbered form; \veqStar = unnumbered form.
+    //   KaTeX has no \label, so \veqStar shows the handle visibly (cosmetic — editor-preview
+    //   only; the published site uses MathJax where \label works and the handle is invisible).
+    //   This is an ACCEPTED interim cosmetic: KaTeX 2-arg macros must reference both #1 and #2.
     // TODO id:feb8 — \tier* open-debt notation (deferred).
-    "\\veq":      "\\tag{#1\\,$#2$}",
+    "\\veq":      "\\@ifstar\\veqStar\\veqNum",
+    "\\veqNum":   "\\tag{#1\\,$#2$}",
+    "\\veqStar":  "#1\\quad #2",
     // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid KaTeX metric warnings).
     "\\sorry":    "\\mathbf{?}",
     "\\sympy":    "\\circ",
