@@ -13,6 +13,24 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
 
 ## Items
 
+- [ ] Sync authoring docs to the `\veq{h}\tier` form — retire the HTML-comment `verify:` syntax [ROUTINE] <!-- id:9fdc -->
+  - **Why**: the 2026-06-18 migration (`a9d2`/`dce9`) moved the corpus + KaTeX/MathJax macros to
+    `\veq{h}\tier`, but `CONVENTIONS.md`/`CLAUDE.md`/`ARCHITECTURE.md` still teach the retired
+    `<!-- verify:tier -->` HTML comment — so a `/relay human` pilot-marker instruction wrongly told the
+    owner to author HTML comments. Pure docs/convention sync (no theory), executor-eligible.
+  - **Scope**: `CONVENTIONS.md` §2 marker table (l.50-63), `CLAUDE.md` rigor-debt-markers (l.39-49),
+    `ARCHITECTURE.md` (l.20), and the `REVIEW_ME.md` `verify:`-pilot owner instruction. Document the
+    implemented form: `\veq{h}\tier` badges `\sorry`→? `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓;
+    open-debt is `\veq{h}\sorry` (NOT `\sympy*` — `id:feb8` `\tier*` notation is still unresolved).
+    KEEP the D4 carve-out: tooling MAY write the badge arg, but the equation/claim inside `\veq{…}` stays
+    human-only theory.
+  - **Acceptance**: `grep -rnE '<!--[[:space:]]*verify:' CONVENTIONS.md CLAUDE.md ARCHITECTURE.md` returns
+    nothing; each doc describes `\veq{h}\tier`; `bash tests/run.sh` green.
+  - **Not gated**: macros (`_includes/custom-head.html`, `.vscode/settings.json`) + corpus migration
+    (`a9d2`/`dce9`, `id:e0b7` pilot) already landed 2026-06-18. NB the residual content-bearing finding
+    comment at `physics/Resogram.md:21` is owner-only (theory notes), out of this item's scope.
+  - **Context**: meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` (D2-D4).
+
 - [x] Add a `Makefile` with `build`, `serve`, `test` targets [ROUTINE] <!-- id:fca7 -->
   - **Acceptance**: `make test` runs all three test layers (`tests/run.sh`) and exits 0;
     `make build` runs `bundle exec jekyll build`; `make serve` runs `bundle exec jekyll
