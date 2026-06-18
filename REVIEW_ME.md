@@ -15,21 +15,39 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   The `id:e0b7` KaTeX/MathJax feasibility spike (run 2026-06-18, this `/relay --afk` turn) settled the
   D7 gate empirically. Matrix (KaTeX 0.16.47 + MathJax 3, both engines this repo renders through):
 
-  | in-prose form | KaTeX | MathJax | note |
+  | in-prose form | KaTeX 0.16.47 | MathJax 3 | note |
   |---|---|---|---|
   | `\veq[tier]{h}` (optional-arg — meeting D3/D7 **preferred**) | ❌ FAIL | ✅ | KaTeX has **no** optional-argument macro support (`\newcommand{\veq}[2][sorry]{…}` → `Expected '}', got '#'`). |
-  | `\veq{h:tier}` (colon, 1 mandatory arg — D7's pre-named fallback) | ✅ | ✅ | tier is part of the single arg → `\tag{h:tier}`/`\label{h:tier}`; `\eqref` must then target `h:tier` (KaTeX macros can't string-split on `:`). |
-  | `\veq{h}{tier}` (2 mandatory args) | ✅ | ✅ | `#1`=handle stays the clean `\tag{#1}\label{#1}` (so `\eqref{h}` is clean); `#2`=tier drives the badge; open-debt needs a `sorry` sentinel, and there is no bare 1-arg `\veq{h}` (always 2 args, or define a 2nd macro). |
+  | `\veq{h:tier}` (colon, 1 brace arg — D7's pre-named fallback) | ⚠️ renders but **can't split** | ✅ | the whole `h:tier` becomes the `\tag`/`\label` (so `\eqref` must target `h:tier`, tier leaks into the handle). See round-2 below — KaTeX cannot split a *braced* colon arg. |
+  | `\veq{h}{tier-badge}` (2 brace args) | ✅ | ✅ | `#1`=handle stays the clean `\tag{#1}\label{#1}` (`\eqref{h}` clean, **immune to a colon in the handle** — verified `\veq{e:dot}{…}` → tag `(e:dot)`); `#2`=a per-tier badge **macro** drives the emoji. Open-debt = a `sorry`-sentinel badge; always 2 args (no bare `\veq{h}`). |
 
-  **Owner decision needed** (this REVISES meeting D7, which pre-chose the colon form *without* the feasibility
-  data): adopt (a) colon `\veq{h:tier}` (D7 default; but the tier leaks into the `\eqref` handle on the site —
-  verify acceptable), or (b) 2-mandatory `\veq{h}{tier}` (clean `\eqref{h}`, costs a `sorry` sentinel / no bare
-  1-arg form), or (c) keep `\ltag` for plain tags + a separate `\veq{h}{tier}` only for verify-marked equations.
-  This choice GATES the `id:a9d2`/`id:dce9` corpus migration AND the `.mw` grammar (`mathematical-writing` `id:358f`,
-  whose math-frontend lowering must match the chosen form). **No macro was committed** — picking the carrier
-  syntax is an owner call (the no-AI-vibe-thinking constraint; D7 made it a gate precisely so the owner ratifies).
-  Reproducer: re-run the spike inline (KaTeX `renderToString` with `macros:{veq:[…]}` / MathJax `TeX({macros})`),
-  or see this turn's diary entry. (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
+  **Round-2 pilot (2026-06-18, follow-up): can a macro SPLIT the colon to render only the real label, and
+  can it map tier→emoji? — both piloted now in both engines:**
+  - **Colon split:** MathJax can (delimited `\def`, `\ifx`). KaTeX can split *only* via a delimited
+    `\def\veq#1:#2;{…}` called **bare as `\veq edot:lean;`** (terminator required) — the **brace form
+    `\veq{edot:lean}` does NOT split** (braces hide the `:` → parse error "expected ':'"). So "keep the
+    `\veq{h:tier}` braces AND render a clean label" is **impossible in KaTeX**.
+  - **Colon-in-a-real-handle risk (your concern): real and inherent** — any delimited split takes the *first*
+    colon, so a future handle containing `:` mis-splits. Today's handles are colon-free, but it's a latent
+    landmine. The 2-arg form sidesteps it entirely (handle is its own braced arg).
+  - **tier→emoji badge:** mapping a tier *string* to an emoji needs `\ifx` (string conditional) — **KaTeX has
+    no `\ifx`** (MathJax does), so cross-engine string→emoji is out. The portable path is **per-tier badge
+    macros** (`\leanbadge`→`\checkmark`, `\sorrybadge`→…), which work in BOTH engines — but they need the badge
+    to be a **macro token**, i.e. the `\veq{h}{\tierbadge}` 2-arg form, not a colon substring. (Also: raw
+    unicode emoji ✓✅ render in KaTeX only with metric *warnings* `unknownSymbol` — badges should use LaTeX
+    symbols `\checkmark`/`\bullet`/`\dagger` or `\htmlClass`, not literal emoji.)
+
+  **Net:** in KaTeX you cannot get *both* a clean label AND a tier badge from a colon string (splitting forbids
+  braces; badging needs a macro-token arg). This **collapses the fork onto the 2-mandatory form
+  `\veq{h}{\tierbadge}`** as the only one satisfying the full requirement in both engines, no `\ifx`, no
+  delimiters, no colon-collision. **Owner decision still needed** (this REVISES meeting D7's colon default):
+  ratify (a) 2-mandatory `\veq{h}{\tierbadge}` — *evidence-recommended*; or (b) accept the colon form's
+  limitations (bare `\veq h:tier;` authoring + no portable emoji badge); or (c) keep `\ltag` for plain tags and
+  introduce `\veq{h}{\tierbadge}` only on verify-marked equations. This GATES the `id:a9d2`/`id:dce9` corpus
+  migration AND the `.mw` grammar (`mathematical-writing` `id:358f`, whose math-frontend lowering must match).
+  **No macro committed** — picking the carrier syntax is an owner call (no-AI-vibe-thinking; D7 made it a gate).
+  Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax `TeX({macros})` — see this turn's diary entry.
+  (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
 
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
