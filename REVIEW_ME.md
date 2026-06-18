@@ -68,19 +68,41 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     added separately, not retrofitted onto every handle); the badge is a SEPARATE token the tool inserts/updates
     without touching the equation/handle (badge=tooling, equation=human, D4); maps closely to D6's
     `{#h}{@verify tier}` brace (trailing badge ≈ the annotation fragment adjacent to the handle fragment).
-  - **Open sub-points:** the badge renders adjacent to, not welded onto, the number (owner judges visual);
-    `\veq*` unnumbered still needs `\@ifstar` (a `\def`, not JSON-able) or a separate `\veqs` macro — minor; the
+  - **Open sub-points:** the badge renders adjacent to, not welded onto, the number (owner judges visual); the
     `.mw` lowering + tool must associate the trailing badge token with the preceding `\veq{h}` (manageable).
+
+  **Round-5 pilot (2026-06-18, owner requirement): annotations are NOT only verification — also definition
+  (e.g. the Resogram `\delta`), assumption, and other kinds; owner prefers (d) PLUS `\@ifstar`, with a family
+  of trailing macros (`\definition`, `\assumption`, … alongside `\sorry`/`\sympy`/`\lean`).** Piloted both engines:
+  - **`\veq*` IS JSON-deployable after all** — `\@ifstar` is invocable from a STRING macros option value
+    (`"\\veq":"\\@ifstar\\veqStar\\veqNum"`, with `\veqNum`/`\veqStar` also string macros), so `\veq{edot}`
+    numbers and `\veq*{x}` is unnumbered, both via the simple-string central config (no `\def` needed). (Refine:
+    `\veqStar` should consume the handle arg so it doesn't leak into the body — trivial.)
+  - **Open annotation-kind vocabulary works**: `\veq{delta}\definition` → "def (delta)", `\veq{a1}\assumption`
+    → "assume (a1)"; all simple string macros. **Composition works**: `\veq{edot}\definition\lean` → "def ✓(edot)"
+    — kind + verification-tier chain as adjacent trailing macros.
+  - So (d) generalizes: `\veq{h}` (+`\@ifstar` for unnumbered) followed by an OPEN family of annotation macros
+    — semantic kinds (`\definition`/`\assumption`/…) AND verification states (`\sorry`/`\sympy`/`\lean`),
+    composable, absence = unannotated/implicit-sorry. All deployable via the simple-string central config.
+  - **Owner/theory decisions this raises (likely a `/meeting`):** (1) the TAXONOMY of annotation kinds (what
+    exists beyond definition/assumption/verify — theory-adjacent, owner enumerates); (2) the BASE MACRO NAME —
+    `\veq` reads as "verified equation" but now tags definitions/assumptions too (neutral name? meeting fallback
+    was `\vtag`); (3) name-collision check for EACH annotation macro (`\definition`/`\assumption`/`\lean`/… vs
+    KaTeX/MathJax builtins + siunitx/physics/mathtools — extend the D7 `\veq`-name check to the whole family);
+    (4) the `.mw` link-types generalize from `{@verify}`/`{@verified}` to an open-enum over KINDS — see
+    `mathematical-writing` `id:358f` (updated).
 
   **Net:** the colon form can't give clean-label-plus-badge in KaTeX; the delimited `\def`, though it answers
   every raw-engine sub-question, can't deploy through this repo's JSON/no-in-doc-def config on the KaTeX/VS-Code
   side. The two forms that DO deploy through the existing simple-string central config in both engines are
-  **(a) 2-brace `\veq{h}{\tierbadge}`** and **(d) `\veq{h}` + trailing `\tier` badge macro** (owner's round-4
-  idea). **Owner decision needed** (REVISES meeting D7's colon default) — ratify one of:
+  **(a) 2-brace `\veq{h}{\tierbadge}`** and **(d) `\veq{h}` + trailing annotation macro(s)** (owner's idea).
+  Owner has stated a preference for **(d) + `\@ifstar` + an open annotation-kind family** (rounds 4–5).
+  **Owner decision needed** (REVISES meeting D7's colon default) — ratify one of:
   (a) 2-brace `\veq{h}{\tierbadge}` (one token, always 2 args, retrofit `{\sorryB}` onto every handle);
-  (d) `\veq{h}` 1-arg drop-in + standalone trailing badge macro, absence=implicit sorry — *evidence-favoured*
-  (cleanest migration + tool/.mw separation); (b) colon `\veq{h:tier}` (bare `\veq h:tier;` authoring, no
-  portable emoji badge); or (c) keep `\ltag` for plain tags and add the verify macro only on marked equations.
+  (d) `\veq{h}` 1-arg drop-in + standalone trailing annotation macro(s) + `\@ifstar`, absence=implicit/unannotated
+  — *owner-favoured, evidence-supported* (cleanest migration + tool/.mw separation + extends to non-verify kinds);
+  (b) colon `\veq{h:tier}` (bare `\veq h:tier;` authoring, no portable emoji badge); or (c) keep `\ltag` for plain
+  tags and add annotation macros only on marked equations.
   This GATES the `id:a9d2`/`id:dce9` corpus migration AND the `.mw` grammar (`mathematical-writing` `id:358f`,
   whose math-frontend lowering must match). **No macro committed** — picking the carrier syntax is an owner call
   (no-AI-vibe-thinking; D7 made it a gate). Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax
