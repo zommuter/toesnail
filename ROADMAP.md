@@ -19,13 +19,17 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
     `<!-- verify:tier -->` HTML comment — so a `/relay human` pilot-marker instruction wrongly told the
     owner to author HTML comments. Pure docs/convention sync (no theory), executor-eligible.
   - **Scope**: `CONVENTIONS.md` §2 marker table (l.50-63), `CLAUDE.md` rigor-debt-markers (l.39-49),
-    `ARCHITECTURE.md` (l.20), and the `REVIEW_ME.md` `verify:`-pilot owner instruction. Document the
+    `ARCHITECTURE.md` (l.20), `README.md` §"How this repo works" (l.46-51 — the `verify:` rigor-marker
+    description + the `grep -rn 'verify:' .` running-list pointer, both now stale post-migration), and the
+    `REVIEW_ME.md` `verify:`-pilot owner instruction. Document the
     implemented form: `\veq{h}\tier` badges `\sorry`→? `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓;
     open-debt is `\veq{h}\sorry` (NOT `\sympy*` — `id:feb8` `\tier*` notation is still unresolved).
     KEEP the D4 carve-out: tooling MAY write the badge arg, but the equation/claim inside `\veq{…}` stays
     human-only theory.
   - **Acceptance**: `grep -rnE '<!--[[:space:]]*verify:' CONVENTIONS.md CLAUDE.md ARCHITECTURE.md` returns
-    nothing; each doc describes `\veq{h}\tier`; `bash tests/run.sh` green.
+    nothing; `README.md` no longer describes the marker as a `verify:` HTML comment and its running-list
+    pointer reflects the `\veq` form (e.g. `grep -rn '\veq' .` or the sidecar attestations, not
+    `grep -rn 'verify:'`); each doc describes `\veq{h}\tier`; `bash tests/run.sh` green.
   - **Not gated**: macros (`_includes/custom-head.html`, `.vscode/settings.json`) + corpus migration
     (`a9d2`/`dce9`, `id:e0b7` pilot) already landed 2026-06-18. NB the residual content-bearing finding
     comment at `physics/Resogram.md:21` is owner-only (theory notes), out of this item's scope.
