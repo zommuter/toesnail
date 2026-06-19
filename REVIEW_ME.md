@@ -156,34 +156,35 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     if one wants them wired). Re-check: `README.md:30` (photon stub line), `README.md:33-35` (crypto wing),
     `_config.yml` exclude list (fhe.ods). No source content edited — bookkeeping confirmation only.
 
-- [ ] **`verify:` pilot candidates in the recovered pages — owner picks which claims to mark.**
-  The recovered derivations carry clean, self-contained results that are natural `verify:` pilots.
+- [ ] **`\veq` pilot candidates in the recovered pages — owner picks which claims to mark.**
+  The recovered derivations carry clean, self-contained results that are natural `\veq{h}\sorry` pilots.
   Per the working contract the AI does **not** choose which claims to mark — surfacing candidates only;
-  once the owner marks a claim with a `verify:sympy|numeric|lean` comment, the mechanical instrument
-  plumbing becomes `[ROUTINE]` (cf. the Human-only note in `ROADMAP.md`). Candidates by tier:
-  - **`verify:sympy` — `physics/entropy.md`** (cleanest pilot): the `N→∞` limit collapsing to
+  once the owner tags a claim's equation with `\veq{h}\sorry` (open-debt sentinel), the mechanical instrument
+  plumbing becomes `[ROUTINE]` (cf. the Human-only note in `ROADMAP.md`). Candidates by intended tier:
+  - **`\sympy` — `physics/entropy.md`** (cleanest pilot): the `N→∞` limit collapsing to
     Bose–Einstein `⟨k⟩ = 1/(e^{βE₁}−1)` and the `N=2` case to Fermi–Dirac `1/(e^{βE₁}+1)`; and the
     Lambert-W inversion `E₁ = −(1/β)·W(−βE·e^{∓βE})`. All are symbolic identities SymPy can re-derive.
-  - **`verify:numeric` — `crypto/fhe.md` + `crypto/fhe.ods`**: the enumeration closure — `Πₙ = log₂((2ⁿ)!)`
+  - **`\numeric` — `crypto/fhe.md` + `crypto/fhe.ods`**: the enumeration closure — `Πₙ = log₂((2ⁿ)!)`
     Stirling expansion, the `binom(2ⁿ, 2^{n−1})` semi-destructive count, and the 24-row `n=2` bijective
     table. A numeric instrument can regenerate the tables and cross-check the `.ods` (the dogfood here is
     that the spreadsheet IS the worked computation — a perfect attestation target).
-  - **`verify:sympy`/`lean` — `physics/wirohsh.md`** (PARTIAL — mark only the complete identities): the
+  - **`\sympy`/`\lean` — `physics/wirohsh.md`** (PARTIAL — mark only the complete identities): the
     tangential-Laplacian reduction `Δ_φ = (∂_x sinφ − ∂_y cosφ)² = ∂_{φ̄}²` and the 1D back-rotation
     `f = f⁺(x−ct) + f⁺(x+ct)`. NOTE the page has unfinished sections (empty `align` blocks) — those are
-    not yet markable as `verify:` claims (no closed result). They render fine, though — the page IS in the
+    not yet markable as `\veq` claims (no closed result). They render fine, though — the page IS in the
     render-test coverage (id:7fd7); "unfinished derivation" is a separate, owner content question.
   - **`physics/photon.md`** carries no closed result yet (Ansatz only) — no pilot until the owner develops it.
   - **OWNER SELECTION 2026-06-16 (/relay human) — box STAYS OPEN (owner places the markers).** Owner picked
-    **two pilots to mark: `physics/entropy.md` (`verify:sympy`)** and **`crypto/fhe.md` + `crypto/fhe.ods`
-    (`verify:numeric`)**; **`physics/wirohsh.md` DEFERRED** (not selected this round). Per the working contract +
+    **two pilots to mark: `physics/entropy.md` (`\sympy`)** and **`crypto/fhe.md` + `crypto/fhe.ods`
+    (`\numeric`)**; **`physics/wirohsh.md` DEFERRED** (not selected this round). Per the working contract +
     the relay scope guard (`physics/*.md` and the FHE content source are Human-only — the AI never edits the
-    theory), **the owner adds the `<!-- verify:sympy -->` / `<!-- verify:numeric -->` comment to the chosen
-    claim(s)** — that placement is the owner's act. **Once the markers land, the instrument plumbing becomes
-    `[ROUTINE]`** (build `verify/entropy_*.py` sympy instruments + a `verify/fhe_*.py` numeric instrument that
-    cross-checks `crypto/fhe.ods`; pin verdicts + `verified:` attestations in `tests/test_verify.sh`, mirroring
-    the existing `resogram_*` pilots). Surfaced as a "you do these" owner action below; the box closes once the
-    markers are in and the next `/relay review` re-derives them.
+    theory), **the owner adds `\veq{h}\sorry` to the chosen equation(s)** — that placement is the owner's act;
+    the tool then runs the instrument and syncs the badge to `\veq{h}\sympy` etc. **Once the markers land,
+    the instrument plumbing becomes `[ROUTINE]`** (build `verify/entropy_*.py` sympy instruments + a
+    `verify/fhe_*.py` numeric instrument that cross-checks `crypto/fhe.ods`; pin verdicts + sidecar
+    attestations in `tests/test_verify.sh`, mirroring the existing `resogram_*` pilots). Surfaced as a
+    "you do these" owner action below; the box closes once the markers are in and the next `/relay review`
+    re-derives them.
   - **ENTROPY markers PLACED 2026-06-18 (owner-directed walkthrough) — eyeball the fidelity.** Per your
     selection, `physics/entropy.md` now tags four claims, all as `\sympyc` (OPEN-DEBT: desired SymPy, NOT yet
     verified — id:feb8 resolved): `\veq{meanE}\sympyc` (the `E/E₁` summation→closed-form chain, l.22),

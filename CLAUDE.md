@@ -36,8 +36,9 @@ decides every resolution.
 
 ## Authoring conventions (see `CONVENTIONS.md` for detail)
 - **Equation handles:** stable content-meaningful ids via `\ltag{…}` / `\eqref{…}` (KaTeX macros in README).
-- **Rigor-debt markers:** greppable HTML comments `<!-- verify:sympy|numeric|lean <claim> -->`. Tiers match
-  `.mw`'s verifier tiers (SymPy / CrossHair / Lean4+Mathlib). `grep -rn 'verify:' .` = live rigor-debt list.
+- **Rigor-debt markers:** `\veq{h}\tier` badges on display equations — open debt = `\veq{h}\sorry`; tiers
+  `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓. Tiers match `.mw`'s verifier tiers (SymPy /
+  CrossHair / Lean4+Mathlib). `grep -rn '\\veq' .` = live rigor-debt list (`\sorry` = open).
 - **Source stays plain:** diff-friendly markdown, no inline computed outputs (source authoritative).
 
 ## Jekyll notes
@@ -46,7 +47,7 @@ decides every resolution.
 - **Layout default:** `_config.yml` applies `layout: page` site-wide via `defaults`. Pages declare only
   `title`+`permalink`; without the default they'd render headless (no `<head>` → no MathJax). Don't drop it.
 - **Blank line after `$$`:** a `$$…$$` block must be separated by a blank line from anything that follows
-  (incl. a `<!-- verify: -->` comment) — otherwise kramdown folds it into a paragraph and emits *inline*
+  (incl. any following comment or text) — otherwise kramdown folds it into a paragraph and emits *inline*
   single-`$` math, which MathJax renders left-aligned with the `\tag` suppressed (the equation handle vanishes).
   `tests/test_render.sh` guards this (no `\ltag` in an inline `kdmath` span).
 - **Math pipeline (MathJax 3):** `_config.yml` sets `kramdown: { math_engine: null }` so kramdown leaves

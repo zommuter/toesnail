@@ -13,7 +13,7 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
 
 ## Items
 
-- [ ] Sync authoring docs to the `\veq{h}\tier` form — retire the HTML-comment `verify:` syntax [ROUTINE] <!-- id:9fdc -->
+- [x] Sync authoring docs to the `\veq{h}\tier` form — retire the HTML-comment `verify:` syntax [ROUTINE] <!-- id:9fdc -->
   - **Why**: the 2026-06-18 migration (`a9d2`/`dce9`) moved the corpus + KaTeX/MathJax macros to
     `\veq{h}\tier`, but `CONVENTIONS.md`/`CLAUDE.md`/`ARCHITECTURE.md` still teach the retired
     `<!-- verify:tier -->` HTML comment — so a `/relay human` pilot-marker instruction wrongly told the

@@ -226,3 +226,7 @@ review since relay-ckpt-20260618-1132 (5 commits, all Opus/owner-directed docs+m
 ## 2026-06-19 17:18 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review 20260618-1132..HEAD: gaming-scan clean, full suite green, id:feb8 open-debt badge family verified consistent, extended id:9fdc to cover README drift; routine_open=1
+## 2026-06-19 — executor (claude-sonnet-4-6)
+
+Worked id:9fdc — synced authoring docs to `\veq{h}\tier` form, retiring the HTML-comment `verify:` syntax. Updated `CONVENTIONS.md` §2 (replaced the `<!-- verify:tier -->` code-block table with `\veq{h}\tier` badge grammar + D4 carve-out + sidecar attestation format); `CLAUDE.md` rigor-debt-markers bullet and Jekyll blank-line note; `ARCHITECTURE.md` §1 decision block; `REVIEW_ME.md` pilot owner instruction. Acceptance check `grep -rnE '<!--[[:space:]]*verify:' CONVENTIONS.md CLAUDE.md ARCHITECTURE.md` returns nothing; `bash tests/run.sh` PASS.
+Friction: none.
