@@ -16,15 +16,17 @@ See `CONVENTIONS.md` "Working contract" and the relay scope guard in `CLAUDE.md`
 
 ## 1. The verify-marker rigor-debt scheme
 
-**Decision.** Hand-waved/asserted claims carry greppable HTML-comment markers
-`<!-- verify:<tier> [handle] <claim> inst=verify/… -->`; discharged claims gain a
-`<!-- verified:<tier> claim=<h8> by=<inst>@<h8> -->` attestation. Instruments live in
-`verify/` (re-runnable `uv` scripts); verdicts are cache, never pasted into prose.
+**Decision.** Hand-waved/asserted claims carry `\veq{h}\tier` badges on their display equations
+(`\veq{h}\sorry` = open debt; tiers `\sympy`→∘ `\numeric`→△ `\lean`→✓ `\sympylean`→✓✓).
+Discharged claims are recorded in a per-file sidecar (`physics/<stem>.toml`, keyed by handle)
+with composite hashes (`claim=<srepr-h8>`, `by=<inst>@<filehash8>`). Instruments live in
+`verify/` (re-runnable `uv` scripts); verdicts are cache, never pasted into prose. The badge arg
+is tool-maintained; the equation/claim inside `\veq{…}` stays human-only (D4 carve-out).
 
-- **Tier = assurance *floor*, not a claim-type label** — `verify:sympy` means "discharge
+- **Tier = assurance *floor*, not a claim-type label** — `\veq{h}\sympy` means "discharge
   with **at least** SymPy," escalatable to Lean. Rejected: tier-as-category (would forbid
   proving an algebra claim in Lean).
-- **`verified:` is a signature, not a result** — composite hash (`srepr` of the sympified
+- **Sidecar is a signature, not a result** — composite hash (`srepr` of the sympified
   claim × instrument file hash, Nix-derivation style). Either changing invalidates it.
   Rejected: pasting the verdict inline (violates "source authoritative, cache disposable").
 - **✗ is a valid outcome.** A located discrepancy is surfaced (in `docs/rigor-debt.md` +

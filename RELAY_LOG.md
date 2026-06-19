@@ -218,3 +218,8 @@ id:a138 \veq* star variant (display+inline, both engines); align-in-same-block r
 ## 2026-06-18 11:32 — strong-execute (claude-opus-4-8)
 
 a9d2 migration: Resogram on \veq/\veqs + Resogram.toml sidecar; \definition/\assumption pilots; \veq* infeasible→\veqs (id:dce9/a9d2/a138)
+
+## 2026-06-19 — executor (claude-sonnet-4-6)
+
+Worked id:9fdc — synced authoring docs to `\veq{h}\tier` form, retiring the HTML-comment `verify:` syntax. Updated `CONVENTIONS.md` §2 (replaced the `<!-- verify:tier -->` code-block table with `\veq{h}\tier` badge grammar + D4 carve-out + sidecar attestation format); `CLAUDE.md` rigor-debt-markers bullet and Jekyll blank-line note; `ARCHITECTURE.md` §1 decision block; `REVIEW_ME.md` pilot owner instruction. Acceptance check `grep -rnE '<!--[[:space:]]*verify:' CONVENTIONS.md CLAUDE.md ARCHITECTURE.md` returns nothing; `bash tests/run.sh` PASS.
+Friction: none.
