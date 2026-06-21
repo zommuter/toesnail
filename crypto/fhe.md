@@ -5,9 +5,7 @@ permalink: /FHE
 
 # Intro
 
-For $n$ input bits there are $I = 2^n$ possible inputs. For each input, there are two possible outputs for each of the $m$ output bits, so there are $O(n,m)=(2^I)^m = 2^{m2^n}$ possible functions from $n$ to $m$ bits. These functions can be enumerated using $m2^n$ bits.
-
-$$ O(n,m) = (2^{I})^{m} = 2^{m\,2^{n}}, \qquad I = 2^{n} \veq{ocount}\sympyc $$
+For $n$ input bits there are $I = 2^n$ possible inputs. For each input, there are two possible outputs for each of the $m$ output bits, so there are $O(n,m)=(2^I)^m = 2^{m2^n} \veqs{ocount}\leanc$ possible functions from $n$ to $m$ bits. These functions can be enumerated using $m2^n$ bits.
 
 For $m=n$ a function is bijective iff the output map is a permutation of the input map, which means there are $P=(2^n)!$ bijective functions for $n$ bits, which can be enumerated using
 
@@ -66,18 +64,14 @@ In the following tables, the inputs are named $A,B,C,...$ for convenience and om
 
 The second half of the table is abbreviated for simplicity, since it consist of the output inversions of the upper half. The columns BE and LE interpret the four output variations big-endian and little-endian respectively for enumerating the functions. Since it makes more sense for A,B to have low numbers instead of their negations, we'll stick with BE from now on. For each sum $s$ of truth-outputs per function there are $\binom4s$ functions, i.e. 1,4,6,4,1. Only the six balanced functions A, B, XOR and there inverses are "semi-destructive", i.e. can be used as output bit of a bijective function, all others destroy information and make it impossible to retrieve the original inputs with just one other bit. Therefore it makes more sense to split the functions like this:
 
-- $\binom{2^n}{2^{n-1}}=6$ semi-destructive functions A, B, XOR and inverses, consisting of the 4 single-input functions (1) from above and only 2 of the 10 dual-input ones (2)
+- $\binom{2^n}{2^{n-1}}=6 \veqs{semidestr}\leanc$ semi-destructive functions A, B, XOR and inverses, consisting of the 4 single-input functions (1) from above and only 2 of the 10 dual-input ones (2)
 - the other 10 fully destructive functions
-
-$$ \#\{\text{semi-destructive } f\}(n) = \binom{2^{n}}{2^{n-1}} \;\overset{n=2}{=}\; \binom{4}{2} = 6 \veq{semidestr}\numericc $$
 
 
 
 # $n=2$
 
-For brevity, only the $(2^2)! = 24$ bijective functions of the $2^{2\cdot 2^2}=256$ functions for bits (A,B) are shown:
-
-$$ \#\{\text{bijective } f:\{0,1\}^{n}\to\{0,1\}^{n}\}(n) = (2^{n})! \;\overset{n=2}{=}\; 24 \veq{bij24}\numericc $$
+For brevity, only the $(2^2)! = 24 \veqs{bij24}\leanc$ bijective functions of the $2^{2\cdot 2^2}=256$ functions for bits (A,B) are shown:
 
 TODO switch endianess of permutation
 

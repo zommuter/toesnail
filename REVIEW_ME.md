@@ -185,13 +185,10 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     attestations in `tests/test_verify.sh`, mirroring the existing `resogram_*` pilots). Surfaced as a
     "you do these" owner action below; the box closes once the markers are in and the next `/relay review`
     re-derives them.
-  - **ENTROPY markers PLACED 2026-06-18 (owner-directed walkthrough) — eyeball the fidelity.** Per your
-    selection, `physics/entropy.md` now tags four claims, all as `\sympyc` (OPEN-DEBT: desired SymPy, NOT yet
-    verified — id:feb8 resolved): `\veq{meanE}\sympyc` (the `E/E₁` summation→closed-form chain, l.22),
-    `\veq{be}\sympyc` (Bose–Einstein `N→∞` limit `1/(e^{βE₁}−1)`, l.27), `\veq{fd}\sympyc` (Fermi–Dirac `N=2`
-    `1/(e^{βE₁}+1)`, l.35), `\veq{lambertw}\sympyc` (Lambert-W inversion `βE₁=−W(−βE·e^{∓βE})∓βE`, l.59). **Only
-    tag/label tokens were appended — no math edited.** Confirm the four handles sit on the claims you intended
-    (esp. `meanE` on l.22 vs the earlier chain lines, and `lambertw` on l.59 vs the `e^{βE₁}` form on l.61–62).
+  - **ENTROPY markers PLACED + fidelity RATIFIED 2026-06-18 (owner).** `physics/entropy.md` tags
+    `\veq{meanE}\sympyc` (l.22), `\veq{be}\sympyc` (l.27), `\veq{fd}\sympyc` (l.35) and `\veq{lambertw}\leanc`
+    (l.59 — escalated to Lean, box below). Owner confirmed all four handles sit on the intended claims. Tag/label
+    tokens only — no math edited. be/fd/meanE → `\sympyc` [ROUTINE] instruments; lambertw → Lean meeting.
 
 - [ ] **`lambertw` tier ESCALATED to Lean [HARD] (owner-ratified 2026-06-18).** SymPy CONFIRMED can't close
   the transcendental inversion — `simplify(x/(e^x∓1))` with `x=−W(−y e^{∓y})∓y` leaves a non-reduced LambertW
@@ -199,26 +196,31 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   passing numeric check falsifies nothing — it can't attest a symbolic identity), NOT the assurance tier. So
   the faithful tier is **Lean** and the claim is **[HARD]** (owner-physics formalization, the `edot_deriv`
   frozen-signature treatment). Marker swapped `\veq{lambertw}\sympyc`→`\veq{lambertw}\leanc` (wants-Lean, open
-  debt). **OPEN for the scoping `/meeting`:** (a) does Mathlib even carry Lambert-W (`Real.lambertW`?) — a real
-  capability-gap risk that may block or redirect; (b) the frozen `HasDerivAt`-style signature + DoD; (c) whether
-  a cheap numeric pre-filter instrument is worth building as a counter-indicator alongside. Surfaced 2026-06-18.
+  debt). **OPEN for the scoping `/meeting`:** (a) ~~does Mathlib carry Lambert-W~~ **CHECKED 2026-06-18: Mathlib
+  has NO Lambert W** — the v4.30.0-rc2 cache (`research_lean/.lake`) has only "Lambert *series*" (number theory),
+  no `lambertW` def. So a `\lean` proof can't `import` W; the Lean target must EITHER build W from scratch (heavy)
+  OR — cleaner — restate the inversion **W-free** as the implicit round-trip `y = x/(e^x∓1)` ⟺ the explicit `x`
+  satisfies it (formalize via `exp`/`Real.log` and the defining `w·e^w` relation, never naming W). (b) the frozen
+  signature + DoD for that W-free statement; (c) whether a cheap numeric pre-filter is worth building as a
+  counter-indicator alongside. Surfaced + Mathlib-gap confirmed 2026-06-18. **Owner 2026-06-18: park `\leanc`
+  + fold into a BROADER `/meeting`** on formalizing toesnail claims that need constructs NOT in base Mathlib —
+  investigate the **PhysLean / physicslib** project (a physics Lean library; NOT checked out locally, so a
+  remote lead) as a source of non-Mathlib lemmas. Consolidated with the FHE combinatorial counts (those ARE in
+  base Mathlib) into the single Lean-strategy meeting item in TODO.
 
-- [ ] **FHE pilot — RATIFY the AI-proposed carrier equations.** `crypto/fhe.md` has only one display equation
-  (Stirling, l.12); the other owner-selected counts live in prose/tables with no `\veq` home, so per your
-  delegation ("suggest the carriers yourself, like resogram `eincr`") I AUTHORED three NEW display equations
-  that **restate counts already stated in the prose** + marked all four open-debt. **Confirm each faithfully
-  restates the stated result (no new theory):**
-  - `stirling` (l.12, in place): `Π_n` Stirling asymptotic → `\veq{stirling}\sympyc` (SymPy log-factorial series).
-  - `ocount` (after l.8): `O(n,m)=(2^I)^m=2^{m2^n}, I=2^n` → `\veq{ocount}\sympyc`. **CAVEAT (rigor):** SymPy only
-    attests the trivial exponent algebra `(2^I)^m=2^{mI}`; the COMBINATORIAL count (why it's the #functions)
-    is not mechanically attestable. Consider `\definition` instead, or accept the weak attestation — your call.
-  - `semidestr` (after l.68): `#semi-destructive(n)=\binom{2^n}{2^{n-1}} \overset{n=2}{=} \binom42 = 6` →
-    `\veq{semidestr}\numericc`.
-  - `bij24` (after l.74): `#bijective(n)=(2^n)! \overset{n=2}{=} 24` → `\veq{bij24}\numericc`.
-  All four are open-debt (NOT yet verified). If a carrier's wording/placement is off, edit `crypto/fhe.md`
-  directly and the next review re-derives. NEXT [ROUTINE] once ratified: numeric instruments cross-checking
-  `fhe.ods`/`fhe.py` + a `crypto/fhe.toml` sidecar + `test_verify.sh` wiring; on green swap `\numericc`→`\numeric`
-  / `\sympyc`→`\sympy`.
+- [x] **FHE markers — RESOLVED 2026-06-18 (owner reshaped).** Owner REJECTED my display-equation carriers
+  ("no new theory") in favor of marking the counts **inline** with `\veqs{h}\tier` on the EXISTING `$…$` math,
+  and re-tiered them: a combinatorial count CLAIM (`\definition` is "a very bad downgrade") — if SymPy can't
+  prove it, it's **Lean4**. Final `crypto/fhe.md` markers:
+  - `\veq{stirling}\sympyc` (l.12 display, in place) — SymPy log-factorial series. **Owner: "looks good."**
+  - `\veqs{ocount}\leanc` (l.8 inline) — `|n→m bit functions| = 2^{m2^n}` (Mathlib `Fintype.card_pi`).
+  - `\veqs{semidestr}\leanc` (l.67 inline) — `\binom{2^n}{2^{n-1}}=6` balanced count (Mathlib `Nat.choose`+`Finset.card`).
+  - `\veqs{bij24}\leanc` (l.74 inline) — `(2^n)!=24` bijection count (Mathlib `Fintype.card_perm`).
+  The three `\leanc` combinatorial counts are TRACTABLE in base Mathlib (card lemmas confirmed present) — they
+  fold into the consolidated Lean meeting below for [ROUTINE]-vs-[HARD] sizing + frozen signatures. `stirling`
+  stays the lone [ROUTINE] SymPy instrument on the FHE page. (The numeric `fhe.ods`/`fhe.py` cross-check remains
+  a valuable COMPLEMENTARY instrument — a counter-indicator + table-correctness check — but Lean is the
+  faithful tier for the count formulas, so it is not the badge.)
 
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by
