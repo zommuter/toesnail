@@ -190,7 +190,13 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     (l.59 — escalated to Lean, box below). Owner confirmed all four handles sit on the intended claims. Tag/label
     tokens only — no math edited. be/fd/meanE → `\sympyc` [ROUTINE] instruments; lambertw → Lean meeting.
 
-- [ ] **`lambertw` tier ESCALATED to Lean [HARD] (owner-ratified 2026-06-18).** SymPy CONFIRMED can't close
+- [x] **`lambertw` — RESOLVED 2026-06-21 (/meeting id:3d2a D1): SPLIT.** The meeting found the earlier "needs Lean
+  [HARD]" framing over-stated: `entropy.md:53–57` is elementary algebra (SymPy-provable, no W); line 58 (`=−W(…)`)
+  is the *definition* of W, not a theorem; only the W *branch+domain* genuinely needs W formalised. So: algebra
+  → `\sympy` [ROUTINE] (`verify/entropy_lambertw.py`, id:7306); closed-form line → `\definition` + a deferred
+  W-branch/domain caveat (folded into the [HARD] queue id:37cc). PhysLean NOT adopted (N=2 unmet). See
+  `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md`. [Superseded box below — original finding:]
+- [x] ~~**`lambertw` tier ESCALATED to Lean [HARD] (owner-ratified 2026-06-18).**~~ SymPy CONFIRMED can't close
   the transcendental inversion — `simplify(x/(e^x∓1))` with `x=−W(−y e^{∓y})∓y` leaves a non-reduced LambertW
   expression (`==y` is False for BOTH ∓ branches; probe run). Numeric is **only a counter-indicator** (a
   passing numeric check falsifies nothing — it can't attest a symbolic identity), NOT the assurance tier. So
