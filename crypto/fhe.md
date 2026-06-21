@@ -7,9 +7,11 @@ permalink: /FHE
 
 For $n$ input bits there are $I = 2^n$ possible inputs. For each input, there are two possible outputs for each of the $m$ output bits, so there are $O(n,m)=(2^I)^m = 2^{m2^n}$ possible functions from $n$ to $m$ bits. These functions can be enumerated using $m2^n$ bits.
 
+$$ O(n,m) = (2^{I})^{m} = 2^{m\,2^{n}}, \qquad I = 2^{n} \veq{ocount}\sympyc $$
+
 For $m=n$ a function is bijective iff the output map is a permutation of the input map, which means there are $P=(2^n)!$ bijective functions for $n$ bits, which can be enumerated using
 
-$$\Pi_n := \log_2(2^n)! \approx 2^n(n - \log_2e)+\frac n2 + \ln\sqrt{2\pi} + \mathcal O(2^{-n}) \quad\text{(by Stirling's approximation)}$$
+$$\Pi_n := \log_2(2^n)! \approx 2^n(n - \log_2e)+\frac n2 + \ln\sqrt{2\pi} + \mathcal O(2^{-n}) \quad\text{(by Stirling's approximation)} \veq{stirling}\sympyc$$
 
 bits. For encryption, there is no point in using more than $\Pi_1= 1$ key bit per data bit since that is equivalent to the OTP which is secure -  or put differently, anything beyond that means it's easier to guess the plaintext message itself than the key. However, $\frac1n\Pi_n>1\forall n\ge2$ (starting with $\frac12\Pi_2 \approx2.3$), so the question is how to sensibly reduce the amount of bijective functions such that there are no excessive keybits used.
 
@@ -67,11 +69,15 @@ The second half of the table is abbreviated for simplicity, since it consist of 
 - $\binom{2^n}{2^{n-1}}=6$ semi-destructive functions A, B, XOR and inverses, consisting of the 4 single-input functions (1) from above and only 2 of the 10 dual-input ones (2)
 - the other 10 fully destructive functions
 
+$$ \#\{\text{semi-destructive } f\}(n) = \binom{2^{n}}{2^{n-1}} \;\overset{n=2}{=}\; \binom{4}{2} = 6 \veq{semidestr}\numericc $$
+
 
 
 # $n=2$
 
 For brevity, only the $(2^2)! = 24$ bijective functions of the $2^{2\cdot 2^2}=256$ functions for bits (A,B) are shown:
+
+$$ \#\{\text{bijective } f:\{0,1\}^{n}\to\{0,1\}^{n}\}(n) = (2^{n})! \;\overset{n=2}{=}\; 24 \veq{bij24}\numericc $$
 
 TODO switch endianess of permutation
 

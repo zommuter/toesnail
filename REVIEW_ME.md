@@ -203,6 +203,23 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   capability-gap risk that may block or redirect; (b) the frozen `HasDerivAt`-style signature + DoD; (c) whether
   a cheap numeric pre-filter instrument is worth building as a counter-indicator alongside. Surfaced 2026-06-18.
 
+- [ ] **FHE pilot — RATIFY the AI-proposed carrier equations.** `crypto/fhe.md` has only one display equation
+  (Stirling, l.12); the other owner-selected counts live in prose/tables with no `\veq` home, so per your
+  delegation ("suggest the carriers yourself, like resogram `eincr`") I AUTHORED three NEW display equations
+  that **restate counts already stated in the prose** + marked all four open-debt. **Confirm each faithfully
+  restates the stated result (no new theory):**
+  - `stirling` (l.12, in place): `Π_n` Stirling asymptotic → `\veq{stirling}\sympyc` (SymPy log-factorial series).
+  - `ocount` (after l.8): `O(n,m)=(2^I)^m=2^{m2^n}, I=2^n` → `\veq{ocount}\sympyc`. **CAVEAT (rigor):** SymPy only
+    attests the trivial exponent algebra `(2^I)^m=2^{mI}`; the COMBINATORIAL count (why it's the #functions)
+    is not mechanically attestable. Consider `\definition` instead, or accept the weak attestation — your call.
+  - `semidestr` (after l.68): `#semi-destructive(n)=\binom{2^n}{2^{n-1}} \overset{n=2}{=} \binom42 = 6` →
+    `\veq{semidestr}\numericc`.
+  - `bij24` (after l.74): `#bijective(n)=(2^n)! \overset{n=2}{=} 24` → `\veq{bij24}\numericc`.
+  All four are open-debt (NOT yet verified). If a carrier's wording/placement is off, edit `crypto/fhe.md`
+  directly and the next review re-derives. NEXT [ROUTINE] once ratified: numeric instruments cross-checking
+  `fhe.ods`/`fhe.py` + a `crypto/fhe.toml` sidecar + `test_verify.sh` wiring; on green swap `\numericc`→`\numeric`
+  / `\sympyc`→`\sympy`.
+
 - [x] `verify/resogram_edot.py` (handle `edot`, `docs/rigor-debt.md`) — **located algebra
   discrepancy.** The doc's 2nd equality `ė = −4βe − ω²(2βx² − ẋy)` is wrong (off by
   `−4βω²x²`); SymPy confirms the correct closed form is `ė = −4βe + ω²(2βx² + ẋy)` (sign on
