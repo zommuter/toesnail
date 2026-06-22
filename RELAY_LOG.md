@@ -238,3 +238,7 @@ docs(conventions): sync authoring docs to \veq{h}\tier — retire verify: HTML-c
 ## 2026-06-21 23:04 — reviewer (claude-opus-4-8)
 
 Opus review (/relay review --all): 4-commit window (id:8807 FHE verify pilot). gaming-scan clean. crypto/fhe.md adds ONLY \veqs/\veq verify-markers onto EXISTING equations — the mathematics is untouched, so the human-only constraint (no AI-authored theory) holds; marker placement is verify-plumbing/tooling scope. Lean-formalization meeting (id:3d2a) + owner doc requests (9c41 inline-render, b7e5 tier colors) are doc-only. Cross-ledger consistent.
+
+## 2026-06-22 16:22 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+LEDGER-ONLY review of 41d749e (human close of \veq pilot-candidates box e0b7): gaming-scan clean, both selected pilots' markers verified present, wirohsh owner-deferred correctly, suite PASS (7 green/1 npm-skip), no drift, routine_open=0
