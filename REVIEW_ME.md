@@ -156,7 +156,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     if one wants them wired). Re-check: `README.md:30` (photon stub line), `README.md:33-35` (crypto wing),
     `_config.yml` exclude list (fhe.ods). No source content edited — bookkeeping confirmation only.
 
-- [ ] **`\veq` pilot candidates in the recovered pages — owner picks which claims to mark.**
+- [x] **`\veq` pilot candidates in the recovered pages — owner picks which claims to mark.**
   The recovered derivations carry clean, self-contained results that are natural `\veq{h}\sorry` pilots.
   Per the working contract the AI does **not** choose which claims to mark — surfacing candidates only;
   once the owner tags a claim's equation with `\veq{h}\sorry` (open-debt sentinel), the mechanical instrument
@@ -189,6 +189,15 @@ cited source (or leave a note under the item) and the next review re-derives. Re
     `\veq{meanE}\sympyc` (l.22), `\veq{be}\sympyc` (l.27), `\veq{fd}\sympyc` (l.35) and `\veq{lambertw}\leanc`
     (l.59 — escalated to Lean, box below). Owner confirmed all four handles sit on the intended claims. Tag/label
     tokens only — no math edited. be/fd/meanE → `\sympyc` [ROUTINE] instruments; lambertw → Lean meeting.
+  - **CLOSED 2026-06-22 (/relay human, owner: "Close the box").** The box's own closing condition
+    (selected pilots marked + next review re-derives) is met: owner picked **two** pilots —
+    `physics/entropy.md` (`\sympy`) and `crypto/fhe.md` + `.ods` (`\numeric`) — and BOTH have markers
+    PLACED + fidelity RATIFIED 2026-06-18 (entropy `\sympyc` tags l.22/27/35 + `\leanc` l.59; FHE
+    `\sympyc`/`\leanc` markers, see boxes below). `physics/wirohsh.md` was owner-DEFERRED (not selected
+    this round) and is tracked separately when the owner develops it — it does NOT keep this
+    candidate-surfacing box open. Re-checkable: `git grep '\\veq' physics/entropy.md crypto/fhe.md`
+    shows the placed markers; the next `/relay review` re-derives them. Instrument plumbing is the
+    separate [ROUTINE] follow-ups (`verify/entropy_*.py`, `verify/fhe_*.py`).
 
 - [x] **`lambertw` — RESOLVED 2026-06-21 (/meeting id:3d2a D1): SPLIT.** The meeting found the earlier "needs Lean
   [HARD]" framing over-stated: `entropy.md:53–57` is elementary algebra (SymPy-provable, no W); line 58 (`=−W(…)`)
