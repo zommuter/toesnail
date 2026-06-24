@@ -232,10 +232,6 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
     can be ROUTINE-dispatched to Sonnet generally. HANDBACK is a VALID outcome — if the proof resists, say
     so in the log rather than weakening the signature or `sorry`-ing.
 
-- [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
-  - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
-    (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
-
 ### Recovered-pages infrastructure (recovery merge `c1e20b4`, 2026-06-16)
 
 - [x] Extend render-test coverage to ALL recovered pages [ROUTINE] <!-- id:7fd7 -->
@@ -265,6 +261,12 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Done-check**: `bash tests/test_crypto_exclude.sh` then full `bash tests/run.sh`.
   - **Owner-flag**: default keeps these source-only (source-stays-plain). If the owner wants the `.ods`
     downloadable from the site, that's a one-line re-include — tracked under the verify-pilot box (id:8807).
+
+## Gated forward-flags — NOT yet executor work
+
+- [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
+  - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
+    (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
 
 ## Human-only — NOT in the executor queue
 
