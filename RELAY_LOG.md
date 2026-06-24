@@ -242,3 +242,7 @@ Opus review (/relay review --all): 4-commit window (id:8807 FHE verify pilot). g
 ## 2026-06-22 16:22 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 LEDGER-ONLY review of 41d749e (human close of \veq pilot-candidates box e0b7): gaming-scan clean, both selected pilots' markers verified present, wirohsh owner-deferred correctly, suite PASS (7 green/1 npm-skip), no drift, routine_open=0
+
+## 2026-06-24 16:40 — reviewer (claude-opus-4-8, relay-loop)
+
+review: relay-ckpt-20260622-1622..HEAD — 0 unaudited commits; parked id:9d8c gated forward-flag to satisfy roadmap-lint; suite/contract-pointer clean
