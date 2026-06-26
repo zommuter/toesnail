@@ -246,3 +246,7 @@ LEDGER-ONLY review of 41d749e (human close of \veq pilot-candidates box e0b7): g
 ## 2026-06-24 16:40 — reviewer (claude-opus-4-8, relay-loop)
 
 review: relay-ckpt-20260622-1622..HEAD — 0 unaudited commits; parked id:9d8c gated forward-flag to satisfy roadmap-lint; suite/contract-pointer clean
+
+## 2026-06-26 09:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: verified ledger-only TODO conversion (id:3441/c095) — id-preserving, gaming-scan clean, ROADMAP drained (routine_open=0)
