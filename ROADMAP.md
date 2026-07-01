@@ -272,7 +272,7 @@ inside the `\veq{…}` — only the badge arg once its instrument is green. The 
 (`physics/entropy.md:59`, now `\leanc`) is OUT of scope — it belongs to the Lean bucket (id:37cc) and
 its marker-split is an owner content decision, not this item.
 
-- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [ROUTINE] <!-- id:7306 -->
+- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [HARD — decision gate] — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
   - **Why**: four owner-placed `\sympyc` (open-debt "desired SymPy, not yet verified") badges exist with
     no instrument behind them — `physics/entropy.md` `meanE` (l.22 mean-energy closed form),
     `be` (l.27 Bose–Einstein N→∞ limit), `fd` (l.35 Fermi–Dirac N=2), and `crypto/fhe.md` `stirling`
@@ -359,3 +359,5 @@ The research itself is the owner's. These are tracked in `TODO.md` (design ledge
   zero-vector uniqueness) and any narrative/topic direction — `docs/rigor-debt.md`.
 - The staleness-checker (TODO `id:04bb`) stays GATED on acoustics (N=2) before it becomes
   a `[ROUTINE]` tooling item.
+- [ ] **[ROUTINE]** Build entropy meanE/be/fd SymPy instruments + physics/entropy.toml sidecar + badge flips (\sympyc→\sympy) — seam of id:7306 (auto, id:3801) <!-- id:e9e9 -->
+- [ ] **[HARD — strong model]** Resolve fhe.md stirling constant-term unit mismatch (ln vs log2 of √(2π)) then build fhe_stirling.py + crypto/fhe.toml + badge flip — seam of id:7306 (auto, id:3801) <!-- id:76e5 -->
