@@ -250,3 +250,7 @@ review: relay-ckpt-20260622-1622..HEAD — 0 unaudited commits; parked id:9d8c g
 ## 2026-06-26 09:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: verified ledger-only TODO conversion (id:3441/c095) — id-preserving, gaming-scan clean, ROADMAP drained (routine_open=0)
+
+## 2026-07-01 20:44 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+handoff: promoted 3 TODO items to ROADMAP (7306/2709 [ROUTINE] + red specs, 37cc [HARD—meeting] gated); pointer v4→v6 [id:7306,2709,37cc]
