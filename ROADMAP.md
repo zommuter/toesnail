@@ -262,11 +262,72 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
   - **Owner-flag**: default keeps these source-only (source-stays-plain). If the owner wants the `.ods`
     downloadable from the site, that's a one-line re-include — tracked under the verify-pilot box (id:8807).
 
+### Entropy + FHE SymPy verify-instrument bucket (/meeting id:3d2a D1/D3, promoted 2026-07-01)
+
+Design spec: `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` (D1/D3). The
+owner has already PLACED the `\sympyc` open-debt badges in the source (id:8807); the executor's job
+is the TOOLING half — build the SymPy instruments, write the sidecars, wire the test, and (badge-arg
+carve-out D4) flip the discharged badges `\sympyc`→`\sympy`. **NO executor edits the physics/claims**
+inside the `\veq{…}` — only the badge arg once its instrument is green. The `lambertw` marker
+(`physics/entropy.md:59`, now `\leanc`) is OUT of scope — it belongs to the Lean bucket (id:37cc) and
+its marker-split is an owner content decision, not this item.
+
+- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [ROUTINE] <!-- id:7306 -->
+  - **Why**: four owner-placed `\sympyc` (open-debt "desired SymPy, not yet verified") badges exist with
+    no instrument behind them — `physics/entropy.md` `meanE` (l.22 mean-energy closed form),
+    `be` (l.27 Bose–Einstein N→∞ limit), `fd` (l.35 Fermi–Dirac N=2), and `crypto/fhe.md` `stirling`
+    (l.12 `\log_2(2^n)!` Stirling expansion with named correction terms + `O(2^{-n})` remainder). Mechanical
+    SymPy plumbing over owner-marked claims = `[ROUTINE]` (scope guard, D4 carve-out).
+  - **Scope**: create `verify/entropy_meanE.py`, `verify/entropy_be.py`, `verify/entropy_fd.py`,
+    `verify/fhe_stirling.py` — each a `# /// script` uv-runnable SymPy instrument modelled on
+    `verify/resogram_esol.py`: derive the claim symbolically, print exactly one `VERDICT: ✓`/`✗` line and a
+    `CLAIM_HASH8`. `fhe_stirling.py` verifies the NAMED correction terms + the `O(2^{-n})` remainder
+    symbolically (Stirling series), NOT eval-at-a-few-n. Create the sidecars `physics/entropy.toml` and
+    `crypto/fhe.toml` (same shape as `physics/Resogram.toml`: `tier_floor`/`tiers`/`claim`/`by`, keyed by
+    handle). Wire the new instruments + sidecars into `tests/test_verify.sh` (extend its instrument loop and
+    its sidecar non-drift / handle-⊆-source check to cover `entropy.toml` + `fhe.toml`), or add a sibling
+    `tests/test_verify_entropy.sh` wired into `tests/run.sh` — either way `make test` must cover them.
+  - **Badge flip (D4 carve-out only)**: once an instrument is green and attested, flip its source badge
+    `\sympyc`→`\sympy` (the four markers above). This is a badge-ARG edit only — do NOT touch the equation/claim.
+  - **Tests**: `tests/test_verify_entropy.sh` (`# roadmap:7306`) — asserts each of the four instruments runs
+    under `uv run` and prints `VERDICT: ✓`, and that `physics/entropy.toml` + `crypto/fhe.toml` attestations
+    are drift-free with handles ⊆ source `\veq/\veqs` handles. Currently RED (instruments + sidecars absent).
+  - **Done-check**: `bash tests/test_verify_entropy.sh` then full `bash tests/run.sh` (both exit 0).
+  - **Context**: `verify/resogram_esol.py` + `physics/Resogram.toml` are the reference pattern; `\sympyc` =
+    open-debt badge (id:feb8). Meeting `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` D1/D3.
+
+- [ ] Document the tier-escalation ladder in `CONVENTIONS.md` [ROUTINE] <!-- id:2709 -->
+  - **Why**: `CONVENTIONS.md` §2 teaches the badge glyphs and "tier = assurance floor" but never states the
+    DECISION LADDER an author/tool follows when picking a tier (the id:3d2a D3 outcome). Pure docs/convention
+    text, executor-eligible.
+  - **Scope**: extend `CONVENTIONS.md` §2 (verify-marker section) with the escalation ladder: **SymPy-if-it-
+    closes → else Lean → else an honest open-debt badge naming the DESIRED tier** (`\sympyc`/`\numericc`/
+    `\leanc`). State explicitly that `\definition` is never a dodge for a real claim (a claim that needs
+    discharge must carry a discharge tier, not be relabelled a definition), and that numeric is a
+    complementary COUNTER-indicator, never the assurance badge. No content/theory edits.
+  - **Tests**: `tests/test_conventions_ladder.sh` (`# roadmap:2709`) — greps `CONVENTIONS.md` for the ladder
+    (the ordered SymPy→Lean→open-debt escalation, the `\definition`-is-not-a-dodge clause, and the
+    numeric-is-counter-indicator clause). Currently RED (ladder not yet documented).
+  - **Done-check**: `bash tests/test_conventions_ladder.sh` then full `bash tests/run.sh` (both exit 0).
+  - **Context**: meeting `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` D3.
+
 ## Gated forward-flags — NOT yet executor work
 
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
     (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
+
+- [ ] Lean claims — queued individually [HARD — meeting] <!-- id:37cc -->
+  - **Gate (decision-gate)**: NOT executor-ready. Each of the five `\leanc` claims — `ocount`
+    (`Fintype.card_fun`), `bij24` (`Fintype.card_perm`), `semidestr`-count (`Nat.choose`),
+    `semidestr`-identification (balanced⟺semi-destructive, owner modelling), `lambertw`-branch/domain —
+    needs its OWN scoping `/meeting` (fidelity-consume + freeze the Lean signature, the `edot_deriv` pattern)
+    BEFORE it can be sized `[ROUTINE]`. All stay `\leanc` open-debt until their meeting lands. Deliverables
+    once scoped: `verify/Entropy.lean` + `verify/FHE.lean` (mirror `verify/Resogram.lean`), wired into
+    `tests/test_lean.sh`; draft signatures go in the meeting note. Content/modelling judgment (esp. the
+    balanced⟺semi-destructive identification) is owner-only.
+  - **Context**: `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` (D2). The `\leanc`
+    markers are placed at `crypto/fhe.md:8,67,74` and `physics/entropy.md:59`.
 
 ## Human-only — NOT in the executor queue
 
