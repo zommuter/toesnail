@@ -268,3 +268,7 @@ tests/run.sh's loop. tests/test_conventions_ladder.sh green, full bash tests/run
 (node/mathjax skip only). Left id:7306 (entropy + FHE-Stirling SymPy instruments) open — a
 larger multi-instrument build better sized for its own session.
 Friction: none.
+
+## 2026-07-01 23:53 — executor (sonnet, relay-loop)
+
+Documented the tier-escalation ladder in CONVENTIONS.md §2 and wired test_conventions_ladder.sh into tests/run.sh — id:2709 closed, full suite green. [id:2709]
