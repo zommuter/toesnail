@@ -308,7 +308,11 @@ its marker-split is an owner content decision, not this item.
   - **Tests**: `tests/test_conventions_ladder.sh` (`# roadmap:2709`) — greps `CONVENTIONS.md` for the ladder
     (the ordered SymPy→Lean→open-debt escalation, the `\definition`-is-not-a-dodge clause, and the
     numeric-is-counter-indicator clause). Currently RED (ladder not yet documented).
-  - **Done-check**: `bash tests/test_conventions_ladder.sh` then full `bash tests/run.sh` (both exit 0).
+  - **Wiring**: when the test goes green, ALSO wire `test_conventions_ladder.sh` into `tests/run.sh`'s
+    test loop (the runner has no expected-red lane, so red specs stay unwired until green — but an unwired
+    green test is orphaned; `make test` must cover it from then on).
+  - **Done-check**: `bash tests/test_conventions_ladder.sh` then full `bash tests/run.sh` (both exit 0),
+    with the ladder test wired into `tests/run.sh`.
   - **Context**: meeting `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` D3.
 
 ## Gated forward-flags — NOT yet executor work
@@ -316,6 +320,16 @@ its marker-split is an owner content decision, not this item.
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
     (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
+
+- [ ] (GATED — owner marker placement first) `lambertw` algebra-step SymPy instrument <!-- id:5d31 -->
+  - **Gate**: /meeting id:3d2a D1 split the old `\veq{lambertw}\leanc` (`physics/entropy.md:59`): the ALGEBRA
+    steps (l.53–57 inversion chain) are SymPy-provable → own handle + `\sympyc` open-debt badge; the closed-form
+    W line (l.59) → `\definition` (its W-branch/domain caveat stays Lean-queued under id:37cc). Placing/moving
+    `\veq` markers is OWNER-only content judgment (the D4 carve-out covers the badge ARG only), so the split is
+    queued as a REVIEW_ME owner action. Once the split markers land, this becomes a `[ROUTINE]` instrument item:
+    `verify/entropy_lambertw.py` + a `physics/entropy.toml` entry + a `tests/test_verify_entropy.sh` row (the
+    id:7306 pattern). Split out of TODO id:7306's scope at the 2026-07-01 handoff (ROADMAP id:7306 deliberately
+    excludes it); tracked here so closing id:7306 doesn't silently drop it. Not dispatched.
 
 - [ ] Lean claims — queued individually [HARD — meeting] <!-- id:37cc -->
   - **Gate (decision-gate)**: NOT executor-ready. Each of the five `\leanc` claims — `ocount`

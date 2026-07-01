@@ -376,6 +376,17 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   <!-- relay:human auto-flow: ROADMAP id:8757/d5f9 implementation already [x]; this box was the
        separate schema-CONTRACT judgment, now owner-ratified. No new pool work unblocked. -->.
 
+## Entropy `lambertw` — D1 marker split (owner places markers)
+
+- [ ] **Place the `lambertw` D1 marker split in `physics/entropy.md`** (/meeting id:3d2a D1, 2026-06-21;
+  surfaced 2026-07-01 relay review). The meeting split the single `\veq{lambertw}\leanc` (l.59): the ALGEBRA
+  steps (the l.53–57 inversion chain) are SymPy-provable → give them their own handle + `\sympyc` open-debt
+  badge; the closed-form W line (l.59) is the *definition* of W → re-badge `\definition` (its W-branch/domain
+  caveat stays Lean-queued, id:37cc). Marker placement is the owner's act (the D4 carve-out lets tooling touch
+  only the badge ARG), which is why the 2026-07-01 handoff deliberately left this OUT of ROADMAP id:7306.
+  Once the split markers land, the `verify/entropy_lambertw.py` instrument becomes `[ROUTINE]` (gated
+  ROADMAP id:5d31); the next `/relay review` re-derives it.
+
 ## Visual / manual (run these — never auto-ticked)
 
 - [x] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a
