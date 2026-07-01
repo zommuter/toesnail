@@ -258,3 +258,13 @@ handoff: promoted 3 TODO items to ROADMAP (7306/2709 [ROUTINE] + red specs, 37cc
 ## 2026-07-01 23:25 — reviewer (claude-fable-5, relay-loop)
 
 fable-recheck of the 20260701-2044 Opus handoff: gaming-scan clean, both red specs genuinely RED + faithful, suite PASS, pointer v6, doctor 0; split lambertw-algebra residual out of id:7306 (gated id:5d31 + REVIEW_ME owner marker-split box), tightened id:2709 test wiring; routine_open=2 [id:7306,2709,37cc,5d31]
+
+## 2026-07-01 — executor (sonnet)
+
+Worked id:2709 — documented the tier-escalation ladder in CONVENTIONS.md §2 (SymPy-if-it-closes
+→ else Lean → else honest open-debt badge naming the desired tier; \definition-is-never-a-dodge
+clause; numeric-is-a-counter-indicator clause), wired tests/test_conventions_ladder.sh into
+tests/run.sh's loop. tests/test_conventions_ladder.sh green, full bash tests/run.sh green
+(node/mathjax skip only). Left id:7306 (entropy + FHE-Stirling SymPy instruments) open — a
+larger multi-instrument build better sized for its own session.
+Friction: none.

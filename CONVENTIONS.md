@@ -73,6 +73,28 @@ unresolved, see `id:feb8`).
 - **Standalone value:** `grep -rn '\\veq' .` is your live rigor-debt list (`\sorry` = open). `.mw` value:
   each `\veq{h}\tier` badge lowers to a `{#h}{@verify tier}` Fragment with handle + tier intact.
 
+### Tier-escalation ladder (/meeting id:3d2a D3)
+
+When an author (or a tool) picks a tier for a new claim, follow this DECISION LADDER, in order:
+
+1. **SymPy if it closes** — try to discharge the claim with SymPy first (fast, cheap heuristic CAS
+   verdict). If a SymPy instrument can close it, use `\sympy`.
+2. **Else Lean** — SymPy → else Lean: if SymPy cannot close the claim (it needs kernel-checked
+   certainty, a structural/type-level statement, or SymPy genuinely can't decide it), escalate to
+   `\lean`.
+3. **Else an honest open-debt badge naming the desired tier** — if neither instrument has run yet,
+   don't guess or leave it unmarked: use the open-debt badge naming the DESIRED tier
+   (`\sympyc`/`\numericc`/`\leanc`), so the marker itself records which instrument is still owed.
+
+Two clauses that keep this ladder from being gamed:
+
+- **`\definition` is never a dodge for a real claim.** A claim that needs discharge must carry a
+  discharge tier (`\sorry`→`\sympy`→…), never be relabelled `\definition` to escape verification —
+  `\definition` is for things that are true by definition, not for hand-waved claims in disguise.
+- **Numeric is a complementary counter-indicator, never the assurance badge.** `\numeric` documents a
+  claimed evaluation as a cross-check; it never substitutes for the actual assurance tier the claim
+  needs — it is complementary evidence, not the discharge itself.
+
 ### `verified:` attestation — sidecar
 
 Once a claim is discharged, the sidecar (`physics/<stem>.toml`, keyed by handle) records the attestation —
