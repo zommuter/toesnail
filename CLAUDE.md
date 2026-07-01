@@ -113,7 +113,7 @@ non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, nev
 - `~/src/collaib` — local-LLM "calm co-author" observer PWA; a candidate live UI for the `verify:` rigor-debt
   assist role (three-repo relationship flagged for a dedicated scoping session).
 
-## Relay contract <!-- relay-executor contract v4 -->
+## Relay contract <!-- relay-executor contract v6 -->
 
 This repo is managed by a reviewer/executor relay. Load `/relay executor` before
 working on any item, then follow its rules exactly.
