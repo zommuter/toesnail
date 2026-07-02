@@ -372,3 +372,7 @@ Friction: none.
 ## 2026-07-02 12:28 — executor (sonnet, relay-loop)
 
 id:9c41: inline \veqs now hides the handle and parenthesizes the tier badge in both MathJax and KaTeX; test_veqs_inline.cjs green + wired into tests/run.sh; full suite green. [id:9c41]
+
+## 2026-07-02 17:01 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: id:9c41 inline-\veqs verified genuine (gaming-scan clean; test_veqs_inline.cjs + test_mathjax.cjs green against REAL configs with npm deps); roadmap-lint + relay-doctor clean; no drift; routine_open=0 [id:9c41]
