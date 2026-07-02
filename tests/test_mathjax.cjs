@@ -38,12 +38,13 @@ const MJ_MACROS = {
   ltag:     ['\\tag{#1}\\label{#1}', 1],
   // \veq{h}\tier — numbered: handle + verification badge in the (tag); 2nd arg is a
   //   single-token tier macro, $...$-wrapped inside the text-mode tag (both engines).
-  // \veqs{h}\tier — unnumbered sub-step/inline: \label + \quad-badge, no \tag.
+  // \veqs{h}\tier — unnumbered sub-step/inline: \label (invisible), badge in parens, no \tag
+  //   (id:9c41 owner render directive 2026-06-18 — no bare handle shown).
   //   Both are DIRECT macros (NO \@ifstar): a \veq* star variant is infeasible because MathJax's
   //   \@ifstar registers a spurious \label keyed on the branch-macro name, so the 2nd non-star
   //   \veq in one document fails "Label '\veqNum' multiply defined" (id:a138).
   veq:      ['\\tag{#1\\,$#2$}\\label{#1}', 2],
-  veqs:     ['\\label{#1}\\quad #2', 2],
+  veqs:     ['\\label{#1}(#2)', 2],
   // Verification-tier badge macros (LaTeX symbols, not raw emoji — no metric warnings).
   //   \sorry    → \mathbf{?}           (open debt)
   //   \sympy    → \circ                (SymPy / CAS check)
@@ -68,9 +69,10 @@ const KX_MACROS = {
   '\\ltag':     '\\tag{#1}',
   '\\eqref':    '(\\text{#1})',
   // \veq{h}\tier — numbered (tag); \veqs{h}\tier — unnumbered (no \tag). Both DIRECT (no \@ifstar).
-  //   KaTeX has no \label; \veqs shows the handle visibly (cosmetic — editor-preview only).
+  //   KaTeX has no \label, so \veqs stores the handle via \def (never rendered) and shows
+  //   only the parenthesized badge — matches the MathJax site's \label-hidden handle (id:9c41).
   '\\veq':      '\\tag{#1\\,$#2$}',
-  '\\veqs':     '#1\\quad #2',
+  '\\veqs':     '\\def\\veqsHandle{#1}(#2)',
   // Verification-tier badge macros.
   '\\sorry':    '\\mathbf{?}',
   '\\sympy':    '\\circ',
@@ -133,7 +135,7 @@ const adaptor = liteAdaptor(); RegisterHTMLHandler(adaptor);
 // leaks into the handle) under MathJax. Both are DIRECT macros (no \@ifstar): a \veq* star form
 // is infeasible — MathJax's \@ifstar registers a spurious \label keyed on the branch-macro name,
 // so the 2nd non-star \veq in one document fails "Label '\veqNum' multiply defined" (id:a138).
-// KaTeX cosmetic: \veqs shows the handle visibly (KaTeX has no \label; editor-preview only).
+// KaTeX \veqs: handle is stored via \def (never rendered), only the parenthesized badge shows.
 console.log('[test_mathjax] \\veq macro family');
 
 const VEQ_CASES = [

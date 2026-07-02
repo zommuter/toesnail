@@ -10,14 +10,16 @@
     //   2nd arg is a single-token tier macro (no braces needed). KaTeX has no \label, so
     //   the handle is just the visible (tag); the badge is $...$-wrapped so the math glyph
     //   renders inside the text-mode tag. (\ltag stays for not-yet-migrated handles.)
-    // \veqs{h}\tier (id:a138) — unnumbered sub-step / inline variant: badge \quad-ed, NO \tag.
+    // \veqs{h}\tier (id:a138) — unnumbered sub-step / inline variant: badge shown in
+    //   parens, handle hidden entirely (id:9c41 owner render directive 2026-06-18).
     //   A \veq* star variant is INFEASIBLE (MathJax \@ifstar breaks the 2nd \veq in a page —
     //   see custom-head.html), so the unnumbered form is the distinct macro \veqs (both DIRECT).
-    //   KaTeX has no \label, and a 2-arg macro must reference #1, so \veqs shows the handle in
-    //   the editor preview (cosmetic — the published MathJax site uses \label, handle invisible).
+    //   KaTeX has no \label, and a 2-arg macro must reference #1, so \veqs stores the handle
+    //   via \def (never rendered — no visible glyphs) to keep it out of the editor preview,
+    //   matching the published MathJax site's \label-hidden handle.
     // TODO id:feb8 — \tier* open-debt notation (deferred).
     "\\veq":      "\\tag{#1\\,$#2$}",
-    "\\veqs":     "#1\\quad #2",
+    "\\veqs":     "\\def\\veqsHandle{#1}(#2)",
     // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid KaTeX metric warnings).
     "\\sorry":    "\\mathbf{?}",
     "\\sympy":    "\\circ",

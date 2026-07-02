@@ -21,6 +21,16 @@ else
   echo "[test_mathjax] SKIP — node not installed"
 fi
 echo
+
+echo "============================================================"
+echo "RUN test_veqs_inline.cjs"
+echo "============================================================"
+if command -v node >/dev/null 2>&1; then
+  node "$here/test_veqs_inline.cjs" || rc=1
+else
+  echo "[test_veqs_inline] SKIP — node not installed"
+fi
+echo
 echo "============================================================"
 if [ "$rc" -eq 0 ]; then
   echo "SUITE: PASS"
