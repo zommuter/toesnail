@@ -359,5 +359,5 @@ The research itself is the owner's. These are tracked in `TODO.md` (design ledge
   zero-vector uniqueness) and any narrative/topic direction — `docs/rigor-debt.md`.
 - The staleness-checker (TODO `id:04bb`) stays GATED on acoustics (N=2) before it becomes
   a `[ROUTINE]` tooling item.
-- [ ] **[ROUTINE]** Build entropy meanE/be/fd SymPy instruments + physics/entropy.toml sidecar + badge flips (\sympyc→\sympy) — seam of id:7306 (auto, id:3801) <!-- id:e9e9 -->
+- [x] **[ROUTINE]** Build entropy meanE/be/fd SymPy instruments + physics/entropy.toml sidecar + badge flips (\sympyc→\sympy) — seam of id:7306 (auto, id:3801) <!-- id:e9e9 -->
 - [ ] **[HARD — strong model]** Resolve fhe.md stirling constant-term unit mismatch (ln vs log2 of √(2π)) then build fhe_stirling.py + crypto/fhe.toml + badge flip — seam of id:7306 (auto, id:3801) <!-- id:76e5 -->

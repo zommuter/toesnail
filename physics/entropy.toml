@@ -1,0 +1,29 @@
+# Entropy verify-attestation sidecar (id:e9e9, seam of id:7306, /meeting id:3d2a D1/D3).
+# Keyed by equation handle; mirrors the .mw SidecarEntry shape (id:358f).
+#   tier_floor = lowest assurance tier intended for the claim
+#   tiers      = achieved/attested tiers (must contain the in-prose \veq badge's tier)
+#   claim      = srepr content-hash (claim identity) the instrument verifies
+#   by         = [<instrument-file>@<filehash8>, …] that produced the attestation
+# The in-prose badge is the human-facing carrier (\veq{h}\tier); this file holds the
+# machine attestation. test_verify_entropy.sh joins the two by handle and asserts
+# (a) no claim/file-hash drift and (b) sidecar handles ⊆ source \veq handles.
+# The `lambertw` handle (l.59, \leanc) is OUT of scope here — it belongs to the
+# Lean bucket (id:37cc) / owner marker-split (id:5d31), not this sidecar.
+
+[meanE]
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "4ae92471"
+by = ["entropy_meanE.py@a0db9201"]
+
+[be]
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "94fec953"
+by = ["entropy_be.py@b271c5f1"]
+
+[fd]
+tier_floor = "sympy"
+tiers = ["sympy"]
+claim = "432dfa18"
+by = ["entropy_fd.py@f7f70d8b"]
