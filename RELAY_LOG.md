@@ -345,3 +345,26 @@ hard-pool, 9d8c forward-flag). No REVIEW_ME boxes added; no items closed or reop
 ## 2026-07-02 12:15 — reviewer (claude-fable-5, relay-loop)
 
 review: ledger-only window clean (gaming-scan clean, suite PASS incl mathjax); 5b promoted 9c41 [ROUTINE] (+RED spec test_veqs_inline.cjs) + b7e5 [HARD — pool] author-half; 01a7 umbrella-close verified + annotated; routine_open=1 [id:9c41,b7e5,01a7]
+
+## 2026-07-02 — executor (sonnet)
+
+Worked id:9c41 — inline `\veqs{h}\tier` no longer shows the handle and now wraps the tier
+badge in parens (owner render directive 2026-06-18). MathJax `veqs` body changed from
+`\label{#1}\quad #2` to `\label{#1}(#2)` (`_includes/custom-head.html`) — `\label` already
+carried the handle invisibly, only the badge needed parenthesizing. KaTeX `veqs` (which has
+no `\label` and whose 2-arg macro must still reference `#1`) changed from `#1\quad #2` to
+`\def\veqsHandle{#1}(#2)` — `\def` stores the handle in a throwaway macro name without
+emitting any glyphs, verified against `tests/test_veqs_inline.cjs`'s visible-text extraction
+(an earlier `\rlap{\hphantom{#1}}` attempt still left the handle characters in the
+katex-html text nodes — CSS-hidden but text-present — so it failed the test's plain
+tag-strip check; `\def` genuinely emits nothing). Synced the `MJ_MACROS`/`KX_MACROS`
+mirrors in `tests/test_mathjax.cjs` (body strings + stale comments) and wired
+`tests/test_veqs_inline.cjs` into `tests/run.sh`. Ticked ROADMAP id:9c41 and its TODO
+mirror. `npm install` was needed in the worktree (mathjax-full + katex test-only deps,
+not previously present) to un-SKIP the spec. Call sites (`crypto/fhe.md`,
+`physics/Resogram.md`) are unchanged — no owner-content markup was touched (D4 carve-out
+respected). Full `bash tests/run.sh` green, including `test_mathjax.cjs` and the new
+`test_veqs_inline.cjs`. This is a `custom-head.html`/`.vscode/settings.json` config
+change, so it re-triggers the `tests/HUMAN-integration.md` visual re-walk (noted here
+per the item's Done-check; not run by this session — visual checks are `[HUMAN]`).
+Friction: none.

@@ -327,7 +327,7 @@ its marker-split is an owner content decision, not this item.
 
 ### Inline-render polish (owner directives 2026-06-18; laned 2026-07-02 apex/human batch, promoted same-id by the 2026-07-02 review)
 
-- [ ] Inline `\veqs`: hide the handle, parenthesize the tier badge [ROUTINE] <!-- id:9c41 -->
+- [x] Inline `\veqs`: hide the handle, parenthesize the tier badge [ROUTINE] <!-- id:9c41 -->
   - **Why**: owner render directive 2026-06-18 — inline `\veqs{h}\tier` (the FHE counts
     `\veqs{ocount}\leanc` etc.) currently shows the handle (KaTeX `#1\quad #2`; the residual id:a138
     cosmetic) and a bare badge; the owner wants NO label shown and the tier badge in parens:

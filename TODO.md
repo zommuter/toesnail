@@ -57,12 +57,7 @@
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
 - [x] **(toesnail) [ROUTINE] Sync authoring docs to `\veq{h}\tier` form — DONE** (relay executor ~2026-06-19; ROADMAP id:9fdc `[x]`). Retired the `<!-- verify:tier -->` HTML comment in CONVENTIONS/CLAUDE/ARCHITECTURE/REVIEW_ME. TODO checkbox reconciled 2026-06-21 (/meeting cross-ledger). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md D2-D4) <!-- id:9fdc -->
 - [ ] **(forward-flag)** `\veq{}` is the natural vehicle for subequation labelling (`id:d2f4`) and ✓-emoji render variants (`id:445e`); design separately, after the KaTeX pilot (`id:e0b7`). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md) <!-- id:7b2b -->
-- [ ] [ROUTINE] **(render, owner 2026-06-18) inline `\veqs` should HIDE the handle/label and show the tier in PARENTHESES.** <!-- id:9c41 -->
-  Currently `\veqs{h}\tier` renders the handle visibly (KaTeX `#1\quad #2`; the residual `id:a138` cosmetic) and
-  the badge bare. For inline use (the FHE counts `\veqs{ocount}\leanc` etc.) the owner wants NO label shown and
-  the tier badge wrapped in parens, e.g. inline `… 2^{m2^n} (✓?)` not `… ocount ✓?`. Affects both engines
-  (`_includes/custom-head.html` MathJax + `.vscode/settings.json` KaTeX) — note KaTeX 2-arg macros must reference
-  `#1`, so hiding it may need `\hphantom`/a 1-arg inline variant. Add a `test_mathjax.cjs` assertion.
+- [x] [ROUTINE] **(render, owner 2026-06-18) inline `\veqs` should HIDE the handle/label and show the tier in PARENTHESES — DONE** (relay executor 2026-07-02; ROADMAP id:9c41 `[x]`). MathJax `veqs` now `\label{#1}(#2)`; KaTeX `veqs` stores the handle via `\def` (never rendered) then `(#2)`. `tests/test_veqs_inline.cjs` green + wired into `tests/run.sh`; `test_mathjax.cjs` mirrors synced. <!-- id:9c41 -->
   **PROMOTED to ROADMAP 2026-07-02 review** (same id, single-id-two-views); red spec
   `tests/test_veqs_inline.cjs` authored (unwired-until-green; the KaTeX must-reference-`#1` caveat is
   now VERIFIED — a body without `#1` is a parse error).

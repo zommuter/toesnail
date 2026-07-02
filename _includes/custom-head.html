@@ -25,8 +25,9 @@ window.MathJax = {
       //   Tier macros (verification state — see CONVENTIONS.md §2):
       //     \sorry → ?   \sympy → ∘   \numeric → △   \lean → ✓   \sympylean → ✓✓
       // \veqs{h}\tier (id:a138) — unnumbered sub-step / inline-math variant: \label only,
-      //   badge \quad-ed inline, NO \tag. Use for sub-steps inside a derivation, inline math,
-      //   or inside an aligned env that already carries an outer \tag.
+      //   badge shown in parens inline, NO \tag (id:9c41 owner render directive 2026-06-18 —
+      //   no bare label/handle shown, tier badge parenthesized). Use for sub-steps inside a
+      //   derivation, inline math, or inside an aligned env that already carries an outer \tag.
       //   NB: a \veq* STAR variant via \@ifstar is INFEASIBLE — MathJax's \@ifstar registers a
       //   spurious \label keyed on the branch-macro name, so the 2nd non-star \veq in the SAME
       //   document (a whole page is one MathJax doc) fails "Label '\veqNum' multiply defined".
@@ -34,7 +35,7 @@ window.MathJax = {
       //   name \veqs (not \veq*). The Resogram edot block uses \veqs for its sub-steps + a
       //   manual \tag{edot} for the number (a9d2). See id:a138.
       veq:     ['\\tag{#1\\,$#2$}\\label{#1}', 2],
-      veqs:    ['\\label{#1}\\quad #2', 2],
+      veqs:    ['\\label{#1}(#2)', 2],
       // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
       // Plain (un-$-wrapped) here; \veq wraps the badge in $...$ when it places it in the tag.
       sorry:    '\\mathbf{?}',
