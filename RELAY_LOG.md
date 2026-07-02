@@ -290,3 +290,28 @@ Friction: none.
 ## 2026-07-02 02:13 — executor (sonnet, relay-loop)
 
 Closed id:e9e9 — built entropy_{meanE,be,fd}.py SymPy instruments + physics/entropy.toml sidecar + badge flips, added narrower test_verify_entropy_routine.sh, full suite green. [id:e9e9]
+
+## 2026-07-02 — reviewer (claude-fable-5, relay-loop)
+
+Review of the 2-executor-batch window relay-ckpt-20260701-2325..HEAD (id:2709 CONVENTIONS ladder;
+id:e9e9 entropy-instrument seam). Trust-but-verify: gaming-scan CLEAN (no deleted tests / added
+skips / removed asserts). id:2709 genuinely green — ladder + \definition-not-a-dodge +
+numeric-counter-indicator clauses landed in CONVENTIONS.md §2; the handoff spec
+test_conventions_ladder.sh was NOT touched and is wired into run.sh. id:e9e9 genuinely green —
+entropy_{meanE,be,fd}.py are first-principles SymPy derivations (independent summation/limit
+paths, no fixture special-casing, no hardcoded verdicts); entropy.toml sidecar drift-checked by
+the new narrower spec test_verify_entropy_routine.sh (wired); badge flips are badge-ARG-only
+(equations byte-identical); the original test_verify_entropy.sh (roadmap:7306) was deliberately
+kept RED + unwired, not weakened. Full suite PASS (mathjax = documented no-node SKIP in the fresh
+worktree; nothing closed on its strength). Independently RE-VERIFIED the id:76e5 stirling finding:
+log₂((2^n)!) needs log₂√(2π), not ln√(2π) — persistent ≈0.407-bit offset confirmed symbolically +
+numerically; surfaced as a REVIEW_ME owner box (owner math, scope guard). Re-derivation: moved the
+two auto-appended seam lines (e9e9/76e5) out of the "Human-only" section — e9e9 [x] into the
+entropy bucket, 76e5 re-laned from the unrecognized `[HARD — strong model]` to the id:5d31
+gated-on-owner pattern (roadmap-lint now clean); ticked TODO id:2709 (cross-ledger drift fix,
+single-id-two-views) + annotated TODO id:7306 with seam status. relay-doctor findings all
+resolved or surfaced (2709 drift fixed; 76e5 lint fixed; unresolved routed:d51c → zomni is
+cross-repo registry config, not this repo's ledger). Contract pointer v6 current; no spec drift
+(window touched docs/tests/verify only, README describes the verify pipeline generically).
+routine_open=0 (open work: 76e5/5d31 owner-gated, 37cc meeting-gated, 9d8c forward-flag).
+Friction: multi-minute harness permission-classifier outage mid-review (writes blocked; waited it out).
