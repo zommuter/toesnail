@@ -19,12 +19,12 @@ $$\begin{align}
 \\ &= \underbrace{-\frac{N\cdot Z_1^N}{1-Z_1^N}}_{=-N\frac{p_N}{1-Z_1}} + \frac{Z_1}{1-Z_1} = \frac{Z_1 - N\cdot p_N}{1-Z_1}
 \\ &= \frac{ - N\cdot Z_1^N + Z_1\overbrace{\frac{1-Z_1^N}{1-Z_1}}^{=Z_B}}{1-Z_1^N}
 \\ &= \frac{-N Z_1^{N-1} + Z_B}{1-Z_1^N}Z_1
-\\ &= \frac{-NZ_1^N}{Z_B(1-Z_1)} + \frac1{Z_1^{-1}-1} \veq{meanE}\sympyc
+\\ &= \frac{-NZ_1^N}{Z_B(1-Z_1)} + \frac1{Z_1^{-1}-1} \veq{meanE}\sympy
 \end{align}$$
 
 Let's take the limit $N\to\infty$, noting that $Z_1^N\to0$ exponentially, so
 
-$$\langle k\rangle = E/E_1 \to Z_1 Z_B\to \frac{Z_1}{1-Z_1} = \frac 1{e^{\beta E_1} - 1}, \veq{be}\sympyc$$
+$$\langle k\rangle = E/E_1 \to Z_1 Z_B\to \frac{Z_1}{1-Z_1} = \frac 1{e^{\beta E_1} - 1}, \veq{be}\sympy$$
 
 which is just the Bose-Einstein (BE) statistics for a bosonic two-level system of energy difference $E$, i.e. an arbitrary amount of particles can populate any energy level.
 
@@ -32,7 +32,7 @@ On the other hand, take $N=2$ to obtain
 
 $$\begin{align*}
 Z_B &= \frac{1-Z_1^2}{1-Z_1} = 1+Z_1, \\
-\langle k\rangle = E/E_1 &= \frac{-2Z_1^2+Z_1(1+Z_1)}{1-Z_1^2} = \frac{Z_1-Z_1^2}{1-Z_1^2} = \frac{Z_1}{1+Z_1} = \frac1{e^{\beta E_1} + 1} = p_1, \veq{fd}\sympyc
+\langle k\rangle = E/E_1 &= \frac{-2Z_1^2+Z_1(1+Z_1)}{1-Z_1^2} = \frac{Z_1-Z_1^2}{1-Z_1^2} = \frac{Z_1}{1+Z_1} = \frac1{e^{\beta E_1} + 1} = p_1, \veq{fd}\sympy
 \end{align*}$$
 
 which is the Fermi-Dirac (FD) statistics for a fermionic system, where each level can only be populated once.

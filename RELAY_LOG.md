@@ -272,3 +272,17 @@ Friction: none.
 ## 2026-07-01 23:53 — executor (sonnet, relay-loop)
 
 Documented the tier-escalation ladder in CONVENTIONS.md §2 and wired test_conventions_ladder.sh into tests/run.sh — id:2709 closed, full suite green. [id:2709]
+
+## 2026-07-02 — executor (sonnet, relay-loop)
+
+Worked id:e9e9 — built the 3 sympy-clean seam of id:7306's decomposed instrument bucket:
+verify/entropy_{meanE,be,fd}.py (first-principles finite-N sum, N→∞ limit, N=2 case
+respectively, each independent of the doc's own derivation chain) + physics/entropy.toml
+sidecar + badge flips \sympyc→\sympy for meanE/be/fd only (fhe.md `stirling` and its
+\sympyc badge untouched — that's id:76e5's [HARD] seam). tests/test_verify_entropy.sh
+(roadmap:7306) already specs all FOUR instruments together and would stay RED without
+fhe_stirling, so rather than weaken/rewrite that existing RED spec I added a new,
+narrower tests/test_verify_entropy_routine.sh (roadmap:e9e9) covering only the three
+closed instruments + entropy.toml, and wired that into tests/run.sh. Full suite green
+(bash tests/run.sh, node/mathjax skip only).
+Friction: none.
