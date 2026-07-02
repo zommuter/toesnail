@@ -18,7 +18,7 @@
 - [ ] **[HARD] Lean claims — queued individually** (/meeting id:3d2a D2) — `ocount` (`Fintype.card_fun`), `bij24` (`Fintype.card_perm`), `semidestr`-count (`Nat.choose`), `semidestr`-identification (balanced⟺semi-destructive, owner modelling), `lambertw`-branch/domain. Each needs its OWN scoping `/meeting` (fidelity-consume + freeze signature, edot_deriv pattern) before `[ROUTINE]`; all stay `\leanc` until then. `verify/Entropy.lean` + `verify/FHE.lean` (mirror resogram_*.py), into `tests/test_lean.sh`. Draft signatures in the meeting note. (2026-06-21-2129-lean-formalization-strategy.md) <!-- id:37cc -->
 - [x] **[ROUTINE] document the tier-escalation ladder** (/meeting id:3d2a D3) in `CONVENTIONS.md` verify-marker section: SymPy-if-closes → else Lean → else honest open-debt badge naming the desired tier (`\sympyc`/`\numericc`/`\leanc`); `\definition` is never a dodge for a real claim; numeric is a complementary counter-indicator, never the assurance badge. **DONE 2026-07-01 (executor), verified genuine 2026-07-02 review** — `CONVENTIONS.md` §2 ladder + both clauses; `tests/test_conventions_ladder.sh` green + wired into `tests/run.sh`. (2026-06-21-2129-lean-formalization-strategy.md) <!-- id:2709 -->
 - [ ] **(forward-flag, cross-project) `.mw`→Lean4 lowering research** (/meeting id:3d2a D4) — can a `.mw` document lower its fragments to Lean4 proof obligations (machine-provable document) vs only tracking external instruments? MIRRORED to `mathematical-writing` inbox (routed:733c); ties `.mw` id:358f. (2026-06-21-2129-lean-formalization-strategy.md) <!-- routed:733c --> <!-- id:4976 -->
-- [ ] (MEETING candidate) Better workflow for math/Lean-formalization design sessions — e.g. meeting-rpg with <!-- id:2f99 -->
+- [ ] [HARD — meeting] (MEETING candidate) Better workflow for math/Lean-formalization design sessions — e.g. meeting-rpg with <!-- id:2f99 -->
   in-session formula rendering (so equation-heavy decisions like id:b9bc's HasDerivAt signature are legible
   during discussion), or possibly a collAIb regime instead. To be scoped in a dedicated /meeting.
 - [ ] `verify:` pilot candidates in recovered pages — OWNER PICKED 2026-06-16 (/relay human): mark **entropy** BE/FD+Lambert-W (sympy) + **fhe** enumeration/`.ods` (numeric); **wirohsh DEFERRED**. Owner places the markers (physics/crypto content is Human-only); then instrument plumbing is [ROUTINE]. See REVIEW_ME. **ENTROPY markers PLACED 2026-06-18** (owner-directed, /walk): `physics/entropy.md` carries `\veq{meanE}\sympyc` (E/E₁ closed-form chain l.22), `\veq{be}\sympyc` (Bose–Einstein N→∞ limit l.27), `\veq{fd}\sympyc` (Fermi–Dirac N=2 l.35), `\veq{lambertw}\sympyc` (Lambert-W inversion l.59) — all `\sympyc` = OPEN-DEBT (desired SymPy, not yet verified, id:feb8). NEXT [ROUTINE]: build `verify/entropy_{be,fd,meanE,lambertw}.py` + `physics/entropy.toml` sidecar + wire into `test_verify.sh`; on green swap `\sympyc`→`\sympy`. `lambertw` ESCALATED `\sympyc`→`\leanc` [HARD] 2026-06-18 (owner-ratified): SymPy CONFIRMED can't close the transcendental inversion (probe; ==y False both ∓ branches), numeric is counter-indicator-only not an assurance tier → faithful tier is Lean. NEEDS a scoping `/meeting` (Mathlib Lambert-W capability-gap risk + frozen signature + DoD) — like edot_deriv. So entropy splits: be/fd/meanE = `\sympyc` [ROUTINE] instruments; lambertw = `\leanc` [HARD]. **FHE markers PLACED + RESHAPED 2026-06-18** (owner ratified): owner rejected AI display-carriers → marked counts INLINE with `\veqs`, and re-tiered combinatorial counts to Lean (`\definition` is a bad downgrade; sympy-can't⇒Lean). `crypto/fhe.md`: `\veq{stirling}\sympyc` (l.12 display, [ROUTINE]), `\veqs{ocount}\leanc` (l.8 inline, Fintype.card_pi), `\veqs{semidestr}\leanc` (l.67 inline, Nat.choose), `\veqs{bij24}\leanc` (l.74 inline, Fintype.card_perm). The 3 `\leanc` counts are Mathlib-tractable → Lean meeting `id:3d2a` for sizing; stirling = lone [ROUTINE] sympy instrument. Entropy fidelity RATIFIED (owner); lambertw also `\leanc`→`id:3d2a`. <!-- id:8807 -->
@@ -41,7 +41,7 @@
   human):** (a) sign correction applied; (b) exact phase-shifted form adopted; (c) one-char paren fix
   applied. Two follow-ups left open (REVIEW_ME): next-`/relay review` instrument re-pin for edot+cval
   (✗→✓, attestations) and the owner-only `cval` c-narrative reconciliation. <!-- id:9135 -->
-- [ ] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle <!-- id:d2f4 -->
+- [ ] [HARD — meeting] Wishlist: automated subequation dot-numbering — derive `(edot.1)…(edot.4)` handles from a parent handle <!-- id:d2f4 -->
   so per-line tags render; also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. (/meeting 2026-06-15) **OPTION (owner obs 2026-06-18, entropy.md):** don't hand-invent
   per-line subhandles — `\veq{h}` only the lines that need a STABLE/citeable handle and let amsmath's native
@@ -57,7 +57,7 @@
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
 - [x] **(toesnail) [ROUTINE] Sync authoring docs to `\veq{h}\tier` form — DONE** (relay executor ~2026-06-19; ROADMAP id:9fdc `[x]`). Retired the `<!-- verify:tier -->` HTML comment in CONVENTIONS/CLAUDE/ARCHITECTURE/REVIEW_ME. TODO checkbox reconciled 2026-06-21 (/meeting cross-ledger). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md D2-D4) <!-- id:9fdc -->
 - [ ] **(forward-flag)** `\veq{}` is the natural vehicle for subequation labelling (`id:d2f4`) and ✓-emoji render variants (`id:445e`); design separately, after the KaTeX pilot (`id:e0b7`). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md) <!-- id:7b2b -->
-- [ ] **(render, owner 2026-06-18) inline `\veqs` should HIDE the handle/label and show the tier in PARENTHESES.** <!-- id:9c41 -->
+- [ ] [ROUTINE] **(render, owner 2026-06-18) inline `\veqs` should HIDE the handle/label and show the tier in PARENTHESES.** <!-- id:9c41 -->
   Currently `\veqs{h}\tier` renders the handle visibly (KaTeX `#1\quad #2`; the residual `id:a138` cosmetic) and
   the badge bare. For inline use (the FHE counts `\veqs{ocount}\leanc` etc.) the owner wants NO label shown and
   the tier badge wrapped in parens, e.g. inline `… 2^{m2^n} (✓?)` not `… ocount ✓?`. Affects both engines
@@ -73,13 +73,13 @@
 - [ ] **(forward-flag, later) notation-implies-annotation sanity checks** — owner 2026-06-18: toesnail uses non-standard "handwavy physics" notation whose OPERATOR carries semantic meaning the verify/annotation layer can leverage as a SANITY CHECK: (a) `:=` directly implies a **definition** (should still get a handle/label — the `:=`↔`\definition`-annotation relationship becomes a cross-check); (b) `\approx` may imply a **Lean-provable `\mathcal{O}(…)`** step; (c) `\dot=` (non-standard) less formally denotes a **linear approximation**; and more as the corpus grows. The tool would infer/verify the expected annotation kind from the operator. Ties to the annotation-kind taxonomy meeting (definition/assumption/… — deferred) and the `.mw` verify engine (`id:358f`). <!-- id:8ddc -->
 - [ ] ROADMAP R2/R3 — rendered ✓-emoji on verified equations (hover/tooltip verify status) + a legible <!-- id:445e -->
   in-document annotation syntax to supersede illegible HTML `verify:` comments; **`\veq{}` macro is the designed vehicle** (2026-06-18-0729-veq-macro-verify-carrier.md D3); implement render variants after `id:e0b7` KaTeX pilot + `id:dce9` migration land. (/meeting 2026-06-15, 2026-06-15-2111-resogram-energy-chain-reconciliation.md)
-- [ ] **Cross-project (triad):** add the owner's Diplomarbeit `.git` repo — a fully finished LaTeX project — <!-- id:6ab8 -->
+- [ ] [HARD — meeting] **Cross-project (triad):** add the owner's Diplomarbeit `.git` repo — a fully finished LaTeX project — <!-- id:6ab8 -->
   as a **second acceptance/test corpus** for the `.mw`/toesnail/collAIb triad (N=2 beyond toesnail's
   north-star physics docs; exercises `.mw` ingest + verification on real finished LaTeX). **MIRRORED in
   `mathematical-writing/TODO.md` under the same `id:6ab8`** — keep both copies in sync MANUALLY (no automated
   cross-PROJECT sync: relay `--cross-ledger` is intra-repo only, inbox routing is one-way). Wherever it's
   worked/closed, tick the twin. Likely resolved in a manual `/meeting`.
-- [ ] **Cross-project (triad) — `/meeting`:** discuss the potentially connecting dots between **zkm <!-- id:4159 -->
+- [ ] [HARD — meeting] **Cross-project (triad) — `/meeting`:** discuss the potentially connecting dots between **zkm <!-- id:4159 -->
   infrastructure** (embeddings / semantic retrieval / knowledge-mgmt) and the `.mw`/toesnail/collAIb triad.
   toesnail is the documented hub (`docs/dependencies.md`); this would extend the dependency map with a zkm
   node. **MIRRORED in `zkm/TODO.md` under the same `id:4159`** — keep both copies in sync MANUALLY; tick the
@@ -93,7 +93,7 @@
   central-macro-def design (we forbid in-doc `\gdef`, which GitHub wouldn't honor anyway). Options to weigh later:
   a README banner pointing readers to the live site for math; a GitHub-compatible macro fallback (hard — no
   per-repo macro config); or swap `\operatorname{…}`→`\mathrm{…}` where owner-content allows. Low priority.
-- [ ] **Comment / annotation system for the GH Pages site** (idea salvaged from the archived `gtnsd` repo, <!-- id:d973 -->
+- [ ] [HARD — meeting] **Comment / annotation system for the GH Pages site** (idea salvaged from the archived `gtnsd` repo, <!-- id:d973 -->
   see `gtnsd-archive` branch). Candidates: hypothes.is annotation overlay, staticman, `ghpages-ghcomments`,
   or a Jekyll static-comments recipe. Ties into collAIb's "live `verify:` assist UI" (annotation = surfacing
   rigor-debt in-page) and the `[edot]`-style handles (anchor targets). NB the gtnsd-era worry "how do
