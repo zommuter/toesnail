@@ -319,3 +319,25 @@ Friction: multi-minute harness permission-classifier outage mid-review (writes b
 ## 2026-07-02 02:53 — reviewer (claude-fable-5, relay-loop)
 
 review: id:2709+id:e9e9 verified genuine (gaming-scan clean, suite PASS); id:76e5 stirling log2-vs-ln finding independently re-confirmed and owner-gated; roadmap re-derived (seam relocation, lint clean); routine_open=0 [id:2709,e9e9,76e5,7306]
+
+## 2026-07-02 — reviewer (claude-fable-5, relay-loop)
+
+Review of the ledger-only window relay-ckpt-20260702-0253..HEAD (3 commits: apex DQ lane-tag
+batch; docs/dependencies.md triad-consulting pointer; 2026-07-02 human-answer batch closing
+id:01a7 + laning id:b7e5). No code/test changes → trust-but-verify trivially clean: gaming-scan
+CLEAN, full suite PASS including the mathjax layer (node_modules symlinked into the worktree —
+NOT a documented SKIP this time). id:01a7 umbrella-close verified sound: children 96ad/d0bf/9b2d
+were ticked + head-line-archived 2026-06-15 (commit c427a2b) and follow-ons 5776/1335/3275 are
+[x] in ROADMAP — annotated the TODO line (the fragments below it are archive residue, not open
+items). Reverse-handoff (5b): the window laned 7 TODO items; the 5 [HARD — meeting] ones stay
+design-ledger; the 2 dispatchable ones were promoted to ROADMAP same-id — id:9c41 [ROUTINE]
+(inline \veqs hide-handle + parenthesized badge; RED spec tests/test_veqs_inline.cjs authored in
+the worktree, reads the REAL engine configs, unwired-until-green; verified empirically that a
+KaTeX string macro must reference #1) and id:b7e5 [HARD — pool] (AUTHOR half only: palette
+options + previews → REVIEW_ME owner pick; run half gated on the pick, relay never
+auto-implements). relay-doctor: toesnail-clean (cross-ledger, roadmap-lint, todo-conformance,
+residue all clean); the 3 surfaced findings are foreign-repo/global (parked orphans in
+dotclaude-skills + zkm-chatgpt, inbox routed:d51c → zomni registry gap), not this repo's ledger.
+Contract pointer v6 current; docs pointer commit is itself the drift fix (no further spec drift).
+routine_open=1 (id:9c41; open remainder: 76e5/5d31 owner-gated, 37cc meeting-gated, b7e5
+hard-pool, 9d8c forward-flag). No REVIEW_ME boxes added; no items closed or reopened.

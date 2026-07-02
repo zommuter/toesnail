@@ -325,6 +325,50 @@ its marker-split is an owner content decision, not this item.
     with the ladder test wired into `tests/run.sh`.
   - **Context**: meeting `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` D3.
 
+### Inline-render polish (owner directives 2026-06-18; laned 2026-07-02 apex/human batch, promoted same-id by the 2026-07-02 review)
+
+- [ ] Inline `\veqs`: hide the handle, parenthesize the tier badge [ROUTINE] <!-- id:9c41 -->
+  - **Why**: owner render directive 2026-06-18 — inline `\veqs{h}\tier` (the FHE counts
+    `\veqs{ocount}\leanc` etc.) currently shows the handle (KaTeX `#1\quad #2`; the residual id:a138
+    cosmetic) and a bare badge; the owner wants NO label shown and the tier badge in parens:
+    `… 2^{m2^n} (✓?)`, not `… ocount ✓?`. Laned `[ROUTINE]` by the 2026-07-02 apex DQ triage
+    (TODO id:9c41 — same token, single-id-two-views).
+  - **Scope**: `_includes/custom-head.html` (MathJax `veqs` macro), `.vscode/settings.json` (KaTeX
+    `\veqs`), then sync the MJ_MACROS/KX_MACROS mirrors in `tests/test_mathjax.cjs`. Display `\veq`
+    is OUT of scope (unchanged). CONSTRAINT (verified while authoring the spec): a KaTeX string
+    macro MUST reference `#1` — a body without it is a parse error — so hiding needs an invisible
+    carrier (`\hphantom`-family; zero-width e.g. `\rlap{\hphantom{#1}}`) or a restructure. If the
+    fix would require changing the CALL-SITE syntax in owner content (`crypto/fhe.md` inline
+    markers), STOP and hand back — owner-placed markers are not tooling-editable beyond the badge
+    arg (D4 carve-out).
+  - **Tests**: `tests/test_veqs_inline.cjs` (`roadmap:9c41` — authored RED by the 2026-07-02 review,
+    deliberately UNWIRED from `tests/run.sh` until green; the runner has no expected-red lane). It
+    reads the REAL engine configs, not the test mirrors — do not weaken it.
+  - **Done-check**: `node tests/test_veqs_inline.cjs` green → add it to the `tests/run.sh` list;
+    full `bash tests/run.sh` green (incl. `test_mathjax.cjs` with the synced mirrors). A config
+    change here re-triggers the `tests/HUMAN-integration.md` visual re-walk (note it in the log).
+  - **Context**: REVIEW_ME id:e0b7 rounds 4–5 (the `\veqs` design history); TODO id:9c41.
+
+- [ ] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) [HARD — pool] <!-- id:b7e5 -->
+  - **Why**: owner render directive 2026-06-18; laned `[HARD — pool]` with an explicit
+    author-then-run split by the 2026-07-02 human-answer batch (TODO id:b7e5, same token). The pool
+    AUTHORS the proposal; the owner RATIFIES the pick; only then is the run half implemented. The
+    relay never auto-implements a palette the owner hasn't picked.
+  - **Author-half deliverable**: 2–3 accessibility-checked palette options (contrast against the
+    site background, colour-blind-safe check) mapping the whole badge family (`\sorry`/`\sympy`/
+    `\numeric`/`\lean`/`\sympylean` + the `\<tier>c` open-debt variants) to colours (strawman:
+    `\sorry` red, `\sympy`/`\sympyc` amber, `\numeric` blue, `\lean` green, `\sympylean`
+    deep-green), plus a PREVIEW render per option (a static HTML page rendering sample badges under
+    each palette), and per-engine implementation notes: KaTeX prefers `\htmlClass` + CSS over raw
+    `\color` (metric warnings; check the `trust` option requirement), MathJax CSS class/`\color`.
+    Lands as a REVIEW_ME owner-pick box + preview files (e.g. `docs/palette-preview/`) — NO engine
+    config is changed in the author half.
+  - **Run half (GATED on the owner's pick)**: implement the ratified palette in both engines +
+    `test_mathjax.cjs` coverage; re-queue as `[ROUTINE]` once the pick exists.
+  - **Done-check (author half)**: the REVIEW_ME owner-pick box with option + preview paths exists;
+    `git diff` shows NO change to `_includes/custom-head.html` / `.vscode/settings.json`.
+  - **Context**: TODO id:b7e5; relates to R2/R3 (id:445e); REVIEW_ME id:e0b7 history.
+
 ## Gated forward-flags — NOT yet executor work
 
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
