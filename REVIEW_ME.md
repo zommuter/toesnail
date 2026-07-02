@@ -387,6 +387,20 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   Once the split markers land, the `verify/entropy_lambertw.py` instrument becomes `[ROUTINE]` (gated
   ROADMAP id:5d31); the next `/relay review` re-derives it.
 
+## FHE `stirling` — constant-term unit mismatch (owner decides the fix)
+
+- [ ] **Fix/ratify the `stirling` constant term in `crypto/fhe.md:12`** (surfaced by the id:7306
+  hard-split 2026-07-01, independently re-verified + queued 2026-07-02 relay review; gates ROADMAP
+  id:76e5). The expansion of `Π_n = log₂((2^n)!)` is written
+  `2^n(n − log₂e) + n/2 + ln√(2π) + O(2^{-n})`, but dividing Stirling's `ln N! = N ln N − N + ½ln(2πN) + …`
+  by `ln 2` (with `N = 2^n`) makes EVERY term base-2 — the constant must be `log₂√(2π)` = `ln√(2π)/ln 2`
+  ≈ 1.326, not `ln√(2π)` ≈ 0.919. Confirmed symbolically (SymPy asymptotic series) AND numerically (the
+  ≈0.407-bit offset does not shrink with n; e.g. n=2: exact 4.585, log₂-form 4.555 — the expected
+  `1/(12N ln2)` remainder — vs ln-form 4.148). AI surfaced, did not edit; the source line is owner math
+  (scope guard). Once fixed (or ruled intended), ROADMAP id:76e5 un-gates into the `[ROUTINE]`
+  `verify/fhe_stirling.py` + `crypto/fhe.toml` build and the original `tests/test_verify_entropy.sh` can
+  go green.
+
 ## Visual / manual (run these — never auto-ticked)
 
 - [x] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a

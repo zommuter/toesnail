@@ -296,6 +296,16 @@ its marker-split is an owner content decision, not this item.
   - **Context**: `verify/resogram_esol.py` + `physics/Resogram.toml` are the reference pattern; `\sympyc` =
     open-debt badge (id:feb8). Meeting `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` D1/D3.
 
+- [x] Build entropy meanE/be/fd SymPy instruments + `physics/entropy.toml` sidecar + badge flips (`\sympyc`→`\sympy`) [ROUTINE] — seam 1 of id:7306's hard-split (auto, id:3801) <!-- id:e9e9 -->
+  - **DONE 2026-07-02** (executor; verified genuine by the 2026-07-02 review): `verify/entropy_{meanE,be,fd}.py`
+    first-principles SymPy instruments (finite-N sum / N→∞ limit / N=2 case, each derived independently of the
+    doc's own algebra chain), `physics/entropy.toml` attestation sidecar, badge-ARG-only flips in
+    `physics/entropy.md` (equations untouched — D4 carve-out honored). New narrower spec
+    `tests/test_verify_entropy_routine.sh` (`# roadmap:e9e9`) wired into `tests/run.sh`; the original
+    `tests/test_verify_entropy.sh` (`# roadmap:7306`, all FOUR instruments) was deliberately kept RED +
+    unwired — NOT weakened — pending the id:76e5 stirling seam. (Relocated here from the misplaced
+    auto-append at the file bottom, 2026-07-02 review.)
+
 - [x] Document the tier-escalation ladder in `CONVENTIONS.md` [ROUTINE] <!-- id:2709 -->
   - **Why**: `CONVENTIONS.md` §2 teaches the badge glyphs and "tier = assurance floor" but never states the
     DECISION LADDER an author/tool follows when picking a tier (the id:3d2a D3 outcome). Pure docs/convention
@@ -331,6 +341,20 @@ its marker-split is an owner content decision, not this item.
     id:7306 pattern). Split out of TODO id:7306's scope at the 2026-07-01 handoff (ROADMAP id:7306 deliberately
     excludes it); tracked here so closing id:7306 doesn't silently drop it. Not dispatched.
 
+- [ ] (GATED — owner content fix first) `fhe_stirling.py` instrument + `crypto/fhe.toml` sidecar + badge flip <!-- id:76e5 -->
+  - **Gate**: seam 2 of id:7306's hard-split (auto, id:3801). The instrument is blocked by a located finding
+    in owner content: `crypto/fhe.md:12`'s `stirling` constant term is written `ln√(2π)` but the base-2
+    Stirling expansion of `log₂((2^n)!)` requires `log₂√(2π)` = `ln√(2π)/ln 2` — a natural-log/log₂ unit
+    mismatch (SymPy asymptotic series + independent float check; the ≈0.407-bit offset does not shrink with
+    n; re-verified by the 2026-07-02 review). Resolving a located verify finding = editing owner math =
+    HUMAN-ONLY (scope guard), so the fix is queued as a REVIEW_ME owner box (2026-07-02) — the id:5d31
+    pattern. Once the owner fixes (or ratifies) the source line, this becomes a `[ROUTINE]` instrument item:
+    `verify/fhe_stirling.py` (named correction terms + `O(2^{-n})` remainder, symbolic — NOT
+    eval-at-a-few-n) + `crypto/fhe.toml` sidecar + the badge-ARG flip, after which the original
+    `tests/test_verify_entropy.sh` (roadmap:7306) can go green and be wired. Not dispatched.
+    (Re-laned from the auto-emitted `[HARD — strong model]` — not a recognized lane — by the 2026-07-02
+    review; the blocking step is owner judgment, not model strength.)
+
 - [ ] Lean claims — queued individually [HARD — meeting] <!-- id:37cc -->
   - **Gate (decision-gate)**: NOT executor-ready. Each of the five `\leanc` claims — `ocount`
     (`Fintype.card_fun`), `bij24` (`Fintype.card_perm`), `semidestr`-count (`Nat.choose`),
@@ -359,5 +383,3 @@ The research itself is the owner's. These are tracked in `TODO.md` (design ledge
   zero-vector uniqueness) and any narrative/topic direction — `docs/rigor-debt.md`.
 - The staleness-checker (TODO `id:04bb`) stays GATED on acoustics (N=2) before it becomes
   a `[ROUTINE]` tooling item.
-- [x] **[ROUTINE]** Build entropy meanE/be/fd SymPy instruments + physics/entropy.toml sidecar + badge flips (\sympyc→\sympy) — seam of id:7306 (auto, id:3801) <!-- id:e9e9 -->
-- [ ] **[HARD — strong model]** Resolve fhe.md stirling constant-term unit mismatch (ln vs log2 of √(2π)) then build fhe_stirling.py + crypto/fhe.toml + badge flip — seam of id:7306 (auto, id:3801) <!-- id:76e5 -->
