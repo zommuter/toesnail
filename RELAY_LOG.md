@@ -368,3 +368,7 @@ respected). Full `bash tests/run.sh` green, including `test_mathjax.cjs` and the
 change, so it re-triggers the `tests/HUMAN-integration.md` visual re-walk (noted here
 per the item's Done-check; not run by this session — visual checks are `[HUMAN]`).
 Friction: none.
+
+## 2026-07-02 12:28 — executor (sonnet, relay-loop)
+
+id:9c41: inline \veqs now hides the handle and parenthesizes the tier badge in both MathJax and KaTeX; test_veqs_inline.cjs green + wired into tests/run.sh; full suite green. [id:9c41]
