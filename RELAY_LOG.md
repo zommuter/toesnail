@@ -341,3 +341,7 @@ dotclaude-skills + zkm-chatgpt, inbox routed:d51c → zomni registry gap), not t
 Contract pointer v6 current; docs pointer commit is itself the drift fix (no further spec drift).
 routine_open=1 (id:9c41; open remainder: 76e5/5d31 owner-gated, 37cc meeting-gated, b7e5
 hard-pool, 9d8c forward-flag). No REVIEW_ME boxes added; no items closed or reopened.
+
+## 2026-07-02 12:15 — reviewer (claude-fable-5, relay-loop)
+
+review: ledger-only window clean (gaming-scan clean, suite PASS incl mathjax); 5b promoted 9c41 [ROUTINE] (+RED spec test_veqs_inline.cjs) + b7e5 [HARD — pool] author-half; 01a7 umbrella-close verified + annotated; routine_open=1 [id:9c41,b7e5,01a7]
