@@ -286,3 +286,7 @@ narrower tests/test_verify_entropy_routine.sh (roadmap:e9e9) covering only the t
 closed instruments + entropy.toml, and wired that into tests/run.sh. Full suite green
 (bash tests/run.sh, node/mathjax skip only).
 Friction: none.
+
+## 2026-07-02 02:13 — executor (sonnet, relay-loop)
+
+Closed id:e9e9 — built entropy_{meanE,be,fd}.py SymPy instruments + physics/entropy.toml sidecar + badge flips, added narrower test_verify_entropy_routine.sh, full suite green. [id:e9e9]
