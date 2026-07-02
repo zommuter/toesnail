@@ -150,3 +150,9 @@ against the *observe-before-preventing* heuristic — this episode is N=1; the h
    commit-hook proposal (id:d8bf) must preserve this: `.mw`/collAIb stay *optional* assists, never a gate.
 2. If this map proves useful, mirror a one-line pointer to it from `.mw`'s and collAIb's `CLAUDE.md`
    (not yet done — observe-first; do it when the relationship is confirmed stable).
+
+> **2026-07-02 Fable consulting cross-dive:** a full CODE/TODO/PROSE classification of every triad +
+> satellite edge (chidiai, zkm, collAIb spikes, leAIrn2learn, Diplomarbeit), a meeting-order plan, and a
+> proposal (P6) to extend THIS map + resolve the hub ambiguity lives at
+> `mathematical-writing/docs/meeting-notes/2026-07-02-1000-fable-consulting-grand-truth-triad.md`.
+> It also found one live twin-drift instance (collaib id:f68b's gate id:47d4 shipped 2026-06-25, unannotated).
