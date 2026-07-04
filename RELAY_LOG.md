@@ -376,3 +376,7 @@ id:9c41: inline \veqs now hides the handle and parenthesizes the tier badge in b
 ## 2026-07-02 17:01 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: id:9c41 inline-\veqs verified genuine (gaming-scan clean; test_veqs_inline.cjs + test_mathjax.cjs green against REAL configs with npm deps); roadmap-lint + relay-doctor clean; no drift; routine_open=0 [id:9c41]
+
+## 2026-07-04 17:59 — strong-execute (claude-opus-4-8, fable-standin, relay-loop)
+
+b7e5 badge-colour palette author half: 3 accessibility-checked options + preview + owner-pick box (no engine config changed) [id:b7e5]
