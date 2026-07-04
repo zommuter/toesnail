@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>toesnail — verification-tier badge palette preview (id:b7e5, author half)</title>
+<style>
+  :root {
+    /* minima classic (light) skin — the live site background/text */
+    --minima-bg: #fdfdfd;
+    --minima-fg: #111111;
+    /* minima "dark" skin (optional; site does not use it today) */
+    --minima-bg-dark: #181818;
+    --minima-fg-dark: #cccccc;
+  }
+  body { font: 16px/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+         margin: 0; padding: 2rem 1.25rem 4rem; color: #222; background: #f4f4f4; }
+  .wrap { max-width: 60rem; margin: 0 auto; }
+  h1 { font-size: 1.5rem; }
+  h2 { margin-top: 2.5rem; font-size: 1.2rem; border-bottom: 2px solid #ddd; padding-bottom: .3rem; }
+  p.note { color: #555; font-size: .92rem; }
+  code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: .88em;
+         background: #eee; padding: .05em .35em; border-radius: 3px; }
+  table.data { border-collapse: collapse; width: 100%; margin: .75rem 0 1.25rem; font-size: .9rem; }
+  table.data th, table.data td { border: 1px solid #ccc; padding: .35rem .55rem; text-align: left; }
+  table.data th { background: #eee; }
+  /* the on-site render mock: a right-aligned equation tag, as MathJax numbers it */
+  .stage { border: 1px solid #ccc; border-radius: 6px; overflow: hidden; margin: .5rem 0 1.5rem; }
+  .stage .skin-label { font: .75rem ui-monospace, monospace; padding: .3rem .6rem; color: #666; background: #eee; }
+  .eqrow { display: flex; align-items: baseline; justify-content: space-between;
+           gap: 1rem; padding: .55rem 1rem; font-size: 1.05rem; }
+  .eqrow .lhs { font-style: italic; font-family: "Cambria Math", "Latin Modern Math", Georgia, serif; }
+  .eqrow .tag { font-family: "Cambria Math", Georgia, serif; white-space: nowrap; }
+  .badge { font-weight: 600; }
+  .sup { font-size: .62em; vertical-align: super; }
+  .light { background: var(--minima-bg); color: var(--minima-fg); }
+  .dark  { background: var(--minima-bg-dark); color: var(--minima-fg-dark); }
+  .legend { display: flex; flex-wrap: wrap; gap: .4rem 1rem; margin: .4rem 0 0; font-size: .85rem; }
+  .legend span { display: inline-flex; align-items: center; gap: .3rem; }
+  .chip { display: inline-block; width: .95rem; height: .95rem; border-radius: 3px; border: 1px solid rgba(0,0,0,.2); }
+  .ok { color: #157347; font-weight: 600; }
+  .warn { color: #b45309; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Verification-tier badge colour — palette preview</h1>
+<p class="note">
+  Author-half deliverable for ROADMAP <code>id:b7e5</code> (owner render directive 2026-06-18).
+  <strong>No engine config is changed by this preview</strong> — it is a static mock the owner picks from.
+  Once a palette is ratified, the run half (implement in <code>_includes/custom-head.html</code> +
+  <code>.vscode/settings.json</code> + <code>tests/test_mathjax.cjs</code>) is re-queued as <code>[ROUTINE]</code>.
+</p>
+<p class="note">
+  Badges render inside the right-aligned equation <code>(tag)</code>, e.g. <code>\veq{edot}\lean</code> →
+  <code>(edot&nbsp;✓)</code>. The <strong>glyph is shape-distinct</strong>
+  (<code>?</code> / <code>∘</code> / <code>△</code> / <code>✓</code> / <code>✓✓</code>) and is the
+  <em>primary</em> channel — so WCAG&nbsp;1.4.1 (never colour alone) holds under every palette below; colour is
+  <em>reinforcement</em>. The five <strong>open-debt <code>\&lt;tier&gt;c</code> variants</strong>
+  (<code>\sympyc</code> …, "verifier desired, not yet run") reuse the <em>same</em> hue as their discharged tier
+  and are told apart by the existing <code>ᵖ</code>-style superscript <code>?</code> glyph — <strong>not</strong>
+  a separate colour — so each palette stays five colours.
+</p>
+
+<h2>Accessibility summary (measured, not asserted)</h2>
+<p class="note">Contrast is WCAG&nbsp;2.1 against the minima light background <code>#fdfdfd</code>.
+  "min deut" = the smallest pairwise separation among the five badges under simulated deuteranopia
+  (Machado&nbsp;2009, severity&nbsp;1.0) — a low number means two badges look alike to a red-green-colour-blind
+  reader and the reader must fall back on the glyph.</p>
+<table class="data">
+  <tr><th>Palette</th><th>Every badge ≥ 4.5:1 on white?</th><th>min deuteranopia sep.</th><th>character</th></tr>
+  <tr><td><strong>A — Semantic traffic-light</strong></td><td class="ok">yes (4.93–6.42)</td>
+      <td>42.5 (sorry↔lean)</td><td>most intuitive; red=debt → green=proven</td></tr>
+  <tr><td><strong>B — Okabe-Ito categorical</strong></td><td class="ok">yes (5.09–10.1)</td>
+      <td class="warn">23.1 (sympy↔lean)</td><td>hues from a colour-blind-tuned source set</td></tr>
+  <tr><td><strong>C — Assurance-ramp + accent</strong></td><td class="ok">yes (4.75–8.96)</td>
+      <td class="ok">50.4 (lean↔sympylean)</td><td>colour tracks the assurance <em>ladder</em>; best CB separation</td></tr>
+</table>
+<p class="note"><strong>Honest finding:</strong> five saturated categorical hues dark enough to clear 4.5:1 on a
+  white page <em>cannot</em> all stay separated under dichromacy — that is why B (categorical, colour-blind-source)
+  scores <em>worse</em> on min-separation than C (an ordinal luminance ramp). If colour-blind readability is the
+  deciding factor, <strong>C is the recommendation</strong>; if intuitive semantics matter most, A. B is offered
+  as the familiar 5-distinct-hue middle. In all three the glyph carries the meaning regardless.</p>
+
+<!-- ============ PALETTE A ============ -->
+<h2>Option A — Semantic traffic-light</h2>
+<div class="legend">
+  <span><span class="chip" style="background:#b12a1b"></span> <code>\sorry</code> #b12a1b</span>
+  <span><span class="chip" style="background:#8a5a00"></span> <code>\sympy</code> #8a5a00</span>
+  <span><span class="chip" style="background:#2563eb"></span> <code>\numeric</code> #2563eb</span>
+  <span><span class="chip" style="background:#15803d"></span> <code>\lean</code> #15803d</span>
+  <span><span class="chip" style="background:#0f766e"></span> <code>\sympylean</code> #0f766e</span>
+</div>
+<div class="stage">
+  <div class="skin-label">minima light skin (live site)</div>
+  <div class="eqrow light"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#b12a1b">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#8a5a00">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#2563eb">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#15803d">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#0f766e">✓✓</span>)</span></div>
+  <div class="eqrow light" style="justify-content:flex-end"><span class="tag" style="font-size:.95rem">
+    open-debt variants:&nbsp;
+    (<span class="badge" style="color:#8a5a00">∘<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#2563eb">△<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#15803d">✓<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#0f766e">✓✓<span class="sup">?</span></span>)</span></div>
+  <div class="skin-label">minima dark skin (not used today — future-proof check)</div>
+  <div class="eqrow dark"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#f2765d">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#e0b341">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#6ea8ff">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#4ec97e">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#3fc7ba">✓✓</span>)</span></div>
+</div>
+
+<!-- ============ PALETTE B ============ -->
+<h2>Option B — Okabe-Ito categorical</h2>
+<div class="legend">
+  <span><span class="chip" style="background:#b34d00"></span> <code>\sorry</code> #b34d00</span>
+  <span><span class="chip" style="background:#9d3d75"></span> <code>\sympy</code> #9d3d75</span>
+  <span><span class="chip" style="background:#0072B2"></span> <code>\numeric</code> #0072B2</span>
+  <span><span class="chip" style="background:#007a59"></span> <code>\lean</code> #007a59</span>
+  <span><span class="chip" style="background:#004a38"></span> <code>\sympylean</code> #004a38</span>
+</div>
+<div class="stage">
+  <div class="skin-label">minima light skin (live site)</div>
+  <div class="eqrow light"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#b34d00">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#9d3d75">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#0072B2">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#007a59">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#004a38">✓✓</span>)</span></div>
+  <div class="eqrow light" style="justify-content:flex-end"><span class="tag" style="font-size:.95rem">
+    open-debt variants:&nbsp;
+    (<span class="badge" style="color:#9d3d75">∘<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#0072B2">△<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#007a59">✓<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#004a38">✓✓<span class="sup">?</span></span>)</span></div>
+  <div class="skin-label">minima dark skin (not used today — future-proof check)</div>
+  <div class="eqrow dark"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#ef8a4d">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#d98cc0">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#5cb3e6">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#4ec79b">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#3fb891">✓✓</span>)</span></div>
+</div>
+
+<!-- ============ PALETTE C ============ -->
+<h2>Option C — Assurance-ramp + counter-indicator accent (colour-blind recommendation)</h2>
+<p class="note">Colour encodes the <strong>assurance ladder</strong> from CONVENTIONS.md&nbsp;§2 as an ordinal:
+  neutral&nbsp;grey (no assurance) → blue (CAS/SymPy) → green (kernel/Lean) → deep-green (both). <code>\numeric</code>
+  sits <em>off</em> the ladder in amber, matching its stated role as a <strong>counter-indicator</strong>
+  (never the assurance badge), so its colour deliberately does not read as "more/less proven".</p>
+<div class="legend">
+  <span><span class="chip" style="background:#6b7280"></span> <code>\sorry</code> #6b7280</span>
+  <span><span class="chip" style="background:#2563eb"></span> <code>\sympy</code> #2563eb</span>
+  <span><span class="chip" style="background:#b45309"></span> <code>\numeric</code> #b45309</span>
+  <span><span class="chip" style="background:#15803d"></span> <code>\lean</code> #15803d</span>
+  <span><span class="chip" style="background:#14532d"></span> <code>\sympylean</code> #14532d</span>
+</div>
+<div class="stage">
+  <div class="skin-label">minima light skin (live site)</div>
+  <div class="eqrow light"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#6b7280">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#2563eb">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#b45309">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#15803d">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#14532d">✓✓</span>)</span></div>
+  <div class="eqrow light" style="justify-content:flex-end"><span class="tag" style="font-size:.95rem">
+    open-debt variants:&nbsp;
+    (<span class="badge" style="color:#2563eb">∘<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#b45309">△<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#15803d">✓<span class="sup">?</span></span>)&nbsp;
+    (<span class="badge" style="color:#14532d">✓✓<span class="sup">?</span></span>)</span></div>
+  <div class="skin-label">minima dark skin (not used today — future-proof check)</div>
+  <div class="eqrow dark"><span class="lhs">ẋ(ẍ+ω²x) = −2βẋ²+ω²ẋy</span>
+    <span class="tag">(sorry&nbsp;<span class="badge" style="color:#a3abb8">?</span>)&nbsp;
+      (esol&nbsp;<span class="badge" style="color:#6ea8ff">∘</span>)&nbsp;
+      (stir&nbsp;<span class="badge" style="color:#e0912f">△</span>)&nbsp;
+      (edot&nbsp;<span class="badge" style="color:#4ec97e">✓</span>)&nbsp;
+      (bij&nbsp;<span class="badge" style="color:#6fc78e">✓✓</span>)</span></div>
+</div>
+
+<p class="note">See <code>docs/palette-preview/README.md</code> for the hex tables, the exact contrast /
+  colour-blindness numbers, the open-debt-variant decision, and the KaTeX / MathJax implementation notes for
+  the run half. Dark-skin hexes above are illustrative lighter tints (the site uses the light skin today);
+  the run half would derive them properly if the owner ever enables minima's dark skin.</p>
+</div>
+</body>
+</html>
