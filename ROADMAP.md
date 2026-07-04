@@ -349,7 +349,16 @@ its marker-split is an owner content decision, not this item.
     change here re-triggers the `tests/HUMAN-integration.md` visual re-walk (note it in the log).
   - **Context**: REVIEW_ME id:e0b7 rounds 4–5 (the `\veqs` design history); TODO id:9c41.
 
-- [ ] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) [HARD — pool] <!-- id:b7e5 -->
+- [x] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) [HARD — pool] <!-- id:b7e5 -->
+  - **AUTHOR HALF DONE 2026-07-04** (relay HARD child): three accessibility-checked palette options
+    (`docs/palette-preview/README.md`) mapping the whole badge family + open-debt `\<tier>c` variants to
+    colour, each with measured WCAG contrast on the minima light bg (`#fdfdfd`, all ≥4.75:1) and Machado-2009
+    deuteranopia/protanopia separation numbers; a self-contained per-option preview render
+    (`docs/palette-preview/index.html`, light + future-proof dark strip); and per-engine (KaTeX `\htmlClass`/
+    `\textcolor` + trust caveat, MathJax `\class`/`\color`) implementation notes for the run half. Owner-pick
+    box filed to `REVIEW_ME.md`. **NO engine config changed** — `git diff` touches only `docs/palette-preview/`,
+    `REVIEW_ME.md`, `RELAY_LOG.md`, `ROADMAP.md` (author-then-run split honored). The RUN half re-queues as
+    `[ROUTINE]` once the owner ratifies a palette (see the gated sub-note below).
   - **Why**: owner render directive 2026-06-18; laned `[HARD — pool]` with an explicit
     author-then-run split by the 2026-07-02 human-answer batch (TODO id:b7e5, same token). The pool
     AUTHORS the proposal; the owner RATIFIES the pick; only then is the run half implemented. The

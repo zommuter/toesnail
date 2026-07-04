@@ -127,6 +127,32 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   Reproducer: KaTeX `renderToString(expr,{macros})` / MathJax `TeX({macros})` — see this turn's diary entries.
   (toesnail `id:e0b7`; meeting `docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md` D3/D7) <!-- id:e0b7 -->
 
+## Badge colour palette — PICK one (ROADMAP id:b7e5 author-then-run; author half done 2026-07-04)
+
+- [ ] **PICK a verification-tier badge colour palette (or reject colour).** The author half of ROADMAP
+  id:b7e5 (owner render directive 2026-06-18) produced **three accessibility-checked options**, each mapping
+  the whole badge family (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` + the open-debt `\<tier>c`
+  variants) to colour. **Preview render:** `docs/palette-preview/index.html` (open in a browser — light + a
+  future-proof dark strip, per palette). **Hex tables, WCAG contrast, colour-blindness numbers, and the
+  KaTeX/MathJax implementation notes:** `docs/palette-preview/README.md`.
+  - **Option A — Semantic traffic-light**: red=`\sorry` → amber=`\sympy` → blue=`\numeric` → green=`\lean` →
+    teal=`\sympylean`. Most intuitive; every badge ≥ 4.9:1 on the white page; **weakest** colour-blind
+    separation (red `\sorry`/green `\lean` are the closest pair, deut 42.5 — relies on the glyph).
+  - **Option B — Okabe-Ito categorical**: five distinct hues from a colour-blind-tuned source, darkened for
+    white-bg contrast (all ≥ 5.1:1). Familiar 5-hue middle; the darkening erodes CB separation (deut 23.1).
+  - **Option C — Assurance-ramp + accent** *(colour-blind recommendation)*: colour encodes the CONVENTIONS.md
+    §2 assurance ladder as an ordinal (grey→blue→green→deep-green), `\numeric` an off-ramp amber
+    counter-indicator; best CB separation (deut 50.4).
+  - **Two sub-decisions folded in** (confirm or override): (1) the open-debt `\<tier>c` variants reuse the
+    SAME hue as their discharged tier, distinguished by the existing superscript `?` glyph — not a separate
+    colour (keeps each palette to five colours); (2) colour is REINFORCEMENT — the glyph `? ∘ △ ✓ ✓✓` stays
+    the primary channel, so a monochrome/colour-blind reader loses nothing. Reject-colour-entirely is a valid
+    pick too (status quo, no run half).
+  - **What happens on a pick**: the RUN half re-queues as `[ROUTINE]` — implement the ratified hexes in
+    `_includes/custom-head.html` + `.vscode/settings.json` + `tests/test_mathjax.cjs` (per the README's
+    per-engine notes), then re-walk `tests/HUMAN-integration.md`. To pick, tick this box and name the option
+    (A/B/C/none) in a note here, or edit the hexes in `docs/palette-preview/README.md` directly.
+
 ## Divergent-main recovery merge — portal surfacing (merge `c1e20b4`, 2026-06-16)
 
 - [x] **Recovered owner pages — confirm portal surfacing + crypto-wing topology.** The
