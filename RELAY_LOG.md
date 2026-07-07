@@ -380,3 +380,7 @@ review: id:9c41 inline-\veqs verified genuine (gaming-scan clean; test_veqs_inli
 ## 2026-07-04 17:59 — strong-execute (claude-opus-4-8, fable-standin, relay-loop)
 
 b7e5 badge-colour palette author half: 3 accessibility-checked options + preview + owner-pick box (no engine config changed) [id:b7e5]
+
+## 2026-07-07 18:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: verify green window since relay-ckpt-20260704-1759 (docs+ledger+unwired probe; 11/11 tiers green, gaming-scan clean); id:b7e5 drift legit author-then-run; routine_open=0
