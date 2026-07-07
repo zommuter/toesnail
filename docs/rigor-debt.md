@@ -83,6 +83,8 @@ Resogram.lean@3c516103) — the algebraic step is the first `sympy+lean` dual-at
 ## physics/acoustics.md  *(pilot #2)*
 
 - `verify:sympy` — ideal-gas manipulation `(1/ρ)∇p = (c²/γ)∇ln ρ + ∇(c²/γ)` from `p = (c²/γ)ρ`.
+  **Pre-confirmed 2026-07-07 (SymPy session probe, general `c²/γ(x⃗)` + `ρ(x⃗)`): identity holds ✓** —
+  the eventual instrument should green immediately once the owner places the marker.
 - `verify:sympy` — **viscous-term coefficient changes between equations:** `(u)` has `+⅓∇(∇·u)` (line ~30)
   but the linearized momentum eq has `+½∇(∇·u)` (line ~54). **SHARPENED 2026-07-07 (SymPy, session probe):
   the operator `Δu + c·∇(∇·u)` is exactly linear in `u`** (`T(u+εv) = T(u)+εT(v)` verified symbolically,
@@ -93,7 +95,8 @@ Resogram.lean@3c516103) — the algebraic step is the first `sympy+lean` dual-at
   conclusion that `n·(ρu)` is continuous.
 - `verify:sympy` — Green's-first-identity step (`Γ=n` ⟹ `∭(n·∇)ψ = ∯ψ dσ`).
 - `verify:sympy` — the vector-calculus identities used in the Helmholtz/continuity argument, e.g.
-  `n·(∇×a) = −∇·(n×a) + a·(∇×n)`.
+  `n·(∇×a) = −∇·(n×a) + a·(∇×n)`. **Pre-confirmed 2026-07-07 (SymPy session probe, general 3D fields
+  `n⃗(x⃗)`, `a⃗(x⃗)`): identity holds ✓.**
 - `verify:lean` — the full Helmholtz-decomposition continuity argument (singularity-free `f ⟹ a, φ`
   continuous) as a structured proof, once the identities above are discharged.
 - ⚠ **modeling tension (owner-territory):** linearization "assume `u₀=0` (which contradicts `u₀≫u` though…)"
