@@ -84,7 +84,11 @@ Resogram.lean@3c516103) — the algebraic step is the first `sympy+lean` dual-at
 
 - `verify:sympy` — ideal-gas manipulation `(1/ρ)∇p = (c²/γ)∇ln ρ + ∇(c²/γ)` from `p = (c²/γ)ρ`.
 - `verify:sympy` — **viscous-term coefficient changes between equations:** `(u)` has `+⅓∇(∇·u)` (line ~30)
-  but the linearized momentum eq has `+½∇(∇·u)` (line ~54). One is likely a transcription slip — check.
+  but the linearized momentum eq has `+½∇(∇·u)` (line ~54). **SHARPENED 2026-07-07 (SymPy, session probe):
+  the operator `Δu + c·∇(∇·u)` is exactly linear in `u`** (`T(u+εv) = T(u)+εT(v)` verified symbolically,
+  component-wise 3D), so linearization *cannot* change the coefficient — the `½` on the linearized line is
+  the suspect transcription (the compressible-Newtonian form with Stokes' hypothesis is `⅓`). Owner fixes
+  or ratifies; AI does not edit the line.
 - `verify:sympy` — the mass-conservation Gauss/divergence step `∭∇·(ρu) = ∯(ρu)·dn`, and the "shoebox"
   conclusion that `n·(ρu)` is continuous.
 - `verify:sympy` — Green's-first-identity step (`Γ=n` ⟹ `∭(n·∇)ψ = ∯ψ dσ`).
