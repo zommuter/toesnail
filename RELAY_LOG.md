@@ -384,3 +384,7 @@ b7e5 badge-colour palette author half: 3 accessibility-checked options + preview
 ## 2026-07-07 18:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: verify green window since relay-ckpt-20260704-1759 (docs+ledger+unwired probe; 11/11 tiers green, gaming-scan clean); id:b7e5 drift legit author-then-run; routine_open=0
+
+## 2026-07-07 19:05 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: window since relay-ckpt-20260704-1759 re-verified green (11/11 tiers PASS, gaming-scan clean); b7e5 drift = legit author-then-run split; contract v6 current; routine_open=0 [id:b7e5,57e2]
