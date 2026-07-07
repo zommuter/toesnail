@@ -80,6 +80,16 @@ F5 cross-file-DAG question. No `.mw`/collAIb ledger was edited from here.
 ## Open questions for the owner
 - **Q6 — status-macro names:** `\derived`/`\empirical`/`\hypothesis` (1-arg-free
   trailing badges, KaTeX-safe) — ratify or rename? (`\input` is impossible; TeX primitive.)
+  - **Feasibility probe run 2026-07-07 (afk, mirrors id:e0b7 discipline): PASS.**
+    Against the REAL central configs (`.vscode/settings.json` macros, KaTeX 0.16.47;
+    `_includes/custom-head.html` macros, mathjax-full): all three names are **free**
+    (undefined ⇒ error in both engines — no builtin collision; NB MathJax's
+    `noundefined` package masks this as red-text, test without it), and **stacking
+    works**: `\veq{probe}\derived\sorry` and `\veqs{probe}\hypothesis\leanc` render
+    clean in BOTH engines with zero-arg trailing-badge bodies
+    (`\;{\scriptsize\text{[der.]}}` style). So Q6 is a pure naming/typography choice —
+    no engine constraint. Probe script kept in the session scratchpad; promote to
+    `tests/` only when the owner ratifies names (then it becomes the red spec).
 - **Q7 — aside taxonomy:** are three reader layers enough (`trivial` = skippable for
   physicists, `prereq` = skippable for laypersons on reread, `advanced` = optional
   depth), or is a numeric level cleaner?

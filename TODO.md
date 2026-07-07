@@ -8,7 +8,9 @@
   D3 tags→mechanism (routed:91ab/1a68 to `.mw`), D4 audience "everyone" (layered reading),
   D5 love wing = game theory/simulations + essays. Still open: **Q2/D2** Galilei-first vs
   Poincaré-first vs hybrid (both elaborated in note §7); **Q6** status-macro names
-  (`\derived`/`\empirical`/`\hypothesis`? — `\input` impossible, TeX primitive); **Q7** aside
+  (`\derived`/`\empirical`/`\hypothesis`? — `\input` impossible, TeX primitive; feasibility
+  probe PASS 2026-07-07: all 3 free + `\veq{h}\derived\sorry` stacking clean in BOTH engines,
+  see 1240 note — pure naming choice now); **Q7** aside
   taxonomy (trivial/prereq/advanced vs numeric levels); **Q8** chapter granularity (one file
   per roadmap step? gates the `.mw` cross-file-DAG question F5). Owner-only (theory direction);
   next `/meeting` or owner walk.
