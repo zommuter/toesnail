@@ -243,7 +243,30 @@ A staged arc, each stage with its own instrument-able mathematics:
   (§1.7) as a standing rigor-debt marker on the Gaussian-ansatz program (owner may
   of course pursue the ansatz anyway — the flag only guards the *interpretation*)?
 
-## References (additions beyond the 1228 note)
+## Addendum (same day, afk continuation): the `gtnsd-archive` branch strengthens Q9
+
+Read `gtnsd-archive:README.md` (the ~2017 origin). Its **Inflownistration** section
+already claims: *"information flow administration describes the very process of, in a
+way, everything we do"* — eating, work, planning, religion, all recast as information
+processing. Consequences:
+
+- **Q9 (information wing) is not an AI suggestion — it's the owner's own oldest
+  thread resurfacing.** The proposed wing (fhe + entropy + Landauer/Shannon, §1.6) has
+  a 2017 owner-authored ancestor; ratifying Q9 would *reconnect* the archive to the
+  living theory rather than adding new structure. The physics-side tradition it joins
+  is Wheeler's "it from bit" [W89] — worth citing as the wing's epigraph-grade anchor
+  (with the usual `[hypothesis]` honesty about its strong form).
+- The archive's annotation worry — *"how will annotations work with content changing
+  over time?"* — is verbatim the staleness problem `.mw` now solves (already noted in
+  CLAUDE.md/id:aae4; recorded here because it means the owner posed `.mw`'s core
+  problem statement nine years before the tool).
+- The gtnsd README itself (procrastination-as-subject, tab-tree confessionals) is
+  tonal kin to `Narrativium.md` — supporting the CLAUDE.md note that it's
+  essays-wing material, owner-authored if ever revived.
+
+**Q9 sharpened accordingly:** "ratify the information wing" becomes "ratify
+inflownistration as the information wing's name/ancestor" — same decision, better
+provenance.
 
 - [B73] C. H. Bennett, "Logical Reversibility of Computation", *IBM J. Res. Dev.*
   **17**, 525 (1973).
@@ -290,6 +313,8 @@ A staged arc, each stage with its own instrument-able mathematics:
   **61**, 35 (1988).
 - [U81] W. G. Unruh, "Experimental Black-Hole Evaporation?", *Phys. Rev. Lett.*
   **46**, 1351 (1981).
+- [W89] J. A. Wheeler, "Information, Physics, Quantum: The Search for Links", *Proc.
+  3rd Int. Symp. Foundations of Quantum Mechanics*, Tokyo (1989) — "it from bit".
 - [W82] F. Wilczek, "Quantum Mechanics of Fractional-Spin Particles",
   *Phys. Rev. Lett.* **49**, 957 (1982).
 - [Y03] N. S. Yanofsky, "A Universal Approach to Self-Referential Paradoxes,
