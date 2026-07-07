@@ -2,6 +2,17 @@
 
 ## Current
 
+- [ ] **[OWNER] TOE roadmap — decide the open questions from the 2026-07-07 evaluation session** <!-- id:57e2 -->
+  (`docs/meeting-notes/2026-07-07-1228-toe-roadmap-evaluation.md` §6–7 +
+  `…-1240-mw-collaib-toe-needs.md` §Open questions). Ratified already: D1 voice+themes,
+  D3 tags→mechanism (routed:91ab/1a68 to `.mw`), D4 audience "everyone" (layered reading),
+  D5 love wing = game theory/simulations + essays. Still open: **Q2/D2** Galilei-first vs
+  Poincaré-first vs hybrid (both elaborated in note §7); **Q6** status-macro names
+  (`\derived`/`\empirical`/`\hypothesis`? — `\input` impossible, TeX primitive); **Q7** aside
+  taxonomy (trivial/prereq/advanced vs numeric levels); **Q8** chapter granularity (one file
+  per roadmap step? gates the `.mw` cross-file-DAG question F5). Owner-only (theory direction);
+  next `/meeting` or owner walk.
+
 - [x] Relay: ALL ROUTINE + HARD bring-up CLOSED 2026-06-16 (re-verified /relay review 20260616-1957). Done: commit-hook cluster (id:8757 post-commit hook, id:d5f9 git-config+doc, id:211c red suite), Lean `edot` cluster tooling (id:5776 test_lean.sh, id:1335 multi-tier marker, id:3275 rigor-debt annotation), HARD bring-up (id:3317 Lean bring-up+proof [HARD+INTENSIVE, lean-build]), id:0e63 mirror fidelity (/meeting D3: faithful four-block .mw mirror owner-ratified + test green), fca7 Makefile, 9868 CI. ONLY OPEN: 2 deferred-HARD/gated, NOT executor work (id:b9bc derivative debt multi-day gated behind id:3317; id:9d8c CI Lean forward-flag gated). Verify-hook JUDGMENT boxes RESOLVED 2026-06-16 (/relay human, id:d8bf): git-notes schema (8757/d5f9) owner-ratified — v1 {status,findings} + forward-compat {triaged,processed,verdict,review_me} FROZEN; mirror fidelity (0e63) RESOLVED 2026-06-16 (/meeting D3, owner-ratified: faithful four-block .mw mirror). Lean cluster SCOPED + promoted to ROADMAP 2026-06-16 /relay review (meeting 0827-lean-edot; toolchain confirmed present). (fca7 Makefile, 9868 CI done). edot/esol (handle renamed from `cval` 2026-06-15) verify instruments re-pinned ✗→✓ + verified green (2026-06-16 /relay review, id:9135 closed). Resogram c-narrative + energy-chain cluster RESOLVED by owner in-document (236fa1b: id:559c/0cb5/f9fe/3999, all REVIEW_ME boxes ticked). Open owner/design work: subequation numbering (id:d2f4), R2/R3 verify-emoji (id:445e). HUMAN-integration walk (id:6501) DONE 2026-06-16 (owner-walked, /relay human). <!-- id:e27e -->
 
 - [x] **(MEETING — RESOLVED 2026-06-21) Lean-formalization strategy for verify pilots needing constructs beyond base Mathlib.** Spun
