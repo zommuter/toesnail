@@ -139,6 +139,50 @@ Each numbered link gets a status tag when authored: `[derivation]` / `[input]` /
 - **Q5 — love wing rigor:** essay-only, or should the thermodynamic bridge
   (Jaynes/England) get the same rigor-debt tagging as the physics spine?
 
+## 7. Owner ratifications (2026-07-07, same session)
+
+- **D1 (Q1, ℕ route + voice):** routes chosen for *maximum non-physicist accessibility
+  while staying precise*; introduce **re-occurring methodology themes** as the
+  connective tissue. Candidate theme set (owner to prune/extend): "look for what stays
+  invariant", "states are rays, not vectors", "label things by irreps", "deform &
+  contract" (see D2), "tag each link's derivation status" (D3). Concrete Q1 call
+  (Fock-ladder vs primitive counting) subordinated to whichever reads better for a
+  layperson — likely primitive counting first, ladder operators as the later
+  "we already knew this" callback.
+- **D2 (Q2, ordering): UNDECIDED — both options elaborated for the handoff doc:**
+  - **Galilei-first.** On-ramp is everyday kinematics (lay-friendly); Bargmann's
+    central charge makes **mass a group-theoretic necessity** plus the superselection
+    rule as an early wow-payoff; relativity then *arrives* as a deformation of the
+    Galilei algebra (İnönü–Wigner contraction read in reverse, deformation parameter
+    1/c) [IW53] — which seeds the "deform & contract" methodology theme. **Cost:**
+    projective-representation machinery hits earlier; Galilei rep theory is messier;
+    some constructions must be redone at Poincaré.
+  - **Poincaré-first** (Weinberg's path [Wei95]). Cleaner representation theory (after
+    the double cover, no nontrivial central charges), Wigner classification lands
+    directly, single pass. Galilei recovered afterwards as the c→∞ contraction [IW53].
+    **Cost:** relativity postulated before it is motivated; steeper on-ramp for the
+    "everyone" audience (tension with D4).
+  - **Hybrid (flagged for owner):** narrate Galilei for intuition, do the rigor once
+    at Poincaré, present contraction as the bridge — buys both payoffs at the cost of
+    one revisit. Given D4's audience call, the AI's finding is that Galilei-first or
+    hybrid fit better; **owner decides**.
+- **D3 (Q3, tags → mechanism): YES** — `[derivation]/[input]/[hypothesis]` becomes a
+  machine-greppable marker family, designed in/with the `mathematical-writing` (`.mw`)
+  project alongside `\veq` (link-status is a different axis than verification tier:
+  a `[derivation]` link can still carry `\sorry`). Routed as a follow-up to `.mw`.
+- **D4 (Q4, audience): "everyone."** Determined laypersons must be able to follow with
+  no prior knowledge; math-comfortable physicists still take something away — via
+  **skippable "trivial maths" sections that remain enjoyable as entertainment**.
+  Owner's phrase: "ars mathematica like yet readable" — artful mathematics, but never
+  at readability's expense. Implies a layered-reading convention (skip-tags /
+  collapsible asides) to be designed with the `.mw` format.
+- **D5 (Q5, love wing): mathematical in sensible measure**, veering toward
+  **simulations and game theory** ("even if that's not quite romantic") — natural
+  anchors: evolution of cooperation [AH81, N06] and dynamical-systems models of
+  couples (Gottman–Murray, the "mathematics of marriage" [GM02]). The `essays/` wing
+  stays as the parallel non-mathematical track. Owner acknowledges it's the tough one;
+  rigor-tagging discipline (D3) applies here too, in that sensible measure.
+
 ## References
 
 - [A72] P. W. Anderson, "More Is Different", *Science* **177**, 393–396 (1972).
@@ -181,3 +225,11 @@ Each numbered link gets a status tag when authored: `[derivation]` / `[input]` /
   *Phys. Lett. B* **96**, 59 (1980).
 - [YM54] C. N. Yang, R. L. Mills, "Conservation of Isotopic Spin and Isotopic Gauge
   Invariance", *Phys. Rev.* **96**, 191 (1954).
+- [IW53] E. İnönü, E. P. Wigner, "On the Contraction of Groups and Their
+  Representations", *Proc. Natl. Acad. Sci. USA* **39**, 510–524 (1953).
+- [AH81] R. Axelrod, W. D. Hamilton, "The Evolution of Cooperation",
+  *Science* **211**, 1390–1396 (1981).
+- [N06] M. A. Nowak, "Five Rules for the Evolution of Cooperation",
+  *Science* **314**, 1560–1563 (2006).
+- [GM02] J. M. Gottman, J. D. Murray, C. Swanson, R. Tyson, K. R. Swanson,
+  *The Mathematics of Marriage: Dynamic Nonlinear Models*, MIT Press (2002).
