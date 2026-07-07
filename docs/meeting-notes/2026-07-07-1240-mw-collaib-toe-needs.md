@@ -77,6 +77,14 @@ meeting (extends `routed:91ab`, which covered F1+F2 in brief): F1 naming pilot
 dependency, F2 layered-reading render, F3 Lean-weight evidence, F4 ffbe elevation,
 F5 cross-file-DAG question. No `.mw`/collAIb ledger was edited from here.
 
+**LANDED 2026-07-07 (later same day, owner authorized cross-repo ledger writes):**
+both inbox items ingested as `mathematical-writing/TODO.md` **id:b160** ([HARD —
+meeting] agenda bundle carrying `routed:91ab` + `routed:1a68`; inbox drained via
+`inbox-done`). Companion breadcrumbs: `collaib/TODO.md` id:d046 (F6 — spike-#3
+corpus + theme-term fit), `chidiai/TODO.md` id:45ef (authored epistemic-status axis
+as design-lineage sibling of the measured Verdict), and an addendum on `.mw` id:aae4
+(toesnail Q9 = inflownistration resurfacing; explicitly NOT a carve trigger).
+
 ## Open questions for the owner
 - **Q6 — status-macro names:** `\derived`/`\empirical`/`\hypothesis` (1-arg-free
   trailing badges, KaTeX-safe) — ratify or rename? (`\input` is impossible; TeX primitive.)
