@@ -21,14 +21,15 @@ Outcomes of the first end-to-end `verify:` pilot. Instruments live in `verify/re
 `verified:` attestation in the source. Per the working contract the AI **surfaces** ✗ findings
 and leaves `Resogram.md`'s math untouched — every resolution below is the owner's call.
 
-- **[`sol`] `verify:sympy` — ✓ (partial).** The claimed analytical solution `x(t) = A cos(Ωt+φ)e^{-βt} + ∫…`
-  solves `ẍ + 2βẋ + ω²(x−y) = 0`, `Ω := √(ω²−β²)`. `verify/resogram_sol.py` confirms symbolically that the
-  homogeneous part solves the homogeneous ODE **and** that the convolution kernel satisfies `K(0)=0`,
-  `K'(0)=ω²`, `K''+2βK'+ω²K=0`; by the Leibniz rule these give `ẍ+2βẋ+ω²x = ω²y`, i.e. the full equation.
-  *No `verified:` attestation yet:* (a) the convolution assembly rests on the (standard) Leibniz step rather
-  than one end-to-end symbolic substitution, and (b) **the rendered integrand has an unbalanced paren**
-  (`\sin(\Omega (t-t')e^{…}` — missing `)` after `(t-t')`); the verified kernel is `sin(Ω(t−t'))·e^{−β(t−t')}`.
-  Surfaced for the owner; not edited.
+- **[`sol`] `verify:sympy` — ✓ (partial); badge `\sorry` (open).** The claimed analytical solution
+  `x(t) = A cos(Ωt+φ)e^{-βt} + ∫…` solves `ẍ + 2βẋ + ω²(x−y) = 0`, `Ω := √(ω²−β²)`.
+  `verify/resogram_sol.py` confirms symbolically that the homogeneous part solves the homogeneous ODE
+  **and** that the convolution kernel satisfies `K(0)=0`, `K'(0)=ω²`, `K''+2βK'+ω²K=0`; by the Leibniz
+  rule these give `ẍ+2βẋ+ω²x = ω²y`, i.e. the full equation. *No `verified:` attestation yet:* the
+  convolution assembly rests on the (standard) Leibniz step rather than one end-to-end symbolic
+  substitution — hence the in-prose badge stays `\veq{sol}\sorry` (the repo's one remaining `\sorry`).
+  *(The integrand's unbalanced-paren typo flagged here originally was owner-ratified + fixed 2026-06-15
+  via /relay human — render fix only, verdict unchanged.)*
 - **[`edot`] `verify:sympy` — ✗→✓ RESOLVED; `verify:lean` — ✓ lean-attested (tier `sympy+lean`).**
   Energy-rate chain `ė = ẋ(ẍ+ω²x) = −2βẋ² + ω²ẋy`: the **first** equality holds. The **second**, as
   written `ė = −4βe − ω²(2βx² − ẋy)`, was **wrong** — off by `−4βω²x²`; corrected to
@@ -101,6 +102,46 @@ Resogram.lean@3c516103) — the algebraic step is the first `sympy+lean` dual-at
   (the asymmetry that yields net cooling) once written as a formula.
 - ⚠ **modeling tension (owner-territory):** the qualitative cooling/heating argument (red-shifted absorption
   ⟹ net cooling) is a physical-direction claim — the owner's to develop; AI verifies only once it's a formula.
+
+## physics/entropy.md  *(recovered page — markers placed 2026-06-18; sections added to this inventory 2026-07-07)*
+
+- **[`meanE`]/[`be`]/[`fd`] `verify:sympy` — ✓ DISCHARGED** (relay seam id:e9e9, 2026-07-02): the finite-N
+  mean-occupation closed form, its N→∞ Bose–Einstein limit, and the N=2 Fermi–Dirac case. Instruments
+  `verify/entropy_{meanE,be,fd}.py`; attestations in `physics/entropy.toml`; in-prose badges flipped
+  `\sympyc`→`\sympy`.
+- **[`lambertw`] `\leanc` (open)** — split per /meeting id:3d2a D1: the l.53–57 algebra chain → its own
+  `\sympyc` handle (OWNER places the split marker — REVIEW_ME box open, gates ROADMAP id:5d31); the W
+  closed-form line → `\definition`; the W branch/domain claim stays Lean-queued (id:37cc).
+- ⚠ **modeling note (owner-territory):** the two-level BE/FD identification ("bosonic two-level system")
+  is a physical-interpretation claim wrapping verified algebra — interpretation stays the owner's.
+
+## crypto/fhe.md  *(recovered page — markers placed 2026-06-18)*
+
+- **[`stirling`] `\sympyc` (open, GATED on owner):** the constant term in `Π_n = log₂((2^n)!)`'s expansion
+  reads `ln√(2π)` but base-2 consistency requires `log₂√(2π)` (≈0.407-bit offset, confirmed symbolically +
+  numerically — REVIEW_ME box, 2026-07-01/02). Instrument `verify/fhe_stirling.py` (id:76e5) un-gates once
+  the owner fixes or ratifies the line.
+- **[`ocount`]/[`semidestr`]/[`bij24`] `\leanc` (open)** — combinatorial counts, Mathlib-tractable
+  (`Fintype.card_pi` / `Nat.choose`+`Finset.card` / `Fintype.card_perm`); each awaits its own frozen-signature
+  scoping per /meeting id:3d2a D2 (queue id:37cc).
+- Complementary numeric instrument (counter-indicator only, never the badge): regenerate the n=2 tables and
+  cross-check `crypto/fhe.ods` (the spreadsheet IS the worked computation — a natural attestation target).
+
+## physics/wirohsh.md  *(recovered page — owner DEFERRED marker placement 2026-06-16)*
+
+- Candidates surfaced in REVIEW_ME (2026-06-16), unmarked by owner choice — kept here as the triage menu:
+  `verify:sympy` the tangential-Laplacian reduction `Δ_φ = (∂_x sinφ − ∂_y cosφ)² = ∂_{φ̄}²`;
+  `verify:sympy` the 1D back-rotation `f = f⁺(x−ct) + f⁻(x+ct)`.
+- **Not yet markable:** the page has unfinished derivations (empty `align` blocks near the end + the
+  `Refraction` stub) — no closed claim to badge; an owner content question, not a tooling one.
+
+## physics/photon.md  *(recovered page — rough stub, no closed result)*
+
+- No `\veq` candidates yet (Ansatz only, no closed claim).
+- ⚠ **structural caution (surfaced 2026-07-07, dreaming session §1.7 / TODO id:57e2 Q12):** interpreting the
+  Gaussian ansatz's `μ_α(x)` as "the photon's position" will collide with the Newton–Wigner
+  non-localizability result (no position operator for massless helicity ≥1) — guard the *interpretation*
+  before the algebra accumulates. Owner decides whether/how to meet it.
 
 ## physics/toesnail.md  *(the QM spine)*
 
