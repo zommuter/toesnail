@@ -388,3 +388,7 @@ review: verify green window since relay-ckpt-20260704-1759 (docs+ledger+unwired 
 ## 2026-07-07 19:05 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: window since relay-ckpt-20260704-1759 re-verified green (11/11 tiers PASS, gaming-scan clean); b7e5 drift = legit author-then-run split; contract v6 current; routine_open=0 [id:b7e5,57e2]
+
+## 2026-07-08 11:28 — reviewer (claude-fable-5, relay-next)
+
+SE-corpus mining + lasercool deep dive session reviewed: 4 docs commits audited (scope-guard clean, suite green); Q13-Q15 ratified, Q16 → REVIEW_ME; id:b7e5 drift = known author-then-run split
