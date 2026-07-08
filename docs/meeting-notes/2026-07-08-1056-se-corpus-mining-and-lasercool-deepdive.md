@@ -221,6 +221,21 @@ maser-as-heat-engine lineage (Scovil 1959) is a step-11 bridge. Cavity cooling's
   sites — the eventual step-3/5 exploration could become the answer. Both are
   owner-external actions; noted, not queued.
 
+## 5b. Owner ratifications (2026-07-08, same session)
+
+- **Q13 — RATIFIED (partial promotion):** promote **P-C** (Casimir→field equations,
+  q/27195, step-5 headline exploration/epigraph), **P-A** (discrete-Noether aside,
+  q/8518), **M-1+M-2** (generators + matrix-exp/BCH lemmas, step-3/4 gap material).
+  Everything else stays in the inventory until its spine step is authored. Authoring
+  is owner-only (physics content) — tracked as TODO id:e552.
+- **Q14 — RATIFIED:** the three lasercool.md empty-section anchors (§3) are adopted
+  as the file's working skeleton, including the second-law per-mode-entropy punchline.
+  Owner authors the prose; the findings memo is the citation base.
+- **Q15 — RATIFIED:** durable inventory created at `docs/se-corpus.md` (seeded this
+  session; future upkeep `[ROUTINE]`-able).
+- **Q16 — remains open** (external, owner-only): self-answering q/669175 with the
+  RBL + cavity-cooling literature; P-F still open on two SE sites.
+
 ## 6. Key references (beyond the 2026-07-07 notes' lists)
 
 *Confidence: verified this session unless marked [K] = training-knowledge citation.*
