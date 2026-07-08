@@ -21,6 +21,16 @@
   `…-1318-math-on-demand-curriculum.md` maps per-step NEEDS/defer/corpus — notes the corpus gap at
   step 3 (projective reps/Bargmann, no exercising file), reads as Q1-evidence for the Fock route
   (step 6's ladder ops become a callback), and its per-step "defer" lists are the Q7 aside inventory.
+  **Extended by the 2026-07-08 SE-corpus mining + lasercool deep dive**
+  (`…-2026-07-08-1056-se-corpus-mining-and-lasercool-deepdive.md`): **Q13** which mined SE subjects
+  to promote (shortlist: P-C Casimir→field-equations = owner's own q/27195 as step-5 headline; P-A
+  discrete-Noether; M-1/M-2 generators+matrix-exp for the step-3/4 gap; P-G Fock-notation = new Q1
+  evidence)? **Q14** adopt the three lasercool.md empty-section anchors (N-body/reabsorption→cavity
+  cooling; multiple levels→optical refrigeration+radiation-balanced lasers; off-resonance→kT-detuning
+  + the 2×10⁻¹³ second-order-Doppler non-example) incl. the second-law per-mode-entropy punchline?
+  **Q15** create a durable `docs/se-corpus.md` inventory ([ROUTINE]-able once seeded)? **Q16**
+  (external, owner-only) self-answer q/669175 with the RBL+cavity-cooling literature; P-F (VSH under
+  Poincaré) still open on two SE sites.
   Owner-only (theory direction); next `/meeting` or owner walk.
 
 - [ ] **[ROUTINE] SymPy instrument bucket** (/meeting id:3d2a D1/D3) — `verify/entropy_{be,fd,meanE}.py`, `verify/fhe_stirling.py` (named correction terms + `O(2^{-n})` remainder, NOT eval-at-a-few-n), `verify/entropy_lambertw.py` (algebra l.53–57); `physics/entropy.toml` + `crypto/fhe.toml` sidecars; split the `lambertw` marker per D1 (algebra step→`\sympyc`, closed-form l.59→`\definition`); `tests/test_verify.sh` wiring; on green flip `\sympyc`→`\sympy`. Suite green, one `VERDICT: ✓`/instrument, sidecar non-drift. ~1 executor session → hand off to relay. **NB 2026-07-01 (relay review):** ROADMAP id:7306 covers the four already-placed `\sympyc` instruments only; the `lambertw` algebra instrument + D1 marker split are gated on OWNER marker placement → ROADMAP id:5d31 + REVIEW_ME box (this line's tick does NOT cover them). **NB 2026-07-02 (relay review):** id:7306 hard-split (auto, id:3801) — 3 of 4 instruments SHIPPED as seam id:e9e9 (`entropy_{meanE,be,fd}.py` + `physics/entropy.toml` + badge flips, verified genuine); the `fhe_stirling` seam id:76e5 is GATED on an owner content fix (fhe.md:12 constant term `ln√(2π)` should be `log₂√(2π)` — REVIEW_ME box). (2026-06-21-2129-lean-formalization-strategy.md) <!-- id:7306 -->
