@@ -427,6 +427,20 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   `verify/fhe_stirling.py` + `crypto/fhe.toml` build and the original `tests/test_verify_entropy.sh` can
   go green.
 
+## SE self-answer q/669175 — owner posts (Q16, 2026-07-08 SE-mining session)
+
+- [ ] **Post (or discard) the q/669175 self-answer — draft ready, owner-external action.**
+  The 2026-07-08 deep dive (`docs/meeting-notes/2026-07-08-1056-se-corpus-mining-and-lasercool-deepdive.md`
+  §3) settled the physics: strong form second-law-forbidden (laser-mode entropy ≈ 0, Ruan PRB 75,
+  214304), weak form established twice (radiation-balanced lasers; cavity cooling κ-replaces-Γ).
+  AI-drafted answer: `docs/drafts/q669175-answer-draft.md` — the owner edits/adopts the voice and
+  posts; it is a draft, never a merge. **Optional first step:** expert-check the draft's two
+  "open" claims (net-cooling a *running* laser below ambient; the closed two-laser loop budget)
+  with **Denis Seletskiy** — contact path via Alfred Leitenstorfer (they co-author: ref 47 of the
+  Nat. Rev. Phys. **7**, 149 (2025) Expert Recommendation, in `private/`). Q13–Q15 from the same
+  session are already ratified (note §5b); this box is the lone open Q16. Ticking = posted or
+  deliberately discarded (note which).
+
 ## Visual / manual (run these — never auto-ticked)
 
 - [x] `@manual` Walk `tests/HUMAN-integration.md` (TODO `id:6501`): equations render in a

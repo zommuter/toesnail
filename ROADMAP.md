@@ -434,5 +434,11 @@ The research itself is the owner's. These are tracked in `TODO.md` (design ledge
   for *owner-marked* claims can become `[ROUTINE]` once the claims are marked).
 - **The toesnail spine's `verify:lean` targets** (Cauchy–Schwarz, inner-product axioms,
   zero-vector uniqueness) and any narrative/topic direction — `docs/rigor-debt.md`.
+- **Author the promoted SE subjects + ratified lasercool anchors** (TODO id:e552; Q13/Q14
+  ratified 2026-07-08, `docs/meeting-notes/2026-07-08-1056-…` §5b) — P-C Casimir→field-equations,
+  P-A discrete-Noether, M-1+M-2 generators/matrix-exp, and the three lasercool.md section
+  skeletons. Physics content = owner-only; the mined inventory lives in `docs/se-corpus.md`
+  (its mechanical upkeep can become `[ROUTINE]` later — nothing promotable now). The lone open
+  Q16 (post the q/669175 self-answer, draft in `docs/drafts/`) is a REVIEW_ME owner box.
 - The staleness-checker (TODO `id:04bb`) stays GATED on acoustics (N=2) before it becomes
   a `[ROUTINE]` tooling item.
