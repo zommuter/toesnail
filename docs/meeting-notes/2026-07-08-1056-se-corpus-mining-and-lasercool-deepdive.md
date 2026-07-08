@@ -236,6 +236,35 @@ maser-as-heat-engine lineage (Scovil 1959) is a step-11 bridge. Cavity cooling's
 - **Q16 — remains open** (external, owner-only): self-answering q/669175 with the
   RBL + cavity-cooling literature; P-F still open on two SE sites.
 
+## 5c. Same-day addendum — owner context + assessment round
+
+- **Owner input:** private correspondence with Alfred Leitenstorfer (owner's former
+  laser-physics professor) yielded Zhang, Ding, Pauzauskie, Sheik-Bahae, **Seletskiy**
+  & Kuno, "Principles for demonstrating condensed phase optical refrigeration",
+  *Nat. Rev. Phys.* **7**, 149–153 (2025) (kept in `private/`, not committed —
+  paywall). It is the field's **verification-standards** paper: four principles
+  (cooling metrics η_EQE·η_abs > (E_ASPL−ΔE)/E_ASPL; explicit heating↔cooling
+  "cooling window" transitions; thermodynamic consistency of cooling time constants;
+  reliable thermometry), motivated by the race toward *semiconductor* optical
+  refrigeration (predicted floors ~10 K, LO-phonon freezeout). Its ref 47 is
+  Lippmann, **Leitenstorfer** & Seletskiy (CLEO 2019, ultrafast tracing of GaAs laser
+  cooling) — the Leitenstorfer→Seletskiy contact path is a live collaboration line.
+  Resonance flagged: the paper's whole purpose is rigor-tagging cooling claims — the
+  same epistemic move as toesnail's `\veq`/verify tiers.
+- **Q16 draft written:** `docs/drafts/q669175-answer-draft.md` (AI-drafted candidate;
+  owner edits/adopts/posts; includes a post-checklist and the suggestion to
+  expert-check the "open" claims with Seletskiy before posting).
+- **Owner additions to the inventory:** the Laurent-continuation cluster + operator
+  functions (M-6 extended) and the liar-paradox ↔ **Gödel/Lean4** bridge (M-5
+  extended): the self-reference chapter could exercise a formalized Gödel I in Lean 4,
+  welding the essay/info wing to the repo's own `\lean` verify tier.
+- **P-F ↔ wirohsh confirmed:** spherical harmonics are the S² instance of wirohsh's
+  compactness⇒discreteness theme (S¹→Fourier/Laurent m; S²→(ℓ,m); Peter–Weyl), and
+  q/267331 (Laplacian on the 3-sphere = SU(2)) joins the same thread. The Poincaré/
+  boost half of P-F is the *non-compact* contrast: compact subgroups ⇒ discrete
+  labels (spin, charge), non-compact directions ⇒ continuous ones (mass, momentum) —
+  a sharpening of candidate theme №1.
+
 ## 6. Key references (beyond the 2026-07-07 notes' lists)
 
 *Confidence: verified this session unless marked [K] = training-knowledge citation.*

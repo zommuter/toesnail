@@ -24,8 +24,10 @@
   **Extended by the 2026-07-08 SE-corpus mining + lasercool deep dive**
   (`…-2026-07-08-1056-se-corpus-mining-and-lasercool-deepdive.md`): **Q13/Q14/Q15 RATIFIED
   2026-07-08** (note §5b) — promotion set P-C/P-A/M-1+M-2 (→ id:e552), lasercool anchors adopted,
-  `docs/se-corpus.md` seeded. Still open here: **Q16** (external, owner-only) self-answer q/669175
-  with the RBL+cavity-cooling literature; P-F (VSH under Poincaré) still open on two SE sites.
+  `docs/se-corpus.md` seeded. Still open here: **Q16** (external, owner-only) self-answer q/669175 —
+  draft ready at `docs/drafts/q669175-answer-draft.md` (owner edits/posts); optionally expert-check the
+  "open" claims with Denis Seletskiy first (contact path via Leitenstorfer, note §5c); P-F (VSH under
+  Poincaré) still open on two SE sites.
   Owner-only (theory direction); next `/meeting` or owner walk.
 
 - [ ] **[OWNER] Author the promoted SE subjects (Q13, ratified 2026-07-08)** — P-C Casimir→field-equations <!-- id:e552 -->
