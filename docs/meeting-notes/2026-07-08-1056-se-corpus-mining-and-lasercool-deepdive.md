@@ -265,6 +265,55 @@ maser-as-heat-engine lineage (Scovil 1959) is a step-11 bridge. Cavity cooling's
   labels (spin, charge), non-compact directions ⇒ continuous ones (mass, momentum) —
   a sharpening of candidate theme №1.
 
+## 5d. Owner's closing thought — cheaper photons: maser-not-laser cooling (2026-07-08)
+
+**Owner's idea (verbatim intent):** if the per-photon harvest is fixed at ~k_BT, use
+super-low-energy photons (IR, radio, longer) to get more photons per watt — maser
+etc., not light amplification. **Findings (citations verified this session):**
+
+- **The scaling is right, and it has a demonstrated incarnation.** Cooling efficiency
+  per absorbed watt is ~k_BT/hν and rises as hν falls. **Electroluminescent cooling**
+  realizes it: an LED at ultra-low bias V < k_BT/q emits photons of energy hν > qV,
+  the difference harvested from lattice heat — measured wall-plug efficiency ~230 %
+  (COP > 1) at picowatt output (Santhanam, Gray & Ram, *PRL* **108**, 097403 (2012));
+  net solid-state photonic cooling of a nanocalorimeter via photon chemical potential
+  (Zhu et al., *Nature* **566**, 239 (2019)); the LED+PV **thermophotonic** heat-pump
+  program (Sadi, Radevici & Oksanen, *Nat. Photonics* **14**, 205 (2020)). Status:
+  NO macroscopic net-cooling demo yet — needs EQE ≈ 1 (GaAs record ~99.5 %); the
+  COP-vs-cooling-power trade is quantified in the detailed-balance analyses
+  (arXiv:2504.05013 → *J. Appl. Phys.* **138**, 173106 (2025)).
+- **Three walls close in as ν → 0** (each a "math on demand" payoff for lasercool.md):
+  1. *The exhaust bath warms up:* n̄_th = 1/(e^{hν/k_BT}−1) → k_BT/hν. Optical modes
+     at 300 K are empty (hν/k_B ~ 14 000 K ⇒ the optical vacuum is a free cold
+     reservoir); microwave modes carry n̄ ≫ 1 of ambient photons — emission and
+     ambient absorption balance, no net cooling without a genuinely COLD load.
+  2. *The entropy channel dies as ν³:* Einstein A/B ∝ ν³ — spontaneous emission (the
+     thermodynamically mandatory exhaust, §3) collapses cubically; ambient-stimulated
+     processes dominate. Ties directly to the Einstein-1917 detailed-balance chapter
+     the dreaming note (§1.2) already queued — the owner's closing thought lands on it.
+  3. *The pipe narrows:* per mode and bandwidth the radiative power is capped ~k_B·T·B
+     (Nyquist) and mode density falls as ν² — one microwave mode at 10 GHz bandwidth
+     moves ~40 pW even into a perfectly cold load. Optical wins on modes×bandwidth,
+     not photon quality.
+- **The maser-domain version EXISTS, and needed exactly the two engineered fixes the
+  walls predict:** Albanese, …, Bertet, "Radiative cooling of a spin ensemble",
+  *Nat. Phys.* **16**, 751 (2020) — bismuth-donor spins in Si cooled below the lattice
+  temperature by connecting the microresonator to a **cold resistive load** (fix for
+  wall 1) with **Purcell-enhanced spontaneous emission** (cavity fix for wall 2;
+  precursor: Bienfait et al., *Nature* **531**, 74 (2016)). Cold-sky radiometry is the
+  same move with the 3 K sky as load.
+- **Optimum + open gap (candidate small original result):** the sweet spot sits at
+  hν ~ a few k_BT — mid-IR/THz, where passive sky cooling (8–13 µm ≈ 4–6 k_BT) and EL
+  cooling already live. The verification agent found **no paper stating the
+  COP-optimal hν/k_BT explicitly** (closest: the thermophotonic detailed-balance
+  papers, framed via bias-vs-bandgap). Maximizing the k_BT/hν gain against the
+  n̄_th occupation loss is a self-contained, SymPy-tier owner derivation — a genuine
+  candidate original mini-result for lasercool.md's photon-energy-scaling section.
+- **Ledger hooks:** extends the Q14 anchors with a fourth candidate section
+  ("photon-energy scaling: laser → LED → maser", welding Einstein A/B, wall 1–3, and
+  Albanese 2020); the id:c9d4 Lean target naturally generalizes to carry the frequency
+  scaling (bound as a function of n̄(ν,T)).
+
 ## 6. Key references (beyond the 2026-07-07 notes' lists)
 
 *Confidence: verified this session unless marked [K] = training-knowledge citation.*

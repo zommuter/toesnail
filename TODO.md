@@ -33,7 +33,12 @@
 - [ ] **[OWNER] Author the promoted SE subjects (Q13, ratified 2026-07-08)** — P-C Casimir→field-equations <!-- id:e552 -->
   (q/27195 as step-5 headline exploration/epigraph), P-A discrete-Noether aside (q/8518, step 4↔1),
   M-1+M-2 generators + matrix-exp/BCH lemmas (step-3/4 gap material); plus the ratified lasercool.md
-  section anchors (Q14). Physics content = Human-only; the AI's role stays findings/citations
+  section anchors (Q14) **+ the owner's 2026-07-08 closing-thought candidate section "photon-energy
+  scaling: laser → LED → maser"** (note §5d: k_BT/hν gain vs the three walls — n̄_th occupation,
+  Einstein A∝ν³, Nyquist/mode-count; EL cooling Santhanam 2012 / Zhu 2019 / TPX Oksanen 2020;
+  Albanese 2020 spin-ensemble maser-cooling as the existence proof; incl. a SymPy-able candidate
+  original mini-result: the COP-optimal hν/k_BT, which the literature apparently never states).
+  Physics content = Human-only; the AI's role stays findings/citations
   (`docs/meeting-notes/2026-07-08-1056-…` + `docs/se-corpus.md`). No deadline — owner's pace.
 
 - [ ] [HARD — meeting] **Lean4-formalize the laser-exhaust entropy bound (owner-declared 2026-07-08)** — prove <!-- id:c9d4 -->
