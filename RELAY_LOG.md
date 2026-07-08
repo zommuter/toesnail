@@ -392,3 +392,7 @@ review: window since relay-ckpt-20260704-1759 re-verified green (11/11 tiers PAS
 ## 2026-07-08 11:28 — reviewer (claude-fable-5, relay-next)
 
 SE-corpus mining + lasercool deep dive session reviewed: 4 docs commits audited (scope-guard clean, suite green); Q13-Q15 ratified, Q16 → REVIEW_ME; id:b7e5 drift = known author-then-run split
+
+## 2026-07-08 11:37 — reviewer (claude-fable-5, relay-next)
+
+lane-grammar fix: id:e552 → conforming [HARD — hands] checkbox item (owner-flagged violation); id:c9d4 Lean entropy-bound forward-flag added
