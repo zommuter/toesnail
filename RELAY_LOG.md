@@ -400,3 +400,7 @@ lane-grammar fix: id:e552 → conforming [HARD — hands] checkbox item (owner-f
 ## 2026-07-08 11:52 — reviewer (claude-fable-5)
 
 owner closing thought (photon-energy scaling / maser cooling) recorded as findings addendum 5d + id:e552 extension; citations agent-verified (Albanese 2020 correction applied)
+
+## 2026-07-10 17:30 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+toesnail review: diff-window clean (gaming-scan OK, suite PASS); promoted id:318f lean-toolchain pointer [ROUTINE]+red spec, @container'd decomposed id:7306 [id:318f,7306]
