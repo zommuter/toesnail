@@ -409,3 +409,7 @@ toesnail review: diff-window clean (gaming-scan OK, suite PASS); promoted id:318
 
 Worked id:318f — added the lean-toolchain provenance pointer to CLAUDE.md 'Related projects' section (cache/derived value, toesnail as rev-bump decider, mathematical-writing as fleet-value publisher); test_toolchain_pointer.sh green, full suite green.
 Friction: none.
+
+## 2026-07-10 18:21 — executor (sonnet, relay-loop)
+
+Documented the lean-toolchain provenance pointer in CLAUDE.md (id:318f) — closes the routed:89d0 inbound item; full test suite green. [id:318f]
