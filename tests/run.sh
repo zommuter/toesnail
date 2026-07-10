@@ -4,7 +4,7 @@
 set -u
 here="$(dirname "$0")"
 rc=0
-for t in test_verify.sh test_verify_entropy_routine.sh test_render.sh test_verify_hook.sh test_mw_mirror.sh test_lean.sh test_page_coverage.sh test_crypto_exclude.sh test_conventions_ladder.sh; do
+for t in test_verify.sh test_verify_entropy_routine.sh test_render.sh test_verify_hook.sh test_mw_mirror.sh test_lean.sh test_page_coverage.sh test_crypto_exclude.sh test_conventions_ladder.sh test_toolchain_pointer.sh; do
   echo "============================================================"
   echo "RUN $t"
   echo "============================================================"
