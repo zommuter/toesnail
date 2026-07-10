@@ -13,6 +13,24 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
 
 ## Items
 
+- [ ] Document the `lean-toolchain` provenance pointer in `CLAUDE.md` [ROUTINE] <!-- id:318f -->
+  - **Why**: inbound `routed:89d0` from `mathematical-writing` (TODO id:318f twin). A reader who
+    opens `verify/lean-toolchain` (`leanprover/lean4:v4.30.0-rc2`) can't tell it is a DERIVED cache of
+    the vendored Mathlib rev, nor which repo decides a rev bump. Pure docs sync (no theory), executor-eligible.
+  - **Scope**: add ONE short pointer to `CLAUDE.md` — natural home is `## Related projects` (l.110) or the
+    `## Local build & tests` / Lean material. State the three facts from the routed item, verbatim in intent:
+    (a) `verify/lean-toolchain` is a CACHE of the vendored Mathlib rev (`.lake/packages/mathlib/lean-toolchain`),
+    NOT a hand-edited fact; (b) toesnail is the triad's rev-bump DECIDER because it pays the ~7 GB Mathlib
+    build; (c) `mathematical-writing` PUBLISHES the derived fleet value at its repo root (the value
+    `relay-doctor`'s id:50c4 drift-check treats as canonical). Docs/prose only — touch NO `physics/*.md`,
+    `essays/*.md`, `verify/*.py`, or engine config; the scope-guard forbids theory edits.
+  - **Acceptance**: `bash tests/test_toolchain_pointer.sh` green (the three facts co-occur near a
+    `lean-toolchain` mention in `CLAUDE.md`); `bash tests/run.sh` green; `git diff` touches only `CLAUDE.md`
+    (+ this ROADMAP/TODO tick).
+  - **Spec test**: `tests/test_toolchain_pointer.sh` (RED until the pointer lands), wired into `tests/run.sh`.
+  - **Context**: inbound routing breadcrumb `routed:89d0` (from `mathematical-writing`); triad toolchain-pin
+    facts live in `verify/README.md` §"Lean tier" and are cross-checked by `relay-doctor`'s id:50c4 gate.
+
 - [x] Sync authoring docs to the `\veq{h}\tier` form — retire the HTML-comment `verify:` syntax [ROUTINE] <!-- id:9fdc -->
   - **Why**: the 2026-06-18 migration (`a9d2`/`dce9`) moved the corpus + KaTeX/MathJax macros to
     `\veq{h}\tier`, but `CONVENTIONS.md`/`CLAUDE.md`/`ARCHITECTURE.md` still teach the retired
@@ -272,7 +290,7 @@ inside the `\veq{…}` — only the badge arg once its instrument is green. The 
 (`physics/entropy.md:59`, now `\leanc`) is OUT of scope — it belongs to the Lean bucket (id:37cc) and
 its marker-split is an owner content decision, not this item.
 
-- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [HARD — decision gate] — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
+- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [HARD — decision gate] @container — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
   - **Why**: four owner-placed `\sympyc` (open-debt "desired SymPy, not yet verified") badges exist with
     no instrument behind them — `physics/entropy.md` `meanE` (l.22 mean-energy closed form),
     `be` (l.27 Bose–Einstein N→∞ limit), `fd` (l.35 Fermi–Dirac N=2), and `crypto/fhe.md` `stirling`
