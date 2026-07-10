@@ -122,7 +122,7 @@
   annotations survive content changing over time?" is the inflownistration/staleness problem (`.mw` `id:aae4`).
   Design before wiring; low priority.
 
-- [ ] [INBOUND routed:89d0 from mathematical-writing] Add a one-line pointer in CLAUDE.md: `verify/lean-toolchain` is a CACHE of the vendored Mathlib rev (`.lake/packages/mathlib/lean-toolchain`), never a hand-edited fact; toesnail is the triad's rev-bump decider because it pays the 7 GB Mathlib build; mathematical-writing publishes the derived fleet value at its repo root. <!-- id:318f -->
+- [x] [INBOUND routed:89d0 from mathematical-writing] Add a one-line pointer in CLAUDE.md: `verify/lean-toolchain` is a CACHE of the vendored Mathlib rev (`.lake/packages/mathlib/lean-toolchain`), never a hand-edited fact; toesnail is the triad's rev-bump decider because it pays the 7 GB Mathlib build; mathematical-writing publishes the derived fleet value at its repo root. <!-- id:318f -->
 
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as

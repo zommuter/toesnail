@@ -13,7 +13,7 @@ checkboxes; only the reviewer adds, removes, or re-scopes items.
 
 ## Items
 
-- [ ] Document the `lean-toolchain` provenance pointer in `CLAUDE.md` [ROUTINE] <!-- id:318f -->
+- [x] Document the `lean-toolchain` provenance pointer in `CLAUDE.md` [ROUTINE] <!-- id:318f -->
   - **Why**: inbound `routed:89d0` from `mathematical-writing` (TODO id:318f twin). A reader who
     opens `verify/lean-toolchain` (`leanprover/lean4:v4.30.0-rc2`) can't tell it is a DERIVED cache of
     the vendored Mathlib rev, nor which repo decides a rev bump. Pure docs sync (no theory), executor-eligible.
