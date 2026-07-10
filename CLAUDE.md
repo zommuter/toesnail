@@ -112,6 +112,12 @@ non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, nev
   north-star use-case for. toesnail's `physics/` docs are the eventual `.mw` migration target.
 - `~/src/collaib` — local-LLM "calm co-author" observer PWA; a candidate live UI for the `verify:` rigor-debt
   assist role (three-repo relationship flagged for a dedicated scoping session).
+- **`verify/lean-toolchain` provenance (routed:89d0 from `mathematical-writing`).** The pinned
+  `leanprover/lean4:v4.30.0-rc2` value in `verify/lean-toolchain` is a CACHE/DERIVED value of the vendored
+  Mathlib rev (`.lake/packages/mathlib/lean-toolchain`), not a hand-edited fact — never bump it directly.
+  toesnail is the triad's rev-bump DECIDER, because it pays the ~7 GB Mathlib build cost that a rev bump
+  triggers; a bump lands here first. `mathematical-writing` PUBLISHES the resulting derived fleet value at
+  its own repo root, which is the value `relay-doctor`'s id:50c4 drift-check treats as canonical downstream.
 
 ## Relay contract <!-- relay-executor contract v6 -->
 
