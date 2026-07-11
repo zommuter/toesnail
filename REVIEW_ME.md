@@ -461,3 +461,12 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   Optional doc nicety: `CONVENTIONS.md` line 57 lists the badge *glyphs* but not the new colours —
   add a one-line "each tier also carries a reinforcement colour (see `docs/palette-preview/`)" if
   the owner wants the convention doc to mention it (glyph line stays accurate as-is; not blocking).
+  Note (2026-07-11 review): the machine half of this concern is now covered — ROADMAP/TODO id:0030
+  landed a byte-for-byte drift guard asserting every badge macro in `_includes/custom-head.html` AND
+  `.vscode/settings.json` matches the `test_mathjax.cjs` mirror (verified genuinely green + fires on a
+  dropped `\textcolor`). Only the *visual* last mile above remains for the owner.
+
+- [ ] **Advisory (typed-edge nicety, id:46f6): ROADMAP id:9d8c carries gate vocabulary but no typed
+  `gated-on:` marker.** `orphan-scan --shipped` flags it UNMARKED-GATE. `roadmap-lint` passes (gated
+  items are lane-exempt), so this is non-blocking — add a typed `gated-on:` edge or confirm the gate
+  when the owner next touches the CI-Lean-build item. Surfaced 2026-07-11 review, not acted on.
