@@ -467,3 +467,7 @@ originals; full `bash tests/run.sh` is green (real Lean/Jekyll/npm run, no SKIPs
 `node_modules` from the main checkout since the worktree started without it). Ticked ROADMAP
 id:0030.
 Friction: none.
+
+## 2026-07-11 14:07 — executor (sonnet, relay-loop)
+
+Closed ROADMAP id:0030 — extended test_mathjax.cjs's drift guard to the whole verification-tier badge macro family (custom-head.html + .vscode/settings.json vs mirror), verified it catches a dropped \textcolor in either file, full suite green. [id:0030]
