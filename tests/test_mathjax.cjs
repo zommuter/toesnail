@@ -51,16 +51,25 @@ const MJ_MACROS = {
   //   \numeric  → \triangle            (numeric / evaluation)
   //   \lean     → \checkmark           (Lean4 proof)
   //   \sympylean → \checkmark\!\checkmark  (SymPy + Lean)
-  sorry:    '\\mathbf{?}',
-  sympy:    '\\circ',
-  numeric:  '\\triangle',
-  lean:     '\\checkmark',
-  sympylean: '\\checkmark\\!\\checkmark',
-  // open-debt-naming-desired-tier badges (id:feb8) — tier glyph + superscript ?
-  sympyc:    '\\circ^{?}',
-  numericc:  '\\triangle^{?}',
-  leanc:     '\\checkmark^{?}',
-  sympyleanc: '{\\checkmark\\!\\checkmark}^{?}',
+  // Colour (id:c7d6, Option C — assurance-ramp + amber accent, docs/palette-preview/README.md).
+  // GOTCHA: hexes are written WITHOUT the leading '#' (both engines accept a bare 6-digit hex,
+  // e.g. \textcolor{15803d}{...}) — a leading '#1' (only when the digit right after '#' is '1')
+  // is misparsed by KaTeX's own macro-arity scan as an argument placeholder ("#1"), which then
+  // tries to consume the next token as an argument and corrupts the render ("Unexpected end of
+  // input in a macro argument"). #2563eb/#b45309/#6b7280 happen not to trigger it (no leading
+  // "#1"), but #15803d and #14532d do — so ALL hexes here drop the '#' for consistency, never
+  // re-add it to a macro string.
+  sorry:    '\\textcolor{6b7280}{\\mathbf{?}}',
+  sympy:    '\\textcolor{2563eb}{\\circ}',
+  numeric:  '\\textcolor{b45309}{\\triangle}',
+  lean:     '\\textcolor{15803d}{\\checkmark}',
+  sympylean: '\\textcolor{14532d}{\\checkmark\\!\\checkmark}',
+  // open-debt-naming-desired-tier badges (id:feb8) — tier glyph + superscript ?, same hue as
+  // the discharged tier (Option C sub-decision 1).
+  sympyc:    '\\textcolor{2563eb}{\\circ^{?}}',
+  numericc:  '\\textcolor{b45309}{\\triangle^{?}}',
+  leanc:     '\\textcolor{15803d}{\\checkmark^{?}}',
+  sympyleanc: '\\textcolor{14532d}{ {\\checkmark\\!\\checkmark}^{?}}',
   // annotation-KIND pilot macros (id:8ddc) — not verification tiers
   definition: '\\mathrm{def}',
   assumption: '\\mathrm{ass}',
@@ -74,16 +83,17 @@ const KX_MACROS = {
   '\\veq':      '\\tag{#1\\,$#2$}',
   '\\veqs':     '\\def\\veqsHandle{#1}(#2)',
   // Verification-tier badge macros.
-  '\\sorry':    '\\mathbf{?}',
-  '\\sympy':    '\\circ',
-  '\\numeric':  '\\triangle',
-  '\\lean':     '\\checkmark',
-  '\\sympylean': '\\checkmark\\!\\checkmark',
-  // open-debt-naming-desired-tier badges (id:feb8)
-  '\\sympyc':    '\\circ^{?}',
-  '\\numericc':  '\\triangle^{?}',
-  '\\leanc':     '\\checkmark^{?}',
-  '\\sympyleanc': '{\\checkmark\\!\\checkmark}^{?}',
+  // Colour (id:c7d6, Option C — assurance-ramp + amber accent).
+  '\\sorry':    '\\textcolor{6b7280}{\\mathbf{?}}',
+  '\\sympy':    '\\textcolor{2563eb}{\\circ}',
+  '\\numeric':  '\\textcolor{b45309}{\\triangle}',
+  '\\lean':     '\\textcolor{15803d}{\\checkmark}',
+  '\\sympylean': '\\textcolor{14532d}{\\checkmark\\!\\checkmark}',
+  // open-debt-naming-desired-tier badges (id:feb8), same hue as the discharged tier
+  '\\sympyc':    '\\textcolor{2563eb}{\\circ^{?}}',
+  '\\numericc':  '\\textcolor{b45309}{\\triangle^{?}}',
+  '\\leanc':     '\\textcolor{15803d}{\\checkmark^{?}}',
+  '\\sympyleanc': '\\textcolor{14532d}{ {\\checkmark\\!\\checkmark}^{?}}',
   // annotation-KIND pilot macros (id:8ddc)
   '\\definition': '\\mathrm{def}',
   '\\assumption': '\\mathrm{ass}',
@@ -210,6 +220,34 @@ const katex = require('katex');
     } catch (e) {
       bad(`KaTeX \\veqs: ${name} → ${e.message.split('\n')[0]}`);
     }
+  }
+}
+
+// ---- Badge colour (id:c7d6, Option C — assurance-ramp + amber accent) ----
+// Colour is REINFORCEMENT, not the primary channel (the glyph is) — see
+// docs/palette-preview/README.md. Assert each discharged-tier macro's ratified hex actually
+// appears in the rendered output under BOTH engines (not just "renders without error"),
+// so a future edit that drops \textcolor silently regresses without this catching it.
+console.log('[test_mathjax] badge colour (Option C)');
+const TIER_COLORS = {
+  sorry: '#6b7280', sympy: '#2563eb', numeric: '#b45309',
+  lean: '#15803d', sympylean: '#14532d',
+  // open-debt variants reuse the discharged tier's hue (Option C sub-decision 1)
+  sympyc: '#2563eb', numericc: '#b45309', leanc: '#15803d', sympyleanc: '#14532d',
+};
+for (const [tier, hex] of Object.entries(TIER_COLORS)) {
+  const tex = new TeX({ packages: AllPackages, tags: 'ams', macros: MJ_MACROS });
+  const doc = mathjax.document('', { InputJax: tex, OutputJax: new SVG() });
+  const html = adaptor.innerHTML(doc.convert(`\\${tier}`, { display: false }));
+  if (html.toLowerCase().includes(hex.slice(1).toLowerCase())) pass(`MathJax \\${tier} carries ${hex}`);
+  else bad(`MathJax \\${tier}: expected colour ${hex} not found in output`);
+
+  try {
+    const out = katex.renderToString(`\\${tier}`, { macros: { ...KX_MACROS }, displayMode: true, throwOnError: true });
+    if (out.toLowerCase().includes(hex.toLowerCase())) pass(`KaTeX \\${tier} carries ${hex}`);
+    else bad(`KaTeX \\${tier}: expected colour ${hex} not found in output`);
+  } catch (e) {
+    bad(`KaTeX \\${tier}: render error → ${e.message.split('\n')[0]}`);
   }
 }
 

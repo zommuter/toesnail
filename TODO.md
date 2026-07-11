@@ -84,7 +84,7 @@
   durable record; `/relay human` owns the `valid|noise` verdict. Coupling kept LOOSE (graceful-degrade,
   never a commit gate). Decomposed into id:8757/d5f9/0e63/211c below + routed findings. <!-- id:d8bf -->
 - [ ] **(forward-flag)** `\veq{}` is the natural vehicle for subequation labelling (`id:d2f4`) and ✓-emoji render variants (`id:445e`); design separately, after the KaTeX pilot (`id:e0b7`). (docs/meeting-notes/2026-06-18-0729-veq-macro-verify-carrier.md) <!-- id:7b2b -->
-- [ ] [HARD] **(render, owner 2026-06-18) COLOR-CODE the tier badges in general.** Give each verification tier a colour *(author-then-run: pool proposes 2-3 accessibility-checked palette options + preview render; owner ratifies the pick)* <!-- id:b7e5 -->
+- [x] [HARD] **(render, owner 2026-06-18) COLOR-CODE the tier badges in general.** Give each verification tier a colour *(author-then-run: pool proposes 2-3 accessibility-checked palette options + preview render; owner ratifies the pick)* <!-- id:b7e5 -->
   (e.g. `\sorry` red, `\sympy`/`\sympyc` amber, `\numeric` blue, `\lean` green, `\sympylean` deep-green) so the
   rigor state is glanceable. Both engines: KaTeX `\htmlClass`/`\color`, MathJax `\color`/CSS class (mind KaTeX
   metric warnings — prefer `\htmlClass` + CSS over raw `\color` where possible). Colour choices = owner. Extends

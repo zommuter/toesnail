@@ -21,17 +21,25 @@
     "\\veq":      "\\tag{#1\\,$#2$}",
     "\\veqs":     "\\def\\veqsHandle{#1}(#2)",
     // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid KaTeX metric warnings).
-    "\\sorry":    "\\mathbf{?}",
-    "\\sympy":    "\\circ",
-    "\\numeric":  "\\triangle",
-    "\\lean":     "\\checkmark",
-    "\\sympylean": "\\checkmark\\!\\checkmark",
+    // Colour (ROADMAP id:c7d6, RUN half of the b7e5 author-then-run split; owner-picked
+    // Option C, REVIEW_ME 2026-07-11 — assurance-ramp + amber accent, docs/palette-preview/README.md):
+    // colour is REINFORCEMENT only, the glyph stays primary (WCAG 1.4.1). Hardcoded \textcolor
+    // per macro (not a CSS \htmlClass route) — VS Code's Markdown-preview KaTeX may not enable
+    // `trust`, and \textcolor needs no trust config in either engine. Hexes OMIT the leading
+    // '#' (both engines accept a bare 6-digit hex) — a leading "#1" is misparsed by KaTeX's
+    // macro-arity scanner as an argument placeholder and corrupts the render; never re-add it.
+    "\\sorry":    "\\textcolor{6b7280}{\\mathbf{?}}",
+    "\\sympy":    "\\textcolor{2563eb}{\\circ}",
+    "\\numeric":  "\\textcolor{b45309}{\\triangle}",
+    "\\lean":     "\\textcolor{15803d}{\\checkmark}",
+    "\\sympylean": "\\textcolor{14532d}{\\checkmark\\!\\checkmark}",
     // Open-debt badges naming the DESIRED-but-unverified tier (id:feb8 resolved): tier glyph +
     // superscript ? . Swap \sympyc → \sympy once the instrument greens + the sidecar attests.
-    "\\sympyc":    "\\circ^{?}",
-    "\\numericc":  "\\triangle^{?}",
-    "\\leanc":     "\\checkmark^{?}",
-    "\\sympyleanc": "{\\checkmark\\!\\checkmark}^{?}",
+    // Colour reuses the SAME hue as the discharged tier — only the `?` glyph distinguishes them.
+    "\\sympyc":    "\\textcolor{2563eb}{\\circ^{?}}",
+    "\\numericc":  "\\textcolor{b45309}{\\triangle^{?}}",
+    "\\leanc":     "\\textcolor{15803d}{\\checkmark^{?}}",
+    "\\sympyleanc": "\\textcolor{14532d}{ {\\checkmark\\!\\checkmark}^{?}}",
     // Annotation-KIND macros (pilot — id:8ddc/.mw id:358f open-enum kinds): \definition (:=),
     // \assumption (premise). Full kind taxonomy is a later /meeting.
     "\\definition": "\\mathrm{def}",

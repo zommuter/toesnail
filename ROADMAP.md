@@ -97,7 +97,7 @@ its marker-split is an owner content decision, not this item.
     `git diff` shows NO change to `_includes/custom-head.html` / `.vscode/settings.json`.
   - **Context**: TODO id:b7e5; relates to R2/R3 (id:445e); REVIEW_ME id:e0b7 history.
 
-- [ ] [ROUTINE] Colour-code the verification-tier badges — RUN half (implement Option C) <!-- id:c7d6 -->
+- [x] [ROUTINE] Colour-code the verification-tier badges — RUN half (implement Option C) <!-- id:c7d6 -->
   - **Owner pick 2026-07-11 (relay human)**: Option C — assurance-ramp + amber accent
     (grey→blue→green→deep-green ordinal over the CONVENTIONS.md §2 assurance ladder; `\numeric` an
     off-ramp amber counter-indicator). Best colour-blind separation (deut 50.4). RUN half of the
