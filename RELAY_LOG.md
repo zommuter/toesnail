@@ -444,3 +444,7 @@ from wrapping an already-grouped TeX expression in `\textcolor{}{}`) was read as
 initial `tail -80` capture of the suite output — re-ran the full log to find it). Fixed with a
 single space between the two braces (harmless in both TeX engines). Re-walking
 `tests/HUMAN-integration.md` for the visual check is `[HUMAN]` — not done by this session.
+
+## 2026-07-11 13:17 — executor (sonnet, relay-loop)
+
+Implemented ROADMAP id:c7d6 (badge-colour RUN half, Option C) — hardcoded \textcolor per verification-tier badge macro in both engines, extended test_mathjax.cjs with colour assertions, ticked TODO id:b7e5 + ROADMAP id:c7d6; full suite PASS (real Lean/Jekyll/npm, no SKIPs). [id:c7d6,b7e5]
