@@ -471,3 +471,7 @@ Friction: none.
 ## 2026-07-11 14:07 — executor (sonnet, relay-loop)
 
 Closed ROADMAP id:0030 — extended test_mathjax.cjs's drift guard to the whole verification-tier badge macro family (custom-head.html + .vscode/settings.json vs mirror), verified it catches a dropped \textcolor in either file, full suite green. [id:0030]
+
+## 2026-07-11 14:32 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+Reviewed toesnail: id:0030 badge-macro drift guard verified genuinely green (gaming-scan clean, guard fires on dropped \textcolor, full suite PASS no SKIPs); ticked TODO twin, surfaced id:9d8c unmarked-gate advisory [id:0030]
