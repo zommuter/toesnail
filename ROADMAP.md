@@ -396,6 +396,19 @@ its marker-split is an owner content decision, not this item.
     `git diff` shows NO change to `_includes/custom-head.html` / `.vscode/settings.json`.
   - **Context**: TODO id:b7e5; relates to R2/R3 (id:445e); REVIEW_ME id:e0b7 history.
 
+- [ ] Colour-code the verification-tier badges — RUN half (implement Option C) [ROUTINE] <!-- id:c7d6 -->
+  - **Owner pick 2026-07-11 (relay human)**: Option C — assurance-ramp + amber accent
+    (grey→blue→green→deep-green ordinal over the CONVENTIONS.md §2 assurance ladder; `\numeric` an
+    off-ramp amber counter-indicator). Best colour-blind separation (deut 50.4). RUN half of the
+    author-then-run split; author half shipped as id:b7e5 (`docs/palette-preview/`).
+  - **Do**: implement the Option C hexes (from `docs/palette-preview/README.md`) in
+    `_includes/custom-head.html` + `.vscode/settings.json` + `tests/test_mathjax.cjs`, per the README's
+    per-engine notes (KaTeX `\htmlClass`/`\textcolor` + `trust` caveat; MathJax `\class`/`\color`).
+    Colour is REINFORCEMENT — the glyph `? ∘ △ ✓ ✓✓` stays the primary channel; the open-debt `\<tier>c`
+    variants reuse the SAME hue as their discharged tier (distinguished by the superscript `?` glyph).
+    Then re-walk `tests/HUMAN-integration.md`.
+  - **Context**: TODO id:b7e5 (same directive, run half); REVIEW_ME palette-pick box (ticked 2026-07-11).
+
 ## Gated forward-flags — NOT yet executor work
 
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->

@@ -129,7 +129,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## Badge colour palette — PICK one (ROADMAP id:b7e5 author-then-run; author half done 2026-07-04)
 
-- [ ] **PICK a verification-tier badge colour palette (or reject colour).** The author half of ROADMAP
+- [x] **PICK a verification-tier badge colour palette (or reject colour).** _human 2026-07-11 (relay human): PICKED Option C (assurance-ramp + amber accent); best CB separation, encodes CONVENTIONS.md §2 assurance ladder. RUN half re-queued as open [ROUTINE] ROADMAP id:c7d6._ The author half of ROADMAP
   id:b7e5 (owner render directive 2026-06-18) produced **three accessibility-checked options**, each mapping
   the whole badge family (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` + the open-debt `\<tier>c`
   variants) to colour. **Preview render:** `docs/palette-preview/index.html` (open in a browser — light + a
@@ -415,7 +415,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
 
 ## FHE `stirling` — constant-term unit mismatch (owner decides the fix)
 
-- [ ] **Fix/ratify the `stirling` constant term in `crypto/fhe.md:12`** (surfaced by the id:7306
+- [x] **Fix/ratify the `stirling` constant term in `crypto/fhe.md:12`** _human 2026-07-11 (relay human): DECIDED apply base-2 Stirling correction. TWO corrections required: constant → log₂√(2π)≈1.326 AND linear −N → −N·log₂e≈−1.4427N (the log₂e factor). base-2 = bits (crypto). Owner applies the physics/*.md edit; un-gates roadmap:76e5._ (surfaced by the id:7306
   hard-split 2026-07-01, independently re-verified + queued 2026-07-02 relay review; gates ROADMAP
   id:76e5). The expansion of `Π_n = log₂((2^n)!)` is written
   `2^n(n − log₂e) + n/2 + ln√(2π) + O(2^{-n})`, but dividing Stirling's `ln N! = N ln N − N + ½ln(2πN) + …`
