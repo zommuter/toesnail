@@ -450,3 +450,14 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   `tests/HUMAN-integration.md` ticked by the owner (live-site visual sanity, VS Code macro
   pickup, cross-browser glance). Re-run after any change to `_includes/custom-head.html`,
   `_config.yml`, `.vscode/settings.json`, or equation markup.
+
+- [ ] `@manual` **Colour re-walk (id:c7d6 RUN half landed 2026-07-11).** The tier badges now
+  render Option C colours (`\sorry` grey `#6b7280`, `\sympy`/`\sympyc` blue `#2563eb`, `\numeric`
+  amber `#b45309`, `\lean`/`\leanc` green `#15803d`, `\sympylean`/`\sympyleanc` deep-green `#14532d`)
+  in BOTH engines — machine-verified present in the rendered output (`test_mathjax.cjs`), but the
+  *visual* last mile (real browser + VS Code KaTeX preview: hues legible, colour-blind separation
+  as designed, glyph still primary on the actual site background) needs an owner eyeball. Re-walk
+  `tests/HUMAN-integration.md` and tick when the colours look right (or note a correction).
+  Optional doc nicety: `CONVENTIONS.md` line 57 lists the badge *glyphs* but not the new colours —
+  add a one-line "each tier also carries a reinforcement colour (see `docs/palette-preview/`)" if
+  the owner wants the convention doc to mention it (glyph line stays accurate as-is; not blocking).

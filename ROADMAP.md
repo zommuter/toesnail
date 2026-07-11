@@ -110,6 +110,24 @@ its marker-split is an owner content decision, not this item.
     Then re-walk `tests/HUMAN-integration.md`.
   - **Context**: TODO id:b7e5 (same directive, run half); REVIEW_ME palette-pick box (ticked 2026-07-11).
 
+- [ ] [ROUTINE] Badge-macro drift guard: assert `_includes/custom-head.html` matches `test_mathjax.cjs`'s mirror <!-- id:0030 -->
+  - **Why**: `test_mathjax.cjs` defines `MJ_MACROS`/`KX_MACROS` as a HARDCODED MIRROR of the badge macros
+    in `_includes/custom-head.html` (line 34 "MJ_MACROS mirrors _includes/custom-head.html macros"). Only the
+    `\ltag` macro has a drift guard (l.128 reads custom-head.html and asserts it). The badge family
+    (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` + `\<tier>c`) has NONE — so the id:c7d6 colour
+    assertions verify the test's OWN copy carries each `\textcolor{hex}`, NOT that custom-head.html does. A
+    future edit that drops `\textcolor` from custom-head.html would render badges colourless yet leave the
+    suite green (false-green). Surfaced by the id:c7d6 review 2026-07-11 (colour DID land correctly this
+    turn — verified live under both engines; this guards against future silent drift).
+  - **Do**: extend the existing l.128 drift-guard pattern to the badge family — for each badge macro, read
+    `_includes/custom-head.html`, extract its macro string, and assert it equals the `MJ_MACROS` mirror entry
+    (hex included). Mirror the same guard for `.vscode/settings.json`'s KaTeX macro block if it also carries
+    the colours.
+  - **Done-check**: a deliberately-mutated custom-head.html badge macro (drop one `\textcolor`) makes
+    `node tests/test_mathjax.cjs` FAIL; unmutated ⇒ full `bash tests/run.sh` exits 0. (Spec is red until the
+    guard exists: today dropping `\textcolor` in custom-head.html does NOT fail the suite.)
+  - **Context**: latent pre-existing mirror pattern (predates c7d6; c7d6 merely added colour to the mirror).
+
 ## Gated forward-flags — NOT yet executor work
 
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
