@@ -42,7 +42,7 @@ inside the `\veq{…}` — only the badge arg once its instrument is green. The 
 (`physics/entropy.md:59`, now `\leanc`) is OUT of scope — it belongs to the Lean bucket (id:37cc) and
 its marker-split is an owner content decision, not this item.
 
-- [ ] Build the entropy + FHE-Stirling SymPy instruments + sidecars [HARD — decision gate] @container — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
+- [ ] [INPUT — decision] Build the entropy + FHE-Stirling SymPy instruments + sidecars @container — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
   - **Why**: four owner-placed `\sympyc` (open-debt "desired SymPy, not yet verified") badges exist with
     no instrument behind them — `physics/entropy.md` `meanE` (l.22 mean-energy closed form),
     `be` (l.27 Bose–Einstein N→∞ limit), `fd` (l.35 Fermi–Dirac N=2), and `crypto/fhe.md` `stirling`
@@ -68,7 +68,7 @@ its marker-split is an owner content decision, not this item.
 
 ### Inline-render polish (owner directives 2026-06-18; laned 2026-07-02 apex/human batch, promoted same-id by the 2026-07-02 review)
 
-- [x] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) [HARD — pool] <!-- id:b7e5 -->
+- [x] [HARD] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) <!-- id:b7e5 -->
   - **AUTHOR HALF DONE 2026-07-04** (relay HARD child): three accessibility-checked palette options
     (`docs/palette-preview/README.md`) mapping the whole badge family + open-debt `\<tier>c` variants to
     colour, each with measured WCAG contrast on the minima light bg (`#fdfdfd`, all ≥4.75:1) and Machado-2009
@@ -97,7 +97,7 @@ its marker-split is an owner content decision, not this item.
     `git diff` shows NO change to `_includes/custom-head.html` / `.vscode/settings.json`.
   - **Context**: TODO id:b7e5; relates to R2/R3 (id:445e); REVIEW_ME id:e0b7 history.
 
-- [ ] Colour-code the verification-tier badges — RUN half (implement Option C) [ROUTINE] <!-- id:c7d6 -->
+- [ ] [ROUTINE] Colour-code the verification-tier badges — RUN half (implement Option C) <!-- id:c7d6 -->
   - **Owner pick 2026-07-11 (relay human)**: Option C — assurance-ramp + amber accent
     (grey→blue→green→deep-green ordinal over the CONVENTIONS.md §2 assurance ladder; `\numeric` an
     off-ramp amber counter-indicator). Best colour-blind separation (deut 50.4). RUN half of the
@@ -140,7 +140,7 @@ its marker-split is an owner content decision, not this item.
     (Re-laned from the auto-emitted `[HARD — strong model]` — not a recognized lane — by the 2026-07-02
     review; the blocking step is owner judgment, not model strength.)
 
-- [ ] Lean claims — queued individually [HARD — meeting] <!-- id:37cc -->
+- [ ] [INPUT — meeting] Lean claims — queued individually <!-- id:37cc -->
   - **Gate (decision-gate)**: NOT executor-ready. Each of the five `\leanc` claims — `ocount`
     (`Fintype.card_fun`), `bij24` (`Fintype.card_perm`), `semidestr`-count (`Nat.choose`),
     `semidestr`-identification (balanced⟺semi-destructive, owner modelling), `lambertw`-branch/domain —
