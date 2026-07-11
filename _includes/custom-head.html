@@ -38,19 +38,33 @@ window.MathJax = {
       veqs:    ['\\label{#1}(#2)', 2],
       // Verification-tier badge macros (LaTeX symbols — no raw emoji to avoid metric warnings).
       // Plain (un-$-wrapped) here; \veq wraps the badge in $...$ when it places it in the tag.
-      sorry:    '\\mathbf{?}',
-      sympy:    '\\circ',
-      numeric:  '\\triangle',
-      lean:     '\\checkmark',
-      sympylean: '\\checkmark\\!\\checkmark',
+      // Colour (ROADMAP id:c7d6, RUN half of the b7e5 author-then-run split; owner-picked
+      // Option C, REVIEW_ME 2026-07-11 — assurance-ramp + amber accent, see
+      // docs/palette-preview/README.md): colour is REINFORCEMENT only, the glyph stays the
+      // primary channel (WCAG 1.4.1). Hardcoded \textcolor per macro (not a CSS \htmlClass
+      // route) per the README's "trust may be unavailable" fallback — \textcolor needs no
+      // `trust` config in either engine. Hexes below OMIT the leading '#' (both engines accept
+      // a bare 6-digit hex) — KaTeX's macro-arity scanner misparses a leading "#1" as an
+      // argument placeholder and corrupts the render (see tests/test_mathjax.cjs for detail);
+      // never re-add the '#' to a macro string. `sympyleanc` inserts a SPACE between its two
+      // opening braces (`{ {\checkmark…`) — this file is rendered through Jekyll's Liquid
+      // engine before it ever reaches MathJax, and an un-spaced `{{` reads as a Liquid
+      // `{{ variable }}` tag, breaking the site build (test_render.sh catches this).
+      sorry:    '\\textcolor{6b7280}{\\mathbf{?}}',
+      sympy:    '\\textcolor{2563eb}{\\circ}',
+      numeric:  '\\textcolor{b45309}{\\triangle}',
+      lean:     '\\textcolor{15803d}{\\checkmark}',
+      sympylean: '\\textcolor{14532d}{\\checkmark\\!\\checkmark}',
       // Open-debt-naming-the-DESIRED-tier badges (id:feb8 RESOLVED — the `\tier*` orphan bug is
       // dodged by a letter-suffixed control word `\<tier>c`, c=claim/pending). The achieved tier
       // glyph carries a superscript `?` = "this verifier is intended but NOT yet run". On green,
       // swap `\sympyc` → `\sympy` and pin the attestation in the <stem>.toml sidecar.
-      sympyc:    '\\circ^{?}',
-      numericc:  '\\triangle^{?}',
-      leanc:     '\\checkmark^{?}',
-      sympyleanc: '{\\checkmark\\!\\checkmark}^{?}',
+      // Colour reuses the SAME hue as the discharged tier (Option C sub-decision 1) — only the
+      // superscript `?` glyph distinguishes open-debt from discharged (not a separate colour).
+      sympyc:    '\\textcolor{2563eb}{\\circ^{?}}',
+      numericc:  '\\textcolor{b45309}{\\triangle^{?}}',
+      leanc:     '\\textcolor{15803d}{\\checkmark^{?}}',
+      sympyleanc: '\\textcolor{14532d}{ {\\checkmark\\!\\checkmark}^{?}}',
       // Annotation-KIND macros (not verification tiers): PILOT of the open annotation family
       // (id:8ddc / .mw id:358f open-enum {@<kind>}). \definition = a defining equation (:=),
       // \assumption = a premise/given. Full kind taxonomy is a later /meeting; these two are

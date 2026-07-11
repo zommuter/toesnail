@@ -417,3 +417,30 @@ Documented the lean-toolchain provenance pointer in CLAUDE.md (id:318f) — clos
 ## 2026-07-10 19:16 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 toesnail review: id:318f lean-toolchain pointer verified green (spec unchanged, gaming-scan clean, suite PASS); no reopens, 0 open ROUTINE [id:318f]
+
+## 2026-07-11 — executor (sonnet, relay-loop)
+
+Worked id:c7d6 — implemented the RUN half of the badge-colour split (owner-picked Option C,
+REVIEW_ME 2026-07-11): added a hardcoded `\textcolor{<hex>}{...}` wrapper per verification-tier
+badge macro in both `_includes/custom-head.html` and `.vscode/settings.json` (grey `\sorry`,
+blue `\sympy`, amber `\numeric`, green `\lean`, deep-green `\sympylean`; the four `\<tier>c`
+open-debt variants reuse their discharged tier's hue). Chose the plain-\textcolor route over
+the CSS-\htmlClass route per the README's own "trust may be unavailable" fallback — no `trust`
+config needed in either engine. Extended `tests/test_mathjax.cjs` with a dedicated "badge
+colour" section asserting each tier's ratified hex actually appears in BOTH engines' rendered
+output (not just "renders without error"), synced the `MJ_MACROS`/`KX_MACROS` mirrors, and
+ticked TODO id:b7e5 (now that both author and run halves are done) alongside ROADMAP id:c7d6.
+Full `bash tests/run.sh` SUITE: PASS (real Lean build, real Jekyll build, real npm-installed
+mathjax-full/katex — no SKIPs this session).
+Friction: two real gotchas surfaced and are now commented in the source at point of use —
+(1) KaTeX's own macro-arity scanner misparses a literal hex starting `#1…` (e.g. `#15803d`,
+`#14532d`) as an argument placeholder ("#1"), corrupting the render with "Unexpected end of
+input in a macro argument"; fixed by dropping the leading `#` everywhere (both KaTeX and
+MathJax accept a bare 6-digit hex — confirmed empirically, not just per KaTeX's own docs).
+(2) `_includes/custom-head.html` is rendered through Jekyll's Liquid engine before it ever
+reaches MathJax, so the `\sympyleanc` macro's `{{\checkmark...` (two adjacent literal braces
+from wrapping an already-grouped TeX expression in `\textcolor{}{}`) was read as a Liquid
+`{{ variable }}` tag and broke the site build (`test_render.sh`, silently truncated out of an
+initial `tail -80` capture of the suite output — re-ran the full log to find it). Fixed with a
+single space between the two braces (harmless in both TeX engines). Re-walking
+`tests/HUMAN-integration.md` for the visual check is `[HUMAN]` — not done by this session.
