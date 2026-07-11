@@ -448,3 +448,7 @@ single space between the two braces (harmless in both TeX engines). Re-walking
 ## 2026-07-11 13:17 — executor (sonnet, relay-loop)
 
 Implemented ROADMAP id:c7d6 (badge-colour RUN half, Option C) — hardcoded \textcolor per verification-tier badge macro in both engines, extended test_mathjax.cjs with colour assertions, ticked TODO id:b7e5 + ROADMAP id:c7d6; full suite PASS (real Lean/Jekyll/npm, no SKIPs). [id:c7d6,b7e5]
+
+## 2026-07-11 13:42 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+Reviewed toesnail: id:c7d6 badge-colour RUN half verified genuinely green (live under both engines); filed id:0030 drift-guard [ROUTINE] + colour visual re-walk REVIEW_ME box [id:c7d6,0030]
