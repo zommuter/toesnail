@@ -129,6 +129,50 @@ if (/ltag:\s*\['\\\\tag\{#1\}\\\\label\{#1\}'/.test(read('_includes/custom-head.
   pass('custom-head.html carries the canonical \\ltag macro');
 else bad('custom-head.html \\ltag macro missing/changed (drift)');
 
+// Badge-macro drift guard (id:0030): the \ltag check above covers ONE macro. The badge
+// family (verification tiers + open-debt variants) has NO such guard — MJ_MACROS/KX_MACROS
+// above are a hand-maintained MIRROR of custom-head.html / .vscode/settings.json, and only
+// the mirror's own copy was ever asserted on (e.g. the "badge colour" block further down
+// renders MJ_MACROS/KX_MACROS, not the real config files). A future edit that drops
+// \textcolor from custom-head.html would leave badges colourless yet this suite green.
+// Extract each badge macro's raw definition from BOTH real config files and assert it is
+// byte-identical to this file's own mirror value (colour hex included).
+console.log('[test_mathjax] badge-macro drift guard (custom-head.html / settings.json vs mirror)');
+const BADGE_KEYS = ['sorry', 'sympy', 'numeric', 'lean', 'sympylean', 'sympyc', 'numericc', 'leanc', 'sympyleanc'];
+
+// Pull the raw quoted value that follows `keyRe` up to the next unescaped `quote` char, then
+// collapse doubled-backslash escaping (the config files write `\\textcolor` — two literal
+// backslash chars — so JS/JSON parses it down to one; do the same collapse here to compare
+// against MJ_MACROS/KX_MACROS, which already hold the collapsed runtime string).
+function extractQuoted(src, keyRe, quote) {
+  const m = keyRe.exec(src);
+  if (!m) return null;
+  let i = m.index + m[0].length;
+  while (src[i] !== quote) i++;
+  i++;
+  let out = '';
+  while (!(src[i] === quote && src[i - 1] !== '\\')) { out += src[i]; i++; }
+  return out.replace(/\\\\/g, '\\');
+}
+
+const headSrc = read('_includes/custom-head.html');
+const vscodeSrc = read('.vscode/settings.json');
+for (const key of BADGE_KEYS) {
+  // custom-head.html: bare-identifier key, single-quoted value, e.g. `sorry:    '...'`.
+  // The `(^|[^A-Za-z])` guard stops "leanc:" from false-matching inside "sympyleanc:".
+  const headVal = extractQuoted(headSrc, new RegExp('(^|[^A-Za-z])' + key + ':\\s*'), "'");
+  if (headVal === null) bad(`custom-head.html: \\${key} macro not found (drift)`);
+  else if (headVal === MJ_MACROS[key]) pass(`custom-head.html \\${key} matches mirror`);
+  else bad(`custom-head.html \\${key} drift: file has "${headVal}", mirror expects "${MJ_MACROS[key]}"`);
+
+  // .vscode/settings.json: quoted "\\key" key, double-quoted value.
+  const jsonVal = extractQuoted(vscodeSrc, new RegExp('"\\\\\\\\' + key + '"\\s*:\\s*'), '"');
+  const kxExpected = KX_MACROS['\\' + key];
+  if (jsonVal === null) bad(`.vscode/settings.json: \\${key} macro not found (drift)`);
+  else if (jsonVal === kxExpected) pass(`.vscode/settings.json \\${key} matches mirror`);
+  else bad(`.vscode/settings.json \\${key} drift: file has "${jsonVal}", mirror expects "${kxExpected}"`);
+}
+
 // ---- MathJax: render every display block + resolve \eqref in one document ----
 console.log('[test_mathjax] MathJax 3 render');
 const { mathjax } = require('mathjax-full/js/mathjax.js');

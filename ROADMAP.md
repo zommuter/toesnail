@@ -110,7 +110,7 @@ its marker-split is an owner content decision, not this item.
     Then re-walk `tests/HUMAN-integration.md`.
   - **Context**: TODO id:b7e5 (same directive, run half); REVIEW_ME palette-pick box (ticked 2026-07-11).
 
-- [ ] [ROUTINE] Badge-macro drift guard: assert `_includes/custom-head.html` matches `test_mathjax.cjs`'s mirror <!-- id:0030 -->
+- [x] [ROUTINE] Badge-macro drift guard: assert `_includes/custom-head.html` matches `test_mathjax.cjs`'s mirror <!-- id:0030 -->
   - **Why**: `test_mathjax.cjs` defines `MJ_MACROS`/`KX_MACROS` as a HARDCODED MIRROR of the badge macros
     in `_includes/custom-head.html` (line 34 "MJ_MACROS mirrors _includes/custom-head.html macros"). Only the
     `\ltag` macro has a drift guard (l.128 reads custom-head.html and asserts it). The badge family

@@ -452,3 +452,18 @@ Implemented ROADMAP id:c7d6 (badge-colour RUN half, Option C) — hardcoded \tex
 ## 2026-07-11 13:42 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 Reviewed toesnail: id:c7d6 badge-colour RUN half verified genuinely green (live under both engines); filed id:0030 drift-guard [ROUTINE] + colour visual re-walk REVIEW_ME box [id:c7d6,0030]
+
+## 2026-07-11 — executor (sonnet, relay-loop)
+
+Worked id:0030 — extended `tests/test_mathjax.cjs`'s source-guard block with a drift check for
+the whole badge-macro family (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` +
+`\<tier>c` open-debt variants): for each macro, extract its raw definition from BOTH
+`_includes/custom-head.html` (MathJax) and `.vscode/settings.json` (KaTeX) and assert it is
+byte-identical to this test's own `MJ_MACROS`/`KX_MACROS` mirror (colour hex included) — the
+existing `\ltag` guard only covered one macro. Verified the guard actually catches drift by
+temporarily dropping `\textcolor` from `leanc` in each config file in turn (both mutations
+made `node tests/test_mathjax.cjs` FAIL as required by the done-check) then restoring the
+originals; full `bash tests/run.sh` is green (real Lean/Jekyll/npm run, no SKIPs — symlinked
+`node_modules` from the main checkout since the worktree started without it). Ticked ROADMAP
+id:0030.
+Friction: none.
