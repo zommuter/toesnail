@@ -440,6 +440,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   Nat. Rev. Phys. **7**, 149 (2025) Expert Recommendation, in `private/`). Q13–Q15 from the same
   session are already ratified (note §5b); this box is the lone open Q16. Ticking = posted or
   deliberately discarded (note which).
+  — DECIDED 2026-07-13 (relay human): EXPERT-CHECK the two 'open' claims (net-cooling a running laser below ambient; the cited caveat) BEFORE posting. Do not post as-is; do not discard. This is a "you run these" human action.
 
 ## Visual / manual (run these — never auto-ticked)
 
