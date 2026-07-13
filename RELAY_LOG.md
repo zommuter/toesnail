@@ -475,3 +475,7 @@ Closed ROADMAP id:0030 — extended test_mathjax.cjs's drift guard to the whole 
 ## 2026-07-11 14:32 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 Reviewed toesnail: id:0030 badge-macro drift guard verified genuinely green (gaming-scan clean, guard fires on dropped \textcolor, full suite PASS no SKIPs); ticked TODO twin, surfaced id:9d8c unmarked-gate advisory [id:0030]
+
+## 2026-07-13 13:25 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: toesnail green (9 shell + Lean tiers pass, node math tiers skip-recorded); gaming-scan clean; doctor+lint clean; 0 open ROUTINE
