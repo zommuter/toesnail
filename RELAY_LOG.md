@@ -479,3 +479,26 @@ Reviewed toesnail: id:0030 badge-macro drift guard verified genuinely green (gam
 ## 2026-07-13 13:25 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: toesnail green (9 shell + Lean tiers pass, node math tiers skip-recorded); gaming-scan clean; doctor+lint clean; 0 open ROUTINE
+
+## 2026-07-16 13:20 — reviewer (claude-opus-4-8, relay-loop)
+
+review: toesnail — diff window relay-ckpt-20260713-1325..HEAD held exactly ONE substantive commit (c1d980d, a
+one-line inbox ingest of routed:b0c5 → TODO id:ff32); no executor code work to trust-but-verify, so no item was
+verified-green and none reopened. gaming-scan clean (0 DELETED_TEST/ADDED_SKIP/REMOVED_ASSERT); relay-doctor
+clean (0 issues); roadmap-lint + todo-conformance + cross-ledger all clean. ALL 12 declared tiers RAN GREEN, no
+skips: test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror, test_lean (lake
+build + no-sorry), test_page_coverage, test_crypto_exclude, test_conventions_ladder, test_toolchain_pointer,
+test_mathjax.cjs, test_veqs_inline.cjs. The last two had been SKIP-recorded by the previous two reviews for a
+missing node_modules — `npm ci` in the worktree un-skipped them (lock stayed clean, node_modules is gitignored)
+and both pass, closing the isochrone-class silent-tier gap (review.md §3) rather than re-recording the skip.
+Residual manual tier: tests/HUMAN-integration.md (irreducibly-visual MathJax checks) — human pass, unchanged.
+spec-drift: CLAUDE.md `## Relay contract` pointer refreshed v6 → v9 (canonical marker in
+dotclaude-skills/relay/references/executor-contract.md); pointer body already current, marker only. README +
+ARCHITECTURE describe what shipped — no drift (window shipped no user-facing surface).
+reverse-handoff §5b: id:ff32 (the one newly-added open item) qualified `[INPUT — meeting]`, NOT promoted to
+ROADMAP and NOT executor work — it is an owner-direction physics research question (T-matrix ↔ Gaussian-splat ↔
+WiRoHSH) with no observable done-state, and this repo's hard constraint reserves theory direction to the owner;
+reused its existing id, no duplicate minted.
+0 open [ROUTINE] after re-derivation (all 6 open ROADMAP items are gated/container/[INPUT]/[HARD — hands]).
+refactor: none needed — this unit wrote only ledger/doc lines (no code surface to clean up).
+[id:ff32]

@@ -123,7 +123,15 @@
   annotations survive content changing over time?" is the inflownistration/staleness problem (`.mw` `id:aae4`).
   Design before wiring; low priority.
 
-- [ ] [INBOUND routed:b0c5 from loderite] Investigate the T-matrix (EM-scattering) ↔ Gaussian-splat ↔ WiRoHSH (Wick-rotated hyper-spherical harmonics) relationship — can a precomputed per-geometry response basis (T-matrix analogy) represent Gaussian splats compactly via WiRoHSH? loderite may become a showcase if applicable <!-- id:ff32 -->
+- [ ] [INPUT — meeting] [INBOUND routed:b0c5 from loderite] Investigate the T-matrix (EM-scattering) ↔ Gaussian-splat ↔ WiRoHSH (Wick-rotated hyper-spherical harmonics) relationship — can a precomputed per-geometry response basis (T-matrix analogy) represent Gaussian splats compactly via WiRoHSH? loderite may become a showcase if applicable. <!-- id:ff32 -->
+  **NB 2026-07-16 (relay review, reverse-handoff §5b):** qualified `[INPUT — meeting]`; NOT executor work and
+  deliberately NOT promoted to ROADMAP. This is an open *physics-direction* research question — it names no
+  concrete change with an observable done-state, and this repo's hard constraint reserves theory direction to the
+  owner (`CLAUDE.md`: the AI never invents physics or decides narrative direction). Needs an owner scoping
+  `/meeting` to rule on whether the T-matrix↔splat↔WiRoHSH correspondence is real and what (if anything) toesnail
+  should author; only a tooling slice falling out of that ruling could later become `[ROUTINE]`. Existing surface:
+  `physics/wirohsh.md`.
+
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
   exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window
