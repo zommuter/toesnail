@@ -123,6 +123,7 @@
   annotations survive content changing over time?" is the inflownistration/staleness problem (`.mw` `id:aae4`).
   Design before wiring; low priority.
 
+- [ ] [INBOUND routed:b0c5 from loderite] Investigate the T-matrix (EM-scattering) ↔ Gaussian-splat ↔ WiRoHSH (Wick-rotated hyper-spherical harmonics) relationship — can a precomputed per-geometry response basis (T-matrix analogy) represent Gaussian splats compactly via WiRoHSH? loderite may become a showcase if applicable <!-- id:ff32 -->
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
   exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window
