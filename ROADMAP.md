@@ -130,6 +130,7 @@ its marker-split is an owner content decision, not this item.
 
 ## Gated forward-flags — NOT yet executor work
 
+- [ ] (GATED — verify-pilot umbrella) verify-pilot instrument bucket @container — DECOMPOSED, no ungated executor work of its own. Seams: id:e9e9 (entropy meanE/be/fd instruments — SHIPPED, `ROADMAP.archive.md`), id:76e5 (fhe_stirling — GATED on owner content fix, below), id:5d31 (lambertw algebra — GATED on owner marker placement, below), id:37cc (five `\leanc` counts — decision-gate `/meeting`, below). Pick those seams, not this. TODO twin `id:8807` is the design-ledger parent (`[ROUTINE]`-tagged there historically, before the owner reshaped it into these seams); this ROADMAP line is its twin so `unpromoted-scan.sh` no longer misreads the parent as fresh un-promoted backlog. Stays open until every seam closes. <!-- id:8807 -->
 - [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- id:9d8c -->
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
     (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
