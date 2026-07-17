@@ -132,6 +132,7 @@
   should author; only a tooling slice falling out of that ruling could later become `[ROUTINE]`. Existing surface:
   `physics/wirohsh.md`.
 
+- [ ] [INBOUND routed:59e7 from mathematical-writing] ESSAY CANDIDATE (owner-authored, flagged not auto-written — narrative is the owner's domain per the working contract; same terms as mathematical-writing id:aae4's gtnsd essay flag): adapt the "Bloch Truth" material into an essays/ piece. **BLOCKED on routed:c196** — the 2026-07-17 .mw meeting found no thesis statement exists in 412 session files, and an essay cannot be written on a non-thesis. Origin quote: knowledge/sessions/claude-ai/2025-08-05_breaking_project_paralysis_cbae6cd6.md:1334 — "the Bloch Truth (might need a better name) might be useful for the AI logic core in the second (ZFC?) layer where incompleteness applies (core layer should only be complete, e.g. ZF without C)". <!-- id:4bb2 -->
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
   exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window
