@@ -467,7 +467,7 @@ cited source (or leave a note under the item) and the next review re-derives. Re
   `.vscode/settings.json` matches the `test_mathjax.cjs` mirror (verified genuinely green + fires on a
   dropped `\textcolor`). Only the *visual* last mile above remains for the owner.
 
-- [ ] **Advisory (typed-edge nicety, id:46f6): ROADMAP id:9d8c carries gate vocabulary but no typed
+- [x] **Advisory (typed-edge nicety, id:46f6): ROADMAP id:9d8c carries gate vocabulary but no typed
   `gated-on:` marker.** `orphan-scan --shipped` flags it UNMARKED-GATE. `roadmap-lint` passes (gated
   items are lane-exempt), so this is non-blocking — add a typed `gated-on:` edge or confirm the gate
-  when the owner next touches the CI-Lean-build item. Surfaced 2026-07-11 review, not acted on.
+  when the owner next touches the CI-Lean-build item. Surfaced 2026-07-11 review, not acted on. — DONE 2026-07-19 (relay human): typed gated-on edge added to id:9d8c.
