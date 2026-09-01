@@ -95,3 +95,13 @@
   `tests/test_veqs_inline.cjs` authored (unwired-until-green; the KaTeX must-reference-`#1` caveat is
   now VERIFIED — a body without `#1` is a parse error).
 - [x] [INBOUND routed:89d0 from mathematical-writing] Add a one-line pointer in CLAUDE.md: `verify/lean-toolchain` is a CACHE of the vendored Mathlib rev (`.lake/packages/mathlib/lean-toolchain`), never a hand-edited fact; toesnail is the triad's rev-bump decider because it pays the 7 GB Mathlib build; mathematical-writing publishes the derived fleet value at its repo root. <!-- id:318f -->
+
+## 2026-09
+- [x] [HARD] **(render, owner 2026-06-18) COLOR-CODE the tier badges in general.** Give each verification tier a colour *(author-then-run: pool proposes 2-3 accessibility-checked palette options + preview render; owner ratifies the pick)* <!-- id:b7e5 -->
+  (e.g. `\sorry` red, `\sympy`/`\sympyc` amber, `\numeric` blue, `\lean` green, `\sympylean` deep-green) so the
+  rigor state is glanceable. Both engines: KaTeX `\htmlClass`/`\color`, MathJax `\color`/CSS class (mind KaTeX
+  metric warnings — prefer `\htmlClass` + CSS over raw `\color` where possible). Colour choices = owner. Extends
+  the badge family (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` + `\<tier>c` open-debt). Relates to R2/R3
+  (`id:445e`). Add `test_mathjax.cjs` coverage. **PROMOTED to ROADMAP 2026-07-02 review** (same id;
+  AUTHOR half only — palette options + previews → REVIEW_ME owner pick; the run half stays gated on the pick).
+- [x] [ROUTINE] **Badge-macro drift guard** — `test_mathjax.cjs` mirrors the badge macros from `_includes/custom-head.html` as a HARDCODED copy (`MJ_MACROS`/`KX_MACROS`), but only `\ltag` has a drift guard reading the real file. The id:c7d6 colour assertions verify the test's own copy carries each `\textcolor{hex}`, not that custom-head.html does — a future `\textcolor` drop in custom-head.html would render badges colourless yet keep the suite green. Extend the existing drift-guard pattern to the badge family. Surfaced by the c7d6 review 2026-07-11 (colour landed correctly this turn; this guards future silent drift). See ROADMAP id:0030. <!-- id:0030 -->
