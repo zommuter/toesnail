@@ -130,6 +130,30 @@
 - [ ] [INBOUND routed:4f85 from mathematical-writing id:de24] Re-derive verify/'s Lean pin from lodelore's already-built Mathlib instead of rebuilding — the lean-toolchain-pin-policy D2 escape has fired (it says the fleet follows in one bump once Mathlib reaches a stable Lean release; lodelore is on stable v4.32.2 while toesnail/verify, mathematical-writing and relay-core sit on the release-candidate v4.30.0-rc2). DO NOT hand-write a version string — D1 forbids authored pins; the value is a function of the vendored Mathlib rev. Procedure: cp --reflink=auto from ~/src/lodelore/lean/.lake (verified 2026-08-22: complete package set incl. mathlib/batteries/aesop/Qq/proofwidgets, 12 GB, and lodelore + toesnail + mw are all on the SAME btrfs device /dev/nvme0n1p2, so extents are genuinely shared — near-instant, ~zero disk), then read the toolchain out of the copied tree, exactly as mathematical-writing's tests/lean_fixture/setup-fixture.sh:85 already does. Mathlib oleans are a pure function of (toolchain, mathlib rev) so they are reusable across projects — NO Mathlib rebuild is needed. The only thing that genuinely compiles is toesnail's OWN verify/ proof layer against the newer Mathlib, and that is also the only place proofs can break, so this item carries the real risk of the fleet bump. Own-pace: land when convenient, but land on the DERIVED value, not a copied literal, or the fleet re-diverges. <!-- id:4b04 -->
 - [ ] [INBOUND routed:710d from mathematical-writing] SUPERSEDES routed:4f85 (its instruction to re-derive from lodelore's Mathlib is WITHDRAWN). Meeting 2026-08-22-1402 retired the bump-together cadence entirely (amends mathematical-writing docs/lean-toolchain-policy.md D2, whose justification 'toesnail pays the ~7 GB Mathlib build cost' no longer holds). You are NOT required to align to v4.32.2 and NOT required to re-derive from anyone. New disposition: toesnail bumps its Mathlib rev whenever it wants, independently; a new tool repo 'leancow' owns CoW reflinking and owns the derivation for treeless repos, so mathematical-writing no longer derives its fixture from toesnail's tree. Action for you: none urgent — adopt leancow's wrapper once it ships (it makes a second consumer on your rev cost ~0 extra disk instead of ~11 GB). Note the index keys on the Mathlib rev from lake-manifest.json, NOT the toolchain string. <!-- id:2479 -->
 - [ ] **[OWNER] Triage the dreamed exploration batch** (`docs/dreamed/`, 32 essays + 33 Lean files + 1 runnable library, 2026-09-01) <!-- id:2460 -->
+  AI-generated, owner-seeded, UNREVIEWED. Index with per-essay headline claims:
+  `docs/dreamed/README.md`. Every Lean file re-verified by the coordinator (exit 0, zero `sorry`,
+  461 theorems); `bash tests/run.sh` still PASSes; the tree sits outside the lake targets so
+  `make test` is unaffected. **FILED 2026-09-01 on the owner's instruction** -- the findings now
+  live in their proper ledgers, listed below, and this line is the index rather than the content.
+  **No recommendation was ratified**; a delegated agent's verdict is never self-settling.
+  - **Owner decisions** -> `REVIEW_ME.md` (id:8e64): ten located findings in owner content
+    (`wirohsh.md:82` smooth-vs-analytic; `toesnail.md:79`/`:89` ordering clash; `toesnail.md:105`
+    real-vs-complex Cauchy-Schwarz; `toesnail.md:59` `t1` probabilities-as-amplitudes;
+    `entropy.md:59` lambertw branch id:8777; `Resogram.md:118` ebar sign id:93f5; `acoustics.md`
+    unstated adiabatic assumption; `Narrativium.md` Ian Stewart; `wirohsh.md` seven notation snags;
+    `photon.md` ansatz + covariance id:25a0), plus ten recommendations awaiting ratification
+    (id:ff32 NO-GO on five grounds now, Q2/Q6/Q7/Q8/Q9/Q10/Q11/Q12, the five-level laser NO-GO,
+    closing collAIb's assist role, and the Wien-4 candidate result).
+  - **Tooling** -> `ROADMAP.md`: id:ac7b (the verify hook runs a constant probe and never reads the
+    commit diff; 164 notes, all pending, one findings string), id:17ee (`se-corpus.md` rows M-1 and
+    P-C misattributed), id:3381 (`dependencies.md` missing the dotclaude-skills node).
+  - **Cross-repo** -> shared inbox: routed:e7cc (helferli/zelegator have NO shared contract artifact
+    while id:29e3 is due at the 2026-09-10 demo gate -- time-critical), routed:c9c1 (zelegator's
+    eval set is saturated and cannot score a distilled student), routed:c050 (loderite
+    ARCHITECTURE.md:76 greedy-meshing claim is void), routed:537e (a .mw DAG catches propagation
+    but not origination; differential testing recommended for fidelity).
+  Deciding what (if anything) to promote from `docs/dreamed/` into `physics/` or `essays/` remains
+  owner-only theory direction. Nothing there was promoted, and no physics file was edited.
   AI-generated, owner-seeded, UNREVIEWED. Nothing was filed into any ledger by design --
   a delegated agent's verdict is a recommendation, never self-settling -- so this item exists
   only so the batch is not invisible. **No verdict below is ratified.** Index with per-essay
