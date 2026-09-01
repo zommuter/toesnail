@@ -1,0 +1,138 @@
+== 1. VALIDATION against the owner's closed forms ==
+sample rate 22050 Hz
+
+(a) steady state on resonance: |x| must equal Q, e must equal (Q*omega)^2/2
+     f[Hz]     Q   rel err |x|   rel err e   energy ripple
+       110   5.0    2.66e-07    4.53e-07    6.54e-05
+       440  20.0    3.03e-07    1.33e-06    2.62e-04
+      1760  80.0    2.89e-06    2.68e-07    1.06e-03
+      4000  20.0    7.03e-05    4.81e-05    2.34e-02
+
+(b) impulse response vs the owner's `sol` kernel
+    K(t) = (omega^2/Omega) sin(Omega t) exp(-beta t)
+     f[Hz]     Q   max rel dev
+       110  20.0    1.35e-12
+       440  20.0    4.31e-10
+      1760  20.0    1.18e-07
+      4000  20.0    4.30e-06
+
+(c) free ring-down decay rate fitted from log(ebar); target 2*beta
+     f[Hz]     Q   fitted     2*beta     rel err
+       440   5.0    552.9246   552.9203    7.69e-06
+       440  20.0    138.2301   138.2301    1.65e-08
+       440  60.0     46.0767    46.0767    1.00e-08
+
+(d) ebar kernel sign, on the free ring-down of the owner's `esol`
+    residual ripple of ebar(t)*exp(+2*beta*t), which should be CONSTANT
+     Q    sign=-1      sign=+1 (as printed)   ratio
+    8.0   5.347e-04    1.568e-02             29.3x
+   20.0   1.307e-04    2.527e-03             19.3x
+   60.0   3.886e-05    2.833e-04              7.3x
+
+== 2. WHAT TRANSFORM IS THIS? ==
+
+Exact algebra (verified numerically below): define the COMPLEX state
+    z(t) = x(t) + i*x_t(t)/omega,   so   e(t) = (omega^2/2)*|z(t)|^2.
+Both channels are linear filters of y, so z = h_c * y exactly, with
+    h_c(t) = h_x(t) + (i/omega) h_x'(t)
+           = (omega^2/Omega) e^{-beta t} [ c_- e^{-i Omega t} + c_+ e^{+i Omega t} ],
+    c_- = (i/2)(1 + e^{i gamma}),  c_+ = (-i/2)(1 - e^{i gamma}),
+    gamma = atan2(beta, Omega)  (note Omega + i*beta = omega e^{i gamma}).
+So the resogram is EXACTLY |CWT|^2 for a causal complex kernel that is a
+damped complex exponential plus a counter-rotating leak of relative
+amplitude |c_+/c_-| = tan(gamma/2) ~ 1/(4Q).
+
+     Q     tan(gamma/2)   1/(4Q)    measured |c+/c-|   |e - (om^2/2)|h_c*y|^2| rel
+     5.0      0.05013   0.05000          0.05013       4.89e-16
+    20.0      0.01250   0.01250          0.01250       4.56e-16
+    80.0      0.00313   0.00313          0.00313       4.82e-16
+
+Admissibility (zero mean) is what a wavelet needs and this kernel lacks:
+  H_x(0) = 1 while the peak gain is Q, so the DC leak sits at -20log10(Q) dB.
+     Q     DC gain   peak gain   DC leak [dB]   measured [dB]
+     5.0    0.9987       5.000         -13.98          -13.99
+    20.0    0.9987      20.000         -26.02          -26.03
+    80.0    0.9987      80.000         -38.06          -38.07
+
+Kernel identity check against the order-1 gammatone
+  gammatone_n(t) = t^{n-1} e^{-2 pi b t} cos(2 pi f_c t + phi) u(t)
+  with n=1, 2 pi b = beta, 2 pi f_c = Omega, phi = -pi/2 this IS h_x/(omega^2/Omega).
+  max rel deviation h_x vs order-1 gammatone: 4.31e-10
+
+== 3. MEASURED COMPARISON: resogram vs Morlet CWT vs STFT ==
+Q = 20.0 for the resogram and the Morlet (matched by -3 dB power bandwidth);
+the Hann window is sized to give the same Q at 440 Hz, since a fixed window
+cannot be constant-Q at more than one frequency.
+Hann N = 1442 samples = 65.4 ms
+Morlet w0 = 2*sqrt(ln2)*Q = 33.302
+
+bank: 139 resonators, 110 Hz to 5920 Hz, 24 per octave
+
+(a) measured -3 dB POWER bandwidth of each analysis filter at 880 Hz
+  resonator   :    44.03 Hz  (centre  879.50, Q =  19.98)
+  Morlet      :    44.00 Hz  (centre  880.00, Q =  20.00)
+  Hann N=1442 :    22.03 Hz  (constant in Hz, Q =  39.95 at 880 Hz)
+
+(b) unit click at t = 0.25 s: -10 dB width and pre-echo, read at 880 Hz
+  method        -10 dB width [ms]   pre-echo [dB rel peak]
+  resogram                10.16      -inf (exactly zero)
+  Morlet CWT              20.32                     -1.3
+  STFT                    42.09                     -0.2
+
+(c) two equal tones one semitone apart, 1 s.
+    The frequency AXIS is refined so the dip is actually sampled:
+    192 bins/octave for the constant-Q banks, 8x zero-padded STFT.
+    Each slice is the TIME MEAN over the middle 60 % of frames. That
+    matters: a filterbank driven by two close tones BEATS at |f1-f2|,
+    so a single instantaneous slice of e(t) can show no dip at all
+    (measured: dip 0.00 dB at the beat maximum). Frequency resolution
+    is a statement about the mean, not about one instant.
+  440.00 vs 466.16 Hz (semitone, 5.95 %), Q=20, Hann N=1442:
+    resogram     resolved: False  dip   -1.12 dB
+    Morlet CWT   resolved: False  dip   -1.09 dB
+    STFT         resolved: False  dip   -1.31 dB
+  440.00 vs 466.16 Hz (semitone, 5.95 %), Q=40, Hann N=2884:
+    resogram     resolved: True   dip   -4.94 dB
+    Morlet CWT   resolved: True   dip  -12.85 dB
+    STFT         resolved: True   dip  -19.33 dB
+  440.00 vs 466.16 Hz (semitone, 5.95 %), Q=80, Hann N=5766:
+    resogram     resolved: True   dip  -10.07 dB
+    Morlet CWT   resolved: True   dip  -59.07 dB
+    STFT         resolved: True   dip  -50.07 dB
+  440.00 vs 452.89 Hz (quartertone, 2.93 %), Q=80, Hann N=5766:
+    resogram     resolved: True   dip   -4.77 dB
+    Morlet CWT   resolved: True   dip  -12.08 dB
+    STFT         resolved: True   dip  -18.32 dB
+  (Rayleigh-style: a dip of at least 3 dB below the weaker peak counts as resolved)
+
+(c2) the resogram's intrinsic +6 dB/octave tilt
+     e = (Q*A*omega)^2/2 on resonance, so equal-amplitude tones an octave
+     apart do NOT give equal display values: the higher one is 4x louder.
+     measured e(880)/e(440) = 4.013  (predicted 4.000,
+     i.e. +6.02 dB); a spectrogram of the same signal gives 1.000.
+
+(d) linear chirp 200 -> 4000 Hz over 1.0 s: ridge tracking error
+  resogram     median |ridge - true|/true =  1.022 %   median bias -0.975 %
+  Morlet CWT   median |ridge - true|/true =  0.685 %   median bias +0.028 %
+  STFT         median |ridge - true|/true =  0.164 %   median bias +0.005 %
+  (a causal filterbank must LAG a rising chirp; a symmetric kernel should not)
+
+(e) cost on the 1.0 s chirp, same output grid (hop 128), single core
+  resogram         28.4 ms   ( 0.028 x realtime)
+  Morlet CWT      112.1 ms   ( 0.112 x realtime)
+  STFT              2.0 ms   ( 0.002 x realtime)
+  process peak RSS at this point: 180.0 MB
+
+wrote out/click.png, out/chirp.png, out/kernels.png, out/ebar.png
+
+== 4. AUDIO I/O, actually exercised on this machine ==
+soundfile 0.14.0 / libsndfile 1.2.2; MP3 in formats: True
+ffmpeg: /usr/bin/ffmpeg
+
+WAV  : wrote and read back 22050 samples at 22050 Hz, rms 0.3162
+MP3  : ffmpeg encoded 21986 bytes; decoded 22050 samples at 22050 Hz, rms 0.3004
+       decoded MP3 peak bin at 440.0 Hz (expected 440.0); bin 440 is 0.00 dB below peak
+       => MP3 decoding VERIFIED on this machine (soundfile/libsndfile 1.2.2).
+       resogram of the decoded MP3 peaks at 1318.5 Hz mid-file
+
+peak RSS for the whole demo: 195.2 MB
