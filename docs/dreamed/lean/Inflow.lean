@@ -13,15 +13,15 @@
 
   What is proved here:
 
-    1. `log_sum_ineq` — the log-sum inequality on a `Finset`, from
+    1. `log_sum_ineq` -- the log-sum inequality on a `Finset`, from
        `Real.log_le_sub_one_of_pos`. Everything else is a corollary.
-    2. `gibbs_nonneg'` — relative entropy is non-negative. Statement pattern taken from
+    2. `gibbs_nonneg'` -- relative entropy is non-negative. Statement pattern taken from
        the sibling file `docs/dreamed/lean/InfoWing.lean` (`gibbs_nonneg`), which proved
        it independently for the entropy wing; it is re-derived here as the normalised
        case of (1) rather than re-proved from scratch, because this file needs the
        *unnormalised* version and the normalised one falls out.
-    3. `MI_nonneg` — mutual information of a finite joint distribution is `≥ 0`.
-    4. `dpi_coarse` — **the data-processing inequality for deterministic coarse-graining**:
+    3. `MI_nonneg` -- mutual information of a finite joint distribution is `≥ 0`.
+    4. `dpi_coarse` -- **the data-processing inequality for deterministic coarse-graining**:
        for any `f : Y → Z`, `MI (push p f) ≤ MI p`. Re-describing a description through
        any function of it cannot increase what it says about the referent.
        `dpi_coarse_twice` iterates it.
@@ -32,7 +32,7 @@
        dreamed file earns. The deterministic case is the one the essay's staleness
        argument uses, since an edit, a summary, a cached verdict and a re-transcription
        are all functions of what they were taken from.
-    5. `mi_decay`, `steps_to_epsilon`, `halfLife`, `rpow_halfLife` — the quantitative
+    5. `mi_decay`, `steps_to_epsilon`, `halfLife`, `rpow_halfLife` -- the quantitative
        half: if each step preserves at most a fraction `q < 1`, then after `n` steps at
        most `q ^ n` survives, and the number of steps to fall below `ε` is
        `log (ε / I₀) / log q`. This is what turns "descriptions rot" into a number.

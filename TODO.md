@@ -129,7 +129,38 @@
 - [ ] [INBOUND routed:5f53 from project_manager /meeting 2026-08-20] Record near TODO.md:123 that the `gtnsd-archive` orphan branch is MIRRORED into `~/src/inflownistration` (whole-branch history import, 21 commits, root c9147ce 2017-12-28, tip 353972e) and that **toesnail's copy stays the CANONICAL PUBLIC record** — this repo has a public GitHub remote, the new one is fievel-only, so pruning gtnsd-archive here on the grounds that 'it lives in inflownistration now' would delete the only public record of the 2017 coinage. No new privacy exposure either way (the content is already public); this is purely a do-not-prune guard. <!-- id:7f2f -->
 - [ ] [INBOUND routed:4f85 from mathematical-writing id:de24] Re-derive verify/'s Lean pin from lodelore's already-built Mathlib instead of rebuilding — the lean-toolchain-pin-policy D2 escape has fired (it says the fleet follows in one bump once Mathlib reaches a stable Lean release; lodelore is on stable v4.32.2 while toesnail/verify, mathematical-writing and relay-core sit on the release-candidate v4.30.0-rc2). DO NOT hand-write a version string — D1 forbids authored pins; the value is a function of the vendored Mathlib rev. Procedure: cp --reflink=auto from ~/src/lodelore/lean/.lake (verified 2026-08-22: complete package set incl. mathlib/batteries/aesop/Qq/proofwidgets, 12 GB, and lodelore + toesnail + mw are all on the SAME btrfs device /dev/nvme0n1p2, so extents are genuinely shared — near-instant, ~zero disk), then read the toolchain out of the copied tree, exactly as mathematical-writing's tests/lean_fixture/setup-fixture.sh:85 already does. Mathlib oleans are a pure function of (toolchain, mathlib rev) so they are reusable across projects — NO Mathlib rebuild is needed. The only thing that genuinely compiles is toesnail's OWN verify/ proof layer against the newer Mathlib, and that is also the only place proofs can break, so this item carries the real risk of the fleet bump. Own-pace: land when convenient, but land on the DERIVED value, not a copied literal, or the fleet re-diverges. <!-- id:4b04 -->
 - [ ] [INBOUND routed:710d from mathematical-writing] SUPERSEDES routed:4f85 (its instruction to re-derive from lodelore's Mathlib is WITHDRAWN). Meeting 2026-08-22-1402 retired the bump-together cadence entirely (amends mathematical-writing docs/lean-toolchain-policy.md D2, whose justification 'toesnail pays the ~7 GB Mathlib build cost' no longer holds). You are NOT required to align to v4.32.2 and NOT required to re-derive from anyone. New disposition: toesnail bumps its Mathlib rev whenever it wants, independently; a new tool repo 'leancow' owns CoW reflinking and owns the derivation for treeless repos, so mathematical-writing no longer derives its fixture from toesnail's tree. Action for you: none urgent — adopt leancow's wrapper once it ships (it makes a second consumer on your rev cost ~0 extra disk instead of ~11 GB). Note the index keys on the Mathlib rev from lake-manifest.json, NOT the toolchain string. <!-- id:2479 -->
-- [ ] **[OWNER] Triage the dreamed exploration batch** (`docs/dreamed/`, 6 essays + 6 Lean files, 2026-09-01) <!-- id:2460 -->
+- [ ] **[OWNER] Triage the dreamed exploration batch** (`docs/dreamed/`, 32 essays + 33 Lean files + 1 runnable library, 2026-09-01) <!-- id:2460 -->
+  AI-generated, owner-seeded, UNREVIEWED. Nothing was filed into any ledger by design --
+  a delegated agent's verdict is a recommendation, never self-settling -- so this item exists
+  only so the batch is not invisible. **No verdict below is ratified.** Index with per-essay
+  headline claims: `docs/dreamed/README.md`. Every Lean file re-verified by the coordinator
+  (exit 0, zero `sorry`); `bash tests/run.sh` still PASSes; the tree is outside the lake
+  targets so `make test` is unaffected.
+  **Located findings in OWNER content, awaiting his ruling:** (a) `physics/wirohsh.md:82`
+  "in smooth regions those are perfectly sufficient" is false -- the line is analytic vs
+  non-analytic; (b) `physics/toesnail.md:79` vs `:89` (complex numbers declared unorderable,
+  then `<Psi|Psi> > 0` written for one); (c) `physics/toesnail.md:105` Cauchy-Schwarz equality
+  case is the real-space one, over C it is the unit circle; (d) `physics/toesnail.md:59` `t1`
+  uses probabilities as coefficients, so it can arise from a unitary only if p is 0 or 1;
+  (e) `physics/entropy.md:59` lambertw needs the `W_{-1}` branch (relates `id:37cc`/`id:5d31`);
+  (f) `physics/Resogram.md:118` prints `e^{+2*beta*t'}` where the opposite sign cancels every
+  ripple term (a reading exists on which the printed form is right -- his call);
+  (g) `physics/acoustics.md` never states its adiabatic assumption and never derives the wave
+  equation; its permalink is spelled `Accoustics`; (h) `essays/Narrativium.md:18,22` spell Ian
+  Stewart as "I. Steward"; (i) four notation snags in `physics/wirohsh.md` (L58, L88, L97, L154).
+  **Located findings in TOOLING/ledgers:** (j) `hooks/post-commit` runs a CONSTANT probe and
+  never reads the commit diff -- 164 notes on `refs/notes/verify`, all `status:pending`, 0
+  triaged, 0 processed, one distinct findings string; (k) `docs/se-corpus.md` row M-1 mislabels
+  its posts (337971 is the curl-generalization question, not the self-answered dilation) and row
+  P-C is wrong about q/27195's mechanism (variational, not an eigenvalue equation);
+  (l) `docs/dependencies.md` has no `dotclaude-skills` node.
+  **Recommendations awaiting ratification:** NO-GO on `id:ff32` (five independent breaks now);
+  Q2 hybrid C1; Q9 ratify-with-membership-corrected; Q10 theme ranking; Q11 adopt-with-three-
+  amendments; Q12 a one-line epistemic aside; Q6 extend the existing kinds; the five-level laser
+  NO-GO at theorem strength; and closing collAIb's "live verify: assist UI" edge as not-taken.
+  **Cross-repo, time-critical:** no shared zelegator/helferli contract artifact exists while
+  `helferli id:29e3` is due at the 2026-09-10 demo gate (see `docs/dreamed/zelegator-helferli.md`).
+  Deciding what (if anything) to promote is owner-only theory direction.
   AI-generated, owner-seeded, UNREVIEWED. Nothing from it was filed into any ledger by design --
   a delegated agent's verdict is a recommendation, never self-settling -- so this item exists only
   so the batch is not invisible. **No verdict below is ratified.** Awaiting the owner's ruling:
