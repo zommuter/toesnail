@@ -30,7 +30,7 @@
   `docs/dreamed/fhe-search/fhe_search.py` (experiments A and A').
 
   Check with:
-    cd verify && nice -n19 lake env lean --threads=2 ../docs/dreamed/lean/FHEToy.lean
+    cd verify && ../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/FHEToy.lean
 -/
 
 import Mathlib.Algebra.Group.Equiv.Basic

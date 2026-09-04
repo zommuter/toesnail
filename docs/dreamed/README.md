@@ -25,9 +25,12 @@ and nothing here has any authority.
 - Runnable code lives in `docs/dreamed/<topic>/` (`resogram-lib/`, `fhe-search/`). It is
   dreamed too: unreviewed, not wired into `tests/`, and not part of `make test`. Where a
   search could be expensive it runs under a resource-capped wrapper.
-- Lean files live in `docs/dreamed/lean/`. They are checked with
-  `nice -n19 lake env lean docs/dreamed/lean/<file>.lean` run from `verify/`, so they
-  are **not** part of the `verify` lake target and cannot break `make test`.
+- Lean files live in `docs/dreamed/lean/`. They are checked from `verify/` with
+  `../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/<file>.lean`,
+  so they are **not** part of the `verify` lake target and cannot break `make test`.
+  `capped.sh` puts the run in a systemd user scope with a hard cgroup memory limit and
+  no swap: a breach OOM-kills that scope alone. Do NOT substitute `ulimit -v` for Lean --
+  it caps address space, and Mathlib mmaps its `.olean` files.
 
 ## Provenance
 
@@ -42,22 +45,25 @@ than by delegated agents, with prior-art research at the owner's explicit instru
 
 ## Index
 
-36 essays, 36 Lean files, one runnable library, one runnable search suite. Every Lean
+37 essays, 37 Lean files, one runnable library, one runnable search suite. Every Lean
 file was re-verified, not merely reported: `exit 0`, zero `sorry`. Every "finding" below
 is an AI **recommendation** awaiting the owner's ruling, never a settled decision.
 
 ### FHE cluster (`crypto/fhe.md`) -- session of 2026-09-04
 
-Companion code: [`fhe-search/`](fhe-search/) -- three stdlib Python scripts run under
-[`fhe-search/run.sh`](fhe-search/run.sh), which caps address space at 2 GiB, caps CPU
-time, and runs at `nice -n19`. Every search is exhaustive over its stated space; the two
+Companion code: [`fhe-search/`](fhe-search/) -- four stdlib Python scripts run under
+[`fhe-search/run.sh`](fhe-search/run.sh) and [`capped.sh`](capped.sh), which impose a HARD cgroup
+memory cap (`MemoryMax`, no swap) plus a CPU quota, so a runaway search is OOM-killed inside its
+own scope and cannot take the machine down. `nice` alone does not do this and `ulimit -v` is wrong
+for Lean (Mathlib mmaps its oleans). Every search is exhaustive over its stated space; the
 Monte-Carlo experiments are seeded and labelled as such.
 
 | Essay | Headline claim (UNRATIFIED) |
 |---|---|
 | [`fhe-toy-enumeration`](fhe-toy-enumeration.md) | A toy two-operation FHE exists trivially, and is trivially broken. Exhaustively: a strict scheme keeps only $\log_2 k$ key bits on a $k$-bit word (Frobenius) against the OTP's $k$; key entropy and functional completeness are **exactly** incompatible; randomising bought **zero** key ambiguity (mean 1.000). Confirms Boneh-Lipton 1996 rather than discovering it. |
 | [`fhe-encrypted-algorithm`](fhe-encrypted-algorithm.md) | "Encrypted algorithm" names **three** problems with three answers, separated by who holds the key: private function evaluation (solved, $O(k\log k)$), obfuscation (VBB **impossible**), circuit privacy (a cost). The $2^n$ program-bit floor of `crypto/fhe.md:8` is a **lower bound over all encodings** and is attained. Obliviousness, not cryptography, is the structural tax. |
-| [`fhe-llm`](fhe-llm.md) | Nothing about FHE-LLM is proven impossible; the gap is $10^3$-$10^4$ and is engineering. **The client should own the whole vocabulary boundary** -- saves >1 layer, $31\times$ bandwidth, deletes the vocabulary softmax exactly, and removes the tokenizer side-channel class. OTRO/TDXRay is an argument **for** FHE over TEEs, not against. "Trustless" is confidentiality **and** integrity, and only integrity proofs can be sampled. |
+| [`fhe-llm`](fhe-llm.md) | State of the art, concretely: **BERT-base under non-interactive FHE in ~1 s on GPU** (NEXUS), but **~5 min/token for LLaMA-7B and only via MPC**. The gap is autoregression, not encryption. **The client should own the whole vocabulary boundary** -- saves >1 layer, $31\times$ bandwidth, deletes the vocabulary softmax exactly, removes the tokenizer side-channel class. OTRO/TDXRay is an argument **for** FHE over TEEs, not against. |
+| [`trustless-distributed-ai`](trustless-distributed-ai.md) | Owner's MP3-vs-bit-exact-codec analogy is the same problem, not an analogy: autoregressive decoding **is** predictive coding, so drift compounds (1e-3 per-token divergence reproduces a 4096-token answer 1.7% of the time), and codecs already fixed it by mandating integer transforms. Integer-only transformers exist (I-BERT, INT8 end-to-end, 3.1-3.6$\times$ faster). **Convergence claim:** an integer-only model is both bit-exactly verifiable AND natively evaluable by the *exact* FHE schemes (BFV/BGV) rather than approximate CKKS -- one substrate, both halves of trustlessness. |
 
 ### WiRoHSH cluster (`physics/wirohsh.md`)
 

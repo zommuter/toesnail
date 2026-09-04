@@ -150,22 +150,47 @@ construction whenever the accuracy target is inherited from a non-ML setting.
 
 Every row is somebody else's measurement, not this document's.
 
-| system | s / token | slowdown vs ~10 ms plaintext | regime |
-|---|---:|---:|---|
-| Zama Concrete-ML, GPT-2 (124M), GPU | 11 | 1100$\times$ | FHE |
-| Zama Concrete-ML, GPT-2 (124M), CPU | 300 | 30000$\times$ | FHE |
-| PUMA, LLaMA-7B | 300 | 30000$\times$ | 2-party MPC |
-| BumbleBee, LLaMA-7B | 480 | 48000$\times$ | 2-party MPC |
+The single most important line to draw is **encoder against generative**, because the field's
+headline numbers come from opposite sides of it and are routinely quoted as if comparable.
+
+**Encoder inference under FHE is essentially solved.**
+
+| system | model | what | result |
+|---|---|---|---|
+| **NEXUS** (NDSS 2025) | BERT-base | one forward pass, **non-interactive** FHE (RNS-CKKS) | **37.3 s**, **164 MB**; 372.5$\times$ less bandwidth than BOLT, 53.6$\times$ than BumbleBee. GPU: **42.3$\times$ faster**, so **under a second** |
+| **ARION** (2025) | BERT-base / BERT-Tiny | same setting | a further **2.5$\times$** / **34.6$\times$** |
+
+**Generative inference is not**, and the gap is autoregression, not encryption.
+
+| system | model | s / token | regime |
+|---|---|---:|---|
+| Zama Concrete-ML, GPU | GPT-2 (124M) | 11 | FHE |
+| Zama Concrete-ML, CPU | GPT-2 (124M) | 300 | FHE |
+| PUMA (2023) | **LLaMA-7B** | ~300 (5 min) | 2-party MPC, **not** FHE |
+| BumbleBee (NDSS 2025) | LLaMA-7B | ~480 (8 min) | 2-party MPC |
 
 Bandwidth, Zama GPT-2: **2.2 MB per token** against roughly 2 bytes of plaintext token.
 
-Two readings, and the second matters more. The MPC rows are for a **7B** model and the FHE rows
-for a **124M** one, so the table *understates* the gap between the regimes; MPC is far ahead, and
-it is ahead precisely because it lets the client evaluate the nonlinearities in the clear on
-secret-shared data instead of paying for them under encryption. And: a naive
-one-bootstrap-per-nonlinearity accounting gives **hours** per token, so the fact that measured
-systems land in seconds is entirely the achievement of SIMD packing and low-degree approximation.
-The levers of sections 2 and 3 are of the same kind.
+So the honest one-sentence state of the art: **one BERT-base forward pass in about a second under
+non-interactive FHE on a GPU; one token of a 7B generative model in about five minutes, and only
+via MPC.** Pure-FHE generative inference tops out around GPT-2 scale. The distance between those
+two facts is the whole problem, and it is structural: a BERT pass is one forward evaluation whose
+sequence dimension packs beautifully into SIMD slots, while generation is $n$ sequential passes
+with a growing KV cache, each conditioned on the last, so nothing amortises across steps.
+
+A 2026 survey (Andreoletti et al., SUPSI/Prem AI, eprint 2026/105) reaches the same verdict from a
+deployment angle and states the trajectory plainly: TEEs today as the only route at production
+latency, crypto-augmented designs in the middle, and FHE as "the natural asymptotic endpoint",
+with current constraints that "preclude its widespread deployment for large autoregressive
+models". It also confirms the PUMA figure as "roughly five minutes per token, representing the
+first MPC demonstration at that scale".
+
+Two further readings. The MPC rows are a **7B** model and the FHE generative rows a **124M** one,
+so the table *understates* the gap between regimes; MPC leads precisely because it lets the client
+evaluate nonlinearities in the clear on secret-shared data. And a naive
+one-bootstrap-per-nonlinearity accounting gives **hours** per token, so measured systems landing
+in seconds is entirely the achievement of SIMD packing and low-degree approximation. The levers of
+sections 2 and 3 are of the same kind.
 
 **A caution about the literature, which the owner raised and which turned out to be warranted.** A
 2026 arXiv paper reports FHE Llama-3 inference at 237 ms and 80 tokens per second, which would
@@ -276,11 +301,13 @@ Located, evidenced, not resolved. Nothing filed into any ledger.
    [`fhe-toy-enumeration`](fhe-toy-enumeration.md) section 4 (the quotient model), not this essay.
    Recorded as an option, explicitly not a recommendation.
 
-2. **The next-session seed is already half-answered here.** The owner named "zero knowledge /
-   trustless distributed AI" as the follow-on. Route R5 above is that subject and section 0's
-   confidentiality/integrity table is its natural frame; R4 is its other half. Noted so the next
-   session starts from these rather than re-deriving them -- **not** filed anywhere, and not a
-   claim on what that session should cover.
+2. **Routes R4 and R5 are taken further in a sibling essay.** The owner named "zero knowledge /
+   trustless distributed AI" as a follow-on and then, mid-session, asked for it directly;
+   [`trustless-distributed-ai`](trustless-distributed-ai.md) is that work. It argues that
+   integrity and confidentiality want the *same* substrate (an integer-only quantised model),
+   which if right partly supersedes this essay's lever set B -- an integer model needs no CKKS
+   noise-budget tuning because BFV/BGV are exact. Flagged so the two are read together rather
+   than as independent recommendations.
 
 3. **No discrepancy found in owner content.** This essay has no owner-authored source; it
    critiques nothing of his.
@@ -288,7 +315,7 @@ Located, evidenced, not resolved. Nothing filed into any ledger.
 ## 9. Lean attestation
 
 **File** [`docs/dreamed/lean/FHESoftmax.lean`](lean/FHESoftmax.lean). **Command**
-`cd verify && nice -n19 lake env lean --threads=2 ../docs/dreamed/lean/FHESoftmax.lean`.
+`cd verify && ../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/FHESoftmax.lean`.
 **Exit status `0`, `sorry` count `0`.** Mathlib is the rev pinned in `verify/lake-manifest.json`;
 imports are narrow, no `import Mathlib`.
 

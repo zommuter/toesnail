@@ -18,7 +18,7 @@ same session's seed) and [`fhe-counting`](fhe-counting.md) (the Lean debts of `c
 This essay's one Lean theorem sharpens the owner's own line at `crypto/fhe.md:8`.
 
 Numbers from [`docs/dreamed/fhe-search/circuit_search.py`](fhe-search/circuit_search.py), run
-under `fhe-search/run.sh` (2 GiB address space cap, CPU cap, `nice -n19`). The NAND costs are
+under `fhe-search/run.sh` (hard cgroup memory cap, no swap, CPU quota -- see `capped.sh`). The NAND costs are
 exhaustive minima from breadth-first circuit synthesis, not bounds from a construction.
 
 ## 0. Summary
@@ -205,7 +205,7 @@ Located, evidenced, not resolved. Nothing filed into any ledger.
 ## 7. Lean attestation
 
 **File** [`docs/dreamed/lean/FHEUniversal.lean`](lean/FHEUniversal.lean). **Command**
-`cd verify && nice -n19 lake env lean --threads=2 ../docs/dreamed/lean/FHEUniversal.lean`.
+`cd verify && ../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/FHEUniversal.lean`.
 **Exit status `0`, `sorry` count `0`.** Mathlib is the rev pinned in `verify/lake-manifest.json`;
 imports are narrow, no `import Mathlib`.
 

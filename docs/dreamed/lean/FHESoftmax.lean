@@ -27,7 +27,7 @@
                        not, which is the real asymmetry the essay draws on.
 
   Check with:
-    cd verify && nice -n19 lake env lean --threads=2 ../docs/dreamed/lean/FHESoftmax.lean
+    cd verify && ../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/FHESoftmax.lean
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Exp

@@ -23,7 +23,7 @@ debts of that page. This essay asks what the *second operation* costs in the sam
 
 Everything numerical below comes from
 [`docs/dreamed/fhe-search/fhe_search.py`](fhe-search/fhe_search.py), run under
-`fhe-search/run.sh` (address space capped at 2 GiB, CPU capped, `nice -n19`). Every search is
+`fhe-search/run.sh` (hard cgroup memory cap, no swap, CPU quota -- see `capped.sh`). Every search is
 exhaustive over its stated space; the two Monte-Carlo experiments are seeded and labelled.
 
 ## 0. Summary
@@ -240,7 +240,7 @@ Located, evidenced, not resolved. Nothing filed into any ledger.
 ## 8. Lean attestation
 
 **File** [`docs/dreamed/lean/FHEToy.lean`](lean/FHEToy.lean). **Command**
-`cd verify && nice -n19 lake env lean --threads=2 ../docs/dreamed/lean/FHEToy.lean`.
+`cd verify && ../docs/dreamed/capped.sh -m 6G -- lake env lean --threads=2 ../docs/dreamed/lean/FHEToy.lean`.
 **Exit status `0`, `sorry` count `0`.** Mathlib is the rev pinned in `verify/lake-manifest.json`;
 imports are narrow, no `import Mathlib`.
 
