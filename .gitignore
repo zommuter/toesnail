@@ -19,3 +19,7 @@ node_modules/
 
 # owner-private notes — never publish (personal journals etc.); see private/
 private/
+
+# Python bytecode (dreamed search scripts)
+__pycache__/
+*.pyc
