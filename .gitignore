@@ -23,3 +23,4 @@ private/
 # Python bytecode (dreamed search scripts)
 __pycache__/
 *.pyc
+TODO.md.lock
