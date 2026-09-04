@@ -154,52 +154,6 @@
     but not origination; differential testing recommended for fidelity).
   Deciding what (if anything) to promote from `docs/dreamed/` into `physics/` or `essays/` remains
   owner-only theory direction. Nothing there was promoted, and no physics file was edited.
-  AI-generated, owner-seeded, UNREVIEWED. Nothing was filed into any ledger by design --
-  a delegated agent's verdict is a recommendation, never self-settling -- so this item exists
-  only so the batch is not invisible. **No verdict below is ratified.** Index with per-essay
-  headline claims: `docs/dreamed/README.md`. Every Lean file re-verified by the coordinator
-  (exit 0, zero `sorry`); `bash tests/run.sh` still PASSes; the tree is outside the lake
-  targets so `make test` is unaffected.
-  **Located findings in OWNER content, awaiting his ruling:** (a) `physics/wirohsh.md:82`
-  "in smooth regions those are perfectly sufficient" is false -- the line is analytic vs
-  non-analytic; (b) `physics/toesnail.md:79` vs `:89` (complex numbers declared unorderable,
-  then `<Psi|Psi> > 0` written for one); (c) `physics/toesnail.md:105` Cauchy-Schwarz equality
-  case is the real-space one, over C it is the unit circle; (d) `physics/toesnail.md:59` `t1`
-  uses probabilities as coefficients, so it can arise from a unitary only if p is 0 or 1;
-  (e) `physics/entropy.md:59` lambertw needs the `W_{-1}` branch (relates `id:37cc`/`id:5d31`);
-  (f) `physics/Resogram.md:118` prints `e^{+2*beta*t'}` where the opposite sign cancels every
-  ripple term (a reading exists on which the printed form is right -- his call);
-  (g) `physics/acoustics.md` never states its adiabatic assumption and never derives the wave
-  equation; its permalink is spelled `Accoustics`; (h) `essays/Narrativium.md:18,22` spell Ian
-  Stewart as "I. Steward"; (i) four notation snags in `physics/wirohsh.md` (L58, L88, L97, L154).
-  **Located findings in TOOLING/ledgers:** (j) `hooks/post-commit` runs a CONSTANT probe and
-  never reads the commit diff -- 164 notes on `refs/notes/verify`, all `status:pending`, 0
-  triaged, 0 processed, one distinct findings string; (k) `docs/se-corpus.md` row M-1 mislabels
-  its posts (337971 is the curl-generalization question, not the self-answered dilation) and row
-  P-C is wrong about q/27195's mechanism (variational, not an eigenvalue equation);
-  (l) `docs/dependencies.md` has no `dotclaude-skills` node.
-  **Recommendations awaiting ratification:** NO-GO on `id:ff32` (five independent breaks now);
-  Q2 hybrid C1; Q9 ratify-with-membership-corrected; Q10 theme ranking; Q11 adopt-with-three-
-  amendments; Q12 a one-line epistemic aside; Q6 extend the existing kinds; the five-level laser
-  NO-GO at theorem strength; and closing collAIb's "live verify: assist UI" edge as not-taken.
-  **Cross-repo, time-critical:** no shared zelegator/helferli contract artifact exists while
-  `helferli id:29e3` is due at the 2026-09-10 demo gate (see `docs/dreamed/zelegator-helferli.md`).
-  Deciding what (if anything) to promote is owner-only theory direction.
-  AI-generated, owner-seeded, UNREVIEWED. Nothing from it was filed into any ledger by design --
-  a delegated agent's verdict is a recommendation, never self-settling -- so this item exists only
-  so the batch is not invisible. **No verdict below is ratified.** Awaiting the owner's ruling:
-  (a) the recommended NO-GO on ROADMAP `id:ff32` (T-matrix / Gaussian-splat / WiRoHSH), with one
-  gated salvage; (b) a branch qualifier on the `lambertw` step at `physics/entropy.md:59` (claimed
-  correct only on `W_{-1}` in the bosonic case; principal branch gives `beta*E_1 = 0` identically)
-  -- relates to `id:37cc`/`id:5d31`; (c) an ordering clash located at `physics/toesnail.md:79` vs
-  `:89` (complex numbers declared unorderable, then `<Psi|Psi> > 0` written for one); (d) the
-  real-vs-complex Cauchy-Schwarz equality case at `physics/toesnail.md:105` ("parallel or
-  anti-parallel" is the real condition; over C it is the whole unit circle); (e) four notation
-  snags in `physics/wirohsh.md` (L58, L88, L97, L154) plus the completed 3D reduction; (f) a
-  critique of `docs/drafts/q669175-answer-draft.md` (relates to Q16 in `id:57e2`); (g) whether
-  corpus row M-5's welding of Goedel and Lawvere into one line should be split. Index with
-  per-essay headline claims: `docs/dreamed/README.md`. Each essay has a "Surfaced for the owner"
-  section. Deciding what (if anything) to promote is owner-only theory direction.
 - [ ] **[OWNER] Triage the dreamed FHE cluster** (`docs/dreamed/`, 6 essays + 6 Lean files + 1 search suite, audited, 2026-09-04) <!-- id:6646 -->
   AI-generated, owner-seeded, UNREVIEWED: toy homomorphic encryption, encrypted algorithms,
   FHE-LLM feasibility, trustless distributed AI, model attestation. **Nothing was filed into any
