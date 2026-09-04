@@ -74,10 +74,10 @@ the search enumerates $\mathrm{GL}(k,2)$ rather than $2^k!$ permutations:
 $|\mathrm{Aut}(+,\times)| = k$ exactly: the Frobenius maps $x \mapsto x^{2^j}$ and nothing else.
 Read against the owner's criterion at `crypto/fhe.md:14`:
 
-$$ \text{one operation: } k \text{ key bits (the OTP)}; \qquad \text{two operations: } \log_2 k \veq{frobenius-dreamed}\lean $$
+$$ \text{one operation: } k \text{ key bits (the OTP)}; \qquad \text{two operations: } \log_2 k \veq{frobenius-dreamed}\sorry $$
 
-**The second operation collapses the key space from exponential in the word size to logarithmic
-in it.** That is the seed's question answered in the owner's own units, and it is why no amount of
+**The second operation collapses the key space from exponential in the word size ($2^k$ possible
+additive automorphisms) to linear in it ($k$), so the key BITS fall from $k$ to $\log_2 k$.** That is the seed's question answered in the owner's own units, and it is why no amount of
 cleverness rescues model A.
 
 ## 2. The exact trade-off: key entropy against expressive power
@@ -95,6 +95,11 @@ the key space and counting the $H$-equivariant binary operations out of $4^{16}$
 | 8 | 3 | 16 | $3.7\cdot10^{-9}$ | 0 of 4 |
 | 12 | 3.585 | 4 | $9.3\cdot10^{-10}$ | 0 of 4 |
 | 24 | 4.585 | 2 | $4.7\cdot10^{-10}$ | 0 of 4 |
+
+(Rows are indexed by subgroup *order*, and where several subgroups share an order the row reports
+the most favourable one. At order 2 the two classes differ: a transposition keeps 2 constants, a
+double transposition keeps 0. The dichotomy below is unaffected -- both are under 4 -- but the
+column is a maximum, not a function of $|H|$.)
 
 The last column carries the argument, and it makes the trade-off an equivalence rather than a
 tendency. A constant operation $(x,y) \mapsto c$ is $H$-equivariant exactly when every key fixes
@@ -132,7 +137,10 @@ $$ \text{key bits} = \log_2\frac{|C|}{2} = (\text{cipher bits}) - 1 \veq{matchin
 for **one** bit of plaintext. Unlike model A this is not zero. It is worse than zero in a way the
 enumeration alone would not reveal, which is why the search runs the attack:
 
-**The equality-pattern attack, seeded Monte Carlo, $|C| = 16$.** Encrypt an $n$-bit plaintext
+**The equality-pattern attack, $|C| = 16$.** (Reported as a seeded Monte Carlo, but honestly it is
+a proof wearing an experiment's clothes: the adversary's rule recovers the plaintext up to a global
+flip with probability exactly 1 for every seed and every length, by construction. The run confirms
+the arithmetic; it does not test anything.) Encrypt an $n$-bit plaintext
 bitwise under one key, give the adversary only the ciphertext and no table access. Group equal
 ciphertexts, output the 2-colouring. Recovery up to global complementation: **100% at
 $n = 1, 2, 4, 8, 16, 32$.** The scheme is deterministic with a reused key, so the ciphertext is
@@ -186,10 +194,16 @@ something, and pretending to have discovered them is not.
   problem and proposed four additive privacy homomorphisms. **Brickell and Yacobi (1987)** broke
   all four -- two under ciphertext-only attack, two under known plaintext, one of them from a
   *single* known pair. Model B's equality-pattern attack is the toy shadow of that.
-- **Boneh and Lipton (1996)** proved the general theorem this essay's model A gropes toward: any
-  **deterministic** algebraically homomorphic cryptosystem over a finite ring can be broken in
-  **subexponential** time, via black-box field/ring extraction. My Frobenius count is a concrete
-  instance of that impossibility, not an independent discovery of it.
+- **Boneh and Lipton (1996)**, *Algorithms for Black-Box Fields*, proved that any **deterministic**
+  **field**-homomorphic encryption scheme can be broken in **subexponential** time, via black-box
+  extraction over a prime field. **Corrected after an audit:** an earlier draft of this section said
+  "over a finite ring", which overstates it. The extension to $\mathbb{Z}_n$ carries hypotheses the
+  draft dropped (squarefree $n$, factorisation known), and the general **ring** case is precisely
+  the question that line of work leaves open -- indeed it is treated as evidence *for* the
+  possibility of ring-homomorphic schemes. My Frobenius count is over $\mathrm{GF}(2^k)$, a field,
+  so it *is* an instance of the proved case; but the impossibility does not extend to rings, and
+  section 5 of [`fhe-llm`](fhe-llm.md) should not have filed it under "proven impossible" without
+  that qualifier.
 - **Determinism defeats IND-CPA outright**, and has since Goldwasser-Micali: an adversary with an
   encryption oracle compares $\mathrm{Enc}(m_0)$ against the challenge. Model B's 100% recovery is
   this textbook fact wearing a toy costume.
@@ -203,10 +217,12 @@ something, and pretending to have discovered them is not.
   bootstrapping resets it. In this essay's language, real FHE is model C with an $F$ that cannot
   be tabulated and a $d$ hidden behind LWE.
 
-One thing the search does add, and I have not found it stated in this form: the equivalence of
-section 2 in **both** directions, exhaustively instantiated. The impossibility literature argues
-from the operations to the key; the palette table argues from the key group to the operations, and
-gets a dichotomy rather than a bound.
+What the search adds is exhaustive instantiation rather than a new theorem, and an earlier draft
+overclaimed here. It said the equivalence of section 2 "in **both** directions" was not stated
+elsewhere -- three sentences after conceding that the reverse direction (a nontrivial group's
+centralizer clone is proper, hence incomplete) is standard clone theory. Both directions are known.
+The contribution is the crypto reading, the exhaustive $S_4$ table, and the fact that the dichotomy
+is exact rather than a bound.
 
 ## 6. What a toy model can and cannot demonstrate
 
@@ -220,7 +236,9 @@ found. This is not a failure of the method; it is the method reporting where its
 
 ## 7. Surfaced for the owner
 
-Located, evidenced, not resolved. Nothing filed into any ledger.
+Located, evidenced, not resolved. **No finding or verdict here was filed into any ledger.** The
+batch carries one neutral pointer (`TODO.md` `id:6646`) that lists these rulings AS PENDING, which
+is how it stays visible to `/relay human` without anything being recorded as decided.
 
 1. **`crypto/fhe.md:14`'s criterion is exactly right and can be sharpened.** The page rejects
    anything above one key bit per data bit as worse than the OTP. Model A gives the reverse

@@ -40,7 +40,7 @@ And "trustless" is two requirements, not one, which the FHE framing hides:
 | requirement | question | answer technology | status |
 |---|---|---|---|
 | **confidentiality** | can the server read my prompt? | FHE, MPC, TEE | expensive / deployed-with-caveats |
-| **integrity** | did the server actually run the model it claims? | zero-knowledge proofs of inference | separate, orthogonal, composable |
+| **integrity** | did the server actually run the model it claims? | sampled auditing, model attestation, zero-knowledge proofs | separate, and **complementary** rather than orthogonal -- see [`model-attestation`](model-attestation.md) section 4 |
 
 FHE gives the first and **nothing at all** of the second: a malicious server can homomorphically
 evaluate a *different, cheaper* model and the client cannot tell.
@@ -158,46 +158,72 @@ Every row is somebody else's measurement, not this document's.
 The single most important line to draw is **encoder against generative**, because the field's
 headline numbers come from opposite sides of it and are routinely quoted as if comparable.
 
-**Encoder inference under FHE is essentially solved.**
+> **CORRECTED after an adversarial audit, same session.** The first version of this section
+> contained three prior-art errors, all pushing in the same direction -- making FHE look better
+> than it is -- and one of them was the exact mistake this essay warns about four paragraphs
+> below. They are corrected in place and named in section 7(b), rather than quietly fixed.
+
+**Encoder inference under FHE is demonstrated at BERT-base scale.**
 
 | system | model | what | result |
 |---|---|---|---|
-| **NEXUS** (NDSS 2025) | BERT-base | one forward pass, **non-interactive** FHE (RNS-CKKS) | **37.3 s**, **164 MB**; 372.5$\times$ less bandwidth than BOLT, 53.6$\times$ than BumbleBee. GPU: **42.3$\times$ faster**, so **under a second** |
-| **ARION** (2025) | BERT-base / BERT-Tiny | same setting | a further **2.5$\times$** / **34.6$\times$** |
+| **NEXUS** (NDSS 2025) | BERT-base | one forward pass, **non-interactive** FHE (RNS-CKKS) | **37.3 s on GPU**, **164 MB**; 372.5$\times$ less bandwidth than BOLT, 53.6$\times$ than BumbleBee |
+| **ARION** (eprint 2025/2271) | BERT-base / BERT-Tiny | same setting | **2.5$\times$** / **34.6$\times$** over **MOAI**, not over NEXUS |
 
-**Generative inference is not**, and the gap is autoregression, not encryption.
+The 37.3 s **is** the GPU figure: NEXUS's evaluation reports 857 s against 37.34 s, and the
+abstract's "the GPU version achieving a 42.3$\times$ speedup ... **this enables** NEXUS to run
+inference ... in just 37.3 seconds" makes the direction explicit. An earlier draft here applied
+the 42.3$\times$ a second time and concluded "under a second", overstating the result by a factor
+of about forty. ARION's own paper is also worth reading before leaning on any of these: it
+distrusts the NEXUS number, remarking that "the runtime reported by NEXUS seems not end-to-end
+runtime".
+
+**Generative inference under end-to-end FHE has no published datapoint I can find at all.**
 
 | system | model | s / token | regime |
 |---|---|---:|---|
-| Zama Concrete-ML, GPU | GPT-2 (124M) | 11 | FHE |
-| Zama Concrete-ML, CPU | GPT-2 (124M) | 300 | FHE |
-| PUMA (2023) | **LLaMA-7B** | ~300 (5 min) | 2-party MPC, **not** FHE |
-| BumbleBee (NDSS 2025) | LLaMA-7B | ~480 (8 min) | 2-party MPC |
+| Zama Concrete-ML, GPU | GPT-2 (124M) | 11 | **hybrid**: one attention head encrypted, everything else plaintext on the client |
+| Zama Concrete-ML, CPU | GPT-2 (124M) | 300 | same hybrid |
+| PUMA (2023) | **LLaMA-7B** | ~300 (5 min) | **3-party** MPC, honest majority, not FHE |
+| BumbleBee (NDSS 2025) | LLaMA-7B | ~480 (8 min) | 2-party MPC, not FHE |
+
+Two labels in that table were wrong in the first draft and both mattered.
+
+The Zama rows are **not end-to-end FHE**. Zama's own documentation: the server "executes linear
+layers", while "the client executes non-linear layers in the LLM, such as attention and activation
+functions", and the demo encrypts "a single attention head of the multi-head attention block". The
+nonlinearities -- which section 1 identifies as *the* hard part -- run in plaintext on the client.
+This is precisely the failure mode the caution below describes, committed against this essay's own
+anchor row. So the earlier conclusion "pure-FHE generative inference tops out around GPT-2 scale"
+is **withdrawn**: no row in this table supports it, because no row is end-to-end pure FHE.
+
+**PUMA is three-party, not two.** Its threat model: "secure against a semi-honest adversary that
+corrupts no more than one of the three computing parties", over 2-out-of-3 replicated secret
+sharing. That is a materially weaker trust assumption than the 2PC label implied, and section 5's
+route R2 argued from the wrong one.
 
 Bandwidth, Zama GPT-2: **2.2 MB per token** against roughly 2 bytes of plaintext token.
 
-So the honest one-sentence state of the art: **one BERT-base forward pass in about a second under
-non-interactive FHE on a GPU; one token of a 7B generative model in about five minutes, and only
-via MPC.** Pure-FHE generative inference tops out around GPT-2 scale. The distance between those
-two facts is the whole problem, and it is structural: a BERT pass is one forward evaluation whose
-sequence dimension packs beautifully into SIMD slots, while generation is $n$ sequential passes
-with a growing KV cache, each conditioned on the last, so nothing amortises across steps.
+So the honest one-sentence state of the art: **one BERT-base forward pass in 37 seconds on a GPU
+under non-interactive FHE; one token of a 7B generative model in about five minutes, and only via
+multi-party computation with a non-collusion assumption.** For end-to-end FHE *generation* at any
+scale, the public record appears to be empty. That is a larger gap than the first draft claimed,
+not a smaller one, and its cause is structural: a BERT pass is one forward evaluation whose
+sequence dimension packs into SIMD slots, while generation is $n$ sequential passes with a growing
+KV cache, each conditioned on the last, so nothing amortises across steps.
 
 A 2026 survey (Andreoletti et al., SUPSI/Prem AI, eprint 2026/105) reaches the same verdict from a
-deployment angle and states the trajectory plainly: TEEs today as the only route at production
-latency, crypto-augmented designs in the middle, and FHE as "the natural asymptotic endpoint",
-with current constraints that "preclude its widespread deployment for large autoregressive
-models". It also confirms the PUMA figure as "roughly five minutes per token, representing the
-first MPC demonstration at that scale".
+deployment angle: TEEs today as the only route at production latency, crypto-augmented designs in
+the middle, and FHE as "the natural asymptotic endpoint", with current constraints that "preclude
+its **widespread deployment** for large autoregressive models". It confirms the PUMA figure as
+"roughly five minutes per token, representing the first MPC demonstration at that scale".
 
-Two further readings. The MPC rows are a **7B** model and the FHE generative rows a **124M** one,
-so the table *understates* the gap between regimes; MPC leads precisely because it lets the client
-evaluate nonlinearities in the clear on secret-shared data. And a naive
-one-bootstrap-per-nonlinearity accounting gives **hours** per token, so measured systems landing
-in seconds is entirely the achievement of SIMD packing and low-degree approximation. The levers of
-sections 2 and 3 are of the same kind.
+One further reading. A naive one-bootstrap-per-nonlinearity accounting gives **hours** per token,
+so measured systems landing in seconds is entirely the achievement of SIMD packing and low-degree
+approximation. The levers of sections 2 and 3 are of the same kind.
 
-**A caution about the literature, which the owner raised and which turned out to be warranted.** A
+**A caution about the literature, which the owner raised and which turned out to be warranted --
+including against this essay, see the correction box above.** A
 2026 arXiv paper reports FHE Llama-3 inference at 237 ms and 80 tokens per second, which would
 overturn everything above. It does not: read past the abstract and it integrates HE operations "to
 secure **some of its layers**". It is not end-to-end encrypted inference and its headline number
@@ -219,8 +245,11 @@ overnight document analysis, private retrieval scoring, offline classification.
 **R2. Two-party MPC.** Server and client jointly evaluate on secret shares; the client does the
 nonlinearities in the clear on its share. Fastest measured regime by a wide margin at 7B scale.
 *Verdict:* the pragmatic choice today, at the cost of an online client and heavy communication.
-Note the security model is genuinely different, not merely weaker: it needs the two parties not to
-collude, which for a client and its own server is trivially satisfied.
+The trust assumption needs stating precisely, and an earlier draft of this essay got it wrong.
+BumbleBee is genuinely two-party. **PUMA is three-party with an honest majority** -- it tolerates
+one semi-honest corruption out of three computing parties -- so it needs a non-colluding third
+party that the client neither owns nor chooses. That is a real assumption about the world, not a
+vacuous one, and it is the thing R4 below tries to replace with something checkable.
 
 **R3. TEEs.** Deployed at scale now (Apple, Meta Private Processing, NVIDIA H100/Blackwell
 confidential computing). Near-zero overhead. *Verdict:* the only route that works today at full
@@ -241,7 +270,7 @@ switching on top of FHE) and the only route whose *trust* story actually matches
 
 **R5. Verifiable inference (zkML), which is orthogonal to all of the above.** None of R1-R4
 answers "did the server run the model it promised". A server can evaluate a 1B model and bill for
-70B, and under FHE the client provably cannot tell -- the ciphertexts decrypt to *something*
+70B, and FHE **alone** gives the client no signal to check against -- the ciphertexts decrypt to *something*
 plausible either way. Zero-knowledge proofs of inference answer this, compose with any of R1-R4,
 and are the subject the owner has already picked as the next session's seed. *Verdict:* the
 neglected half of "trustless", and probably the half where a small amount of work buys the most,
@@ -260,7 +289,7 @@ to check and would be significant if it worked.
 
 Encryption hides values. It does not hide **how many ciphertexts there were or when they were
 sent**, and for an autoregressive model that is a rich channel. **Weiss et al. (USENIX Security
-2024)** reconstructed 27% of an AI assistant's responses and inferred the topic of 53% from the
+2024)** reconstructed 29% of an AI assistant's responses and inferred the topic of 55% from the
 sequence of *token lengths* alone, over TLS. FHE does not help at all. Padding is the mitigation,
 and it is not free:
 
@@ -290,15 +319,20 @@ What I believe this essay contributes, offered for the owner to knock down:
 1. The **client-owns-the-vocabulary-boundary** split stated as one design with all four of its
    consequences priced together: embedding saved, $31\times$ bandwidth saved, vocabulary softmax
    deleted exactly, tokenizer side-channel class removed by construction.
-2. The reading of **OTRO/TDXRay as an argument *for* FHE over TEEs**, which is the opposite of how
-   the result is usually presented.
+2. The reading of **OTRO/TDXRay as an argument *for* FHE over TEEs**. Stated more carefully after
+   an audit: that FHE has no access-pattern side channel is textbook, and is exactly why TEEs need
+   ORAM and FHE does not. What is worth saying is narrower -- that a 2026 result presented as a
+   *tokenizer vulnerability in confidential LLM serving* is, read against its own threat model, a
+   point in FHE's favour rather than a new worry for it.
 3. The **confidentiality/integrity split** applied to the word "trustless", with the observation
    that integrity proofs can be sampled and confidentiality cannot -- so the two halves have
    completely different cost curves.
 
 ## 8. Surfaced for the owner
 
-Located, evidenced, not resolved. Nothing filed into any ledger.
+Located, evidenced, not resolved. **No finding or verdict here was filed into any ledger.** The
+batch carries one neutral pointer (`TODO.md` `id:6646`) that lists these rulings AS PENDING, which
+is how it stays visible to `/relay human` without anything being recorded as decided.
 
 1. **`crypto/fhe.md` has no LLM section and this essay does not propose one.** The page is a
    counting argument about bijections; everything above is a systems argument. If the owner ever

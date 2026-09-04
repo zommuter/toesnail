@@ -107,10 +107,15 @@ $\alpha=\beta=10^{-3}$:
 
 | observable | $n$ to decide | implied KL (nats/obs) | bits/obs |
 |---|---:|---:|---:|
-| sampled token | 300 | 0.0230 | **0.033** |
+| seed-synchronised token | 300 | 0.0230 | **0.033** |
 | activation fingerprint | 2 | 3.4534 | **4.982** |
 
 **A factor of 150 per observation.** The reason is information-theoretic and worth stating plainly:
+
+Note the row label, corrected after an audit: the 300 figure comes from *Token*-DiFR, which is
+"conditioned on the same random seed", so it is a seed-synchronised token and strictly *more*
+informative than an ordinary sample. 0.033 bits is therefore an **upper** bound on what plain
+sampling carries, and the 150x ratio is if anything conservative.
 
 A sampled token is **one draw** from the output distribution. It carries at most $\log_2 V$ bits,
 and in practice far less, because a confident model puts nearly all its mass on one token and the
@@ -131,11 +136,11 @@ the same constant and it survives most choices of $\alpha,\beta$.
 
 | KL / obs | what it is | $\alpha=10^{-2}$ | $10^{-3}$ | $10^{-6}$ |
 |---:|---|---:|---:|---:|
-| 0.001 | same model, different kernel | 4595 | 6905 | 13816 |
+| 0.001 | same model, different kernel | 4595 | 6907 | 13816 |
 | 0.023 | 4-bit quantization (derived above) | 200 | 300 | 601 |
 | 0.1 | fine-tune or watermark | 46 | 69 | 138 |
 | 1.0 | a genuinely smaller model | 5 | 7 | 14 |
-| 3.45 | activation fingerprint of a quantized model | 2 | 2 | 4 |
+| 3.45 | activation fingerprint of a quantized model | 1 | 2 | 4 |
 
 Two structural readings. The top row is **good** news: telling a model apart from *itself* on
 different hardware takes thousands of observations, so benign numerical divergence is not mistaken
@@ -251,8 +256,11 @@ is better than the answer to the harder question the previous essay asked:
   chosen by the client.
 - **Bond the provider.** With a bond worth a thousand requests, a 0.09% audit rate deters
   substituting an 8B for a 70B.
-- **Encrypt, and the audit becomes unevadable.** This is the part that is not in the literature as
-  far as I can find, and it is the one thing here I would call a contribution.
+- **Encrypt, and the audit becomes unevadable.** I did not find this stated *in this form for FHE*,
+  and it is the one thing here I would offer as a contribution. Stated more weakly than the first
+  draft, which claimed it was absent from the literature: audit-indistinguishability is a standard
+  requirement in auditing design generally, and the recognisability of published test prompts is
+  discussed in the Model Equality Testing line this essay cites.
 - **Do not confuse this with ownership fingerprinting.** Different verifier, different suspect,
   different literature.
 
@@ -263,7 +271,9 @@ magnitude away.
 
 ## 8. Surfaced for the owner
 
-Located, evidenced, not resolved. Nothing filed into any ledger.
+Located, evidenced, not resolved. **No finding or verdict here was filed into any ledger.** The
+batch carries one neutral pointer (`TODO.md` `id:6646`) that lists these rulings AS PENDING, which
+is how it stays visible to `/relay human` without anything being recorded as decided.
 
 1. **No owner content is touched.** This essay has no source in `crypto/` or `physics/`, locates
    no discrepancy, and proposes no edit to anything he wrote.

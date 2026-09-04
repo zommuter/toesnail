@@ -92,8 +92,9 @@ theorem requiredRate_mono (s D d₁ d₂ : ℝ) (hs : 0 < s) (hD : 0 < D)
 catch rate is zero whatever the audit rate, so the deterrence condition `s < q D` is
 unsatisfiable. Checking *every* request does not help, because it is honest exactly when
 checked. -/
-theorem evasion_total (s D r : ℝ) (hs : 0 < s) :
-    ¬ (s < (r * (1 - 1)) * D) := by
+theorem evasion_total (s D r d : ℝ) (hs : 0 < s) (hd : d = 1) :
+    ¬ (s < (r * (1 - d)) * D) := by
+  subst hd
   simp only [sub_self, mul_zero, zero_mul]
   linarith
 

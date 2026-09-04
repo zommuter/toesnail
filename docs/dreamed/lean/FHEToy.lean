@@ -211,9 +211,10 @@ theorem eval_exists_family {C M ι : Type*} (d : C → M) (hd : Function.Surject
 /-- What the previous theorem does *not* say, recorded as a definition rather than a
 theorem because it is a computational statement and not an algebraic one: a toy scheme is
 useful only if the published `F` does not determine `d`. Experiment C of the Python search
-measures exactly this quantity for small `C` and finds it degenerate (mean 2 consistent
-partitions, i.e. the true key and its complement), which is why real schemes never publish
-`F` as a table. STATED, NOT PROVED, and not provable at this level of abstraction. -/
+measures exactly this quantity for small `C` and finds it fully degenerate: mean 1.000 consistent
+partitions, maximum 1, at every size tested. Not even the complement survives, because flipping the
+class labels turns XOR into NXOR. (An earlier version of this comment predicted 2; the measurement
+said 1.) This is why real schemes never publish `F` as a table. STATED, NOT PROVED, and not provable at this level of abstraction. -/
 def KeyHiding {C M : Type*} (F : C → C → C) (f : M → M → M) : Prop :=
   ∃ d₁ d₂ : C → M, d₁ ≠ d₂ ∧
     Function.Surjective d₁ ∧ Function.Surjective d₂ ∧

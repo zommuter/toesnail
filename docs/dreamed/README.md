@@ -45,13 +45,15 @@ than by delegated agents, with prior-art research at the owner's explicit instru
 
 ## Index
 
-38 essays, 38 Lean files, one runnable library, one runnable search suite. Every Lean
+39 essays, 39 Lean files, one runnable library, one runnable search suite. Every Lean
 file was re-verified, not merely reported: `exit 0`, zero `sorry`. Every "finding" below
 is an AI **recommendation** awaiting the owner's ruling, never a settled decision.
 
 ### FHE cluster (`crypto/fhe.md`) -- session of 2026-09-04
 
-Companion code: [`fhe-search/`](fhe-search/) -- five stdlib Python scripts run under
+Companion code: [`fhe-search/`](fhe-search/) -- six stdlib Python scripts, plus
+`stage0_logit_gaps.py` which needs torch/transformers and is excluded from the default
+run, all under
 [`fhe-search/run.sh`](fhe-search/run.sh) and [`capped.sh`](capped.sh), which impose a HARD cgroup
 memory cap (`MemoryMax`, no swap) plus a CPU quota, so a runaway search is OOM-killed inside its
 own scope and cannot take the machine down. `nice` alone does not do this and `ulimit -v` is wrong
@@ -62,8 +64,9 @@ Monte-Carlo experiments are seeded and labelled as such.
 |---|---|
 | [`fhe-toy-enumeration`](fhe-toy-enumeration.md) | A toy two-operation FHE exists trivially, and is trivially broken. Exhaustively: a strict scheme keeps only $\log_2 k$ key bits on a $k$-bit word (Frobenius) against the OTP's $k$; key entropy and functional completeness are **exactly** incompatible; randomising bought **zero** key ambiguity (mean 1.000). Confirms Boneh-Lipton 1996 rather than discovering it. |
 | [`fhe-encrypted-algorithm`](fhe-encrypted-algorithm.md) | "Encrypted algorithm" names **three** problems with three answers, separated by who holds the key: private function evaluation (solved, $O(k\log k)$), obfuscation (VBB **impossible**), circuit privacy (a cost). The $2^n$ program-bit floor of `crypto/fhe.md:8` is a **lower bound over all encodings** and is attained. Obliviousness, not cryptography, is the structural tax. |
-| [`fhe-llm`](fhe-llm.md) | State of the art, concretely: **BERT-base under non-interactive FHE in ~1 s on GPU** (NEXUS), but **~5 min/token for LLaMA-7B and only via MPC**. The gap is autoregression, not encryption. **The client should own the whole vocabulary boundary** -- saves >1 layer, $31\times$ bandwidth, deletes the vocabulary softmax exactly, removes the tokenizer side-channel class. OTRO/TDXRay is an argument **for** FHE over TEEs, not against. |
+| [`fhe-llm`](fhe-llm.md) | State of the art, concretely: **BERT-base under non-interactive FHE in 37 s on GPU** (NEXUS), **~5 min/token for LLaMA-7B and only via 3-party MPC**, and **no published end-to-end pure-FHE generative datapoint at all**. The gap is autoregression, not encryption. *(Section 4 was rewritten after an adversarial audit found three prior-art errors, all flattering to FHE.)* **The client should own the whole vocabulary boundary** -- saves >1 layer, $31\times$ bandwidth, deletes the vocabulary softmax exactly, removes the tokenizer side-channel class. OTRO/TDXRay is an argument **for** FHE over TEEs, not against. |
 | [`model-attestation`](model-attestation.md) | The "LLM footprint" exists: **Activation-DiFR** detects a 4-bit swap at AUC>0.999 from **2 output tokens**, and Model Equality Testing found **11 of 31** commercial Llama endpoints deviating from Meta's weights. Derived: a sampled token carries **0.033 bits** of identity evidence, an activation fingerprint **4.98** -- a factor of 150, so text-based verification pays a huge avoidable tax. **Main claim:** under FHE a provider cannot recognise an audit, so encryption makes sampled integrity checking **unevadable** -- reversing "FHE gives no integrity" in the two siblings, which are corrected. Also retracts this batch's gap-gating as non-novel (DiFR got there first). |
+| [`zkml-proofs`](zkml-proofs.md) | Written by a delegated agent; Lean re-verified by the coordinator (exit 0, zero `sorry`). Argues the zkML gap is **engineering, not structural** ($10^{3.2}$-$10^{3.8}$ overhead, sublinear in model size), which **contradicts** the sibling essays' "~4 orders away". Sharper finding: a zkML proof over *private* weights certifies an existential ("some admissible weights produce this output"), not "the promised model ran" -- so it answers the seed only if zero-knowledge over the weights is dropped, which is the property the provider wanted. |
 | [`trustless-distributed-ai`](trustless-distributed-ai.md) | Owner's MP3-vs-bit-exact-codec analogy is the same problem, not an analogy: autoregressive decoding **is** predictive coding, so drift compounds (1e-3 per-token divergence reproduces a 4096-token answer 1.7% of the time), and codecs already fixed it by mandating integer transforms. Integer-only transformers exist (I-BERT, INT8 end-to-end, 3.1-3.6$\times$ faster). **Convergence claim:** an integer-only model is both bit-exactly verifiable AND natively evaluable by the *exact* FHE schemes (BFV/BGV) rather than approximate CKKS -- one substrate, both halves of trustlessness. |
 
 ### WiRoHSH cluster (`physics/wirohsh.md`)
@@ -145,9 +148,12 @@ would most want ratified or rejected.
 
 ### Findings surfaced, deliberately NOT filed
 
-Each essay carries a "Surfaced for the owner" section. **Nothing from this batch was
-written into `TODO.md`, `ROADMAP.md`, or `REVIEW_ME.md`** -- routing a dreamed finding
-into a ledger is an owner decision, and a delegated agent's verdict is a recommendation,
-never self-settling. The candidates awaiting that ruling are the `id:ff32` NO-GO, the
+Each essay carries a "Surfaced for the owner" section. **No FINDING or VERDICT from either batch was written into `TODO.md`,
+`ROADMAP.md`, or `REVIEW_ME.md`** -- routing a dreamed finding into a ledger is an owner
+decision, and a delegated agent's verdict is a recommendation, never self-settling. Each
+batch does get ONE neutral pointer item (`id:2460`, `id:6646`) whose body lists the
+pending rulings *as pending*, so the batch is visible to `/relay human` without a verdict
+being recorded. An earlier wording here said "nothing from this batch was written into
+TODO.md" without that qualifier, which the repo contradicts. The candidates awaiting that ruling are the `id:ff32` NO-GO, the
 `lambertw` branch qualifier, the spine's ordering clash and Cauchy-Schwarz equality case,
 the four notation snags in `physics/wirohsh.md`, and the critique of the q/669175 draft.

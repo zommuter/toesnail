@@ -8,7 +8,7 @@ permalink: /dreamed/trustless-distributed-ai
 > **STATUS: DREAMED, UNREVIEWED.** See [`docs/dreamed/README.md`](./). Written by an AI agent on
 > 2026-09-04 from an owner-picked seed. Nothing here is theory or a correction; nothing moves into
 > `crypto/` or the `verify/` machinery without the owner authoring the move. Claims about owner
-> content live under [Surfaced for the owner](#8-surfaced-for-the-owner), located, never resolved.
+> content live under [Surfaced for the owner](#9-surfaced-for-the-owner), located, never resolved.
 
 **Seed (owner, this session):** *"follow the 'everyone said it's impossible, till someone who
 didn't know made it anyway' approach to some healthy extent. The goal is clear, be creative about
@@ -65,8 +65,14 @@ check with is encrypted from the client's own key and the server never saw plain
 lying about.
 
 This is not a corner case. It is the *economically obvious* attack: compute cost is roughly linear
-in parameter count, so substituting an 8B for a 70B saves 89% of the bill. Under FHE it is
-undetectable by construction.
+in parameter count, so substituting an 8B for a 70B saves 89% of the bill.
+
+> **CORRECTION.** "Undetectable by construction" is what an earlier draft said here, and it is
+> wrong. It is undetectable *from the output of a single request*. A sampled audit detects it, and
+> the sibling [`model-attestation`](model-attestation.md) section 4 shows that encryption makes
+> that audit **unevadable**, because a provider who cannot read the prompt cannot recognise which
+> requests are being checked. FHE alone gives no integrity; FHE plus an audit gives more than a
+> plaintext API plus the same audit.
 
 So a trustless system needs a second mechanism, and the good news is that the second mechanism is
 much cheaper than the first, for a structural reason:
@@ -115,12 +121,13 @@ amount of good faith closes it. A cross-provider check must be a **tolerance** c
 
 **A correction to the usual story, which I had wrong until I checked it.** The popular account
 blames GPU concurrency and atomic adds. Thinking Machines Lab's *Defeating Nondeterminism in LLM
-Inference* rules that out -- the same matmul on the same data is bitwise reproducible, because
+Inference* (September 2025) rules that out -- the same matmul on the same data is bitwise reproducible, because
 atomics are essentially absent from the forward pass. The real cause of nondeterministic
 production endpoints is **batch-invariance failure**: kernel numerics change with batch size, and
 batch size changes with server load, so *your* request's arithmetic depends on who else is
 querying. They fix it with batch-invariant kernels and demonstrate bitwise identical outputs
-across 1000 runs at roughly **2x** cost.
+across 1000 runs at **1.6-2.1x** cost (26 s baseline, 55 s unoptimised, 42 s with improved
+attention; the authors note they had not heavily optimised).
 
 That is a real result and it is also **not the one replication needs**. They address run-to-run
 determinism on an identical hardware and software stack, explicitly not cross-hardware
@@ -182,14 +189,67 @@ rate $1 - e^{-2\varepsilon/\mu}$:
 | 0.3 | $6.7\cdot10^{-5}$ | $6.7\cdot10^{-4}$ | $6.6\cdot10^{-3}$ | $6.5\cdot10^{-2}$ |
 | 0.1 | $2.0\cdot10^{-4}$ | $2.0\cdot10^{-3}$ | $2.0\cdot10^{-2}$ | 0.18 |
 
-At the measured float32 tolerance ($\varepsilon \sim 10^{-5}$) escalation runs between $10^{-5}$
-and $2\cdot10^{-4}$ across every gap scale modelled -- roughly one token in ten thousand.
+At the synthetic float32 tolerance ($\varepsilon \sim 10^{-5}$) escalation runs between
+$6.7\cdot10^{-6}$ and $2\cdot10^{-4}$ across every gap scale modelled. **Section 4a replaces both
+the tolerance and the gap model with measurements, and both were wrong.**
 
 **The caveat is load-bearing and I want it read, not skimmed.** An exponential gap model is a
 guess, and it is wrong in the direction that hurts: real logit gaps concentrate near zero exactly
 at genuine 50/50 continuations, which are also the tokens where a cheating provider gains most.
 Measuring the true distribution is an afternoon with any open-weights model and should be done
 before anyone trusts that table.
+
+## 4a. Stage 0: the same quantities, measured on a real model
+
+Sections 2 and 4 estimated two numbers -- the honest-implementation logit spread, and the top-2 gap
+distribution -- from a synthetic dot product and a parametric guess respectively. At the owner's
+instruction those were then **measured** on GPT-2 (124M) over 2048 token positions of this
+repository's own prose, by
+[`fhe-search/stage0_logit_gaps.py`](fhe-search/stage0_logit_gaps.py). Both estimates were wrong,
+and the corrections go in opposite directions.
+
+**The tolerance is about ten times larger than section 2 claimed.** Running the *whole network* in
+float32 against float64, rather than a single synthetic dot product:
+
+| quantile | max abs logit difference |
+|---:|---:|
+| 50% | $1.01\cdot10^{-4}$ |
+| 95% | $2.25\cdot10^{-4}$ |
+| 99% | $4.17\cdot10^{-4}$ |
+| max | $4.04\cdot10^{-3}$ |
+
+Section 2's synthetic estimate was $\sim10^{-5}$. The real whole-network figure is $10^{-4}$ at the
+median and $4\cdot10^{-3}$ at worst, because error accumulates through twelve layers rather than one
+dot product. **So $\varepsilon \sim 10^{-5}$, the value section 4's escalation table is evaluated
+at, is one to two orders of magnitude too tight.**
+
+**The gap distribution is not exponential.** Measured mean gap 1.94 nats; measured escalation
+$P(\text{gap} \le 2\varepsilon)$ against the Exponential model of section 4 fitted to the same mean:
+
+| $\varepsilon$ | measured | Exp model | ratio |
+|---:|---:|---:|---:|
+| $10^{-5}$ | 0 | $1.03\cdot10^{-5}$ | -- |
+| $10^{-4}$ | 0 | $1.03\cdot10^{-4}$ | -- |
+| $10^{-3}$ | $2.44\cdot10^{-3}$ | $1.03\cdot10^{-3}$ | **2.36** |
+| $10^{-2}$ | $2.00\cdot10^{-2}$ | $1.03\cdot10^{-2}$ | **1.95** |
+
+Where the sample can resolve it, the true escalation rate is about **twice** the modelled one --
+the direction section 4's own caveat predicted would hurt. The two zeros are a resolution floor,
+not a finding: 2048 positions cannot measure a rate of $10^{-5}$, and saying otherwise would be
+the same overreach this batch has already made twice.
+
+**But the flip rate is better than feared.** Argmax disagreements between float32 and float64 over
+those 2048 positions: **zero**. So the per-token divergence probability is under $1/2048$, and the
+amplification table of section 3 -- which uses an *illustrative* $p = 10^{-3}$ -- is pessimistic for
+this precision pair. At the measured upper bound $p < 4.9\cdot10^{-4}$, a 4096-token completion
+still reproduces only about **13%** of the time, so the qualitative argument survives intact: drift
+compounds, comparing text is the wrong primitive. The specific 1.7% figure is not a measurement and
+should not be quoted as one.
+
+Net effect on this essay: **the argument stands, the numbers move.** Gap-gating needs a tolerance
+around $10^{-4}$ rather than $10^{-5}$, and at $\varepsilon = 10^{-3}$ the real escalation rate is
+about 0.24% rather than the 0.1% modelled. Both remain small. And the case for integer arithmetic
+gets *stronger*, not weaker: every one of these numbers is exactly zero in exact arithmetic.
 
 ## 5. The codec precedent, and integer-only transformers
 
@@ -243,23 +303,30 @@ together, which is the main reason this essay exists.
    transformer is natively evaluable under them with no approximation error at all. The
    accuracy-versus-depth trade-off that dominates the FHE-transformer literature is partly an
    artefact of insisting the model stay in floating point.
-3. **The nonlinearities are already done.** I-BERT replaced GELU, softmax and LayerNorm with
-   *integer polynomial* algorithms for hardware reasons. Low-degree polynomials over integers is
-   precisely what an exact FHE scheme evaluates. The FHE-friendliness was produced as a
-   side-effect of an unrelated optimisation -- convergent evolution, and it means the hard design
-   work has partly been done by people who were not thinking about encryption.
+3. ~~**The nonlinearities are already done.**~~ **RETRACTED after an adversarial audit.** I claimed
+   I-BERT had replaced GELU, softmax and LayerNorm with *integer polynomial* algorithms, which is
+   what an exact FHE scheme evaluates. That is false, and this essay quotes the refutation two
+   sections earlier without noticing it: `i-Softmax` uses **bit-shifts** and `i-LayerNorm` an
+   **iterative integer square root** (I-ViT likewise ships `Shiftmax` and `ShiftGELU`). Bit-shift,
+   integer division and iterative square root are **not** polynomials over $\mathbb{Z}_t$, and are
+   among the *hardest* primitives for BFV/BGV -- worse than the smooth functions CKKS approximates.
+   So the third leg of the convergence does not hold. What survives is legs 1 and 2: integer
+   arithmetic buys bit-exact verifiability, and exact schemes remove approximation error. Whether
+   they cost less overall is now doubly open.
 
 So the proposal: **an integer-only, quantised transformer is the natural substrate for trustless
 distributed AI**, because the same property buys verifiability and exact homomorphic evaluation,
 and it is already 3x faster in the clear. In the codec framing: stop specifying the model as
 mathematics with a tolerance, and start specifying it as a bit-exact integer program.
 
-**What I have not checked, and would need to before believing my own conclusion:** whether BFV/BGV
-noise growth over I-BERT's polynomial depth is actually better than CKKS's, or merely
-differently bad. Exact arithmetic removes approximation error but does nothing about multiplicative
-depth, and the integer polynomials may cost more depth than CKKS's cheaper approximations. That is
-a real possibility that would weaken point 2 to "cleaner semantics, similar cost", and it is
-lead 1 below rather than something I am asserting.
+**What the retraction of leg 3 leaves.** The conclusion is now: an integer-only model is the right
+substrate for *verifiability*, and that claim is untouched. For *confidentiality* the case is much
+weaker than the first draft asserted -- exact schemes remove approximation error, but I-BERT's
+nonlinearities are not the polynomials BFV/BGV want, and translating a bit-shift or an iterative
+sqrt into an exact-FHE circuit may cost more than CKKS's approximation of the smooth original. The
+honest statement is "cleaner semantics, unknown and possibly worse cost", and lead 1 below is the
+measurement that would settle it. I am not asserting the convergence; I am proposing it and naming
+what kills it.
 
 ## 7. The three integrity mechanisms, ranked
 
@@ -302,7 +369,9 @@ into trust in many parties' independence. That is a much better bet. It is still
 
 ## 9. Surfaced for the owner
 
-Located, evidenced, not resolved. Nothing filed into any ledger.
+Located, evidenced, not resolved. **No finding or verdict here was filed into any ledger.** The
+batch carries one neutral pointer (`TODO.md` `id:6646`) that lists these rulings AS PENDING, which
+is how it stays visible to `/relay human` without anything being recorded as decided.
 
 1. **The codec insight is yours, not mine, and it is the best idea in this batch.** Recorded
    explicitly because the provenance matters for a directory whose whole purpose is keeping

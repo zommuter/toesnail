@@ -13,8 +13,16 @@
   `docs/dreamed/fhe-search/trustless_verify.py` experiment L: about 1e-5 apart at float32,
   purely from reduction order), so the check must be a tolerance check -- and a tolerance
   check on a discrete argmax is unsound unless the margin is large enough. `argmax_stable`
-  is exactly the side condition that makes it sound, and it is the reason the scheme is a
-  theorem rather than a hope:
+  is exactly the side condition that makes it sound.
+
+  NOT NOVEL, recorded here as well as in the essays: DiFR (arXiv 2511.20621, Nov 2025) uses a
+  clipped logit-gap margin for the same purpose and does it better -- as a continuous statistic
+  aggregated over tokens rather than a binary gate, plus seed synchronisation. The theorem below
+  is independently derived and remains a clean statement of WHY a margin is the right gate.
+
+  Also: the ~1e-5 figure quoted above is the SYNTHETIC single-dot-product estimate. Measured on
+  GPT-2 end to end (float32 vs float64), the median is ~1e-4 and the max ~4e-3 -- see the essay's
+  section 4a. The theorem is unaffected; the tolerance it should be instantiated at is not.
 
     `argmax_stable`      if two logit vectors agree within eps and the winner's margin
                          exceeds 2*eps, both vectors have the same argmax. Tokens failing

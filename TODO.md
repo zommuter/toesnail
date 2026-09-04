@@ -200,7 +200,7 @@
   corpus row M-5's welding of Goedel and Lawvere into one line should be split. Index with
   per-essay headline claims: `docs/dreamed/README.md`. Each essay has a "Surfaced for the owner"
   section. Deciding what (if anything) to promote is owner-only theory direction.
-- [ ] **[OWNER] Triage the dreamed FHE cluster** (`docs/dreamed/`, 5 essays + 5 Lean files + 1 search suite, 2026-09-04) <!-- id:6646 -->
+- [ ] **[OWNER] Triage the dreamed FHE cluster** (`docs/dreamed/`, 6 essays + 6 Lean files + 1 search suite, audited, 2026-09-04) <!-- id:6646 -->
   AI-generated, owner-seeded, UNREVIEWED: toy homomorphic encryption, encrypted algorithms,
   FHE-LLM feasibility, trustless distributed AI, model attestation. **Nothing was filed into any
   ledger** -- a delegated verdict is a recommendation, never self-settling -- so this line exists
@@ -230,48 +230,6 @@
   - **Scope question, now overdue and owner-only**: three of the five essays are systems security
     with no connection to `crypto/fhe.md`'s counting argument or to physics. `docs/dreamed/`
     commits to nothing, but is the wrong home if any of it is to be BUILT.
-  AI-generated, owner-seeded, UNREVIEWED. Second dreamed batch, on toy homomorphic encryption,
-  encrypted algorithms, FHE-LLM feasibility, and trustless distributed AI. **Nothing was filed
-  into any ledger** -- a delegated verdict is a recommendation, never self-settling -- so this
-  line exists only so the batch is not invisible. **No verdict below is ratified.** Index:
-  `docs/dreamed/README.md`. Lean re-verified under a hard cgroup memory cap (`FHEToy`,
-  `FHEUniversal`, `FHESoftmax`, `TrustlessVerify`: exit 0, zero `sorry`); the search suite runs
-  under `docs/dreamed/capped.sh` (systemd scope, `MemoryMax`, no swap, CPU quota -- `nice` alone
-  does not bound memory, and `ulimit -v` is wrong for Lean) and sits outside the lake targets,
-  so `make test` is unaffected.
-  - **Pending owner rulings on owner content** (all in `crypto/fhe.md`, none acted on): whether
-    `:14`'s key-bit criterion wants the two-operation converse (two ops cap the key at log2(k)
-    bits for k data bits, so asymptotically ZERO key bits per data bit); whether `:8`'s
-    enumeration length wants upgrading to the lower bound it actually is (no encoding is shorter;
-    the truth table attains it; Lean written as `universal_card_lower` + `tt_universal`).
-  - **Pending, cosmetic, entirely ignorable**: `crypto/fhe.md:76` bare `TODO switch endianess of
-    permutation`, `:112` stray `print("hello")` block. Both predate this session.
-  - **No discrepancy found** in owner content by three of the four essays -- stated so the absence
-    is not read as an omission. The `id:76e5` stirling finding is untouched and stands as
-    `docs/dreamed/fhe-counting.md` left it.
-  - **Owner-originated idea, credited**: the MP3-vs-bit-exact-codec analogy is the owner's and is
-    what produced the integer-arithmetic convergence claim; recorded so provenance stays clear.
-  - **Scope question the owner may want to settle first**: whether this thread belongs in toesnail
-    at all. `crypto/` is one counting page; the last two essays are systems security, not physics.
-  AI-generated, owner-seeded, UNREVIEWED. Second dreamed batch, on toy homomorphic encryption,
-  encrypted algorithms, and trustless distributed AI. **Nothing was filed into any ledger** --
-  a delegated verdict is a recommendation, never self-settling -- so this line exists only so the
-  batch is not invisible. **No verdict below is ratified.** Index: `docs/dreamed/README.md`.
-  Lean re-verified (`FHEToy`, `FHEUniversal`, `FHESoftmax`: exit 0, zero `sorry`); the search
-  suite runs under `docs/dreamed/fhe-search/run.sh` (2 GiB address-space cap, CPU cap, nice -n19)
-  and sits outside the lake targets, so `make test` is unaffected.
-  - **Pending owner rulings on owner content** (all in `crypto/fhe.md`, none acted on): whether
-    `:14`'s key-bit criterion wants the two-operation converse (two ops cap the key at log2(k)
-    bits for k data bits, so asymptotically ZERO key bits per data bit); whether `:8`'s
-    enumeration length wants upgrading to the lower bound it actually is (no encoding is shorter;
-    the truth table attains it; Lean written as `universal_card_lower` + `tt_universal`).
-  - **Pending, cosmetic, entirely ignorable**: `crypto/fhe.md:76` bare `TODO switch endianess of
-    permutation`, `:112` stray `print("hello")` block. Both predate this session.
-  - **No discrepancy found** in owner content by two of the three essays -- stated so the absence
-    is not read as an omission. The `id:76e5` stirling finding is untouched and stands as
-    `docs/dreamed/fhe-counting.md` left it.
-  - **Scope question the owner may want to settle first**: whether this thread belongs in toesnail
-    at all. `crypto/` is one counting page; the FHE-LLM essay is systems security, not physics.
 ## Done
   reconciled to REVIEW_ME 2026-06-15): energy-loss claim cites (edot.3) (id:559c); ymaint/yfree accepted as
   exposition, results ✓ (id:0cb5); c-narrative dangling-`c` sentence removed (id:f9fe); sliding-average window

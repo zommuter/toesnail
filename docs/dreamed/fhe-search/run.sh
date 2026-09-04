@@ -6,7 +6,7 @@
 # here gets the scope OOM-killed and leaves the machine alone. See
 # ../capped.sh for why `nice` and `ulimit -v` are both inadequate on their own.
 #
-# Usage: ./run.sh [script.py ...]   (default: all five)
+# Usage: ./run.sh [script.py ...]   (default: all six stdlib scripts; stage0_logit_gaps.py needs torch and is excluded)
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -17,7 +17,7 @@ TIMEOUT=1800
 
 scripts=("$@")
 if [ ${#scripts[@]} -eq 0 ]; then
-  scripts=(fhe_search.py circuit_search.py llm_cost.py trustless_verify.py model_attestation.py)
+  scripts=(fhe_search.py circuit_search.py llm_cost.py trustless_verify.py model_attestation.py zkml_cost.py)
 fi
 
 for s in "${scripts[@]}"; do

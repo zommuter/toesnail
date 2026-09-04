@@ -60,7 +60,7 @@ distinct programs:
 
 $$ \text{Universal } U \implies 2^{2^n} \le |P| \implies \text{program length} \ge 2^n \text{ bits} \veq{progfloor-dreamed}\lean $$
 
-and the truth table attains it. Verified for $n \le 3$ by construction, exhaustively:
+and the truth table attains it. Verified exhaustively for $n \le 3$:
 
 | $n$ | functions $O(n,1)$ | floor (bits) | multiplexer program (bits) | tight |
 |---:|---:|---:|---:|:--:|
@@ -68,6 +68,9 @@ and the truth table attains it. Verified for $n \le 3$ by construction, exhausti
 | 2 | 16 | 4 | 4 | yes |
 | 3 | 256 | 8 | 8 | yes |
 | 4 | 65536 | 16 | 16 | yes |
+
+(The last column is verified by exhaustive enumeration for $n \le 3$; the $n = 4$ row is the same
+argument, not enumerated.)
 
 **Hiding which function you run costs nothing in program length.** The owner's $m2^n$ is optimal.
 The entire cost lives in the circuit that interprets the program, which is section 2.
@@ -120,10 +123,15 @@ each bit width, Euclid's algorithm:
 | 8 | 65025 | 4.754 | 12 | 2.52 |
 | 10 | 1046529 | 5.913 | 15 | 2.54 |
 
-Both columns are linear in the bit width, so the factor converges rather than growing: worst case
-$\approx 1.44$ steps per bit ($1/\log_2\varphi$, consecutive Fibonacci inputs), mean
-$\approx 0.58$ per bit (Porter's constant), limit $2.47$. **For Euclid the price of obliviousness
-is a small constant**, and the table is approaching it from below.
+Both columns are linear in the bit width, so the factor converges rather than growing. The
+asymptotic constants are $1/\log_2\varphi \approx 1.44$ steps per bit for the worst case
+(consecutive Fibonacci inputs) and $12(\ln 2)^2/\pi^2 \approx 0.584$ per bit for the mean (the
+Levy-Heilbronn coefficient -- *not* Porter's constant, which is the additive $O(1)$ term
+$\approx 1.467$; an earlier draft misattributed it), giving a limit of about $2.47$.
+**For Euclid the price of obliviousness is a small constant**, and the table approaches that limit
+**from above**: at these widths the worst case is still exactly $1.5$ steps per bit (6, 9, 12, 15)
+rather than the asymptotic $1.44$, so the measured ratio overshoots and descends. An earlier draft
+said "from below", which its own table contradicts.
 
 That is the good case, and it is good only because Euclid's worst case is known and tight. The
 general statement is worse in a way no engineering fixes: for an arbitrary program the trip count
@@ -184,7 +192,9 @@ annoying until it is.
 
 ## 6. Surfaced for the owner
 
-Located, evidenced, not resolved. Nothing filed into any ledger.
+Located, evidenced, not resolved. **No finding or verdict here was filed into any ledger.** The
+batch carries one neutral pointer (`TODO.md` `id:6646`) that lists these rulings AS PENDING, which
+is how it stays visible to `/relay human` without anything being recorded as decided.
 
 1. **`crypto/fhe.md:8` is stronger than it says it is.** The line "These functions can be
    enumerated using $m2^n$ bits" reads as a remark about one encoding. It is optimal: no encoding
