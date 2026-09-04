@@ -45,13 +45,13 @@ than by delegated agents, with prior-art research at the owner's explicit instru
 
 ## Index
 
-37 essays, 37 Lean files, one runnable library, one runnable search suite. Every Lean
+38 essays, 38 Lean files, one runnable library, one runnable search suite. Every Lean
 file was re-verified, not merely reported: `exit 0`, zero `sorry`. Every "finding" below
 is an AI **recommendation** awaiting the owner's ruling, never a settled decision.
 
 ### FHE cluster (`crypto/fhe.md`) -- session of 2026-09-04
 
-Companion code: [`fhe-search/`](fhe-search/) -- four stdlib Python scripts run under
+Companion code: [`fhe-search/`](fhe-search/) -- five stdlib Python scripts run under
 [`fhe-search/run.sh`](fhe-search/run.sh) and [`capped.sh`](capped.sh), which impose a HARD cgroup
 memory cap (`MemoryMax`, no swap) plus a CPU quota, so a runaway search is OOM-killed inside its
 own scope and cannot take the machine down. `nice` alone does not do this and `ulimit -v` is wrong
@@ -63,6 +63,7 @@ Monte-Carlo experiments are seeded and labelled as such.
 | [`fhe-toy-enumeration`](fhe-toy-enumeration.md) | A toy two-operation FHE exists trivially, and is trivially broken. Exhaustively: a strict scheme keeps only $\log_2 k$ key bits on a $k$-bit word (Frobenius) against the OTP's $k$; key entropy and functional completeness are **exactly** incompatible; randomising bought **zero** key ambiguity (mean 1.000). Confirms Boneh-Lipton 1996 rather than discovering it. |
 | [`fhe-encrypted-algorithm`](fhe-encrypted-algorithm.md) | "Encrypted algorithm" names **three** problems with three answers, separated by who holds the key: private function evaluation (solved, $O(k\log k)$), obfuscation (VBB **impossible**), circuit privacy (a cost). The $2^n$ program-bit floor of `crypto/fhe.md:8` is a **lower bound over all encodings** and is attained. Obliviousness, not cryptography, is the structural tax. |
 | [`fhe-llm`](fhe-llm.md) | State of the art, concretely: **BERT-base under non-interactive FHE in ~1 s on GPU** (NEXUS), but **~5 min/token for LLaMA-7B and only via MPC**. The gap is autoregression, not encryption. **The client should own the whole vocabulary boundary** -- saves >1 layer, $31\times$ bandwidth, deletes the vocabulary softmax exactly, removes the tokenizer side-channel class. OTRO/TDXRay is an argument **for** FHE over TEEs, not against. |
+| [`model-attestation`](model-attestation.md) | The "LLM footprint" exists: **Activation-DiFR** detects a 4-bit swap at AUC>0.999 from **2 output tokens**, and Model Equality Testing found **11 of 31** commercial Llama endpoints deviating from Meta's weights. Derived: a sampled token carries **0.033 bits** of identity evidence, an activation fingerprint **4.98** -- a factor of 150, so text-based verification pays a huge avoidable tax. **Main claim:** under FHE a provider cannot recognise an audit, so encryption makes sampled integrity checking **unevadable** -- reversing "FHE gives no integrity" in the two siblings, which are corrected. Also retracts this batch's gap-gating as non-novel (DiFR got there first). |
 | [`trustless-distributed-ai`](trustless-distributed-ai.md) | Owner's MP3-vs-bit-exact-codec analogy is the same problem, not an analogy: autoregressive decoding **is** predictive coding, so drift compounds (1e-3 per-token divergence reproduces a 4096-token answer 1.7% of the time), and codecs already fixed it by mandating integer transforms. Integer-only transformers exist (I-BERT, INT8 end-to-end, 3.1-3.6$\times$ faster). **Convergence claim:** an integer-only model is both bit-exactly verifiable AND natively evaluable by the *exact* FHE schemes (BFV/BGV) rather than approximate CKKS -- one substrate, both halves of trustlessness. |
 
 ### WiRoHSH cluster (`physics/wirohsh.md`)

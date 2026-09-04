@@ -33,6 +33,10 @@ architectural choice that serves **both** halves of trustlessness at once.
 1. **"Trustless" is two requirements.** Confidentiality (can the server read my prompt) and
    integrity (did the server run the model it billed for). FHE gives the first and **zero** of the
    second. They have opposite cost curves: **integrity can be sampled, confidentiality cannot.**
+   *(Corrected by the sibling [`model-attestation`](model-attestation.md) section 4: "zero" is
+   right about FHE alone and wrong about FHE plus an audit. Because the provider cannot read the
+   prompt, it cannot tell an audit from a real request, so encryption makes a sampled integrity
+   audit **unevadable**. The two properties are complementary, not orthogonal.)*
 2. **The cheap route to integrity is replication, and it is blocked by reproducibility.** Two
    honest providers running identical weights on identical input disagree on a logit by about
    **1e-5** at float32, purely from the order their hardware sums a dot product. Measured below.
@@ -157,6 +161,15 @@ $$ \lVert w - v\rVert_\infty \le \varepsilon \ \wedge\ \text{margin}(v) > 2\vare
 So: **accept a token on cheap tolerance agreement when its margin clears the bar; escalate the
 rest to an exact check.** The strict inequality is not slack -- at margin exactly $2\varepsilon$ a
 counterexample exists and is in the Lean file.
+
+> **CORRECTION (added after further research, same session).** This scheme is **not novel**.
+> DiFR (Karvonen et al., arXiv 2511.20621, November 2025) uses a clipped logit-gap margin for
+> exactly this purpose, and does it better: as a *continuous statistic aggregated over tokens*
+> rather than my binary accept-or-escalate gate, plus **seed synchronisation**, which constrains
+> the provider far more tightly and which I had not considered. It detects 4-bit quantization at
+> AUC > 0.999 within 300 tokens at zero cost to the provider. `argmax_stable` remains a correct
+> theorem and a clean statement of *why* a margin is the right gate, but it is independently
+> derived, not new. See [`model-attestation`](model-attestation.md) section 6.
 
 The cost of the scheme is the escalation rate. **PARAMETRIC MODEL, not a measurement** -- no
 weights are loaded here; top-2 gaps are modelled as Exponential(mean $\mu$), giving escalation

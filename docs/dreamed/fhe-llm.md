@@ -43,7 +43,12 @@ And "trustless" is two requirements, not one, which the FHE framing hides:
 | **integrity** | did the server actually run the model it claims? | zero-knowledge proofs of inference | separate, orthogonal, composable |
 
 FHE gives the first and **nothing at all** of the second: a malicious server can homomorphically
-evaluate a *different, cheaper* model and the client cannot tell. For "trustless distributed AI"
+evaluate a *different, cheaper* model and the client cannot tell.
+
+*(Partially retracted in [`model-attestation`](model-attestation.md) section 4. "Nothing at all"
+is right about FHE in isolation and wrong about the system: since the provider cannot read the
+prompt, it cannot recognise an audit request, so encryption strictly **strengthens** sampled
+integrity checking. Read the two together.)* For "trustless distributed AI"
 as a goal, that is the more interesting half and the less discussed one.
 
 Six levers below cut real cost, four of them from an architectural split this essay argues for,
