@@ -23,11 +23,13 @@ demands anyway. Both were read in full (arXiv PDF, v1):
 
 | | |
 |---|---|
-| **P1** | Faizal, Shabir, Khan, *Implications of Tarski's Undefinability Theorem on the Theory of Everything*, [arXiv:2410.10903](https://arxiv.org/abs/2410.10903) (2024-10-13), **EPL 148** (2024), DOI `10.1209/0295-5075/ad80c2`. |
+| **P1** | Faizal, Shabir, Khan, *Implications of Tarski's Undefinability Theorem on the Theory of Everything*, [arXiv:2410.10903](https://arxiv.org/abs/2410.10903) (2024-10-13), **EPL 148** (2024) 3, 39001, DOI `10.1209/0295-5075/ad80c2`. |
 | **P2** | Faizal, Krauss, Shabir, Marino, *Consequences of Undecidability in Physics on the Theory of Everything*, [arXiv:2507.22950](https://arxiv.org/abs/2507.22950) (2025-07-29), **J. Holography Appl. Phys. 5**(2) (2025) 10-21, DOI `10.22128/jhap.2025.1024.1118`. |
 
 Neither is a logic paper in a logic venue (EPL is general physics letters; JHAP is a small
-holography journal at Damghan University). Stated as a fact about refereeing exposure, not as an
+holography journal at Damghan University). **Page citations throughout this essay use the arXiv PDF
+pagination**, verified line by line against the downloaded PDFs. P2's journal version paginates
+10-21, so its "p. 4" is journal p. 13. Stated as a fact about refereeing exposure, not as an
 argument. Criticism weighed in §5: Redden, [arXiv:2512.11807](https://arxiv.org/abs/2512.11807);
 Smith and Stocks, *Against Professional Philosophy*, 2026-05-10.
 
