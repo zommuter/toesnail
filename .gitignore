@@ -23,4 +23,8 @@ private/
 # Python bytecode (dreamed search scripts)
 __pycache__/
 *.pyc
+
+# flock files for the shared non-union ledgers (md-merge.py / commit-ledger.sh)
 TODO.md.lock
+ROADMAP.md.lock
+REVIEW_ME.md.lock

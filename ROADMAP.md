@@ -128,28 +128,72 @@ its marker-split is an owner content decision, not this item.
     guard exists: today dropping `\textcolor` in custom-head.html does NOT fail the suite.)
   - **Context**: latent pre-existing mirror pattern (predates c7d6; c7d6 merely added colour to the mirror).
 
-## Gated forward-flags — NOT yet executor work
+### Dreamed-batch tooling findings (filed 2026-09-01 by the owner-instructed ledger pass, batch id:8e64)
 
-- [ ] [ROUTINE] Verify commit-hook: read the actual commit diff, and advance the note lifecycle <!-- id:ac7b -->
-- [ ] [ROUTINE] `docs/se-corpus.md`: fix two misattributed rows (M-1 posts, P-C mechanism) <!-- id:17ee -->
+Three tooling defects located and coordinator-verified by the 2026-09-01 dreamed batch
+(`docs/dreamed/`, TODO twin `id:2460`). All three are **tooling / inventory upkeep only** — no
+physics, essays or `crypto/` prose, no `verify:` finding resolution, no marker moves. The scope
+guard at the top of this file still binds.
+
+> **Placement note (relay review 2026-09-07).** These three were filed under the
+> `## Gated forward-flags — NOT yet executor work` heading with all three bodies stacked under
+> `id:3381`, so `ac7b` and `17ee` carried no acceptance criteria at all and `roadmap-lint`
+> rejected all three as `PARKED-POOL-LANE` — a pool-executable `[ROUTINE]` tag under a parked
+> heading, i.e. dispatch-invisible (the `id:d35a` silent-no-op class). Same `md-merge`
+> stacked-body damage that `584e93e` repaired in `TODO.md` for `id:2460`/`id:6646`. Moved here
+> and re-attached to their own head lines; no text was changed, added or dropped.
+
 - [ ] [ROUTINE] `docs/dependencies.md`: add the missing `dotclaude-skills` node <!-- id:3381 -->
   - **Why (located 2026-09-01, coordinator-verified: grep count for dotclaude-skills in `docs/dependencies.md` is 0)**: the file is the canonical three-node map (toesnail / `.mw` / collAIb), but the relay, the hooks, the ledger helpers and the commit-hook design all live in `~/src/dotclaude-skills`, which the map never mentions. `~/src/inflownistration`'s `instances.md` independently alleges the same gap. A dependency map missing a load-bearing dependency is the derived-doc-drift class `CLAUDE.md` warns about.
   - **Do**: add the node and its edges (which direction the dependency runs, and how strongly), matching the file's existing format. Documentation only, no code.
   - **Done-check**: the node exists with at least one typed edge; `bash tests/run.sh` exits 0.
   - **Context**: `docs/dreamed/inflownistration.md`; batch pointer TODO twin id:2460.
+
+- [ ] [ROUTINE] `docs/se-corpus.md`: fix two misattributed rows (M-1 posts, P-C mechanism) <!-- id:17ee -->
   - **Why (located 2026-09-01, coordinator-verified)**: the corpus file is the inventory feeding the owner-only authoring item id:e552, so a wrong row sends the author down the wrong road. **Row M-1** lists posts `116633+a/116639, 337971, 186201` against the subject "generators: e^{a d/dx}, dilation alpha^{x d/dx} (self-answered), curl as skew so(3), curl eigenvectors", so positionally it attaches "(self-answered)" and the dilation to **337971**. Both belong to **116633/a-116639**. And 337971's actual subject, "Can the curl operator be generalized to non-3D?" (score 35, the owner's highest in the cluster), appears nowhere in the row; it also carries a live open question of the owner's own from 2013 (whether `A` can be `d_1^{-1}` and `d_{n-2}^{-1}` at once for `n != 3`), which the row hides entirely. **Row P-C** reads "Casimir eigenvalue eqs as field eqs", but q/27195's real title is "Can symmetry generators be used for quantization?" and its mechanism is **VARIATIONAL**, not an eigenvalue equation (`0 = delta <psi| p^2 - m0^2 |psi>` gives Klein-Gordon). Its accepted answer (Urs Schreiber, +22) gets Dirac from the **square root** via worldline supersymmetry, not from `W^2`, and neither answer appears in the row.
   - **Do**: correct both rows. Split 337971 into its own row with its real subject plus a note that it carries an open owner question. Restate P-C's mechanism as variational and record what its answers established. **Mechanical inventory upkeep only** (ROADMAP already calls `docs/se-corpus.md` maintenance ROUTINE-able): do NOT re-rank, re-promote, or change any row's **Status**, which is owner judgment.
   - **Done-check**: both rows name the right post for each claim; `bash tests/run.sh` exits 0 (unchanged).
   - **Context**: `docs/dreamed/generators-and-bch.md` and `docs/dreamed/casimir-field-equations.md`; batch pointer TODO twin id:2460. Suggested replacement text is in each essay's "Surfaced for the owner".
+
+- [ ] [ROUTINE] Verify commit-hook: read the actual commit diff, and advance the note lifecycle <!-- id:ac7b -->
   - **Why (located 2026-09-01, coordinator-verified, `docs/dreamed/mw-collaib-triad.md`)**: `hooks/post-commit` runs a **CONSTANT PROBE**. It always simulates editing the same `e` definition in the mirror (`new_src = src.replace(e_def.content, e_def.content + " + 0  # probe")`) and **never reads the commit diff**, so every commit emits an identical, content-independent finding. Measured on this repo: **164 notes on `refs/notes/verify`, ALL `status:pending`, 0 triaged, 0 processed, and exactly ONE distinct findings string (`findings=stale`)**. The design's own observe-first log (`docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md`) therefore holds 164 copies of the same constant and has gathered zero evidence since installation. This is the silent-no-op class: a detector that fires correctly and resolves to nothing.
   - **Do**: (a) make the HARD tier read the committed diff and probe only the sections the commit actually touched, so the finding is a function of the commit; (b) either implement the pending/triaged/processed transition the design specifies, or delete the lifecycle field if no consumer is planned rather than emit a status nothing advances. Honour all four `CLAUDE.md` invariants (`.mw` optional and never a commit gate; no LLM in the hook; relay-skip; the mirror is a derived artifact). **Tooling only** -- no physics content, no marker moves.
   - **Tests**: extend `tests/test_verify_hook.sh` so that (1) two commits touching DIFFERENT sections produce DIFFERENT findings strings, and (2) a commit touching nothing relevant produces no finding or an explicit empty one. Currently RED: today every commit yields the same string.
   - **Done-check**: the two new assertions pass, then full `bash tests/run.sh` exits 0.
   - **Context**: surfaced by the 2026-09-01 dreamed batch (TODO twin id:2460). The existing 164 notes are local-only and lossy-on-rebase by design, so no migration is needed.
+
+### Test-suite tier coverage (surfaced by the relay review 2026-09-07, §3 tier enumeration)
+
+- [ ] [ROUTINE] Wire `tests/test_ci.sh` and `tests/test_make.sh` into `tests/run.sh` <!-- id:0183 -->
+  - **Why (measured 2026-09-07)**: `tests/run.sh` runs 10 `.sh` tiers + 2 `.cjs` tiers. `test_ci.sh`
+    (`# roadmap:9868`) and `test_make.sh` (`# roadmap:fca7`) are in `tests/` but in NO tier list, so
+    `bash tests/run.sh` — this repo's stated definition-of-done — never runs them. Both items are CLOSED
+    (`ROADMAP.archive.md:49` and `:40`), and both tests PASS when invoked by hand (verified: exit 0
+    each), so their regression guards work and are simply not armed: deleting `.github/workflows/ci.yml`
+    or the `Makefile`'s `test` target today leaves the suite green. A guard nothing runs is the
+    `id:d35a` silent-no-op class.
+  - **Do**: add `test_ci.sh` and `test_make.sh` to the `for t in …` list in `tests/run.sh`. Nothing else.
+    `tests/test_verify_entropy.sh` is deliberately NOT included — it is the still-RED spec for the gated
+    seam `id:76e5` (verified: exit 1 today), and its shipped half already runs as
+    `test_verify_entropy_routine.sh`. `tests/probe_status_macros.cjs` is a probe, not a tier.
+  - **Done-check**: `bash tests/run.sh` prints `RUN test_ci.sh` and `RUN test_make.sh` and exits 0.
+  - **Context**: relay review 2026-09-07, review.md §3(a) tier enumeration. Tooling only.
+
+## Gated forward-flags — NOT yet executor work
+
 - [ ] (GATED — verify-pilot umbrella) verify-pilot instrument bucket @container — DECOMPOSED, no ungated executor work of its own. Seams: id:e9e9 (entropy meanE/be/fd instruments — SHIPPED, `ROADMAP.archive.md`), id:76e5 (fhe_stirling — GATED on owner content fix, below), id:5d31 (lambertw algebra — GATED on owner marker placement, below), id:37cc (five `\leanc` counts — decision-gate `/meeting`, below). Pick those seams, not this. TODO twin `id:8807` is the design-ledger parent (`[ROUTINE]`-tagged there historically, before the owner reshaped it into these seams); this ROADMAP line is its twin so `unpromoted-scan.sh` no longer misreads the parent as fresh un-promoted backlog. Stays open until every seam closes. <!-- id:8807 -->
-- [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- gated-on: id5776-local-lake-build-gate --> <!-- id:9d8c -->
+- [ ] (FORWARD-FLAG, GATED — NOT yet executor work) CI Lean/Mathlib build <!-- owner-hold:local-lake-build-gate-suffices --> <!-- id:9d8c -->
   - **Gate**: a CI Mathlib build is ~60-min cold for one one-liner; warranted ONLY if local kernel-checking
     (id:5776's `lake build` gate) proves insufficient. Parked until that gate fires. Not dispatched.
+  - **Marker corrected 2026-09-07 (relay review) — needs owner confirmation.** The 2026-07-19 `/relay
+    human` pass wrote `<!-- gated-on: id5776-local-lake-build-gate -->` and ticked its REVIEW_ME box as
+    DONE. That marker parsed to NOTHING: `lib-typed-edges.sh`'s extractor is
+    `(?<=<!-- gated-on:)[0-9a-f,]+(?= -->)`, so both the space after the colon and the non-4-hex payload
+    miss — the `id:d35a` silent-no-op class, and the tick was a false claim. `gated-on:5776` is also the
+    WRONG edge: id:5776 is `[x]` closed (`ROADMAP.archive.md:137`), so a dependency edge on it would read
+    as CLEARED and unpark an item the owner deliberately parked. The gate is a CONDITION ("only if the
+    local gate proves insufficient"), which is exactly what `owner-hold:` (id:d119) expresses — an
+    intentionally-unclearable hold. Owner: confirm `owner-hold` is the intent, or say what should clear it.
 
 - [ ] (GATED — owner marker placement first) `lambertw` algebra-step SymPy instrument <!-- id:5d31 -->
   - **Gate**: /meeting id:3d2a D1 split the old `\veq{lambertw}\leanc` (`physics/entropy.md:59`): the ALGEBRA

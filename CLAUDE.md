@@ -27,6 +27,12 @@ decides every resolution.
   retired `gtnsd` repo (the ~2017 "inflownistration" / information-flow-administration origin; the standalone
   repo was archived on GitHub + dropped 2026-06-16). Conceptually essays-wing material; its "Inflownistration"
   section is an owner-authored essay candidate. See `.mw` `id:aae4`.
+  **DO NOT PRUNE (routed:5f53 / `id:7f2f`).** The branch is also MIRRORED into `~/src/inflownistration`
+  (whole-branch history import, 21 commits, root `c9147ce` 2017-12-28, tip `353972e`), but **toesnail's
+  copy stays the CANONICAL PUBLIC record**: this repo has a public GitHub remote, `inflownistration` is
+  fievel-only. Deleting `gtnsd-archive` here on the grounds that "it lives in inflownistration now" would
+  destroy the only public record of the 2017 coinage. No privacy delta either way (the content is already
+  public) — this is purely a do-not-prune guard.
 - `img/`, `_includes/`, `_config.yml` — Jekyll site assets (theme: minima).
 - `CONVENTIONS.md` — authoring conventions (equation handles, `verify:` markers, source-stays-plain) + the
   AI working contract.
@@ -119,7 +125,7 @@ non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, nev
   triggers; a bump lands here first. `mathematical-writing` PUBLISHES the resulting derived fleet value at
   its own repo root, which is the value `relay-doctor`'s id:50c4 drift-check treats as canonical downstream.
 
-## Relay contract <!-- relay-executor contract v9 -->
+## Relay contract <!-- relay-executor contract v18 -->
 
 This repo is managed by a reviewer/executor relay. Load `/relay executor` before
 working on any item, then follow its rules exactly.
