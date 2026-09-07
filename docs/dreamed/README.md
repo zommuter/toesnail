@@ -54,11 +54,32 @@ under `capped.sh` (cgroup `MemoryMax`, no swap, CPU quota) at his instruction.
 
 ## Index
 
-52 essays, 51 Lean files, one runnable library, one runnable search suite, one citation
-audit. Every Lean file was re-verified, not merely reported: `exit 0`, zero `sorry`. Every
-"finding" below is an AI **recommendation** awaiting the owner's ruling, never a settled
-decision. (`citation-audit.md` is the one essay with no Lean companion, by design: it is an
-audit artefact, not a dream.)
+67 pages: 58 essays, 9 infographics. 53 Lean files, two runnable libraries, one runnable
+search suite, one citation audit. Every Lean file was re-verified, not merely reported:
+`exit 0`, zero `sorry`. Every "finding" below is an AI **recommendation** awaiting the
+owner's ruling, never a settled decision. (`citation-audit.md` is the one essay with no Lean
+companion, by design: it is an audit artefact, not a dream.)
+
+### Infographics -- session of 2026-09-07
+
+Nine visual summaries, owner-requested, covering all three dreaming sessions. Hand-authored
+inline SVG: the site loads no CDN and no charting library, so that is the only thing that
+renders. Every page passes `tests/test_dreamed_render.cjs` through both MathJax and KaTeX.
+Charts follow the `dataviz` palette, validated rather than eyeballed. **These are figures,
+not rulings**: where one carries a verdict it is that figure's reading of the essays, and
+`docs/meeting-notes/2026-09-07-1508-bloch-truth-rulings.md` is the only ratified record.
+
+| Figure | Covers | Worth a look for |
+|---|---|---|
+| [`fig-the-object`](fig-the-object.md) | the Bloch Truth geometry | The ball and the triangle either side of a "project out phi" arrow, captioned *the same information, minus the angle*. Draws Goedel's sentence at **both** poles of the true/unprovable ball, which is why that encoding fails. |
+| [`fig-cluster-map`](fig-cluster-map.md) | all 19 Bloch Truth pages | 19 nodes, 27 edges, six typed edge kinds (corrects, refutes-own-parent, self-refutes, converges-with, adjudicates, builds-on). Lists the five edges dropped for legibility rather than thinning the graph quietly. |
+| [`fig-boundary-and-big-five`](fig-boundary-and-big-five.md) | undecidability + Reverse Mathematics | The Big Five ladder, `WKL_0` as a hub with seven equivalences radiating out, and conservativity drawn as an **architecture** statement: a strong layer that provably cannot corrupt the weak one below it. Mostly established mathematics, and says so. |
+| [`fig-results`](fig-results.md) | the cluster's only measurements | The scissors: gain and break-even swap rank between two panels sharing an x-axis. Re-ran the experiment rather than transcribing it. |
+| [`fig-wirohsh`](fig-wirohsh.md) | the WiRoHSH cluster | **The independence audit.** Only two of five essays bear on `id:ff32`, and the five grounds collapse to two roots, self-reported at `wirohsh-approximation.md:187`. The NO-GO survives on two legs, not five. |
+| [`fig-fhe`](fig-fhe.md) | the FHE cluster | A latency dot plot with an explicitly **empty lane** for end-to-end pure-FHE generation, and the zkML-versus-siblings overhead disagreement drawn as UNRESOLVED rather than settled. |
+| [`fig-thermo-laser`](fig-thermo-laser.md) | the entropy and laser wing | The Lambert-W branch panel: one horizontal cut through `u e^u` meeting it twice, `W_0` giving `beta E_1 = 0` exactly and `W_-1` giving 1.000000. Every CAS defaults to the wrong branch, so this is the wing's most practically dangerous finding. |
+| [`fig-spine`](fig-spine.md) | the QM spine audit | `physics/toesnail.md` as a line-number track with the l.126 asymmetry as a dashed rule, and Goedel I struck through in the omniscience panel as the one place he does **not** reach. |
+| [`fig-wings-and-corpus`](fig-wings-and-corpus.md) | corpus, wings, neighbouring repos | Grouped by **evidence type, not topic**, and argues why. The DAG bound (propagation caught, origination structurally invisible) scored on the real `edot` incident at 4 caught / 2 not. |
 
 ### Bloch Truth cluster -- session of 2026-09-07
 

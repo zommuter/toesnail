@@ -101,6 +101,19 @@ theorems rather than opinions.**
    not checked yet". Section 7 states this without hedging; it is the strongest thing direction (ii)
    has, and it is not a small thing.
 
+**ADDED after publication, 2026-09-07 (see §4.4).** A seventh item belongs on this list, located by
+the sibling [`logic-counterfactual-boundary.md`](logic-counterfactual-boundary.md) §2.2 after this
+essay was published. **The uncomputability is stacked, and item 6's wall was not the bottom one.**
+§4.2 rules out a computable *measure*. One level down, every *point* of the Stone space is an
+undecidable set of sentences (Goedel-Rosser), with no exceptions; and read as *models* rather than
+as theories, exactly one isomorphism class is computable and every other has both its addition and
+its multiplication non-recursive (**Tennenbaum 1959**). That closes the engineering fallback of
+"never mind the measure, just pick a completion and believe it" -- which matters, because §4.2's
+wall is quoted with a *non-dogmatic* hypothesis and a picked completion is precisely a dogmatic
+state, so the fallback slipped past it. §4.4 states this, machine-checks the one part of it that is
+not about computability at all, and is candid that the strengthening is smaller than it looks:
+nothing in §2, §3 or §5 depends on it.
+
 **The constructive recommendation:** keep (i) as the account of what a *theory* determines about a
 *sentence*, and drop the ball for it. (i)'s honest geometry is a **Bauer simplex** over the Cantor
 space of completions, which is infinite-dimensional and much richer than a 3-ball -- the richness
@@ -470,6 +483,149 @@ also the correct answer to the owner's `conv-formal-language.md` question about 
 complete systems disagreeing: two such systems are two different $\mu$, and there is no
 contradiction to locate because $z$ never claimed to be intrinsic.
 
+## 4.4 The points are uncomputable too, and that is what closes the "just pick a model" fallback
+
+**ADDED after publication, 2026-09-07.** Located by the sibling
+[`logic-counterfactual-boundary.md`](logic-counterfactual-boundary.md) §2.2, which observed that
+this essay never mentions Tennenbaum's theorem and framed the omission as a **missing
+strengthening, not an error**. Nothing above is retracted and §4.2 stands exactly as written. What
+follows is a second wall one level down, the reason it is needed rather than decorative, one
+machine-checked consequence, and an honest accounting of how much smaller the strengthening is than
+it first looks.
+
+### 4.4.1 The theorem
+
+**Tennenbaum's theorem** (Stanley Tennenbaum, 1959; announced as *Non-Archimedean models for
+arithmetic*, Notices of the American Mathematical Society **6**, p. 270): *no countable nonstandard
+model of first-order Peano arithmetic is recursive.* Sharper, and this is the half that does the
+work below: **neither the addition nor the multiplication of such a model can be recursive**, each
+operation separately.
+
+"Computable model" needs care here, because the *domain* is not the obstruction. A structure in
+PA's language counts as recursive when its carrier can be taken to be $\mathbb{N}$ itself, with the
+graphs of $\oplus$, $\otimes$ and $<$ recursive relations on those codes. Listing the elements of a
+countable model is therefore always possible; what is impossible is computing its **operations** on
+that listing. Up to isomorphism exactly one model of PA is computable, the standard one, against
+continuum many countable models in all.
+
+The theorem as stated is about full first-order PA. **How far it descends to weaker fragments was
+not established here** and the honesty table in §4.4.5 records what was tried. That matters for the
+layered architecture in a specific way: §1 already shows the *complete* core layer has a one-point
+Stone space and a unique measure, so nothing in this subsection reaches it. Tennenbaum bites at the
+PA-strength upper layer, which is exactly where this essay puts it, and its status in between is
+left open.
+
+### 4.4.2 What it closes, and why the closure is needed
+
+§1 opens the segment with **Dirac measures**: "if $\varphi$ is independent then $[\varphi]$ and its
+complement are both nonempty clopen sets, so Dirac measures at points of each are available and
+every convex combination of them is a measure". A Dirac measure is the natural engineering reading
+of *never mind which measure, just pick a completion and believe it*. Two things follow, and the
+first is why this subsection is a strengthening rather than a footnote.
+
+**First, the fallback slips §4.2's wall on a hypothesis.** The reported Demski result is about a
+belief state that is *non-dogmatic*, Gaifman-inductive and weakly coherent. A Dirac measure is
+two-valued: 0 or 1 on every sentence, nothing between. It is the maximally dogmatic state, so the
+non-dogmatic hypothesis fails outright and that wall does not touch it. §4.2 fences the
+*interesting* measures; the fallback is precisely the retreat to an uninteresting one.
+
+**Second, a different theorem closes it.** A point of $S(B_{\mathrm{PA}})$ is a complete consistent
+extension of PA. By Goedel-Rosser together with the essential undecidability of Robinson's Q, no
+such extension is decidable, and here there is **no exception at all**: the standard model's own
+theory is the worst case, since by Tarski $\mathrm{Th}(\mathbb{N})$ is not merely undecidable but
+not arithmetically definable. Pass from the point to a model realising it and Tennenbaum adds the
+next layer, with all but one isomorphism class uncomputable in each operation separately.
+
+So the stack is three deep and the layers are logically independent of each other: the measure has
+no computable approximation (§4.2), its points are undecidable (Goedel-Rosser), and read as models
+all but one are uncomputable (Tennenbaum 1959). A machine can neither sample this space nor name a
+point of it.
+
+**One natural compression of that is false and should be avoided.** It is tempting to write "the
+points are individually uncomputable, with exactly one exception, the standard model". That mixes
+the two levels. The one-exception count belongs to **models**; at the level of **points**, which is
+what this essay's Stone space consists of, there is no exception, and $\mathbb{N}$'s point is the
+one furthest out of reach. The exception appears only after one has passed to a structure, and the
+structure carrying it is not something a machine reaches by *choosing a completion*: reaching it
+presupposes the answer to every arithmetical question.
+
+### 4.4.3 One machine-checked consequence, and it is not about computability
+
+The sharpest thing to say against the fallback turns out to need no computability at all. A Dirac
+state is two-valued, so under (i) it reports a **pole for every sentence**, including the
+independent ones that opened the segment in the first place:
+
+$$
+\big(\forall a \in B,\ \mu(a) \in \{0, 1\}\big)
+\;\Longrightarrow\;
+z(a) \in \{-1, +1\} \ \text{ and }\ r(a) = 1
+\veq{dirac-poles}\lean
+$$
+
+That is `IsDirac`, `dirac_poles_only` and `dirac_r_one` in
+[`lean/LogicModels.lean`](lean/LogicModels.lean), added in the same pass, with the supporting
+`m_compl_eq_zero`, `m_inf_eq_one` and `dirac_decides` recording that the measure-one set of a Dirac
+state is a complete, consistent, conjunction-closed extension, which is the Stone-space point in
+`FinProb` clothing.
+
+Read against `complete_theory_poles_only` this says something the owner's layered architecture
+should hear. A Dirac report on an incomplete theory is **indistinguishable, in the report format,
+from a complete theory's report**: both give $z = \pm 1$ and $r = 1$ on every sentence. So the
+fallback does not merely fail to be computable. It also erases the one distinction §1 sells as
+direction (i)'s main deliverable, namely that the interior of the segment is a witness to
+incompleteness. Under (i) that interior is available only to genuinely mixed measures, that is,
+only to states that are about more than one completion at once.
+
+### 4.4.4 How much smaller this is than it looks
+
+Three limits, stated because a strengthening invites overreach.
+
+1. **It does not touch the central result.** §2's diagonality and the reachable segment
+   $|z| = r$ are algebraic: a measure supplies probabilities and nothing else, and no computability
+   hypothesis appears anywhere in them. Not a word of §2, §3 or §5 changes. The essay's headline
+   cost stands or falls entirely independently of Tennenbaum.
+
+2. **It does not prevent a measure from existing.** The points exist by the Boolean Prime Ideal
+   theorem and the Dirac measures at them follow; Stone duality is untouched, and every measure §1
+   constructs is still there. What is denied is **algorithmic access**: sampling, naming,
+   conditioning. That is a claim about implementations, which is why it lands on the owner's
+   AI-core application and nowhere else in the essay.
+
+3. **Tennenbaum is fragile with respect to signature, and an unqualified statement of it would
+   over-claim.** Pakhomov, *How to escape Tennenbaum's theorem*
+   ([arXiv:2209.00967](https://arxiv.org/abs/2209.00967), 2022), abstract verbatim: *"We construct a
+   theory definitionally equivalent to first-order Peano arithmetic PA and a non-standard computable
+   model of this theory. The same technique allows us to construct a theory definitionally
+   equivalent to Zermelo-Fraenkel set theory ZF that has a computable model."* Maia, *Escaping
+   Tennenbaum's theorem and a strong jump inversion theorem*
+   ([arXiv:2603.04599](https://arxiv.org/abs/2603.04599), 2026), extends that fragility to
+   intermediate strengths with theories definitionally equivalent to "PA plus all $\Pi^0_n$ truths"
+   admitting computable nonstandard models, and records that Pakhomov showed it does **not** extend
+   to true arithmetic: any nonstandard model of a theory definitionally equivalent to
+   $\mathrm{Th}(\mathbb{N})$ is uncomputable.
+
+   Why that does not rescue the fallback, said explicitly. The Goedel-Rosser layer is the one that
+   applies to the **points** of this essay's Stone space, it is a statement about the undecidability
+   of a set of sentences, and no change of signature touches it. What Pakhomov weakens is the
+   model-level layer, and even there the escape buys a structure that is computable in *another*
+   signature while PA's own $+$ and $\times$ on it remain non-recursive. The correct form of the
+   claim is therefore the point-level one, with Tennenbaum as the model-level corollary rather than
+   the load-bearing step.
+
+### 4.4.5 What was verified for this subsection, and what was not
+
+| Claim | Status |
+|---|---|
+| Tennenbaum 1959: no countable nonstandard model of PA is recursive; neither operation recursive; citation *Non-Archimedean models for arithmetic*, Notices AMS **6** (1959), 270 | **Verified.** Statement, recursive-model definition and citation from the Wikipedia article on the theorem, cross-checked against three independent arXiv abstracts (Hermes-Kirst 2302.14699, Glazer 2311.13699, Reid 1311.6375), which agree on the statement |
+| Pakhomov 2022 and Maia 2026, quoted above | **Verified**, abstracts fetched from their arXiv listing pages; quoted text is verbatim from those abstracts. Neither full paper was read |
+| Every complete consistent extension of PA is undecidable (Goedel-Rosser, essential undecidability of Q) | **Not re-verified here.** Standard, and it is the same fact §1 already uses to prove the algebra atomless |
+| $\mathrm{Th}(\mathbb{N})$ not arithmetically definable (Tarski) | **Not re-verified here.** Standard |
+| Whether Tennenbaum holds for $I\Sigma_1$, $I\Delta_0$, or fails for open induction | **Not verified.** No source reached. Tried: the nLab page (404), Kaye's paper page and its PDF (both 404), the SEP incompleteness entry (no mention of Tennenbaum at all), and Glazer's paper, which mentions `IOpen` only in a corollary and cites nothing on recursive nonstandard models of it. A gap in this sweep is not evidence that the fact is unsettled; it is evidence that this pass did not find a source |
+
+**Honesty note.** This session's WebSearch budget was exhausted before this subsection was written,
+so every item above was checked by fetching a specific page rather than by search, which is why the
+last row reports a gap rather than a negative result.
+
 ---
 
 # 5. Four attempts to get the equator back, and what each actually yields
@@ -599,13 +755,17 @@ cd verify && ../docs/dreamed/capped.sh -m 4G -c 100 -- \
 | `z-saturates` | `abs_z_le_r`, `abs_z_eq_r_iff_diagonal` | $\|z\| \le r$ always, with equality **exactly** on the diagonal states |
 | `complete-poles` | `complete_theory_unique`, `complete_theory_poles_only` | a two-valued algebra has a unique probability, and every sentence sits at a pole |
 | `undecided-witness` | `undecided_of_strictly_between` | $-1 < z < 1$ implies the sentence is neither $\bot$ nor $\top$ |
+| `dirac-poles` | `dirac_poles_only`, `dirac_r_one` | **ADDED 2026-09-07 with §4.4.** A two-valued (Dirac) state reports $z = \pm 1$ and $r = 1$ on *every* sentence, so picking one completion erases the incompleteness witness |
 
 Plus the supporting facts the essay leans on: `m_compl` ($p(\neg a) = 1 - p(a)$, which is the NOT
 gate), `m_le_one`, `m_mono` (a stronger sentence has no more models), `FinProb.mix` (mixtures of
 model-measures are model-measures, so the reachable set is convex), `blochOf_diagonal` and
 `blochOf_mix` (the assignment is diagonal-valued and affine), and `blochOf_z_mem` ($z \in [-1,1]$).
-`#print axioms` on the four headline theorems returns only `propext`, `Classical.choice`,
-`Quot.sound`.
+Added with §4.4: `IsDirac`, `dirac_decides`, `m_compl_eq_zero`, `m_inf_eq_one` and `m_bot_ne_one`,
+which together say the measure-one set of a two-valued state is a complete, consistent,
+conjunction-closed extension. `#print axioms` on the four headline theorems, and on
+`dirac_poles_only`, `dirac_r_one`, `dirac_decides` and `m_inf_eq_one`, returns only `propext`,
+`Classical.choice`, `Quot.sound`.
 
 **What it does not prove, and says so in its header.** Nothing about quantum mechanics: `Bloch` is a
 bare triple of reals with no positivity constraint, no trace and no Hilbert space. Nothing about
@@ -615,7 +775,9 @@ between finitely additive probabilities on $B$ and Radon measures on $\mathrm{St
 a cited premise throughout and is proved nowhere in this repo, which is the single largest
 unformalized load-bearing step in the essay. The completeness theorems take
 $\forall a,\ a = \bot \vee a = \top$ as a *hypothesis*; that Presburger arithmetic satisfies it is
-cited, not derived.
+cited, not derived. **And nothing about computability**: the `dirac_*` lemmas added with §4.4 say
+what a two-valued state *reports*, never that such a state is unreachable. Goedel-Rosser and
+Tennenbaum are cited in the prose and formalised nowhere here.
 
 ---
 
@@ -640,6 +802,17 @@ measure does all the epistemic work and the geometry is bookkeeping. Gaifman's c
 without selecting; Hutter et al. prove existence and reach for minimum relative entropy to select;
 the reported Demski result says a non-dogmatic Gaifman-inductive weakly coherent state has no
 computable approximation. So (i) is a description of a limit object that no machine occupies.
+
+**AMENDED after publication, 2026-09-07, by §4.4.** As originally written this cost had a hole,
+found by [`logic-counterfactual-boundary.md`](logic-counterfactual-boundary.md) §2.2. The Demski
+statement carries a **non-dogmatic** hypothesis, and the obvious retreat from an uncomputable
+measure is a *dogmatic* one: pick a single completion, put a Dirac measure on it. That retreat
+escapes this paragraph as written. It is closed one level down instead, and by a different theorem:
+every point of the Stone space is an undecidable set of sentences (Goedel-Rosser, no exceptions),
+and read as models all but one isomorphism class has both operations non-recursive (Tennenbaum
+1959). The uncomputability is therefore **stacked**, not single. C3's verdict is unchanged and
+better supported; §4.4 also gives the retreat a second, purely order-theoretic defect that needs no
+computability at all.
 
 **C4. The origin collision the fork anticipated is worse than a collision.** The brief expected
 independence and total ignorance to land together at the origin. Under (i) that is not what happens,
@@ -791,6 +964,15 @@ recommendation, never a self-settling decision.
    minimum-relative-entropy choice) is acceptable for the construction's purposes, or whether the
    absence of a canonical one is disqualifying. Note that the essay reports the MIRI results from
    summaries; verifying Demski's exact statement against the primary source is a cheap open task.
+   **AMENDED after publication, 2026-09-07 (§4.4), and the ruling this item needs has changed
+   shape.** The stipulated-measure menu above omits the option an implementation would reach for
+   first: *stipulate a Dirac measure*, that is, pick one completion and believe it. §4.4 shows that
+   option is worse than the listed ones, twice over. It escapes the Demski wall quoted here, which
+   assumes a **non-dogmatic** state, and is closed instead by Goedel-Rosser at the level of points
+   and Tennenbaum at the level of models; and independently of computability it reports $r = 1$ on
+   every sentence, so an incomplete theory's report becomes indistinguishable from a complete
+   theory's. **The ruling is therefore two-part:** whether a stipulated measure is acceptable at
+   all, and, if it is, that the stipulation must be a genuinely mixed one.
 
 10. **Prior art: the diagonal restriction was published in 2012.** Located: §2, E. D. Vol,
     [arXiv:1205.6898](https://arxiv.org/abs/1205.6898). **Ruling needed:** none required, but the
@@ -804,6 +986,23 @@ recommendation, never a self-settling decision.
     independently found the phase to be invisible to the truth question and found no
     rotation-covariant order on the equator. Two essays converging on "the phase carries nothing" by
     different routes is the cluster's most checkable cross-result.
+
+12. **ADDED after publication, 2026-09-07. The uncomputability is stacked, and a single completion
+    is a dogmatic report.** Located: §4.4, added because
+    [`logic-counterfactual-boundary.md`](logic-counterfactual-boundary.md) §2.2 found this essay
+    never mentions Tennenbaum's theorem. Three independent layers: no computable measure (§4.2), no
+    decidable point (Goedel-Rosser, no exceptions, $\mathrm{Th}(\mathbb{N})$ the worst case), and no
+    computable model but the standard one, in either operation separately (Tennenbaum 1959). The
+    part that is machine-checked is not the computability but its consequence for the report format,
+    `dirac_poles_only` and `dirac_r_one`: a picked completion reports $z = \pm 1$ and $r = 1$ on
+    every sentence. **Ruling needed:** nothing is overturned, so this needs a ruling only on scope.
+    Does the AI-core application accept a semantics whose points a machine can neither name nor
+    sample, on the grounds that the core consumes reports rather than models, or does that make
+    direction (i) unusable rather than merely idealised? **Two honesty notes attached to the item.**
+    The strengthening does not touch §2, §3 or §5, which have no computability content at all; and
+    Tennenbaum is fragile with respect to signature, since Pakhomov ([arXiv:2209.00967](https://arxiv.org/abs/2209.00967),
+    2022) built a theory definitionally equivalent to PA with a computable nonstandard model, so the
+    load-bearing layer is the point-level Goedel-Rosser one, with Tennenbaum as a corollary.
 
 ---
 
@@ -832,6 +1031,14 @@ complete_poles   = Implies(ForAll(a, Or(Eq(a, Bot), Eq(a, Top))),
                            Or(Eq(z(mu,a), -1), Eq(z(mu,a), 1)))
 undecided_witness = Implies(And(Lt(-1, z(mu,a)), Lt(z(mu,a), 1)),
                             And(Ne(a, Bot), Ne(a, Top)))
+```
+
+```computation
+# handle: dirac-poles. ADDED 2026-09-07 with section 4.4.
+# A two-valued (Dirac) state is dogmatic: poles everywhere, radius one everywhere.
+is_dirac(mu) = ForAll(a, Or(Eq(mu(a), 0), Eq(mu(a), 1)))
+dirac_poles  = Implies(is_dirac(mu),
+                       And(Or(Eq(z(mu,a), -1), Eq(z(mu,a), 1)), Eq(r(mu,a), 1)))
 ```
 
 # Follow-up leads

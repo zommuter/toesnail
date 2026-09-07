@@ -113,9 +113,22 @@ variable**, $e^{-(x-ct)^2/2\sigma^2}$, solves the wave equation exactly, because
 differentiable $g(x-ct)$ does. So the shape "Gaussian" is not the problem. The problem is a Gaussian
 whose argument is $x$ or $x^\nu x_\nu$ rather than a null combination.
 
-$$ \square\, g(x-ct) = 0 \quad\text{for any } g \veq{gauss-travel}\lean
-\qquad\text{but}\qquad
-\square\, e^{-x^2/2\sigma^2} = \frac{x^2-\sigma^2}{\sigma^4}\,e^{-x^2/2\sigma^2} \neq 0 \veq{gauss-static}\lean $$
+$$ \square\, g(x-ct) = 0 \quad\text{for any } g \veq{gauss-travel}\lean $$
+
+but
+
+$$ \square\, e^{-x^2/2\sigma^2} = \frac{x^2-\sigma^2}{\sigma^4}\,e^{-x^2/2\sigma^2} \neq 0 \veq{gauss-static}\lean $$
+
+<!-- RENDER FIX 2026-09-07: these two displays were previously ONE display block carrying BOTH
+     veq handles. Each veq macro expands to a tag, so KaTeX threw "Multiple tag" and MathJax
+     emitted an merror, and the pair rendered broken on the public page from 2026-09-01 until
+     now. Split into two display blocks per the repo's documented pattern (CLAUDE.md Jekyll
+     notes; same fix as id:3b4c), which keeps both handles addressable by eqref. Located by
+     tests/test_dreamed_render.cjs on its first run, the advisory tier built for id:8b1c.
+     No content changed. NOTE: this comment deliberately contains no dollar signs, because an
+     earlier version quoted the delimiter literally and kramdown read it as opening a new math
+     block, which cascaded five further false findings down the page. -->
+
 
 Read charitably this is not fatal, because the owner wrote $\square A_\mu = J_\mu$ with a source. The
 computation then *is* the answer: it tells him which $J_\mu$ his ansatz is the field of. That

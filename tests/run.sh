@@ -31,6 +31,19 @@ else
   echo "[test_veqs_inline] SKIP — node not installed"
 fi
 echo
+# ---- ADVISORY tier (id:8b1c, owner ruling option (c)) -----------------------
+# Reports render breaks in the UNRATIFIED docs/dreamed/ pages. Deliberately does NOT
+# contribute to $rc: those pages are published but not owner-ratified, so they must
+# never be able to fail `make test`. Its own output is a loud ADVISORY block.
+echo "============================================================"
+echo "RUN test_dreamed_render.cjs  [ADVISORY: never fails the suite]"
+echo "============================================================"
+if command -v node >/dev/null 2>&1; then
+  node "$here/test_dreamed_render.cjs" || true
+else
+  echo "[test_dreamed_render] SKIP: node not installed"
+fi
+echo
 echo "============================================================"
 if [ "$rc" -eq 0 ]; then
   echo "SUITE: PASS"

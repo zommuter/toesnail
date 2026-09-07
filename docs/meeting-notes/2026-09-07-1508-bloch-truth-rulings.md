@@ -134,6 +134,41 @@ to commute (adopting ZF + AC then not-AC differs from the reverse) and still die
 order-dependence of *update* is not order-dependence of *evaluation*. Anyone reopening this
 should start there.
 
+## Outcomes, recorded the same day
+
+All four items were discharged within hours of the ruling. Their results are recorded here
+because a decision record that does not say what the decision produced is half a record.
+**None of these outcomes is itself a ruling**; each is evidence for the owner.
+
+- **D3, the prototype, ran and the prediction failed in both halves.** Reading (ii) does not
+  beat reading (i): at zero independent sentences (i) settles 19.98 per 1000 budget units
+  against (ii)'s 17.57, and (ii) loses at every fraction tested. The reports are identical
+  until someone PAYS for an independence proof, so the distinction is a purchase rather than
+  information already present. Break-even is 12 to 29 units against a mean ordinary proof
+  cost of 40, and the budget sweep shows a **scissors**: the gain is largest exactly where
+  the break-even price is lowest, so the regime where the distinction is valuable and the
+  regime where you can afford it do not overlap. **The (i)-versus-(ii) fork is therefore
+  INFORMED but still NOT SETTLED**, which is the outcome D3 was designed to produce.
+- **D4.1, the BPI lead, is verdict (b): a real theorem about the wrong object.** BPI governs
+  a general Boolean algebra; the Lindenbaum-Tarski algebra of a countable language is
+  countable and its prime ideal is built choice-free. The real boundary is
+  well-orderability. The honest replacement for the instinct is **WKL_0, compactness rather
+  than choice**. This also supplies the matching half of `REVIEW_ME.md id:251e`: dropping AC
+  costs no truth assignment either, so "ZF without C" is inert in both directions.
+- **D4.2 corrected its own brief.** The Stone space's points are complete consistent
+  extensions, every one undecidable by Goedel-Rosser with no exception; the one-exception
+  count belongs to models. The strengthening turned out load-bearing rather than decorative.
+- **D4.3, the advisory render tier, found a real six-day-old public break on its first run**
+  (`photon-localizability.md`, two tag-bearing handles in one display block), plus four
+  ratified pages the old self-checking allowlist had never covered.
+
+One further audit, not part of D1-D4 and recorded for the same reason: `fig-wirohsh.md`
+found that `id:ff32`'s "five grounds" are two roots, self-reported at
+`wirohsh-approximation.md:187`. The NO-GO recommendation is unaffected, its evidential
+weight is. That is the third convergence claim to collapse under checking this session, and
+the pattern is now the session's most reliable finding: when several agents agree, assume a
+shared root until someone proves otherwise.
+
 ## What was NOT decided
 
 The `(i)` versus `(ii)` fork itself is left open, deliberately: D3 makes it an empirical

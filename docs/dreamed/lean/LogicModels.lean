@@ -304,6 +304,76 @@ theorem undecided_of_strictly_between (μ : FinProb B) (a : B)
     rw [show (blochOf μ a).z = 2 * μ.m a - 1 from rfl, h, μ.m_top] at hhi
     linarith
 
+/-! ## 5. The Dirac fallback: picking one model is dogmatic
+
+    ADDED after publication, 2026-09-07, alongside the essay's Section 4.4 (the
+    Tennenbaum strengthening located by `logic-counterfactual-boundary.md` Section 2.2).
+
+    The essay's Section 1 opens the segment by taking Dirac measures at points of a
+    proper clopen set. A Dirac measure is the engineering fallback "never mind which
+    measure, just pick one complete extension and believe it". These lemmas say what
+    that fallback reports, and the answer is the reason the fallback slips the
+    computability wall of Section 4.2: that wall is quoted with a NON-DOGMATIC
+    hypothesis, and a Dirac state is exactly a dogmatic one.
+
+    NOT claimed here: anything about computability. That a two-valued state is
+    uncomputable is Goedel-Rosser (points) and Tennenbaum (models), both cited in the
+    essay and neither formalised anywhere in this repo. -/
+
+/-- Two general facts about any finitely additive probability, needed below. A sentence
+    of measure one has a complement of measure zero. -/
+theorem m_compl_eq_zero {a : B} (ha : μ.m a = 1) : μ.m aᶜ = 0 := by
+  rw [μ.m_compl, ha]; norm_num
+
+/-- And two sentences of measure one have a conjunction of measure one, so the
+    measure-one set is closed under conjunction (deductive closure, in the reading). -/
+theorem m_inf_eq_one {a b : B} (ha : μ.m a = 1) (hb : μ.m b = 1) : μ.m (a ⊓ b) = 1 := by
+  have hsplit : (a ⊓ b) ⊔ (a ⊓ bᶜ) = a := by
+    rw [← inf_sup_left, sup_compl_eq_top, inf_top_eq]
+  have hd : Disjoint (a ⊓ b) (a ⊓ bᶜ) :=
+    disjoint_compl_right.mono inf_le_right inf_le_right
+  have hadd := μ.m_add (a ⊓ b) (a ⊓ bᶜ) hd
+  rw [hsplit] at hadd
+  have hle : μ.m (a ⊓ bᶜ) ≤ μ.m bᶜ := μ.m_mono inf_le_right
+  have hc : μ.m bᶜ = 0 := μ.m_compl_eq_zero hb
+  have hnn := μ.nonneg (a ⊓ b)
+  have hnn2 := μ.nonneg (a ⊓ bᶜ)
+  linarith
+
+/-- **A Dirac state**: two-valued, i.e. concentrated on a single point of the Stone
+    space. Equivalently, in the essay's reading, a single complete consistent extension
+    picked and believed. -/
+def IsDirac : Prop := ∀ a : B, μ.m a = 0 ∨ μ.m a = 1
+
+/-- A Dirac state decides every sentence: it is a COMPLETE extension. -/
+theorem dirac_decides (h : μ.IsDirac) (a : B) : μ.m a = 1 ∨ μ.m aᶜ = 1 := by
+  rcases h a with h0 | h1
+  · right; rw [μ.m_compl, h0]; norm_num
+  · left; exact h1
+
+/-- And it is consistent: `⊥` never gets measure one. Nothing here needs `IsDirac`; it
+    is recorded so the triple complete-consistent-closed is visible in one place, the
+    third leg being `m_inf_eq_one`. -/
+theorem m_bot_ne_one : μ.m ⊥ ≠ 1 := by
+  rw [μ.m_bot]; norm_num
+
+/-- **The finding, machine-checked.** Under the Dirac fallback every sentence sits at a
+    pole, INCLUDING the independent ones that opened the segment in the first place. So
+    picking a model does not report "undecided"; it reports proven-true or proven-false
+    about everything. -/
+theorem dirac_poles_only (h : μ.IsDirac) (a : B) :
+    (blochOf μ a).z = -1 ∨ (blochOf μ a).z = 1 := by
+  rcases h a with h0 | h1
+  · left; show 2 * μ.m a - 1 = -1; rw [h0]; norm_num
+  · right; show 2 * μ.m a - 1 = 1; rw [h1]; norm_num
+
+/-- Same fact in the report coordinates: a Dirac state has `r = 1` for every sentence,
+    i.e. maximal claimed certainty everywhere. This is what makes it DOGMATIC, which is
+    precisely the hypothesis the Section 4.2 computability wall assumes away. -/
+theorem dirac_r_one (h : μ.IsDirac) (a : B) : (blochOf μ a).r = 1 := by
+  rw [Bloch.diagonal_r _ (blochOf_diagonal μ a)]
+  rcases dirac_poles_only μ h a with hz | hz <;> rw [hz] <;> norm_num
+
 end FinProb
 
 end Toesnail.LogicModels
