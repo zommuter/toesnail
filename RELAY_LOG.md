@@ -234,3 +234,7 @@ refactor: none needed -- two table-row edits in an existing markdown file, no ne
 
 1 open [ROUTINE] after re-derivation (id:ac7b) -- id:17ee closed this session.
 [id:17ee]
+
+## 2026-09-07 10:46 — executor (sonnet, relay-loop)
+
+Fixed the two misattributed docs/se-corpus.md rows (id:17ee): split 337971 out of row M-1 into its own row M-1b with its real subject, and restated P-C's mechanism as variational instead of eigenvalue-based, recording both SE answers. [id:17ee]
