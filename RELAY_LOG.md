@@ -210,3 +210,7 @@ of them only because the placement damage above was repaired.
 ## 2026-09-07 10:27 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review(toesnail): un-parked 3 [ROUTINE] items md-merge had filed under a gated heading with stacked bodies (ac7b/17ee/3381); fixed id:9d8c's non-parsing gated-on edge; filed id:0183 (2 test tiers never run); 12/12 tiers green, zero skips [id:ac7b,17ee,3381,0183,9d8c,7f2f]
+
+## 2026-09-07 10:33 — executor (sonnet, relay-loop)
+
+Wired test_ci.sh and test_make.sh into tests/run.sh's tier loop (id:0183), closing the silent-no-op gap where both regression guards existed but never ran under `bash tests/run.sh`. [id:0183]
