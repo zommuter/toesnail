@@ -369,3 +369,22 @@
   - **Do**: correct both rows. Split 337971 into its own row with its real subject plus a note that it carries an open owner question. Restate P-C's mechanism as variational and record what its answers established. **Mechanical inventory upkeep only** (ROADMAP already calls `docs/se-corpus.md` maintenance ROUTINE-able): do NOT re-rank, re-promote, or change any row's **Status**, which is owner judgment.
   - **Done-check**: both rows name the right post for each claim; `bash tests/run.sh` exits 0 (unchanged).
   - **Context**: `docs/dreamed/generators-and-bch.md` and `docs/dreamed/casimir-field-equations.md`; batch pointer TODO twin id:2460. Suggested replacement text is in each essay's "Surfaced for the owner".
+
+### Dreamed-batch tooling findings (filed 2026-09-01 by the owner-instructed ledger pass, batch id:8e64)
+Three tooling defects located and coordinator-verified by the 2026-09-01 dreamed batch
+(`docs/dreamed/`, TODO twin `id:2460`). All three are **tooling / inventory upkeep only** — no
+physics, essays or `crypto/` prose, no `verify:` finding resolution, no marker moves. The scope
+guard at the top of this file still binds.
+> **Placement note (relay review 2026-09-07).** These three were filed under the
+> `## Gated forward-flags — NOT yet executor work` heading with all three bodies stacked under
+> `id:3381`, so `ac7b` and `17ee` carried no acceptance criteria at all and `roadmap-lint`
+> rejected all three as `PARKED-POOL-LANE` — a pool-executable `[ROUTINE]` tag under a parked
+> heading, i.e. dispatch-invisible (the `id:d35a` silent-no-op class). Same `md-merge`
+> stacked-body damage that `584e93e` repaired in `TODO.md` for `id:2460`/`id:6646`. Moved here
+> and re-attached to their own head lines; no text was changed, added or dropped.
+- [x] [ROUTINE] Verify commit-hook: read the actual commit diff, and advance the note lifecycle <!-- id:ac7b -->
+  - **Why (located 2026-09-01, coordinator-verified, `docs/dreamed/mw-collaib-triad.md`)**: `hooks/post-commit` runs a **CONSTANT PROBE**. It always simulates editing the same `e` definition in the mirror (`new_src = src.replace(e_def.content, e_def.content + " + 0  # probe")`) and **never reads the commit diff**, so every commit emits an identical, content-independent finding. Measured on this repo: **164 notes on `refs/notes/verify`, ALL `status:pending`, 0 triaged, 0 processed, and exactly ONE distinct findings string (`findings=stale`)**. The design's own observe-first log (`docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md`) therefore holds 164 copies of the same constant and has gathered zero evidence since installation. This is the silent-no-op class: a detector that fires correctly and resolves to nothing.
+  - **Do**: (a) make the HARD tier read the committed diff and probe only the sections the commit actually touched, so the finding is a function of the commit; (b) either implement the pending/triaged/processed transition the design specifies, or delete the lifecycle field if no consumer is planned rather than emit a status nothing advances. Honour all four `CLAUDE.md` invariants (`.mw` optional and never a commit gate; no LLM in the hook; relay-skip; the mirror is a derived artifact). **Tooling only** -- no physics content, no marker moves.
+  - **Tests**: extend `tests/test_verify_hook.sh` so that (1) two commits touching DIFFERENT sections produce DIFFERENT findings strings, and (2) a commit touching nothing relevant produces no finding or an explicit empty one. Currently RED: today every commit yields the same string.
+  - **Done-check**: the two new assertions pass, then full `bash tests/run.sh` exits 0.
+  - **Context**: surfaced by the 2026-09-01 dreamed batch (TODO twin id:2460). The existing 164 notes are local-only and lossy-on-rebase by design, so no migration is needed.
