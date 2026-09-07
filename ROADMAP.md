@@ -100,23 +100,6 @@ guard at the top of this file still binds.
   - **Done-check**: the two new assertions pass, then full `bash tests/run.sh` exits 0.
   - **Context**: surfaced by the 2026-09-01 dreamed batch (TODO twin id:2460). The existing 164 notes are local-only and lossy-on-rebase by design, so no migration is needed.
 
-### Test-suite tier coverage (surfaced by the relay review 2026-09-07, §3 tier enumeration)
-
-- [x] [ROUTINE] Wire `tests/test_ci.sh` and `tests/test_make.sh` into `tests/run.sh` <!-- id:0183 -->
-  - **Why (measured 2026-09-07)**: `tests/run.sh` runs 10 `.sh` tiers + 2 `.cjs` tiers. `test_ci.sh`
-    (`# roadmap:9868`) and `test_make.sh` (`# roadmap:fca7`) are in `tests/` but in NO tier list, so
-    `bash tests/run.sh` — this repo's stated definition-of-done — never runs them. Both items are CLOSED
-    (`ROADMAP.archive.md:49` and `:40`), and both tests PASS when invoked by hand (verified: exit 0
-    each), so their regression guards work and are simply not armed: deleting `.github/workflows/ci.yml`
-    or the `Makefile`'s `test` target today leaves the suite green. A guard nothing runs is the
-    `id:d35a` silent-no-op class.
-  - **Do**: add `test_ci.sh` and `test_make.sh` to the `for t in …` list in `tests/run.sh`. Nothing else.
-    `tests/test_verify_entropy.sh` is deliberately NOT included — it is the still-RED spec for the gated
-    seam `id:76e5` (verified: exit 1 today), and its shipped half already runs as
-    `test_verify_entropy_routine.sh`. `tests/probe_status_macros.cjs` is a probe, not a tier.
-  - **Done-check**: `bash tests/run.sh` prints `RUN test_ci.sh` and `RUN test_make.sh` and exits 0.
-  - **Context**: relay review 2026-09-07, review.md §3(a) tier enumeration. Tooling only.
-
 ## Gated forward-flags — NOT yet executor work
 
 - [ ] (GATED — verify-pilot umbrella) verify-pilot instrument bucket @container — DECOMPOSED, no ungated executor work of its own. Seams: id:e9e9 (entropy meanE/be/fd instruments — SHIPPED, `ROADMAP.archive.md`), id:76e5 (fhe_stirling — GATED on owner content fix, below), id:5d31 (lambertw algebra — GATED on owner marker placement, below), id:37cc (five `\leanc` counts — decision-gate `/meeting`, below). Pick those seams, not this. TODO twin `id:8807` is the design-ledger parent (`[ROUTINE]`-tagged there historically, before the owner reshaped it into these seams); this ROADMAP line is its twin so `unpromoted-scan.sh` no longer misreads the parent as fresh un-promoted backlog. Stays open until every seam closes. <!-- id:8807 -->

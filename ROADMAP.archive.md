@@ -341,3 +341,19 @@
     `node tests/test_mathjax.cjs` FAIL; unmutated ⇒ full `bash tests/run.sh` exits 0. (Spec is red until the
     guard exists: today dropping `\textcolor` in custom-head.html does NOT fail the suite.)
   - **Context**: latent pre-existing mirror pattern (predates c7d6; c7d6 merely added colour to the mirror).
+
+### Test-suite tier coverage (surfaced by the relay review 2026-09-07, §3 tier enumeration)
+- [x] [ROUTINE] Wire `tests/test_ci.sh` and `tests/test_make.sh` into `tests/run.sh` <!-- id:0183 -->
+  - **Why (measured 2026-09-07)**: `tests/run.sh` runs 10 `.sh` tiers + 2 `.cjs` tiers. `test_ci.sh`
+    (`# roadmap:9868`) and `test_make.sh` (`# roadmap:fca7`) are in `tests/` but in NO tier list, so
+    `bash tests/run.sh` — this repo's stated definition-of-done — never runs them. Both items are CLOSED
+    (`ROADMAP.archive.md:49` and `:40`), and both tests PASS when invoked by hand (verified: exit 0
+    each), so their regression guards work and are simply not armed: deleting `.github/workflows/ci.yml`
+    or the `Makefile`'s `test` target today leaves the suite green. A guard nothing runs is the
+    `id:d35a` silent-no-op class.
+  - **Do**: add `test_ci.sh` and `test_make.sh` to the `for t in …` list in `tests/run.sh`. Nothing else.
+    `tests/test_verify_entropy.sh` is deliberately NOT included — it is the still-RED spec for the gated
+    seam `id:76e5` (verified: exit 1 today), and its shipped half already runs as
+    `test_verify_entropy_routine.sh`. `tests/probe_status_macros.cjs` is a probe, not a tier.
+  - **Done-check**: `bash tests/run.sh` prints `RUN test_ci.sh` and `RUN test_make.sh` and exits 0.
+  - **Context**: relay review 2026-09-07, review.md §3(a) tier enumeration. Tooling only.
