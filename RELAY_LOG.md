@@ -226,3 +226,11 @@ refactor: none needed -- one bullet + two table rows added to an existing doc, n
 ## 2026-09-07 10:39 — executor (sonnet, relay-loop)
 
 Added dotclaude-skills as a fourth node (+2 edge rows) to docs/dependencies.md (id:3381); full 12/12-tier suite green [id:3381]
+
+## 2026-09-07 — executor (claude-sonnet-5, relay-loop)
+
+Worked id:17ee -- fixed the two misattributed rows in `docs/se-corpus.md` (M-1/P-C cluster). Row M-1 wrongly tagged `337971` as the dilation-generator post and marked it self-answered; split it into a new row M-1b with its real subject (curl generalized to non-3D via de Rham/Hodge) and its own open owner question (can A be d_1^{-1} and d_{n-2}^{-1} simultaneously for n≠3?); M-1 now correctly attaches `(self-answered)` to `116633`+`a/116639`. Row P-C's summary "Casimir eigenvalue eqs as field eqs" was restated as the actual VARIATIONAL mechanism (stationarity of `<psi|p^2-m0^2|psi>`, not an eigenvalue read-off), and both answers (Schreiber: worldline-SUSY -> Dirac via the odd generator, not W^2; Misha: symmetry alone underdetermines the spectrum) are now recorded. No row's Status changed (owner judgment, out of scope); mechanical inventory correction only, no physics/essays content touched. Full `bash tests/run.sh` SUITE: PASS (all tiers green, unchanged by this doc-only edit).
+refactor: none needed -- two table-row edits in an existing markdown file, no new duplication.
+
+1 open [ROUTINE] after re-derivation (id:ac7b) -- id:17ee closed this session.
+[id:17ee]

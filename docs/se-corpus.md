@@ -20,7 +20,7 @@ crypto, bitcoin, MathOverflow.
 |---|---|---|---|---|---|
 | P-A | [q/8518](https://physics.stackexchange.com/q/8518) (115) | Noether for discrete symmetries | step 4 ↔ 1 | "What Noether doesn't give you" aside | **promoted 2026-07-08** |
 | P-B | [q/8626](https://physics.stackexchange.com/q/8626), [q/8860](https://physics.stackexchange.com/q/8860) | converse of Noether; DOF counting | steps 1, 4 | rigor-debt aside pair | inventory |
-| P-C | [q/27195](https://physics.stackexchange.com/q/27195) | Casimir eigenvalue eqs as field eqs (P²→KG, W²→spin?) | steps 3–5 | step-5 headline exploration/epigraph | **promoted 2026-07-08** |
+| P-C | [q/27195](https://physics.stackexchange.com/q/27195) | Can symmetry generators be used for quantization? — VARIATIONAL stationarity (0=δ⟨ψ\|p²−m₀²\|ψ⟩ ⇒ (□+m₀²)ψ=0), not an eigenvalue eq; Schreiber (accepted): worldline reparam → Hamiltonian-as-constraint, and for spin ½ the odd worldline-SUSY generator gives Dirac (not W² directly); Misha: symmetry alone underdetermines the spectrum | steps 3–5 | step-5 headline exploration/epigraph | **promoted 2026-07-08** |
 | P-D | [a/8627](https://physics.stackexchange.com/a/8627) | mass = Casimir P² of the whole system | steps 3, 5 | sidebar citation | inventory |
 | P-E | [q/48349](https://physics.stackexchange.com/q/48349)+own answer, [a/281724](https://physics.stackexchange.com/a/281724) | −¼F² ⇒ massless photon; Proca DOF count | step 7 (+5) | rigor-debt aside | inventory |
 | P-F | [q/27279](https://physics.stackexchange.com/q/27279) = MO [89955](https://mathoverflow.net/q/89955), [q/759844](https://physics.stackexchange.com/q/759844) | VSH under Poincaré; so(d) ladder ops | steps 3–4 | exploration file (SymPy-friendly) | inventory · open-on-SE |
@@ -37,7 +37,8 @@ crypto, bitcoin, MathOverflow.
 
 | Ref | Post(s) | Subject | Feeds | Candidate form | Status |
 |---|---|---|---|---|---|
-| M-1 | [116633](https://math.stackexchange.com/q/116633)+[a/116639](https://math.stackexchange.com/a/116639), [337971](https://math.stackexchange.com/q/337971), [186201](https://math.stackexchange.com/q/186201) | generators: e^{a d/dx}, dilation α^{x d/dx} (self-answered), curl as skew so(3), curl eigenvectors | step 4 | exploration/aside, owner-worked | **promoted 2026-07-08** |
+| M-1 | [116633](https://math.stackexchange.com/q/116633)+[a/116639](https://math.stackexchange.com/a/116639) (self-answered), [186201](https://math.stackexchange.com/q/186201) | generators: e^{a d/dx}, dilation α^{x d/dx}; curl as skew so(3), curl eigenvectors | step 4 | exploration/aside, owner-worked | **promoted 2026-07-08** |
+| M-1b | [337971](https://math.stackexchange.com/q/337971) (self-answered) | curl operator generalized to non-3D via de Rham/Hodge (curl² := ♯∘∗∘d_{n-2}∘∗∘d₁∘♭); open owner question: can A be d₁⁻¹ and d_{n-2}⁻¹ simultaneously for n≠3? | step 4 | exploration/aside, owner-worked | **promoted 2026-07-08** |
 | M-2 | [2043](https://math.stackexchange.com/q/2043)+[a/2047](https://math.stackexchange.com/a/2047), [57832](https://math.stackexchange.com/q/57832) | d/dx e^{A(x)} non-commuting; BCH ln(AB) | steps 3–4 | rigor-debt lemmas (`\veq` candidates) | **promoted 2026-07-08** |
 | M-3 | [4734748](https://math.stackexchange.com/q/4734748) | unitaries with {Uᵢ†,Uⱼ}=2δ → Clifford algebra | steps 3/5/6 | aside → gamma matrices | inventory |
 | M-4 | [468839](https://math.stackexchange.com/q/468839), [469568](https://math.stackexchange.com/q/469568) | ζ-regularization consistency | step 6 | rigor-debt aside | inventory |
