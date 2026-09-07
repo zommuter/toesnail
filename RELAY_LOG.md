@@ -214,3 +214,11 @@ review(toesnail): un-parked 3 [ROUTINE] items md-merge had filed under a gated h
 ## 2026-09-07 10:33 — executor (sonnet, relay-loop)
 
 Wired test_ci.sh and test_make.sh into tests/run.sh's tier loop (id:0183), closing the silent-no-op gap where both regression guards existed but never ran under `bash tests/run.sh`. [id:0183]
+
+## 2026-09-07 — executor (claude-sonnet-5, relay-loop)
+
+Worked id:3381 -- added `dotclaude-skills` as a fourth node to `docs/dependencies.md`'s cross-project dependency map, plus two edge rows (`dotclaude-skills → toesnail` strong/non-blocking for the engineering process: relay executor, the relay-aware commit-hook design, ledger helpers; `toesnail → dotclaude-skills` weak, since it manages toesnail generically with no toesnail-specific requirement feeding back). Documentation only, matching the existing table/bullet format; no code touched. Full `bash tests/run.sh` SUITE: PASS (12/12 tiers green, including a real `lake exe cache get` + build under the Lean tier -- took well over 120s wall time, backgrounded and waited out, unrelated to this item).
+refactor: none needed -- one bullet + two table rows added to an existing doc, no new duplication.
+
+2 open [ROUTINE] after re-derivation (id:17ee, id:ac7b) -- id:3381 closed this session; both remaining items are untouched by this change (docs/se-corpus.md corpus-row fix and the verify commit-hook diff-awareness item).
+[id:3381]
