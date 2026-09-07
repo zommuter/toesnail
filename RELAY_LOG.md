@@ -314,3 +314,7 @@ delimiter migration says never to hand-swap one in isolation -- left alone delib
 refactor: none needed -- this unit wrote ledger, doc and log lines only; no code surface to clean up.
 1 open [ROUTINE] after re-derivation (id:ac7b).
 [id:0183, id:3381, id:17ee, id:ac7b]
+
+## 2026-09-07 10:56 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review(toesnail): id:0183/3381/17ee verified genuinely green (14/14 tiers, zero skips, gaming-scan clean); corrected a false git-hook dependency edge id:3381 introduced and a tests/README that denied the repo is relay-managed; 1 open [ROUTINE] (ac7b) [id:0183,3381,17ee,ac7b]
