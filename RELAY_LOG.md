@@ -408,3 +408,7 @@ exploration prose may be exactly the wrong answer, and that is the owner's call.
 0 open [ROUTINE] after re-derivation. The single `[ROUTINE]` substring in ROADMAP.md is prose inside
 `id:8807`'s `@container` line describing how its TODO twin was historically tagged, not a lane tag.
 [id:8b1c]
+
+## 2026-09-07 11:48 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: window clean (no executor unit ran); 14/14 tiers green incl. real Lean build; documented docs/dreamed/ conventions in CLAUDE.md; surfaced id:8b1c (43 published /dreamed pages, zero render coverage, self-checking allowlist) [id:8b1c]
