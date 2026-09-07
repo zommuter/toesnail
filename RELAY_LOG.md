@@ -510,3 +510,75 @@ Reviewed toesnail: window held only a 1-line inbox ingest (no executor work to v
 ## 2026-07-17 18:35 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 Handoff toesnail: reconciled id:8807 verify-pilot parent as a gated @container ROADMAP twin (executor work already fully decomposed into seams e9e9/76e5/5d31/37cc); no new promotable work; unpromoted-scan promote=0, roadmap-lint --strict clean. [id:8807]
+
+## 2026-09-07 10:06 — reviewer (claude-opus-5, relay-loop)
+
+Reviewed toesnail over `relay-ckpt-20260717-1835`..HEAD (33 commits, 109 files, +27,723 lines). The window
+contains NO executor work: it is the 2026-09-01/09-04 owner-seeded `docs/dreamed/` batch (32 essays + Lean
+companions + one runnable library under `docs/dreamed/resogram-lib/`), four cross-project inbox ingests, and
+three ledger-filing commits. Nothing was closed by an executor, so nothing was verified-green this pass.
+
+test-integrity: `gaming-scan.sh` emitted `ADDED_SKIP:docs/dreamed/resogram-lib/tests/test_core.py:142` and
+`:172`. Both are FALSE POSITIVES and are reported as such, not waved away: each is an English comment inside a
+NEW file (`# Skip the first ring-up cycle…`, `# skip the first two half periods`), not a skip decorator, and the
+file is a dreamed-batch artifact under `docs/` that no repo tier runs. Zero DELETED_TEST, zero REMOVED_ASSERT.
+`tests/` itself is byte-identical across the window, so §2b's resurrection and fixture-special-casing checks
+have no candidates. Provenance greps for `@owner-accepted:`, `@owner-answered:` and `<!-- answer-src:` over
+every commit in the window: zero hits, added or modified. No `[host:]` tags, so §2c does not apply.
+
+tiers (review.md §3, all named, none skipped): `bash tests/run.sh` ran all 12 declared tiers GREEN, exit 0 —
+test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror, test_lean,
+test_page_coverage, test_crypto_exclude, test_conventions_ladder, test_toolchain_pointer, test_mathjax.cjs,
+test_veqs_inline.cjs. NO tier was skip-recorded: Ruby, node_modules and the lake toolchain were all present
+(the Lean tier ran a real `lake build` at load ~22, hence the wall time). CI's three-job subset and
+`package.json`'s `test:math` are both strictly contained in that set. Residual manual tier unchanged:
+`tests/HUMAN-integration.md`.
+
+Tier ENUMERATION found a real gap, filed as `[ROUTINE] id:0183`: `tests/test_ci.sh` (`# roadmap:9868`) and
+`tests/test_make.sh` (`# roadmap:fca7`) exist, carry roadmap headers, and PASS when run by hand (verified, exit
+0 each) — but neither is in `tests/run.sh`'s tier list, so this repo's stated definition-of-done never runs
+them and both closed items' regression guards are unarmed. `tests/test_verify_entropy.sh` is deliberately NOT
+in that item: it is the still-RED spec for gated seam id:76e5 (verified exit 1), correctly excluded.
+
+Main finding — `ROADMAP.md` carried the same `md-merge` stacked-body damage `584e93e` repaired in `TODO.md`.
+`bcecee6` filed `id:ac7b`, `id:17ee` and `id:3381` as `[ROUTINE]`; all three head lines landed at the top of
+`## Gated forward-flags — NOT yet executor work` with ALL THREE bodies stacked under `id:3381`. So `ac7b` and
+`17ee` carried no acceptance criteria at all, and `roadmap-lint` rejected all three as `PARKED-POOL-LANE` —
+pool-executable lane under a parked heading, i.e. structurally undispatchable (the `id:d35a` class). Three
+genuine executor items were invisible from 2026-09-01 to today. Moved into a new `### Dreamed-batch tooling
+findings` section under `## Items`, each body re-attached to its own head line; no text changed, added or
+dropped. `roadmap-lint` now exits clean. Third occurrence of this shape, so it is a tool defect — already
+tracked upstream as `dotclaude-skills id:4f0f`, nothing new filed (REVIEW_ME box notes the one half 4f0f may
+not cover: 4f0f is about EDITING a wrapped item, this was INSERTION where the failure is PLACEMENT).
+
+Second finding — `ROADMAP id:9d8c`'s typed `gated-on:` edge, ticked DONE in REVIEW_ME on 2026-07-19, parsed to
+NOTHING. Written as `<!-- gated-on: id5776-local-lake-build-gate -->`; `lib-typed-edges.sh` extracts
+`(?<=<!-- gated-on:)[0-9a-f,]+(?= -->)`, so both the space after the colon and the non-4-hex payload miss.
+`gated-on:5776` would also have been the wrong edge — id:5776 is `[x]` closed, so the gate would read CLEARED
+and unpark an item the owner deliberately parked. Replaced with `<!-- owner-hold:local-lake-build-gate-suffices
+-->` (id:d119, the marker for an intentionally-unclearable hold) and surfaced for owner ratification, since
+changing gate semantics on a parked forward-flag is his call, not mine.
+
+relay-doctor: cross-ledger drift clean; TODO conformance 0 non-conforming (the `grammar-continuation` lines are
+the advisory id:0d7c line-shrink signal, report-only, untouched); main checkout clean; mechanical-orphan clean.
+`orphan-scan --shipped` reported two UNMARKED-GATE hits, `id:9d8c` (fixed above) and `id:4bb2` (blocked on the
+CROSS-REPO token `routed:c196`, which the local-4-hex `gated-on:` grammar cannot express at all — surfaced to
+REVIEW_ME, changed nothing). Fleet-level doctor findings (4 parked orphans in other repos, relay-core shadow
+mismatches, one install-drift `relay/scripts/lib-archive-idempotency.py` missing from the install tree) are not
+toesnail's and were not written into this repo's ledgers.
+
+spec-drift: `CLAUDE.md` `## Relay contract` pointer refreshed v9 → v18 (marker only; body already current).
+README/ARCHITECTURE describe what shipped — the window added no user-facing surface, only `docs/`.
+
+reverse-handoff §5b: six newly-added open TODO items. Four are `[INBOUND routed:*]` cross-repo notes (id:7a42,
+id:4b04, id:2479 — the last two superseding each other, no local action) and two are `[OWNER]` triage items
+(id:2460, id:6646) that are owner-only theory direction, correctly not promoted. The fifth, `id:7f2f`
+(routed:5f53), WAS execution-ready — a do-not-prune guard for the `gtnsd-archive` orphan branch — and was small
+enough to do here rather than burn an executor turn: recorded in `CLAUDE.md`'s `gtnsd-archive` bullet and
+ticked. Deviation stated on the line itself: the inbound asked for `TODO.md:123`, but `CLAUDE.md` is the only
+place in the repo that describes the branch, so that is where a reader about to prune it will actually look.
+
+refactor: none needed — this unit wrote only ledger and doc lines; no code surface to clean up.
+4 open [ROUTINE] after re-derivation (id:3381, id:17ee, id:ac7b, id:0183) — all four newly dispatchable, three
+of them only because the placement damage above was repaired.
+[id:ac7b, id:17ee, id:3381, id:0183, id:9d8c, id:7f2f]

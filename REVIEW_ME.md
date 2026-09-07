@@ -600,3 +600,38 @@ recorded as chosen. Full argument + weaknesses in each essay.
   CALIBRATED as "could not find it stated", NOT "original": arXiv:2504.05013 states the content
   numerically per material; absent is the dimensionless closed form and the Wien identification.
   **Owner decides whether this is worth writing up.** See `docs/dreamed/photon-energy-scaling.md`.
+
+## Relay review 2026-09-07 (window `relay-ckpt-20260717-1835`..HEAD, 33 commits)
+
+- [ ] **`ROADMAP id:9d8c` — the 2026-07-19 "typed `gated-on:` edge added" tick was FALSE; the marker
+  parsed to nothing, and I have replaced it with `owner-hold:` on my own judgment. Confirm or correct.**
+  The written marker was `<!-- gated-on: id5776-local-lake-build-gate -->`. `lib-typed-edges.sh`'s
+  extractor is `(?<=<!-- gated-on:)[0-9a-f,]+(?= -->)`, so the space after the colon AND the non-4-hex
+  payload both miss — the edge was invisible to every consumer, while the REVIEW_ME box above it was
+  ticked `[x] DONE`. `gated-on:5776` would ALSO have been wrong: id:5776 is `[x]` closed
+  (`ROADMAP.archive.md:137`), so a dependency edge on it resolves as CLEARED and would unpark an item
+  you deliberately parked. The gate as written is a CONDITION ("warranted only if the local `lake build`
+  gate proves insufficient"), which is what `owner-hold:` (id:d119) exists to express. **This is a
+  semantics change to a gate you parked, so it is yours to ratify** — say whether `owner-hold` is the
+  intent, or name what should clear the gate. Located 2026-09-07 by `orphan-scan --shipped` +
+  reading the extractor, not by taking the tick at face value.
+- [ ] **`ROADMAP id:4bb2` — UNMARKED-GATE with no expressible typed edge.** The line reads "BLOCKED on
+  routed:c196", a CROSS-REPO token. `lib-typed-edges.sh`'s `gated-on:` grammar takes local 4-hex ids
+  only, so there is no marker that can express this blocker and `orphan-scan --shipped` will report it
+  UNMARKED-GATE forever. Options: leave it and accept the standing report, add an `owner-hold:` with a
+  reason, or ask `.mw`/dotclaude-skills for a cross-repo edge grammar. **Your call**; I changed nothing.
+- [ ] **`ROADMAP.md` carried the same `md-merge` stacked-body damage that `584e93e` repaired in
+  `TODO.md` — REPAIRED here, but the generator is still live.** `bcecee6` filed `id:ac7b`, `id:17ee`
+  and `id:3381` via `md-merge update-ids`; all three head lines landed at the top of
+  `## Gated forward-flags — NOT yet executor work` with ALL THREE bodies stacked under `id:3381`. Net
+  effect: `ac7b` and `17ee` had no acceptance criteria at all, and `roadmap-lint` rejected all three as
+  `PARKED-POOL-LANE` (a pool-executable `[ROUTINE]` under a parked heading, i.e. never dispatchable —
+  the `id:d35a` class). They sat that way from 2026-09-01 to 2026-09-07. Moved to their own
+  `### Dreamed-batch tooling findings` section with each body re-attached; no text changed, added or
+  dropped. **This is the THIRD occurrence** (`id:6646`, `id:2460`, now ROADMAP), so it is a tool defect,
+  not three slips: `update-ids` replaces the id-tagged LINE but neither moves nor replaces its
+  continuation lines. **Already tracked upstream as `dotclaude-skills id:4f0f`** ("`md-merge.py
+  update-ids` cannot reach a WRAPPED item's continuation lines at all"), so nothing new was filed. One
+  half may not be covered there and is worth checking when 4f0f is worked: 4f0f is about EDITING an
+  existing wrapped item, whereas this incident was INSERTING three new ones, where the failure was
+  PLACEMENT — all three head lines landed under a heading whose semantics silently disqualified them.
