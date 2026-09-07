@@ -1,5 +1,10 @@
 # Relay log <!-- merge=union; append-only — never edit or reorder past entries -->
 
+## 2026-09-07 10:32 — executor (claude-sonnet-5)
+
+Worked id:0183 -- wired `test_ci.sh` and `test_make.sh` into `tests/run.sh`'s tier loop. Both tests already existed and passed standalone but were armed nowhere, so `bash tests/run.sh` never ran them (the id:d35a silent-no-op class); one-line addition, nothing else touched. Verified both individually (exit 0 each) and via a full `bash tests/run.sh` run (SUITE: PASS, exit 0) which now includes them. Friction: the full suite's `test_lean.sh` tier does a real `lake exe cache get` + build under high host load (load average ~20, swap-heavy), so the run took well over the 120s foreground timeout and had to be backgrounded -- unrelated to this item, just noting the wall-clock cost of the definition-of-done check on this repo.
+refactor: none needed -- one-line addition to an existing loop, no new duplication.
+
 ## 2026-07-07 18:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
 
 review: verify green window since relay-ckpt-20260704-1759 (docs+ledger+unwired probe; 11/11 tiers green, gaming-scan clean); id:b7e5 drift legit author-then-run; routine_open=0
