@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" role="img" aria-labelledby="hasse-title">
+<title id="hasse-title">Hasse diagram of the decidability landscape: Presburger arithmetic below, Buechi arithmetic base 2 and base 3 incomparable above it, Skolem arithmetic a fourth incomparable point, and full arithmetic above a cliff</title>
+<defs>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#3a3a3a"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="860" height="480" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="24" y="24" width="812" height="128" fill="#f4ece6" stroke="none"/>
+<text x="40" y="48" font-size="13" fill="#8a3d12" font-weight="bold">UNDECIDABLE AND INCOMPLETE</text>
+
+<line x1="24" y1="152" x2="836" y2="152" stroke="#a8501e" stroke-width="3" stroke-dasharray="9 5"/>
+<text x="40" y="174" font-size="14" fill="#8a3d12" font-weight="bold">THE CLIFF: interprets Robinson's Q</text>
+<text x="40" y="192" font-size="12.5" fill="#5c5c5c">Nothing sits on this line. See panel 2.</text>
+<text x="40" y="216" font-size="13" fill="#2f6b3f" font-weight="bold">DECIDABLE AND COMPLETE</text>
+
+<rect x="345" y="62" width="180" height="52" fill="#ffffff" stroke="#8a3d12" stroke-width="2.5"/>
+<text x="435" y="83" font-size="15" text-anchor="middle" font-weight="bold">⟨ℕ, +, ×⟩</text>
+<text x="435" y="102" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Goedel 1931, Church 1936</text>
+
+<line x1="240" y1="258" x2="380" y2="118" stroke="#3a3a3a" stroke-width="1.6" marker-end="url(#arrA)"/>
+<line x1="435" y1="258" x2="435" y2="118" stroke="#3a3a3a" stroke-width="1.6" marker-end="url(#arrA)"/>
+<line x1="640" y1="258" x2="495" y2="118" stroke="#3a3a3a" stroke-width="1.6" marker-end="url(#arrA)"/>
+<line x1="330" y1="392" x2="240" y2="312" stroke="#3a3a3a" stroke-width="1.6" marker-end="url(#arrA)"/>
+<line x1="345" y1="392" x2="425" y2="312" stroke="#3a3a3a" stroke-width="1.6" marker-end="url(#arrA)"/>
+
+<rect x="150" y="258" width="180" height="54" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="240" y="279" font-size="14" text-anchor="middle" font-weight="bold">⟨ℕ, +, V₂⟩</text>
+<text x="240" y="299" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Buechi, base 2</text>
+
+<rect x="345" y="258" width="180" height="54" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="435" y="279" font-size="14" text-anchor="middle" font-weight="bold">⟨ℕ, +, V₃⟩</text>
+<text x="435" y="299" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Buechi, base 3</text>
+
+<rect x="550" y="258" width="180" height="54" fill="#ffffff" stroke="#2d5c8a" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="640" y="279" font-size="14" text-anchor="middle" font-weight="bold">⟨ℕ, ×⟩</text>
+<text x="640" y="299" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Skolem, Mostowski 1952</text>
+
+<rect x="250" y="392" width="190" height="54" fill="#ffffff" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="345" y="413" font-size="14" text-anchor="middle" font-weight="bold">⟨ℕ, +⟩</text>
+<text x="345" y="433" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Presburger 1929</text>
+
+<text x="240" y="336" font-size="12.5" text-anchor="middle" fill="#8a3d12" font-weight="bold">no edge between these two</text>
+<text x="435" y="336" font-size="12.5" text-anchor="middle" fill="#8a3d12" font-weight="bold">= INCOMPARABLE</text>
+<text x="337" y="356" font-size="12.5" text-anchor="middle" fill="#5c5c5c">(Cobham 1969, Semenov 1977; also bases 5, 7, ... pairwise)</text>
+<text x="640" y="336" font-size="12.5" text-anchor="middle" fill="#5c5c5c">dashed: no addition at all,</text>
+<text x="640" y="353" font-size="12.5" text-anchor="middle" fill="#5c5c5c">so incomparable with all of them</text>
+
+<text x="470" y="446" font-size="12.5" fill="#5c5c5c">2^(2^cn) proof-length lower bound already here (Fischer and Rabin 1974):</text>
+<text x="470" y="464" font-size="12.5" fill="#5c5c5c">decidable is a mathematical property, not an engineering one.</text>
+</g>
+</svg>

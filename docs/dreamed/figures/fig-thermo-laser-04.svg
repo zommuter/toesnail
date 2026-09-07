@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 452" role="img" aria-labelledby="f4t f4d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f4t">The two Lambert W branches, and the Gentile family between Fermi and Bose</title>
+<desc id="f4d">Left panel plots F of u equals u times e to the u against u from minus four to plus 0.4. The curve falls to a minimum of minus one over e at u equals minus one, then rises through zero. A horizontal line at minus 0.3252 cuts it twice, at minus 1.581977 on the W minus one branch and at minus 0.581977 on the principal branch. The principal root gives beta E one exactly zero; the other gives the correct value 1.0. Right panel plots the maximum attainable beta E against the occupancy cutoff N on a log axis, rising from 0.2784645 at N equals two toward the Bose supremum of one.</desc>
+<text class="hd" x="14" y="26">One horizontal line, two roots: the principal branch returns the trivial one</text>
+
+<text class="sh" x="14" y="52">a. F(u) = u e^u, and the two pre-images of a physical argument</text>
+<line class="g" x1="70" y1="130" x2="390" y2="130"/>
+<line class="g" x1="70" y1="245" x2="390" y2="245"/>
+<line class="ax" x1="70" y1="201.4" x2="390" y2="201.4"/>
+<line class="ax" x1="70" y1="70" x2="70" y2="300"/>
+<text class="mu sm e" x="64" y="134">0.33</text>
+<text class="mu sm e" x="64" y="205">0</text>
+<text class="mu sm e" x="64" y="249">-0.20</text>
+<text class="mu sm e" x="64" y="304">-0.45</text>
+<polyline class="ln s1k" points="70,217.5 106.4,224.6 142.7,234.2 179.1,246.4 215.5,260.7 233.6,268 245.9,272.7 251.8,274.7 270,279.9 288.2,282 306.4,279 318.6,272.7 324.5,267.9 342.7,244.1 360.9,201.4 379.1,131.1 390,70.7"/>
+<line class="dsh s2k" x1="70" y1="272.7" x2="390" y2="272.7"/>
+<text class="s2 sm lbl" x="76" y="268">v = -&#946;E&#183;e^(-&#946;E) = -0.32520</text>
+<circle class="mk s1" cx="288.2" cy="282" r="5"/>
+<text class="mu sm m" x="288.2" y="298">branch point (-1, -1/e)</text>
+<g class="mk s2"><rect x="240.4" y="267.2" width="11" height="11"/><rect x="313.1" y="267.2" width="11" height="11"/></g>
+<line class="thin ax" x1="245.9" y1="272.7" x2="215" y2="180"/>
+<text class="crt sm m" x="180" y="162">W&#8331;&#8321; branch, u &#8804; -1</text>
+<text class="crt sm m" x="180" y="176">u = -1.581977, &#946;E&#8321; = 1.000000</text>
+<text class="crt sm m" x="180" y="146">the CORRECT root</text>
+<line class="thin ax" x1="318.6" y1="272.7" x2="345" y2="180"/>
+<text class="sm m" x="342" y="162">W&#8320; branch, u &#8805; -1</text>
+<text class="sm m" x="342" y="176">u = -0.581977, &#946;E&#8321; = 0</text>
+<text class="crt sm m" x="342" y="146">every CAS default</text>
+<text class="mu sm m" x="70" y="318">-4</text>
+<text class="mu sm m" x="142.7" y="318">-3</text>
+<text class="mu sm m" x="215.5" y="318">-2</text>
+<text class="mu sm m" x="288.2" y="318">-1</text>
+<text class="mu sm m" x="360.9" y="318">0</text>
+<text class="mu sm m" x="230" y="338">u (dimensionless). Row shown: &#946;E&#8321; = 1.00, &#946;E = 0.581977.</text>
+
+<text class="sh" x="420" y="52">b. The N family is GENTILE statistics, not anyons</text>
+<line class="g" x1="470" y1="80.95" x2="730" y2="80.95"/>
+<line class="g" x1="470" y1="135.7" x2="730" y2="135.7"/>
+<line class="g" x1="470" y1="190.5" x2="730" y2="190.5"/>
+<line class="g" x1="470" y1="245.3" x2="730" y2="245.3"/>
+<line class="ax" x1="470" y1="300" x2="730" y2="300"/>
+<line class="ax" x1="470" y1="70" x2="470" y2="300"/>
+<text class="mu sm e" x="464" y="85">1.0</text>
+<text class="mu sm e" x="464" y="140">0.75</text>
+<text class="mu sm e" x="464" y="195">0.5</text>
+<text class="mu sm e" x="464" y="250">0.25</text>
+<text class="mu sm e" x="464" y="304">0</text>
+<line class="dsh ck" x1="470" y1="80.95" x2="730" y2="80.95"/>
+<polyline class="ln s3k" points="470,239 486.9,207 508.2,172.6 527.8,147.4 614.4,94 730,82.1"/>
+<g class="mk s3"><circle cx="470" cy="239" r="5"/><circle cx="486.9" cy="207" r="5"/><circle cx="508.2" cy="172.6" r="5"/><circle cx="527.8" cy="147.4" r="5"/><circle cx="614.4" cy="94" r="5"/><circle cx="730" cy="82.1" r="5"/></g>
+<text class="lbl sm e" x="730" y="234">N = 2 (Fermi-Dirac): 0.2784645428 = W&#8320;(1/e)</text>
+<text class="crt sm e" x="726" y="76">N &#8594; &#8734; (Bose): supremum 1, NOT attained</text>
+<text class="mu sm m" x="470" y="318">2</text>
+<text class="mu sm m" x="527.8" y="318">8</text>
+<text class="mu sm m" x="614.4" y="318">64</text>
+<text class="mu sm m" x="730" y="318">1024</text>
+<text class="mu sm m" x="600" y="338">N, occupancy cutoff (at most N-1 quanta per level; log axis)</text>
+<text class="mu sm m" x="600" y="354">y axis: maximum attainable &#946;E (dimensionless)</text>
+
+<text class="crt sm" x="14" y="386">Bosonic: an unqualified W returns &#946;E&#8321; = 0 for EVERY physical &#946;E, because -&#946;E is its own principal pre-image.</text>
+<text class="crt sm" x="14" y="404">At &#946;E&#8321; = 0.1 the W&#8320; route gives 1.8e-25; the W&#8331;&#8321; route gives 0.100000.</text>
+<text class="sm" x="14" y="426">Fermionic: real roots always exist, saturated exactly at &#946;E = W&#8320;(1/e) = 0.2784645, but BOTH branches are</text>
+<text class="sm" x="14" y="444">physical, so one energy measurement does not determine the level spacing.</text>
+</svg>

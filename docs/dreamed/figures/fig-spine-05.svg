@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 400" style="min-width:740px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Side by side: for Galilei the boost-translation coboundary vanishes identically so mass is a nontrivial class, while for Poincare the same term is a coboundary and disappears into a redefinition of the energy generator; caveat that all of this is 1+1 dimensions</title>
+<rect x="0" y="0" width="900" height="400" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <rect x="20" y="30" width="410" height="230" rx="10" fill="#ffffff" stroke="#a01b1b" stroke-width="3"/>
+  <text x="40" y="60" font-size="17" font-weight="700" fill="#a01b1b">GALILEI</text>
+  <text x="40" y="86" font-size="15" font-family="ui-monospace, monospace">[K, P] = 0</text>
+  <text x="40" y="116" font-size="14">so the coboundary of any f in that slot is</text>
+  <text x="40" y="140" font-size="15" font-family="ui-monospace, monospace">(delta f)(K, P) = -eps * f_H = 0</text>
+  <text x="40" y="168" font-size="14">identically. No redefinition of generators can</text>
+  <text x="40" y="188" font-size="14">ever produce a boost-translation term.</text>
+  <text x="40" y="220" font-size="16" font-weight="700" fill="#a01b1b">Mass is a NONTRIVIAL class.</text>
+  <text x="40" y="244" font-size="13" fill="#6b7280">Lean: `galilei_mass_is_not_a_coboundary`</text>
+
+  <rect x="470" y="30" width="410" height="230" rx="10" fill="#ffffff" stroke="#17696b" stroke-width="3"/>
+  <text x="490" y="60" font-size="17" font-weight="700" fill="#12484a">POINCARE</text>
+  <text x="490" y="86" font-size="15" font-family="ui-monospace, monospace">[K, P] = eps * H, eps = 1/c^2</text>
+  <text x="490" y="116" font-size="14">so choosing the energy shift below removes</text>
+  <text x="490" y="140" font-size="15" font-family="ui-monospace, monospace">f_H = -b / eps</text>
+  <text x="490" y="168" font-size="14">and the central term disappears into a</text>
+  <text x="490" y="188" font-size="14">redefinition of the energy generator.</text>
+  <text x="490" y="220" font-size="16" font-weight="700" fill="#12484a">The same term is a COBOUNDARY.</text>
+  <text x="490" y="244" font-size="13" fill="#6b7280">Lean: `poincare_KP_is_a_coboundary`</text>
+
+  <rect x="20" y="286" width="860" height="94" rx="10" fill="#fdf3e7" stroke="#c05621" stroke-width="3"/>
+  <text x="40" y="314" font-size="16" font-weight="700" fill="#8a3c14">CAVEAT, and it is not a footnote</text>
+  <text x="40" y="340" font-size="14">All of this is 1+1 dimensions. In 1+1 the Poincare algebra still has a one-dimensional second cohomology,</text>
+  <text x="40" y="360" font-size="14">spanned by the translation-translation class: the verified statement is that the dimension is ONE, not zero.</text>
+  <text x="40" y="378" font-size="14">A spine that advertises "Poincare has no central extensions" must say in which dimension, or the claim is false.</text>
+</g>
+</svg>

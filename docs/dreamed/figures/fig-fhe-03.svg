@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 432" role="img" aria-labelledby="c3t c3d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c3t">Measured latency of encrypted transformer inference, and the missing end-to-end pure-FHE generative datapoint</title>
+<desc id="c3d">A dot plot on a logarithmic seconds axis. One BERT-base forward pass under non-interactive FHE takes 37.3 seconds on GPU. Per-token generative figures are 11 seconds for a hybrid GPT-2 on GPU, 300 seconds for the same hybrid on CPU, about 300 seconds for LLaMA-7B under three-party MPC and about 480 seconds under two-party MPC. The last lane is empty: no end-to-end pure-FHE generative datapoint is published at any scale. Figures in the table below.</desc>
+<text class="hd" x="14" y="24">What has actually been measured, and the one lane with nothing in it</text>
+<text x="14" y="44">seconds, logarithmic. Encoder rows are one forward pass; generative rows are per decoded token</text>
+<line class="g" x1="320" y1="72" x2="320" y2="300"/>
+<line class="g" x1="456.7" y1="72" x2="456.7" y2="300"/>
+<line class="g" x1="593.3" y1="72" x2="593.3" y2="300"/>
+<line class="ax" x1="730" y1="72" x2="730" y2="300"/>
+<text class="m mu" x="320" y="66">1 s</text>
+<text class="m mu" x="456.7" y="66">10 s</text>
+<text class="m mu" x="593.3" y="66">100 s</text>
+<text class="m mu" x="730" y="66">1000 s</text>
+<text class="lbl" x="14" y="102">NEXUS, BERT-base, GPU</text>
+<text x="14" y="119">non-interactive FHE (RNS-CKKS), one pass, 164 MB</text>
+<circle class="s1 mk" cx="534.8" cy="106" r="7"/>
+<text class="s1 lbl" x="548" y="111">37.3 s</text>
+<text class="lbl" x="14" y="150">Zama Concrete-ML, GPT-2, GPU</text>
+<text x="14" y="167">hybrid: one attention head encrypted, rest on the client</text>
+<circle class="s2 mk" cx="462.3" cy="154" r="7"/>
+<text class="s2 lbl" x="476" y="159">11 s per token</text>
+<text class="lbl" x="14" y="198">Zama Concrete-ML, GPT-2, CPU</text>
+<text x="14" y="215">same hybrid, nonlinearities in plaintext on the client</text>
+<circle class="s2 mk" cx="658.6" cy="202" r="7"/>
+<text class="s2 lbl e" x="645" y="207">300 s per token</text>
+<text class="lbl" x="14" y="246">PUMA, LLaMA-7B</text>
+<text x="14" y="263">3-party MPC, honest majority, not FHE</text>
+<circle class="s3 mk" cx="658.6" cy="250" r="7"/>
+<text class="s3 lbl e" x="645" y="255">about 300 s per token</text>
+<text class="lbl" x="14" y="294">BumbleBee, LLaMA-7B</text>
+<text x="14" y="311">2-party MPC, not FHE</text>
+<circle class="s3 mk" cx="686.4" cy="298" r="7"/>
+<text class="s3 lbl e" x="673" y="303">about 480 s per token</text>
+<text class="crt" x="14" y="348">end-to-end pure FHE, generative, any scale</text>
+<text x="14" y="365">the thing the seed actually asked for</text>
+<rect class="dash" x="320" y="330" width="410" height="42"/>
+<text class="m crt" x="525" y="356">NO PUBLISHED DATAPOINT AT ALL</text>
+<text class="mu" x="14" y="400">Source: fhe-llm.md section 4. The lane is drawn empty because the record is empty, not because the value is small.</text>
+<text class="mu" x="14" y="420">The gap is autoregression, not encryption: a BERT pass packs its sequence into SIMD slots; generation is n sequential passes, nothing amortises.</text>
+</svg>

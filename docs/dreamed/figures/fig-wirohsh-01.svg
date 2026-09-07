@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 880 274" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The three objects of id:ff32, T-matrix, Gaussian splat and WiRoHSH, with both joins marked as broken, and the completed Whittaker formula shown beneath as a separate positive result</title>
+<rect x="0" y="0" width="880" height="274" fill="#fbfaf8"/>
+<g font-family="Georgia, serif" font-size="15" fill="#24303c">
+  <rect x="20" y="40" width="200" height="86" rx="6" fill="#ffffff" stroke="#24303c" stroke-width="1.6"/>
+  <text x="120" y="66" text-anchor="middle" font-size="16" font-weight="bold">T-matrix</text>
+  <text x="120" y="88" text-anchor="middle" font-size="13">Waterman: maps incident</text>
+  <text x="120" y="106" text-anchor="middle" font-size="13">to scattered. An OPERATOR.</text>
+
+  <rect x="330" y="40" width="220" height="86" rx="6" fill="#ffffff" stroke="#24303c" stroke-width="1.6"/>
+  <text x="440" y="66" text-anchor="middle" font-size="16" font-weight="bold">Gaussian splat</text>
+  <text x="440" y="88" text-anchor="middle" font-size="13">outgoing radiance, low-degree</text>
+  <text x="440" y="106" text-anchor="middle" font-size="13">SH. A VECTOR. Clipped local.</text>
+
+  <rect x="660" y="40" width="200" height="86" rx="6" fill="#ffffff" stroke="#24303c" stroke-width="1.6"/>
+  <text x="760" y="66" text-anchor="middle" font-size="16" font-weight="bold">WiRoHSH</text>
+  <text x="760" y="88" text-anchor="middle" font-size="13">discrete Laurent basis for a</text>
+  <text x="760" y="106" text-anchor="middle" font-size="13">Helmholtz problem. GLOBAL.</text>
+
+  <line x1="222" y1="83" x2="326" y2="83" stroke="#b25c1e" stroke-width="2.4" stroke-dasharray="7 5"/>
+  <line x1="552" y1="83" x2="656" y2="83" stroke="#b25c1e" stroke-width="2.4" stroke-dasharray="7 5"/>
+  <g stroke="#b25c1e" stroke-width="3">
+    <line x1="266" y1="70" x2="282" y2="96"/><line x1="282" y1="70" x2="266" y2="96"/>
+    <line x1="596" y1="70" x2="612" y2="96"/><line x1="612" y1="70" x2="596" y2="96"/>
+  </g>
+  <text x="274" y="146" text-anchor="middle" font-size="13" fill="#b25c1e">JOIN BREAKS</text>
+  <text x="274" y="164" text-anchor="middle" font-size="12">operator vs vector</text>
+  <text x="604" y="146" text-anchor="middle" font-size="13" fill="#b25c1e">JOIN BREAKS</text>
+  <text x="604" y="164" text-anchor="middle" font-size="12">no wave equation present</text>
+
+  <rect x="20" y="196" width="840" height="62" rx="6" fill="#eef3f3" stroke="#17696b" stroke-width="1.6"/>
+  <text x="40" y="220" font-size="14" font-weight="bold" fill="#17696b">Separate, and POSITIVE: the empty parentheses, filled and then collapsed</text>
+  <text x="40" y="244" font-size="13">the phi-integral of a(x_phi + iz) + b(x_phi + iz) x_phibar, which is Whittaker 1903 once the b family goes.</text>
+</g>
+</svg>

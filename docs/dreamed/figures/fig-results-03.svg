@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 316" role="img" aria-labelledby="c3t c3d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .crit{stroke:#d03b3b;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .zone{fill:#f0efec}
+</style>
+
+<title id="c3t">The richer interface performs worse: coin sentences settled at coin fraction 0.30</title>
+<desc id="c3d">Horizontal bars out of the 15 known-fair-coin sentences present. Reading (i) settles 13.93, the four-weight oracle 12.18, reading (ii) 1.45. Performance runs opposite to interface richness.</desc>
+<text class="hd" x="14" y="26">The conflation at the point (0,1) costs more than the distinction is worth</text>
+<text x="14" y="46">coin sentences settled, of the 15 present; coin fraction 0.30, independent fraction 0.20, budget 2500</text>
+<line class="ax" x1="360" y1="76" x2="360" y2="246"/>
+<text class="mu m" x="360" y="268">0</text>
+<line class="g" x1="473.3" y1="76" x2="473.3" y2="246"/>
+<text class="mu m" x="473.3" y="268">5</text>
+<line class="g" x1="586.7" y1="76" x2="586.7" y2="246"/>
+<text class="mu m" x="586.7" y="268">10</text>
+<line class="g" x1="700" y1="76" x2="700" y2="246"/>
+<text class="mu m" x="700" y="268">15</text>
+<text class="m" x="530" y="290">coin sentences settled, of 15 present</text>
+<rect class="s1" x="360" y="92" width="315.7" height="30" rx="4"/>
+<text class="e" x="348" y="106">reading (i), sees the truth lean only</text>
+<text class="mu e" x="348" y="121">poorest interface</text>
+<text class="val" x="683.7" y="112">13.93</text>
+<rect class="s3" x="360" y="144" width="276.1" height="30" rx="4"/>
+<text class="e" x="348" y="158">four-weight oracle, sees the simplex point</text>
+<text class="mu e" x="348" y="173">richest interface</text>
+<text class="val" x="644.1" y="164">12.18</text>
+<rect class="s2" x="360" y="196" width="32.9" height="30" rx="4"/>
+<text class="e" x="348" y="210">reading (ii), sees the two-number report</text>
+<text class="mu e" x="348" y="225">middle interface</text>
+<text class="val" x="400.9" y="216">1.45</text>
+<text class="warn" x="14" y="312">Reading (ii) throws away 4.07 settled sentences per 1000 units, 32 per cent of the oracle throughput.</text>
+</svg>

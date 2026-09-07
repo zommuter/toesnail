@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 430" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Projecting out the azimuth collapses each horizontal disc of the Bloch ball to a segment, and the ball to the triangle given by the absolute value of z at most r at most one</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+  <circle cx="140" cy="225" r="105" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <ellipse cx="140" cy="170" rx="89" ry="18" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="5 5"/>
+  <ellipse cx="140" cy="225" rx="105" ry="22" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="5 5"/>
+  <ellipse cx="140" cy="280" rx="89" ry="18" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <line x1="278" y1="225" x2="368" y2="225" stroke="#1f2430" stroke-width="9"/>
+  <polygon points="382,225 360,213 360,237" fill="#1f2430"/>
+  <text x="325" y="192" font-size="24">project out phi</text>
+  <text x="325" y="272" font-size="24" fill="#6b7280">(z, r) shadow</text>
+
+  <polygon points="525,340 415,130 635,130" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="525" y1="340" x2="525" y2="130" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="392" y="240" font-size="28" font-weight="700" fill="#2b5d8a">r</text>
+  <text x="525" y="378" font-size="28" font-weight="700">z</text>
+  <text x="350" y="412" font-size="24" fill="#6b7280">the same information, minus the angle</text>
+</g>
+</svg>

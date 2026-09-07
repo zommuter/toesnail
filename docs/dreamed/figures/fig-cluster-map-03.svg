@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1240 400" style="min-width:1000px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Prior art panel: what the cluster contributed versus what it rediscovered, with the citation audit tally of 37 items</title>
+<rect x="0" y="0" width="1240" height="400" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430" font-size="16">
+  <rect x="20" y="20" width="580" height="250" rx="8" fill="#eaf1e6" stroke="#4a7a3c" stroke-width="2"/>
+  <text x="44" y="52" font-size="19" font-weight="700">NEW, as far as the sweeps could tell</text>
+  <text x="44" y="86">the provability reading itself: no provability predicate</text>
+  <text x="44" y="110">anywhere in the published geometry</text>
+  <text x="44" y="144">no rotation-covariant order on the equator</text>
+  <text x="44" y="178">a Boolean ring has no odd part, for any grading group</text>
+  <text x="44" y="212">the broadcasting refutation of the ball applied to proofs</text>
+  <text x="44" y="236" font-size="15" fill="#4a5568">(no prior art found; the finding its essay most wants shot down)</text>
+
+  <rect x="640" y="20" width="580" height="250" rx="8" fill="#f2ece2" stroke="#8a6a3c" stroke-width="2"/>
+  <text x="664" y="52" font-size="19" font-weight="700">ALREADY PUBLISHED</text>
+  <text x="664" y="86">the geometry: Sperling and Walmsley, Phys. Rev. A 97,</text>
+  <text x="664" y="110">062327 (2018), section IV.3 "True, false, and undecidable"</text>
+  <text x="664" y="144">the architecture: proof-carrying code (Necula and Lee 1998),</text>
+  <text x="664" y="168">Milawa's eleven-level tower, partial reflection schemas</text>
+  <text x="664" y="192">(Harrison, SRI CRC-053, 1995), LCF-style kernels</text>
+  <text x="664" y="226">the simplex-iff-compatible equivalence, and the</text>
+  <text x="664" y="250">three-status fragment, which is Kleene K3 relabelled</text>
+
+  <text x="20" y="316" font-size="19" font-weight="700">The citation audit, 37 items checked</text>
+  <g>
+    <rect x="20" y="334" width="907" height="34" fill="#2f6b35"/>
+    <rect x="927" y="334" width="162" height="34" fill="#a01b1b"/>
+    <rect x="1089" y="334" width="131" height="34" fill="#9a6b00"/>
+    <g fill="#ffffff" font-size="16" text-anchor="middle">
+      <text x="473" y="357">28 CONFIRMED</text><text x="1008" y="357">5 WRONG</text><text x="1154" y="357">4 UNRESOLVED</text>
+    </g>
+  </g>
+  <text x="20" y="390" font-size="15" fill="#4a5568">All 11 recommended corrections were applied. The two audited Faizal papers came out clean, both quoted lines verbatim on the stated pages.</text>
+</g>
+</svg>

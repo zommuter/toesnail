@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 500" role="img" aria-labelledby="c4t c4d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c4t">Identity evidence per observation: a sampled token carries 0.033 bits, an activation fingerprint 4.98 bits</title>
+<desc id="c4d">A bar chart of bits of identity evidence per observation. A seed-synchronised token carries 0.033 bits; an activation fingerprint carries 4.982 bits, about 150 times more. Below, the observation counts needed to detect a 4-bit swap at AUC above 0.999: 300 output tokens against 2. Below that, a grid of 31 squares of which 11 are marked: 11 of 31 commercial Llama endpoints deviated from Meta's released weights.</desc>
+<text class="hd" x="14" y="24">Evidence about which model ran, per observation</text>
+<text x="14" y="44">bits per observation, derived from DiFR's published detection thresholds via Wald's relation</text>
+<line class="ax" x1="220" y1="76" x2="220" y2="200"/>
+<line class="g" x1="316" y1="76" x2="316" y2="200"/>
+<line class="g" x1="412" y1="76" x2="412" y2="200"/>
+<line class="g" x1="508" y1="76" x2="508" y2="200"/>
+<line class="g" x1="604" y1="76" x2="604" y2="200"/>
+<line class="g" x1="700" y1="76" x2="700" y2="200"/>
+<text class="m mu" x="220" y="70">0</text><text class="m mu" x="316" y="70">1</text><text class="m mu" x="412" y="70">2</text><text class="m mu" x="508" y="70">3</text><text class="m mu" x="604" y="70">4</text><text class="m mu" x="700" y="70">5</text>
+<text class="lbl e" x="208" y="104">seed-synchronised token</text>
+<text class="e" x="208" y="121">Token-DiFR, 300 tokens to decide</text>
+<rect class="s2" x="220" y="90" width="4" height="30" rx="2"/>
+<text class="s2 lbl" x="234" y="111">0.033 bits</text>
+<text class="lbl e" x="208" y="164">activation fingerprint</text>
+<text class="e" x="208" y="181">Activation-DiFR, 2 tokens to decide</text>
+<rect class="s1" x="220" y="150" width="478" height="30" rx="4"/>
+<text class="lbl e" x="688" y="171" fill="#fcfcfb">4.982 bits</text>
+<text class="m mu" x="460" y="220">bits of identity evidence per observation</text>
+<text class="crt" x="220" y="244">a factor of about 150, and it is an upper bound on plain sampling: a seed-synchronised token</text>
+<text class="crt" x="220" y="262">is strictly more informative than an ordinary one</text>
+<text class="sh" x="14" y="300">Observations needed to detect a 4-bit quantization swap at AUC above 0.999</text>
+<rect class="card" x="14" y="314" width="356" height="72"/>
+<text class="mu" x="30" y="338">TOKEN-DiFR, GENERATED TEXT</text>
+<text class="val" x="30" y="372" style="font-size:26px">300 output tokens</text>
+<rect class="card" x="390" y="314" width="356" height="72"/>
+<text class="mu" x="406" y="338">ACTIVATION-DiFR, THE FOOTPRINT</text>
+<text class="val" x="406" y="372" style="font-size:26px">2 output tokens</text>
+<text class="sh" x="14" y="420">And the base rate is bad: Model Equality Testing, ICLR 2025</text>
+<text x="14" y="440">commercial Llama endpoints tested against Meta's released weights, summer 2024</text>
+<rect x="220" y="454" width="187" height="30" rx="4" fill="#d03b3b"/>
+<rect x="409" y="454" width="337" height="30" rx="4" fill="#f0efec" stroke="#c3c2b7"/>
+<text class="lbl" x="234" y="475" fill="#fcfcfb">11 deviating from Meta's weights</text>
+<text class="lbl" x="423" y="475">20 matching, of 31 endpoints tested</text>
+</svg>

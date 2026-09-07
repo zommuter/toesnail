@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 330" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Row M-1 attaches its labels to the wrong post ids: the dilation material and the self-answered tag belong to 116633, while 337971 is about generalizing curl to non-3D and appears nowhere in the row</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <text x="150" y="34" font-size="18" font-weight="700" text-anchor="middle">ROW M-1's LABELS</text>
+  <text x="740" y="34" font-size="18" font-weight="700" text-anchor="middle">THE ACTUAL POSTS</text>
+
+  <rect x="20" y="52" width="260" height="56" fill="#f6e2d8" stroke="#b04a25"/>
+  <text x="34" y="76" font-size="16">dilation, alpha to the x d/dx</text>
+  <text x="34" y="96" font-size="16">tagged (self-answered)</text>
+
+  <rect x="20" y="124" width="260" height="56" fill="#f6e2d8" stroke="#b04a25"/>
+  <text x="34" y="148" font-size="16">curl as skew so(3)</text>
+  <text x="34" y="168" font-size="16" fill="#6b7280">listed against id 337971</text>
+
+  <rect x="20" y="196" width="260" height="56" fill="#f6e2d8" stroke="#b04a25"/>
+  <text x="34" y="220" font-size="16">curl eigenvectors</text>
+  <text x="34" y="240" font-size="16" fill="#6b7280">listed as a separate label</text>
+
+  <rect x="600" y="52" width="280" height="56" fill="#ffffff" stroke="#2b5d8a"/>
+  <text x="614" y="76" font-size="16" font-weight="700">116633, score 18</text>
+  <text x="614" y="96" font-size="16">dilation. Self-answered at a/116639.</text>
+
+  <rect x="600" y="124" width="280" height="56" fill="#ffffff" stroke="#2b5d8a"/>
+  <text x="614" y="148" font-size="16" font-weight="700">337971, score 35</text>
+  <text x="614" y="168" font-size="16">"curl generalized to non-3D". NOT dilation.</text>
+
+  <rect x="600" y="196" width="280" height="56" fill="#ffffff" stroke="#2b5d8a"/>
+  <text x="614" y="220" font-size="16" font-weight="700">186201, score 14</text>
+  <text x="614" y="240" font-size="16">skew so(3) AND the eigenvectors: one post.</text>
+
+  <path d="M 284 80 C 420 80 460 80 596 80" stroke="#2b5d8a" stroke-width="2.5" fill="none"/>
+  <path d="M 596 80 l -11 -6 l 0 12 z" fill="#2b5d8a"/>
+  <path d="M 284 152 C 420 152 460 224 596 224" stroke="#2b5d8a" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+  <path d="M 596 224 l -11 -6 l 0 12 z" fill="#2b5d8a"/>
+  <path d="M 284 224 C 420 224 460 230 596 230" stroke="#2b5d8a" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+  <path d="M 596 230 l -11 -6 l 0 12 z" fill="#2b5d8a"/>
+  <text x="440" y="196" font-size="15" fill="#6b7280" text-anchor="middle">dashed: label lands on a different post</text>
+
+  <rect x="20" y="270" width="860" height="46" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
+  <text x="36" y="292" font-size="17" font-weight="700">337971 also carries a live gap of the owner's own, thirteen years old.</text>
+  <text x="36" y="310" font-size="16">His own follow-up answer says he cannot yet check whether curl-squared = grad div minus Laplacian. SymPy-sized at low n.</text>
+</g>
+</svg>

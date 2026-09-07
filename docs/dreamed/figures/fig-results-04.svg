@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 384" role="img" aria-labelledby="c4t c4d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .crit{stroke:#d03b3b;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .zone{fill:#f0efec}
+</style>
+
+<title id="c4t">How far the second law is from binding: proof search against laser cooling</title>
+<desc id="c4d">Logarithmic axis of the ratio between energy actually spent and the Landauer floor at 300 K. Laser cooling sits near 10 to the 3, where the bound genuinely constrains the physics. Proof search sits between 10 to the 11 and 10 to the 22. Each bar is labelled with its value.</desc>
+<text class="hd" x="14" y="26">Same accounting, opposite verdict: the thermodynamic analogy is a costume</text>
+<text x="14" y="46">energy spent divided by the Landauer floor at 300 K, a dimensionless ratio; log scale, one tick per 10 to the 4</text>
+<rect class="zone" x="356" y="84" width="55.7" height="224"/>
+<text class="m" x="383.8" y="76">bound bites</text>
+<line class="ax" x1="356" y1="84" x2="356" y2="308"/>
+<text class="mu m" x="356" y="328">10^0</text>
+<line class="g" x1="411.7" y1="84" x2="411.7" y2="308"/>
+<text class="mu m" x="411.7" y="328">10^4</text>
+<line class="g" x1="467.3" y1="84" x2="467.3" y2="308"/>
+<text class="mu m" x="467.3" y="328">10^8</text>
+<line class="g" x1="523" y1="84" x2="523" y2="308"/>
+<text class="mu m" x="523" y="328">10^12</text>
+<line class="g" x1="578.7" y1="84" x2="578.7" y2="308"/>
+<text class="mu m" x="578.7" y="328">10^16</text>
+<line class="g" x1="634.3" y1="84" x2="634.3" y2="308"/>
+<text class="mu m" x="634.3" y="328">10^20</text>
+<line class="g" x1="690" y1="84" x2="690" y2="308"/>
+<text class="mu m" x="690" y="328">10^24</text>
+<text class="m" x="523" y="350">margin above the Landauer floor</text>
+<rect class="s3" x="356" y="89" width="41.8" height="20" rx="4"/>
+<text class="e" x="344" y="104">Doppler cooling of Rb87 (lasercool.md)</text>
+<text class="val" x="405.8" y="104">about 10^3</text>
+<rect class="s3" x="356" y="121" width="34.5" height="20" rx="4"/>
+<text class="e" x="344" y="136">Doppler cooling of Na (lasercool.md)</text>
+<text class="val" x="398.5" y="136">about 3 x 10^2</text>
+<rect class="s1" x="356" y="153" width="157.8" height="20" rx="4"/>
+<text class="e" x="344" y="168">whole 4 GiB cap erased every second</text>
+<text class="val" x="521.8" y="168">2.2 x 10^11</text>
+<rect class="s1" x="356" y="185" width="161" height="20" rx="4"/>
+<text class="e" x="344" y="200">whole 4 GiB cap erased once</text>
+<text class="val" x="525" y="200">3.7 x 10^11</text>
+<rect class="s1" x="356" y="217" width="182" height="20" rx="4"/>
+<text class="e" x="344" y="232">10^9 bits of scratch erased</text>
+<text class="val" x="546" y="232">1.2 x 10^13</text>
+<rect class="s1" x="356" y="249" width="291.6" height="20" rx="4"/>
+<text class="e" x="344" y="264">Mathlib build, per theorem</text>
+<text class="val" x="655.6" y="264">3 to 9 x 10^20</text>
+<rect class="s1" x="356" y="281" width="307.2" height="20" rx="4"/>
+<text class="e" x="344" y="296">per settled sentence, one bit</text>
+<text class="val" x="671.2" y="296">1.2 x 10^22</text>
+<text class="e mu" x="344" y="76">laser cooling</text>
+<text class="warn" x="14" y="374">Laser cooling has a margin of about 1000, so the bound bites. Proof search has 10 to the 11 up to 10 to the 22.</text>
+</svg>

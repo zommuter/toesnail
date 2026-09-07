@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 434" role="img" aria-labelledby="f1t f1d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f1t">Entropy per photon: what the field gains, what an atom can shed, what the pump delivers</title>
+<desc id="f1d">A base-10 logarithmic axis in units of Boltzmann's constant per photon, running from 1e-9 to 10. Fluorescence carries 2.28 to 7.71 k_B per photon. A Doppler-cooled Rb87 atom can shed at most 2.49e-3 and sodium 1.02e-2. The pump beam carries 5.9e-9 and a published diode figure 1.3e-7. The gap between the atom bound and the fluorescence is about a factor 1000, not the factor 10 million a naive mode count suggests. Figures repeated in the table below.</desc>
+<text class="hd" x="14" y="26">Entropy per photon, Rb87 D2 laser cooling</text>
+<text x="14" y="46">k_B per photon, base-10 log axis. The margin is the gap between the two labelled lanes, not a mode count.</text>
+
+<line class="g" x1="100" y1="76" x2="100" y2="336"/>
+<line class="g" x1="160" y1="76" x2="160" y2="336"/>
+<line class="g" x1="220" y1="76" x2="220" y2="336"/>
+<line class="g" x1="280" y1="76" x2="280" y2="336"/>
+<line class="g" x1="340" y1="76" x2="340" y2="336"/>
+<line class="g" x1="400" y1="76" x2="400" y2="336"/>
+<line class="g" x1="460" y1="76" x2="460" y2="336"/>
+<line class="g" x1="520" y1="76" x2="520" y2="336"/>
+<line class="g" x1="580" y1="76" x2="580" y2="336"/>
+<line class="g" x1="640" y1="76" x2="640" y2="336"/>
+<line class="g" x1="700" y1="76" x2="700" y2="336"/>
+<line class="ax" x1="100" y1="336" x2="700" y2="336"/>
+<text class="mu sm m" x="100" y="354">1e-9</text>
+<text class="mu sm m" x="220" y="354">1e-7</text>
+<text class="mu sm m" x="340" y="354">1e-5</text>
+<text class="mu sm m" x="460" y="354">1e-3</text>
+<text class="mu sm m" x="580" y="354">0.1</text>
+<text class="mu sm m" x="700" y="354">10</text>
+<text class="mu sm m" x="400" y="374">entropy per photon, k_B per photon (log scale, base 10)</text>
+
+<text class="sh" x="14" y="100">Field gains</text>
+<line class="ln s3k" x1="661.5" y1="112" x2="693.2" y2="112"/>
+<g class="mk s3"><circle cx="661.5" cy="112" r="5.5"/><circle cx="693.2" cy="112" r="5.5"/></g>
+<text class="lbl e" x="700" y="94">2.28 to 7.71 (fluorescence)</text>
+
+<text class="sh" x="14" y="160">Atoms shed</text>
+<g class="mk s2"><rect x="478.3" y="166.5" width="11" height="11"/><rect x="515" y="166.5" width="11" height="11"/></g>
+<text class="lbl e" x="472" y="176">Rb87 bound 2.49e-3</text>
+<text class="lbl" x="534" y="176">Na bound 1.02e-2</text>
+
+<text class="sh" x="14" y="222">Pump delivers</text>
+<g class="mk s1"><polygon points="146.3,222 152,228 146.3,234 140.6,228"/><polygon points="226.8,222 232.5,228 226.8,234 221.1,228"/></g>
+<text class="lbl" x="160" y="216">1 mW, 780 nm, 1 MHz linewidth: 5.9e-9</text>
+<text class="lbl" x="240" y="246">Ruan 2007 diode beam: 1.3e-7</text>
+
+<text class="lbl m" x="572" y="258">ACTUAL margin, Rb87: about 10&#179;</text>
+<line class="ln s2k" x1="483.8" y1="270" x2="661.5" y2="270"/>
+<line class="ln s2k" x1="483.8" y1="264" x2="483.8" y2="276"/>
+<line class="ln s2k" x1="661.5" y1="264" x2="661.5" y2="276"/>
+
+<text class="crt m" x="451" y="296">what the folklore "one mode against 4&#960;" implies: 10&#8311;</text>
+<line class="dsh ck" x1="241.5" y1="308" x2="661.5" y2="308"/>
+<line class="ln ck" x1="241.5" y1="302" x2="241.5" y2="314"/>
+<line class="ln ck" x1="661.5" y1="302" x2="661.5" y2="314"/>
+<text class="mu sm m" x="451" y="328">(dashed bracket is a construction: the exhaust value divided by 10&#8311;)</text>
+
+<text class="gd sm" x="14" y="402">Reabsorption is a RATE problem, not a second-law problem: the margin closes only at n_f = 3.1e3,</text>
+<text class="gd sm" x="14" y="420">and free-space radiation trapping pushes n_f from 1e-2 only toward 1, six orders short.</text>
+</svg>

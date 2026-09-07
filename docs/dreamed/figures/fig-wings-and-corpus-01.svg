@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 560" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>All twelve essays of the 2026-09-01 batch placed in three bands by subject: the owner's StackExchange corpus, the essay and love wings, and five neighbouring repositories</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <rect x="8" y="8" width="904" height="544" fill="#fbfaf7" stroke="#c9c4bb"/>
+
+  <rect x="20" y="24" width="276" height="42" fill="#dce8f2" stroke="#2b5d8a" stroke-width="2"/>
+  <text x="158" y="43" font-size="18" font-weight="700" text-anchor="middle">GROUP A</text>
+  <text x="158" y="60" font-size="16" text-anchor="middle">the StackExchange corpus</text>
+  <rect x="312" y="24" width="276" height="42" fill="#f2e8dc" stroke="#8a5d2b" stroke-width="2"/>
+  <text x="450" y="43" font-size="18" font-weight="700" text-anchor="middle">GROUP B</text>
+  <text x="450" y="60" font-size="16" text-anchor="middle">the wings (essay + love)</text>
+  <rect x="604" y="24" width="296" height="42" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="752" y="43" font-size="18" font-weight="700" text-anchor="middle">GROUP C</text>
+  <text x="752" y="60" font-size="16" text-anchor="middle">neighbouring repos</text>
+
+  <g font-size="16">
+    <rect x="20" y="82" width="276" height="70" fill="#ffffff" stroke="#2b5d8a"/>
+    <text x="32" y="103" font-weight="700">casimir-field-equations</text>
+    <text x="32" y="124">row P-C, physics.SE q/27195</text>
+    <text x="32" y="143" fill="#8a2b2b">correction: mechanism is variational</text>
+
+    <rect x="20" y="160" width="276" height="70" fill="#ffffff" stroke="#2b5d8a"/>
+    <text x="32" y="181" font-weight="700">generators-and-bch</text>
+    <text x="32" y="202">rows M-1, M-2, math.SE</text>
+    <text x="32" y="221" fill="#8a2b2b">correction: row mislabels its posts</text>
+
+    <rect x="20" y="238" width="276" height="70" fill="#ffffff" stroke="#2b5d8a"/>
+    <text x="32" y="259" font-weight="700">discrete-noether</text>
+    <text x="32" y="280">row P-A, physics.SE q/8518</text>
+    <text x="32" y="299" fill="#8a2b2b">correction: charge multiplies, not adds</text>
+
+    <rect x="312" y="82" width="276" height="70" fill="#ffffff" stroke="#8a5d2b"/>
+    <text x="324" y="103" font-weight="700">love-wing</text>
+    <text x="324" y="124">the seven-stage arc, open Q11</text>
+    <text x="324" y="143">invariant is a Lyapunov quantity</text>
+
+    <rect x="312" y="160" width="276" height="70" fill="#ffffff" stroke="#8a5d2b"/>
+    <text x="324" y="181" font-weight="700">narrativium-formalized</text>
+    <text x="324" y="202">essays/Narrativium.md</text>
+    <text x="324" y="221">the simplicity prior inverts the myth</text>
+
+    <rect x="312" y="238" width="276" height="70" fill="#ffffff" stroke="#8a5d2b"/>
+    <text x="324" y="259" font-weight="700">methodology-themes</text>
+    <text x="324" y="280">open Q10, six candidate themes</text>
+    <text x="324" y="299">counted with file:line receipts</text>
+
+    <rect x="312" y="316" width="276" height="70" fill="#ffffff" stroke="#8a5d2b"/>
+    <text x="324" y="337" font-weight="700">essay-wing</text>
+    <text x="324" y="358">gtnsd-archive, one 2017 evening</text>
+    <text x="324" y="377">one subject, but no single quantity</text>
+
+    <rect x="604" y="82" width="296" height="70" fill="#ffffff" stroke="#3d6b45"/>
+    <text x="616" y="103" font-weight="700">mw-collaib-triad</text>
+    <text x="616" y="124">mathematical-writing, collAIb</text>
+    <text x="616" y="143">a DAG bounds what it can promise</text>
+
+    <rect x="604" y="160" width="296" height="70" fill="#ffffff" stroke="#3d6b45"/>
+    <text x="616" y="181" font-weight="700">inflownistration</text>
+    <text x="616" y="202">~/src/inflownistration, read live</text>
+    <text x="616" y="221">the concept is under test, not thin</text>
+
+    <rect x="604" y="238" width="296" height="70" fill="#ffffff" stroke="#3d6b45"/>
+    <text x="616" y="259" font-weight="700">loderite-lodelore</text>
+    <text x="616" y="280">the voxel game and its lore repo</text>
+    <text x="616" y="299">truncated octahedron, verified</text>
+
+    <rect x="604" y="316" width="296" height="70" fill="#ffffff" stroke="#3d6b45"/>
+    <text x="616" y="337" font-weight="700">zelegator-helferli</text>
+    <text x="616" y="358">the router and the microcontroller</text>
+    <text x="616" y="377">its eval set is spent as an instrument</text>
+
+    <rect x="604" y="394" width="296" height="70" fill="#ffffff" stroke="#3d6b45"/>
+    <text x="616" y="415" font-weight="700">resogram-library</text>
+    <text x="616" y="436">running code, not just an essay</text>
+    <text x="616" y="455">it is a causal constant-Q wavelet</text>
+  </g>
+
+  <text x="158" y="346" font-size="16" fill="#6b7280" text-anchor="middle">3 essays</text>
+  <text x="450" y="424" font-size="16" fill="#6b7280" text-anchor="middle">4 essays</text>
+  <text x="752" y="502" font-size="16" fill="#6b7280" text-anchor="middle">5 essays</text>
+
+  <text x="24" y="536" font-size="15" fill="#6b7280">Group A is drawn as before-and-after (section 2); B as its three findings (section 3); C as one bound plus a status strip (section 4).</text>
+</g>
+</svg>

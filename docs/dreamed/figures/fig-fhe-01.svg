@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 348" role="img" aria-labelledby="c1t c1d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c1t">The three problems that "encrypted algorithm" names, separated by who holds the decryption key</title>
+<desc id="c1d">Three rows. When only the client can decrypt, the problem is private function evaluation and it is solved at a logarithmic cost. When the evaluator can run the program in the clear, the problem is obfuscation and virtual black box obfuscation is impossible. When the client who decrypts must not learn the server's circuit, the problem is circuit privacy and it is a cost. Figures repeated in the table below.</desc>
+<text class="hd" x="14" y="24">One phrase, three problems, three different answers</text>
+<text x="14" y="44">the separating question is who holds the decryption key, and nothing else</text>
+<text class="mu" x="14" y="76">WHO HOLDS THE KEY</text>
+<text class="mu" x="252" y="76">THE PROBLEM</text>
+<text class="mu" x="430" y="76">ANSWER</text>
+<text class="mu" x="556" y="76">WHAT IT COSTS</text>
+<rect class="card" x="14" y="88" width="732" height="72"/>
+<rect x="14" y="88" width="5" height="72" fill="#0ca30c"/>
+<text x="32" y="112">client only. The evaluator</text>
+<text x="32" y="130">sees two ciphertexts and</text>
+<text x="32" y="148">one public circuit</text>
+<text class="lbl" x="252" y="112">private function</text>
+<text class="lbl" x="252" y="130">evaluation</text>
+<text class="good" x="430" y="121">SOLVED</text>
+<text x="556" y="112">a universal circuit,</text>
+<text x="556" y="130">size O(k log k) for a</text>
+<text x="556" y="148">size-k circuit, Valiant 1976</text>
+<rect class="card" x="14" y="168" width="732" height="72"/>
+<rect x="14" y="168" width="5" height="72" fill="#d03b3b"/>
+<text x="32" y="192">the evaluator. It holds the</text>
+<text x="32" y="210">program clearly enough to</text>
+<text x="32" y="228">run it on inputs it chooses</text>
+<text class="lbl" x="252" y="192">obfuscation</text>
+<text x="252" y="210">running it is itself</text>
+<text x="252" y="228">an oracle</text>
+<text class="crt" x="430" y="192">VBB</text>
+<text class="crt" x="430" y="210">IMPOSSIBLE</text>
+<text x="556" y="192">no price. Barak et al. 2001.</text>
+<text x="556" y="210">Indistinguishability</text>
+<text x="556" y="228">obfuscation exists, far from practical</text>
+<rect class="card" x="14" y="248" width="732" height="72"/>
+<rect x="14" y="248" width="5" height="72" fill="#fab219"/>
+<text x="32" y="272">the client, who decrypts</text>
+<text x="32" y="290">a result whose noise carries</text>
+<text x="32" y="308">information about the circuit</text>
+<text class="lbl" x="252" y="272">circuit privacy</text>
+<text x="252" y="290">the one people forget</text>
+<text x="252" y="308">exists</text>
+<text class="wrn" x="430" y="281">A COST</text>
+<text x="556" y="272">noise flooding, or bootstrap</text>
+<text x="556" y="290">the result through a fresh key.</text>
+<text x="556" y="308">A cost, not a barrier</text>
+<text class="mu" x="14" y="340">Source: fhe-encrypted-algorithm.md sections 0 and 4. The first is what FHE gives almost for free.</text>
+</svg>

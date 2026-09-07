@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 860 400" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Unit circle in the complex plane: the real equality case of Cauchy-Schwarz is the two points plus one and minus one, while over the complex field equality holds on the entire unit circle, with the counterexample i marked</title>
+<rect x="0" y="0" width="860" height="400" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <g stroke="#c9ccd4" stroke-width="1.5">
+    <line x1="60" y1="200" x2="420" y2="200"/>
+    <line x1="240" y1="30" x2="240" y2="370"/>
+  </g>
+  <text x="428" y="205" font-size="14" fill="#6b7280">Re c</text>
+  <text x="248" y="28" font-size="14" fill="#6b7280">Im c</text>
+
+  <circle cx="240" cy="200" r="130" fill="none" stroke="#3b3f9e" stroke-width="4"/>
+  <text x="240" y="52" font-size="15" font-weight="700" fill="#3b3f9e" text-anchor="middle">equality over the complex field: the WHOLE circle</text>
+
+  <g fill="#17696b">
+    <circle cx="370" cy="200" r="9"/>
+    <circle cx="110" cy="200" r="9"/>
+  </g>
+  <g font-size="15" fill="#12484a" font-weight="700">
+    <text x="366" y="232">c = +1</text>
+    <text x="76" y="232">c = -1</text>
+  </g>
+  <text x="240" y="368" font-size="14" fill="#12484a" text-anchor="middle">"parallel or anti-parallel": the REAL equality case, two points</text>
+
+  <g>
+    <circle cx="240" cy="70" r="10" fill="#a01b1b"/>
+    <text x="262" y="76" font-size="16" font-weight="700" fill="#a01b1b">c = i</text>
+    <text x="262" y="96" font-size="13" fill="#6b7280">counterexample: |Phi&gt; = i|Psi&gt; gives equality</text>
+    <text x="262" y="114" font-size="13" fill="#6b7280">and is neither parallel nor anti-parallel</text>
+  </g>
+
+  <g font-size="15">
+    <text x="500" y="150" font-weight="700">`physics/toesnail.md:105`</text>
+    <text x="500" y="176" font-size="14" fill="#3f4653">"the length of the inner product is always &lt;= 1 and only</text>
+    <text x="500" y="196" font-size="14" fill="#3f4653">exactly equal to one of the vectors are parallel or</text>
+    <text x="500" y="216" font-size="14" fill="#3f4653">anti-parallel"</text>
+    <text x="500" y="248" font-size="14">Over the field the file admitted at l.71, equality holds</text>
+    <text x="500" y="268" font-size="14">exactly when the vectors are linearly DEPENDENT, with a</text>
+    <text x="500" y="288" font-size="14">complex coefficient of modulus one. Both directions are</text>
+    <text x="500" y="308" font-size="14">proved in `lean/Spine.lean`.</text>
+    <text x="500" y="340" font-size="14" fill="#8a3c14">The essay adds that this correction and the RAYS concept</text>
+    <text x="500" y="360" font-size="14" fill="#8a3c14">are the same content, so it doubles as a demand-driven</text>
+    <text x="500" y="380" font-size="14" fill="#8a3c14">on-ramp to rays, costing one sentence.</text>
+  </g>
+</g>
+</svg>

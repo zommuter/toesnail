@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 430" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Two candidate pole assignments: provable versus not provable works, true versus unprovable fails because Goedel's sentence occupies both poles</title>
+<g font-family="system-ui, sans-serif" text-anchor="middle" fill="#1f2430">
+  <text x="175" y="34" font-size="24" font-weight="700">EXCLUSIVE AND EXHAUSTIVE</text>
+  <circle cx="175" cy="215" r="100" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <ellipse cx="175" cy="215" rx="100" ry="27" fill="none" stroke="#2b5d8a" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="175" cy="115" r="11" fill="#1f2430"/>
+  <circle cx="175" cy="315" r="11" fill="#1f2430"/>
+  <text x="175" y="88" font-size="24">provable</text>
+  <text x="175" y="352" font-size="24">not provable</text>
+  <text x="175" y="400" font-size="24" fill="#6b7280">ratified assignment</text>
+
+  <text x="525" y="34" font-size="24" font-weight="700" fill="#b04a25">NOT EXCLUSIVE: FAILS</text>
+  <circle cx="525" cy="215" r="100" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
+  <line x1="525" y1="115" x2="525" y2="315" stroke="#b04a25" stroke-width="3" stroke-dasharray="7 7"/>
+  <line x1="450" y1="140" x2="600" y2="290" stroke="#b04a25" stroke-width="7" opacity="0.75"/>
+  <line x1="600" y1="140" x2="450" y2="290" stroke="#b04a25" stroke-width="7" opacity="0.75"/>
+  <circle cx="525" cy="115" r="19" fill="#b04a25"/>
+  <circle cx="525" cy="315" r="19" fill="#b04a25"/>
+  <text x="525" y="124" font-size="24" font-weight="700" fill="#ffffff">G</text>
+  <text x="525" y="324" font-size="24" font-weight="700" fill="#ffffff">G</text>
+  <text x="525" y="88" font-size="24">true</text>
+  <text x="525" y="352" font-size="24">unprovable</text>
+  <text x="525" y="400" font-size="24" fill="#6b7280">G: true AND unprovable</text>
+</g>
+</svg>

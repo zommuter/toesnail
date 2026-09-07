@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 664" role="img" aria-labelledby="c1t c1d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .crit{stroke:#d03b3b;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .zone{fill:#f0efec}
+</style>
+
+<title id="c1t">The scissors: the gain from the independence distinction is largest exactly where an independence proof must be cheapest</title>
+<desc id="c1d">Two panels share an x-axis of independent-sentence fraction. Top, the per cent gain of reading (ii) at zero purchase cost over reading (i). Bottom, the break-even price of one independence attempt divided by the mean ordinary proof cost of 40 units. As budget rises from 1500 to 4000 the gain collapses while the affordable price rises past parity. Full figures in the table below.</desc>
+<text class="hd" x="14" y="26">Gain from the distinction, best case: reading (ii) told free which sentences are independent</text>
+<text x="14" y="46">per cent more sentences settled than reading (i), same corpus, same budget, 40 seeds</text>
+<text class="warn" x="14" y="66">as budget rises the gain collapses ...</text>
+<line class="ax" x1="96" y1="292" x2="552" y2="292"/>
+<text class="mu e" x="86" y="296">0%</text>
+<line class="g" x1="96" y1="253.1" x2="552" y2="253.1"/>
+<text class="mu e" x="86" y="257.1">10%</text>
+<line class="g" x1="96" y1="214.2" x2="552" y2="214.2"/>
+<text class="mu e" x="86" y="218.2">20%</text>
+<line class="g" x1="96" y1="175.3" x2="552" y2="175.3"/>
+<text class="mu e" x="86" y="179.3">30%</text>
+<line class="g" x1="96" y1="136.4" x2="552" y2="136.4"/>
+<text class="mu e" x="86" y="140.4">40%</text>
+<line class="g" x1="96" y1="97.5" x2="552" y2="97.5"/>
+<text class="mu e" x="86" y="101.5">50%</text>
+<polyline class="ln s1k" points="96,249.6 210,208.3 324,168.7 438,126.6 552,86.2"/>
+<g class="mk s1"><circle cx="96" cy="249.6" r="4.5"/><circle cx="210" cy="208.3" r="4.5"/><circle cx="324" cy="168.7" r="4.5"/><circle cx="438" cy="126.6" r="4.5"/><circle cx="552" cy="86.2" r="4.5"/></g>
+<text class="lbl" x="566" y="90.2">budget 1500</text>
+<polyline class="ln s2k" points="96,281.1 210,261.3 324,239.9 438,220.8 552,207.2"/>
+<g class="mk s2"><rect x="92" y="277.1" width="8" height="8"/><rect x="206" y="257.3" width="8" height="8"/><rect x="320" y="235.9" width="8" height="8"/><rect x="434" y="216.8" width="8" height="8"/><rect x="548" y="203.2" width="8" height="8"/></g>
+<text class="lbl" x="566" y="211.2">budget 2500</text>
+<polyline class="ln s3k" points="96,292 210,290.8 324,285.4 438,280.3 552,271.8"/>
+<g class="mk s3"><polygon points="96,286.5 101.5,292 96,297.5 90.5,292"/><polygon points="210,285.3 215.5,290.8 210,296.3 204.5,290.8"/><polygon points="324,279.9 329.5,285.4 324,290.9 318.5,285.4"/><polygon points="438,274.8 443.5,280.3 438,285.8 432.5,280.3"/><polygon points="552,266.3 557.5,271.8 552,277.3 546.5,271.8"/></g>
+<text class="lbl" x="566" y="275.8">budget 4000</text>
+<text class="hd" x="14" y="336">Break-even price of one independence attempt, in units of an ordinary proof</text>
+<text x="14" y="356">break-even price divided by the mean ordinary proof cost of 40 units; above 1.00 the idea is uneconomic</text>
+<text class="warn" x="14" y="376">... and exactly there the affordable price rises past parity</text>
+<line class="ax" x1="96" y1="598" x2="552" y2="598"/>
+<text class="mu e" x="86" y="602">0.0</text>
+<line class="g" x1="96" y1="544.5" x2="552" y2="544.5"/>
+<text class="mu e" x="86" y="548.5">0.4</text>
+<line class="g" x1="96" y1="491" x2="552" y2="491"/>
+<text class="mu e" x="86" y="495">0.8</text>
+<line class="g" x1="96" y1="437.5" x2="552" y2="437.5"/>
+<text class="mu e" x="86" y="441.5">1.2</text>
+<line class="g" x1="96" y1="384" x2="552" y2="384"/>
+<text class="mu e" x="86" y="388">1.6</text>
+<line class="crit" x1="96" y1="464.2" x2="556" y2="464.2"/>
+<text class="critt e" x="552" y="484.2">1.00: an independence proof costs the same as an ordinary one</text>
+<polyline class="ln s1k" points="96,583.3 210,573.9 324,568.6 438,564.6 552,561.9"/>
+<g class="mk s1"><circle cx="96" cy="583.3" r="4.5"/><circle cx="210" cy="573.9" r="4.5"/><circle cx="324" cy="568.6" r="4.5"/><circle cx="438" cy="564.6" r="4.5"/><circle cx="552" cy="561.9" r="4.5"/></g>
+<text class="lbl" x="566" y="565.9">budget 1500</text>
+<polyline class="ln s2k" points="96,539.1 210,515.1 324,508.4 438,501.7 552,499"/>
+<g class="mk s2"><rect x="92" y="535.1" width="8" height="8"/><rect x="206" y="511.1" width="8" height="8"/><rect x="320" y="504.4" width="8" height="8"/><rect x="434" y="497.7" width="8" height="8"/><rect x="548" y="495" width="8" height="8"/></g>
+<text class="lbl" x="566" y="503">budget 2500</text>
+<polyline class="ln s3k" points="96,464.2 210,456.2 324,432.1 438,412.1 552,396"/>
+<g class="mk s3"><polygon points="96,458.8 101.5,464.2 96,469.8 90.5,464.2"/><polygon points="210,450.7 215.5,456.2 210,461.7 204.5,456.2"/><polygon points="324,426.6 329.5,432.1 324,437.6 318.5,432.1"/><polygon points="438,406.6 443.5,412.1 438,417.6 432.5,412.1"/><polygon points="552,390.5 557.5,396 552,401.5 546.5,396"/></g>
+<text class="lbl" x="566" y="400">budget 4000</text>
+<text class="mu m" x="96" y="620">0.10</text>
+<text class="mu m" x="210" y="620">0.20</text>
+<text class="mu m" x="324" y="620">0.30</text>
+<text class="mu m" x="438" y="620">0.40</text>
+<text class="mu m" x="552" y="620">0.50</text>
+<text class="m" x="324" y="644">fraction of the 50-sentence corpus that is independent</text>
+</svg>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1240 830" style="min-width:1000px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Directed graph of the 19 Bloch Truth pages, with edges typed as builds-on, corrects, refutes-own-parent, self-refutes, converges-with and adjudicates</title>
+<defs>
+  <marker id="mTri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c05621"/></marker>
+  <marker id="mTriR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a01b1b"/></marker>
+  <marker id="mV" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#98a2b3" stroke-width="1.8"/></marker>
+  <marker id="mSq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><rect x="1" y="1" width="8" height="8" fill="#ffffff" stroke="#3b3f9e" stroke-width="2"/></marker>
+  <marker id="mDia" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M5,0 L10,5 L5,10 L0,5 z" fill="#17696b"/></marker>
+</defs>
+<rect x="0" y="0" width="1240" height="830" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <g font-size="17" font-weight="700" text-anchor="middle" fill="#6b7280">
+    <text x="105" y="30">WAVE 1</text><text x="350" y="30">WAVE 2</text><text x="595" y="30">WAVE 2</text>
+    <text x="840" y="30">WAVE 3 (speculative)</text><text x="1085" y="30">RATIFIED FOLLOW-UP</text>
+  </g>
+
+  <g stroke-linecap="round" fill="none">
+    <g stroke="#98a2b3" stroke-width="1.8" marker-end="url(#mV)">
+      <path d="M189,170 L266,100"/><path d="M189,170 L266,230"/>
+      <path d="M189,330 L266,352"/><path d="M189,520 L266,520"/>
+      <path d="M434,520 L511,520"/><path d="M924,560 L997,560"/>
+      <path d="M595,542 C720,650 920,640 1001,568"/>
+    </g>
+    <g stroke="#17696b" stroke-width="2.4" stroke-dasharray="2 5" marker-start="url(#mDia)" marker-end="url(#mDia)">
+      <path d="M434,95 L511,283"/><path d="M434,235 L511,294"/><path d="M350,498 L560,312"/>
+      <path d="M105,712 C350,800 700,792 838,586"/>
+    </g>
+    <g stroke="#3b3f9e" stroke-width="2.4" stroke-dasharray="14 4 3 4" marker-end="url(#mSq)">
+      <path d="M511,160 L438,104"/><path d="M511,160 L438,226"/>
+    </g>
+    <g stroke="#c05621" stroke-width="2.6" marker-end="url(#mTri)">
+      <path d="M560,678 C500,620 430,580 394,545"/>
+      <path d="M511,700 C480,600 478,320 438,248"/>
+      <path d="M511,690 C462,610 466,430 438,368"/>
+      <path d="M756,395 L683,395"/>
+      <path d="M756,160 L683,160"/>
+      <path d="M756,275 L683,287"/>
+      <path d="M790,253 C700,70 560,80 438,214"/>
+      <path d="M756,560 L683,530"/>
+      <path d="M840,538 C1060,420 1000,20 354,73"/>
+    </g>
+    <g stroke="#a01b1b" stroke-width="2.6" stroke-dasharray="9 5" marker-end="url(#mTriR)">
+      <path d="M511,395 L438,360"/>
+      <path d="M1001,378 C930,280 760,300 687,387"/>
+    </g>
+    <g stroke="#a01b1b" stroke-width="2.4" stroke-dasharray="3 3" marker-end="url(#mTriR)">
+      <path d="M924,148 C988,126 988,186 928,172"/>
+      <path d="M924,263 C988,241 988,301 928,287"/>
+      <path d="M924,383 C988,361 988,421 928,407"/>
+    </g>
+  </g>
+
+  <g font-size="16" text-anchor="middle">
+    <g fill="#e8eef5" stroke="#2b5d8a" stroke-width="2">
+      <rect x="21" y="148" width="168" height="44" rx="6"/><rect x="21" y="308" width="168" height="44" rx="6"/>
+      <rect x="21" y="498" width="168" height="44" rx="6"/><rect x="21" y="668" width="168" height="44" rx="6"/>
+    </g>
+    <g fill="#1f2430" stroke="none">
+      <text x="105" y="176">bloch-poles</text><text x="105" y="336">bloch-gates</text>
+      <text x="105" y="526">qutrit-su3</text><text x="105" y="696">weltformel</text>
+    </g>
+    <g fill="#eaf1e6" stroke="#4a7a3c" stroke-width="2">
+      <rect x="266" y="73" width="168" height="44" rx="6"/><rect x="266" y="213" width="168" height="44" rx="6"/>
+      <rect x="266" y="333" width="168" height="44" rx="6"/><rect x="266" y="498" width="168" height="44" rx="6"/>
+      <rect x="511" y="138" width="168" height="44" rx="6"/><rect x="511" y="268" width="168" height="44" rx="6"/>
+      <rect x="511" y="373" width="168" height="44" rx="6"/><rect x="511" y="498" width="168" height="44" rx="6"/>
+      <rect x="511" y="678" width="168" height="44" rx="6"/>
+    </g>
+    <g fill="#1f2430" stroke="none">
+      <text x="350" y="101">models-ensemble</text><text x="350" y="241">epistemic-state</text>
+      <text x="350" y="361">bloch-phase</text><text x="350" y="526">beyond-su3</text>
+      <text x="595" y="155" font-size="15">models-vs-</text><text x="595" y="173" font-size="15">epistemic</text>
+      <text x="595" y="296">simplex</text><text x="595" y="401">z2-grading</text>
+      <text x="595" y="526">layered-core</text><text x="595" y="706">citation-audit</text>
+    </g>
+    <g fill="#f7ece0" stroke="#b06a25" stroke-width="2">
+      <rect x="756" y="138" width="168" height="44" rx="6"/><rect x="756" y="253" width="168" height="44" rx="6"/>
+      <rect x="756" y="373" width="168" height="44" rx="6"/><rect x="756" y="538" width="168" height="44" rx="6"/>
+    </g>
+    <g fill="#1f2430" stroke="none">
+      <text x="840" y="166">complementarity</text><text x="840" y="281">thermodynamics</text>
+      <text x="840" y="401">proof-gauge</text>
+      <text x="840" y="555" font-size="15">counterfactual-</text><text x="840" y="573" font-size="15">boundary</text>
+    </g>
+    <g fill="#ede7f6" stroke="#5b4a9e" stroke-width="2">
+      <rect x="1001" y="373" width="168" height="44" rx="6"/><rect x="1001" y="538" width="168" height="44" rx="6"/>
+    </g>
+    <g fill="#1f2430" stroke="none">
+      <text x="1085" y="401">bpi</text>
+      <text x="1085" y="555" font-size="15">scheduler-</text><text x="1085" y="573" font-size="15">prototype</text>
+    </g>
+  </g>
+
+  <g font-size="16">
+    <rect x="21" y="756" width="1198" height="58" rx="6" fill="#ffffff" stroke="#d5d8dd"/>
+    <g stroke-linecap="round" fill="none">
+      <path d="M38,776 L98,776" stroke="#98a2b3" stroke-width="1.8" marker-end="url(#mV)"/>
+      <path d="M38,802 L98,802" stroke="#c05621" stroke-width="2.6" marker-end="url(#mTri)"/>
+      <path d="M330,776 L390,776" stroke="#a01b1b" stroke-width="2.6" stroke-dasharray="9 5" marker-end="url(#mTriR)"/>
+      <path d="M330,802 C378,790 378,814 334,808" stroke="#a01b1b" stroke-width="2.4" stroke-dasharray="3 3" marker-end="url(#mTriR)"/>
+      <path d="M700,776 L760,776" stroke="#17696b" stroke-width="2.4" stroke-dasharray="2 5" marker-start="url(#mDia)" marker-end="url(#mDia)"/>
+      <path d="M700,802 L760,802" stroke="#3b3f9e" stroke-width="2.4" stroke-dasharray="14 4 3 4" marker-end="url(#mSq)"/>
+    </g>
+    <text x="108" y="781">builds on</text><text x="108" y="807">corrects (or locates a gap in)</text>
+    <text x="400" y="781">refutes its own parent</text><text x="400" y="807">self-refutes</text>
+    <text x="770" y="781">converges with</text><text x="770" y="807">adjudicates (and corrects both)</text>
+  </g>
+</g>
+</svg>

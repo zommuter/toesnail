@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 336" role="img" aria-labelledby="c7t c7d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c7t">The four retractions the cluster made against its own earlier essays</title>
+<desc id="c7d">Two correcting essays and their targets. model-attestation section 6 retracts the batch's own gap-gated verification as non-novel, DiFR having got there first, and reverses the claim that FHE gives no integrity in two sibling essays. zkml-proofs section 9 retracts the four-orders figure and the claim that zkML has no trust assumption.</desc>
+<text class="hd" x="14" y="24">Four retractions across six essays, all self-inflicted and all published in place</text>
+<text x="14" y="44">the correcting essay on the left, what it retracts in the middle, the essay corrected on the right</text>
+<rect class="card" x="14" y="66" width="188" height="112"/>
+<rect x="14" y="66" width="5" height="112" fill="#2a78d6"/>
+<text class="lbl" x="32" y="92">model-attestation.md</text>
+<text x="32" y="110">section 6</text>
+<text x="32" y="140">two corrections, one of</text>
+<text x="32" y="158">them reversing its own</text>
+<text x="32" y="176">earlier headline claim</text>
+<rect class="card" x="14" y="192" width="188" height="112"/>
+<rect x="14" y="192" width="5" height="112" fill="#eb6834"/>
+<text class="lbl" x="32" y="218">zkml-proofs.md</text>
+<text x="32" y="236">section 9</text>
+<text x="32" y="266">two more, both against</text>
+<text x="32" y="284">a figure the batch had</text>
+<text x="32" y="302">quoted twice</text>
+<path class="arw" d="M206 96 L 250 96" marker-end="url(#a7)"/>
+<path class="arw" d="M206 152 L 250 152" marker-end="url(#a7)"/>
+<path class="arw" d="M206 222 L 250 222" marker-end="url(#a7)"/>
+<path class="arw" d="M206 278 L 250 278" marker-end="url(#a7)"/>
+<defs><marker id="a7" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#898781"/></marker></defs>
+<text class="crt" x="256" y="88">RETRACTED: gap-gated verification is novel</text>
+<text x="256" y="106">DiFR, November 2025, got there first, with a clipped logit-gap</text>
+<text x="256" y="122">statistic and seed synchronisation. Target: trustless-distributed-ai section 4</text>
+<text class="crt" x="256" y="152">REVERSED: FHE gives confidentiality and zero integrity</text>
+<text x="256" y="170">a provider that cannot read the prompt cannot recognise an audit,</text>
+<text x="256" y="186">so encryption makes the audit unevadable. Targets: fhe-llm section 0</text>
+<text x="256" y="202">and trustless-distributed-ai sections 0 and 1</text>
+<text class="crt" x="256" y="232">RETRACTED: zkML is four orders of magnitude away</text>
+<text x="256" y="250">the figure came from opML, February 2024, predating zkLLM and zkGPT.</text>
+<text x="256" y="266">Targets: model-attestation section 7, trustless-distributed-ai section 7</text>
+<text class="crt" x="256" y="290">RETRACTED: zkML is the only mechanism with no trust assumption</text>
+<text x="256" y="308">right about the computation, wrong about the model. Target: trustless-distributed-ai section 7</text>
+</svg>

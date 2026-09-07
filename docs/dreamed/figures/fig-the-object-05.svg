@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 320" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The four simplex weights as a stacked bar, showing that the absolute value of z is at most r follows from non-negativity of the weights alone</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+  <text x="350" y="42" font-size="26" font-weight="700">derived, not imposed</text>
+  <rect x="90" y="90" width="130" height="62" fill="#2b5d8a"/>
+  <rect x="220" y="90" width="90" height="62" fill="#8fb4d0"/>
+  <rect x="310" y="90" width="150" height="62" fill="#c9c9c9"/>
+  <rect x="460" y="90" width="150" height="62" fill="#ffffff" stroke="#6b7280" stroke-width="3" stroke-dasharray="8 6"/>
+  <rect x="90" y="90" width="520" height="62" fill="none" stroke="#1f2430" stroke-width="3"/>
+  <text x="155" y="190" font-size="24">proved</text>
+  <text x="265" y="190" font-size="24">refuted</text>
+  <text x="385" y="190" font-size="24">indep.</text>
+  <text x="535" y="190" font-size="24">open</text>
+  <line x1="90" y1="212" x2="460" y2="212" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="90" y1="212" x2="90" y2="200" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="460" y1="212" x2="460" y2="200" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="275" y="244" font-size="24" fill="#2b5d8a">r = 1 &#8722; open</text>
+  <text x="350" y="292" font-size="24">|z| &#8804; r &#8804; 1 from p &#8805; 0 alone</text>
+</g>
+</svg>

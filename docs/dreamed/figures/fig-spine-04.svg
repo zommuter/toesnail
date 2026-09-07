@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 400" style="min-width:800px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Derivation chain: three questions about transitions force a one-parameter unitary group, Stone's theorem then yields a unique self-adjoint generator, from which the Schroedinger equation and Noether conservation follow</title>
+<rect x="0" y="0" width="960" height="400" fill="#fcfcfa"/>
+<defs><marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f2430"/></marker></defs>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <g>
+    <rect x="20" y="40" width="230" height="66" rx="8" fill="#ffffff" stroke="#17696b" stroke-width="2.5"/>
+    <text x="34" y="64" font-size="15" font-weight="700" fill="#12484a">Q1</text>
+    <text x="62" y="64" font-size="14">Does a transition keep</text>
+    <text x="62" y="82" font-size="14">probabilities probabilities?</text>
+    <text x="62" y="100" font-size="13" fill="#6b7280">that is UNITARY</text>
+
+    <rect x="20" y="122" width="230" height="66" rx="8" fill="#ffffff" stroke="#17696b" stroke-width="2.5"/>
+    <text x="34" y="146" font-size="15" font-weight="700" fill="#12484a">Q2</text>
+    <text x="62" y="146" font-size="14">Do transitions compose?</text>
+    <text x="62" y="164" font-size="13" fill="#6b7280">wait 3 s then 2 more = wait 5 s</text>
+    <text x="62" y="182" font-size="13" fill="#6b7280">that is the GROUP LAW</text>
+
+    <rect x="20" y="204" width="230" height="66" rx="8" fill="#ffffff" stroke="#17696b" stroke-width="2.5"/>
+    <text x="34" y="228" font-size="15" font-weight="700" fill="#12484a">Q3</text>
+    <text x="62" y="228" font-size="14">What does waiting no</text>
+    <text x="62" y="246" font-size="14">time do?</text>
+    <text x="62" y="264" font-size="13" fill="#6b7280">nothing: the IDENTITY</text>
+  </g>
+
+  <g stroke="#1f2430" stroke-width="2" fill="none" marker-end="url(#arw2)">
+    <path d="M252,73 L300,140"/><path d="M252,155 L300,155"/><path d="M252,237 L300,170"/>
+  </g>
+
+  <rect x="306" y="118" width="200" height="76" rx="8" fill="#eef1f7" stroke="#3b3f9e" stroke-width="2.5"/>
+  <text x="406" y="146" font-size="15" font-weight="700" fill="#3b3f9e" text-anchor="middle">one-parameter</text>
+  <text x="406" y="166" font-size="15" font-weight="700" fill="#3b3f9e" text-anchor="middle">unitary group</text>
+  <text x="406" y="186" font-size="13" fill="#6b7280" text-anchor="middle">nothing was postulated</text>
+
+  <path d="M510,156 L560,156" stroke="#1f2430" stroke-width="2" fill="none" marker-end="url(#arw2)"/>
+  <text x="535" y="144" font-size="13" fill="#6b7280" text-anchor="middle">Stone</text>
+
+  <rect x="566" y="112" width="230" height="88" rx="8" fill="#ffffff" stroke="#a01b1b" stroke-width="3"/>
+  <text x="681" y="140" font-size="16" font-weight="700" fill="#a01b1b" text-anchor="middle">a UNIQUE self-adjoint H</text>
+  <text x="681" y="162" font-size="14" text-anchor="middle">not postulated: PROVED to exist</text>
+  <text x="681" y="182" font-size="13" fill="#6b7280" text-anchor="middle">read off as the derivative at t = 0</text>
+
+  <g stroke="#1f2430" stroke-width="2" fill="none" marker-end="url(#arw2)">
+    <path d="M800,140 L846,110"/><path d="M800,172 L846,202"/>
+  </g>
+  <g font-size="14">
+    <text x="852" y="106">Schroedinger,</text>
+    <text x="852" y="124">as a corollary</text>
+    <text x="852" y="200">Noether: commuting</text>
+    <text x="852" y="218">means conserved</text>
+  </g>
+
+  <g>
+    <line x1="20" y1="300" x2="940" y2="300" stroke="#c9ccd4" stroke-width="1.5"/>
+    <text x="20" y="326" font-size="15" font-weight="700" fill="#a01b1b">Located finding T3, filed in REVIEW_ME id:8e64 and open</text>
+    <text x="20" y="348" font-size="14">`physics/toesnail.md:59`, equation `t1`, writes the tossed coin with PROBABILITIES as coefficients.</text>
+    <text x="20" y="368" font-size="14">A unitary preserves the sum of squared moduli, not the plain sum, so those coefficients can come from</text>
+    <text x="20" y="388" font-size="14">a time evolution only in the degenerate case where the probability is exactly 0 or exactly 1.</text>
+  </g>
+</g>
+</svg>

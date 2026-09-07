@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 250" style="min-width:720px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Two candidate dividing lines drawn on the same axis: the owner's smooth versus discontinuous line and the correct analytic versus non-analytic line, showing that a smooth compactly supported bump sits on opposite sides of the two</title>
+<rect x="0" y="0" width="900" height="250" fill="#fbfaf8"/>
+<g font-family="Georgia, serif" fill="#24303c">
+  <text x="20" y="30" font-size="14" font-weight="bold">Line as written at :82 (smooth vs discontinuous)</text>
+  <line x1="20" y1="44" x2="880" y2="44" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="600" y1="52" x2="600" y2="106" stroke="#6b7280" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <text x="600" y="122" text-anchor="middle" font-size="12" fill="#6b7280">the line as written</text>
+  <text x="60" y="80" font-size="13">1/(1+x^2)</text>
+  <text x="230" y="80" font-size="13">C-infinity bump, compact support</text>
+  <text x="660" y="80" font-size="13">shock, step</text>
+  <text x="300" y="100" font-size="12" fill="#6b7280">claimed "perfectly sufficient"</text>
+
+  <text x="20" y="160" font-size="14" font-weight="bold" fill="#b25c1e">Correct line (analytic vs non-analytic)</text>
+  <line x1="20" y1="174" x2="880" y2="174" stroke="#d5d0c8" stroke-width="1"/>
+  <line x1="200" y1="182" x2="200" y2="236" stroke="#b25c1e" stroke-width="2.8"/>
+  <text x="200" y="252" text-anchor="middle" font-size="12" fill="#b25c1e">where the line really is</text>
+  <text x="45" y="210" font-size="13">1/(1+x^2)</text>
+  <text x="240" y="210" font-size="13">C-infinity bump</text>
+  <text x="240" y="228" font-size="12" fill="#b25c1e">MOVED: it is on the wrong side of :82</text>
+  <text x="660" y="210" font-size="13">shock, step</text>
+  <text x="620" y="228" font-size="12">unchanged</text>
+</g>
+</svg>

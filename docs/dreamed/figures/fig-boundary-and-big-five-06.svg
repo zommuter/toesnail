@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 450" role="img" aria-labelledby="wkl-title">
+<title id="wkl-title">Seven theorems radiating from weak Koenig's lemma, each equivalent to it over RCA-zero: Heine-Borel compactness of the unit interval, the compactness theorem for first-order logic, Goedel's completeness theorem, separable Hahn-Banach, Brouwer's fixed point theorem, Peano existence for ordinary differential equations, and the existence of a prime ideal in every countable commutative ring</title>
+<rect x="0" y="0" width="860" height="450" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<line x1="430" y1="225" x2="430" y2="52" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="712" y2="112" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="742" y2="225" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="712" y2="338" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="430" y2="398" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="148" y2="338" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="118" y2="225" stroke="#a8501e" stroke-width="1.6"/>
+<line x1="430" y1="225" x2="148" y2="112" stroke="#a8501e" stroke-width="1.6"/>
+
+<circle cx="430" cy="225" r="68" fill="#f4ece6" stroke="#a8501e" stroke-width="3"/>
+<text x="430" y="216" font-size="19" text-anchor="middle" font-weight="bold">WKL₀</text>
+<text x="430" y="240" font-size="12.5" text-anchor="middle" fill="#8a3d12">every infinite</text>
+<text x="430" y="256" font-size="12.5" text-anchor="middle" fill="#8a3d12">subtree of 2&lt;ω</text>
+<text x="430" y="272" font-size="12.5" text-anchor="middle" fill="#8a3d12">has a path</text>
+
+<rect x="326" y="26" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="430" y="48" font-size="13" text-anchor="middle">Heine-Borel compactness</text>
+<text x="430" y="66" font-size="13" text-anchor="middle">of the closed unit interval</text>
+
+<rect x="608" y="86" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="712" y="108" font-size="13" text-anchor="middle">Compactness theorem</text>
+<text x="712" y="126" font-size="13" text-anchor="middle">for first-order logic</text>
+
+<rect x="638" y="199" width="208" height="52" fill="#ffffff" stroke="#4a3560" stroke-width="2.5"/>
+<text x="742" y="221" font-size="13" text-anchor="middle" font-weight="bold">Goedel's completeness</text>
+<text x="742" y="239" font-size="13" text-anchor="middle" font-weight="bold">theorem (countable)</text>
+
+<rect x="608" y="312" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="712" y="334" font-size="13" text-anchor="middle">Separable</text>
+<text x="712" y="352" font-size="13" text-anchor="middle">Hahn-Banach theorem</text>
+
+<rect x="326" y="372" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="430" y="394" font-size="13" text-anchor="middle">Brouwer's</text>
+<text x="430" y="412" font-size="13" text-anchor="middle">fixed point theorem</text>
+
+<rect x="44" y="312" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="148" y="334" font-size="13" text-anchor="middle">Peano existence theorem</text>
+<text x="148" y="352" font-size="13" text-anchor="middle">for ODEs</text>
+
+<rect x="14" y="199" width="208" height="52" fill="#ffffff" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="118" y="221" font-size="13" text-anchor="middle" font-weight="bold">Every countable commutative</text>
+<text x="118" y="239" font-size="13" text-anchor="middle" font-weight="bold">ring has a prime ideal</text>
+
+<rect x="44" y="86" width="208" height="52" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<text x="148" y="108" font-size="13" text-anchor="middle">Riemann integrability of</text>
+<text x="148" y="126" font-size="13" text-anchor="middle">continuous functions on [0,1]</text>
+</g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1240 428" style="min-width:1000px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Verdict strip: for each of the 19 pages, whether its headline claim landed as confirmed, refuted, narrowed or superseded</title>
+<defs>
+  <g id="gC"><circle cx="12" cy="12" r="11" fill="#2f6b35"/><path d="M6,12 L10,17 L18,7" stroke="#ffffff" stroke-width="2.6" fill="none"/></g>
+  <g id="gR"><rect x="1" y="1" width="22" height="22" rx="3" fill="#a01b1b"/><path d="M7,7 L17,17 M17,7 L7,17" stroke="#ffffff" stroke-width="2.6"/></g>
+  <g id="gN"><circle cx="12" cy="12" r="11" fill="#ffffff" stroke="#9a6b00" stroke-width="2.4"/><path d="M12,1 A11,11 0 0,1 12,23 z" fill="#9a6b00"/></g>
+  <g id="gS"><path d="M12,1 L24,12 L12,23 L0,12 z" fill="#ffffff" stroke="#4a5568" stroke-width="2.4"/><path d="M3,12 L21,12" stroke="#4a5568" stroke-width="2.4"/></g>
+</defs>
+<rect x="0" y="0" width="1240" height="428" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" font-size="16" fill="#1f2430">
+  <g transform="translate(20,26)">
+    <use href="#gC"/><text x="32" y="18">CONFIRMED, 9</text>
+    <g transform="translate(215,0)"><use href="#gR"/><text x="32" y="18">REFUTED, 3</text></g>
+    <g transform="translate(400,0)"><use href="#gN"/><text x="32" y="18">NARROWED, 6</text></g>
+    <g transform="translate(600,0)"><use href="#gS"/><text x="32" y="18">SUPERSEDED, 1</text></g>
+  </g>
+<g transform="translate(20,74)"><use href="#gC"/><text x="32" y="18" font-weight="600">weltformel</text><text x="230" y="18" font-size="15" fill="#4a5568">two located errors stand; converges with counterfactual-boundary</text></g>
+<g transform="translate(20,110)"><use href="#gS"/><text x="32" y="18" font-weight="600">bloch-poles</text><text x="230" y="18" font-size="15" fill="#4a5568">pole assignment survives; D1 demotes its ball to exposition</text></g>
+<g transform="translate(20,146)"><use href="#gC"/><text x="32" y="18" font-weight="600">bloch-gates</text><text x="230" y="18" font-size="15" fill="#4a5568">no rotation-covariant order on the equator; cited by D1</text></g>
+<g transform="translate(20,182)"><use href="#gC"/><text x="32" y="18" font-weight="600">qutrit-su3</text><text x="230" y="18" font-size="15" fill="#4a5568">the qutrit body is not a ball; the dimension count was right</text></g>
+<g transform="translate(20,218)"><use href="#gN"/><text x="32" y="18" font-weight="600">models-ensemble</text><text x="230" y="18" font-size="15" fill="#4a5568">adjudicated against, then strengthened by Tennenbaum</text></g>
+<g transform="translate(20,254)"><use href="#gN"/><text x="32" y="18" font-weight="600">epistemic-state</text><text x="230" y="18" font-size="15" fill="#4a5568">adjudicated in favour, then priced negative by the prototype</text></g>
+<g transform="translate(20,290)"><use href="#gN"/><text x="32" y="18" font-weight="600">models-vs-epistemic</text><text x="230" y="18" font-size="15" fill="#4a5568">its report triangle became D1; its "name a pair" framing corrected</text></g>
+<g transform="translate(20,326)"><use href="#gR"/><text x="32" y="18" font-weight="600">bloch-phase</text><text x="230" y="18" font-size="15" fill="#4a5568">recommendation refuted; its negative result survives and D1 cites it</text></g>
+<g transform="translate(20,362)"><use href="#gC"/><text x="32" y="18" font-weight="600">beyond-su3</text><text x="230" y="18" font-size="15" fill="#4a5568">flat antichain, no connectives; its GL route feeds D3</text></g>
+<g transform="translate(20,398)"><use href="#gC"/><text x="32" y="18" font-weight="600">simplex</text><text x="230" y="18" font-size="15" fill="#4a5568">built the object; D1 makes its shadow the real one</text></g>
+<g transform="translate(640,74)"><use href="#gN"/><text x="32" y="18" font-weight="600">z2-grading</text><text x="215" y="18" font-size="15" fill="#4a5568">refutation stands; its own BPI lead dissolved</text></g>
+<g transform="translate(640,110)"><use href="#gN"/><text x="32" y="18" font-weight="600">layered-core</text><text x="215" y="18" font-size="15" fill="#4a5568">a fourth channel was missing; D3 builds it anyway</text></g>
+<g transform="translate(640,146)"><use href="#gC"/><text x="32" y="18" font-weight="600">citation-audit</text><text x="215" y="18" font-size="15" fill="#4a5568">11 corrections applied; it drove D2</text></g>
+<g transform="translate(640,182)"><use href="#gC"/><text x="32" y="18" font-weight="600">complementarity</text><text x="215" y="18" font-size="15" fill="#4a5568">confirmed as a negative; nine inventions dead</text></g>
+<g transform="translate(640,218)"><use href="#gC"/><text x="32" y="18" font-weight="600">counterfactual-boundary</text><text x="215" y="18" font-size="15" fill="#4a5568">its design constraint binds D3</text></g>
+<g transform="translate(640,254)"><use href="#gR"/><text x="32" y="18" font-weight="600">proof-gauge</text><text x="215" y="18" font-size="15" fill="#4a5568">construction flat; two corrections survive it</text></g>
+<g transform="translate(640,290)"><use href="#gR"/><text x="32" y="18" font-weight="600">thermodynamics</text><text x="215" y="18" font-size="15" fill="#4a5568">self-declared costume; one real theorem kept</text></g>
+<g transform="translate(640,326)"><use href="#gC"/><text x="32" y="18" font-weight="600">bpi</text><text x="215" y="18" font-size="15" fill="#4a5568">confirmed as a negative; the honest home is weak Koenig</text></g>
+<g transform="translate(640,362)"><use href="#gN"/><text x="32" y="18" font-weight="600">scheduler-prototype</text><text x="215" y="18" font-size="15" fill="#4a5568">the fork is a purchase, not free information</text></g>
+</g>
+</svg>

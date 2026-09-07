@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" role="img" aria-labelledby="bpi-title">
+<title id="bpi-title">The same theorem at two cardinalities: for arbitrary languages the completion needs the Boolean prime ideal theorem, a choice principle, while for countable languages it is weak Koenig's lemma, a compactness principle provable in ZF</title>
+<rect x="0" y="0" width="860" height="300" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<text x="430" y="30" font-size="14" text-anchor="middle" font-weight="bold">"Every consistent theory has a complete consistent extension"</text>
+<text x="430" y="50" font-size="12.5" text-anchor="middle" fill="#5c5c5c">one statement, and the cardinality of the language decides what it costs</text>
+
+<rect x="30" y="70" width="390" height="180" fill="#ffffff" stroke="#4a3560" stroke-width="2.5"/>
+<text x="225" y="98" font-size="14" text-anchor="middle" font-weight="bold">ARBITRARY language</text>
+<text x="225" y="124" font-size="13.5" text-anchor="middle" fill="#4a3560" font-weight="bold">needs BPI: a CHOICE principle</text>
+<text x="48" y="150" font-size="12.5">Unprovable in ZF. Strictly weaker than AC</text>
+<text x="48" y="168" font-size="12.5">(Halpern and Levy 1971). Zorn on the poset of</text>
+<text x="48" y="186" font-size="12.5">proper filters: a genuine limit stage, and the</text>
+<text x="48" y="204" font-size="12.5">union at that stage is what must be chosen.</text>
+<text x="48" y="230" font-size="12.5" fill="#5c5c5c">Sharp condition: the algebra is NOT well-orderable.</text>
+
+<rect x="440" y="70" width="390" height="180" fill="#ffffff" stroke="#a8501e" stroke-width="3"/>
+<text x="635" y="98" font-size="14" text-anchor="middle" font-weight="bold">COUNTABLE language</text>
+<text x="635" y="124" font-size="13.5" text-anchor="middle" fill="#8a3d12" font-weight="bold">needs WKL: a COMPACTNESS principle</text>
+<text x="458" y="150" font-size="12.5">A ZF theorem. Walk the enumeration, decide one</text>
+<text x="458" y="168" font-size="12.5">element at a time, every stage a successor.</text>
+<text x="458" y="186" font-size="12.5">Nothing is chosen. Measured finely in reverse</text>
+<text x="458" y="204" font-size="12.5">mathematics, the strength is exactly WKL₀.</text>
+<text x="458" y="230" font-size="12.5" fill="#5c5c5c">Machine-checked construction: lean/LogicBPI.lean.</text>
+
+<text x="430" y="272" font-size="13.5" text-anchor="middle" font-weight="bold">So the principle the layered architecture actually needs is COMPACTNESS, not CHOICE.</text>
+<text x="430" y="292" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Low Basis Theorem (Jockusch and Soare 1972): the completion exists, is not computable, and is LOW.</text>
+</g>
+</svg>

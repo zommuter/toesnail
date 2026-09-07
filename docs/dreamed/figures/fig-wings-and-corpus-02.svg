@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 380" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Corpus row P-C summarises the question as a Casimir eigenvalue equation; the post itself proposes a variational stationarity condition, and its accepted answer gets Dirac from a square-root generator instead</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <rect x="20" y="20" width="400" height="42" fill="#f6e2d8" stroke="#b04a25" stroke-width="2"/>
+  <text x="220" y="48" font-size="18" font-weight="700" text-anchor="middle">WHAT THE ROW SAYS</text>
+  <rect x="480" y="20" width="400" height="42" fill="#dce8f2" stroke="#2b5d8a" stroke-width="2"/>
+  <text x="680" y="48" font-size="18" font-weight="700" text-anchor="middle">WHAT THE POST SAYS</text>
+
+  <rect x="20" y="76" width="400" height="96" fill="#ffffff" stroke="#b04a25"/>
+  <text x="36" y="100" font-size="16" font-style="italic">"Casimir eigenvalue eqs as field eqs</text>
+  <text x="36" y="122" font-size="16" font-style="italic">(P-squared to KG, W-squared to spin?)"</text>
+  <text x="36" y="150" font-size="16">an EIGENVALUE equation, read off</text>
+  <text x="36" y="166" font-size="15" fill="#6b7280">docs/se-corpus.md, row P-C</text>
+
+  <rect x="480" y="76" width="400" height="96" fill="#ffffff" stroke="#2b5d8a"/>
+  <text x="496" y="100" font-size="16" font-style="italic">"Can symmetry generators be used</text>
+  <text x="496" y="122" font-size="16" font-style="italic">for quantization?"</text>
+  <text x="496" y="150" font-size="16">a VARIATIONAL stationarity condition</text>
+  <text x="496" y="166" font-size="15" fill="#6b7280">physics.SE q/27195, owner-authored</text>
+
+  <path d="M 424 124 L 474 124" stroke="#1f2430" stroke-width="2"/>
+  <path d="M 474 124 l -11 -6 l 0 12 z" fill="#1f2430"/>
+
+  <rect x="20" y="196" width="860" height="76" fill="#ffffff" stroke="#2b5d8a"/>
+  <text x="36" y="220" font-size="17" font-weight="700">The accepted answer changes the mechanism, and is absent from the row.</text>
+  <text x="36" y="243" font-size="16">Dirac does arrive by annihilation-by-a-generator, but the generator is not W-squared. It is the odd,</text>
+  <text x="36" y="263" font-size="16">first-order worldline-supersymmetry generator whose SQUARE is the bosonic constraint.</text>
+
+  <rect x="20" y="290" width="860" height="70" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
+  <text x="36" y="314" font-size="17" font-weight="700">And at the massless seam: W-squared = 0 does NOT follow from masslessness.</text>
+  <text x="36" y="338" font-size="16">The time and z components cancel identically. It vanishes exactly when the two transverse components do,</text>
+  <text x="36" y="356" font-size="16">and those two are the ISO(2) little-group "translations". Discarding them is an EMPIRICAL exclusion.</text>
+</g>
+</svg>

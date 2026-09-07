@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 344" role="img" aria-labelledby="c5t c5d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c5t">The cluster's internal disagreement on the zkML overhead gap, with who holds which position</title>
+<desc id="c5d">A logarithmic overhead axis from ten to the three to ten to the four point two. The zkml-proofs essay places the measured gap as a band from ten to the three point two to ten to the three point eight, calling it engineering and sublinear in model size. Two sibling essays place it at about ten to the four and call it four orders away. The disagreement is unresolved.</desc>
+<text class="hd" x="14" y="24">How far is zkML from practical? The cluster gives two answers</text>
+<text x="14" y="44">prover overhead against the plaintext forward pass of the same model, logarithmic</text>
+<line class="ax" x1="80" y1="270" x2="710" y2="270"/>
+<line class="g" x1="80" y1="90" x2="80" y2="270"/>
+<line class="g" x1="338.3" y1="90" x2="338.3" y2="270"/>
+<line class="g" x1="596.7" y1="90" x2="596.7" y2="270"/>
+<text class="m mu" x="80" y="290">1000x</text>
+<text class="m mu" x="338.3" y="290">about 3000x</text>
+<text class="m mu" x="596.7" y="290">10000x</text>
+<text class="m mu" x="395" y="312">overhead against plaintext inference</text>
+<rect class="s1" x="183.3" y="98" width="310" height="30" rx="4"/>
+<text class="lbl" x="195" y="119" fill="#fcfcfb">1671x to 6747x</text>
+<text class="s1 lbl" x="80" y="88">zkml-proofs.md: ENGINEERING, not structural</text>
+<text x="80" y="150">measured band, four systems on named hardware. Sublinear: a 1.857x parameter</text>
+<text x="80" y="168">increase from LLaMa-2-7B to 13B bought only a 1.295x time increase</text>
+<circle class="s2 mk" cx="596.7" cy="212" r="9"/>
+<text class="s2 lbl e" x="580" y="200">model-attestation.md and trustless-distributed-ai.md:</text>
+<text class="s2 lbl e" x="580" y="218">ABOUT FOUR ORDERS AWAY</text>
+<text class="e" x="580" y="240">both rest on opML's February 2024 nanoGPT figure, which zkml-proofs</text>
+<text class="e" x="580" y="258">shows predates both zkLLM (April 2024) and zkGPT (2025)</text>
+<path class="arw" d="M493 113 L 560 113 L 560 200" stroke-dasharray="6 4"/>
+<text class="crt" x="14" y="336">UNRESOLVED in the cluster. Drawn, not settled: no owner ruling has been taken on which figure stands.</text>
+</svg>

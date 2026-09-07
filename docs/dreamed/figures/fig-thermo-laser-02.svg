@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 452" role="img" aria-labelledby="f2t f2d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f2t">Two region diagrams: inversion and cooling do not overlap</title>
+<desc id="f2d">Left panel plots the upper-to-lower laser level population ratio on a log axis against the net heat drawn per cycle in units of k_B T. The chained bound N3 over N4 at most exp of minus Q over k_B T passes exactly through the point where the ratio is one and the heat is zero, so the whole quadrant with net cooling and inversion together is unreachable. Right panel plots the laser-to-pump energy ratio against the lattice-to-pump-brightness temperature ratio. The Scovil-Schulz-DuBois ceiling one minus T over T_p lies below the cooling floor of one for every positive temperature ratio; the two touch only at zero.</desc>
+<text class="hd" x="14" y="26">Inversion and cooling are mutually exclusive, at any pump strength and any laser intensity</text>
+
+<text class="sh" x="14" y="52">a. The chained detailed-balance bound</text>
+<text class="sm" x="14" y="70">N&#8323;/N&#8324; on a log axis against net heat drawn per cycle</text>
+<rect class="bad" x="215" y="80" width="145" height="100"/>
+<polygon class="ok" points="70,180 215,180 215,284.2 360,284.2 360,300 70,300"/>
+<line class="g" x1="70" y1="80" x2="360" y2="80"/>
+<line class="g" x1="70" y1="120" x2="360" y2="120"/>
+<line class="ax" x1="70" y1="180" x2="360" y2="180"/>
+<line class="g" x1="70" y1="240" x2="360" y2="240"/>
+<line class="g" x1="70" y1="300" x2="360" y2="300"/>
+<text class="mu sm e" x="64" y="84">100</text>
+<text class="mu sm e" x="64" y="124">10</text>
+<text class="mu sm e" x="64" y="184">1</text>
+<text class="mu sm e" x="64" y="244">0.1</text>
+<text class="mu sm e" x="64" y="304">0.01</text>
+<line class="ax" x1="70" y1="300" x2="360" y2="300"/>
+<line class="ax" x1="215" y1="80" x2="215" y2="300"/>
+<text class="mu sm m" x="70" y="318">-4</text>
+<text class="mu sm m" x="142.5" y="318">-2</text>
+<text class="mu sm m" x="215" y="318">0</text>
+<text class="mu sm m" x="287.5" y="318">+2</text>
+<text class="mu sm m" x="360" y="318">+4</text>
+<text class="mu sm m" x="215" y="338">Q / k_B T, net heat drawn from the lattice per cycle</text>
+<text class="mu sm m" x="215" y="352">(Q = &#916; - E&#8324; = h&#957;_L - h&#957;_p1 - h&#957;_p2; Q &gt; 0 is cooling)</text>
+<line class="ln s1k" x1="70" y1="75.8" x2="360" y2="284.2"/>
+<text class="s1 sm lbl" x="76" y="100">bound N&#8323;/N&#8324; &#8804; e^(-Q/k_B T)</text>
+<text class="crt sm" x="222" y="100">FORBIDDEN</text>
+<text class="crt sm" x="222" y="116">inversion AND</text>
+<text class="crt sm" x="222" y="132">net cooling</text>
+<text class="crt sm" x="222" y="148">(empty region)</text>
+<text class="s1 sm" x="76" y="272">reachable</text>
+<text class="mu sm e" x="356" y="196">heating</text>
+<text class="mu sm e" x="356" y="212">no inversion</text>
+
+<text class="sh" x="420" y="52">b. Scovil-Schulz-DuBois, generalised</text>
+<text class="sm" x="420" y="70">laser energy per pump energy against lattice/pump-brightness temperature</text>
+<rect class="bad" x="440" y="80" width="290" height="70"/>
+<polygon class="ok" points="440,150 730,300 440,300"/>
+<line class="g" x1="440" y1="80" x2="730" y2="80"/>
+<line class="g" x1="440" y1="112.5" x2="730" y2="112.5"/>
+<line class="g" x1="440" y1="187.5" x2="730" y2="187.5"/>
+<line class="g" x1="440" y1="225" x2="730" y2="225"/>
+<line class="g" x1="440" y1="262.5" x2="730" y2="262.5"/>
+<line class="ax" x1="440" y1="300" x2="730" y2="300"/>
+<line class="ax" x1="440" y1="80" x2="440" y2="300"/>
+<text class="mu sm e" x="434" y="84">1.4</text>
+<text class="mu sm e" x="434" y="154">1.0</text>
+<text class="mu sm e" x="434" y="229">0.5</text>
+<text class="mu sm e" x="434" y="304">0</text>
+<text class="mu sm m" x="440" y="318">0</text>
+<text class="mu sm m" x="585" y="318">0.5</text>
+<text class="mu sm m" x="730" y="318">1.0</text>
+<text class="mu sm m" x="585" y="338">T / T_p, lattice temperature over pump brightness temperature</text>
+<text class="mu sm m" x="585" y="352">(dimensionless; a laser pump is the limit T_p &#8594; &#8734;, i.e. T/T_p &#8594; 0)</text>
+<line class="ln s2k" x1="440" y1="150" x2="730" y2="300"/>
+<line class="dsh s1k" x1="440" y1="150" x2="730" y2="150"/>
+<text class="s2 sm lbl" x="600" y="272">inversion ceiling 1 - T/T_p</text>
+<text class="s1 sm lbl" x="446" y="168">cooling floor: h&#957;_L / &#931;h&#957;_p &gt; 1</text>
+<text class="crt sm m" x="585" y="106">net cooling requires this band</text>
+<text class="crt sm m" x="585" y="126">and inversion forbids it: EMPTY</text>
+<text class="mu sm" x="446" y="290">inversion allowed</text>
+
+<text class="sh" x="14" y="380">What survives: the same cycle run as a FLUORESCENCE cooler, where spontaneous 3&#8594;4 needs no inversion.</text>
+<text class="sm" x="14" y="400">Cooling needs the energy ratio above 1; inversion needs it below the ceiling 1 - T/T_p. They meet only at T/T_p = 0.</text>
+<text class="sm" x="14" y="418">COP per absorbed pump pair 2.2% at Q = k_B T and 6.5% at Q = 3k_B T (300 K, E&#8322; = 1.2 eV), against a</text>
+<text class="sm" x="14" y="436">Carnot ceiling of 0.199 for a fluorescence flux temperature T_F = 1808 K: a factor 3 below its own limit.</text>
+</svg>

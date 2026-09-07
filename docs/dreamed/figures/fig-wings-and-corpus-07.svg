@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 320" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Owner-authored instance counts for six candidate methodology themes plus one the note missed, showing that theme number three out-counts everything while reversibility greps to zero hits</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <text x="24" y="30" font-size="17" font-weight="700">Owner-authored instances, each with a file:line receipt</text>
+
+  <g font-size="16">
+    <text x="24" y="66">No. 3  move the problem, solve, move back</text>
+    <text x="24" y="102">(missed)  the complex plane pays rent</text>
+    <text x="24" y="138">No. 1  compactness forces discreteness</text>
+    <text x="24" y="174">No. 4  reversibility is sacred</text>
+    <text x="24" y="210">No. 2  linearize, then worry</text>
+    <text x="24" y="246">No. 5 / No. 6  same equation, one protagonist</text>
+  </g>
+
+  <rect x="440" y="52" width="320" height="20" fill="#3d6b45"/>
+  <text x="772" y="68" font-size="16" font-weight="700">about 8, in 5 files</text>
+  <rect x="440" y="88" width="160" height="20" fill="#2b5d8a"/>
+  <text x="612" y="104" font-size="16">4, in 2 files</text>
+  <rect x="440" y="124" width="120" height="20" fill="#2b5d8a"/>
+  <text x="572" y="140" font-size="16">3 plus a converse, all in one file</text>
+  <rect x="440" y="160" width="40" height="20" fill="#b04a25"/>
+  <text x="492" y="176" font-size="16" font-weight="700" fill="#b04a25">1 explicit, plus 2 implicit</text>
+  <rect x="440" y="196" width="40" height="20" fill="#8a8578"/>
+  <text x="492" y="212" font-size="16">1</text>
+  <rect x="440" y="232" width="40" height="20" fill="#8a8578"/>
+  <text x="492" y="248" font-size="16">1</text>
+
+  <rect x="24" y="266" width="856" height="44" fill="#f6e2d8" stroke="#b04a25" stroke-width="2"/>
+  <text x="40" y="288" font-size="17" font-weight="700">The hard fact in a soft area: grep -rn 'revers' over physics/, essays/ and crypto/ returns NOTHING.</text>
+  <text x="40" y="306" font-size="16">The words "reversible" and "irreversible" appear in zero owner-authored files. Today it is a slogan, not a theme.</text>
+</g>
+</svg>

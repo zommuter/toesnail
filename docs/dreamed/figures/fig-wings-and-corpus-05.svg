@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 300" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>A scalar Lyapunov quantity threads the first four stages of the love-wing arc and breaks at the fifth, where a fitted model has no Lyapunov function to derive</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <text x="24" y="34" font-size="17" font-weight="700">The thread is a scalar Lyapunov quantity, NOT the order parameter.</text>
+
+  <rect x="20" y="52" width="152" height="88" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="96" y="76" font-size="16" font-weight="700" text-anchor="middle">1 Resogram</text>
+  <text x="96" y="100" font-size="15" text-anchor="middle">linear loss</text>
+  <text x="96" y="120" font-size="15" text-anchor="middle">plus drive</text>
+
+  <rect x="192" y="52" width="152" height="88" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="268" y="76" font-size="16" font-weight="700" text-anchor="middle">2 Strogatz</text>
+  <text x="268" y="100" font-size="15" text-anchor="middle">the centre's</text>
+  <text x="268" y="120" font-size="15" text-anchor="middle">conserved form</text>
+
+  <rect x="364" y="52" width="152" height="88" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="440" y="76" font-size="16" font-weight="700" text-anchor="middle">3 Kuramoto</text>
+  <text x="440" y="100" font-size="15" text-anchor="middle">Ott-Antonsen</text>
+  <text x="440" y="120" font-size="15" text-anchor="middle">reduced r equation</text>
+
+  <rect x="536" y="52" width="152" height="88" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="612" y="76" font-size="16" font-weight="700" text-anchor="middle">4 games</text>
+  <text x="612" y="100" font-size="15" text-anchor="middle">the potential of</text>
+  <text x="612" y="120" font-size="15" text-anchor="middle">a potential game</text>
+
+  <rect x="726" y="52" width="154" height="88" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
+  <text x="803" y="76" font-size="16" font-weight="700" text-anchor="middle">5 Gottman</text>
+  <text x="803" y="100" font-size="15" text-anchor="middle">every parameter</text>
+  <text x="803" y="120" font-size="15" text-anchor="middle">FITTED per couple</text>
+
+  <path d="M 20 162 L 690 162" stroke="#3d6b45" stroke-width="5"/>
+  <path d="M 726 162 L 880 162" stroke="#b04a25" stroke-width="5" stroke-dasharray="8 8"/>
+  <line x1="700" y1="140" x2="716" y2="186" stroke="#b04a25" stroke-width="5"/>
+  <line x1="716" y1="140" x2="700" y2="186" stroke="#b04a25" stroke-width="5"/>
+  <text x="355" y="186" font-size="16" fill="#3d6b45" text-anchor="middle">monotonicity FOLLOWS from the model</text>
+  <text x="806" y="186" font-size="16" fill="#b04a25" text-anchor="middle">none to derive, only to postulate</text>
+
+  <rect x="20" y="206" width="860" height="76" fill="#ffffff" stroke="#8a5d2b"/>
+  <text x="36" y="230" font-size="16">Junction 2 is real but a genuine JUMP: linear to nonlinear, two-body to N-body, amplitude to phase, all at once.</text>
+  <text x="36" y="252" font-size="16">What survives is the METHOD, not the model. The Ott-Antonsen equation and the Resogram's energy equation both</text>
+  <text x="36" y="272" font-size="16">read "linear loss plus drive", with the frequency SPREAD playing the damping's role. The break is the finding.</text>
+</g>
+</svg>

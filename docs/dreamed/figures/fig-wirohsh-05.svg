@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 860 380" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Measured coefficient growth for three profiles on the shell, plotting the m-th root of the coefficient modulus against m on a log axis, with the real-analytic Poisson kernel flat at one half and both the smooth bump and the square pulse climbing toward one</title>
+<rect x="0" y="0" width="860" height="380" fill="#fbfaf8"/>
+<g font-family="Georgia, serif" fill="#24303c">
+  <g stroke="#e2ddd4" stroke-width="1">
+    <line x1="90" y1="60" x2="790" y2="60"/><line x1="90" y1="100" x2="790" y2="100"/>
+    <line x1="90" y1="140" x2="790" y2="140"/><line x1="90" y1="180" x2="790" y2="180"/>
+    <line x1="90" y1="220" x2="790" y2="220"/><line x1="90" y1="260" x2="790" y2="260"/>
+    <line x1="90" y1="300" x2="790" y2="300"/>
+  </g>
+  <g font-size="12" fill="#6b7280" text-anchor="end">
+    <text x="82" y="64">1.0</text><text x="82" y="104">0.9</text><text x="82" y="144">0.8</text>
+    <text x="82" y="184">0.7</text><text x="82" y="224">0.6</text><text x="82" y="264">0.5</text>
+    <text x="82" y="304">0.4</text>
+  </g>
+  <line x1="90" y1="60" x2="790" y2="60" stroke="#24303c" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="796" y="64" font-size="12" fill="#24303c">radius 1</text>
+  <text x="796" y="80" font-size="11" fill="#6b7280">= no annulus</text>
+  <line x1="90" y1="300" x2="790" y2="300" stroke="#24303c" stroke-width="1.4"/>
+  <line x1="90" y1="40" x2="90" y2="300" stroke="#24303c" stroke-width="1.4"/>
+  <g font-size="12" fill="#6b7280" text-anchor="middle">
+    <text x="90" y="322">m = 10</text><text x="255" y="322">20</text><text x="420" y="322">40</text>
+    <text x="585" y="322">80</text><text x="750" y="322">160</text>
+  </g>
+  <text x="440" y="346" text-anchor="middle" font-size="13">index m, doubling</text>
+  <text x="24" y="30" font-size="13" font-weight="bold">m-th root of the coefficient modulus</text>
+
+  <polyline points="90,260 255,260 420,260 585,260 750,260" fill="none" stroke="#17696b" stroke-width="2.6"/>
+  <g fill="#17696b">
+    <circle cx="90" cy="260" r="4"/><circle cx="255" cy="260" r="4"/><circle cx="420" cy="260" r="4"/>
+    <circle cx="585" cy="260" r="4"/><circle cx="750" cy="260" r="4"/>
+  </g>
+  <text x="300" y="252" font-size="12.5" fill="#17696b">Poisson kernel, real-analytic: flat at 0.5000</text>
+
+  <polyline points="90,242 255,209 420,155 585,122 750,107" fill="none" stroke="#b25c1e" stroke-width="2.6" stroke-dasharray="9 5"/>
+  <g fill="#b25c1e">
+    <rect x="86" y="238" width="8" height="8"/><rect x="251" y="205" width="8" height="8"/>
+    <rect x="416" y="151" width="8" height="8"/><rect x="581" y="118" width="8" height="8"/>
+    <rect x="746" y="103" width="8" height="8"/>
+  </g>
+  <text x="470" y="140" font-size="12.5" fill="#b25c1e">C-infinity bump: 0.5454 climbing to 0.8827</text>
+
+  <polyline points="90,178 255,143 420,106 585,89 750,75" fill="none" stroke="#3b3f9e" stroke-width="2.6" stroke-dasharray="2 5"/>
+  <g fill="#3b3f9e">
+    <path d="M90,172 L96,182 L84,182 z"/><path d="M255,137 L261,147 L249,147 z"/>
+    <path d="M420,100 L426,110 L414,110 z"/><path d="M585,83 L591,93 L579,93 z"/>
+    <path d="M750,69 L756,79 L744,79 z"/>
+  </g>
+  <text x="330" y="102" font-size="12.5" fill="#3b3f9e">square pulse, distribution: 0.7048 climbing to 0.9617</text>
+</g>
+</svg>

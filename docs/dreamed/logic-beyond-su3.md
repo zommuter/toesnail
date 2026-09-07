@@ -1,5 +1,5 @@
 ---
-title: Beyond SU(3): what else can carry a logic of provability?
+title: "Beyond SU(3): what else can carry a logic of provability?"
 permalink: /dreamed/logic-beyond-su3
 ---
 

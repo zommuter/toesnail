@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 980 470" style="min-width:820px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Five WiRoHSH essays with their verified mechanisms on the left, arrows to a single NO-GO node on the right, with two solid load-bearing arrows and three dotted non-bearing arrows each labelled with what the essay actually does</title>
+<rect x="0" y="0" width="980" height="470" fill="#fbfaf8"/>
+<defs>
+  <marker id="wArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#17696b"/></marker>
+  <marker id="wArrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9" fill="none" stroke="#6b7280" stroke-width="1.8"/></marker>
+</defs>
+<g font-family="Georgia, serif" fill="#24303c">
+  <g font-size="13">
+    <rect x="16" y="30" width="360" height="64" rx="5" fill="#ffffff" stroke="#17696b" stroke-width="2"/>
+    <text x="30" y="52" font-size="14" font-weight="bold">wirohsh-splats</text>
+    <text x="30" y="72">Wick rotation makes the direction null, so the</text>
+    <text x="30" y="88">b_phi family is redundant. Result is Whittaker 1903.</text>
+
+    <rect x="16" y="112" width="360" height="64" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <text x="30" y="134" font-size="14" font-weight="bold">wirohsh-discontinuities</text>
+    <text x="30" y="154">Non-holomorphy data returns as a Sato</text>
+    <text x="30" y="170">hyperfunction boundary value. Nothing is lost.</text>
+
+    <rect x="16" y="194" width="360" height="64" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <text x="30" y="216" font-size="14" font-weight="bold">wirohsh-refraction</text>
+    <text x="30" y="236">Conformal flatness half true: rays, Fermat, Snell</text>
+    <text x="30" y="252">survive; a drift kills harmonicity but for one profile.</text>
+
+    <rect x="16" y="276" width="360" height="64" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <text x="30" y="298" font-size="14" font-weight="bold">wirohsh-ladder</text>
+    <text x="30" y="318">The ladder's parity is not Huygens: d = 1 is the</text>
+    <text x="30" y="334">ladder's best floor and Huygens' one exception.</text>
+
+    <rect x="16" y="358" width="360" height="64" rx="5" fill="#ffffff" stroke="#17696b" stroke-width="2"/>
+    <text x="30" y="380" font-size="14" font-weight="bold">wirohsh-approximation</text>
+    <text x="30" y="400">Analytic functions have no compact support, so</text>
+    <text x="30" y="416">the basis can never localize.</text>
+  </g>
+
+  <path d="M378,62 C 470,62 470,215 640,215" fill="none" stroke="#17696b" stroke-width="2.6" marker-end="url(#wArr)"/>
+  <path d="M378,390 C 470,390 470,245 640,245" fill="none" stroke="#17696b" stroke-width="2.6" marker-end="url(#wArr)"/>
+  <path d="M378,144 C 470,144 500,190 636,205" fill="none" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="3 5" marker-end="url(#wArrO)"/>
+  <path d="M378,226 C 470,226 510,220 636,224" fill="none" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="3 5" marker-end="url(#wArrO)"/>
+  <path d="M378,308 C 470,308 500,265 636,250" fill="none" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="3 5" marker-end="url(#wArrO)"/>
+
+  <g font-size="12" fill="#17696b">
+    <text x="404" y="52">carries 4 of the 5 grounds</text>
+    <text x="404" y="404">carries the 5th ground</text>
+  </g>
+  <g font-size="12" fill="#6b7280">
+    <text x="404" y="132">no bearing on ff32 at all</text>
+    <text x="404" y="184">(its target is wirohsh.md:82)</text>
+    <text x="404" y="290">declines to rule: lead 2 only</text>
+    <text x="404" y="348">defers to round 1, borrows</text>
+    <text x="404" y="364">the locality point from below</text>
+  </g>
+
+  <rect x="644" y="176" width="316" height="118" rx="8" fill="#ffffff" stroke="#b25c1e" stroke-width="2.4"/>
+  <text x="802" y="206" text-anchor="middle" font-size="17" font-weight="bold" fill="#b25c1e">NO-GO on id:ff32</text>
+  <text x="802" y="230" text-anchor="middle" font-size="13">recommended, as framed,</text>
+  <text x="802" y="250" text-anchor="middle" font-size="13">with one gated salvage.</text>
+  <text x="802" y="274" text-anchor="middle" font-size="13" font-weight="bold">UNRATIFIED. Owner rules.</text>
+
+  <g font-size="12" fill="#24303c">
+    <line x1="650" y1="330" x2="690" y2="330" stroke="#17696b" stroke-width="2.6" marker-end="url(#wArr)"/>
+    <text x="700" y="334">solid: load-bearing for the NO-GO</text>
+    <line x1="650" y1="356" x2="690" y2="356" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="3 5" marker-end="url(#wArrO)"/>
+    <text x="700" y="360">dotted: cited, but carries no ground</text>
+  </g>
+</g>
+</svg>

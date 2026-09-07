@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 436" role="img" aria-labelledby="c2t c2d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .crit{stroke:#d03b3b;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .zone{fill:#f0efec}
+</style>
+
+<title id="c2t">Reading (ii) loses at every independent fraction, including zero</title>
+<desc id="c2d">Grouped bars of sentences settled per 1000 budget units. The first bar of each pair is reading (i), which is also exactly reading (ii) before any independence proof is purchased. The second bar is reading (ii) buying at 80 units, and it is lower everywhere. Figures are printed on the bars.</desc>
+<text class="hd" x="14" y="26">Where the prediction failed: buying independence proofs loses at every fraction</text>
+<text x="14" y="46">sentences settled per 1000 budget units; N=50, budget 2500, 40 seeds, attempt price 80 units</text>
+<text class="warn" x="14" y="70">at zero independents no attempt could possibly succeed, and 760 units went on trying: minus 12.1 per cent</text>
+<line class="ax" x1="110" y1="336" x2="660" y2="336"/>
+<text class="mu e" x="102" y="340">0</text>
+<line class="g" x1="110" y1="278.9" x2="660" y2="278.9"/>
+<text class="mu e" x="102" y="282.9">5</text>
+<line class="g" x1="110" y1="221.7" x2="660" y2="221.7"/>
+<text class="mu e" x="102" y="225.7">10</text>
+<line class="g" x1="110" y1="164.6" x2="660" y2="164.6"/>
+<text class="mu e" x="102" y="168.6">15</text>
+<line class="g" x1="110" y1="107.4" x2="660" y2="107.4"/>
+<text class="mu e" x="102" y="111.4">20</text>
+<text x="14" y="88">settled per</text>
+<text x="14" y="104">1000 units</text>
+<rect class="s1" x="127.2" y="107.7" width="44" height="228.3" rx="4"/>
+<text class="val m" x="149.2" y="100.7">19.98</text>
+<rect class="s2" x="173.2" y="135.2" width="44" height="200.8" rx="4"/>
+<text class="val m" x="195.2" y="128.2">17.57</text>
+<text class="mu m" x="172.2" y="358">0.00</text>
+<rect class="s1" x="235.6" y="135.9" width="44" height="200.1" rx="4"/>
+<text class="val m" x="257.6" y="128.9">17.51</text>
+<rect class="s2" x="281.6" y="168.8" width="44" height="167.2" rx="4"/>
+<text class="val m" x="303.6" y="161.8">14.63</text>
+<text class="mu m" x="280.6" y="358">0.10</text>
+<rect class="s1" x="344" y="166.5" width="44" height="169.5" rx="4"/>
+<text class="val m" x="366" y="159.5">14.83</text>
+<rect class="s2" x="390" y="188.8" width="44" height="147.2" rx="4"/>
+<text class="val m" x="412" y="181.8">12.88</text>
+<text class="mu m" x="389" y="358">0.20</text>
+<rect class="s1" x="452.4" y="194.9" width="44" height="141.1" rx="4"/>
+<text class="val m" x="474.4" y="187.9">12.35</text>
+<rect class="s2" x="498.4" y="209" width="44" height="127" rx="4"/>
+<text class="val m" x="520.4" y="202">11.11</text>
+<text class="mu m" x="497.4" y="358">0.30</text>
+<rect class="s1" x="560.8" y="242.2" width="44" height="93.8" rx="4"/>
+<text class="val m" x="582.8" y="235.2">8.21</text>
+<rect class="s2" x="606.8" y="245.3" width="44" height="90.7" rx="4"/>
+<text class="val m" x="628.8" y="238.3">7.94</text>
+<text class="mu m" x="605.8" y="358">0.50</text>
+<text class="m" x="389" y="382">fraction of the corpus that is independent</text>
+<rect class="s1" x="118" y="392" width="14" height="14" rx="3"/>
+<text x="138" y="404">reading (i), and reading (ii) before any purchase: identical to every digit</text>
+<rect class="s2" x="118" y="412" width="14" height="14" rx="3"/>
+<text x="138" y="424">reading (ii), buying an independence proof at 80 units</text>
+</svg>

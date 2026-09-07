@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 500" role="img" aria-labelledby="f5t f5d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f5t">The plane-to-cylinder map identifying the Laurent index with the Matsubara index</title>
+<desc id="f5d">Top row shows a thermal cylinder in coordinates sigma and tau, with tau periodic with period h-bar beta c, mapped by z equals exp of two pi times sigma plus i tau over h-bar beta c onto an annulus carrying the Laurent basis z to the m. The indices coincide. Lower rows contrast the two inequivalent circles: quotienting by a translation gives constant circumference and global equilibrium Matsubara physics; using the polar angle gives circumference two pi r, a position-dependent period, and therefore the Unruh temperature. The bottom chart plots that temperature against radius on log-log axes.</desc>
+<text class="hd" x="14" y="26">His m IS the Matsubara n: one coordinate change, not an analogy</text>
+
+<rect x="40" y="60" width="200" height="110" rx="6" fill="none" stroke="#2a78d6" stroke-width="2"/>
+<line class="thin s1k" x1="40" y1="88" x2="240" y2="88"/>
+<line class="thin s1k" x1="40" y1="116" x2="240" y2="116"/>
+<line class="thin s1k" x1="40" y1="144" x2="240" y2="144"/>
+<text class="sm m" x="140" y="80">thermal cylinder, coordinates (&#963;, &#964;)</text>
+<text class="sm m" x="140" y="108">&#964; ~ &#964; + &#295;&#946;c  (period fixed)</text>
+<text class="sm m" x="140" y="136">&#969;_n = 2&#960;n/(&#295;&#946;), n integer</text>
+<text class="sm m" x="140" y="164">Matsubara basis e^(i&#969;_n&#964;)</text>
+<text class="mu sm m" x="140" y="186">thermal field theory</text>
+
+<line class="ln ax" x1="256" y1="115" x2="384" y2="115"/>
+<polygon fill="#c3c2b7" points="384,115 374,110 374,120"/>
+<text class="sm m" x="320" y="100">z = exp[2&#960;(&#963; + i&#964;)/(&#295;&#946;c)]</text>
+<text class="lbl sm m" x="320" y="140">m = n</text>
+<text class="mu sm m" x="320" y="158">radial quantization</text>
+
+<circle cx="510" cy="115" r="58" fill="none" stroke="#eb6834" stroke-width="2"/>
+<circle cx="510" cy="115" r="20" fill="none" stroke="#eb6834" stroke-width="2"/>
+<line class="thin s2k" x1="530" y1="115" x2="568" y2="115"/>
+<line class="thin s2k" x1="496" y1="100" x2="469" y2="74"/>
+<line class="thin s2k" x1="496" y1="130" x2="469" y2="156"/>
+<text class="sm m" x="510" y="119">z^m</text>
+<text class="sm m" x="620" y="80">Laurent basis in</text>
+<text class="sm m" x="620" y="96">wirohsh.md:</text>
+<text class="sm m" x="620" y="116">z^m = r^m e^(im&#966;)</text>
+<text class="sm m" x="620" y="140">R_m&#177; = r&#177;^m are the</text>
+<text class="sm m" x="620" y="156">two halves of ONE</text>
+<text class="sm m" x="620" y="172">Matsubara frequency</text>
+
+<line class="g" x1="40" y1="204" x2="730" y2="204"/>
+<text class="sh" x="14" y="228">Two inequivalent circles, and the file leaves &#964; non-compact</text>
+
+<rect class="zone" x="40" y="244" width="320" height="104" rx="6"/>
+<text class="sh sm" x="56" y="266">1. Quotient by a translation</text>
+<line class="thin s1k" x1="60" y1="284" x2="340" y2="284"/>
+<line class="thin s1k" x1="60" y1="332" x2="340" y2="332"/>
+<ellipse cx="110" cy="308" rx="16" ry="24" fill="none" stroke="#2a78d6" stroke-width="2"/>
+<ellipse cx="200" cy="308" rx="16" ry="24" fill="none" stroke="#2a78d6" stroke-width="2"/>
+<ellipse cx="290" cy="308" rx="16" ry="24" fill="none" stroke="#2a78d6" stroke-width="2"/>
+
+<rect class="zone" x="400" y="244" width="330" height="104" rx="6"/>
+<text class="sh sm" x="416" y="266">2. Use the polar ANGLE as the thermal circle</text>
+<circle cx="452" cy="308" r="12" fill="none" stroke="#eb6834" stroke-width="2"/>
+<circle cx="452" cy="308" r="22" fill="none" stroke="#eb6834" stroke-width="2"/>
+<circle cx="452" cy="308" r="32" fill="none" stroke="#eb6834" stroke-width="2"/>
+<text class="sm" x="494" y="292">circumference 2&#960;r: the period is</text>
+<text class="sm" x="494" y="308">POSITION DEPENDENT, &#295;&#946;(r)c = 2&#960;r.</text>
+<text class="crt sm" x="494" y="326">k_B T = &#295;c/(2&#960;r) = &#295;a/(2&#960;c), a = c&#178;/r:</text>
+<text class="crt sm" x="494" y="342">the Unruh temperature, forced.</text>
+
+<text class="sm" x="40" y="366">Reading 1: constant circumference at every &#963;, so a global &#946;, equilibrium, Matsubara. Reading 2 in SI units, below:</text>
+<text class="sh" x="14" y="386">the local temperature the angle condition forces</text>
+<line class="g" x1="100" y1="410" x2="700" y2="410"/>
+<line class="g" x1="100" y1="444" x2="700" y2="444"/>
+<line class="ax" x1="100" y1="478" x2="700" y2="478"/>
+<line class="ax" x1="100" y1="400" x2="100" y2="478"/>
+<polyline class="ln s2k" points="100,411.6 233.3,428.6 366.7,445.6 500,462.5 700,488"/>
+<circle class="mk s2" cx="233.3" cy="428.6" r="5"/>
+<text class="lbl sm" x="244" y="424">r = 1 &#181;m: T = 364 K, proper acceleration a = 9.0e22 m/s&#178;</text>
+<text class="mu sm e" x="94" y="414">1e5 K</text>
+<text class="mu sm e" x="94" y="448">1e3 K</text>
+<text class="mu sm e" x="94" y="482">1e1 K</text>
+<text class="mu sm m" x="100" y="496">1e-9 m</text>
+<text class="mu sm m" x="300" y="496">1e-6 m</text>
+<text class="mu sm m" x="500" y="496">1e-3 m</text>
+<text class="mu sm m" x="700" y="496">1 m</text>
+</svg>

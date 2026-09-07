@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 230" role="img" aria-labelledby="fields-title">
+<title id="fields-title">Three fields and three verdicts: the reals are decidable, the rationals and the integers are not, with Julia Robinson's definability of the integers inside the rationals as the mechanism</title>
+<defs>
+<marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#8a3d12"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="860" height="230" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="30" y="48" width="230" height="86" fill="#ffffff" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="145" y="78" font-size="17" text-anchor="middle" font-weight="bold">ℝ</text>
+<text x="145" y="100" font-size="13.5" text-anchor="middle" fill="#2f6b3f" font-weight="bold">DECIDABLE</text>
+<text x="145" y="122" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Tarski 1948, real closed fields</text>
+
+<rect x="315" y="48" width="230" height="86" fill="#ffffff" stroke="#8a3d12" stroke-width="2.5"/>
+<text x="430" y="78" font-size="17" text-anchor="middle" font-weight="bold">ℚ</text>
+<text x="430" y="100" font-size="13.5" text-anchor="middle" fill="#8a3d12" font-weight="bold">UNDECIDABLE</text>
+<text x="430" y="122" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Julia Robinson 1949</text>
+
+<rect x="600" y="48" width="230" height="86" fill="#f4ece6" stroke="#8a3d12" stroke-width="2.5"/>
+<text x="715" y="78" font-size="17" text-anchor="middle" font-weight="bold">ℤ</text>
+<text x="715" y="100" font-size="13.5" text-anchor="middle" fill="#8a3d12" font-weight="bold">UNDECIDABLE</text>
+<text x="715" y="122" font-size="12.5" text-anchor="middle" fill="#5c5c5c">Goedel 1931, Church 1936</text>
+
+<path d="M 700 148 C 660 190, 480 190, 436 150" fill="none" stroke="#8a3d12" stroke-width="2" marker-end="url(#arrD)"/>
+<text x="568" y="196" font-size="12.5" text-anchor="middle" fill="#8a3d12">ℤ is first-order definable inside ℚ, so ℚ inherits the verdict</text>
+
+<text x="30" y="176" font-size="12.5" fill="#5c5c5c">ℝ has both operations and cannot define ℤ.</text>
+<text x="30" y="212" font-size="13" fill="#1a1a1a">The line does not run between simple and rich structures. It runs between structures that can point at their own integers and structures that cannot.</text>
+</g>
+</svg>

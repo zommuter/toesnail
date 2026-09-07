@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 436" role="img" aria-labelledby="f6t f6d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f6t">The two-knob acoustic plane against the one-knob optical line, and the reflectance curve</title>
+<desc id="f6d">Left panel is a log-log plane of density ratio against sound-speed ratio. The reflectionless locus, where the impedances match, is the full anti-diagonal line. Optics is confined to the horizontal line where the density ratio is one, so its only reflectionless point is the trivial one where the speeds also match. A witness at speed ratio two and density ratio one half lies on the acoustic locus and refracts. Right panel plots normal-incidence energy reflectance against the impedance ratio on a log axis, marking air to water at 99.9 per cent and a ten kelvin warm-air layer at 7 times ten to the minus five.</desc>
+<text class="hd" x="14" y="26">Two knobs against one: what optics cannot do</text>
+
+<text class="sh" x="14" y="52">a. Reflectionless loci in the material plane (both axes log)</text>
+<rect class="ok" x="70" y="70" width="290" height="230"/>
+<line class="g" x1="70" y1="70" x2="360" y2="70"/>
+<line class="g" x1="70" y1="127.5" x2="360" y2="127.5"/>
+<line class="g" x1="70" y1="242.5" x2="360" y2="242.5"/>
+<line class="ax" x1="70" y1="300" x2="360" y2="300"/>
+<line class="g" x1="142.5" y1="70" x2="142.5" y2="300"/>
+<line class="g" x1="287.5" y1="70" x2="287.5" y2="300"/>
+<line class="ax" x1="70" y1="70" x2="70" y2="300"/>
+<line class="ln s1k" x1="70" y1="70" x2="360" y2="300"/>
+<line class="ln s2k" x1="70" y1="185" x2="360" y2="185"/>
+<circle class="mk s3" cx="215" cy="185" r="6"/>
+<g class="mk s1"><rect x="281.5" y="236.5" width="12" height="12"/></g>
+<text class="s1 sm lbl" x="76" y="88">ACOUSTICS: r = 0 on this whole line (Z&#8321; = Z&#8322;)</text>
+<text class="s2 sm lbl" x="76" y="178">OPTICS lives only here (Z = Z&#8320;/n)</text>
+<line class="thin ax" x1="287.5" y1="242.5" x2="320" y2="270"/>
+<text class="lbl sm e" x="356" y="284">witness: c&#8322; = 2c&#8321;, &#961;&#8322; = &#961;&#8321;/2</text>
+<text class="sm e" x="356" y="298">no reflection, halves the wavelength</text>
+<line class="thin ax" x1="215" y1="185" x2="190" y2="150"/>
+<text class="crt sm m" x="186" y="140">their only common point:</text>
+<text class="crt sm m" x="186" y="126">the trivial one, no refraction</text>
+<text class="mu sm e" x="64" y="74">4</text>
+<text class="mu sm e" x="64" y="132">2</text>
+<text class="mu sm e" x="64" y="189">1</text>
+<text class="mu sm e" x="64" y="247">0.5</text>
+<text class="mu sm e" x="64" y="304">0.25</text>
+<text class="mu sm m" x="70" y="318">0.25</text>
+<text class="mu sm m" x="142.5" y="318">0.5</text>
+<text class="mu sm m" x="215" y="318">1</text>
+<text class="mu sm m" x="287.5" y="318">2</text>
+<text class="mu sm m" x="360" y="318">4</text>
+<text class="mu sm m" x="215" y="338">c&#8322;/c&#8321;, sound-speed ratio (dimensionless)</text>
+<text class="mu sm m" x="215" y="354">y axis: &#961;&#8322;/&#961;&#8321;, density ratio (dimensionless)</text>
+
+<text class="sh" x="420" y="52">b. Normal-incidence energy reflectance R = r&#178;</text>
+<line class="g" x1="440" y1="70" x2="730" y2="70"/>
+<line class="g" x1="440" y1="127.5" x2="730" y2="127.5"/>
+<line class="g" x1="440" y1="185" x2="730" y2="185"/>
+<line class="g" x1="440" y1="242.5" x2="730" y2="242.5"/>
+<line class="ax" x1="440" y1="300" x2="730" y2="300"/>
+<line class="ax" x1="440" y1="70" x2="440" y2="300"/>
+<text class="mu sm e" x="434" y="74">1.0</text>
+<text class="mu sm e" x="434" y="132">0.75</text>
+<text class="mu sm e" x="434" y="189">0.5</text>
+<text class="mu sm e" x="434" y="247">0.25</text>
+<text class="mu sm e" x="434" y="304">0</text>
+<polyline class="ln s3k" points="440,70.1 476.3,70.9 512.5,79 548.8,146 566.1,233.3 574.1,274.4 585,300 595.9,274.4 604,233.3 621.3,146 657.5,79 693.8,70.9 730,70.1"/>
+<g class="mk s3"><circle cx="714.1" cy="70.3" r="5.5"/><circle cx="584.7" cy="300" r="5.5"/></g>
+<line class="thin ax" x1="714.1" y1="70.3" x2="690" y2="104"/>
+<text class="lbl sm e" x="700" y="118">air to water: Z 413 vs 1.5e6 rayl,</text>
+<text class="sm e" x="700" y="132">R = 99.9%, so 1e-3 crosses</text>
+<line class="thin ax" x1="584.7" y1="300" x2="560" y2="266"/>
+<text class="lbl sm e" x="558" y="256">+10 K warm-air layer:</text>
+<text class="sm e" x="558" y="242">c changes 1.7%, R = 7e-5</text>
+<text class="mu sm m" x="440" y="318">1e-4</text>
+<text class="mu sm m" x="512.5" y="318">1e-2</text>
+<text class="mu sm m" x="585" y="318">1</text>
+<text class="mu sm m" x="657.5" y="318">1e2</text>
+<text class="mu sm m" x="730" y="318">1e4</text>
+<text class="mu sm m" x="585" y="338">Z&#8322;/Z&#8321;, impedance ratio (log scale, base 10)</text>
+<text class="mu sm m" x="585" y="354">y axis: R, fraction of incident energy reflected (dimensionless)</text>
+
+<text class="crt sm" x="14" y="386">And the assumption nobody states: physics/acoustics.md defines c&#178;/&#947; := nRT/m, the ISOTHERMAL gas law,</text>
+<text class="crt sm" x="14" y="404">whose NAMING presupposes the adiabatic c&#178; = &#947;p/&#961;. Load-bearing, and never stated in the file.</text>
+<text class="sm" x="14" y="426">Newton 290.1 m/s against Laplace 343.2 m/s for air at 20 &#176;C, a ratio of &#8730;&#947; = 1.18322.</text>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 510" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The four corners of the report triangle: proved at one comma one, refuted at minus one comma one, settled but unlocated at zero comma one, nothing known at the origin</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+  <polygon points="350,410 150,150 550,150" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="350" y1="150" x2="350" y2="410" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="150" cy="150" r="10" fill="#1f2430"/>
+  <circle cx="550" cy="150" r="10" fill="#1f2430"/>
+  <circle cx="350" cy="150" r="10" fill="#b04a25"/>
+  <circle cx="350" cy="410" r="10" fill="#1f2430"/>
+  <text x="150" y="100" font-size="24" font-weight="700">refuted</text>
+  <text x="150" y="128" font-size="24" fill="#6b7280">(-1, 1)</text>
+  <text x="350" y="100" font-size="24" font-weight="700" fill="#b04a25">settled but unlocated</text>
+  <text x="350" y="128" font-size="24" fill="#6b7280">(0, 1)</text>
+  <text x="550" y="100" font-size="24" font-weight="700">proved</text>
+  <text x="550" y="128" font-size="24" fill="#6b7280">(1, 1)</text>
+  <text x="350" y="452" font-size="24" font-weight="700">nothing known</text>
+  <text x="350" y="480" font-size="24" fill="#6b7280">(0, 0)</text>
+  <text x="424" y="300" font-size="24" fill="#6b7280" text-anchor="start">unproved</text>
+</g>
+</svg>

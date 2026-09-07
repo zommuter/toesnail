@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 300" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>A continuous symmetry gives an additive Noether charge; a discrete symmetry gives a multiplicative root-of-unity charge instead, with Bloch quasi-momentum as the closest analogue in between</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <rect x="20" y="20" width="270" height="180" fill="#dce8f2" stroke="#2b5d8a" stroke-width="2"/>
+  <text x="155" y="46" font-size="18" font-weight="700" text-anchor="middle">CONTINUOUS</text>
+  <text x="155" y="74" font-size="16" text-anchor="middle">a dial you can turn</text>
+  <text x="155" y="106" font-size="17" text-anchor="middle" font-weight="700">charges ADD</text>
+  <text x="155" y="132" font-size="16" text-anchor="middle">label lives in the reals</text>
+  <text x="155" y="160" font-size="16" text-anchor="middle">a conserved current, a flow</text>
+  <text x="155" y="186" font-size="15" fill="#6b7280" text-anchor="middle">Noether's theorem</text>
+
+  <rect x="610" y="20" width="270" height="180" fill="#f6e2d8" stroke="#b04a25" stroke-width="2"/>
+  <text x="745" y="46" font-size="18" font-weight="700" text-anchor="middle">DISCRETE</text>
+  <text x="745" y="74" font-size="16" text-anchor="middle">a switch, not a dial</text>
+  <text x="745" y="106" font-size="17" text-anchor="middle" font-weight="700">charges MULTIPLY</text>
+  <text x="745" y="132" font-size="16" text-anchor="middle">label is an n-th root of unity</text>
+  <text x="745" y="160" font-size="16" text-anchor="middle">selection rules, forced degeneracy</text>
+  <text x="745" y="186" font-size="15" fill="#6b7280" text-anchor="middle">no current at all</text>
+
+  <rect x="320" y="46" width="260" height="128" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
+  <text x="450" y="72" font-size="17" font-weight="700" text-anchor="middle">BLOCH, the best analogue</text>
+  <text x="450" y="98" font-size="16" text-anchor="middle">infinite discrete: lattice shifts</text>
+  <text x="450" y="122" font-size="16" text-anchor="middle">quasi-momentum, continuous</text>
+  <text x="450" y="146" font-size="16" text-anchor="middle">but conserved MODULO a</text>
+  <text x="450" y="166" font-size="16" text-anchor="middle">reciprocal lattice vector</text>
+
+  <path d="M 294 110 L 316 110" stroke="#1f2430" stroke-width="2"/>
+  <path d="M 316 110 l -10 -5 l 0 10 z" fill="#1f2430"/>
+  <path d="M 606 110 L 584 110" stroke="#1f2430" stroke-width="2"/>
+  <path d="M 584 110 l 10 -5 l 0 10 z" fill="#1f2430"/>
+
+  <rect x="20" y="216" width="860" height="66" fill="#ffffff" stroke="#3d6b45"/>
+  <text x="36" y="240" font-size="17" font-weight="700">That "modulo" IS the finding.</text>
+  <text x="36" y="262" font-size="16">The label lives on a circle, or on a ring of n sites in the integers mod n, rather than in the reals. Umklapp scattering</text>
+  <text x="36" y="278" font-size="16">is this arithmetic happening to phonons. The one thing lost with the dial is the flow, not the conservation.</text>
+</g>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 940 430" style="min-width:800px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Independence audit grouping the five NO-GO grounds into two root assumptions, with breaks one and two under a no-wave-problem root and breaks three, four and five under a single locality theorem root</title>
+<rect x="0" y="0" width="940" height="430" fill="#fbfaf8"/>
+<g font-family="Georgia, serif" fill="#24303c">
+  <rect x="20" y="24" width="420" height="176" rx="8" fill="#ffffff" stroke="#17696b" stroke-width="2.2"/>
+  <text x="40" y="50" font-size="15" font-weight="bold" fill="#17696b">ROOT A. The pipeline has no wave problem in it.</text>
+  <text x="40" y="70" font-size="12.5">3DGS is alpha compositing along a ray. No incident field,</text>
+  <text x="40" y="88" font-size="12.5">no phase, no omega, no Helmholtz operator.</text>
+  <rect x="40" y="102" width="180" height="80" rx="5" fill="#eef3f3" stroke="#17696b" stroke-width="1.4"/>
+  <text x="52" y="124" font-size="13" font-weight="bold">Break 1</text>
+  <text x="52" y="142" font-size="12">one-sided: a splat's SH</text>
+  <text x="52" y="158" font-size="12">is a vector, a T-matrix</text>
+  <text x="52" y="174" font-size="12">is an operator</text>
+  <rect x="240" y="102" width="180" height="80" rx="5" fill="#eef3f3" stroke="#17696b" stroke-width="1.4"/>
+  <text x="252" y="124" font-size="13" font-weight="bold">Break 2</text>
+  <text x="252" y="142" font-size="12">no wave equation, so</text>
+  <text x="252" y="158" font-size="12">WiRoHSH cures a disease</text>
+  <text x="252" y="174" font-size="12">that is not present</text>
+  <text x="230" y="196" text-anchor="middle" font-size="11.5" fill="#6b7280">two JOINS of one observation, not two facts</text>
+
+  <rect x="480" y="24" width="440" height="230" rx="8" fill="#ffffff" stroke="#b25c1e" stroke-width="2.2"/>
+  <text x="500" y="50" font-size="15" font-weight="bold" fill="#b25c1e">ROOT B. An analytic basis cannot be local.</text>
+  <text x="500" y="70" font-size="12.5">Identity theorem: a nonzero real-analytic function has no</text>
+  <text x="500" y="88" font-size="12.5">compact support. Everything below is that, in other clothes.</text>
+  <rect x="500" y="102" width="400" height="42" rx="5" fill="#fbf1e8" stroke="#b25c1e" stroke-width="1.8"/>
+  <text x="512" y="120" font-size="13" font-weight="bold">Break 5, the theorem itself</text>
+  <text x="512" y="137" font-size="12">a clipped splat is exactly the class the basis provably lacks</text>
+  <rect x="500" y="154" width="400" height="42" rx="5" fill="#fdf8f4" stroke="#b25c1e" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="512" y="172" font-size="13" font-weight="bold">Break 3, the same fact as GEOMETRY</text>
+  <text x="512" y="189" font-size="12">the annulus excludes the edges; occlusion edges are the content</text>
+  <rect x="500" y="206" width="400" height="42" rx="5" fill="#fdf8f4" stroke="#b25c1e" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="512" y="224" font-size="13" font-weight="bold">Break 4, the same fact as ECONOMICS</text>
+  <text x="512" y="241" font-size="12">spatially sparse rewritten in a globally dense basis gets larger</text>
+
+  <rect x="20" y="278" width="900" height="60" rx="6" fill="#eef3f3" stroke="#17696b" stroke-width="1.6"/>
+  <text x="40" y="302" font-size="13" font-weight="bold" fill="#17696b">The merge is self-reported, not my inference.</text>
+  <text x="40" y="324" font-size="12.5">wirohsh-approximation section 3.3: "the domain restriction and the analyticity restriction are the same restriction wearing two hats."</text>
+
+  <rect x="20" y="352" width="900" height="60" rx="6" fill="#ffffff" stroke="#24303c" stroke-width="1.8"/>
+  <text x="40" y="376" font-size="14" font-weight="bold">VERDICT: two independent roots, not five. A and B are genuinely independent of each other,</text>
+  <text x="40" y="398" font-size="14" font-weight="bold">and either alone would close the item. Inside each root, the grounds are one fact restated.</text>
+</g>
+</svg>

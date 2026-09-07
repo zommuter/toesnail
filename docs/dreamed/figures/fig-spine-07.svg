@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 720 430" style="min-width:620px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>A five by five grid of verification tiers against epistemic-status kinds, all 25 cells inhabited, with two corner cells annotated as the seemingly odd but realizable combinations</title>
+<rect x="0" y="0" width="720" height="430" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <text x="20" y="30" font-size="15" font-weight="700">tier (assurance floor) across, status (claim kind) down: 5 x 5 = 25, every cell inhabited</text>
+
+  <g font-size="14" text-anchor="middle" fill="#3b3f9e" font-weight="700">
+    <text x="255" y="72">sorry</text><text x="345" y="72">numeric</text><text x="435" y="72">sympy</text>
+    <text x="525" y="72">lean</text><text x="615" y="72">sympylean</text>
+  </g>
+  <g font-size="14" text-anchor="end" fill="#12484a" font-weight="700">
+    <text x="200" y="110">definition</text><text x="200" y="170">assumption</text><text x="200" y="230">derivation</text>
+    <text x="200" y="290">observation</text><text x="200" y="350">hypothesis</text>
+  </g>
+
+  <rect x="212" y="86" width="446" height="286" fill="#ffffff" stroke="#6b7280" stroke-width="1.6"/>
+  <g stroke="#c9ccd4" stroke-width="1.4">
+    <path d="M302,86 V372 M392,86 V372 M482,86 V372 M572,86 V372"/>
+    <path d="M212,146 H658 M212,206 H658 M212,266 H658 M212,326 H658"/>
+  </g>
+  <g fill="#17696b">
+    <circle cx="255" cy="109" r="5"/><circle cx="345" cy="109" r="5"/><circle cx="435" cy="109" r="5"/><circle cx="525" cy="109" r="5"/><circle cx="615" cy="109" r="5"/>
+    <circle cx="255" cy="169" r="5"/><circle cx="345" cy="169" r="5"/><circle cx="435" cy="169" r="5"/><circle cx="525" cy="169" r="5"/><circle cx="615" cy="169" r="5"/>
+    <circle cx="255" cy="229" r="5"/><circle cx="345" cy="229" r="5"/><circle cx="435" cy="229" r="5"/><circle cx="525" cy="229" r="5"/><circle cx="615" cy="229" r="5"/>
+    <circle cx="255" cy="289" r="5"/><circle cx="345" cy="289" r="5"/><circle cx="435" cy="289" r="5"/><circle cx="525" cy="289" r="5"/><circle cx="615" cy="289" r="5"/>
+    <circle cx="255" cy="349" r="5"/><circle cx="345" cy="349" r="5"/><circle cx="435" cy="349" r="5"/><circle cx="525" cy="349" r="5"/><circle cx="615" cy="349" r="5"/>
+  </g>
+  <g fill="none" stroke="#c05621" stroke-width="3">
+    <rect x="483" y="327" width="84" height="44"/>
+    <rect x="393" y="267" width="84" height="44"/>
+  </g>
+
+  <g font-size="13" fill="#8a3c14">
+    <text x="20" y="390">hypothesis + lean: a POSITED law whose stated consequence is kernel-checked.</text>
+    <text x="20" y="410">observation + sympy: a fitted formula whose algebraic restatement is CAS-confirmed. Neither corner is empty.</text>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 470" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The Bloch ball's three coordinates: z is the truth lean, r is settledness, the azimuth phi carries no logical content</title>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+  <circle cx="170" cy="230" r="115" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <ellipse cx="170" cy="230" rx="115" ry="32" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="170" y1="230" x2="170" y2="98" stroke="#1f2430" stroke-width="4"/>
+  <polygon points="170,88 164,104 176,104" fill="#1f2430"/>
+  <text x="146" y="112" font-size="28" font-weight="700">z</text>
+  <line x1="170" y1="230" x2="251" y2="149" stroke="#2b5d8a" stroke-width="4"/>
+  <polygon points="258,142 244,148 252,156" fill="#2b5d8a"/>
+  <text x="222" y="196" font-size="28" font-weight="700" fill="#2b5d8a">r</text>
+  <text x="96" y="316" font-size="28" font-weight="700" fill="#6b7280">phi</text>
+  <line x1="88" y1="306" x2="152" y2="306" stroke="#b04a25" stroke-width="4"/>
+
+  <rect x="340" y="55" width="350" height="115" rx="10" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="360" y="93" font-size="26" font-weight="700">z = which way it leans</text>
+  <text x="360" y="127" font-size="24">p(true) = (1 + z)/2</text>
+  <text x="360" y="157" font-size="24" fill="#6b7280">a Born probability</text>
+
+  <rect x="340" y="185" width="350" height="115" rx="10" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="360" y="223" font-size="26" font-weight="700">r = how settled</text>
+  <text x="360" y="257" font-size="24">S = h((1 + r)/2)</text>
+  <text x="360" y="287" font-size="24" fill="#6b7280">maximal only at r = 0</text>
+
+  <rect x="340" y="315" width="350" height="115" rx="10" fill="#ececec" stroke="#6b7280" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="360" y="353" font-size="26" font-weight="700" fill="#6b7280">phi = nothing</text>
+  <line x1="356" y1="344" x2="530" y2="344" stroke="#b04a25" stroke-width="4"/>
+  <text x="360" y="387" font-size="24" fill="#6b7280">no logical content</text>
+  <text x="360" y="417" font-size="24" fill="#6b7280">four essays, independently</text>
+</g>
+</svg>

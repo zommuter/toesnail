@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 430" style="min-width:800px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Four routes into the measurement chapter with the structures each needs and the postulate each leaves standing, and a banner recording that spine.md frames with decoherence while measurement-routes.md puts POVM first</title>
+<rect x="0" y="0" width="960" height="430" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <g font-size="14" font-weight="700" fill="#6b7280">
+    <text x="20" y="34">ROUTE</text><text x="330" y="34">NEW STRUCTURES FIRST</text><text x="580" y="34">POSTULATE LEFT STANDING</text>
+  </g>
+  <line x1="20" y1="44" x2="940" y2="44" stroke="#c9ccd4" stroke-width="1.5"/>
+
+  <g>
+    <rect x="20" y="56" width="290" height="66" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+    <text x="36" y="80" font-size="15" font-weight="700">A. projective postulate</text>
+    <text x="36" y="102" font-size="13" fill="#6b7280">cheapest, and contradicts l.136 directly</text>
+    <text x="330" y="88" font-size="15">3</text>
+    <text x="352" y="88" font-size="13" fill="#6b7280">self-adjointness, eigenvalue, spectral theorem</text>
+    <text x="580" y="88" font-size="14" fill="#a01b1b">the Born rule, PLUS collapse</text>
+    <text x="580" y="108" font-size="13" fill="#6b7280">contained in B as a THEOREM, not lost</text>
+  </g>
+
+  <g>
+    <rect x="20" y="132" width="290" height="66" rx="8" fill="#eef1f7" stroke="#3b3f9e" stroke-width="3"/>
+    <text x="36" y="156" font-size="15" font-weight="700" fill="#3b3f9e">B. POVM and Naimark</text>
+    <text x="36" y="178" font-size="13" fill="#6b7280">honours l.136 most literally: outcomes are indices</text>
+    <text x="330" y="164" font-size="15">2</text>
+    <text x="352" y="164" font-size="13" fill="#6b7280">positive operator, resolution of the identity</text>
+    <text x="580" y="164" font-size="14" fill="#a01b1b">the Born rule, restated</text>
+    <text x="580" y="184" font-size="13" fill="#6b7280">POVMs GENERALIZE it; they do not derive it</text>
+  </g>
+
+  <g>
+    <rect x="20" y="208" width="290" height="66" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+    <text x="36" y="232" font-size="15" font-weight="700">C. decoherence, einselection</text>
+    <text x="36" y="254" font-size="13" fill="#6b7280">cannot precede the l.133 dynamics debt</text>
+    <text x="330" y="240" font-size="15">4</text>
+    <text x="352" y="240" font-size="13" fill="#6b7280">tensor algebra, density matrix, partial trace, dynamics</text>
+    <text x="580" y="240" font-size="14" fill="#a01b1b">SINGLE OUTCOMES</text>
+    <text x="580" y="260" font-size="13" fill="#6b7280">explains which basis, never why one outcome happens</text>
+  </g>
+
+  <g>
+    <rect x="20" y="284" width="290" height="66" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+    <text x="36" y="308" font-size="15" font-weight="700">D. Gleason (Busch)</text>
+    <text x="36" y="330" font-size="13" fill="#6b7280">Gleason needs dimension at least 3; the coin is 2</text>
+    <text x="330" y="316" font-size="15">3</text>
+    <text x="352" y="316" font-size="13" fill="#6b7280">projection lattice, frame function, the theorem</text>
+    <text x="580" y="316" font-size="14" fill="#12484a">NONE for the Born rule</text>
+    <text x="580" y="336" font-size="13" fill="#6b7280">Busch removes the dimension bar from a STRONGER premise</text>
+  </g>
+
+  <rect x="20" y="366" width="920" height="52" rx="8" fill="#fdf3e7" stroke="#c05621" stroke-width="3" stroke-dasharray="10 5"/>
+  <text x="38" y="390" font-size="15" font-weight="700" fill="#8a3c14">A DISAGREEMENT, not a supersession:</text>
+  <text x="330" y="390" font-size="14">`spine.md` recommends framing with C and building with B.</text>
+  <text x="38" y="410" font-size="14">`measurement-routes.md` reverses it: B first, then C as the physical reading of B's ancilla. Marked as a disagreement.</text>
+</g>
+</svg>

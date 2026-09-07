@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 920 740" style="min-width:760px" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>physics/toesnail.md drawn as a vertical line-number track: four pieces of mathematics paid in full on the left, four supplied before their demand and three demanded and never paid on the right, with the asymmetry boundary at line 126</title>
+<rect x="0" y="0" width="920" height="740" fill="#fcfcfa"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430">
+
+  <g font-size="16" font-weight="700" fill="#6b7280">
+    <text x="30" y="32">PAID IN FULL</text>
+    <text x="30" y="52" font-size="13" font-weight="400">demand stated first</text>
+    <text x="530" y="32">SUPPLIED BEFORE DEMANDED</text>
+    <text x="530" y="52" font-size="13" font-weight="400">then, below l.126, DEMANDED AND NEVER PAID</text>
+  </g>
+
+  <line x1="460" y1="60" x2="460" y2="700" stroke="#1f2430" stroke-width="2.5"/>
+  <text x="460" y="722" font-size="14" text-anchor="middle" fill="#6b7280">physics/toesnail.md, l.23 to l.139</text>
+
+  <g font-size="13" fill="#6b7280" text-anchor="middle">
+    <text x="460" y="58">l.23</text>
+    <text x="490" y="700" text-anchor="start">l.139</text>
+  </g>
+
+  <g stroke="#17696b" stroke-width="2"><g fill="#17696b">
+    <circle cx="460" cy="96" r="8"/>
+    <circle cx="460" cy="168" r="8"/>
+    <circle cx="460" cy="277" r="8"/>
+    <circle cx="460" cy="510" r="8"/>
+  </g></g>
+  <g font-size="15" text-anchor="end" fill="#12484a">
+    <text x="440" y="92">ket labels (l.30)</text>
+    <text x="440" y="110" font-size="13" fill="#6b7280">writing out "life, the universe and everything" is tedious</text>
+    <text x="440" y="164">subsystem splitting (l.44)</text>
+    <text x="440" y="182" font-size="13" fill="#6b7280">the omniscience problem one sentence earlier</text>
+    <text x="440" y="273">linear combination (l.65)</text>
+    <text x="440" y="291" font-size="13" fill="#6b7280">the coin at l.57 has two weighted outcomes</text>
+    <text x="440" y="506">norm and unit vectors (l.110, l.116)</text>
+    <text x="440" y="524" font-size="13" fill="#6b7280">l.110 asks what the self inner product is</text>
+  </g>
+
+  <g fill="#c05621" stroke="#c05621" stroke-width="2">
+    <path d="M480,200 l11,-11 l11,11 z"/>
+    <path d="M480,308 l11,-11 l11,11 z"/>
+    <path d="M480,391 l11,-11 l11,11 z"/>
+  </g>
+  <g fill="none" stroke="#c05621" stroke-width="2.2">
+    <path d="M480,440 l11,-11 l11,11 z"/>
+  </g>
+  <g font-size="15" fill="#8a3c14">
+    <text x="510" y="200">tensor product symbol (l.50)</text>
+    <text x="510" y="218" font-size="13" fill="#6b7280">the comma form at l.46 already answered l.44; l.52 defers it</text>
+    <text x="510" y="308">complex numbers (l.71, ~350-word footnote to l.79)</text>
+    <text x="510" y="326" font-size="13" fill="#6b7280">largest unpaid introduction by word count; no question asks for a phase</text>
+    <text x="510" y="391">conjugate symmetry (l.87)</text>
+    <text x="510" y="409" font-size="13" fill="#6b7280">arrives as an axiom-list item, and is the axiom most urgently needed</text>
+    <text x="510" y="440">positive-definiteness (l.89)</text>
+    <text x="510" y="458" font-size="13" fill="#6b7280">its demand exists 21 lines LATER, at l.110 (open marker = deferred demand)</text>
+  </g>
+
+  <g stroke="#a01b1b" stroke-width="2.5" stroke-dasharray="9 5">
+    <line x1="60" y1="593" x2="880" y2="593"/>
+  </g>
+  <text x="60" y="586" font-size="15" font-weight="700" fill="#a01b1b">l.126 -- the boundary: over-supplied above, starved below</text>
+
+  <g fill="none" stroke="#a01b1b" stroke-width="2.5">
+    <rect x="452" y="212" width="16" height="16"/>
+    <rect x="452" y="604" width="16" height="16"/>
+    <rect x="452" y="648" width="16" height="16"/>
+  </g>
+  <g font-size="15" fill="#a01b1b">
+    <text x="510" y="612">TIME, promised at l.54, still open at l.139</text>
+    <text x="510" y="656">OPERATORS, l.133: the arrow is posed, then</text>
+    <text x="510" y="674" font-family="ui-monospace, monospace" font-size="13">#TODO: get to operators...</text>
+    <text x="510" y="692" font-size="13" fill="#6b7280">the file's one TOTAL non-payment: nothing supplied, not even a named deferral</text>
+  </g>
+  <g font-size="13" fill="#a01b1b">
+    <text x="510" y="228">(omniscience, l.44: parked in docs/rigor-debt.md as ill-posed)</text>
+  </g>
+
+  <g font-size="13" fill="#6b7280">
+    <text x="30" y="700">four clean introductions</text>
+    <text x="30" y="718">against four early arrivals and, below l.126, two total non-payments</text>
+  </g>
+</g>
+</svg>

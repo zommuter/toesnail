@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" role="img" aria-labelledby="cons-title">
+<title id="cons-title">Conservativity as a layered architecture: WKL-zero sits above RCA-zero, which sits above primitive recursive arithmetic, and each stronger layer is conservative over the one below for a stated class of sentences</title>
+<defs>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6b3f"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="860" height="320" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="40" y="30" width="420" height="66" fill="#f4ece6" stroke="#a8501e" stroke-width="3"/>
+<text x="250" y="58" font-size="16" text-anchor="middle" font-weight="bold">WKL₀</text>
+<text x="250" y="80" font-size="12.5" text-anchor="middle" fill="#8a3d12">strong: compactness, Heine-Borel, completeness, Brouwer</text>
+
+<rect x="40" y="126" width="420" height="66" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="250" y="154" font-size="16" text-anchor="middle" font-weight="bold">RCA₀</text>
+<text x="250" y="176" font-size="12.5" text-anchor="middle" fill="#2f6b3f">weak: computable mathematics only</text>
+
+<rect x="40" y="222" width="420" height="66" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="250" y="250" font-size="16" text-anchor="middle" font-weight="bold">PRA</text>
+<text x="250" y="272" font-size="12.5" text-anchor="middle" fill="#2f6b3f">primitive recursive arithmetic: finitist</text>
+
+<path d="M 476 62 C 560 62, 560 158, 480 158" fill="none" stroke="#2f6b3f" stroke-width="2.5" marker-end="url(#arrG)"/>
+<text x="578" y="52" font-size="13.5" font-weight="bold">Π¹₁-conservative over RCA₀</text>
+<text x="578" y="72" font-size="12.5" fill="#5c5c5c">Harrington, unpublished;</text>
+<text x="578" y="90" font-size="12.5" fill="#5c5c5c">available via Simpson 2009.</text>
+
+<path d="M 476 158 C 560 158, 560 254, 480 254" fill="none" stroke="#2f6b3f" stroke-width="2.5" marker-end="url(#arrG)"/>
+<text x="578" y="150" font-size="13.5" font-weight="bold">Π⁰₂-conservative over PRA</text>
+<text x="578" y="170" font-size="12.5" fill="#5c5c5c">Parsons 1970 (IΣ₁ over PRA),</text>
+<text x="578" y="188" font-size="12.5" fill="#5c5c5c">Friedman 1976 (IΣ₁ is RCA₀'s</text>
+<text x="578" y="206" font-size="12.5" fill="#5c5c5c">first-order part), Sieg 1985</text>
+<text x="578" y="224" font-size="12.5" fill="#5c5c5c">for a constructive treatment.</text>
+
+<text x="40" y="308" font-size="13.5" fill="#8a3d12" font-weight="bold">Read as architecture: you may reason in the strong layer and the weak layer is not corrupted. That is a theorem, not a hope.</text>
+</g>
+</svg>

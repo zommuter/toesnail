@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 576" role="img" aria-labelledby="c6t c6d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .good{fill:#0ca30c;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
+.tsfig .dash{fill:none;stroke:#898781;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}
+.tsfig .s2{fill:#eb6834}
+.tsfig .s3{fill:#1baf7a}
+.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3k{stroke:#1baf7a}
+.tsfig .arw{fill:none;stroke:#898781;stroke-width:2}
+</style>
+
+<title id="c6t">Drift compounds over a completion, and integer arithmetic removes it while also fitting exact FHE schemes</title>
+<desc id="c6d">Upper panel, the probability that a completion is reproduced exactly, against completion length in tokens, for three per-token divergence rates. At one in a thousand a 4096-token answer reproduces 1.7 per cent of the time. Lower panel, one architectural choice serving both halves of trustlessness: an integer-only quantised transformer is bit-exactly reproducible and natively evaluable under the exact FHE schemes.</desc>
+<text class="hd" x="14" y="24">Autoregressive decoding is predictive coding, so drift compounds</text>
+<text x="14" y="44">probability an n-token completion is reproduced exactly, given a per-token divergence rate p</text>
+<line class="g" x1="80" y1="110" x2="700" y2="110"/>
+<line class="g" x1="80" y1="157.5" x2="700" y2="157.5"/>
+<line class="g" x1="80" y1="205" x2="700" y2="205"/>
+<line class="g" x1="80" y1="252.5" x2="700" y2="252.5"/>
+<line class="ax" x1="80" y1="300" x2="700" y2="300"/>
+<text class="e mu" x="72" y="114">1.00</text>
+<text class="e mu" x="72" y="161">0.75</text>
+<text class="e mu" x="72" y="209">0.50</text>
+<text class="e mu" x="72" y="256">0.25</text>
+<text class="e mu" x="72" y="304">0.00</text>
+<text class="mu" x="14" y="92">reproduced exactly</text>
+<polyline class="ln s3k" points="80,110.4 235,111.1 390,114.8 545,128.4 700,173.8"/>
+<polyline class="ln s1k" points="80,113.0 235,121.8 390,152.9 545,231.8 700,296.8"/>
+<polyline class="ln s2k" points="80,138.1 235,200.1 390,285.6 545,300 700,300"/>
+<circle class="s3 mk" cx="700" cy="173.8" r="5"/>
+<circle class="s1 mk" cx="700" cy="296.8" r="5"/>
+<circle class="s2 mk" cx="390" cy="285.6" r="5"/>
+<text class="s3 lbl e" x="694" y="164">p = 0.0001</text>
+<text class="s2 lbl" x="400" y="282">p = 0.01</text>
+<text class="s1 lbl e" x="690" y="288">p = 0.001</text>
+<text class="crt e" x="690" y="322">1.7 per cent at 4096 tokens</text>
+<text class="m mu" x="80" y="322">16</text><text class="m mu" x="235" y="322">64</text><text class="m mu" x="390" y="322">256</text><text class="m mu" x="545" y="322">1024</text>
+<text class="m mu" x="390" y="344">completion length, tokens</text>
+<text class="sh" x="14" y="384">One architectural choice, both halves of trustlessness</text>
+<rect class="card" x="14" y="398" width="232" height="86"/>
+<text class="lbl" x="30" y="424">integer-only quantised</text>
+<text class="lbl" x="30" y="442">transformer</text>
+<text x="30" y="464">I-BERT: INT8 end to end,</text>
+<text x="30" y="480">3.08x base, 3.56x large, on a T4</text>
+<path class="arw" d="M246 425 L 300 425" marker-end="url(#a6)"/>
+<path class="arw" d="M246 458 L 300 458" marker-end="url(#a6)"/>
+<defs><marker id="a6" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#898781"/></marker></defs>
+<rect class="card" x="304" y="398" width="442" height="40"/>
+<rect x="304" y="398" width="5" height="40" fill="#2a78d6"/>
+<text class="lbl" x="322" y="416">INTEGRITY: integer addition is associative, so reduction order</text>
+<text x="322" y="432">cannot matter and cross-provider bit-exactness is free</text>
+<rect class="card" x="304" y="444" width="442" height="40"/>
+<rect x="304" y="444" width="5" height="40" fill="#1baf7a"/>
+<text class="lbl" x="322" y="462">CONFIDENTIALITY: natively evaluable by the exact schemes</text>
+<text x="322" y="478">BFV and BGV, rather than the approximate CKKS everyone uses</text>
+<text class="wrn" x="14" y="510">Honest limit, retracted by the essay itself: i-Softmax uses bit-shifts and i-LayerNorm an iterative integer square root.</text>
+<text class="wrn" x="14" y="528">Those are not polynomials over the plaintext ring, so the third leg of the convergence does not hold.</text>
+<text class="mu" x="14" y="554">Source: trustless-distributed-ai.md sections 3, 5 and 6. The MP3-versus-bit-exact-codec framing is the OWNER'S, not the essay's.</text>
+<text class="mu" x="14" y="570">Codecs mandated bit-exact integer transforms from H.264 onward for exactly this reason; Opus ships a bit-exact fixed-point decoder.</text>
+</svg>

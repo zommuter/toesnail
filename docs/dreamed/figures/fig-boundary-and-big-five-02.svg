@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" role="img" aria-labelledby="sharp-title">
+<title id="sharp-title">Two senses of sharpness: on the left, expressive power is a wide partially ordered region; on the right, the decidability verdict is a step function with nothing on the threshold</title>
+<rect x="0" y="0" width="860" height="300" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="20" y="20" width="400" height="260" fill="#ffffff" stroke="#767676"/>
+<text x="36" y="46" font-size="14" font-weight="bold">SENSE 1: expressive power</text>
+<text x="36" y="66" font-size="13" fill="#2f6b3f" font-weight="bold">NOT sharp. Not even a line.</text>
+<circle cx="150" cy="230" r="9" fill="#2f6b3f"/>
+<text x="166" y="235" font-size="12.5">Presburger</text>
+<circle cx="100" cy="160" r="9" fill="#2d5c8a"/>
+<text x="60" y="150" font-size="12.5">base 2</text>
+<circle cx="200" cy="150" r="9" fill="#2d5c8a"/>
+<text x="214" y="146" font-size="12.5">base 3</text>
+<circle cx="290" cy="170" r="9" fill="#2d5c8a"/>
+<text x="230" y="188" font-size="12.5">base 5 ...</text>
+<circle cx="345" cy="215" r="9" fill="#2d5c8a" stroke="#1a1a1a" stroke-dasharray="3 2"/>
+<text x="300" y="243" font-size="12.5">Skolem</text>
+<circle cx="215" cy="95" r="9" fill="#8a3d12"/>
+<text x="232" y="99" font-size="12.5">⟨ℕ, +, ×⟩</text>
+<line x1="150" y1="221" x2="105" y2="170" stroke="#3a3a3a"/>
+<line x1="150" y1="221" x2="198" y2="160" stroke="#3a3a3a"/>
+<line x1="150" y1="222" x2="285" y2="179" stroke="#3a3a3a"/>
+<line x1="100" y1="151" x2="209" y2="104" stroke="#3a3a3a"/>
+<line x1="200" y1="141" x2="214" y2="105" stroke="#3a3a3a"/>
+<line x1="290" y1="161" x2="223" y2="103" stroke="#3a3a3a"/>
+<line x1="345" y1="206" x2="222" y2="103" stroke="#3a3a3a" stroke-dasharray="4 3"/>
+<text x="36" y="272" font-size="12.5" fill="#5c5c5c">An antichain cannot be indexed by a real number.</text>
+
+<rect x="440" y="20" width="400" height="260" fill="#ffffff" stroke="#767676"/>
+<text x="456" y="46" font-size="14" font-weight="bold">SENSE 2: the verdict</text>
+<text x="456" y="66" font-size="13" fill="#8a3d12" font-weight="bold">ABSOLUTELY sharp. A step.</text>
+<line x1="480" y1="240" x2="810" y2="240" stroke="#3a3a3a" stroke-width="1.5"/>
+<line x1="480" y1="240" x2="480" y2="90" stroke="#3a3a3a" stroke-width="1.5"/>
+<line x1="486" y1="220" x2="640" y2="220" stroke="#2f6b3f" stroke-width="4"/>
+<line x1="640" y1="110" x2="804" y2="110" stroke="#8a3d12" stroke-width="4"/>
+<line x1="640" y1="220" x2="640" y2="110" stroke="#767676" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="640" cy="220" r="5" fill="#ffffff" stroke="#2f6b3f" stroke-width="2.5"/>
+<circle cx="640" cy="110" r="5" fill="#8a3d12"/>
+<text x="500" y="212" font-size="12.5" fill="#2f6b3f">complete and decidable</text>
+<text x="662" y="102" font-size="12.5" fill="#8a3d12">incomplete and undecidable</text>
+<text x="640" y="262" font-size="12.5" text-anchor="middle">interprets Robinson's Q</text>
+<text x="456" y="90" font-size="12.5" fill="#5c5c5c">No partial credit, no gradations,</text>
+<text x="456" y="107" font-size="12.5" fill="#5c5c5c">nothing on the threshold itself.</text>
+</g>
+</svg>

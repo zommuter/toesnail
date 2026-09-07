@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 456" role="img" aria-labelledby="f3t f3d">
+<style>
+.tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tsfig text{fill:#52514e;font-size:13px}
+.tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
+.tsfig .sh{fill:#0b0b0b;font-size:13px;font-weight:600}
+.tsfig .mu{fill:#898781}
+.tsfig .sm{font-size:12px}
+.tsfig .e{text-anchor:end}
+.tsfig .m{text-anchor:middle}
+.tsfig .lbl{fill:#0b0b0b;font-weight:600}
+.tsfig .crt{fill:#d03b3b;font-weight:600}
+.tsfig .gd{fill:#0ca30c;font-weight:600}
+.tsfig .g{stroke:#e1e0d9;stroke-width:1}
+.tsfig .ax{stroke:#c3c2b7;stroke-width:1}
+.tsfig .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.tsfig .dsh{fill:none;stroke-width:2;stroke-dasharray:7 5}
+.tsfig .thin{fill:none;stroke-width:1.5}
+.tsfig .mk{stroke:#fcfcfb;stroke-width:2}
+.tsfig .s1{fill:#2a78d6}.tsfig .s1k{stroke:#2a78d6}
+.tsfig .s2{fill:#eb6834}.tsfig .s2k{stroke:#eb6834}
+.tsfig .s3{fill:#1baf7a}.tsfig .s3k{stroke:#1baf7a}
+.tsfig .ck{stroke:#d03b3b}
+.tsfig .zone{fill:#f0efec}
+.tsfig .bad{fill:#d03b3b;opacity:0.13}
+.tsfig .ok{fill:#2a78d6;opacity:0.10}
+</style>
+
+<title id="f3t">A power optimum exists; a COP optimum does not</title>
+<desc id="f3d">Left panel plots normalised cooling power, proportional to y to the fourth over exp y minus one, against the harvested energy per photon y in units of k_B T_c. It rises from zero, peaks at y equals 3.920690395, and falls away. Marks on the axis show the neighbouring Wien constants for rate exponents 1, 2 and 4. Right panel plots coefficient of performance against the harvested fraction of each photon on log-log axes. It is a single monotone curve with no stationary point, diverging as the harvested fraction approaches one, and the second law cuts the axis at the cold-over-hot temperature ratio. Figures in the tables below.</desc>
+<text class="hd" x="14" y="26">An optimum in POWER; no optimum in COP</text>
+
+<text class="sh" x="14" y="52">a. Cooling power, y&#8308;/(e^y - 1), normalised to its own maximum</text>
+<line class="g" x1="70" y1="80.95" x2="380" y2="80.95"/>
+<line class="g" x1="70" y1="135.7" x2="380" y2="135.7"/>
+<line class="g" x1="70" y1="190.5" x2="380" y2="190.5"/>
+<line class="g" x1="70" y1="245.3" x2="380" y2="245.3"/>
+<line class="ax" x1="70" y1="300" x2="380" y2="300"/>
+<line class="ax" x1="70" y1="70" x2="70" y2="300"/>
+<text class="mu sm e" x="64" y="85">1.0</text>
+<text class="mu sm e" x="64" y="140">0.75</text>
+<text class="mu sm e" x="64" y="195">0.5</text>
+<text class="mu sm e" x="64" y="250">0.25</text>
+<text class="mu sm e" x="64" y="304">0</text>
+<polyline class="ln s1k" points="70,300 77.8,298.9 82.9,295.6 89.4,287 95.8,273.3 102.3,255.1 108.8,233.4 115.2,209.6 121.7,185.2 128.1,161.6 134.6,139.9 141,121 147.5,105.5 154,93.8 160.4,85.9 166.9,81.8 171.3,81 179.8,83.7 186.3,88.9 199.2,105.7 212.1,127.9 225,152.4 250.8,199.6 276.7,237 302.5,262.9 328.3,279.2 354.2,288.8 380,294.2"/>
+<line class="dsh ck" x1="171.3" y1="81" x2="171.3" y2="300"/>
+<circle class="mk s1" cx="171.3" cy="81" r="5.5"/>
+<text class="crt sm lbl" x="180" y="76">y* = 3.920690395</text>
+<text class="crt sm" x="180" y="92">= 4 + W&#8320;(-4e&#8315;&#8308;)</text>
+<text class="sm" x="180" y="112">24.508 THz at T_c = 300 K,</text>
+<text class="sm" x="180" y="128">wavelength 12.232 &#181;m</text>
+<line class="ax" x1="111.2" y1="300" x2="111.2" y2="308"/>
+<line class="ax" x1="142.9" y1="300" x2="142.9" y2="308"/>
+<line class="ax" x1="198.3" y1="300" x2="198.3" y2="308"/>
+<text class="mu sm m" x="70" y="318">0</text>
+<text class="mu sm m" x="121.7" y="318">2</text>
+<text class="mu sm m" x="173.3" y="318">4</text>
+<text class="mu sm m" x="225" y="318">6</text>
+<text class="mu sm m" x="276.7" y="318">8</text>
+<text class="mu sm m" x="328.3" y="318">10</text>
+<text class="mu sm m" x="380" y="318">12</text>
+<text class="mu sm m" x="225" y="338">y = (h&#957; - &#956;)/k_B T_c, heat harvested per photon (dimensionless)</text>
+<text class="mu sm m" x="225" y="354">ticks below axis: the neighbouring Wien constants, 1.5936 / 2.8214 / 4.9651</text>
+
+<text class="sh" x="420" y="52">b. COP = u/(1 - u), same device, both axes log</text>
+<line class="g" x1="440" y1="70.25" x2="730" y2="70.25"/>
+<line class="g" x1="440" y1="127.5" x2="730" y2="127.5"/>
+<line class="g" x1="440" y1="185" x2="730" y2="185"/>
+<line class="g" x1="440" y1="242.5" x2="730" y2="242.5"/>
+<line class="ax" x1="440" y1="300" x2="730" y2="300"/>
+<line class="ax" x1="440" y1="70" x2="440" y2="300"/>
+<text class="mu sm e" x="434" y="74">100</text>
+<text class="mu sm e" x="434" y="132">10</text>
+<text class="mu sm e" x="434" y="189">1</text>
+<text class="mu sm e" x="434" y="247">0.1</text>
+<text class="mu sm e" x="434" y="304">0.01</text>
+<polyline class="ln s2k" points="440,299.8 500.6,282.2 554.4,258.5 595,239.9 635.6,219.6 659.4,206.2 689.4,185 709.1,163.8 723.8,130.1 727,111.5 729.4,70.3"/>
+<line class="dsh ck" x1="730" y1="70" x2="730" y2="300"/>
+<text class="crt sm e" x="726" y="86">u &#8594; 1</text>
+<g class="mk s2"><circle cx="487.6" cy="287.9" r="5.5"/><circle cx="637.9" cy="218.4" r="5.5"/><circle cx="650" cy="211.8" r="5.5"/></g>
+<line class="thin ax" x1="487.6" y1="287.9" x2="470" y2="266"/>
+<text class="lbl sm" x="446" y="262">780 nm, u = 1.6%, COP 0.016</text>
+<line class="thin ax" x1="637.9" y1="218.4" x2="620" y2="252"/>
+<text class="lbl sm e" x="618" y="266">10 &#181;m, u = 20.8%</text>
+<line class="thin ax" x1="650" y1="211.8" x2="676" y2="176"/>
+<text class="lbl sm e" x="730" y="172">24.51 THz optimum, u = 25.5%</text>
+<text class="mu sm m" x="440" y="318">0.01</text>
+<text class="mu sm m" x="595" y="318">0.1</text>
+<text class="mu sm m" x="730" y="318">1</text>
+<text class="mu sm m" x="585" y="338">u = (h&#957; - &#956;)/h&#957;, harvested fraction of each photon (log)</text>
+<text class="mu sm m" x="585" y="354">second law: cooling requires u &lt; T_c/T_h, and COP = t/(1-t) AT that cut</text>
+
+<text class="crt sm" x="14" y="386">No interior COP optimum exists: the derivative of y/(x-y) with respect to x is -y/(x-y)&#178;, negative everywhere.</text>
+<text class="crt sm" x="14" y="404">Cheaper photons are always better for COP without limit, and the supremum is Carnot on the zero-flux boundary.</text>
+<text class="gd sm" x="14" y="426">The optimum the seed was reaching for is real, and it is a POWER optimum: 3.920690395 k_B T_c per photon,</text>
+<text class="gd sm" x="14" y="444">essentially independent of frequency, of the temperature ratio, and of the operating point.</text>
+</svg>

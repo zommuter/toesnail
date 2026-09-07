@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 250" role="img" aria-labelledby="squares-title">
+<title id="squares-title">Chain showing that Presburger arithmetic plus the bare set of squares defines squaring, then multiplication, then interprets Robinson's Q and falls to Goedel</title>
+<defs>
+<marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#3a3a3a"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="860" height="250" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="16" y="60" width="150" height="72" fill="#ffffff" stroke="#2f6b3f" stroke-width="2.5"/>
+<text x="91" y="88" font-size="14" text-anchor="middle" font-weight="bold">⟨ℕ, +⟩</text>
+<text x="91" y="108" font-size="12.5" text-anchor="middle" fill="#2f6b3f">decidable</text>
+<text x="91" y="124" font-size="12.5" text-anchor="middle" fill="#2f6b3f">and complete</text>
+
+<text x="184" y="100" font-size="26" text-anchor="middle" font-weight="bold">+</text>
+
+<rect x="202" y="60" width="176" height="72" fill="#ffffff" stroke="#a8501e" stroke-width="2.5"/>
+<text x="290" y="86" font-size="13.5" text-anchor="middle" font-weight="bold">a SET, nothing more:</text>
+<text x="290" y="108" font-size="13.5" text-anchor="middle">Sq = &#123;0, 1, 4, 9, 16, ...&#125;</text>
+<text x="290" y="126" font-size="12.5" text-anchor="middle" fill="#5c5c5c">a unary predicate</text>
+
+<line x1="382" y1="96" x2="428" y2="96" stroke="#3a3a3a" stroke-width="1.8" marker-end="url(#arrC)"/>
+
+<rect x="432" y="60" width="176" height="72" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+<text x="520" y="84" font-size="13" text-anchor="middle">(n+1)² = n² + (2n+1)</text>
+<text x="520" y="104" font-size="12.5" text-anchor="middle" fill="#5c5c5c">defines the graph of</text>
+<text x="520" y="121" font-size="12.5" text-anchor="middle" fill="#5c5c5c">squaring, then of ×</text>
+
+<line x1="612" y1="96" x2="658" y2="96" stroke="#3a3a3a" stroke-width="1.8" marker-end="url(#arrC)"/>
+
+<rect x="662" y="60" width="182" height="72" fill="#f4ece6" stroke="#8a3d12" stroke-width="2.5"/>
+<text x="753" y="86" font-size="13.5" text-anchor="middle" font-weight="bold">interprets Q</text>
+<text x="753" y="108" font-size="12.5" text-anchor="middle" fill="#8a3d12">Goedel I and II, Rosser,</text>
+<text x="753" y="125" font-size="12.5" text-anchor="middle" fill="#8a3d12">Tarski, Church, all at once</text>
+
+<text x="16" y="176" font-size="13" fill="#5c5c5c">The set of squares looks like a harmless extra table. It is the whole of arithmetic arriving in the shape of a lookup table.</text>
+<text x="16" y="198" font-size="13" fill="#5c5c5c">Machine-checked in lean/LogicBoundary.lean: sq_step, next_square_forces, mul_from_sq.</text>
+<text x="16" y="226" font-size="12.5" fill="#8a3d12" font-weight="bold">Design consequence: audit a weak core by what SETS it may name, not only by what OPERATIONS it has.</text>
+</g>
+</svg>
