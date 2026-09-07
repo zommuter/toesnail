@@ -412,3 +412,7 @@ exploration prose may be exactly the wrong answer, and that is the owner's call.
 ## 2026-09-07 11:48 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review: window clean (no executor unit ran); 14/14 tiers green incl. real Lean build; documented docs/dreamed/ conventions in CLAUDE.md; surfaced id:8b1c (43 published /dreamed pages, zero render coverage, self-checking allowlist) [id:8b1c]
+
+## 2026-09-07 16:35 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: 5 Bloch Truth commits verified green (14/14 tiers, zero skips; id:c086 numbers reproduced, 4 dreamed Lean files re-elaborated); no gaming; 5 findings surfaced, nothing reopened [id:8b1c,c086,987e,0fba,ef6b,bcc6,a4bc,ff4c,9d8c]
