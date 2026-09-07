@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 860 400" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 400" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>Unit circle in the complex plane: the real equality case of Cauchy-Schwarz is the two points plus one and minus one, while over the complex field equality holds on the entire unit circle, with the counterexample i marked</title>
-<rect x="0" y="0" width="860" height="400" fill="#fcfcfa"/>
+<rect x="0" y="0" width="900" height="400" fill="#fcfcfa"/>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
 
   <g stroke="#c9ccd4" stroke-width="1.5">

@@ -30,7 +30,7 @@
 <title id="f1t">Entropy per photon: what the field gains, what an atom can shed, what the pump delivers</title>
 <desc id="f1d">A base-10 logarithmic axis in units of Boltzmann's constant per photon, running from 1e-9 to 10. Fluorescence carries 2.28 to 7.71 k_B per photon. A Doppler-cooled Rb87 atom can shed at most 2.49e-3 and sodium 1.02e-2. The pump beam carries 5.9e-9 and a published diode figure 1.3e-7. The gap between the atom bound and the fluorescence is about a factor 1000, not the factor 10 million a naive mode count suggests. Figures repeated in the table below.</desc>
 <text class="hd" x="14" y="26">Entropy per photon, Rb87 D2 laser cooling</text>
-<text x="14" y="46">k_B per photon, base-10 log axis. The margin is the gap between the two labelled lanes, not a mode count.</text>
+<text font-size="13" x="14" y="46">k_B per photon, base-10 log axis. The margin is the gap between the two labelled lanes, not a mode count.</text>
 
 <line class="g" x1="100" y1="76" x2="100" y2="336"/>
 <line class="g" x1="160" y1="76" x2="160" y2="336"/>

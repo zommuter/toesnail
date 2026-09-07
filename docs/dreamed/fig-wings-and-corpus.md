@@ -199,11 +199,11 @@ relation is a choice of map, and no eigenvalue equation supplies a map).
 
   <rect x="600" y="124" width="280" height="56" fill="#ffffff" stroke="#2b5d8a"/>
   <text x="614" y="148" font-size="16" font-weight="700">337971, score 35</text>
-  <text x="614" y="168" font-size="16">"curl generalized to non-3D". NOT dilation.</text>
+  <text x="614" y="168" font-size="16">curl to non-3D. NOT dilation.</text>
 
   <rect x="600" y="196" width="280" height="56" fill="#ffffff" stroke="#2b5d8a"/>
   <text x="614" y="220" font-size="16" font-weight="700">186201, score 14</text>
-  <text x="614" y="240" font-size="16">skew so(3) AND the eigenvectors: one post.</text>
+  <text x="614" y="240" font-size="16">skew so(3) + eigenvectors: one post.</text>
 
   <path d="M 284 80 C 420 80 460 80 596 80" stroke="#2b5d8a" stroke-width="2.5" fill="none"/>
   <path d="M 596 80 l -11 -6 l 0 12 z" fill="#2b5d8a"/>
@@ -215,7 +215,7 @@ relation is a choice of map, and no eigenvalue equation supplies a map).
 
   <rect x="20" y="270" width="860" height="46" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
   <text x="36" y="292" font-size="17" font-weight="700">337971 also carries a live gap of the owner's own, thirteen years old.</text>
-  <text x="36" y="310" font-size="16">His own follow-up answer says he cannot yet check whether curl-squared = grad div minus Laplacian. SymPy-sized at low n.</text>
+  <text x="36" y="310" font-size="16">His follow-up says he cannot yet check whether curl-squared = grad div minus Laplacian. SymPy-sized at low n.</text>
 </g>
 </svg>
 </div>
@@ -320,11 +320,11 @@ inversion, and a count.
   <line x1="700" y1="140" x2="716" y2="186" stroke="#b04a25" stroke-width="5"/>
   <line x1="716" y1="140" x2="700" y2="186" stroke="#b04a25" stroke-width="5"/>
   <text x="355" y="186" font-size="16" fill="#3d6b45" text-anchor="middle">monotonicity FOLLOWS from the model</text>
-  <text x="806" y="186" font-size="16" fill="#b04a25" text-anchor="middle">none to derive, only to postulate</text>
+  <text x="880" y="186" font-size="16" fill="#b04a25" text-anchor="end">none to derive, only to postulate</text>
 
   <rect x="20" y="206" width="860" height="76" fill="#ffffff" stroke="#8a5d2b"/>
   <text x="36" y="230" font-size="16">Junction 2 is real but a genuine JUMP: linear to nonlinear, two-body to N-body, amplitude to phase, all at once.</text>
-  <text x="36" y="252" font-size="16">What survives is the METHOD, not the model. The Ott-Antonsen equation and the Resogram's energy equation both</text>
+  <text x="36" y="252" font-size="16">What survives is the METHOD, not the model. The Ott-Antonsen and the Resogram's energy equations both</text>
   <text x="36" y="272" font-size="16">read "linear loss plus drive", with the frequency SPREAD playing the damping's role. The break is the finding.</text>
 </g>
 </svg>
@@ -339,7 +339,7 @@ an empirical-fit equation, and nothing currently stops it.
 ### 3.2 Narrativium: the prior points the wrong way
 
 <div style="overflow-x:auto">
-<svg viewBox="0 0 900 280" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 300" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>The simplicity prior predicts that the boring history is the likely one, while narrativium's slogan says the million-to-one chance comes off; the two are opposed, and the coincidence costs 19 to 20 bits</title>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
   <rect x="20" y="20" width="410" height="112" fill="#f2e8dc" stroke="#8a5d2b" stroke-width="2"/>
@@ -358,11 +358,12 @@ an empirical-fit equation, and nothing currently stops it.
 
   <rect x="20" y="152" width="860" height="52" fill="#ffffff" stroke="#b04a25" stroke-width="2"/>
   <text x="36" y="176" font-size="17" font-weight="700">Opposed, not merely different. And the price is exact, with no logarithm needed:</text>
-  <text x="36" y="196" font-size="16">2 to the 19 is under a million, 2 to the 20 is over it, so the coincidence costs between NINETEEN and TWENTY bits to record.</text>
+  <text x="36" y="196" font-size="16">2 to the 19 is under a million, 2 to the 20 is over it: the coincidence costs NINETEEN to TWENTY bits to record.</text>
 
-  <rect x="20" y="220" width="860" height="52" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
+  <rect x="20" y="220" width="860" height="72" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
   <text x="36" y="243" font-size="17" font-weight="700">What survives is a theorem about bounded DESCRIBERS, which is Pratchett's own reading.</text>
-  <text x="36" y="264" font-size="16">"Humans ADD narrativium to their world" is already a claim about humans. A short account exists for an exponentially small fraction of histories.</text>
+  <text x="36" y="264" font-size="16">"Humans ADD narrativium to their world" is already a claim about humans.</text>
+  <text x="36" y="284" font-size="16">A short account exists for an exponentially small fraction of histories.</text>
 </g>
 </svg>
 </div>
@@ -428,7 +429,7 @@ unifying *quantity*.
 This is the most reusable idea in the group, so it gets the diagram.
 
 <div style="overflow-x:auto">
-<svg viewBox="0 0 900 340" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 360" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>In the edot incident a staleness DAG would have caught all four downstream discrepancies and neither of the two claims that were wrong on arrival, because a checker reading only the dependency graph and the edit set is blind to correctness</title>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
   <rect x="20" y="20" width="420" height="200" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
@@ -462,11 +463,12 @@ This is the most reusable idea in the group, so it gets the diagram.
   <text x="670" y="182" font-size="16" text-anchor="middle">edit set is empty and the verdict is</text>
   <text x="670" y="204" font-size="17" font-weight="700" text-anchor="middle">"nothing stale"</text>
 
-  <rect x="20" y="238" width="860" height="86" fill="#ffffff" stroke="#2b5d8a" stroke-width="2"/>
+  <rect x="20" y="238" width="860" height="112" fill="#ffffff" stroke="#2b5d8a" stroke-width="2"/>
   <text x="36" y="262" font-size="17" font-weight="700">The edot incident, scored exactly.</text>
-  <text x="36" y="284" font-size="16">CAUGHT by the DAG: all FOUR downstream discrepancies the sign fix propagated. NOT CAUGHT: the sign error itself, and a</text>
-  <text x="36" y="304" font-size="16">2021 averaging-window error. Both were wrong from the moment they were written. What found the sign error was an</text>
-  <text x="36" y="320" font-size="16">INSTRUMENT running a SymPy check of a claim against its derivation, one claim at a time, where someone chose to instrument.</text>
+  <text x="36" y="284" font-size="16">CAUGHT by the DAG: all FOUR downstream discrepancies the sign fix propagated. NOT CAUGHT: the sign error</text>
+  <text x="36" y="304" font-size="16">itself, and a 2021 averaging-window error. Both were wrong from the moment they were written.</text>
+  <text x="36" y="324" font-size="16">What found the sign error was an INSTRUMENT running a SymPy check of a claim against its derivation,</text>
+  <text x="36" y="344" font-size="16">one claim at a time, where someone chose to instrument.</text>
 </g>
 </svg>
 </div>

@@ -31,8 +31,8 @@
 
 <rect class="box" x="170" y="262" width="360" height="250" rx="16"/>
 <rect class="out" x="200" y="292" width="300" height="126"/>
-<text class="huge m" x="350" y="378">7</text>
-<text class="sm m" x="350" y="404">your secret number</text>
+<text class="huge m" text-anchor="middle" x="350" y="378">7</text>
+<text class="sm m" text-anchor="middle" x="350" y="404">your secret number</text>
 <path class="arw" d="M478,286 a14,14 0 0 1 28,0 l0,12" fill="none"/>
 <rect x="472" y="298" width="40" height="30" rx="5" fill="#f2f1ec" stroke="#26251f" stroke-width="3"/>
 <text class="sm" x="524" y="322">locked</text>
@@ -58,11 +58,11 @@
 <text class="bd" x="55" y="1048">a blink</text>
 <text class="sm" x="30" y="1094">the very same job, inside the locked box</text>
 <rect class="barB" x="30" y="1104" width="560" height="34"/>
-<text class="bd e" x="670" y="1132">minutes</text>
+<text class="bd e" text-anchor="end" x="670" y="1132">minutes</text>
 <text class="sm" x="30" y="1178">the biggest AI models, all the way inside the box</text>
 <rect class="empty" x="30" y="1188" width="640" height="34" rx="6"/>
-<text class="bd m" x="350" y="1214">nobody has managed it yet</text>
-<text class="sm" x="30" y="1264">A longer bar means slower. The empty lane is empty because</text>
-<text class="sm" x="30" y="1294">the record is empty, not because the number is small. Reading</text>
+<text class="bd m" text-anchor="middle" x="350" y="1214">nobody has managed it yet</text>
+<text class="sm" x="30" y="1264">A longer bar means slower. The lane is empty because the</text>
+<text class="sm" x="30" y="1294">record is empty, not because the number is small. Reading</text>
 <text class="sm" x="30" y="1324">a gap in a chart is a skill worth having.</text>
 </svg>

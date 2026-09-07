@@ -82,7 +82,7 @@
 <text class="mu sm m" x="527.8" y="318">8</text>
 <text class="mu sm m" x="614.4" y="318">64</text>
 <text class="mu sm m" x="730" y="318">1024</text>
-<text class="mu sm m" x="600" y="338">N, occupancy cutoff (at most N-1 quanta per level; log axis)</text>
+<text class="mu sm m" x="600" y="338">N, occupancy cutoff (at most N-1 quanta per level; log)</text>
 <text class="mu sm m" x="600" y="354">y axis: maximum attainable &#946;E (dimensionless)</text>
 
 <text class="crt sm" x="14" y="386">Bosonic: an unqualified W returns &#946;E&#8321; = 0 for EVERY physical &#946;E, because -&#946;E is its own principal pre-image.</text>

@@ -8,6 +8,8 @@ permalink: /dreamed/poster-too-hard
 > **DREAMED, UNREVIEWED.** See [`docs/dreamed/README.md`](README.md). Assembled by an AI agent,
 > not by the owner. Nothing here is toesnail's theory.
 
+*Auf Deutsch: [`poster-too-hard-de.md`](poster-too-hard-de.md).*
+
 These are two posters for a twelve-year-old. The first one is about a place where maths stops
 being able to answer, and about how astonishingly thin the line is. The second one is about a
 group of mathematicians who ask their questions backwards. Both are simplified on purpose, and
@@ -120,11 +122,11 @@ handed over as something a machine may look things up in, was enough to rebuild 
 <text x="515" y="272" font-size="24" text-anchor="middle">What rules do I NEED</text>
 <text x="515" y="302" font-size="24" text-anchor="middle">to prove this thing?</text>
 
-<text x="350" y="378" font-size="28" text-anchor="middle" font-weight="bold">THE ANSWER IS A LADDER</text>
-<text x="350" y="412" font-size="24" text-anchor="middle">Almost every everyday theorem sits on one of five rungs.</text>
+<text x="350" y="360" font-size="28" text-anchor="middle" font-weight="bold">THE ANSWER IS A LADDER</text>
+<text x="350" y="392" font-size="24" text-anchor="middle">Almost every everyday theorem sits on one of five rungs.</text>
+<text x="350" y="422" font-size="24" text-anchor="middle" fill="#2d5c8a">The higher the rung, the more you have to assume.</text>
 
 <line x1="46" y1="1018" x2="46" y2="430" stroke="#2d5c8a" stroke-width="3" marker-end="url(#p2arrow)"/>
-<text x="26" y="724" font-size="21" fill="#2d5c8a" text-anchor="middle" transform="rotate(-90 26 724)">you have to assume more</text>
 
 <rect x="76" y="436" width="594" height="110" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
 <rect x="76" y="436" width="72" height="110" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
@@ -164,23 +166,22 @@ handed over as something a machine may look things up in, was enough to rebuild 
 <text x="350" y="1072" font-size="28" text-anchor="middle" font-weight="bold">RUNG 2 IS THE STRANGE ONE</text>
 <text x="350" y="1106" font-size="24" text-anchor="middle">Borrow a strong tool. Gain no new simple facts.</text>
 
-<rect x="60" y="1128" width="440" height="96" fill="#f6ebe4" stroke="#8a3d12" stroke-width="4"/>
-<text x="280" y="1166" font-size="25" text-anchor="middle" font-weight="bold">UPSTAIRS</text>
-<text x="280" y="1200" font-size="24" text-anchor="middle">the powerful borrowed tool</text>
+<rect x="60" y="1128" width="420" height="96" fill="#f6ebe4" stroke="#8a3d12" stroke-width="4"/>
+<text x="270" y="1166" font-size="25" text-anchor="middle" font-weight="bold">UPSTAIRS</text>
+<text x="270" y="1200" font-size="24" text-anchor="middle">the powerful borrowed tool</text>
 
-<rect x="60" y="1224" width="440" height="16" fill="#3a3a3a"/>
+<rect x="60" y="1224" width="420" height="16" fill="#3a3a3a"/>
 
-<rect x="60" y="1240" width="440" height="96" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="4"/>
-<text x="280" y="1278" font-size="25" text-anchor="middle" font-weight="bold">DOWNSTAIRS</text>
-<text x="280" y="1312" font-size="24" text-anchor="middle">the simple, everyday facts</text>
+<rect x="60" y="1240" width="420" height="96" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="4"/>
+<text x="270" y="1278" font-size="25" text-anchor="middle" font-weight="bold">DOWNSTAIRS</text>
+<text x="270" y="1312" font-size="24" text-anchor="middle">the simple, everyday facts</text>
 
-<text x="516" y="1158" font-size="24">Borrow all</text>
-<text x="516" y="1188" font-size="24">you like</text>
-<text x="516" y="1218" font-size="24">upstairs,</text>
-<text x="516" y="1272" font-size="24">and nothing</text>
-<text x="516" y="1302" font-size="24">changes for</text>
-<text x="516" y="1332" font-size="24">the floor</text>
-<text x="516" y="1362" font-size="24">below.</text>
+<text x="496" y="1158" font-size="24">Borrow all</text>
+<text x="496" y="1188" font-size="24">you like</text>
+<text x="496" y="1218" font-size="24">upstairs,</text>
+<text x="496" y="1272" font-size="24">and nothing</text>
+<text x="496" y="1302" font-size="24">changes for</text>
+<text x="496" y="1332" font-size="24">the floor below.</text>
 
 <text x="60" y="1382" font-size="24">Every simple fact the weak floor could prove</text>
 <text x="60" y="1412" font-size="24">before is exactly what it can prove now. And</text>

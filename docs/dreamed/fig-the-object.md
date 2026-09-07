@@ -34,7 +34,7 @@ which the owner ratified.** Every number and label below is sourced to a named s
   <text x="175" y="352" font-size="24">not provable</text>
   <text x="175" y="400" font-size="24" fill="#6b7280">ratified assignment</text>
 
-  <text x="525" y="34" font-size="24" font-weight="700" fill="#b04a25">NOT EXCLUSIVE: FAILS</text>
+  <text x="525" y="34" font-size="24" font-weight="700" text-anchor="middle" fill="#b04a25">NOT EXCLUSIVE: FAILS</text>
   <circle cx="525" cy="215" r="100" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
   <line x1="525" y1="115" x2="525" y2="315" stroke="#b04a25" stroke-width="3" stroke-dasharray="7 7"/>
   <line x1="450" y1="140" x2="600" y2="290" stroke="#b04a25" stroke-width="7" opacity="0.75"/>
@@ -45,7 +45,7 @@ which the owner ratified.** Every number and label below is sourced to a named s
   <text x="525" y="324" font-size="24" font-weight="700" fill="#ffffff">G</text>
   <text x="525" y="88" font-size="24">true</text>
   <text x="525" y="352" font-size="24">unprovable</text>
-  <text x="525" y="400" font-size="24" fill="#6b7280">G: true AND unprovable</text>
+  <text x="525" y="400" font-size="24" text-anchor="middle" fill="#6b7280">G: true AND unprovable</text>
 </g>
 </svg>
 </div>
@@ -133,7 +133,7 @@ sign is a potential, not a holonomy, so it is not an azimuth even in the gauge r
   <line x1="525" y1="340" x2="525" y2="130" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
   <text x="392" y="240" font-size="28" font-weight="700" fill="#2b5d8a">r</text>
   <text x="525" y="378" font-size="28" font-weight="700">z</text>
-  <text x="350" y="412" font-size="24" fill="#6b7280">the same information, minus the angle</text>
+  <text x="350" y="412" font-size="24" text-anchor="middle" fill="#6b7280">the same information, minus the angle</text>
 </g>
 </svg>
 </div>
@@ -230,7 +230,7 @@ So the ball was enforcing, by construction, a constraint the simplex gets for fr
   <polygon points="508,153 492,146 486,161" fill="#1f2430"/>
   <circle cx="524" cy="150" r="13" fill="#b04a25"/>
   <text x="616" y="145" font-size="24" font-weight="700">(0, 1)</text>
-  <text x="616" y="178" font-size="24" fill="#6b7280">one point</text>
+  <text x="616" y="178" font-size="24" text-anchor="middle" fill="#6b7280">one point</text>
   <text x="350" y="294" font-size="24" fill="#6b7280">forced by mixing alone</text>
 </g>
 </svg>

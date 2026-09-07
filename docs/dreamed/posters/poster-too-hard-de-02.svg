@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1730" role="img" aria-labelledby="dp2-title">
+<title id="dp2-title">Poster: was musst du voraussetzen. Mathematikerinnen und Mathematiker fragen rückwärts, welche Regeln für einen Beweis nötig sind, und das sortiert fast jeden gewöhnlichen Satz auf eine von fünf Sprossen einer Leiter. Sprosse 2 ist als zweistöckiges Haus gezeichnet, in dem man das starke Werkzeug oben frei ausleihen kann, ohne dass sich an den einfachen Fakten unten irgendetwas ändert.</title>
+<defs>
+<marker id="dp2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#2d5c8a"/>
+</marker>
+</defs>
+
+<rect x="0" y="0" width="760" height="1730" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="0" y="0" width="760" height="176" fill="#e6ecf2"/>
+<text x="380" y="72" font-size="46" text-anchor="middle" font-weight="bold">WAS MUSST DU</text>
+<text x="380" y="124" font-size="46" text-anchor="middle" font-weight="bold">VORAUSSETZEN?</text>
+<text x="380" y="160" font-size="26" text-anchor="middle" fill="#4a4a4a">Mathematik, rückwärts gefragt.</text>
+
+<rect x="60" y="198" width="310" height="130" rx="10" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+<text x="215" y="236" font-size="24" text-anchor="middle" font-weight="bold">DIE ÜBLICHE FRAGE</text>
+<text x="215" y="272" font-size="24" text-anchor="middle">Was kann ich aus</text>
+<text x="215" y="302" font-size="24" text-anchor="middle">diesen Regeln beweisen?</text>
+
+<rect x="390" y="198" width="310" height="130" rx="10" fill="#eaf0f6" stroke="#2d5c8a" stroke-width="4"/>
+<text x="545" y="236" font-size="24" text-anchor="middle" font-weight="bold">IHRE FRAGE</text>
+<text x="545" y="272" font-size="24" text-anchor="middle">Welche Regeln BRAUCHE</text>
+<text x="545" y="302" font-size="24" text-anchor="middle">ich für diesen Beweis?</text>
+
+<text x="380" y="360" font-size="28" text-anchor="middle" font-weight="bold">DIE ANTWORT IST EINE LEITER</text>
+<text x="380" y="392" font-size="24" text-anchor="middle">Fast jeder alltägliche Satz sitzt auf einer von fünf Sprossen.</text>
+<text x="380" y="422" font-size="24" text-anchor="middle" fill="#2d5c8a">Je höher die Sprosse, desto mehr musst du voraussetzen.</text>
+
+<line x1="76" y1="1018" x2="76" y2="430" stroke="#2d5c8a" stroke-width="3" marker-end="url(#dp2arrow)"/>
+
+<rect x="106" y="436" width="624" height="110" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
+<rect x="106" y="436" width="72" height="110" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
+<text x="142" y="506" font-size="40" text-anchor="middle" font-weight="bold">5</text>
+<text x="190" y="470" font-size="25" font-weight="bold">Alle Sammlungen auf einmal abfragen.</text>
+<text x="190" y="504" font-size="24" fill="#4a3560">Jede geschlossene Form hat einen idealen Kern.</text>
+<text x="190" y="534" font-size="24" fill="#4a3560">Endlose Gruppen zerfallen in einfache Teile.</text>
+
+<rect x="106" y="554" width="624" height="110" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
+<rect x="106" y="554" width="72" height="110" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
+<text x="142" y="624" font-size="40" text-anchor="middle" font-weight="bold">4</text>
+<text x="190" y="588" font-size="25" font-weight="bold">Einen Schritt über das Ende hinaus tun.</text>
+<text x="190" y="622" font-size="24" fill="#4a3560">Zwei endlose Ordnungen sind vergleichbar.</text>
+<text x="190" y="652" font-size="24" fill="#4a3560">Diese Sprosse heisst „unendlich viele Runden“.</text>
+
+<rect x="106" y="672" width="624" height="110" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<rect x="106" y="672" width="72" height="110" fill="#e7eef5" stroke="#2d5c8a" stroke-width="2"/>
+<text x="142" y="742" font-size="40" text-anchor="middle" font-weight="bold">3</text>
+<text x="190" y="706" font-size="25" font-weight="bold">Die Zahlen sammeln, die du beschreibst.</text>
+<text x="190" y="740" font-size="24" fill="#2d5c8a">Endlos viele Punkte in einer Kiste häufen sich.</text>
+<text x="190" y="770" font-size="24" fill="#2d5c8a">Jede beschränkte Liste hat eine tiefste Decke.</text>
+
+<rect x="106" y="790" width="624" height="110" fill="#f6ebe4" stroke="#8a3d12" stroke-width="5"/>
+<rect x="106" y="790" width="72" height="110" fill="#ecd9cc" stroke="#8a3d12" stroke-width="5"/>
+<text x="142" y="860" font-size="40" text-anchor="middle" font-weight="bold">2</text>
+<text x="190" y="824" font-size="25" font-weight="bold">Ein endloser Verzweigungsweg endet nie.</text>
+<text x="190" y="858" font-size="24" fill="#8a3d12">Eine glatte Kurve hat einen höchsten Punkt.</text>
+<text x="190" y="888" font-size="24" fill="#8a3d12">Drücke eine Scheibe: ein Punkt bleibt liegen.</text>
+
+<rect x="106" y="908" width="624" height="110" fill="#ffffff" stroke="#2f6b3f" stroke-width="2"/>
+<rect x="106" y="908" width="72" height="110" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2"/>
+<text x="142" y="978" font-size="40" text-anchor="middle" font-weight="bold">1</text>
+<text x="190" y="942" font-size="25" font-weight="bold">Nur was eine Maschine ausrechnen kann.</text>
+<text x="190" y="976" font-size="24" fill="#2f6b3f">Eine Linie von minus nach plus kreuzt die Null.</text>
+<text x="190" y="1006" font-size="24" fill="#2f6b3f">Schrumpfende Kisten fangen einen Punkt.</text>
+
+<text x="380" y="1072" font-size="28" text-anchor="middle" font-weight="bold">SPROSSE 2 IST DIE SELTSAME</text>
+<text x="380" y="1106" font-size="24" text-anchor="middle">Leih dir ein starkes Werkzeug. Kein neuer einfacher Satz.</text>
+
+<rect x="90" y="1128" width="420" height="96" fill="#f6ebe4" stroke="#8a3d12" stroke-width="4"/>
+<text x="300" y="1166" font-size="25" text-anchor="middle" font-weight="bold">OBEN</text>
+<text x="300" y="1200" font-size="24" text-anchor="middle">das starke geliehene Werkzeug</text>
+
+<rect x="90" y="1224" width="420" height="16" fill="#3a3a3a"/>
+
+<rect x="90" y="1240" width="420" height="96" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="4"/>
+<text x="300" y="1278" font-size="25" text-anchor="middle" font-weight="bold">UNTEN</text>
+<text x="300" y="1312" font-size="24" text-anchor="middle">die einfachen Alltagsfakten</text>
+
+<text x="526" y="1158" font-size="24">Leih dir oben</text>
+<text x="526" y="1188" font-size="24">so viel du</text>
+<text x="526" y="1218" font-size="24">willst,</text>
+<text x="526" y="1272" font-size="24">unten ändert</text>
+<text x="526" y="1302" font-size="24">sich gar</text>
+<text x="526" y="1332" font-size="24">nichts.</text>
+
+<text x="90" y="1382" font-size="24">Jeder einfache Satz, den das schwache Stockwerk</text>
+<text x="90" y="1412" font-size="24">vorher beweisen konnte, ist genau der, den es auch</text>
+<text x="90" y="1442" font-size="24">jetzt beweisen kann. „Einfach“ leistet dabei echte</text>
+<text x="90" y="1472" font-size="24">Arbeit: kompliziertere Fragen oben bekommen sehr</text>
+<text x="90" y="1502" font-size="24">wohl neue Antworten. Erwachsene nennen den sicheren</text>
+<text x="90" y="1532" font-size="24">Boden ein Konservativitätsresultat.</text>
+
+<rect x="70" y="1558" width="620" height="82" rx="8" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+<text x="94" y="1594" font-size="24">Achtung: Es geht darum, welche Annahmen man</text>
+<text x="94" y="1624" font-size="24">BRAUCHT, nicht darum, ob die Mathematik stimmt.</text>
+
+<text x="380" y="1672" font-size="19" text-anchor="middle" fill="#5c5c5c">Weggelassen: die echten Namen der fünf Sprossen, und dass jeder Satz</text>
+<text x="380" y="1696" font-size="19" text-anchor="middle" fill="#5c5c5c">erst in einer sorgfältigen Spezialsprache neu formuliert werden muss.</text>
+</g>
+</svg>

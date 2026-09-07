@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 1300" role="img" aria-labelledby="p1t p1d">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p1t">Vier Wege hinein, zwei Wege hinaus, also ging etwas verloren</title>
+<desc id="p1d">Ein Plakat. Vier Kästchen oben zeigen die vier Stellungen von zwei Schaltern: aus aus, aus an, an aus, an an. Pfeile laufen hinunter zu zwei Antwortkästchen. Drei Pfeile drängen sich in die Antwort NEIN, nur ein einziger erreicht die Antwort JA. Weil drei verschiedene Starts dieselbe Antwort geben, kann NEIN nicht verraten, woher es kam, also ging Information verloren. Ein Computer, der rückwärts laufen muss, darf nichts vernichten und braucht darum einen dritten Draht für den Rest. Information zu vernichten kostet ausserdem Energie und macht Wärme.</desc>
+<defs>
+<marker id="p1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#26251f"/>
+</marker>
+</defs>
+
+<text class="hl" x="30" y="72">Vier Wege hinein.</text>
+<text class="hl" x="30" y="128">Zwei Wege hinaus.</text>
+<text class="hl" x="30" y="184">Etwas ging verloren.</text>
+<text class="sub" x="30" y="232">Warum ein Computer, der rückwärts läuft,</text>
+<text class="sub" x="30" y="266">einen Draht mehr braucht.</text>
+
+<text class="sm" x="30" y="316">die zwei Schalter</text>
+<rect class="box" x="30" y="328" width="148" height="84" rx="10"/>
+<rect class="box" x="194" y="328" width="148" height="84" rx="10"/>
+<rect class="box" x="358" y="328" width="148" height="84" rx="10"/>
+<rect class="box" x="522" y="328" width="148" height="84" rx="10"/>
+<text class="big m" text-anchor="middle" x="104" y="382">aus aus</text>
+<text class="big m" text-anchor="middle" x="268" y="382">aus an</text>
+<text class="big m" text-anchor="middle" x="432" y="382">an aus</text>
+<text class="big m" text-anchor="middle" x="596" y="382">an an</text>
+
+<path class="arw" d="M104,416 L228,500" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M268,416 L243,500" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M432,416 L258,500" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M596,416 L580,500" marker-end="url(#p1arrow)"/>
+
+<rect class="out" x="30" y="508" width="430" height="80" rx="10"/>
+<rect class="out" x="490" y="508" width="180" height="80" rx="10"/>
+<text class="huge m" text-anchor="middle" x="245" y="567">NEIN</text>
+<text class="huge m" text-anchor="middle" x="580" y="567">JA</text>
+<text class="sm" x="30" y="620">drei Starts drängen sich in eine Antwort</text>
+<text class="sm e" text-anchor="end" x="670" y="620">ein Start, eine Antwort</text>
+
+<text class="hd" x="30" y="674">Bei JA kannst du rückwärts rechnen</text>
+<text class="bd" x="30" y="710">Wenn die Antwort ja ist, sind beide Schalter an,</text>
+<text class="bd" x="30" y="742">und du weisst genau, womit du angefangen hast.</text>
+
+<text class="hd" x="30" y="796">Bei NEIN ist die Vergangenheit weg</text>
+<text class="bd" x="30" y="832">War der linke Schalter aus? Der rechte? Beide?</text>
+<text class="bd" x="30" y="864">NEIN verrät es dir nicht. Drei verschiedene</text>
+<text class="bd" x="30" y="896">Starts, eine einzige Antwort.</text>
+
+<text class="hd" x="30" y="950">Rückwärts rechnen braucht drei Drähte</text>
+<text class="bd" x="30" y="986">Zwei Drähte hinein und zwei hinaus können die</text>
+<text class="bd" x="30" y="1018">Antwort und den Rest nicht gleichzeitig tragen.</text>
+<text class="bd" x="30" y="1050">Drei Drähte können es, der dritte hält den Rest.</text>
+<text class="bd" x="30" y="1082">Zähl die Pfeile: das ist keine Geschmacksfrage,</text>
+<text class="bd" x="30" y="1114">sondern eine Frage des Zählens.</text>
+
+<text class="hd" x="30" y="1168">Vergessen macht Wärme</text>
+<text class="bd" x="30" y="1204">Jedes Bit, das du wegwirfst, wärmt den Raum um</text>
+<text class="bd" x="30" y="1236">mindestens ein winziges bisschen. Niemand kommt</text>
+<text class="bd" x="30" y="1268">ums Bezahlen herum.</text>
+</svg>

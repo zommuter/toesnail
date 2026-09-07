@@ -32,17 +32,17 @@
 <text class="hl" x="30" y="72">Four ways in.</text>
 <text class="hl" x="30" y="128">Two ways out.</text>
 <text class="hl" x="30" y="184">Something got lost.</text>
-<text class="sub" x="30" y="232">Why a computer that runs backwards needs a spare wire.</text>
+<text class="sub" x="30" y="232">Why a backwards computer needs a spare wire.</text>
 
 <text class="sm" x="30" y="282">the two switches</text>
 <rect class="box" x="30" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="194" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="358" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="522" y="294" width="148" height="84" rx="10"/>
-<text class="big m" x="104" y="348">off off</text>
-<text class="big m" x="268" y="348">off on</text>
-<text class="big m" x="432" y="348">on off</text>
-<text class="big m" x="596" y="348">on on</text>
+<text class="big m" text-anchor="middle" x="104" y="348">off off</text>
+<text class="big m" text-anchor="middle" x="268" y="348">off on</text>
+<text class="big m" text-anchor="middle" x="432" y="348">on off</text>
+<text class="big m" text-anchor="middle" x="596" y="348">on on</text>
 
 <path class="arw" d="M104,382 L228,466" marker-end="url(#p1arrow)"/>
 <path class="arw" d="M268,382 L243,466" marker-end="url(#p1arrow)"/>
@@ -51,10 +51,10 @@
 
 <rect class="out" x="30" y="474" width="430" height="80" rx="10"/>
 <rect class="out" x="490" y="474" width="180" height="80" rx="10"/>
-<text class="huge m" x="245" y="533">NO</text>
-<text class="huge m" x="580" y="533">YES</text>
+<text class="huge m" text-anchor="middle" x="245" y="533">NO</text>
+<text class="huge m" text-anchor="middle" x="580" y="533">YES</text>
 <text class="sm" x="30" y="586">three starts crowd into one answer</text>
-<text class="sm e" x="670" y="586">one start, one answer</text>
+<text class="sm e" text-anchor="end" x="670" y="586">one start, one answer</text>
 
 <text class="hd" x="30" y="640">Say YES and you can work backwards</text>
 <text class="bd" x="30" y="676">If the answer is yes, both switches are on,</text>

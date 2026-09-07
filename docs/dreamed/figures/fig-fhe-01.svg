@@ -5,13 +5,13 @@
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
 .tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .good{fill:#0ca30c;font-weight:600}
-.tsfig .crt{fill:#d03b3b;font-weight:600}
-.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .good{fill:#0ca30c;font-weight:600;font-size:13px}
+.tsfig .crt{fill:#d03b3b;font-weight:600;font-size:13px}
+.tsfig .wrn{fill:#a06a00;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
@@ -56,9 +56,9 @@
 <text x="252" y="228">an oracle</text>
 <text class="crt" x="430" y="192">VBB</text>
 <text class="crt" x="430" y="210">IMPOSSIBLE</text>
-<text x="556" y="192">no price. Barak et al. 2001.</text>
-<text x="556" y="210">Indistinguishability</text>
-<text x="556" y="228">obfuscation exists, far from practical</text>
+<text font-size="13" x="556" y="192">no price. Barak et al. 2001.</text>
+<text font-size="13" x="556" y="210">Indistinguishability obfuscation</text>
+<text font-size="13" x="556" y="228">exists, but far from practical</text>
 <rect class="card" x="14" y="248" width="732" height="72"/>
 <rect x="14" y="248" width="5" height="72" fill="#fab219"/>
 <text x="32" y="272">the client, who decrypts</text>
@@ -68,8 +68,8 @@
 <text x="252" y="290">the one people forget</text>
 <text x="252" y="308">exists</text>
 <text class="wrn" x="430" y="281">A COST</text>
-<text x="556" y="272">noise flooding, or bootstrap</text>
-<text x="556" y="290">the result through a fresh key.</text>
-<text x="556" y="308">A cost, not a barrier</text>
+<text font-size="13" x="556" y="272">noise flooding, or bootstrap</text>
+<text font-size="13" x="556" y="290">the result through a fresh key.</text>
+<text font-size="13" x="556" y="308">A cost, not a barrier</text>
 <text class="mu" x="14" y="340">Source: fhe-encrypted-algorithm.md sections 0 and 4. The first is what FHE gives almost for free.</text>
 </svg>

@@ -24,11 +24,11 @@ each chart carry the same figures as text.
 .tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .warn,.tsfig .critt{fill:#d03b3b;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .crit{stroke:#d03b3b;stroke-width:2;stroke-dasharray:7 5}
@@ -80,7 +80,7 @@ purchase stops paying, divided by the 40-unit mean cost of an ordinary proof.
 <g class="mk s3"><polygon points="96,286.5 101.5,292 96,297.5 90.5,292"/><polygon points="210,285.3 215.5,290.8 210,296.3 204.5,290.8"/><polygon points="324,279.9 329.5,285.4 324,290.9 318.5,285.4"/><polygon points="438,274.8 443.5,280.3 438,285.8 432.5,280.3"/><polygon points="552,266.3 557.5,271.8 552,277.3 546.5,271.8"/></g>
 <text class="lbl" x="566" y="275.8">budget 4000</text>
 <text class="hd" x="14" y="336">Break-even price of one independence attempt, in units of an ordinary proof</text>
-<text x="14" y="356">break-even price divided by the mean ordinary proof cost of 40 units; above 1.00 the idea is uneconomic</text>
+<text font-size="13" x="14" y="356">break-even price divided by the mean ordinary proof cost of 40 units; above 1.00 the idea is uneconomic</text>
 <text class="warn" x="14" y="376">... and exactly there the affordable price rises past parity</text>
 <line class="ax" x1="96" y1="598" x2="552" y2="598"/>
 <text class="mu e" x="86" y="602">0.0</text>
@@ -288,7 +288,7 @@ k_B T ln 2 = 2.871 zJ per erased bit, against roughly 34 J actually spent:
 <title id="c4t">How far the second law is from binding: proof search against laser cooling</title>
 <desc id="c4d">Logarithmic axis of the ratio between energy actually spent and the Landauer floor at 300 K. Laser cooling sits near 10 to the 3, where the bound genuinely constrains the physics. Proof search sits between 10 to the 11 and 10 to the 22. Each bar is labelled with its value.</desc>
 <text class="hd" x="14" y="26">Same accounting, opposite verdict: the thermodynamic analogy is a costume</text>
-<text x="14" y="46">energy spent divided by the Landauer floor at 300 K, a dimensionless ratio; log scale, one tick per 10 to the 4</text>
+<text font-size="13" x="14" y="46">energy spent divided by the Landauer floor at 300 K, a dimensionless ratio; log scale, one tick per 10 to the 4</text>
 <rect class="zone" x="356" y="84" width="55.7" height="224"/>
 <text class="m" x="383.8" y="76">bound bites</text>
 <line class="ax" x1="356" y1="84" x2="356" y2="308"/>

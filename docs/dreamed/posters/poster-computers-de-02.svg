@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 110" role="img" aria-labelledby="p1st p1sd">
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 152" role="img" aria-labelledby="p1st p1sd">
 <style>
 .tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tspost text{fill:#26251f}
@@ -21,10 +21,11 @@
 .tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
 </style>
 
-<title id="p1st">What poster one skipped</title>
-<desc id="p1sd">The three wire gate is called a Toffoli gate. It leaves both switches untouched and adds the answer onto a third wire. The heat from one forgotten bit is far smaller than what a real chip wastes today, so it is real physics but not yet the thing that limits computers.</desc>
+<title id="p1st">Was Plakat eins weggelassen hat</title>
+<desc id="p1sd">Das Drei-Draht-Gatter heisst Toffoli-Gatter. Es lässt beide Schalter unangetastet und legt die Antwort auf einen dritten Draht. Die Wärme aus einem einzigen vergessenen Bit ist viel kleiner als das, was ein echter Chip heute verheizt: echte Physik, aber noch nicht die Grenze für heutige Computer.</desc>
 <line class="rule" x1="30" y1="14" x2="670" y2="14"/>
-<text class="sm" x="30" y="48">What we skipped: the three wire gate is called a Toffoli. It</text>
-<text class="sm" x="30" y="78">leaves both switches alone and adds the answer onto a</text>
-<text class="sm" x="30" y="108">third wire. Forgetting one bit makes less heat than a chip.</text>
+<text class="sm" x="30" y="48">Was wir weggelassen haben: das Drei-Draht-Gatter heisst</text>
+<text class="sm" x="30" y="78">Toffoli. Es lässt beide Schalter in Ruhe und legt die</text>
+<text class="sm" x="30" y="108">Antwort auf den dritten Draht. Und die Wärme aus einem</text>
+<text class="sm" x="30" y="138">vergessenen Bit ist winzig gegen das, was ein Chip verheizt.</text>
 </svg>

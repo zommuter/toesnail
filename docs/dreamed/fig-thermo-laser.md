@@ -66,7 +66,7 @@ and for Rb87 that is 2.49 millikelvin-scale-free units of nothing at all: it is
 <title id="f1t">Entropy per photon: what the field gains, what an atom can shed, what the pump delivers</title>
 <desc id="f1d">A base-10 logarithmic axis in units of Boltzmann's constant per photon, running from 1e-9 to 10. Fluorescence carries 2.28 to 7.71 k_B per photon. A Doppler-cooled Rb87 atom can shed at most 2.49e-3 and sodium 1.02e-2. The pump beam carries 5.9e-9 and a published diode figure 1.3e-7. The gap between the atom bound and the fluorescence is about a factor 1000, not the factor 10 million a naive mode count suggests. Figures repeated in the table below.</desc>
 <text class="hd" x="14" y="26">Entropy per photon, Rb87 D2 laser cooling</text>
-<text x="14" y="46">k_B per photon, base-10 log axis. The margin is the gap between the two labelled lanes, not a mode count.</text>
+<text font-size="13" x="14" y="46">k_B per photon, base-10 log axis. The margin is the gap between the two labelled lanes, not a mode count.</text>
 
 <line class="g" x1="100" y1="76" x2="100" y2="336"/>
 <line class="g" x1="160" y1="76" x2="160" y2="336"/>
@@ -184,7 +184,7 @@ inversion ceiling and the cooling floor on opposite sides of the same line.
 <text class="mu sm e" x="356" y="212">no inversion</text>
 
 <text class="sh" x="420" y="52">b. Scovil-Schulz-DuBois, generalised</text>
-<text class="sm" x="420" y="70">laser energy per pump energy against lattice/pump-brightness temperature</text>
+<text class="sm" x="420" y="70">laser/pump energy ratio against T/T_p</text>
 <rect class="bad" x="440" y="80" width="290" height="70"/>
 <polygon class="ok" points="440,150 730,300 440,300"/>
 <line class="g" x1="440" y1="80" x2="730" y2="80"/>
@@ -299,7 +299,7 @@ it.
 <text class="mu sm m" x="595" y="318">0.1</text>
 <text class="mu sm m" x="730" y="318">1</text>
 <text class="mu sm m" x="585" y="338">u = (h&#957; - &#956;)/h&#957;, harvested fraction of each photon (log)</text>
-<text class="mu sm m" x="585" y="354">second law: cooling requires u &lt; T_c/T_h, and COP = t/(1-t) AT that cut</text>
+<text class="mu sm m" x="585" y="354">second law cut: u &lt; T_c/T_h for cooling; COP = t/(1-t) there</text>
 
 <text class="crt sm" x="14" y="386">No interior COP optimum exists: the derivative of y/(x-y) with respect to x is -y/(x-y)&#178;, negative everywhere.</text>
 <text class="crt sm" x="14" y="404">Cheaper photons are always better for COP without limit, and the supremum is Carnot on the zero-flux boundary.</text>
@@ -398,7 +398,7 @@ the two arms meet at the global minimum `F(-1) = -1/e`.
 <text class="mu sm m" x="527.8" y="318">8</text>
 <text class="mu sm m" x="614.4" y="318">64</text>
 <text class="mu sm m" x="730" y="318">1024</text>
-<text class="mu sm m" x="600" y="338">N, occupancy cutoff (at most N-1 quanta per level; log axis)</text>
+<text class="mu sm m" x="600" y="338">N, occupancy cutoff (at most N-1 quanta per level; log)</text>
 <text class="mu sm m" x="600" y="354">y axis: maximum attainable &#946;E (dimensionless)</text>
 
 <text class="crt sm" x="14" y="386">Bosonic: an unqualified W returns &#946;E&#8321; = 0 for EVERY physical &#946;E, because -&#946;E is its own principal pre-image.</text>

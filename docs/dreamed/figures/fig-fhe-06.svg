@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 576" role="img" aria-labelledby="c6t c6d">
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 596" role="img" aria-labelledby="c6t c6d">
 <style>
 .tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
 .tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .good{fill:#0ca30c;font-weight:600}
-.tsfig .crt{fill:#d03b3b;font-weight:600}
-.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .good{fill:#0ca30c;font-weight:600;font-size:13px}
+.tsfig .crt{fill:#d03b3b;font-weight:600;font-size:13px}
+.tsfig .wrn{fill:#a06a00;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
@@ -70,9 +70,10 @@
 <rect class="card" x="304" y="444" width="442" height="40"/>
 <rect x="304" y="444" width="5" height="40" fill="#1baf7a"/>
 <text class="lbl" x="322" y="462">CONFIDENTIALITY: natively evaluable by the exact schemes</text>
-<text x="322" y="478">BFV and BGV, rather than the approximate CKKS everyone uses</text>
-<text class="wrn" x="14" y="510">Honest limit, retracted by the essay itself: i-Softmax uses bit-shifts and i-LayerNorm an iterative integer square root.</text>
+<text font-size="13" x="322" y="478">BFV and BGV, rather than the approximate CKKS everyone uses</text>
+<text class="wrn" x="14" y="510">Honest limit, retracted by the essay itself: i-Softmax uses bit-shifts, i-LayerNorm an iterative integer square root.</text>
 <text class="wrn" x="14" y="528">Those are not polynomials over the plaintext ring, so the third leg of the convergence does not hold.</text>
-<text class="mu" x="14" y="554">Source: trustless-distributed-ai.md sections 3, 5 and 6. The MP3-versus-bit-exact-codec framing is the OWNER'S, not the essay's.</text>
-<text class="mu" x="14" y="570">Codecs mandated bit-exact integer transforms from H.264 onward for exactly this reason; Opus ships a bit-exact fixed-point decoder.</text>
+<text class="mu" x="14" y="552">Source: trustless-distributed-ai.md sections 3, 5 and 6. The MP3-versus-bit-exact-codec framing is</text>
+<text class="mu" x="14" y="568">the OWNER'S, not the essay's. Codecs mandated bit-exact integer transforms from H.264 onward for</text>
+<text class="mu" x="14" y="584">exactly this reason; Opus ships a bit-exact fixed-point decoder.</text>
 </svg>

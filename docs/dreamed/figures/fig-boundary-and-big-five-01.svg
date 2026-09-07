@@ -49,7 +49,8 @@
 <text x="640" y="336" font-size="12.5" text-anchor="middle" fill="#5c5c5c">dashed: no addition at all,</text>
 <text x="640" y="353" font-size="12.5" text-anchor="middle" fill="#5c5c5c">so incomparable with all of them</text>
 
-<text x="470" y="446" font-size="12.5" fill="#5c5c5c">2^(2^cn) proof-length lower bound already here (Fischer and Rabin 1974):</text>
-<text x="470" y="464" font-size="12.5" fill="#5c5c5c">decidable is a mathematical property, not an engineering one.</text>
+<text x="470" y="428" font-size="12.5" fill="#5c5c5c">2^(2^cn) proof-length lower bound already here</text>
+<text x="470" y="446" font-size="12.5" fill="#5c5c5c">(Fischer and Rabin 1974): decidable is a mathematical</text>
+<text x="470" y="464" font-size="12.5" fill="#5c5c5c">property, not an engineering one.</text>
 </g>
 </svg>

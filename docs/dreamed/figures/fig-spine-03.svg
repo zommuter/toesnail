@@ -31,26 +31,26 @@
       <circle cx="42" cy="322" r="8" fill="#17696b"/>
       <text x="62" y="328" font-weight="700">Cantor / Lawvere</text>
       <text x="260" y="328" fill="#3f4653">needs nothing but sets and functions</text>
-      <text x="700" y="328" font-weight="700">APPLIES, directly</text>
+      <text x="660" y="328" font-weight="700">APPLIES, directly</text>
     </g>
     <g>
       <path d="M34,346 l8,-9 l8,9 z" fill="#c05621"/>
       <text x="62" y="356" font-weight="700" fill="#8a3c14">Tarski undefinability</text>
       <text x="260" y="356" fill="#3f4653">needs a formal language with arithmetic</text>
-      <text x="700" y="356" font-weight="700" fill="#8a3c14">NEARLY: no language given</text>
+      <text x="660" y="356" font-weight="700" fill="#8a3c14">NEARLY: no language given</text>
     </g>
     <g>
       <path d="M34,374 l8,-9 l8,9 z" fill="none" stroke="#c05621" stroke-width="2"/>
       <text x="62" y="384" font-weight="700" fill="#8a3c14">Wolpert / Breuer</text>
       <text x="260" y="384" fill="#3f4653">needs physics (inference devices)</text>
-      <text x="700" y="384" font-weight="700" fill="#8a3c14">CONDITIONALLY</text>
+      <text x="660" y="384" font-weight="700" fill="#8a3c14">CONDITIONALLY</text>
     </g>
     <g>
       <line x1="34" y1="404" x2="50" y2="420" stroke="#a01b1b" stroke-width="3"/>
       <line x1="50" y1="404" x2="34" y2="420" stroke="#a01b1b" stroke-width="3"/>
       <text x="62" y="418" font-weight="700" fill="#a01b1b">Goedel I</text>
       <text x="260" y="418" fill="#3f4653">needs a consistent, effectively axiomatized theory</text>
-      <text x="700" y="418" font-weight="700" fill="#a01b1b">DOES NOT APPLY</text>
+      <text x="660" y="418" font-weight="700" fill="#a01b1b">DOES NOT APPLY</text>
     </g>
     <text x="62" y="444" font-size="13" fill="#6b7280">contra corpus row M-5, which welds all four into one line</text>
   </g>

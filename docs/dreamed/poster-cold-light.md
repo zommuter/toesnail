@@ -7,6 +7,8 @@ permalink: /dreamed/poster-cold-light
 > This page *proposes*; the owner disposes. Nothing here is toesnail theory, and nothing may be
 > promoted into `physics/` or `essays/` without the owner authoring the move himself.
 
+*A German edition of both posters is at [`poster-cold-light-de`](poster-cold-light-de).*
+
 These are two posters for a twelve year old. Each one has a single idea and a picture, and you
 should be able to get it from across the room. The first says how you can make something colder by
 shining a light on it, which sounds like nonsense and is not. The second says where the mess goes
@@ -94,7 +96,7 @@ are [`lasercool`](lasercool), [`five-level-laser`](five-level-laser) and the fig
 <path class="hot" d="M 422,896 L 448,882 L 448,910 Z"/>
 <path class="hot" d="M 492,896 L 518,882 L 518,910 Z"/>
 <path class="hot" d="M 562,896 L 588,882 L 588,910 Z"/>
-<text class="sm m" x="486" y="946">the laser beam, aimed this way</text>
+<text class="sm m" text-anchor="middle" x="486" y="946">the laser beam, aimed this way</text>
 <line class="kr" x1="206" y1="960" x2="126" y2="960"/>
 <path class="hot" d="M 126,948 L 98,960 L 126,972 Z"/>
 <text class="sm" x="220" y="968">one tiny shove backwards</text>
@@ -110,9 +112,9 @@ are [`lasercool`](lasercool), [`five-level-laser`](five-level-laser) and the fig
 <path class="grey" d="M 422,1102 L 448,1088 L 448,1116 Z"/>
 <path class="grey" d="M 492,1102 L 518,1088 L 518,1116 Z"/>
 <path class="grey" d="M 562,1102 L 588,1088 L 588,1116 Z"/>
-<text class="sm m" x="486" y="1152">wrong colour, so it sails past</text>
+<text class="sm m" text-anchor="middle" x="486" y="1152">wrong colour, so it sails past</text>
 
-<text class="bg" x="44" y="1224">Thousands of tiny shoves later, it has nearly stopped.</text>
+<text class="bg" x="44" y="1224">Thousands of shoves later: nearly stopped.</text>
 
 <text class="h2" x="44" y="1286">3. You already know this trick</text>
 <text class="bd" x="44" y="1330">A siren sounds higher as the ambulance</text>
@@ -196,7 +198,7 @@ are [`lasercool`](lasercool), [`five-level-laser`](five-level-laser) and the fig
 <circle class="hot" cx="566" cy="504" r="8"/>
 <circle class="hot" cx="614" cy="478" r="8"/>
 <circle class="hot" cx="604" cy="522" r="8"/>
-<text class="sm m" x="500" y="566">more of it, spread wider</text>
+<text class="sm m" text-anchor="middle" x="500" y="566">more of it, spread wider</text>
 
 <text class="bg" x="44" y="628">Nobody has ever broken this rule.</text>
 
@@ -219,7 +221,7 @@ are [`lasercool`](lasercool), [`five-level-laser`](five-level-laser) and the fig
 <circle class="hot" cx="342" cy="828" r="6"/>
 <circle class="hot" cx="422" cy="828" r="6"/>
 <circle class="hot" cx="502" cy="828" r="6"/>
-<text class="sm m" x="456" y="930">light leaves, carrying the mess</text>
+<text class="sm m" text-anchor="middle" x="456" y="930">light leaves, carrying the mess</text>
 
 <text class="h2" x="44" y="1034">3. The surprise</text>
 <text class="bd" x="44" y="1078">People assume there is a gigantic safety</text>
@@ -228,7 +230,7 @@ are [`lasercool`](lasercool), [`five-level-laser`](five-level-laser) and the fig
 <text class="bd" x="44" y="1174">thousand times, not ten million.</text>
 
 <rect class="panel" x="44" y="1200" width="612" height="240" rx="14"/>
-<text class="sm m" x="350" y="1236">each block along a bar means ten times bigger</text>
+<text class="sm m" text-anchor="middle" x="350" y="1236">each block along a bar means ten times bigger</text>
 <text class="lb" x="90" y="1272">What people assume</text>
 <rect x="90" y="1284" width="420" height="40" rx="4" fill="#cfd9ea" stroke="#2a6fd6" stroke-width="2"/>
 <line x1="150" y1="1284" x2="150" y2="1324" stroke="#2a6fd6" stroke-width="2"/>

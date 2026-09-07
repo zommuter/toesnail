@@ -34,11 +34,11 @@
   <line x1="700" y1="140" x2="716" y2="186" stroke="#b04a25" stroke-width="5"/>
   <line x1="716" y1="140" x2="700" y2="186" stroke="#b04a25" stroke-width="5"/>
   <text x="355" y="186" font-size="16" fill="#3d6b45" text-anchor="middle">monotonicity FOLLOWS from the model</text>
-  <text x="806" y="186" font-size="16" fill="#b04a25" text-anchor="middle">none to derive, only to postulate</text>
+  <text x="880" y="186" font-size="16" fill="#b04a25" text-anchor="end">none to derive, only to postulate</text>
 
   <rect x="20" y="206" width="860" height="76" fill="#ffffff" stroke="#8a5d2b"/>
   <text x="36" y="230" font-size="16">Junction 2 is real but a genuine JUMP: linear to nonlinear, two-body to N-body, amplitude to phase, all at once.</text>
-  <text x="36" y="252" font-size="16">What survives is the METHOD, not the model. The Ott-Antonsen equation and the Resogram's energy equation both</text>
+  <text x="36" y="252" font-size="16">What survives is the METHOD, not the model. The Ott-Antonsen and the Resogram's energy equations both</text>
   <text x="36" y="272" font-size="16">read "linear loss plus drive", with the frequency SPREAD playing the damping's role. The break is the finding.</text>
 </g>
 </svg>

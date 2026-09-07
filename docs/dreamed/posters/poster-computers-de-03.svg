@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 1340" role="img" aria-labelledby="p2t p2d">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p2t">Mathe in einer verschlossenen Kiste</title>
+<desc id="p2d">Ein Plakat. Eine verschlossene Kiste mit Vorhängeschloss enthält eine geheime Zahl. Zwei Handschuhe greifen von aussen hinein, damit ein Fremder mit der Zahl arbeiten kann, ohne die Kiste zu öffnen. Der Fremde rechnet, gibt die Kiste zurück, und die Besitzerin schliesst auf und findet die richtige Antwort, während der Fremde weder die Zahl noch die Antwort gesehen hat. Darunter vergleichen drei Balken die Geschwindigkeit: ein normaler Computer braucht einen Wimpernschlag, dieselbe Aufgabe in der Kiste braucht Minuten, und die dritte Spur ist leer gezeichnet, weil noch niemand die grössten KI-Modelle ganz in der Kiste laufen liess.</desc>
+
+<text class="hl" x="30" y="72">Mathe in einer</text>
+<text class="hl" x="30" y="128">verschlossenen Kiste.</text>
+<text class="sub" x="30" y="180">Ein Fremder rechnet für dich, ohne je deine</text>
+<text class="sub" x="30" y="214">Zahl zu sehen, und ohne die Antwort zu sehen.</text>
+
+<rect class="box" x="170" y="262" width="360" height="250" rx="16"/>
+<rect class="out" x="200" y="292" width="300" height="126"/>
+<text class="huge m" text-anchor="middle" x="350" y="378">7</text>
+<text class="sm m" text-anchor="middle" x="350" y="404">deine geheime Zahl</text>
+<path class="arw" d="M478,286 a14,14 0 0 1 28,0 l0,12" fill="none"/>
+<rect x="472" y="298" width="40" height="30" rx="5" fill="#f2f1ec" stroke="#26251f" stroke-width="3"/>
+<text class="sm" x="524" y="322">verschlossen</text>
+<circle class="out" cx="270" cy="482" r="28"/>
+<circle class="out" cx="430" cy="482" r="28"/>
+<path d="M40,572 Q150,566 268,502" fill="none" stroke="#6b6a66" stroke-width="24" stroke-linecap="round"/>
+<path d="M660,572 Q550,566 432,502" fill="none" stroke="#6b6a66" stroke-width="24" stroke-linecap="round"/>
+<text class="sm" x="30" y="612">der Fremde greift hinein, die Kiste geht nie auf</text>
+
+<text class="hd" x="30" y="666">Hingeben, zurückbekommen, aufschliessen</text>
+<text class="bd" x="30" y="702">Schliess deine Zahl in die Kiste. Gib die Kiste einem</text>
+<text class="bd" x="30" y="734">Fremden. Er rechnet mit dem, was drin ist, ohne sie</text>
+<text class="bd" x="30" y="766">zu öffnen, und gibt sie dir zurück. Du schliesst auf.</text>
+<text class="bd" x="30" y="798">Die Antwort stimmt.</text>
+
+<text class="hd" x="30" y="852">Klingt unmöglich. Gibt es wirklich.</text>
+<text class="bd" x="30" y="888">Er hat deine Zahl nie gesehen und die Antwort auch</text>
+<text class="bd" x="30" y="920">nicht. Er hat die Kiste nur durchgeschüttelt.</text>
+
+<text class="hd" x="30" y="974">Der Haken: es ist unfassbar langsam.</text>
+<text class="sm" x="30" y="1010">ein normaler Computer, offen im Freien</text>
+<rect class="barA" x="30" y="1020" width="9" height="34"/>
+<text class="bd" x="55" y="1048">ein Wimpernschlag</text>
+<text class="sm" x="30" y="1094">genau dieselbe Aufgabe, in der verschlossenen Kiste</text>
+<rect class="barB" x="30" y="1104" width="560" height="34"/>
+<text class="bd e" text-anchor="end" x="670" y="1132">Minuten</text>
+<text class="sm" x="30" y="1178">die grössten KI-Modelle, ganz in der Kiste</text>
+<rect class="empty" x="30" y="1188" width="640" height="34" rx="6"/>
+<text class="bd m" text-anchor="middle" x="350" y="1214">das hat noch niemand geschafft</text>
+<text class="sm" x="30" y="1264">Ein längerer Balken heisst langsamer. Die Spur ist leer,</text>
+<text class="sm" x="30" y="1294">weil der Rekord leer ist, nicht weil die Zahl klein ist.</text>
+<text class="sm" x="30" y="1324">Eine Lücke in einer Grafik zu bemerken, ist eine Kunst.</text>
+</svg>

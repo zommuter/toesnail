@@ -98,11 +98,12 @@ this makes the repair local rather than a rewrite.
     <text x="510" y="200">tensor product symbol (l.50)</text>
     <text x="510" y="218" font-size="13" fill="#6b7280">the comma form at l.46 already answered l.44; l.52 defers it</text>
     <text x="510" y="308">complex numbers (l.71, ~350-word footnote to l.79)</text>
-    <text x="510" y="326" font-size="13" fill="#6b7280">largest unpaid introduction by word count; no question asks for a phase</text>
+    <text x="510" y="326" font-size="13" fill="#6b7280">largest unpaid introduction by word count;</text>
+    <text x="510" y="344" font-size="13" fill="#6b7280">no question asks for a phase</text>
     <text x="510" y="391">conjugate symmetry (l.87)</text>
-    <text x="510" y="409" font-size="13" fill="#6b7280">arrives as an axiom-list item, and is the axiom most urgently needed</text>
+    <text x="510" y="409" font-size="13" fill="#6b7280">arrives as an axiom-list item; the axiom most urgently needed</text>
     <text x="510" y="440">positive-definiteness (l.89)</text>
-    <text x="510" y="458" font-size="13" fill="#6b7280">its demand exists 21 lines LATER, at l.110 (open marker = deferred demand)</text>
+    <text x="510" y="458" font-size="13" fill="#6b7280">its demand exists 21 lines LATER, at l.110</text>
   </g>
 
   <g stroke="#a01b1b" stroke-width="2.5" stroke-dasharray="9 5">
@@ -119,7 +120,7 @@ this makes the repair local rather than a rewrite.
     <text x="510" y="612">TIME, promised at l.54, still open at l.139</text>
     <text x="510" y="656">OPERATORS, l.133: the arrow is posed, then</text>
     <text x="510" y="674" font-family="ui-monospace, monospace" font-size="13">#TODO: get to operators...</text>
-    <text x="510" y="692" font-size="13" fill="#6b7280">the file's one TOTAL non-payment: nothing supplied, not even a named deferral</text>
+    <text x="510" y="692" font-size="13" fill="#6b7280">the file's one TOTAL non-payment: not even a named deferral</text>
   </g>
   <g font-size="13" fill="#a01b1b">
     <text x="510" y="228">(omniscience, l.44: parked in docs/rigor-debt.md as ill-posed)</text>
@@ -154,9 +155,9 @@ owner's.
 The second one is settled instantly by a picture.
 
 <div style="overflow-x:auto">
-<svg viewBox="0 0 860 400" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 400" style="min-width:700px" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>Unit circle in the complex plane: the real equality case of Cauchy-Schwarz is the two points plus one and minus one, while over the complex field equality holds on the entire unit circle, with the counterexample i marked</title>
-<rect x="0" y="0" width="860" height="400" fill="#fcfcfa"/>
+<rect x="0" y="0" width="900" height="400" fill="#fcfcfa"/>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
 
   <g stroke="#c9ccd4" stroke-width="1.5">
@@ -255,26 +256,26 @@ theory, which is a large extra premise that would have to be stated rather than 
       <circle cx="42" cy="322" r="8" fill="#17696b"/>
       <text x="62" y="328" font-weight="700">Cantor / Lawvere</text>
       <text x="260" y="328" fill="#3f4653">needs nothing but sets and functions</text>
-      <text x="700" y="328" font-weight="700">APPLIES, directly</text>
+      <text x="660" y="328" font-weight="700">APPLIES, directly</text>
     </g>
     <g>
       <path d="M34,346 l8,-9 l8,9 z" fill="#c05621"/>
       <text x="62" y="356" font-weight="700" fill="#8a3c14">Tarski undefinability</text>
       <text x="260" y="356" fill="#3f4653">needs a formal language with arithmetic</text>
-      <text x="700" y="356" font-weight="700" fill="#8a3c14">NEARLY: no language given</text>
+      <text x="660" y="356" font-weight="700" fill="#8a3c14">NEARLY: no language given</text>
     </g>
     <g>
       <path d="M34,374 l8,-9 l8,9 z" fill="none" stroke="#c05621" stroke-width="2"/>
       <text x="62" y="384" font-weight="700" fill="#8a3c14">Wolpert / Breuer</text>
       <text x="260" y="384" fill="#3f4653">needs physics (inference devices)</text>
-      <text x="700" y="384" font-weight="700" fill="#8a3c14">CONDITIONALLY</text>
+      <text x="660" y="384" font-weight="700" fill="#8a3c14">CONDITIONALLY</text>
     </g>
     <g>
       <line x1="34" y1="404" x2="50" y2="420" stroke="#a01b1b" stroke-width="3"/>
       <line x1="50" y1="404" x2="34" y2="420" stroke="#a01b1b" stroke-width="3"/>
       <text x="62" y="418" font-weight="700" fill="#a01b1b">Goedel I</text>
       <text x="260" y="418" fill="#3f4653">needs a consistent, effectively axiomatized theory</text>
-      <text x="700" y="418" font-weight="700" fill="#a01b1b">DOES NOT APPLY</text>
+      <text x="660" y="418" font-weight="700" fill="#a01b1b">DOES NOT APPLY</text>
     </g>
     <text x="62" y="444" font-size="13" fill="#6b7280">contra corpus row M-5, which welds all four into one line</text>
   </g>
@@ -299,9 +300,9 @@ introduced, force one object; a theorem then derives the Hamiltonian from it rat
 it.
 
 <div style="overflow-x:auto">
-<svg viewBox="0 0 960 400" style="min-width:800px" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1010 400" style="min-width:800px" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>Derivation chain: three questions about transitions force a one-parameter unitary group, Stone's theorem then yields a unique self-adjoint generator, from which the Schroedinger equation and Noether conservation follow</title>
-<rect x="0" y="0" width="960" height="400" fill="#fcfcfa"/>
+<rect x="0" y="0" width="1010" height="400" fill="#fcfcfa"/>
 <defs><marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f2430"/></marker></defs>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
 
@@ -353,7 +354,7 @@ it.
   </g>
 
   <g>
-    <line x1="20" y1="300" x2="940" y2="300" stroke="#c9ccd4" stroke-width="1.5"/>
+    <line x1="20" y1="300" x2="990" y2="300" stroke="#c9ccd4" stroke-width="1.5"/>
     <text x="20" y="326" font-size="15" font-weight="700" fill="#a01b1b">Located finding T3, filed in REVIEW_ME id:8e64 and open</text>
     <text x="20" y="348" font-size="14">`physics/toesnail.md:59`, equation `t1`, writes the tossed coin with PROBABILITIES as coefficients.</text>
     <text x="20" y="368" font-size="14">A unitary preserves the sum of squared moduli, not the plain sum, so those coefficients can come from</text>

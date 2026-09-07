@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="eli" viewBox="0 0 700 2102" role="img" aria-labelledby="p2t p2d">
+<style>
+.eli{display:block;width:100%;height:auto;max-width:700px;margin:0 auto;background:#fbfaf7;font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+.eli text{fill:#26241d}
+.eli .h1{font-size:48px;font-weight:800;fill:#14130f}
+.eli .h2{font-size:33px;font-weight:700;fill:#14130f}
+.eli .sub{font-size:27px;font-weight:600;fill:#3d3a31}
+.eli .bd{font-size:26px}
+.eli .bg{font-size:27px;font-weight:700;fill:#14130f}
+.eli .lb{font-size:24px;font-weight:700}
+.eli .sm{font-size:22px;fill:#6b6a63}
+.eli .m{text-anchor:middle}
+.eli .hot{fill:#d8542a}
+.eli .cool{fill:#2a6fd6}
+.eli .grey{fill:#8b877a}
+.eli .green{fill:#2c6b4c}
+.eli .panel{fill:#f2f0e8;stroke:#dcd8c9;stroke-width:2}
+.eli .honest{fill:#eaf1ec;stroke:#4a8f6b;stroke-width:2}
+.eli .rule{stroke:#c9c5b6;stroke-width:2}
+.eli .kb{stroke:#2a6fd6;stroke-width:5;fill:none;stroke-linecap:round}
+.eli .kr{stroke:#d8542a;stroke-width:5;fill:none;stroke-linecap:round}
+.eli .ink{stroke:#26241d;stroke-width:4;fill:none;stroke-linecap:round}
+</style>
+
+<title id="p2t">Poster: wohin geht das Chaos?</title>
+<desc id="p2d">Ein Poster in vier Teilen. Teil eins: Aufräumen zerstört Unordnung nie, es verschiebt sie, und hinterher ist es immer ein wenig mehr, gezeichnet als ordentliches Raster neben einer verstreuten Punktwolke. Teil zwei: ein Atom zu kühlen ist Aufräumen, das Chaos reist also auf dem Licht davon, das wegfliegt. Teil drei, der Befund: alle nehmen einen riesigen Sicherheitsabstand an, sauber ausgerechnet sind es aber etwa tausend statt zehn Millionen, gezeichnet als zwei Balken, bei denen jeder Block zehnmal so viel bedeutet, sieben Blöcke gegen drei. Teil vier: der Grund ist, dass Atome Chaos schlecht wegtragen, das Atom ist also die enge Stelle. Das Ehrliche: das ist eine Grenze dafür, was erlaubt ist, nicht dafür, was einfach ist.</desc>
+
+<rect x="0" y="0" width="700" height="2102" fill="#fbfaf7"/>
+
+<text class="sm" x="44" y="52">POSTER 2 VON 2   .   ENTROPIE</text>
+<text class="h1" x="44" y="124">Wohin geht das Chaos?</text>
+<text class="sub" x="44" y="176">Aufräumen zerstört nichts. Es verschiebt nur.</text>
+<line class="rule" x1="44" y1="204" x2="656" y2="204"/>
+
+<text class="h2" x="44" y="258">1. Die tiefste Regel der Physik</text>
+<text class="bd" x="44" y="302">Räum dein Zimmer auf, und das Chaos</text>
+<text class="bd" x="44" y="334">verschwindet nicht. Es landet woanders,</text>
+<text class="bd" x="44" y="366">und es wird nie weniger, als du</text>
+<text class="bd" x="44" y="398">weggeräumt hast.</text>
+
+<rect class="panel" x="44" y="424" width="612" height="190" rx="14"/>
+<text class="sm m" text-anchor="middle" x="155" y="460">das räumst du auf</text>
+<rect class="cool" x="110" y="480" width="26" height="26" rx="3"/>
+<rect class="cool" x="142" y="480" width="26" height="26" rx="3"/>
+<rect class="cool" x="174" y="480" width="26" height="26" rx="3"/>
+<rect class="cool" x="110" y="512" width="26" height="26" rx="3"/>
+<rect class="cool" x="142" y="512" width="26" height="26" rx="3"/>
+<rect class="cool" x="174" y="512" width="26" height="26" rx="3"/>
+<text class="sm m" text-anchor="middle" x="155" y="572">ordentlich und langweilig</text>
+<text class="sm m" text-anchor="middle" x="284" y="498">aber</text>
+<line class="ink" x1="240" y1="526" x2="300" y2="526"/>
+<path fill="#26241d" d="M 300,514 L 328,526 L 300,538 Z"/>
+<circle class="hot" cx="372" cy="484" r="8"/>
+<circle class="hot" cx="408" cy="464" r="8"/>
+<circle class="hot" cx="444" cy="498" r="8"/>
+<circle class="hot" cx="392" cy="530" r="8"/>
+<circle class="hot" cx="430" cy="554" r="8"/>
+<circle class="hot" cx="468" cy="470" r="8"/>
+<circle class="hot" cx="500" cy="502" r="8"/>
+<circle class="hot" cx="478" cy="542" r="8"/>
+<circle class="hot" cx="520" cy="462" r="8"/>
+<circle class="hot" cx="548" cy="494" r="8"/>
+<circle class="hot" cx="590" cy="476" r="8"/>
+<circle class="hot" cx="566" cy="536" r="8"/>
+<circle class="hot" cx="614" cy="510" r="8"/>
+<circle class="hot" cx="604" cy="554" r="8"/>
+<text class="sm m" text-anchor="middle" x="500" y="598">mehr davon, breiter verteilt</text>
+
+<text class="bg" x="44" y="660">Diese Regel hat noch nie jemand gebrochen.</text>
+
+<text class="h2" x="44" y="718">2. Ein Atom kühlen ist Aufräumen</text>
+<text class="bd" x="44" y="762">Das Chaos muss also irgendwohin. Es</text>
+<text class="bd" x="44" y="794">reist auf dem Licht davon, das wegfliegt.</text>
+
+<rect class="panel" x="44" y="820" width="612" height="190" rx="14"/>
+<circle class="cool" cx="150" cy="894" r="36"/>
+<circle fill="#fbfaf7" cx="138" cy="882" r="5"/>
+<circle fill="#fbfaf7" cx="158" cy="888" r="5"/>
+<circle fill="#fbfaf7" cx="146" cy="906" r="5"/>
+<circle fill="#fbfaf7" cx="164" cy="904" r="5"/>
+<text class="sm m" text-anchor="middle" x="150" y="962">wird aufgeräumt</text>
+<text class="sm m" text-anchor="middle" x="248" y="866">gibt es weiter</text>
+<line class="ink" x1="200" y1="894" x2="268" y2="894"/>
+<path fill="#26241d" d="M 268,882 L 296,894 L 268,906 Z"/>
+<path class="kr" d="M 322,894 q 20,-24 40,0 t 40,0 t 40,0 t 40,0 t 40,0 t 40,0"/>
+<path class="hot" d="M 562,882 L 590,894 L 562,906 Z"/>
+<circle class="hot" cx="342" cy="860" r="6"/>
+<circle class="hot" cx="422" cy="860" r="6"/>
+<circle class="hot" cx="502" cy="860" r="6"/>
+<text class="sm m" text-anchor="middle" x="470" y="962">Licht nimmt das Chaos mit</text>
+
+<text class="h2" x="44" y="1066">3. Die Überraschung</text>
+<text class="bd" x="44" y="1110">Alle nehmen an, hier sei ein riesiger</text>
+<text class="bd" x="44" y="1142">Sicherheitsabstand. Sauber ausgerechnet</text>
+<text class="bd" x="44" y="1174">für ein echtes Atom sind es etwa tausend,</text>
+<text class="bd" x="44" y="1206">nicht zehn Millionen.</text>
+
+<rect class="panel" x="44" y="1232" width="612" height="240" rx="14"/>
+<text class="sm m" text-anchor="middle" x="350" y="1268">ein Block auf einem Balken heisst zehnmal so viel</text>
+<text class="lb" x="90" y="1304">Was alle annehmen</text>
+<rect x="90" y="1316" width="420" height="40" rx="4" fill="#cfd9ea" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="150" y1="1316" x2="150" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="210" y1="1316" x2="210" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="270" y1="1316" x2="270" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="330" y1="1316" x2="330" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="390" y1="1316" x2="390" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="450" y1="1316" x2="450" y2="1356" stroke="#2a6fd6" stroke-width="2"/>
+<text class="lb" x="522" y="1344">10 000 000</text>
+<text class="lb" x="90" y="1386">Was es wirklich ist</text>
+<rect x="90" y="1398" width="180" height="40" rx="4" fill="#f6d3c4" stroke="#d8542a" stroke-width="3"/>
+<line x1="150" y1="1398" x2="150" y2="1438" stroke="#d8542a" stroke-width="2"/>
+<line x1="210" y1="1398" x2="210" y2="1438" stroke="#d8542a" stroke-width="2"/>
+<text class="lb" x="282" y="1426">1000</text>
+<text class="sm m" text-anchor="middle" x="350" y="1460">sieben Blöcke gegen drei</text>
+
+<text class="bd" x="44" y="1516">Trotzdem in Ordnung. Trotzdem erlaubt.</text>
+<text class="bd" x="44" y="1548">Nur viel knapper als die übliche Erzählung.</text>
+
+<text class="h2" x="44" y="1606">4. Atome können das schlecht</text>
+<text class="bd" x="44" y="1650">Licht trägt Chaos hervorragend weg. Ein</text>
+<text class="bd" x="44" y="1682">Atom kann immer nur ein Häppchen abgeben,</text>
+<text class="bd" x="44" y="1714">es ist also die enge Stelle im Trichter.</text>
+<text class="bd" x="44" y="1746">Seine Zahl bestimmt den Abstand.</text>
+
+<rect class="honest" x="44" y="1778" width="612" height="172" rx="14"/>
+<text class="lb green" x="72" y="1822">Das ehrliche Kleingedruckte</text>
+<text class="bd" x="72" y="1862">Das ist eine Grenze dafür, was ERLAUBT</text>
+<text class="bd" x="72" y="1894">ist, nicht dafür, was EINFACH ist. Fast</text>
+<text class="bd" x="72" y="1926">jede echte Schwierigkeit hier ist praktisch.</text>
+
+<text class="sm" x="44" y="1986">Was wir weggelassen haben: die Zahlen gelten für ein</text>
+<text class="sm" x="44" y="2012">bestimmtes Atom (Rubidium) und einen Strahl, das Chaos</text>
+<text class="sm" x="44" y="2038">wird pro Lichtteilchen gezählt, und die Regel selbst gilt</text>
+<text class="sm" x="44" y="2064">fürs ganze Universum, nicht für ein Zimmer.</text>
+</svg>

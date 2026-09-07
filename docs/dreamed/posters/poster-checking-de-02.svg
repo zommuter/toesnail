@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 1200" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster: wie du merkst, dass du falsch lagst, und warum mehrere Zustimmungen ein Grund mit vielen Hüten sein können</title>
+<desc>Links zeigen fünf einzelne Punkte je mit einem Pfeil auf eine Behauptung, das sieht nach fünf unabhängigen Gründen aus. Rechts führen dieselben fünf Punkte alle nach oben zu einer einzigen Quelle, es ist also ein Grund, fünfmal erzählt. Darunter zeigen drei Zeilen, wie Zahlen zusammenfallen: fünf zu zwei, vier zu eins, zwei zu eins. Dann ein Abzeichen mit der Aufschrift Ich lag falsch, daneben die Notiz, dass sechs Texte hier ihre eigene Idee gekippt haben und einer genau die Idee kippte, für die er geschrieben wurde.</desc>
+<rect x="0" y="0" width="700" height="1200" fill="#fdfcf9"/>
+<rect x="0" y="0" width="700" height="10" fill="#7a3d8f"/>
+<g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+
+<text x="40" y="90" font-size="46" font-weight="700" fill="#10233a">Wie du merkst,</text>
+<text x="40" y="140" font-size="46" font-weight="700" fill="#10233a">dass du falsch lagst</text>
+
+<text x="40" y="184" font-size="26" fill="#46535f">Fünf Leute, die zustimmen, sind keine fünf</text>
+<text x="40" y="216" font-size="26" fill="#46535f">Gründe, wenn alle es von einem gehört haben.</text>
+
+<rect x="36" y="250" width="300" height="250" rx="10" fill="#ffffff" stroke="#b9b5ab" stroke-width="2"/>
+<text x="186" y="286" font-size="25" font-weight="600" fill="#10233a" text-anchor="middle">sieht aus wie 5 Gründe</text>
+<circle cx="86" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="136" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="186" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="236" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="286" cy="340" r="13" fill="#7a3d8f"/>
+<line x1="86" y1="356" x2="86" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="136" y1="356" x2="136" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="186" y1="356" x2="186" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="236" y1="356" x2="236" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="286" y1="356" x2="286" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<polygon points="78,400 94,400 86,412" fill="#7a3d8f"/>
+<polygon points="128,400 144,400 136,412" fill="#7a3d8f"/>
+<polygon points="178,400 194,400 186,412" fill="#7a3d8f"/>
+<polygon points="228,400 244,400 236,412" fill="#7a3d8f"/>
+<polygon points="278,400 294,400 286,412" fill="#7a3d8f"/>
+<rect x="66" y="418" width="240" height="48" rx="8" fill="#eae4f0" stroke="#7a3d8f" stroke-width="2"/>
+<text x="186" y="450" font-size="25" fill="#10233a" text-anchor="middle">die Behauptung</text>
+
+<rect x="364" y="250" width="300" height="250" rx="10" fill="#ffffff" stroke="#b9b5ab" stroke-width="2"/>
+<text x="514" y="286" font-size="25" font-weight="600" fill="#b0521a" text-anchor="middle">echt nur 1 Grund, 5 Hüte</text>
+<rect x="444" y="298" width="140" height="42" rx="8" fill="#f6e3d5" stroke="#b0521a" stroke-width="2"/>
+<text x="514" y="326" font-size="23" fill="#10233a" text-anchor="middle">eine Quelle</text>
+<line x1="514" y1="340" x2="414" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="464" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="514" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="564" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="614" y2="372" stroke="#b0521a" stroke-width="3"/>
+<circle cx="414" cy="384" r="13" fill="#b0521a"/>
+<circle cx="464" cy="384" r="13" fill="#b0521a"/>
+<circle cx="514" cy="384" r="13" fill="#b0521a"/>
+<circle cx="564" cy="384" r="13" fill="#b0521a"/>
+<circle cx="614" cy="384" r="13" fill="#b0521a"/>
+<polygon points="406,400 422,400 414,412" fill="#b0521a"/>
+<polygon points="456,400 472,400 464,412" fill="#b0521a"/>
+<polygon points="506,400 522,400 514,412" fill="#b0521a"/>
+<polygon points="556,400 572,400 564,412" fill="#b0521a"/>
+<polygon points="606,400 622,400 614,412" fill="#b0521a"/>
+<rect x="394" y="418" width="240" height="48" rx="8" fill="#f6e3d5" stroke="#b0521a" stroke-width="2"/>
+<text x="514" y="450" font-size="25" fill="#10233a" text-anchor="middle">dieselbe Behauptung</text>
+
+<text x="40" y="550" font-size="28" font-weight="700" fill="#10233a">Hier ist das dreimal passiert.</text>
+
+<rect x="44" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="104" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="134" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="164" y="585" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="596" x2="238" y2="596" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,588 256,596 238,604" fill="#6b6a63"/>
+<rect x="272" y="585" width="22" height="22" fill="#b0521a"/>
+<rect x="302" y="585" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="639" font-size="24" fill="#46535f">fünf Gründe, eine Idee fallenzulassen, echt zwei</text>
+
+<rect x="44" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="104" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="134" y="665" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="676" x2="238" y2="676" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,668 256,676 238,684" fill="#6b6a63"/>
+<rect x="272" y="665" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="719" font-size="24" fill="#46535f">vier Texte, die zustimmen, alle zitieren einen</text>
+
+<rect x="44" y="745" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="745" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="756" x2="238" y2="756" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,748 256,756 238,764" fill="#6b6a63"/>
+<rect x="272" y="745" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="799" font-size="24" fill="#46535f">zwei schwere Fragen, zweimal dieselbe</text>
+
+<circle cx="112" cy="900" r="64" fill="#ffffff" stroke="#2f6b35" stroke-width="6"/>
+<circle cx="112" cy="900" r="52" fill="none" stroke="#2f6b35" stroke-width="2"/>
+<text x="112" y="893" font-size="24" font-weight="700" fill="#2f6b35" text-anchor="middle">ICH LAG</text>
+<text x="112" y="923" font-size="24" font-weight="700" fill="#2f6b35" text-anchor="middle">FALSCH</text>
+<polygon points="88,955 112,975 136,955 136,1000 112,984 88,1000" fill="#2f6b35"/>
+<text x="205" y="864" font-size="26" fill="#10233a">Sechs Texte hier haben ihre</text>
+<text x="205" y="896" font-size="26" fill="#10233a">eigene Idee laut gekippt.</text>
+<text x="205" y="940" font-size="26" font-weight="700" fill="#10233a">Einer kippte genau die Idee,</text>
+<text x="205" y="972" font-size="26" font-weight="700" fill="#10233a">für die er geschrieben wurde.</text>
+
+<text x="40" y="1036" font-size="30" font-weight="700" fill="#10233a">Die eigene Antwort zu prüfen ist</text>
+<text x="40" y="1074" font-size="30" font-weight="700" fill="#10233a">kein Versagen. Es ist die Arbeit.</text>
+
+<text x="40" y="1118" font-size="24" fill="#6b6a63">Was wir weggelassen haben: um welche</text>
+<text x="40" y="1146" font-size="24" fill="#6b6a63">Behauptungen es ging, und die ganze Mathematik.</text>
+<text x="40" y="1174" font-size="24" fill="#6b6a63">Die steht auf den grossen Seiten.</text>
+</g>
+</svg>

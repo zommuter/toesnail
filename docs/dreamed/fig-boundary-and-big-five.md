@@ -95,8 +95,9 @@ are **incomparable**: each defines a set the other cannot. That antichain is why
 <text x="640" y="336" font-size="12.5" text-anchor="middle" fill="#5c5c5c">dashed: no addition at all,</text>
 <text x="640" y="353" font-size="12.5" text-anchor="middle" fill="#5c5c5c">so incomparable with all of them</text>
 
-<text x="470" y="446" font-size="12.5" fill="#5c5c5c">2^(2^cn) proof-length lower bound already here (Fischer and Rabin 1974):</text>
-<text x="470" y="464" font-size="12.5" fill="#5c5c5c">decidable is a mathematical property, not an engineering one.</text>
+<text x="470" y="428" font-size="12.5" fill="#5c5c5c">2^(2^cn) proof-length lower bound already here</text>
+<text x="470" y="446" font-size="12.5" fill="#5c5c5c">(Fischer and Rabin 1974): decidable is a mathematical</text>
+<text x="470" y="464" font-size="12.5" fill="#5c5c5c">property, not an engineering one.</text>
 </g>
 </svg>
 
@@ -270,7 +271,7 @@ and the theory of the rationals is undecidable in consequence.
 <text x="568" y="196" font-size="12.5" text-anchor="middle" fill="#8a3d12">ℤ is first-order definable inside ℚ, so ℚ inherits the verdict</text>
 
 <text x="30" y="176" font-size="12.5" fill="#5c5c5c">ℝ has both operations and cannot define ℤ.</text>
-<text x="30" y="212" font-size="13" fill="#1a1a1a">The line does not run between simple and rich structures. It runs between structures that can point at their own integers and structures that cannot.</text>
+<text x="30" y="212" font-size="13" fill="#1a1a1a">The line runs not between simple and rich structures, but between those that can point at their own integers and those that cannot.</text>
 </g>
 </svg>
 
@@ -303,7 +304,7 @@ because none was verified this session.
 <g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
 
 <line x1="22" y1="418" x2="22" y2="26" stroke="#2d5c8a" stroke-width="2" marker-end="url(#arrE)"/>
-<text x="14" y="230" font-size="12.5" fill="#2d5c8a" transform="rotate(-90 14 230)" text-anchor="middle">increasing strength</text>
+<text x="0" y="0" font-size="12.5" fill="#2d5c8a" transform="translate(14 284) rotate(-90)">increasing strength</text>
 
 <rect x="40" y="16" width="806" height="74" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
 <rect x="40" y="16" width="160" height="74" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
@@ -471,7 +472,7 @@ constructive proof that transforms proofs into primitive recursive functions.
 <text x="578" y="206" font-size="12.5" fill="#5c5c5c">first-order part), Sieg 1985</text>
 <text x="578" y="224" font-size="12.5" fill="#5c5c5c">for a constructive treatment.</text>
 
-<text x="40" y="308" font-size="13.5" fill="#8a3d12" font-weight="bold">Read as architecture: you may reason in the strong layer and the weak layer is not corrupted. That is a theorem, not a hope.</text>
+<text x="40" y="308" font-size="13.5" fill="#8a3d12" font-weight="bold">Read as architecture: reasoning in the strong layer cannot corrupt the weak one. That is a theorem, not a hope.</text>
 </g>
 </svg>
 

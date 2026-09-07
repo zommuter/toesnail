@@ -33,6 +33,6 @@
 <text x="578" y="206" font-size="12.5" fill="#5c5c5c">first-order part), Sieg 1985</text>
 <text x="578" y="224" font-size="12.5" fill="#5c5c5c">for a constructive treatment.</text>
 
-<text x="40" y="308" font-size="13.5" fill="#8a3d12" font-weight="bold">Read as architecture: you may reason in the strong layer and the weak layer is not corrupted. That is a theorem, not a hope.</text>
+<text x="40" y="308" font-size="13.5" fill="#8a3d12" font-weight="bold">Read as architecture: reasoning in the strong layer cannot corrupt the weak one. That is a theorem, not a hope.</text>
 </g>
 </svg>

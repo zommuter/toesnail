@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 900 340" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 360" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>In the edot incident a staleness DAG would have caught all four downstream discrepancies and neither of the two claims that were wrong on arrival, because a checker reading only the dependency graph and the edit set is blind to correctness</title>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
   <rect x="20" y="20" width="420" height="200" fill="#e2ecdf" stroke="#3d6b45" stroke-width="2"/>
@@ -33,10 +33,11 @@
   <text x="670" y="182" font-size="16" text-anchor="middle">edit set is empty and the verdict is</text>
   <text x="670" y="204" font-size="17" font-weight="700" text-anchor="middle">"nothing stale"</text>
 
-  <rect x="20" y="238" width="860" height="86" fill="#ffffff" stroke="#2b5d8a" stroke-width="2"/>
+  <rect x="20" y="238" width="860" height="112" fill="#ffffff" stroke="#2b5d8a" stroke-width="2"/>
   <text x="36" y="262" font-size="17" font-weight="700">The edot incident, scored exactly.</text>
-  <text x="36" y="284" font-size="16">CAUGHT by the DAG: all FOUR downstream discrepancies the sign fix propagated. NOT CAUGHT: the sign error itself, and a</text>
-  <text x="36" y="304" font-size="16">2021 averaging-window error. Both were wrong from the moment they were written. What found the sign error was an</text>
-  <text x="36" y="320" font-size="16">INSTRUMENT running a SymPy check of a claim against its derivation, one claim at a time, where someone chose to instrument.</text>
+  <text x="36" y="284" font-size="16">CAUGHT by the DAG: all FOUR downstream discrepancies the sign fix propagated. NOT CAUGHT: the sign error</text>
+  <text x="36" y="304" font-size="16">itself, and a 2021 averaging-window error. Both were wrong from the moment they were written.</text>
+  <text x="36" y="324" font-size="16">What found the sign error was an INSTRUMENT running a SymPy check of a claim against its derivation,</text>
+  <text x="36" y="344" font-size="16">one claim at a time, where someone chose to instrument.</text>
 </g>
 </svg>

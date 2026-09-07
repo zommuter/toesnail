@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 588" role="img" aria-labelledby="c2t c2d">
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 606" role="img" aria-labelledby="c2t c2d">
 <style>
 .tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
 .tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .good{fill:#0ca30c;font-weight:600}
-.tsfig .crt{fill:#d03b3b;font-weight:600}
-.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .good{fill:#0ca30c;font-weight:600;font-size:13px}
+.tsfig .crt{fill:#d03b3b;font-weight:600;font-size:13px}
+.tsfig .wrn{fill:#a06a00;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
@@ -30,7 +30,7 @@
 <title id="c2t">Key bits against word size: the second operation collapses the key space from k bits to log base 2 of k</title>
 <desc id="c2d">Upper panel, key bits against word size in bits. The one-time pad line rises linearly to 16 bits at word size 16. The strict two-operation scheme rises as the logarithm, reaching only 4 bits at word size 16. Lower panel, computable constants against key bits over the subgroups of the symmetric group on four points: all four constants are computable only at zero key bits. Figures in the tables below.</desc>
 <text class="hd" x="14" y="24">Key entropy against word size, strict two-operation scheme versus the one-time pad</text>
-<text x="14" y="44">key bits kept, on a k-bit word, exhaustive over GL(k,2) for k up to 4 and the exact Frobenius count beyond</text>
+<text font-size="13" x="14" y="44">key bits kept, on a k-bit word, exhaustive over GL(k,2) for k up to 4 and the exact Frobenius count beyond</text>
 <line class="g" x1="60" y1="110" x2="700" y2="110"/>
 <line class="g" x1="60" y1="165" x2="700" y2="165"/>
 <line class="g" x1="60" y1="220" x2="700" y2="220"/>
@@ -47,12 +47,12 @@
 <circle class="s1 mk" cx="60" cy="316.3" r="5"/><circle class="s1 mk" cx="102.7" cy="302.5" r="5"/><circle class="s1 mk" cx="145.3" cy="288.8" r="5"/><circle class="s1 mk" cx="188" cy="275" r="5"/>
 <circle class="s2 mk" cx="60" cy="330" r="5"/><circle class="s2 mk" cx="102.7" cy="316.3" r="5"/><circle class="s2 mk" cx="145.3" cy="308.2" r="5"/><circle class="s2 mk" cx="188" cy="302.5" r="5"/>
 <text class="s1 lbl e" x="694" y="102">one-time pad, k key bits</text>
-<text class="s2 lbl" x="618" y="266">two operations, log2 k key bits</text>
+<text class="s2 lbl e" x="694" y="266">two operations, log2 k key bits</text>
 <text class="mu" x="200" y="352">filled markers are the exhaustively enumerated rows, k = 1 to 4</text>
 <text class="m mu" x="60" y="352">1</text><text class="m mu" x="188" y="352">4</text><text class="m mu" x="358.7" y="352">8</text><text class="m mu" x="529.3" y="352">12</text><text class="m mu" x="700" y="352">16</text>
 <text class="m mu" x="380" y="374">word size k, bits</text>
 <text class="sh" x="14" y="416">Key entropy and functional completeness are exactly incompatible, not traded off</text>
-<text x="14" y="436">computable constants against key bits, each subgroup of the symmetric group on 4 points as key space</text>
+<text font-size="13" x="14" y="436">computable constants against key bits, each subgroup of the symmetric group on 4 points as key space</text>
 <line class="g" x1="60" y1="470" x2="700" y2="470"/>
 <line class="g" x1="60" y1="495" x2="700" y2="495"/>
 <line class="ax" x1="60" y1="520" x2="700" y2="520"/>
@@ -72,5 +72,6 @@
 <text class="crt" x="330" y="516">0 of 4 from key order 4 onward</text>
 <text class="m mu" x="60" y="542">0</text><text class="m mu" x="188" y="542">1</text><text class="m mu" x="316" y="542">2</text><text class="m mu" x="444" y="542">3</text><text class="m mu" x="572" y="542">4</text><text class="m mu" x="700" y="542">5</text>
 <text class="m mu" x="380" y="564">key bits</text>
-<text class="mu" x="14" y="582">Source: fhe-toy-enumeration.md sections 1 and 2. Rows are indexed by subgroup order; where several share an order the most favourable is shown.</text>
+<text class="mu" x="14" y="576">Source: fhe-toy-enumeration.md sections 1 and 2. Rows are indexed by subgroup order;</text>
+<text class="mu" x="14" y="594">where several share an order the most favourable is shown.</text>
 </svg>

@@ -7,6 +7,8 @@ permalink: /dreamed/poster-checking
 > This file *proposes*; the owner disposes. Nothing here is toesnail theory, and nothing may be
 > promoted into `physics/` or `essays/` without the owner authoring the move himself.
 
+*A German edition of both posters is at [`poster-checking-de`](poster-checking-de).*
+
 Two posters for a twelve-year-old. Each one takes a result from this pile of AI-written
 essays and says it in plain words, with a picture you can read from the other side of a room.
 They simplify a lot. They are not meant to be wrong anywhere. The grown-up versions, with the
@@ -51,7 +53,7 @@ numbers and the caveats, are [`fig-results`](fig-results),
 <text x="630" y="632" font-size="24" fill="#6b6a63" text-anchor="end">loads of time</text>
 <text x="350" y="664" font-size="24" fill="#46535f" text-anchor="middle">how much time you have</text>
 
-<text x="40" y="714" font-size="26" font-weight="600" fill="#10233a">The race, actually run, with NO impossible ones in the pile:</text>
+<text x="40" y="714" font-size="26" font-weight="600" fill="#10233a">The race, run for real. NO impossible questions:</text>
 <text x="40" y="762" font-size="24" fill="#46535f">just works through them</text>
 <rect x="340" y="740" width="220" height="32" rx="6" fill="#17696b"/>
 <text x="550" y="763" font-size="24" font-weight="700" fill="#ffffff" text-anchor="end">20.0</text>

@@ -25,13 +25,13 @@ themselves, chart 7 draws that too.
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
 .tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .good{fill:#0ca30c;font-weight:600}
-.tsfig .crt{fill:#d03b3b;font-weight:600}
-.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .good{fill:#0ca30c;font-weight:600;font-size:13px}
+.tsfig .crt{fill:#d03b3b;font-weight:600;font-size:13px}
+.tsfig .wrn{fill:#a06a00;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
@@ -85,9 +85,9 @@ decryption key**. Blurring them is what makes the phrase sound simultaneously so
 <text x="252" y="228">an oracle</text>
 <text class="crt" x="430" y="192">VBB</text>
 <text class="crt" x="430" y="210">IMPOSSIBLE</text>
-<text x="556" y="192">no price. Barak et al. 2001.</text>
-<text x="556" y="210">Indistinguishability</text>
-<text x="556" y="228">obfuscation exists, far from practical</text>
+<text font-size="13" x="556" y="192">no price. Barak et al. 2001.</text>
+<text font-size="13" x="556" y="210">Indistinguishability obfuscation</text>
+<text font-size="13" x="556" y="228">exists, but far from practical</text>
 <rect class="card" x="14" y="248" width="732" height="72"/>
 <rect x="14" y="248" width="5" height="72" fill="#fab219"/>
 <text x="32" y="272">the client, who decrypts</text>
@@ -97,9 +97,9 @@ decryption key**. Blurring them is what makes the phrase sound simultaneously so
 <text x="252" y="290">the one people forget</text>
 <text x="252" y="308">exists</text>
 <text class="wrn" x="430" y="281">A COST</text>
-<text x="556" y="272">noise flooding, or bootstrap</text>
-<text x="556" y="290">the result through a fresh key.</text>
-<text x="556" y="308">A cost, not a barrier</text>
+<text font-size="13" x="556" y="272">noise flooding, or bootstrap</text>
+<text font-size="13" x="556" y="290">the result through a fresh key.</text>
+<text font-size="13" x="556" y="308">A cost, not a barrier</text>
 <text class="mu" x="14" y="340">Source: fhe-encrypted-algorithm.md sections 0 and 4. The first is what FHE gives almost for free.</text>
 </svg>
 
@@ -120,11 +120,11 @@ with the field operations of GF(2ᵏ) the intersection is exactly the k Frobeniu
 
 <div style="overflow-x:auto">
 
-<svg class="tsfig" viewBox="0 0 760 588" role="img" aria-labelledby="c2t c2d">
+<svg class="tsfig" viewBox="0 0 760 606" role="img" aria-labelledby="c2t c2d">
 <title id="c2t">Key bits against word size: the second operation collapses the key space from k bits to log base 2 of k</title>
 <desc id="c2d">Upper panel, key bits against word size in bits. The one-time pad line rises linearly to 16 bits at word size 16. The strict two-operation scheme rises as the logarithm, reaching only 4 bits at word size 16. Lower panel, computable constants against key bits over the subgroups of the symmetric group on four points: all four constants are computable only at zero key bits. Figures in the tables below.</desc>
 <text class="hd" x="14" y="24">Key entropy against word size, strict two-operation scheme versus the one-time pad</text>
-<text x="14" y="44">key bits kept, on a k-bit word, exhaustive over GL(k,2) for k up to 4 and the exact Frobenius count beyond</text>
+<text font-size="13" x="14" y="44">key bits kept, on a k-bit word, exhaustive over GL(k,2) for k up to 4 and the exact Frobenius count beyond</text>
 <line class="g" x1="60" y1="110" x2="700" y2="110"/>
 <line class="g" x1="60" y1="165" x2="700" y2="165"/>
 <line class="g" x1="60" y1="220" x2="700" y2="220"/>
@@ -141,12 +141,12 @@ with the field operations of GF(2ᵏ) the intersection is exactly the k Frobeniu
 <circle class="s1 mk" cx="60" cy="316.3" r="5"/><circle class="s1 mk" cx="102.7" cy="302.5" r="5"/><circle class="s1 mk" cx="145.3" cy="288.8" r="5"/><circle class="s1 mk" cx="188" cy="275" r="5"/>
 <circle class="s2 mk" cx="60" cy="330" r="5"/><circle class="s2 mk" cx="102.7" cy="316.3" r="5"/><circle class="s2 mk" cx="145.3" cy="308.2" r="5"/><circle class="s2 mk" cx="188" cy="302.5" r="5"/>
 <text class="s1 lbl e" x="694" y="102">one-time pad, k key bits</text>
-<text class="s2 lbl" x="618" y="266">two operations, log2 k key bits</text>
+<text class="s2 lbl e" x="694" y="266">two operations, log2 k key bits</text>
 <text class="mu" x="200" y="352">filled markers are the exhaustively enumerated rows, k = 1 to 4</text>
 <text class="m mu" x="60" y="352">1</text><text class="m mu" x="188" y="352">4</text><text class="m mu" x="358.7" y="352">8</text><text class="m mu" x="529.3" y="352">12</text><text class="m mu" x="700" y="352">16</text>
 <text class="m mu" x="380" y="374">word size k, bits</text>
 <text class="sh" x="14" y="416">Key entropy and functional completeness are exactly incompatible, not traded off</text>
-<text x="14" y="436">computable constants against key bits, each subgroup of the symmetric group on 4 points as key space</text>
+<text font-size="13" x="14" y="436">computable constants against key bits, each subgroup of the symmetric group on 4 points as key space</text>
 <line class="g" x1="60" y1="470" x2="700" y2="470"/>
 <line class="g" x1="60" y1="495" x2="700" y2="495"/>
 <line class="ax" x1="60" y1="520" x2="700" y2="520"/>
@@ -166,7 +166,8 @@ with the field operations of GF(2ᵏ) the intersection is exactly the k Frobeniu
 <text class="crt" x="330" y="516">0 of 4 from key order 4 onward</text>
 <text class="m mu" x="60" y="542">0</text><text class="m mu" x="188" y="542">1</text><text class="m mu" x="316" y="542">2</text><text class="m mu" x="444" y="542">3</text><text class="m mu" x="572" y="542">4</text><text class="m mu" x="700" y="542">5</text>
 <text class="m mu" x="380" y="564">key bits</text>
-<text class="mu" x="14" y="582">Source: fhe-toy-enumeration.md sections 1 and 2. Rows are indexed by subgroup order; where several share an order the most favourable is shown.</text>
+<text class="mu" x="14" y="576">Source: fhe-toy-enumeration.md sections 1 and 2. Rows are indexed by subgroup order;</text>
+<text class="mu" x="14" y="594">where several share an order the most favourable is shown.</text>
 </svg>
 
 </div>
@@ -209,7 +210,7 @@ because the field's headline numbers come from opposite sides of it and are quot
 
 <div style="overflow-x:auto">
 
-<svg class="tsfig" viewBox="0 0 760 432" role="img" aria-labelledby="c3t c3d">
+<svg class="tsfig" viewBox="0 0 760 448" role="img" aria-labelledby="c3t c3d">
 <title id="c3t">Measured latency of encrypted transformer inference, and the missing end-to-end pure-FHE generative datapoint</title>
 <desc id="c3d">A dot plot on a logarithmic seconds axis. One BERT-base forward pass under non-interactive FHE takes 37.3 seconds on GPU. Per-token generative figures are 11 seconds for a hybrid GPT-2 on GPU, 300 seconds for the same hybrid on CPU, about 300 seconds for LLaMA-7B under three-party MPC and about 480 seconds under two-party MPC. The last lane is empty: no end-to-end pure-FHE generative datapoint is published at any scale. Figures in the table below.</desc>
 <text class="hd" x="14" y="24">What has actually been measured, and the one lane with nothing in it</text>
@@ -246,8 +247,9 @@ because the field's headline numbers come from opposite sides of it and are quot
 <text x="14" y="365">the thing the seed actually asked for</text>
 <rect class="dash" x="320" y="330" width="410" height="42"/>
 <text class="m crt" x="525" y="356">NO PUBLISHED DATAPOINT AT ALL</text>
-<text class="mu" x="14" y="400">Source: fhe-llm.md section 4. The lane is drawn empty because the record is empty, not because the value is small.</text>
-<text class="mu" x="14" y="420">The gap is autoregression, not encryption: a BERT pass packs its sequence into SIMD slots; generation is n sequential passes, nothing amortises.</text>
+<text class="mu" x="14" y="398">Source: fhe-llm.md section 4. The lane is drawn empty because the record is empty, not because the value is small.</text>
+<text class="mu" x="14" y="416">The gap is autoregression, not encryption: a BERT pass packs its sequence into SIMD slots;</text>
+<text class="mu" x="14" y="434">generation is n sequential passes, nothing amortises.</text>
 </svg>
 
 </div>
@@ -300,8 +302,8 @@ by the same constant.
 <rect class="s1" x="220" y="150" width="478" height="30" rx="4"/>
 <text class="lbl e" x="688" y="171" fill="#fcfcfb">4.982 bits</text>
 <text class="m mu" x="460" y="220">bits of identity evidence per observation</text>
-<text class="crt" x="220" y="244">a factor of about 150, and it is an upper bound on plain sampling: a seed-synchronised token</text>
-<text class="crt" x="220" y="262">is strictly more informative than an ordinary one</text>
+<text class="crt" x="220" y="244">a factor of about 150, and it is an upper bound on plain sampling:</text>
+<text class="crt" x="220" y="262">a seed-synchronised token is strictly more informative than an ordinary one</text>
 <text class="sh" x="14" y="300">Observations needed to detect a 4-bit quantization swap at AUC above 0.999</text>
 <rect class="card" x="14" y="314" width="356" height="72"/>
 <text class="mu" x="30" y="338">TOKEN-DiFR, GENERATED TEXT</text>
@@ -396,7 +398,7 @@ material distinguishable.
 
 <div style="overflow-x:auto">
 
-<svg class="tsfig" viewBox="0 0 760 576" role="img" aria-labelledby="c6t c6d">
+<svg class="tsfig" viewBox="0 0 760 596" role="img" aria-labelledby="c6t c6d">
 <title id="c6t">Drift compounds over a completion, and integer arithmetic removes it while also fitting exact FHE schemes</title>
 <desc id="c6d">Upper panel, the probability that a completion is reproduced exactly, against completion length in tokens, for three per-token divergence rates. At one in a thousand a 4096-token answer reproduces 1.7 per cent of the time. Lower panel, one architectural choice serving both halves of trustlessness: an integer-only quantised transformer is bit-exactly reproducible and natively evaluable under the exact FHE schemes.</desc>
 <text class="hd" x="14" y="24">Autoregressive decoding is predictive coding, so drift compounds</text>
@@ -440,11 +442,12 @@ material distinguishable.
 <rect class="card" x="304" y="444" width="442" height="40"/>
 <rect x="304" y="444" width="5" height="40" fill="#1baf7a"/>
 <text class="lbl" x="322" y="462">CONFIDENTIALITY: natively evaluable by the exact schemes</text>
-<text x="322" y="478">BFV and BGV, rather than the approximate CKKS everyone uses</text>
-<text class="wrn" x="14" y="510">Honest limit, retracted by the essay itself: i-Softmax uses bit-shifts and i-LayerNorm an iterative integer square root.</text>
+<text font-size="13" x="322" y="478">BFV and BGV, rather than the approximate CKKS everyone uses</text>
+<text class="wrn" x="14" y="510">Honest limit, retracted by the essay itself: i-Softmax uses bit-shifts, i-LayerNorm an iterative integer square root.</text>
 <text class="wrn" x="14" y="528">Those are not polynomials over the plaintext ring, so the third leg of the convergence does not hold.</text>
-<text class="mu" x="14" y="554">Source: trustless-distributed-ai.md sections 3, 5 and 6. The MP3-versus-bit-exact-codec framing is the OWNER'S, not the essay's.</text>
-<text class="mu" x="14" y="570">Codecs mandated bit-exact integer transforms from H.264 onward for exactly this reason; Opus ships a bit-exact fixed-point decoder.</text>
+<text class="mu" x="14" y="552">Source: trustless-distributed-ai.md sections 3, 5 and 6. The MP3-versus-bit-exact-codec framing is</text>
+<text class="mu" x="14" y="568">the OWNER'S, not the essay's. Codecs mandated bit-exact integer transforms from H.264 onward for</text>
+<text class="mu" x="14" y="584">exactly this reason; Opus ships a bit-exact fixed-point decoder.</text>
 </svg>
 
 </div>
@@ -501,16 +504,17 @@ against its source rather than against a summary.
 <defs><marker id="a7" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#898781"/></marker></defs>
 <text class="crt" x="256" y="88">RETRACTED: gap-gated verification is novel</text>
 <text x="256" y="106">DiFR, November 2025, got there first, with a clipped logit-gap</text>
-<text x="256" y="122">statistic and seed synchronisation. Target: trustless-distributed-ai section 4</text>
+<text font-size="13" x="256" y="122">statistic and seed synchronisation. Target: trustless-distributed-ai section 4</text>
 <text class="crt" x="256" y="152">REVERSED: FHE gives confidentiality and zero integrity</text>
 <text x="256" y="170">a provider that cannot read the prompt cannot recognise an audit,</text>
-<text x="256" y="186">so encryption makes the audit unevadable. Targets: fhe-llm section 0</text>
+<text font-size="13" x="256" y="186">so encryption makes the audit unevadable. Targets: fhe-llm section 0</text>
 <text x="256" y="202">and trustless-distributed-ai sections 0 and 1</text>
 <text class="crt" x="256" y="232">RETRACTED: zkML is four orders of magnitude away</text>
-<text x="256" y="250">the figure came from opML, February 2024, predating zkLLM and zkGPT.</text>
-<text x="256" y="266">Targets: model-attestation section 7, trustless-distributed-ai section 7</text>
+<text font-size="13" x="256" y="250">the figure came from opML, February 2024, predating zkLLM and zkGPT.</text>
+<text font-size="13" x="256" y="266">Targets: model-attestation section 7, trustless-distributed-ai section 7</text>
 <text class="crt" x="256" y="290">RETRACTED: zkML is the only mechanism with no trust assumption</text>
-<text x="256" y="308">right about the computation, wrong about the model. Target: trustless-distributed-ai section 7</text>
+<text font-size="13" x="256" y="308">right about the computation, wrong about the model.</text>
+<text font-size="13" x="256" y="324">Target: trustless-distributed-ai section 7</text>
 </svg>
 
 </div>

@@ -4,8 +4,8 @@
 <rect x="0" y="0" width="700" height="1600" fill="#f7f7f4"/>
 <g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
 
-  <text x="350" y="66" font-size="54" font-weight="700">THE TRUTH BALL</text>
-  <text x="350" y="106" font-size="26" fill="#5b6270">a picture of what we KNOW, not what we believe</text>
+  <text x="350" y="66" font-size="54" font-weight="700" text-anchor="middle">THE TRUTH BALL</text>
+  <text x="350" y="106" font-size="26" fill="#5b6270" text-anchor="middle">a picture of what we KNOW, not what we believe</text>
 
   <circle cx="350" cy="470" r="155" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
   <circle cx="350" cy="470" r="103" fill="none" stroke="#9fb3c4" stroke-width="2" stroke-dasharray="6 7"/>
@@ -14,10 +14,10 @@
 
   <circle cx="350" cy="315" r="13" fill="#1f2430"/>
   <circle cx="350" cy="625" r="13" fill="#1f2430"/>
-  <text x="350" y="196" font-size="34" font-weight="700">TOP: PROVED TRUE</text>
-  <text x="350" y="232" font-size="24" fill="#5b6270">we know it is true</text>
-  <text x="350" y="700" font-size="34" font-weight="700">BOTTOM: PROVED FALSE</text>
-  <text x="350" y="736" font-size="24" fill="#5b6270">we know it is false</text>
+  <text x="350" y="196" font-size="34" font-weight="700" text-anchor="middle">TOP: PROVED TRUE</text>
+  <text x="350" y="232" font-size="24" fill="#5b6270" text-anchor="middle">we know it is true</text>
+  <text x="350" y="700" font-size="34" font-weight="700" text-anchor="middle">BOTTOM: PROVED FALSE</text>
+  <text x="350" y="736" font-size="24" fill="#5b6270" text-anchor="middle">we know it is false</text>
 
   <line x1="188" y1="470" x2="338" y2="470" stroke="#1f2430" stroke-width="3"/>
   <circle cx="350" cy="470" r="11" fill="#b04a25"/>
@@ -31,45 +31,45 @@
   <text x="524" y="472" font-size="24" text-anchor="start">you know all</text>
   <text x="524" y="501" font-size="24" text-anchor="start">there is</text>
 
-  <text x="350" y="792" font-size="30" font-weight="700">How far OUT = how much you KNOW.</text>
-  <text x="350" y="826" font-size="24" fill="#5b6270">Not how sure you feel. What has actually been settled.</text>
+  <text x="350" y="792" font-size="30" font-weight="700" text-anchor="middle">How far OUT = how much you KNOW.</text>
+  <text x="350" y="826" font-size="24" fill="#5b6270" text-anchor="middle">Not how sure you feel. What has actually been settled.</text>
 
-  <text x="350" y="890" font-size="34" font-weight="700">So there are TWO kinds of not knowing</text>
+  <text x="350" y="890" font-size="34" font-weight="700" text-anchor="middle">So there are TWO kinds of not knowing</text>
 
   <rect x="25" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
   <circle cx="185" cy="972" r="40" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
   <circle cx="185" cy="972" r="10" fill="#b04a25"/>
-  <text x="185" y="1040" font-size="26" font-weight="700">NOBODY HAS</text>
-  <text x="185" y="1070" font-size="26" font-weight="700">SOLVED IT YET</text>
-  <text x="185" y="1112" font-size="26" font-weight="700" fill="#2f6d4a">KEEP TRYING</text>
+  <text x="185" y="1040" font-size="26" font-weight="700" text-anchor="middle">NOBODY HAS</text>
+  <text x="185" y="1070" font-size="26" font-weight="700" text-anchor="middle">SOLVED IT YET</text>
+  <text x="185" y="1112" font-size="26" font-weight="700" fill="#2f6d4a" text-anchor="middle">KEEP TRYING</text>
 
   <rect x="355" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#b04a25" stroke-width="3" stroke-dasharray="10 6"/>
   <circle cx="515" cy="972" r="40" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
   <circle cx="555" cy="972" r="10" fill="#b04a25"/>
-  <text x="515" y="1040" font-size="26" font-weight="700">WE PROVED</text>
-  <text x="515" y="1070" font-size="26" font-weight="700">NOBODY EVER CAN</text>
-  <text x="515" y="1112" font-size="26" font-weight="700" fill="#b04a25">STOP TRYING</text>
+  <text x="515" y="1040" font-size="26" font-weight="700" text-anchor="middle">WE PROVED</text>
+  <text x="515" y="1070" font-size="26" font-weight="700" text-anchor="middle">NOBODY EVER CAN</text>
+  <text x="515" y="1112" font-size="26" font-weight="700" fill="#b04a25" text-anchor="middle">STOP TRYING</text>
 
-  <text x="350" y="1180" font-size="24" fill="#5b6270">They feel the same. They are completely different.</text>
+  <text x="350" y="1180" font-size="24" fill="#5b6270" text-anchor="middle">They feel the same. They are completely different.</text>
 
-  <text x="350" y="1240" font-size="32" font-weight="700">And spinning it sideways</text>
-  <text x="350" y="1278" font-size="32" font-weight="700">turned out to mean NOTHING,</text>
+  <text x="350" y="1240" font-size="32" font-weight="700" text-anchor="middle">And spinning it sideways</text>
+  <text x="350" y="1278" font-size="32" font-weight="700" text-anchor="middle">turned out to mean NOTHING,</text>
 
   <circle cx="140" cy="1375" r="72" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
   <ellipse cx="140" cy="1375" rx="72" ry="19" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
-  <text x="140" y="1478" font-size="22" fill="#5b6270">the ball</text>
+  <text x="140" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">the ball</text>
 
   <line x1="238" y1="1375" x2="322" y2="1375" stroke="#1f2430" stroke-width="9"/>
   <polygon points="340,1375 318,1362 318,1388" fill="#1f2430"/>
-  <text x="286" y="1338" font-size="24" font-weight="700">squash</text>
+  <text x="286" y="1338" font-size="24" font-weight="700" text-anchor="middle">squash</text>
 
   <polygon points="500,1448 408,1300 592,1300" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
   <line x1="500" y1="1300" x2="500" y2="1448" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
-  <text x="500" y="1478" font-size="22" fill="#5b6270">the same thing, flat</text>
+  <text x="500" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">the same thing, flat</text>
 
   <rect x="25" y="1495" width="650" height="95" rx="10" fill="#efeee9" stroke="#9a958a" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="45" y="1526" font-size="22" text-anchor="start" fill="#4a4640">What we skipped: this ball is borrowed from quantum physics,</text>
-  <text x="45" y="1554" font-size="22" text-anchor="start" fill="#4a4640">grown-ups draw it with numbers instead of words, and the flat</text>
-  <text x="45" y="1582" font-size="22" text-anchor="start" fill="#4a4640">triangle still muddles two of the middle cases into one dot.</text>
+  <text x="45" y="1526" font-size="22" text-anchor="start" fill="#4a4640">What we skipped: this ball comes from quantum physics,</text>
+  <text x="45" y="1554" font-size="22" text-anchor="start" fill="#4a4640">grown-ups draw it with numbers, not words, and the flat</text>
+  <text x="45" y="1582" font-size="22" text-anchor="start" fill="#4a4640">triangle still muddles two middle cases into one dot.</text>
 </g>
 </svg>

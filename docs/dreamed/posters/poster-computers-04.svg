@@ -24,7 +24,7 @@
 <title id="p2st">What poster two skipped</title>
 <desc id="p2sd">The box is clever arithmetic rather than a physical box, there are several kinds of box and some are much faster than others, and how slow it is depends enormously on which sum you ask for.</desc>
 <line class="rule" x1="30" y1="14" x2="670" y2="14"/>
-<text class="sm" x="30" y="48">What we skipped: the box is really clever arithmetic, not a box you</text>
-<text class="sm" x="30" y="78">could hold. There are several kinds, some much faster than others,</text>
-<text class="sm" x="30" y="108">and how slow it is depends hugely on which sum you ask for.</text>
+<text class="sm" x="30" y="48">What we skipped: the box is clever arithmetic, not a box</text>
+<text class="sm" x="30" y="78">you could hold. There are several kinds, some much faster</text>
+<text class="sm" x="30" y="108">than others, and it depends hugely on which sum you ask.</text>
 </svg>

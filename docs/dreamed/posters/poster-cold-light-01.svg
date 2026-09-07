@@ -74,7 +74,7 @@
 <path class="hot" d="M 422,896 L 448,882 L 448,910 Z"/>
 <path class="hot" d="M 492,896 L 518,882 L 518,910 Z"/>
 <path class="hot" d="M 562,896 L 588,882 L 588,910 Z"/>
-<text class="sm m" x="486" y="946">the laser beam, aimed this way</text>
+<text class="sm m" text-anchor="middle" x="486" y="946">the laser beam, aimed this way</text>
 <line class="kr" x1="206" y1="960" x2="126" y2="960"/>
 <path class="hot" d="M 126,948 L 98,960 L 126,972 Z"/>
 <text class="sm" x="220" y="968">one tiny shove backwards</text>
@@ -90,9 +90,9 @@
 <path class="grey" d="M 422,1102 L 448,1088 L 448,1116 Z"/>
 <path class="grey" d="M 492,1102 L 518,1088 L 518,1116 Z"/>
 <path class="grey" d="M 562,1102 L 588,1088 L 588,1116 Z"/>
-<text class="sm m" x="486" y="1152">wrong colour, so it sails past</text>
+<text class="sm m" text-anchor="middle" x="486" y="1152">wrong colour, so it sails past</text>
 
-<text class="bg" x="44" y="1224">Thousands of tiny shoves later, it has nearly stopped.</text>
+<text class="bg" x="44" y="1224">Thousands of shoves later: nearly stopped.</text>
 
 <text class="h2" x="44" y="1286">3. You already know this trick</text>
 <text class="bd" x="44" y="1330">A siren sounds higher as the ambulance</text>

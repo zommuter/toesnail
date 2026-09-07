@@ -16,6 +16,6 @@
   <line x1="525" y1="340" x2="525" y2="130" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
   <text x="392" y="240" font-size="28" font-weight="700" fill="#2b5d8a">r</text>
   <text x="525" y="378" font-size="28" font-weight="700">z</text>
-  <text x="350" y="412" font-size="24" fill="#6b7280">the same information, minus the angle</text>
+  <text x="350" y="412" font-size="24" text-anchor="middle" fill="#6b7280">the same information, minus the angle</text>
 </g>
 </svg>

@@ -28,6 +28,6 @@
 <text x="568" y="196" font-size="12.5" text-anchor="middle" fill="#8a3d12">ℤ is first-order definable inside ℚ, so ℚ inherits the verdict</text>
 
 <text x="30" y="176" font-size="12.5" fill="#5c5c5c">ℝ has both operations and cannot define ℤ.</text>
-<text x="30" y="212" font-size="13" fill="#1a1a1a">The line does not run between simple and rich structures. It runs between structures that can point at their own integers and structures that cannot.</text>
+<text x="30" y="212" font-size="13" fill="#1a1a1a">The line runs not between simple and rich structures, but between those that can point at their own integers and those that cannot.</text>
 </g>
 </svg>

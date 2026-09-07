@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 900 280" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 300" role="img" xmlns="http://www.w3.org/2000/svg">
 <title>The simplicity prior predicts that the boring history is the likely one, while narrativium's slogan says the million-to-one chance comes off; the two are opposed, and the coincidence costs 19 to 20 bits</title>
 <g font-family="system-ui, sans-serif" fill="#1f2430">
   <rect x="20" y="20" width="410" height="112" fill="#f2e8dc" stroke="#8a5d2b" stroke-width="2"/>
@@ -18,10 +18,11 @@
 
   <rect x="20" y="152" width="860" height="52" fill="#ffffff" stroke="#b04a25" stroke-width="2"/>
   <text x="36" y="176" font-size="17" font-weight="700">Opposed, not merely different. And the price is exact, with no logarithm needed:</text>
-  <text x="36" y="196" font-size="16">2 to the 19 is under a million, 2 to the 20 is over it, so the coincidence costs between NINETEEN and TWENTY bits to record.</text>
+  <text x="36" y="196" font-size="16">2 to the 19 is under a million, 2 to the 20 is over it: the coincidence costs NINETEEN to TWENTY bits to record.</text>
 
-  <rect x="20" y="220" width="860" height="52" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
+  <rect x="20" y="220" width="860" height="72" fill="#faf3e6" stroke="#8a6a2b" stroke-width="2"/>
   <text x="36" y="243" font-size="17" font-weight="700">What survives is a theorem about bounded DESCRIBERS, which is Pratchett's own reading.</text>
-  <text x="36" y="264" font-size="16">"Humans ADD narrativium to their world" is already a claim about humans. A short account exists for an exponentially small fraction of histories.</text>
+  <text x="36" y="264" font-size="16">"Humans ADD narrativium to their world" is already a claim about humans.</text>
+  <text x="36" y="284" font-size="16">A short account exists for an exponentially small fraction of histories.</text>
 </g>
 </svg>

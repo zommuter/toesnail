@@ -1,0 +1,187 @@
+---
+title: "Zwei Poster: die Wahrheitskugel und Fragen ohne Antwort"
+permalink: /dreamed/poster-truth-ball-de
+---
+
+> **GETRÄUMT. UNGEPRÜFT. NICHT VOM EIGENTÜMER GESCHRIEBEN.** Siehe [`docs/dreamed/README.md`](./README.md).
+> Diese Datei *schlägt vor*; entschieden wird anderswo. Nichts hier ist toesnail-Theorie, und nichts
+> darf nach `physics/` oder `essays/` wandern, ohne dass der Eigentümer den Schritt selbst schreibt.
+
+*Englische Fassung: [`poster-truth-ball`](./poster-truth-ball.md).*
+
+# Zwei Poster
+
+Zwei Poster für Zwölfjährige. Jedes hat ein grosses Bild, ein paar kurze Zeilen und einen Gedanken,
+den du quer durch den Raum in etwa fünfzehn Sekunden mitbekommen sollst. Dieselben Sachen für
+Erwachsene, mit der echten Mathematik und den Quellen, stehen nebenan in den `fig-`-Seiten, angefangen
+bei [`fig-the-object`](./fig-the-object.md).
+
+---
+
+<div style="overflow-x:auto">
+<svg viewBox="0 0 700 1650" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster eins, die Wahrheitskugel: oben heisst bewiesen wahr, unten heisst bewiesen falsch, wie weit aussen du bist heisst wie viel du weisst, also gibt es zwei ganz verschiedene Arten von Nichtwissen, und die Kugel wird flach zu einem Dreieck</title>
+<rect x="0" y="0" width="700" height="1650" fill="#f7f7f4"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+
+  <text x="350" y="66" font-size="52" font-weight="700" text-anchor="middle">DIE WAHRHEITSKUGEL</text>
+  <text x="350" y="106" font-size="26" fill="#5b6270" text-anchor="middle">ein Bild vom WISSEN, nicht vom Glauben</text>
+
+  <circle cx="350" cy="470" r="155" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <circle cx="350" cy="470" r="103" fill="none" stroke="#9fb3c4" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle cx="350" cy="470" r="52" fill="none" stroke="#9fb3c4" stroke-width="2" stroke-dasharray="6 7"/>
+  <ellipse cx="350" cy="470" rx="155" ry="40" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <circle cx="350" cy="315" r="13" fill="#1f2430"/>
+  <circle cx="350" cy="625" r="13" fill="#1f2430"/>
+  <text x="350" y="196" font-size="34" font-weight="700" text-anchor="middle">OBEN: BEWIESEN WAHR</text>
+  <text x="350" y="232" font-size="24" fill="#5b6270" text-anchor="middle">wir wissen, es stimmt</text>
+  <text x="350" y="700" font-size="34" font-weight="700" text-anchor="middle">UNTEN: BEWIESEN FALSCH</text>
+  <text x="350" y="736" font-size="24" fill="#5b6270" text-anchor="middle">wir wissen, es stimmt nicht</text>
+
+  <line x1="188" y1="470" x2="338" y2="470" stroke="#1f2430" stroke-width="3"/>
+  <circle cx="350" cy="470" r="11" fill="#b04a25"/>
+  <text x="180" y="442" font-size="26" font-weight="700" text-anchor="end">MITTE:</text>
+  <text x="180" y="472" font-size="24" text-anchor="end">du weisst</text>
+  <text x="180" y="501" font-size="24" text-anchor="end">gar nichts</text>
+
+  <line x1="350" y1="470" x2="495" y2="470" stroke="#b04a25" stroke-width="6"/>
+  <polygon points="514,470 492,458 492,482" fill="#b04a25"/>
+  <text x="524" y="442" font-size="26" font-weight="700" text-anchor="start">RAND:</text>
+  <text x="524" y="472" font-size="24" text-anchor="start">du weisst</text>
+  <text x="524" y="501" font-size="24" text-anchor="start">schon alles</text>
+
+  <text x="350" y="792" font-size="30" font-weight="700" text-anchor="middle">Wie weit AUSSEN = wie viel du WEISST.</text>
+  <text x="350" y="826" font-size="24" fill="#5b6270" text-anchor="middle">Nicht wie sicher du dich fühlst, sondern was geklärt ist.</text>
+
+  <text x="350" y="890" font-size="34" font-weight="700" text-anchor="middle">Es gibt ZWEI Arten von Nichtwissen</text>
+
+  <rect x="25" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <circle cx="185" cy="972" r="40" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <circle cx="185" cy="972" r="10" fill="#b04a25"/>
+  <text x="185" y="1040" font-size="26" font-weight="700" text-anchor="middle">NIEMAND HAT ES</text>
+  <text x="185" y="1070" font-size="26" font-weight="700" text-anchor="middle">BISHER GELÖST</text>
+  <text x="185" y="1112" font-size="26" font-weight="700" fill="#2f6d4a" text-anchor="middle">SUCH WEITER</text>
+
+  <rect x="355" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#b04a25" stroke-width="3" stroke-dasharray="10 6"/>
+  <circle cx="515" cy="972" r="40" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
+  <circle cx="555" cy="972" r="10" fill="#b04a25"/>
+  <text x="515" y="1040" font-size="26" font-weight="700" text-anchor="middle">WIR HABEN BEWIESEN:</text>
+  <text x="515" y="1070" font-size="26" font-weight="700" text-anchor="middle">NIEMAND SCHAFFT ES</text>
+  <text x="515" y="1112" font-size="26" font-weight="700" fill="#b04a25" text-anchor="middle">HÖR AUF ZU SUCHEN</text>
+
+  <text x="350" y="1180" font-size="24" fill="#5b6270" text-anchor="middle">Es fühlt sich gleich an. Es ist völlig verschieden.</text>
+
+  <text x="350" y="1240" font-size="32" font-weight="700" text-anchor="middle">Und die Kugel zu drehen</text>
+  <text x="350" y="1278" font-size="32" font-weight="700" text-anchor="middle">bedeutet am Ende NICHTS,</text>
+
+  <circle cx="140" cy="1375" r="72" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <ellipse cx="140" cy="1375" rx="72" ry="19" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="140" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">die Kugel</text>
+
+  <line x1="238" y1="1375" x2="322" y2="1375" stroke="#1f2430" stroke-width="9"/>
+  <polygon points="340,1375 318,1362 318,1388" fill="#1f2430"/>
+  <text x="290" y="1338" font-size="21" font-weight="700" text-anchor="middle">platt drücken</text>
+
+  <polygon points="500,1448 408,1300 592,1300" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="500" y1="1300" x2="500" y2="1448" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="500" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">dasselbe, nur flach</text>
+
+  <rect x="25" y="1495" width="650" height="125" rx="10" fill="#efeee9" stroke="#9a958a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="45" y="1526" font-size="22" text-anchor="start" fill="#4a4640">Was wir weggelassen haben: Die Kugel kommt aus der</text>
+  <text x="45" y="1554" font-size="22" text-anchor="start" fill="#4a4640">Quantenphysik, Erwachsene malen sie mit Zahlen statt mit</text>
+  <text x="45" y="1582" font-size="22" text-anchor="start" fill="#4a4640">Wörtern, und das flache Dreieck wirft immer noch zwei</text>
+  <text x="45" y="1610" font-size="22" text-anchor="start" fill="#4a4640">mittlere Fälle in einen einzigen Punkt zusammen.</text>
+</g>
+</svg>
+</div>
+
+Das zweite Poster nimmt sich die Ecke des ersten vor, über die alle stolpern: den äusseren Rand,
+wo *bewiesen* ist, dass die Frage nie geklärt wird. Das ist keine Geschichte, das ist ein Satz aus
+der Mathematik, und er hat einen Namen.
+
+---
+
+<div style="overflow-x:auto">
+<svg viewBox="0 0 700 1780" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster zwei: manche Fragen haben keine Antwort, und das ist bewiesen. Gödels Satz sagt, dieser Satz ist unbeweisbar, was etwas anderes ist als der Schulhofsatz dieser Satz ist gelogen. Mehr Regeln helfen nicht, und der Satz sagt nicht, dass die Mathematik kaputt ist.</title>
+<rect x="0" y="0" width="700" height="1780" fill="#f7f7f4"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+
+  <text x="350" y="62" font-size="50" font-weight="700" text-anchor="middle">MANCHE FRAGEN</text>
+  <text x="350" y="114" font-size="50" font-weight="700" text-anchor="middle">HABEN KEINE ANTWORT.</text>
+  <text x="350" y="156" font-size="26" font-weight="700" fill="#b04a25" text-anchor="middle">Das ist keine Vermutung. Jemand hat es BEWIESEN.</text>
+
+  <text x="350" y="216" font-size="32" font-weight="700" text-anchor="middle">Ein Satz kann über sich selbst reden.</text>
+
+  <rect x="30" y="245" width="310" height="195" rx="14" fill="#ececec" stroke="#6b7280" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="185" y="285" font-size="22" font-weight="700" fill="#6b7280" text-anchor="middle">DER SCHULHOF-SATZ</text>
+  <text x="185" y="332" font-size="28" font-weight="700" text-anchor="middle">Dieser Satz</text>
+  <text x="185" y="366" font-size="28" font-weight="700" text-anchor="middle">ist GELOGEN.</text>
+  <text x="185" y="412" font-size="22" fill="#6b7280" text-anchor="middle">dreht sich ewig im Kreis</text>
+
+  <rect x="360" y="245" width="310" height="195" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="515" y="285" font-size="22" font-weight="700" fill="#2b5d8a" text-anchor="middle">GÖDELS ECHTER SATZ</text>
+  <text x="515" y="332" font-size="28" font-weight="700" text-anchor="middle">Dieser Satz</text>
+  <text x="515" y="366" font-size="28" font-weight="700" text-anchor="middle">ist UNBEWEISBAR.</text>
+  <text x="515" y="412" font-size="22" fill="#2b5d8a" text-anchor="middle">dieser funktioniert</text>
+
+  <text x="350" y="486" font-size="26" text-anchor="middle">Könntest du ihn beweisen, hättest du etwas</text>
+  <text x="350" y="518" font-size="26" text-anchor="middle">FALSCHES bewiesen. Das darf ein Regelwerk nicht.</text>
+  <text x="350" y="562" font-size="26" font-weight="700" text-anchor="middle">Also ist er WAHR, und keiner kann ihn je beweisen.</text>
+
+  <text x="350" y="630" font-size="30" font-weight="700" text-anchor="middle">In JEDEM Regelwerk, das für normales</text>
+  <text x="350" y="666" font-size="30" font-weight="700" text-anchor="middle">Rechnen reicht, plus und mal, gilt:</text>
+
+  <rect x="40" y="692" width="620" height="175" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="350" y="748" font-size="34" font-weight="700" text-anchor="middle">es gibt WAHRE Sätze,</text>
+  <text x="350" y="790" font-size="34" font-weight="700" text-anchor="middle">die es nie beweisen kann.</text>
+  <text x="350" y="836" font-size="22" fill="#5b6270" text-anchor="middle">Nicht "noch nicht schlau genug". Bewiesen unmöglich.</text>
+
+  <text x="350" y="920" font-size="32" font-weight="700" text-anchor="middle">Kann man nicht eine Regel dazunehmen?</text>
+  <text x="350" y="958" font-size="30" font-weight="700" fill="#b04a25" text-anchor="middle">Nein. Der Trick geht einfach wieder los.</text>
+
+  <rect x="80" y="985" width="360" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1026" font-size="24" text-anchor="start">das Regelwerk</text>
+  <circle cx="410" cy="1017" r="13" fill="#b04a25"/>
+
+  <rect x="80" y="1059" width="440" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1100" font-size="24" text-anchor="start">das Regelwerk, eine Regel mehr</text>
+  <circle cx="490" cy="1091" r="13" fill="#b04a25"/>
+
+  <rect x="80" y="1133" width="520" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1174" font-size="24" text-anchor="start">das Regelwerk, hundert Regeln mehr</text>
+  <circle cx="570" cy="1165" r="13" fill="#b04a25"/>
+
+  <text x="350" y="1234" font-size="24" fill="#b04a25" text-anchor="middle">jeder rote Punkt: ein wahrer Satz, den es nie beweist</text>
+
+  <text x="350" y="1300" font-size="32" font-weight="700" text-anchor="middle">Was es NICHT heisst</text>
+
+  <rect x="25" y="1325" width="320" height="215" rx="14" fill="#f6e2d8" stroke="#b04a25" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="185" y="1367" font-size="26" font-weight="700" fill="#b04a25" text-anchor="middle">FALSCH</text>
+  <text x="185" y="1408" font-size="24" text-anchor="middle">"Mathe ist kaputt"</text>
+  <text x="185" y="1440" font-size="24" text-anchor="middle">"man weiss gar nichts"</text>
+  <line x1="167" y1="1478" x2="203" y2="1514" stroke="#b04a25" stroke-width="7"/>
+  <line x1="203" y1="1478" x2="167" y2="1514" stroke="#b04a25" stroke-width="7"/>
+
+  <rect x="355" y="1325" width="320" height="215" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="515" y="1367" font-size="26" font-weight="700" fill="#2b5d8a" text-anchor="middle">RICHTIG</text>
+  <text x="515" y="1408" font-size="24" text-anchor="middle">fast alles</text>
+  <text x="515" y="1440" font-size="24" text-anchor="middle">gilt weiter</text>
+  <polyline points="494,1497 508,1513 538,1477" fill="none" stroke="#2b5d8a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="350" y="1586" font-size="24" text-anchor="middle">Es schliesst EINES aus: ein Regelwerk, das alles klärt.</text>
+  <text x="350" y="1618" font-size="24" text-anchor="middle">Alles aus dem Matheunterricht funktioniert weiter.</text>
+
+  <rect x="25" y="1640" width="650" height="125" rx="10" fill="#efeee9" stroke="#9a958a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="45" y="1671" font-size="22" text-anchor="start" fill="#4a4640">Was wir weggelassen haben: Ein "Regelwerk" ist eine Liste,</text>
+  <text x="45" y="1699" font-size="22" text-anchor="start" fill="#4a4640">die eine Maschine prüfen kann, seine Regeln dürfen sich</text>
+  <text x="45" y="1727" font-size="22" text-anchor="start" fill="#4a4640">nicht widersprechen, und "wahr" heisst hier: wahr für das</text>
+  <text x="45" y="1755" font-size="22" text-anchor="start" fill="#4a4640">Zählen.</text>
+</g>
+</svg>
+</div>
+
+Der heikle Punkt ist der Unterschied zwischen den beiden Sätzen in der ersten Reihe. "Dieser Satz
+ist gelogen" dreht sich nur im Kreis; er landet nie auf wahr und nie auf falsch. Gödels Satz landet:
+Er kommt als **wahr** heraus, und seine eigenen Worte sagen dir, dass es keinen Beweis für ihn gibt.

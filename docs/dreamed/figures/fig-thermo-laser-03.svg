@@ -89,7 +89,7 @@
 <text class="mu sm m" x="595" y="318">0.1</text>
 <text class="mu sm m" x="730" y="318">1</text>
 <text class="mu sm m" x="585" y="338">u = (h&#957; - &#956;)/h&#957;, harvested fraction of each photon (log)</text>
-<text class="mu sm m" x="585" y="354">second law: cooling requires u &lt; T_c/T_h, and COP = t/(1-t) AT that cut</text>
+<text class="mu sm m" x="585" y="354">second law cut: u &lt; T_c/T_h for cooling; COP = t/(1-t) there</text>
 
 <text class="crt sm" x="14" y="386">No interior COP optimum exists: the derivative of y/(x-y) with respect to x is -y/(x-y)&#178;, negative everywhere.</text>
 <text class="crt sm" x="14" y="404">Cheaper photons are always better for COP without limit, and the supremum is Carnot on the zero-flux boundary.</text>

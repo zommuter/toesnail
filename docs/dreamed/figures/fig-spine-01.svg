@@ -48,11 +48,12 @@
     <text x="510" y="200">tensor product symbol (l.50)</text>
     <text x="510" y="218" font-size="13" fill="#6b7280">the comma form at l.46 already answered l.44; l.52 defers it</text>
     <text x="510" y="308">complex numbers (l.71, ~350-word footnote to l.79)</text>
-    <text x="510" y="326" font-size="13" fill="#6b7280">largest unpaid introduction by word count; no question asks for a phase</text>
+    <text x="510" y="326" font-size="13" fill="#6b7280">largest unpaid introduction by word count;</text>
+    <text x="510" y="344" font-size="13" fill="#6b7280">no question asks for a phase</text>
     <text x="510" y="391">conjugate symmetry (l.87)</text>
-    <text x="510" y="409" font-size="13" fill="#6b7280">arrives as an axiom-list item, and is the axiom most urgently needed</text>
+    <text x="510" y="409" font-size="13" fill="#6b7280">arrives as an axiom-list item; the axiom most urgently needed</text>
     <text x="510" y="440">positive-definiteness (l.89)</text>
-    <text x="510" y="458" font-size="13" fill="#6b7280">its demand exists 21 lines LATER, at l.110 (open marker = deferred demand)</text>
+    <text x="510" y="458" font-size="13" fill="#6b7280">its demand exists 21 lines LATER, at l.110</text>
   </g>
 
   <g stroke="#a01b1b" stroke-width="2.5" stroke-dasharray="9 5">
@@ -69,7 +70,7 @@
     <text x="510" y="612">TIME, promised at l.54, still open at l.139</text>
     <text x="510" y="656">OPERATORS, l.133: the arrow is posed, then</text>
     <text x="510" y="674" font-family="ui-monospace, monospace" font-size="13">#TODO: get to operators...</text>
-    <text x="510" y="692" font-size="13" fill="#6b7280">the file's one TOTAL non-payment: nothing supplied, not even a named deferral</text>
+    <text x="510" y="692" font-size="13" fill="#6b7280">the file's one TOTAL non-payment: not even a named deferral</text>
   </g>
   <g font-size="13" fill="#a01b1b">
     <text x="510" y="228">(omniscience, l.44: parked in docs/rigor-debt.md as ill-posed)</text>

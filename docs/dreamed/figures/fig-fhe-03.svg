@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 432" role="img" aria-labelledby="c3t c3d">
+<svg xmlns="http://www.w3.org/2000/svg" class="tsfig" viewBox="0 0 760 448" role="img" aria-labelledby="c3t c3d">
 <style>
 .tsfig{display:block;width:100%;height:auto;max-width:760px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tsfig text{fill:#52514e;font-size:13px}
 .tsfig .hd{fill:#0b0b0b;font-size:15px;font-weight:600}
 .tsfig .sh{fill:#0b0b0b;font-size:14px;font-weight:600}
-.tsfig .mu{fill:#898781}
-.tsfig .e{text-anchor:end}
-.tsfig .m{text-anchor:middle}
-.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600}
-.tsfig .good{fill:#0ca30c;font-weight:600}
-.tsfig .crt{fill:#d03b3b;font-weight:600}
-.tsfig .wrn{fill:#a06a00;font-weight:600}
+.tsfig .mu{fill:#898781;font-size:13px}
+.tsfig .e{text-anchor:end;font-size:13px}
+.tsfig .m{text-anchor:middle;font-size:13px}
+.tsfig .val,.tsfig .lbl{fill:#0b0b0b;font-weight:600;font-size:13px}
+.tsfig .good{fill:#0ca30c;font-weight:600;font-size:13px}
+.tsfig .crt{fill:#d03b3b;font-weight:600;font-size:13px}
+.tsfig .wrn{fill:#a06a00;font-weight:600;font-size:13px}
 .tsfig .g{stroke:#e1e0d9;stroke-width:1}
 .tsfig .ax{stroke:#c3c2b7;stroke-width:1}
 .tsfig .card{fill:#f9f9f7;stroke:#e1e0d9;stroke-width:1}
@@ -63,6 +63,7 @@
 <text x="14" y="365">the thing the seed actually asked for</text>
 <rect class="dash" x="320" y="330" width="410" height="42"/>
 <text class="m crt" x="525" y="356">NO PUBLISHED DATAPOINT AT ALL</text>
-<text class="mu" x="14" y="400">Source: fhe-llm.md section 4. The lane is drawn empty because the record is empty, not because the value is small.</text>
-<text class="mu" x="14" y="420">The gap is autoregression, not encryption: a BERT pass packs its sequence into SIMD slots; generation is n sequential passes, nothing amortises.</text>
+<text class="mu" x="14" y="398">Source: fhe-llm.md section 4. The lane is drawn empty because the record is empty, not because the value is small.</text>
+<text class="mu" x="14" y="416">The gap is autoregression, not encryption: a BERT pass packs its sequence into SIMD slots;</text>
+<text class="mu" x="14" y="434">generation is n sequential passes, nothing amortises.</text>
 </svg>

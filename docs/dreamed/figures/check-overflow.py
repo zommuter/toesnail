@@ -44,11 +44,40 @@ def measure(s, size, bold):
 DREAMED = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def group_attr_at(svg, pos, attr):
+    """text-anchor inherited from the innermost enclosing <g>, if any.
+
+    SVG inherits presentation attributes. A <g text-anchor="middle"> wrapping sixty
+    runs means none of them carries the attribute itself, and reading one element in
+    isolation places every one of them from the wrong origin. That produced thirty
+    phantom overflows on a single page before this was handled.
+    """
+    stack = []
+    for m in re.finditer(r"<g\b([^>]*)>|</g>", svg[:pos]):
+        if m.group(0) == "</g>":
+            if stack:
+                stack.pop()
+        else:
+            am = re.search(r'%s="([^"]+)"' % re.escape(attr), m.group(1) or "")
+            stack.append(am.group(1) if am else None)
+    for a in reversed(stack):
+        if a:
+            return a
+    return None
+
+
 def class_sizes(svg, page_style):
     """font-size per CSS class, from the svg's own <style> and the page-level one."""
     sizes, weights = {}, {}
+    # "__elem__" holds a bare descendant-element rule such as `.tsfig text{font-size:13px}`.
+    # Missing it made the tool assume the 16px CSS initial value on pages that actually
+    # render at 13px, turning 23 healthy runs into phantom overflows.
     for block in re.findall(r"<style[^>]*>(.*?)</style>", page_style + svg, re.S | re.I):
         for sel, body in re.findall(r"([^{}]+)\{([^{}]*)\}", block):
+            if re.search(r"(^|\s)text\s*$", sel.strip()):
+                fse = re.search(r"font-size\s*:\s*([\d.]+)", body)
+                if fse:
+                    sizes.setdefault("__elem__", float(fse.group(1)))
             fs = re.search(r"font-size\s*:\s*([\d.]+)", body)
             fw = re.search(r"font-weight\s*:\s*(\d+|bold)", body)
             for name in re.findall(r"\.([A-Za-z0-9_-]+)", sel):
@@ -93,7 +122,21 @@ def check(path):
                             fs = sizes[c]
                             break
                 if fs is None:
-                    continue  # cannot resolve, do not guess
+                    # Inherited from an enclosing <g>. Before this, an unresolved
+                    # size hit `continue` and the run was skipped SILENTLY, so a
+                    # page could pass the gate while still clipping. That is the
+                    # worst failure mode a checker can have, and it shipped.
+                    gfs = group_attr_at(svg, t.start(), "font-size")
+                    if gfs:
+                        try:
+                            fs = float(re.sub(r"[^\d.]", "", gfs))
+                        except ValueError:
+                            fs = None
+                if fs is None:
+                    # A bare element rule if the page has one, else the CSS initial
+                    # value. Assume rather than skip: skipping is how a clipping page
+                    # passes a green gate.
+                    fs = sizes.get("__elem__", 16.0)
 
             bold = "bold" in attrs or (
                 re.search(r'class="([^"]+)"', attrs)
@@ -105,6 +148,20 @@ def check(path):
             am = re.search(r'text-anchor="(\w+)"', attrs)
             if am:
                 anchor = am.group(1)
+            else:
+                # These pages set the anchor via CSS classes .m / .e as well as via
+                # the attribute. Missing that measured centred text from the wrong
+                # origin and reported healthy lines as overflowing.
+                cm3 = re.search(r'class="([^"]+)"', attrs)
+                cls3 = cm3.group(1).split() if cm3 else []
+                if "m" in cls3:
+                    anchor = "middle"
+                elif "e" in cls3:
+                    anchor = "end"
+                else:
+                    inherited = group_attr_at(svg, t.start(), "text-anchor")
+                    if inherited:
+                        anchor = inherited
             if anchor == "middle":
                 left, right = x - w / 2, x + w / 2
             elif anchor == "end":

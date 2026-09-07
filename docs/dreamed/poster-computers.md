@@ -13,6 +13,8 @@ being wrong is not. The grown-up versions, with the proofs and the citations, ar
 [`logic-bloch-gates`](logic-bloch-gates) for the first poster and [`fig-fhe`](fig-fhe) for the
 second.
 
+**Auf Deutsch:** [Zwei Plakate über Computer](poster-computers-de).
+
 <style>
 .tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 .tspost text{fill:#26251f}
@@ -50,17 +52,17 @@ second.
 <text class="hl" x="30" y="72">Four ways in.</text>
 <text class="hl" x="30" y="128">Two ways out.</text>
 <text class="hl" x="30" y="184">Something got lost.</text>
-<text class="sub" x="30" y="232">Why a computer that runs backwards needs a spare wire.</text>
+<text class="sub" x="30" y="232">Why a backwards computer needs a spare wire.</text>
 
 <text class="sm" x="30" y="282">the two switches</text>
 <rect class="box" x="30" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="194" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="358" y="294" width="148" height="84" rx="10"/>
 <rect class="box" x="522" y="294" width="148" height="84" rx="10"/>
-<text class="big m" x="104" y="348">off off</text>
-<text class="big m" x="268" y="348">off on</text>
-<text class="big m" x="432" y="348">on off</text>
-<text class="big m" x="596" y="348">on on</text>
+<text class="big m" text-anchor="middle" x="104" y="348">off off</text>
+<text class="big m" text-anchor="middle" x="268" y="348">off on</text>
+<text class="big m" text-anchor="middle" x="432" y="348">on off</text>
+<text class="big m" text-anchor="middle" x="596" y="348">on on</text>
 
 <path class="arw" d="M104,382 L228,466" marker-end="url(#p1arrow)"/>
 <path class="arw" d="M268,382 L243,466" marker-end="url(#p1arrow)"/>
@@ -69,10 +71,10 @@ second.
 
 <rect class="out" x="30" y="474" width="430" height="80" rx="10"/>
 <rect class="out" x="490" y="474" width="180" height="80" rx="10"/>
-<text class="huge m" x="245" y="533">NO</text>
-<text class="huge m" x="580" y="533">YES</text>
+<text class="huge m" text-anchor="middle" x="245" y="533">NO</text>
+<text class="huge m" text-anchor="middle" x="580" y="533">YES</text>
 <text class="sm" x="30" y="586">three starts crowd into one answer</text>
-<text class="sm e" x="670" y="586">one start, one answer</text>
+<text class="sm e" text-anchor="end" x="670" y="586">one start, one answer</text>
 
 <text class="hd" x="30" y="640">Say YES and you can work backwards</text>
 <text class="bd" x="30" y="676">If the answer is yes, both switches are on,</text>
@@ -103,9 +105,9 @@ second.
 <title id="p1st">What poster one skipped</title>
 <desc id="p1sd">The three wire gate is called a Toffoli gate. It leaves both switches untouched and adds the answer onto a third wire. The heat from one forgotten bit is far smaller than what a real chip wastes today, so it is real physics but not yet the thing that limits computers.</desc>
 <line class="rule" x1="30" y1="14" x2="670" y2="14"/>
-<text class="sm" x="30" y="48">What we skipped: the three wire gate has a name, Toffoli. It leaves</text>
-<text class="sm" x="30" y="78">both switches alone and adds the answer onto the third wire. And the</text>
-<text class="sm" x="30" y="108">heat from one forgotten bit is far less than a real chip wastes today.</text>
+<text class="sm" x="30" y="48">What we skipped: the three wire gate is called a Toffoli. It</text>
+<text class="sm" x="30" y="78">leaves both switches alone and adds the answer onto a</text>
+<text class="sm" x="30" y="108">third wire. Forgetting one bit makes less heat than a chip.</text>
 </svg>
 
 </div>
@@ -125,8 +127,8 @@ second.
 
 <rect class="box" x="170" y="262" width="360" height="250" rx="16"/>
 <rect class="out" x="200" y="292" width="300" height="126"/>
-<text class="huge m" x="350" y="378">7</text>
-<text class="sm m" x="350" y="404">your secret number</text>
+<text class="huge m" text-anchor="middle" x="350" y="378">7</text>
+<text class="sm m" text-anchor="middle" x="350" y="404">your secret number</text>
 <path class="arw" d="M478,286 a14,14 0 0 1 28,0 l0,12" fill="none"/>
 <rect x="472" y="298" width="40" height="30" rx="5" fill="#f2f1ec" stroke="#26251f" stroke-width="3"/>
 <text class="sm" x="524" y="322">locked</text>
@@ -152,12 +154,12 @@ second.
 <text class="bd" x="55" y="1048">a blink</text>
 <text class="sm" x="30" y="1094">the very same job, inside the locked box</text>
 <rect class="barB" x="30" y="1104" width="560" height="34"/>
-<text class="bd e" x="670" y="1132">minutes</text>
+<text class="bd e" text-anchor="end" x="670" y="1132">minutes</text>
 <text class="sm" x="30" y="1178">the biggest AI models, all the way inside the box</text>
 <rect class="empty" x="30" y="1188" width="640" height="34" rx="6"/>
-<text class="bd m" x="350" y="1214">nobody has managed it yet</text>
-<text class="sm" x="30" y="1264">A longer bar means slower. The empty lane is empty because</text>
-<text class="sm" x="30" y="1294">the record is empty, not because the number is small. Reading</text>
+<text class="bd m" text-anchor="middle" x="350" y="1214">nobody has managed it yet</text>
+<text class="sm" x="30" y="1264">A longer bar means slower. The lane is empty because the</text>
+<text class="sm" x="30" y="1294">record is empty, not because the number is small. Reading</text>
 <text class="sm" x="30" y="1324">a gap in a chart is a skill worth having.</text>
 </svg>
 
@@ -169,9 +171,9 @@ second.
 <title id="p2st">What poster two skipped</title>
 <desc id="p2sd">The box is clever arithmetic rather than a physical box, there are several kinds of box and some are much faster than others, and how slow it is depends enormously on which sum you ask for.</desc>
 <line class="rule" x1="30" y1="14" x2="670" y2="14"/>
-<text class="sm" x="30" y="48">What we skipped: the box is really clever arithmetic, not a box you</text>
-<text class="sm" x="30" y="78">could hold. There are several kinds, some much faster than others,</text>
-<text class="sm" x="30" y="108">and how slow it is depends hugely on which sum you ask for.</text>
+<text class="sm" x="30" y="48">What we skipped: the box is clever arithmetic, not a box</text>
+<text class="sm" x="30" y="78">you could hold. There are several kinds, some much faster</text>
+<text class="sm" x="30" y="108">than others, and it depends hugely on which sum you ask.</text>
 </svg>
 
 </div>

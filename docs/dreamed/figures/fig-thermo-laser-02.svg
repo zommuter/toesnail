@@ -65,7 +65,7 @@
 <text class="mu sm e" x="356" y="212">no inversion</text>
 
 <text class="sh" x="420" y="52">b. Scovil-Schulz-DuBois, generalised</text>
-<text class="sm" x="420" y="70">laser energy per pump energy against lattice/pump-brightness temperature</text>
+<text class="sm" x="420" y="70">laser/pump energy ratio against T/T_p</text>
 <rect class="bad" x="440" y="80" width="290" height="70"/>
 <polygon class="ok" points="440,150 730,300 440,300"/>
 <line class="g" x1="440" y1="80" x2="730" y2="80"/>

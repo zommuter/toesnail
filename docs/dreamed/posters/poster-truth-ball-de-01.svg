@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 1650" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster eins, die Wahrheitskugel: oben heisst bewiesen wahr, unten heisst bewiesen falsch, wie weit aussen du bist heisst wie viel du weisst, also gibt es zwei ganz verschiedene Arten von Nichtwissen, und die Kugel wird flach zu einem Dreieck</title>
+<rect x="0" y="0" width="700" height="1650" fill="#f7f7f4"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+
+  <text x="350" y="66" font-size="52" font-weight="700" text-anchor="middle">DIE WAHRHEITSKUGEL</text>
+  <text x="350" y="106" font-size="26" fill="#5b6270" text-anchor="middle">ein Bild vom WISSEN, nicht vom Glauben</text>
+
+  <circle cx="350" cy="470" r="155" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <circle cx="350" cy="470" r="103" fill="none" stroke="#9fb3c4" stroke-width="2" stroke-dasharray="6 7"/>
+  <circle cx="350" cy="470" r="52" fill="none" stroke="#9fb3c4" stroke-width="2" stroke-dasharray="6 7"/>
+  <ellipse cx="350" cy="470" rx="155" ry="40" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <circle cx="350" cy="315" r="13" fill="#1f2430"/>
+  <circle cx="350" cy="625" r="13" fill="#1f2430"/>
+  <text x="350" y="196" font-size="34" font-weight="700" text-anchor="middle">OBEN: BEWIESEN WAHR</text>
+  <text x="350" y="232" font-size="24" fill="#5b6270" text-anchor="middle">wir wissen, es stimmt</text>
+  <text x="350" y="700" font-size="34" font-weight="700" text-anchor="middle">UNTEN: BEWIESEN FALSCH</text>
+  <text x="350" y="736" font-size="24" fill="#5b6270" text-anchor="middle">wir wissen, es stimmt nicht</text>
+
+  <line x1="188" y1="470" x2="338" y2="470" stroke="#1f2430" stroke-width="3"/>
+  <circle cx="350" cy="470" r="11" fill="#b04a25"/>
+  <text x="180" y="442" font-size="26" font-weight="700" text-anchor="end">MITTE:</text>
+  <text x="180" y="472" font-size="24" text-anchor="end">du weisst</text>
+  <text x="180" y="501" font-size="24" text-anchor="end">gar nichts</text>
+
+  <line x1="350" y1="470" x2="495" y2="470" stroke="#b04a25" stroke-width="6"/>
+  <polygon points="514,470 492,458 492,482" fill="#b04a25"/>
+  <text x="524" y="442" font-size="26" font-weight="700" text-anchor="start">RAND:</text>
+  <text x="524" y="472" font-size="24" text-anchor="start">du weisst</text>
+  <text x="524" y="501" font-size="24" text-anchor="start">schon alles</text>
+
+  <text x="350" y="792" font-size="30" font-weight="700" text-anchor="middle">Wie weit AUSSEN = wie viel du WEISST.</text>
+  <text x="350" y="826" font-size="24" fill="#5b6270" text-anchor="middle">Nicht wie sicher du dich fühlst, sondern was geklärt ist.</text>
+
+  <text x="350" y="890" font-size="34" font-weight="700" text-anchor="middle">Es gibt ZWEI Arten von Nichtwissen</text>
+
+  <rect x="25" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <circle cx="185" cy="972" r="40" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <circle cx="185" cy="972" r="10" fill="#b04a25"/>
+  <text x="185" y="1040" font-size="26" font-weight="700" text-anchor="middle">NIEMAND HAT ES</text>
+  <text x="185" y="1070" font-size="26" font-weight="700" text-anchor="middle">BISHER GELÖST</text>
+  <text x="185" y="1112" font-size="26" font-weight="700" fill="#2f6d4a" text-anchor="middle">SUCH WEITER</text>
+
+  <rect x="355" y="915" width="320" height="220" rx="14" fill="#ffffff" stroke="#b04a25" stroke-width="3" stroke-dasharray="10 6"/>
+  <circle cx="515" cy="972" r="40" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
+  <circle cx="555" cy="972" r="10" fill="#b04a25"/>
+  <text x="515" y="1040" font-size="26" font-weight="700" text-anchor="middle">WIR HABEN BEWIESEN:</text>
+  <text x="515" y="1070" font-size="26" font-weight="700" text-anchor="middle">NIEMAND SCHAFFT ES</text>
+  <text x="515" y="1112" font-size="26" font-weight="700" fill="#b04a25" text-anchor="middle">HÖR AUF ZU SUCHEN</text>
+
+  <text x="350" y="1180" font-size="24" fill="#5b6270" text-anchor="middle">Es fühlt sich gleich an. Es ist völlig verschieden.</text>
+
+  <text x="350" y="1240" font-size="32" font-weight="700" text-anchor="middle">Und die Kugel zu drehen</text>
+  <text x="350" y="1278" font-size="32" font-weight="700" text-anchor="middle">bedeutet am Ende NICHTS,</text>
+
+  <circle cx="140" cy="1375" r="72" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <ellipse cx="140" cy="1375" rx="72" ry="19" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="140" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">die Kugel</text>
+
+  <line x1="238" y1="1375" x2="322" y2="1375" stroke="#1f2430" stroke-width="9"/>
+  <polygon points="340,1375 318,1362 318,1388" fill="#1f2430"/>
+  <text x="290" y="1338" font-size="21" font-weight="700" text-anchor="middle">platt drücken</text>
+
+  <polygon points="500,1448 408,1300 592,1300" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <line x1="500" y1="1300" x2="500" y2="1448" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="500" y="1478" font-size="22" fill="#5b6270" text-anchor="middle">dasselbe, nur flach</text>
+
+  <rect x="25" y="1495" width="650" height="125" rx="10" fill="#efeee9" stroke="#9a958a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="45" y="1526" font-size="22" text-anchor="start" fill="#4a4640">Was wir weggelassen haben: Die Kugel kommt aus der</text>
+  <text x="45" y="1554" font-size="22" text-anchor="start" fill="#4a4640">Quantenphysik, Erwachsene malen sie mit Zahlen statt mit</text>
+  <text x="45" y="1582" font-size="22" text-anchor="start" fill="#4a4640">Wörtern, und das flache Dreieck wirft immer noch zwei</text>
+  <text x="45" y="1610" font-size="22" text-anchor="start" fill="#4a4640">mittlere Fälle in einen einzigen Punkt zusammen.</text>
+</g>
+</svg>
