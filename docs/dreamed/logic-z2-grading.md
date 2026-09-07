@@ -303,6 +303,17 @@ proofs have **opposite sign**; they prove the **same sequent**, so no truth meas
 provability predicate can tell them apart (criterion (b)); the sign is computed from the proof net
 rather than chosen (criterion (d)); and it is not constant (criterion (c)).
 
+**CORRECTED after publication, by the sibling [`logic-proof-gauge.md`](logic-proof-gauge.md)
+§1.3.** The semantic half of that argument is true at $\dim V = 2$ and is **not robust**. In
+general $\det(\tau) = (-1)^{n(n-1)/2}$ on $V \otimes V$ with $\dim V = n$, because $\tau$ fixes the
+$n$ diagonal basis vectors and pairs the remaining $n^2 - n$ into $(n^2-n)/2$ transpositions. That
+is $+1$ for $n \equiv 0, 1 \pmod 4$, verified by exact computation for $n = 1 \dots 8$ and
+re-derived independently. Dimension is not a logical datum, so a sign that depends on the model's
+dimension cannot carry logical content: the **semantic route is unsafe**. The conclusion survives
+on the **syntactic** warrant alone, which is the sign of the transposition on atom occurrences and
+is what the Lean file actually discharges. The four criteria still pass; only the justification
+changes.
+
 **All four criteria pass.** This is the essay's positive result, and it is exactly the parent's own
 "the only character is the sign" observation, relocated from the renumbering group (where it dies,
 because that group is perfect) to the exchange structure of proofs (where it lives).
@@ -685,8 +696,16 @@ never a settled decision.
 
 10. **Three candidates rejected with reasons worth keeping.** §4.1, §4.5, §4.6. Proof-length parity
     is not an invariant of the proof: cut elimination moves size non-elementarily (Statman-Orevkov),
-    and by confluence every normalisation-invariant is a function of the normal form, which the
-    subformula property makes visible to truth. "Logic is secretly a super-algebra" is a pun: a
+    and by confluence every normalisation-invariant is a function of the normal form.
+    **CORRECTED after publication, by the sibling [`logic-proof-gauge.md`](logic-proof-gauge.md)
+    §3.2:** this item originally continued *"which the subformula property makes visible to truth"*,
+    and that clause does not follow. A sequent has many cut-free proofs; the subformula property
+    constrains which *formulas* appear, not which *proof* you hold. This essay's own surviving
+    candidate (`identity_and_braiding_differ`) is the counterexample, since it is a
+    normalisation-invariant that truth cannot see. Read correctly, the confluence argument
+    **classifies** legitimate proof invariants as functions of the normal form rather than vacating
+    them, which is a weaker and more useful conclusion. The rejection of proof-length parity stands
+    on the Statman-Orevkov half alone. "Logic is secretly a super-algebra" is a pun: a
     Boolean ring has characteristic 2 (a *consequence* of idempotence, not a restatement), so the
     Koszul sign rule degenerates to commutativity. Rosser's comparison is degenerate on consistent
     theories, and its real degree of freedom is a **total order** on proofs, not an involution; it

@@ -153,6 +153,48 @@
     but not origination; differential testing recommended for fidelity).
   Deciding what (if anything) to promote from `docs/dreamed/` into `physics/` or `essays/` remains
   owner-only theory direction. Nothing there was promoted, and no physics file was edited.
+- [ ] **[OWNER] Triage the dreamed Bloch Truth cluster, THIRD WAVE (SPECULATIVE MODE)** (`docs/dreamed/`, 4 essays + 4 Lean files, 2026-09-07) <!-- id:e50c -->
+  Owner-instructed mode: *"have some more agents dream on creatively, also hallucinate a bit
+  intentionally with then again sound logic for the investigations"*. These four essays deliberately
+  INVENT mathematical objects and then attack them with real apparatus. Two limits were held and are
+  visible in every file: **no invented citations** (where no prior art was found the text says so),
+  and **every invented object labelled `[INVENTED]` at point of use** plus a numbered inventory at
+  the top. Coordinator spot-checked the labelling and verified arXiv:2103.07469 and the
+  `det(swap) = (-1)^(n(n-1)/2)` computation independently. **Nothing filed into any ledger. No
+  verdict ratified.** All four Lean files re-verified from `verify/` under `capped.sh` (exit 0, zero
+  `sorry`); `bash tests/run.sh` PASSes.
+  - **PENDING RULING, and it closes the cluster's central question.** `logic-complementarity.md`
+    answers the adjudicator's standing challenge ("name a pair of questions that cannot be answered
+    simultaneously") with a machine-checked NO: nine invented candidates, nine failures, one
+    theorem. Two consequences the owner should rule on: the challenge and the ball were **the same
+    demand** all along (simplex iff all measurements compatible, Plavala 2016 / Kuramochi 2020), so
+    the cluster ran one argument twice; and **proofs are broadcastable**, which refutes the ball
+    with no candidate pair at all (non-simplex iff no-broadcasting, Barnum-Barrett-Leifer-Wilce
+    2007). Taken together this is the strongest case yet for retiring the ball, which remains the
+    owner's call because it retires the object his project is named after.
+  - **PENDING RULING, architecture-critical.** `logic-counterfactual-boundary.md` finds a core layer
+    that cannot interpret arithmetic **cannot talk about proofs at all** (a proof is a finite
+    sequence, sequences are pairing, pairing is the cliff). It is a bounded dashboard, not a
+    supervisor, and cannot verify a report is about the sentence it claims. Locates a FOURTH channel
+    (the report index) that `logic-layered-core.md` missed, binding before that essay's
+    truth-functionality obstruction. Also: the cliff is crossed by adding a SET, not an operation --
+    addition plus "is a square" already defines multiplication, machine-checked.
+  - **CORRECTIONS APPLIED by the coordinator within the batch, no owner action needed:** two located
+    errors in `logic-z2-grading.md` found by `logic-proof-gauge.md` (a confluence-vacuity clause
+    that does not follow, and a braiding-sign justification that is dimension-dependent hence
+    unsafe). Both are recorded inline in the corrected essay rather than silently patched. The
+    syntactic warrant survives; only the justification changed.
+  - **Batch self-refutations, recorded not hidden:** `logic-proof-gauge.md` proves its own gauge
+    theory exactly FLAT and demotes its own invented pincer as redundant; `logic-thermodynamics.md`
+    calls itself a costume and **refutes its own brief's premise** that `r` is an order parameter,
+    finding the quantity that sharpens at the SAT threshold is the truth lean `z`, which corrects
+    four sibling essays; `logic-complementarity.md` kills all nine of its own inventions.
+  - **Three citations that FAILED verification are flagged in-text, not dropped and not guessed**
+    (`logic-thermodynamics.md` item 7): the 3-SAT threshold decimal 4.267, the IJCAI-1991
+    Cheeseman-Kanefsky-Taylor record, the AAAI-1992 Mitchell-Selman-Levesque record. This session's
+    WebSearch budget was exhausted before this wave, so every "no prior art found" here means
+    "nothing surfaced in indexed titles and abstracts"; `logic-proof-gauge.md` names three unread
+    preprints it could not rule out, notably arXiv:2004.13582.
 - [ ] **[OWNER] Triage the dreamed Bloch Truth cluster, SECOND WAVE** (`docs/dreamed/`, 9 more essays + 8 Lean files, 2026-09-07) <!-- id:352a -->
   Follow-on to `id:c454`, same session, owner-seeded on his mixed-state question (can the equator be
   "unprovedness" and the origin maximum non-knowledge, with `r < 1` included) plus two further asks:
