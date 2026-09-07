@@ -318,3 +318,34 @@ refactor: none needed -- this unit wrote ledger, doc and log lines only; no code
 ## 2026-09-07 10:56 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review(toesnail): id:0183/3381/17ee verified genuinely green (14/14 tiers, zero skips, gaming-scan clean); corrected a false git-hook dependency edge id:3381 introduced and a tests/README that denied the repo is relay-managed; 1 open [ROUTINE] (ac7b) [id:0183,3381,17ee,ac7b]
+
+## 2026-09-07 — executor (claude-sonnet-5, relay-loop)
+
+Worked id:ac7b — `hooks/post-commit`'s HARD tier no longer simulates a constant probe against
+the hardcoded `e` definition; it now reads the ACTUAL committed diff of
+`verify/mirror/resogram_esol.mw` (parent-commit content vs this commit's content) and runs
+`mathematical_writing.dag.stale_after_edit` on the real before/after fragments, so the note's
+`findings=` line is a function of what the commit actually changed. A commit that doesn't
+touch the mirror at all now short-circuits to an explicit `findings=none (mirror unchanged in
+this commit)` with no parsing/probing invoked, instead of the old content-independent constant.
+Extended `tests/test_verify_hook.sh` with two new cases (7: editing two independent mirror
+sections in separate commits produces different findings strings; 8: a commit touching only an
+unrelated file produces the explicit unchanged-mirror finding) against a new mirror-bearing
+sandbox helper (`make_mirror_sandbox`) seeded with two independent computation clusters so an
+edit to one doesn't stale the other. All 8 cases in `tests/test_verify_hook.sh` pass; full
+`bash tests/run.sh` is green (14/14 tiers, real Lean/Jekyll/npm run, no skips — the Lean tier's
+`lake exe cache get` re-downloaded mathlib into this fresh worktree, ~5.5 min wall time,
+unrelated to this item).
+The note-lifecycle half of the item ("either implement the pending/triaged/processed transition
+or delete the field") is left as-is on purpose: a consumer IS planned for it, just not yet
+built — the `/relay review` triage pass (routed:6cc0) and the `/relay human` owner-verdict pass
+(routed:f42b) are the designed consumers per the 2026-06-16 meeting's D4/D5
+(docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md), and building those
+review/human-mode passes is out of this tooling-only post-commit hook's scope. This unit
+addresses the constant-probe half, which was the part actually reachable from the hook file
+alone.
+Friction: none — item was fully specified with acceptance, tests and a done-check.
+refactor: none needed — the fix replaces the probe body in place, reusing the existing
+skip/status-formatting structure; no new duplication introduced.
+0 open [ROUTINE] after re-derivation.
+[id:ac7b]

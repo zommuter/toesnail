@@ -17,6 +17,8 @@
 #   4. .mw unavailable → commit succeeds, hook no-ops (graceful degrade).    [roadmap:8757]
 #   5. squash two noted commits → BOTH findings survive (concatenate).       [roadmap:d5f9]
 #   6. loose/off-branch note detected via merge-base --is-ancestor.          [roadmap:8757]
+#   7. two commits editing DIFFERENT mirror sections → DIFFERENT findings.   [roadmap:ac7b]
+#   8. a commit touching nothing relevant to the mirror → no/empty finding.  [roadmap:ac7b]
 set -u
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 HOOK="$REPO_ROOT/hooks/post-commit"
@@ -59,6 +61,30 @@ commit_file() { # <repo> <name> <content>
   printf '%s\n' "$3" > "$1/$2"
   git -C "$1" add "$2"
   git -C "$1" commit -q -m "$2"
+}
+findings_for() { # <repo> <rev> → the findings=... line (or empty)
+  note_for "$1" "$2" | grep '^findings=' || true
+}
+
+# Mirror-bearing sandbox: same as make_sandbox but seeds a real
+# verify/mirror/resogram_esol.mw with two INDEPENDENT computation clusters
+# (a/a2 and b/b2) so editing one section leaves the other's dependents alone —
+# needed to exercise the real diff-driven staleness (id:ac7b), as opposed to
+# the .mw-absent path every other case above exercises.
+MW_REPO_FOR_TEST="${MW_REPO:-/home/tobias/src/mathematical-writing}"
+mw_available() {
+  command -v uv >/dev/null 2>&1 && [ -d "$MW_REPO_FOR_TEST" ]
+}
+mirror_content() { # <a-value> <b-value>
+  printf '```computation\na = %s\n```\n\n```computation\na2 = a + 1\n```\n\n```computation\nb = %s\n```\n\n```computation\nb2 = b + 1\n```\n' "$1" "$2"
+}
+make_mirror_sandbox() {
+  local d; d=$(make_sandbox)
+  mkdir -p "$d/verify/mirror"
+  mirror_content 1 2 > "$d/verify/mirror/resogram_esol.mw"
+  git -C "$d" add verify/mirror/resogram_esol.mw
+  ( cd "$d" && unset RELAY_SKIP; git commit -q -m baseline )
+  echo "$d"
 }
 
 # --- case 1: owner commit writes a pending note ----------------------------
@@ -170,6 +196,49 @@ else
   bad "loose-note detection failed (loose=$loose sidenote='${sidenote}')"
 fi
 rm -rf "$S"
+
+# --- case 7: different sections edited → different findings strings -------
+# id:ac7b: the finding must be a FUNCTION of the commit, not a constant probe on a
+# hardcoded `e` definition. Edit the two independent clusters in separate commits
+# and assert the resulting findings differ.
+echo "[test_verify_hook] case 7 — different mirror sections → different findings"
+if mw_available; then
+  S=$(make_mirror_sandbox)
+  ( cd "$S" && unset RELAY_SKIP
+    mirror_content 9 2 > verify/mirror/resogram_esol.mw
+    git add verify/mirror/resogram_esol.mw
+    git commit -q -m "edit a" )
+  find_a=$(findings_for "$S" HEAD)
+  ( cd "$S" && unset RELAY_SKIP
+    mirror_content 9 7 > verify/mirror/resogram_esol.mw
+    git add verify/mirror/resogram_esol.mw
+    git commit -q -m "edit b" )
+  find_b=$(findings_for "$S" HEAD)
+  if [ -n "$find_a" ] && [ -n "$find_b" ] && [ "$find_a" != "$find_b" ]; then
+    pass "editing a vs editing b produced different findings ('$find_a' vs '$find_b')"
+  else
+    bad "expected different findings per section (a='${find_a}' b='${find_b}')"
+  fi
+  rm -rf "$S"
+else
+  bad "mw_available() false — cannot exercise real diff-driven staleness (uv/$MW_REPO_FOR_TEST missing)"
+fi
+
+# --- case 8: commit touching nothing relevant → no/empty finding ----------
+echo "[test_verify_hook] case 8 — irrelevant commit → no/empty finding"
+if mw_available; then
+  S=$(make_mirror_sandbox)
+  ( cd "$S" && unset RELAY_SKIP; commit_file "$S" unrelated.txt "not the mirror" )
+  find_irrelevant=$(findings_for "$S" HEAD)
+  case "$find_irrelevant" in
+    "") pass "irrelevant commit: no findings line" ;;
+    findings=none*) pass "irrelevant commit: explicit empty finding ('$find_irrelevant')" ;;
+    *) bad "irrelevant commit should not report mirror staleness (got '${find_irrelevant}')" ;;
+  esac
+  rm -rf "$S"
+else
+  bad "mw_available() false — cannot exercise real diff-driven staleness (uv/$MW_REPO_FOR_TEST missing)"
+fi
 
 [ "$fail" -eq 0 ] && echo "[test_verify_hook] PASS" || echo "[test_verify_hook] FAIL"
 exit "$fail"
