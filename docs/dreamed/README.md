@@ -43,11 +43,36 @@ encryption, encrypted algorithms, and trustless distributed AI. Written directly
 than by delegated agents, with prior-art research at the owner's explicit instruction
 ("don't not-invented-here", "don't blindly trust every publication").
 
+Third session, 2026-09-07: the Bloch Truth cluster below, by four delegated agents.
+Owner-seeded on a Spektrum article about the impossibility of a world formula, plus his
+own claude.ai conversations on non-binary logic on the Bloch sphere. The seeds are his
+2025-08-16 "Falsifiability and Logical Boundaries" thread and six companion threads found
+by sweeping the export at his instruction ("there might have been multiple conversations
+on that, double-check"), together with the idea's origin quote in his own idea pool at
+`~/knowledge/sessions/claude-ai/` -- the pool `id:4bb2` cites. All Lean AND Python ran
+under `capped.sh` (cgroup `MemoryMax`, no swap, CPU quota) at his instruction.
+
 ## Index
 
-39 essays, 39 Lean files, one runnable library, one runnable search suite. Every Lean
+43 essays, 43 Lean files, one runnable library, one runnable search suite. Every Lean
 file was re-verified, not merely reported: `exit 0`, zero `sorry`. Every "finding" below
 is an AI **recommendation** awaiting the owner's ruling, never a settled decision.
+
+### Bloch Truth cluster -- session of 2026-09-07
+
+Seeded on the owner's own backburner project "Bloch Truth" / "Bloch Truth Mapping".
+Origin quote, `~/knowledge/sessions/claude-ai/2025-08-05_breaking_project_paralysis_cbae6cd6.md:1334`
+(his turn, 2025-08-08): *"the Bloch Truth (might need a better name) might be useful for
+the AI logic core in the second (ZFC?) layer where incompleteness applies (core layer
+should only be complete, e.g. ZF without C)"*. All four essays bear on `id:4bb2`, which
+`TODO.md` records as BLOCKED for want of a thesis statement.
+
+| Essay | Lean | Headline claim (UNRATIFIED) |
+|---|---|---|
+| [`weltformel-impossibility`](weltformel-impossibility.md) | `lean/Weltformel.lean` | The Spektrum piece reports Faizal-Shabir-Khan (EPL 148, 2024) and Faizal-Krauss-Shabir-Marino (JHAP 5(2), 2025). **Neither proves a theorem about physics**: both quote 1931-1974 logic plus asserted premises. Two located errors, quoted: P2 p. 4's *"any sentence S with K(S) > K_F is undecidable"* is false as written (counterexample `r = r`), and P1 p. 7 calls a **universe** inconsistent, a category error carrying its whole escape from Lucas-Penrose. Three impossibility claims get three verdicts; only **no self-certification** is established, and it limits self-reference, not physics. Cubitt-Perez-Garcia-Wolf (Nature 528, 2015) is a sharper honest bound. Fair credit: the Tarski step genuinely beats Goedel I here, surviving loss of effective axiomatizability. `omniscience.md`'s objection **transfers and gains force**. |
+| [`logic-bloch-poles`](logic-bloch-poles.md) | `lean/LogicBloch.lean` | The poles should be **provable / not provable**, the only exclusive-and-exhaustive assignment matching a two-outcome procedure; its cost is that the south pole conflates refutable with independent. **`true` vs `unprovable` is refuted**: Goedel's sentence is both at once. `false = e^{iπ}|1>` encodes nothing (global phase). The two-axis reading survives the density matrix exactly: `p(true) = (1+z)/2`, `S(ρ) = h((1+r)/2)`, `\|z\| ≤ r`. **The ball cannot represent a glut** -- Belnap's `B` sits above both T and F in the information order and nothing sits above a pure state, so the ball is Kleene, not Belnap. The equator is maximum certainty about an *orthogonal* question, not indeterminacy; the centre is no information. Goedel buys the z-diameter and nothing else. |
+| [`logic-bloch-gates`](logic-bloch-gates.md) | `lean/LogicGates.lean` | Read off the gates, the ball carries three structures and only one is a truth value. **Central negative finding: no rotation-covariant order on the equator exists**, so the angle cannot be a Kleene/Priest third value (machine-checked via torsion). Full CNOT Bloch action derived and checked to 1.7e-16: radius loss equals correlation gained, `r' = sqrt(1-C²)`. Phase kickback is the `b_x = -1` corner of that same formula, not a separate effect. The **implication reading fails twice**: the target back-acts on the control, and `(H⊗H) CNOT (H⊗H)` is CNOT reversed exactly. "Why a third qubit for AND" is answered by counting: three wires is a proven minimum. Kochen-Specker needs dimension ≥ 3, so contextuality is unavailable until CNOT. |
+| [`logic-qutrit-su3`](logic-qutrit-su3.md) | `lean/LogicQutrit.lean` | **The owner's dimension count was right**: pure qutrit states are `CP²`, real dim 4, on `S⁵`; the prior AI turn's "correction" was wrong the other way. **Main claim: the qutrit Bloch body is not a ball.** `det ρ ≥ 0` has no qubit analogue and reads `\|n₃\| + p_undec ≤ 1` -- polarisation plus undecidability weight cannot exceed 1. Machine-checked witness `diag(-1/6, 7/12, 7/12)` at 75 % of maximum Bloch length. The antipode of a pure logical value is **not a value**, so a three-valued state space has no *distinguished* negation. Colour not flavour, and the owner's own same-day group-theory thread had it right. Confinement language recommended dropped for **superselection**. |
 
 ### FHE cluster (`crypto/fhe.md`) -- session of 2026-09-04
 
