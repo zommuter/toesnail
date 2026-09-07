@@ -268,11 +268,22 @@ discarding the azimuth.
 </svg>
 </div>
 
-The clinching argument needs no geometry. A non-simplex state space is exactly one with **no
-broadcasting** (Barnum, Barrett, Leifer and Wilce, Phys. Rev. Lett. **99**, 240501, 2007), so a ball
-would assert that a sentence's status cannot be copied. Publishing a proof copies it, exactly and
-freely. `logic-complementarity.md` also showed that "name a complementary pair" and "justify the
-ball" are the same demand, by published theorem, so the cluster had been running one argument twice.
+**WITHDRAWN, 2026-09-07.** This panel originally argued that a non-simplex state space is exactly
+one with no broadcasting (Barnum, Barrett, Leifer and Wilce, Phys. Rev. Lett. **99**, 240501,
+2007), so a ball would assert that a sentence's status cannot be copied, and that publishing a
+proof copies it. **The argument is invalid.** In quantum theory orthogonal pure states can be
+perfectly cloned, and "proved true" versus "proved false" are the poles, hence orthogonal. So
+copying a published proof exhibits only that *distinguishable* states broadcast, which quantum
+theory permits as well, and it separates nothing. The citation is accurate; its scope was misused,
+since broadcastability is a property of a SET of states rather than a licence to read one copyable
+pair as classicality. Located by the Fable review pass (`review-essays.md`, HIGH 1). The drawing
+above is left in place as the record of a withdrawn argument.
+
+What survives, and what the ruling actually rested on, is the azimuth result: four essays
+independently found that the sideways angle carries no logical content, so the ball has a
+coordinate the logic does not use. `logic-complementarity.md` separately showed that "name a
+complementary pair" and "justify the ball" are the same demand, by published theorem, so the
+cluster had been running one argument twice.
 
 ---
 

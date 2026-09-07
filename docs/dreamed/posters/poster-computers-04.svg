@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 110" role="img" aria-labelledby="p2st p2sd">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p2st">What poster two skipped</title>
+<desc id="p2sd">The box is clever arithmetic rather than a physical box, there are several kinds of box and some are much faster than others, and how slow it is depends enormously on which sum you ask for.</desc>
+<line class="rule" x1="30" y1="14" x2="670" y2="14"/>
+<text class="sm" x="30" y="48">What we skipped: the box is really clever arithmetic, not a box you</text>
+<text class="sm" x="30" y="78">could hold. There are several kinds, some much faster than others,</text>
+<text class="sm" x="30" y="108">and how slow it is depends hugely on which sum you ask for.</text>
+</svg>

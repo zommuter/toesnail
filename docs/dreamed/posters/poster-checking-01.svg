@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 1110" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster: knowing which questions are impossible only helps if finding out is cheap</title>
+<desc>Two lines cross on a chart. One line, solid, is how much a tip about impossibility is worth, and it falls as you get more time. The other line, dashed, is how much you could afford to pay for that tip, and it rises as you get more time. The wedge above the crossing, where both would be high, is empty. Below, a small race shows the worker who just tries every question finishing twenty, and the one who stops to check first finishing seventeen point six.</desc>
+<rect x="0" y="0" width="700" height="1110" fill="#fdfcf9"/>
+<rect x="0" y="0" width="700" height="10" fill="#17696b"/>
+<g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+
+<text x="40" y="90" font-size="44" font-weight="700" fill="#10233a">Knowing which ones</text>
+<text x="40" y="140" font-size="44" font-weight="700" fill="#10233a">are impossible only helps</text>
+<text x="40" y="190" font-size="44" font-weight="700" fill="#10233a">if finding out is cheap</text>
+
+<text x="40" y="234" font-size="26" fill="#46535f">You have homework and not much time.</text>
+<text x="40" y="266" font-size="26" fill="#46535f">Some of the questions are impossible.</text>
+
+<line x1="70" y1="600" x2="630" y2="600" stroke="#b9b5ab" stroke-width="2"/>
+<line x1="70" y1="320" x2="70" y2="600" stroke="#b9b5ab" stroke-width="2"/>
+
+<polyline points="95,360 605,585" fill="none" stroke="#17696b" stroke-width="5"/>
+<polyline points="95,585 605,360" fill="none" stroke="#b0521a" stroke-width="5" stroke-dasharray="12 8"/>
+
+<text x="95" y="345" font-size="24" font-weight="600" fill="#17696b">worth of the tip</text>
+<text x="605" y="345" font-size="24" font-weight="600" fill="#b0521a" text-anchor="end">what you can afford</text>
+
+<circle cx="350" cy="472" r="9" fill="#10233a"/>
+<text x="350" y="404" font-size="25" fill="#10233a" text-anchor="middle">you would want to be</text>
+<text x="350" y="434" font-size="25" fill="#10233a" text-anchor="middle">up here. Nobody is.</text>
+
+<text x="70" y="632" font-size="24" fill="#6b6a63">hardly any time</text>
+<text x="630" y="632" font-size="24" fill="#6b6a63" text-anchor="end">loads of time</text>
+<text x="350" y="664" font-size="24" fill="#46535f" text-anchor="middle">how much time you have</text>
+
+<text x="40" y="714" font-size="26" font-weight="600" fill="#10233a">The race, actually run, with NO impossible ones in the pile:</text>
+<text x="40" y="762" font-size="24" fill="#46535f">just works through them</text>
+<rect x="340" y="740" width="220" height="32" rx="6" fill="#17696b"/>
+<text x="550" y="763" font-size="24" font-weight="700" fill="#ffffff" text-anchor="end">20.0</text>
+<text x="40" y="808" font-size="24" fill="#46535f">stops to check first</text>
+<rect x="340" y="786" width="193" height="32" rx="6" fill="#b0521a"/>
+<text x="523" y="809" font-size="24" font-weight="700" fill="#ffffff" text-anchor="end">17.6</text>
+<text x="40" y="850" font-size="24" fill="#6b6a63">questions finished in the same time, checking cost double</text>
+
+<rect x="44" y="880" width="18" height="18" fill="#17696b"/>
+<text x="78" y="897" font-size="27" fill="#10233a">Checking costs time too.</text>
+<rect x="44" y="918" width="18" height="18" fill="#17696b"/>
+<text x="78" y="935" font-size="27" fill="#10233a">Loads of time: you finish anyway.</text>
+<rect x="44" y="956" width="18" height="18" fill="#17696b"/>
+<text x="78" y="973" font-size="27" fill="#10233a">Short of time: you cannot afford it.</text>
+<rect x="44" y="994" width="18" height="18" fill="#b0521a"/>
+<text x="78" y="1011" font-size="27" font-weight="700" fill="#10233a">So the tip never quite pays.</text>
+
+<text x="40" y="1058" font-size="24" fill="#6b6a63">What we skipped: this was a computer</text>
+<text x="40" y="1086" font-size="24" fill="#6b6a63">simulation with pretend homework, not real maths.</text>
+</g>
+</svg>

@@ -230,7 +230,7 @@ The four rulings, each with the one finding that drove it. **These four are rati
 
 | Ruling | What was decided | The finding behind it |
 |---|---|---|
-| **D1** | keep the Bloch ball for exposition only; the report triangle (z-magnitude at most r, r at most 1) is the object, and the azimuth is labelled gauge | a non-simplicial state space is exactly one with no broadcasting (Barnum, Barrett, Leifer and Wilce, PRL **99**, 240501, 2007), so a ball would assert that a sentence's status cannot be copied. Publishing a proof copies it, freely. Four essays had independently found the azimuth empty: `bloch-gates`, `bloch-phase`, `z2-grading`, `proof-gauge` |
+| **D1** | keep the Bloch ball for exposition only; the report triangle (z-magnitude at most r, r at most 1) is the object, and the azimuth is labelled gauge | **the driver originally cited here is WITHDRAWN as invalid** (orthogonal states clone freely in quantum theory, so copying a published proof separates nothing; see `fig-the-object` and `review-essays` HIGH 1). D1 stands on what it was actually taken on: four essays independently found the azimuth carries no logical content, so the ball has a coordinate the logic never uses |
 | **D2** | `id:4bb2` unblocked, thesis ruled: Bloch Truth adds a **provability reading** to a geometry already published | `citation-audit` verified Sperling and Walmsley 2018 section IV.3, which already draws the poles, the undecidable equator and the double cone. No provability predicate appears anywhere in it |
 | **D3** | build a minimal scheduler that reads the reports and allocates proof-search budget | the fork between direction (i) and direction (ii) is exactly whether "proved undecidable, stop" and "got nowhere yet, spend budget" are the same point. `counterfactual-boundary` then bound the design: a core that cannot interpret arithmetic cannot represent proofs at all, so the core gets decidable equality on opaque atoms and nothing else |
 | **D4** | pursue three follow-ups: the BPI lead, the Tennenbaum strengthening, and the `/dreamed` render-coverage gap `id:8b1c` | `z2-grading` section 4.3 flagged the BPI convergence as striking and unverified; `counterfactual-boundary` located the missing Tennenbaum caveat; a parallel relay review found the published dreamed pages carried zero render-test coverage |
@@ -255,7 +255,7 @@ name a pair of questions about a sentence that cannot be answered at once.
   <text x="44" y="144">no rotation-covariant order on the equator</text>
   <text x="44" y="178">a Boolean ring has no odd part, for any grading group</text>
   <text x="44" y="212">the broadcasting refutation of the ball applied to proofs</text>
-  <text x="44" y="236" font-size="15" fill="#4a5568">(no prior art found; the finding its essay most wants shot down)</text>
+  <text x="44" y="236" font-size="15" fill="#4a5568">(WITHDRAWN 2026-09-07: invalid, it was shot down. See review-essays.)</text>
 
   <rect x="640" y="20" width="580" height="250" rx="8" fill="#f2ece2" stroke="#8a6a3c" stroke-width="2"/>
   <text x="664" y="52" font-size="19" font-weight="700">ALREADY PUBLISHED</text>

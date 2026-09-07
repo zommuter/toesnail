@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 1730" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster two: some questions have no answer and that is a theorem. Goedel's sentence says this cannot be proved, which is not the same as this sentence is a lie. Adding more rules does not help, and the theorem does not say maths is broken.</title>
+<rect x="0" y="0" width="700" height="1730" fill="#f7f7f4"/>
+<g font-family="system-ui, sans-serif" fill="#1f2430" text-anchor="middle">
+
+  <text x="350" y="62" font-size="50" font-weight="700">SOME QUESTIONS</text>
+  <text x="350" y="114" font-size="50" font-weight="700">HAVE NO ANSWER.</text>
+  <text x="350" y="156" font-size="28" font-weight="700" fill="#b04a25">That is not a guess. Somebody PROVED it.</text>
+
+  <text x="350" y="216" font-size="32" font-weight="700">A sentence can talk about itself.</text>
+
+  <rect x="30" y="245" width="310" height="195" rx="14" fill="#ececec" stroke="#6b7280" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="185" y="285" font-size="24" font-weight="700" fill="#6b7280">THE PLAYGROUND ONE</text>
+  <text x="185" y="332" font-size="28" font-weight="700">This sentence</text>
+  <text x="185" y="366" font-size="28" font-weight="700">is a LIE.</text>
+  <text x="185" y="412" font-size="22" fill="#6b7280">spins forever, useless</text>
+
+  <rect x="360" y="245" width="310" height="195" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="515" y="285" font-size="24" font-weight="700" fill="#2b5d8a">GOEDEL'S REAL ONE</text>
+  <text x="515" y="332" font-size="28" font-weight="700">This sentence</text>
+  <text x="515" y="366" font-size="28" font-weight="700">cannot be PROVED.</text>
+  <text x="515" y="412" font-size="22" fill="#2b5d8a">this one actually works</text>
+
+  <text x="350" y="486" font-size="26">If you could prove it, you would have proved</text>
+  <text x="350" y="518" font-size="26">something FALSE. Rulebooks may not do that.</text>
+  <text x="350" y="562" font-size="28" font-weight="700">So it is TRUE, and nobody can ever prove it.</text>
+
+  <text x="350" y="630" font-size="30" font-weight="700">In ANY rulebook big enough to do</text>
+  <text x="350" y="666" font-size="30" font-weight="700">ordinary arithmetic, plus and times:</text>
+
+  <rect x="40" y="692" width="620" height="175" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="350" y="748" font-size="34" font-weight="700">there are TRUE things</text>
+  <text x="350" y="790" font-size="34" font-weight="700">it can never prove.</text>
+  <text x="350" y="836" font-size="24" fill="#5b6270">Not "we are not clever enough yet". Proved impossible.</text>
+
+  <text x="350" y="920" font-size="32" font-weight="700">Can we just add another rule?</text>
+  <text x="350" y="958" font-size="30" font-weight="700" fill="#b04a25">No. The trick just runs again.</text>
+
+  <rect x="80" y="985" width="360" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1026" font-size="24" text-anchor="start">the rulebook</text>
+  <circle cx="410" cy="1017" r="13" fill="#b04a25"/>
+
+  <rect x="80" y="1059" width="440" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1100" font-size="24" text-anchor="start">the rulebook, plus one new rule</text>
+  <circle cx="490" cy="1091" r="13" fill="#b04a25"/>
+
+  <rect x="80" y="1133" width="520" height="64" rx="8" fill="#ffffff" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="100" y="1174" font-size="24" text-anchor="start">the rulebook, plus a hundred new rules</text>
+  <circle cx="570" cy="1165" r="13" fill="#b04a25"/>
+
+  <text x="350" y="1234" font-size="24" fill="#b04a25">every red dot: a true thing THAT rulebook cannot prove</text>
+
+  <text x="350" y="1300" font-size="32" font-weight="700">What it does NOT say</text>
+
+  <rect x="25" y="1325" width="320" height="215" rx="14" fill="#f6e2d8" stroke="#b04a25" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="185" y="1367" font-size="26" font-weight="700" fill="#b04a25">WRONG</text>
+  <text x="185" y="1408" font-size="24">"maths is broken"</text>
+  <text x="185" y="1440" font-size="24">"nothing is knowable"</text>
+  <line x1="167" y1="1478" x2="203" y2="1514" stroke="#b04a25" stroke-width="7"/>
+  <line x1="203" y1="1478" x2="167" y2="1514" stroke="#b04a25" stroke-width="7"/>
+
+  <rect x="355" y="1325" width="320" height="215" rx="14" fill="#dce8f2" stroke="#2b5d8a" stroke-width="4"/>
+  <text x="515" y="1367" font-size="26" font-weight="700" fill="#2b5d8a">RIGHT</text>
+  <text x="515" y="1408" font-size="24">almost everything</text>
+  <text x="515" y="1440" font-size="24">still stands</text>
+  <polyline points="494,1497 508,1513 538,1477" fill="none" stroke="#2b5d8a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="350" y="1586" font-size="24">It rules out ONE thing: a rulebook that settles it all.</text>
+  <text x="350" y="1618" font-size="24">Everything you meet in maths class still works fine.</text>
+
+  <rect x="25" y="1640" width="650" height="70" rx="10" fill="#efeee9" stroke="#9a958a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="45" y="1671" font-size="22" text-anchor="start" fill="#4a4640">What we skipped: a "rulebook" is a list a machine can check, its</text>
+  <text x="45" y="1699" font-size="22" text-anchor="start" fill="#4a4640">rules must not fight each other, and "true" means true of counting.</text>
+</g>
+</svg>

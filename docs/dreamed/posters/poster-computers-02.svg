@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 110" role="img" aria-labelledby="p1st p1sd">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p1st">What poster one skipped</title>
+<desc id="p1sd">The three wire gate is called a Toffoli gate. It leaves both switches untouched and adds the answer onto a third wire. The heat from one forgotten bit is far smaller than what a real chip wastes today, so it is real physics but not yet the thing that limits computers.</desc>
+<line class="rule" x1="30" y1="14" x2="670" y2="14"/>
+<text class="sm" x="30" y="48">What we skipped: the three wire gate has a name, Toffoli. It leaves</text>
+<text class="sm" x="30" y="78">both switches alone and adds the answer onto the third wire. And the</text>
+<text class="sm" x="30" y="108">heat from one forgotten bit is far less than a real chip wastes today.</text>
+</svg>

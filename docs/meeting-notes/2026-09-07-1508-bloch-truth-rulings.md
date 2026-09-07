@@ -38,9 +38,25 @@ four essays independently found that `phi` carries no logical content:
 - `logic-proof-gauge.md`: that sign is a **potential**, not a holonomy, so it is not an
   azimuth even in the gauge reading.
 
-The clinching argument needs no geometry. A non-simplicial state space is exactly one with no
-broadcasting (Barnum-Barrett-Leifer-Wilce, PRL **99**, 240501, 2007), so a ball would assert
-that a sentence's status cannot be copied. Publishing a proof copies it, exactly and freely.
+> **AMENDMENT, 2026-09-07, awaiting the owner's ratification of the amendment itself.** The
+> paragraph struck immediately below was cited as D1's clinching argument. **It is invalid and is
+> withdrawn.** Located by a Fable review pass (`docs/dreamed/review-essays.md`, HIGH 1) and
+> confirmed independently: in quantum theory orthogonal pure states CAN be perfectly cloned, and
+> "proved true" versus "proved false" are the poles, hence orthogonal. So "publishing a proof
+> copies a status" exhibits only that *distinguishable* states broadcast, which quantum theory
+> permits too, and it therefore decides nothing between a ball and a simplex. Barnum-Barrett-
+> Leifer-Wilce is correctly cited but its scope was misused: broadcastability is a property of a
+> SET of states, not a licence to read one copyable pair as classicality.
+>
+> **D1 itself is unaffected and stands**, on the four independent azimuth findings listed above,
+> which is what the ruling was actually taken on. Only the stated driver was wrong. This amendment
+> corrects an explicitly stated premise and says so, which the repo's own rule sanctions; it does
+> not reopen the decision. ~~Struck text follows for the record:~~
+
+~~The clinching argument needs no geometry. A non-simplicial state space is exactly one with no
+broadcasting (Barnum-Barrett-Leifer-Wilce, PRL 99, 240501, 2007), so a ball would assert
+that a sentence's status cannot be copied. Publishing a proof copies it, exactly and freely.~~
+
 Separately, `logic-complementarity.md` established that "name a complementary pair" and
 "justify the ball" are the SAME demand by published theorem (a state space is a simplex iff
 all its measurements are compatible), so the two arguments the cluster had been running were

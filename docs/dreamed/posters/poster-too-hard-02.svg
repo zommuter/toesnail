@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1700" role="img" aria-labelledby="p2-title">
+<title id="p2-title">Poster: what do you have to assume. Mathematicians ask backwards which rules are needed to prove a thing, which sorts almost every ordinary theorem onto one of five rungs of a ladder. The second rung is drawn as a two-storey house in which the powerful upstairs tool can be borrowed freely without the simple facts downstairs changing at all.</title>
+<defs>
+<marker id="p2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#2d5c8a"/>
+</marker>
+</defs>
+
+<rect x="0" y="0" width="700" height="1700" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="0" y="0" width="700" height="176" fill="#e6ecf2"/>
+<text x="350" y="72" font-size="46" text-anchor="middle" font-weight="bold">WHAT DO YOU NEED</text>
+<text x="350" y="124" font-size="46" text-anchor="middle" font-weight="bold">TO ASSUME?</text>
+<text x="350" y="160" font-size="26" text-anchor="middle" fill="#4a4a4a">Maths, asked backwards.</text>
+
+<rect x="30" y="198" width="310" height="130" rx="10" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+<text x="185" y="236" font-size="24" text-anchor="middle" font-weight="bold">THE USUAL QUESTION</text>
+<text x="185" y="272" font-size="24" text-anchor="middle">What can I prove</text>
+<text x="185" y="302" font-size="24" text-anchor="middle">from these rules?</text>
+
+<rect x="360" y="198" width="310" height="130" rx="10" fill="#eaf0f6" stroke="#2d5c8a" stroke-width="4"/>
+<text x="515" y="236" font-size="24" text-anchor="middle" font-weight="bold">THEIR QUESTION</text>
+<text x="515" y="272" font-size="24" text-anchor="middle">What rules do I NEED</text>
+<text x="515" y="302" font-size="24" text-anchor="middle">to prove this thing?</text>
+
+<text x="350" y="378" font-size="28" text-anchor="middle" font-weight="bold">THE ANSWER IS A LADDER</text>
+<text x="350" y="412" font-size="24" text-anchor="middle">Almost every everyday theorem sits on one of five rungs.</text>
+
+<line x1="46" y1="1018" x2="46" y2="430" stroke="#2d5c8a" stroke-width="3" marker-end="url(#p2arrow)"/>
+<text x="26" y="724" font-size="21" fill="#2d5c8a" text-anchor="middle" transform="rotate(-90 26 724)">you have to assume more</text>
+
+<rect x="76" y="436" width="594" height="110" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
+<rect x="76" y="436" width="72" height="110" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
+<text x="112" y="506" font-size="40" text-anchor="middle" font-weight="bold">5</text>
+<text x="162" y="470" font-size="25" font-weight="bold">Quiz every collection at once.</text>
+<text x="162" y="504" font-size="24" fill="#4a3560">Every closed shape has a perfect core.</text>
+<text x="162" y="534" font-size="24" fill="#4a3560">Endless groups split into simple parts.</text>
+
+<rect x="76" y="554" width="594" height="110" fill="#ffffff" stroke="#4a3560" stroke-width="2"/>
+<rect x="76" y="554" width="72" height="110" fill="#efe9f4" stroke="#4a3560" stroke-width="2"/>
+<text x="112" y="624" font-size="40" text-anchor="middle" font-weight="bold">4</text>
+<text x="162" y="588" font-size="25" font-weight="bold">Repeat a step past the end.</text>
+<text x="162" y="622" font-size="24" fill="#4a3560">Two endless orderings can be compared.</text>
+<text x="162" y="652" font-size="24" fill="#4a3560">This rung is "infinitely many rounds".</text>
+
+<rect x="76" y="672" width="594" height="110" fill="#ffffff" stroke="#2d5c8a" stroke-width="2"/>
+<rect x="76" y="672" width="72" height="110" fill="#e7eef5" stroke="#2d5c8a" stroke-width="2"/>
+<text x="112" y="742" font-size="40" text-anchor="middle" font-weight="bold">3</text>
+<text x="162" y="706" font-size="25" font-weight="bold">Gather the numbers you describe.</text>
+<text x="162" y="740" font-size="24" fill="#2d5c8a">Endless points in a small box pile up.</text>
+<text x="162" y="770" font-size="24" fill="#2d5c8a">Any bounded list has a lowest ceiling.</text>
+
+<rect x="76" y="790" width="594" height="110" fill="#f6ebe4" stroke="#8a3d12" stroke-width="5"/>
+<rect x="76" y="790" width="72" height="110" fill="#ecd9cc" stroke="#8a3d12" stroke-width="5"/>
+<text x="112" y="860" font-size="40" text-anchor="middle" font-weight="bold">2</text>
+<text x="162" y="824" font-size="25" font-weight="bold">An endless splitting path never stops.</text>
+<text x="162" y="858" font-size="24" fill="#8a3d12">A continuous line has a highest point.</text>
+<text x="162" y="888" font-size="24" fill="#8a3d12">Squash a disc: one point stays put.</text>
+
+<rect x="76" y="908" width="594" height="110" fill="#ffffff" stroke="#2f6b3f" stroke-width="2"/>
+<rect x="76" y="908" width="72" height="110" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2"/>
+<text x="112" y="978" font-size="40" text-anchor="middle" font-weight="bold">1</text>
+<text x="162" y="942" font-size="25" font-weight="bold">Only what a machine can work out.</text>
+<text x="162" y="976" font-size="24" fill="#2f6b3f">A line from minus to plus crosses zero.</text>
+<text x="162" y="1006" font-size="24" fill="#2f6b3f">Shrinking boxes always trap a point.</text>
+
+<text x="350" y="1072" font-size="28" text-anchor="middle" font-weight="bold">RUNG 2 IS THE STRANGE ONE</text>
+<text x="350" y="1106" font-size="24" text-anchor="middle">Borrow a strong tool. Gain no new simple facts.</text>
+
+<rect x="60" y="1128" width="440" height="96" fill="#f6ebe4" stroke="#8a3d12" stroke-width="4"/>
+<text x="280" y="1166" font-size="25" text-anchor="middle" font-weight="bold">UPSTAIRS</text>
+<text x="280" y="1200" font-size="24" text-anchor="middle">the powerful borrowed tool</text>
+
+<rect x="60" y="1224" width="440" height="16" fill="#3a3a3a"/>
+
+<rect x="60" y="1240" width="440" height="96" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="4"/>
+<text x="280" y="1278" font-size="25" text-anchor="middle" font-weight="bold">DOWNSTAIRS</text>
+<text x="280" y="1312" font-size="24" text-anchor="middle">the simple, everyday facts</text>
+
+<text x="516" y="1158" font-size="24">Borrow all</text>
+<text x="516" y="1188" font-size="24">you like</text>
+<text x="516" y="1218" font-size="24">upstairs,</text>
+<text x="516" y="1272" font-size="24">and nothing</text>
+<text x="516" y="1302" font-size="24">changes for</text>
+<text x="516" y="1332" font-size="24">the floor</text>
+<text x="516" y="1362" font-size="24">below.</text>
+
+<text x="60" y="1382" font-size="24">Every simple fact the weak floor could prove</text>
+<text x="60" y="1412" font-size="24">before is exactly what it can prove now. And</text>
+<text x="60" y="1442" font-size="24">&#8220;simple&#8221; is doing real work: fancier questions</text>
+<text x="60" y="1472" font-size="24">upstairs DO get new answers. Grown-ups call the</text>
+<text x="60" y="1502" font-size="24">safe-floor part a conservativity result.</text>
+
+<rect x="40" y="1528" width="620" height="82" rx="8" fill="#ffffff" stroke="#767676" stroke-width="2"/>
+<text x="64" y="1564" font-size="24">Careful: this is about which assumptions you</text>
+<text x="64" y="1594" font-size="24">NEED, not about whether the maths is true.</text>
+
+<text x="350" y="1642" font-size="19" text-anchor="middle" fill="#5c5c5c">What we skipped: the real names of the five rungs, and the fact that each</text>
+<text x="350" y="1666" font-size="19" text-anchor="middle" fill="#5c5c5c">theorem has to be restated in a careful special language before it is sorted.</text>
+</g>
+</svg>

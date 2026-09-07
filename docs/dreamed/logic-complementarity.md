@@ -88,13 +88,18 @@ into three equivalent statements of why nobody can.**
    update associated with an effect is determined by the effect. In logic they come apart, and all
    the non-commutativity ends up in the half that does not matter. (§4, §5.4)
 
-5. **A second, independent refutation of the ball that does not go through questions at all.** A
-   non-simplex state space is exactly a state space in which states cannot be broadcast
+5. **WITHDRAWN 2026-09-07, and it was this essay's proudest claim.** It read: a non-simplex state
+   space is exactly one in which states cannot be broadcast
    ([Barnum, Barrett, Leifer, Wilce, Phys. Rev. Lett. **99**, 240501
-   (2007)](https://arxiv.org/abs/0707.0620); the equivalence is Theorem 7.7 of Plávala's review). So
-   choosing a ball asserts that **the status of a sentence cannot be copied**. It manifestly can:
-   publish the proof. Proofs are broadcastable, which is most of what proofs are *for*. This
-   argument needs no candidate pair, and it is new to this cluster. (§6.3)
+   (2007)](https://arxiv.org/abs/0707.0620)), so choosing a ball asserts that the status of a
+   sentence cannot be copied, and it manifestly can, because you publish the proof.
+   **The inference does not hold.** Broadcastability is a property of a SET of states, and in
+   quantum theory a set of mutually *orthogonal* states can be perfectly cloned. "Proved true" and
+   "proved false" are the poles, hence orthogonal, so copying a published proof exhibits exactly
+   the case quantum theory also permits and separates nothing. The citation is accurate and its
+   scope was misused. Located by a Fable review pass (`review-essays.md`, HIGH 1) and confirmed
+   independently by the coordinator. Item 4 of this list, the compatibility-equals-simplex result,
+   is unaffected and remains this essay's real contribution. (§6.3)
 
 6. **Recommendation, with its weakness in the same breath.** *Close the search for a complementary
    pair, and record the closure as a theorem rather than as a failure to find.* The weakness that

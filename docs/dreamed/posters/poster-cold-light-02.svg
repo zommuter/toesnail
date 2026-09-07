@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="eli" viewBox="0 0 700 2070" role="img" aria-labelledby="p2t p2d">
+<style>
+.eli{display:block;width:100%;height:auto;max-width:700px;margin:0 auto;background:#fbfaf7;font-family:system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+.eli text{fill:#26241d}
+.eli .h1{font-size:48px;font-weight:800;fill:#14130f}
+.eli .h2{font-size:33px;font-weight:700;fill:#14130f}
+.eli .sub{font-size:27px;font-weight:600;fill:#3d3a31}
+.eli .bd{font-size:26px}
+.eli .bg{font-size:27px;font-weight:700;fill:#14130f}
+.eli .lb{font-size:24px;font-weight:700}
+.eli .sm{font-size:22px;fill:#6b6a63}
+.eli .m{text-anchor:middle}
+.eli .hot{fill:#d8542a}
+.eli .cool{fill:#2a6fd6}
+.eli .grey{fill:#8b877a}
+.eli .green{fill:#2c6b4c}
+.eli .panel{fill:#f2f0e8;stroke:#dcd8c9;stroke-width:2}
+.eli .honest{fill:#eaf1ec;stroke:#4a8f6b;stroke-width:2}
+.eli .rule{stroke:#c9c5b6;stroke-width:2}
+.eli .kb{stroke:#2a6fd6;stroke-width:5;fill:none;stroke-linecap:round}
+.eli .kr{stroke:#d8542a;stroke-width:5;fill:none;stroke-linecap:round}
+.eli .ink{stroke:#26241d;stroke-width:4;fill:none;stroke-linecap:round}
+</style>
+
+<title id="p2t">Poster: where does the mess go?</title>
+<desc id="p2d">A poster in four parts. Part one: tidying never destroys mess, it moves it, and there is never less of it than you removed, drawn as a neat grid of squares beside a scattered cloud of dots. Part two: cooling an atom is tidying it up, so the mess leaves riding on the light that flies away. Part three, the finding: people assume a gigantic safety margin, but worked out properly for one real atom the margin is about a thousand times, not ten million, drawn as two bars on a ladder where each block means ten times bigger, seven blocks against three, the shorter bar labelled what it actually is. Part four: the reason is that atoms are bad at carrying mess away, so the atom is the bottleneck. The honest bit: this is a limit on what is allowed, not on what is easy.</desc>
+
+<rect x="0" y="0" width="700" height="2070" fill="#fbfaf7"/>
+
+<text class="sm" x="44" y="52">POSTER 2 OF 2   .   ENTROPY</text>
+<text class="h1" x="44" y="124">Where does the mess go?</text>
+<text class="sub" x="44" y="176">Tidying never destroys mess. It moves it.</text>
+<line class="rule" x1="44" y1="204" x2="656" y2="204"/>
+
+<text class="h2" x="44" y="258">1. The deepest rule in physics</text>
+<text class="bd" x="44" y="302">Tidy your room and the mess does not</text>
+<text class="bd" x="44" y="334">vanish. It goes somewhere else, and there</text>
+<text class="bd" x="44" y="366">is never less of it than you removed.</text>
+
+<rect class="panel" x="44" y="392" width="612" height="190" rx="14"/>
+<text class="sm m" x="155" y="428">you tidy this</text>
+<rect class="cool" x="110" y="448" width="26" height="26" rx="3"/>
+<rect class="cool" x="142" y="448" width="26" height="26" rx="3"/>
+<rect class="cool" x="174" y="448" width="26" height="26" rx="3"/>
+<rect class="cool" x="110" y="480" width="26" height="26" rx="3"/>
+<rect class="cool" x="142" y="480" width="26" height="26" rx="3"/>
+<rect class="cool" x="174" y="480" width="26" height="26" rx="3"/>
+<text class="sm m" x="155" y="540">neat, tidy, boring</text>
+<text class="sm m" x="284" y="466">but</text>
+<line class="ink" x1="240" y1="494" x2="300" y2="494"/>
+<path fill="#26241d" d="M 300,482 L 328,494 L 300,506 Z"/>
+<circle class="hot" cx="372" cy="452" r="8"/>
+<circle class="hot" cx="408" cy="432" r="8"/>
+<circle class="hot" cx="444" cy="466" r="8"/>
+<circle class="hot" cx="392" cy="498" r="8"/>
+<circle class="hot" cx="430" cy="522" r="8"/>
+<circle class="hot" cx="468" cy="438" r="8"/>
+<circle class="hot" cx="500" cy="470" r="8"/>
+<circle class="hot" cx="478" cy="510" r="8"/>
+<circle class="hot" cx="520" cy="430" r="8"/>
+<circle class="hot" cx="548" cy="462" r="8"/>
+<circle class="hot" cx="590" cy="444" r="8"/>
+<circle class="hot" cx="566" cy="504" r="8"/>
+<circle class="hot" cx="614" cy="478" r="8"/>
+<circle class="hot" cx="604" cy="522" r="8"/>
+<text class="sm m" x="500" y="566">more of it, spread wider</text>
+
+<text class="bg" x="44" y="628">Nobody has ever broken this rule.</text>
+
+<text class="h2" x="44" y="686">2. Cooling an atom is tidying</text>
+<text class="bd" x="44" y="730">So the mess has to go somewhere. It</text>
+<text class="bd" x="44" y="762">leaves riding on the light that flies off.</text>
+
+<rect class="panel" x="44" y="788" width="612" height="190" rx="14"/>
+<circle class="cool" cx="150" cy="862" r="36"/>
+<circle fill="#fbfaf7" cx="138" cy="850" r="5"/>
+<circle fill="#fbfaf7" cx="158" cy="856" r="5"/>
+<circle fill="#fbfaf7" cx="146" cy="874" r="5"/>
+<circle fill="#fbfaf7" cx="164" cy="872" r="5"/>
+<text class="sm m" x="150" y="930">atom being tidied</text>
+<text class="sm m" x="248" y="834">hands it over</text>
+<line class="ink" x1="200" y1="862" x2="268" y2="862"/>
+<path fill="#26241d" d="M 268,850 L 296,862 L 268,874 Z"/>
+<path class="kr" d="M 322,862 q 20,-24 40,0 t 40,0 t 40,0 t 40,0 t 40,0 t 40,0"/>
+<path class="hot" d="M 562,850 L 590,862 L 562,874 Z"/>
+<circle class="hot" cx="342" cy="828" r="6"/>
+<circle class="hot" cx="422" cy="828" r="6"/>
+<circle class="hot" cx="502" cy="828" r="6"/>
+<text class="sm m" x="456" y="930">light leaves, carrying the mess</text>
+
+<text class="h2" x="44" y="1034">3. The surprise</text>
+<text class="bd" x="44" y="1078">People assume there is a gigantic safety</text>
+<text class="bd" x="44" y="1110">margin here. Worked out properly for one</text>
+<text class="bd" x="44" y="1142">real atom, the margin came out about a</text>
+<text class="bd" x="44" y="1174">thousand times, not ten million.</text>
+
+<rect class="panel" x="44" y="1200" width="612" height="240" rx="14"/>
+<text class="sm m" x="350" y="1236">each block along a bar means ten times bigger</text>
+<text class="lb" x="90" y="1272">What people assume</text>
+<rect x="90" y="1284" width="420" height="40" rx="4" fill="#cfd9ea" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="150" y1="1284" x2="150" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="210" y1="1284" x2="210" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="270" y1="1284" x2="270" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="330" y1="1284" x2="330" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="390" y1="1284" x2="390" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<line x1="450" y1="1284" x2="450" y2="1324" stroke="#2a6fd6" stroke-width="2"/>
+<text class="lb" x="522" y="1312">10,000,000</text>
+<text class="lb" x="90" y="1354">What it actually is</text>
+<rect x="90" y="1366" width="180" height="40" rx="4" fill="#f6d3c4" stroke="#d8542a" stroke-width="3"/>
+<line x1="150" y1="1366" x2="150" y2="1406" stroke="#d8542a" stroke-width="2"/>
+<line x1="210" y1="1366" x2="210" y2="1406" stroke="#d8542a" stroke-width="2"/>
+<text class="lb" x="282" y="1394">1,000</text>
+<text class="sm m" x="350" y="1428">seven blocks against three</text>
+
+<text class="bd" x="44" y="1484">Still fine. Still legal. Just far tighter</text>
+<text class="bd" x="44" y="1516">than the story people usually tell.</text>
+
+<text class="h2" x="44" y="1574">4. Atoms are bad at it</text>
+<text class="bd" x="44" y="1618">Light is brilliant at carrying mess away.</text>
+<text class="bd" x="44" y="1650">An atom can only hand over a scrap at a</text>
+<text class="bd" x="44" y="1682">time, so the atom is the narrow bit of</text>
+<text class="bd" x="44" y="1714">the funnel. Its number sets the margin.</text>
+
+<rect class="honest" x="44" y="1746" width="612" height="172" rx="14"/>
+<text class="lb green" x="72" y="1790">The honest bit</text>
+<text class="bd" x="72" y="1830">This is a limit on what is ALLOWED,</text>
+<text class="bd" x="72" y="1862">not on what is EASY. Almost every real</text>
+<text class="bd" x="72" y="1894">difficulty here is practical, not deep.</text>
+
+<text class="sm" x="44" y="1954">What we skipped: those numbers are for one particular</text>
+<text class="sm" x="44" y="1980">atom (rubidium) with one particular beam, the mess is</text>
+<text class="sm" x="44" y="2006">counted per particle of light, and the rule itself is a</text>
+<text class="sm" x="44" y="2032">statement about the whole universe, not about one room.</text>
+</svg>

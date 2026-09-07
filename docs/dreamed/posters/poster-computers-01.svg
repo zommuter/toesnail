@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 1240" role="img" aria-labelledby="p1t p1d">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p1t">Four ways in, two ways out, so something got lost</title>
+<desc id="p1d">A poster. Four boxes across the top show the four settings of two switches: off off, off on, on off, on on. Arrows run down to two answer boxes. Three arrows crowd into the answer NO and only one arrow reaches the answer YES. Because three different starts give the same answer, the answer NO cannot tell you which start it came from, so information was destroyed. A computer that must run backwards cannot destroy anything, so it needs a third wire to keep the leftovers. Destroying information also costs energy and makes heat.</desc>
+<defs>
+<marker id="p1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#26251f"/>
+</marker>
+</defs>
+
+<text class="hl" x="30" y="72">Four ways in.</text>
+<text class="hl" x="30" y="128">Two ways out.</text>
+<text class="hl" x="30" y="184">Something got lost.</text>
+<text class="sub" x="30" y="232">Why a computer that runs backwards needs a spare wire.</text>
+
+<text class="sm" x="30" y="282">the two switches</text>
+<rect class="box" x="30" y="294" width="148" height="84" rx="10"/>
+<rect class="box" x="194" y="294" width="148" height="84" rx="10"/>
+<rect class="box" x="358" y="294" width="148" height="84" rx="10"/>
+<rect class="box" x="522" y="294" width="148" height="84" rx="10"/>
+<text class="big m" x="104" y="348">off off</text>
+<text class="big m" x="268" y="348">off on</text>
+<text class="big m" x="432" y="348">on off</text>
+<text class="big m" x="596" y="348">on on</text>
+
+<path class="arw" d="M104,382 L228,466" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M268,382 L243,466" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M432,382 L258,466" marker-end="url(#p1arrow)"/>
+<path class="arw" d="M596,382 L580,466" marker-end="url(#p1arrow)"/>
+
+<rect class="out" x="30" y="474" width="430" height="80" rx="10"/>
+<rect class="out" x="490" y="474" width="180" height="80" rx="10"/>
+<text class="huge m" x="245" y="533">NO</text>
+<text class="huge m" x="580" y="533">YES</text>
+<text class="sm" x="30" y="586">three starts crowd into one answer</text>
+<text class="sm e" x="670" y="586">one start, one answer</text>
+
+<text class="hd" x="30" y="640">Say YES and you can work backwards</text>
+<text class="bd" x="30" y="676">If the answer is yes, both switches are on,</text>
+<text class="bd" x="30" y="708">and you know exactly what you started with.</text>
+
+<text class="hd" x="30" y="762">Say NO and the past is gone</text>
+<text class="bd" x="30" y="798">Was it the left switch that was off? The right</text>
+<text class="bd" x="30" y="830">one? Both? NO cannot tell you. Three</text>
+<text class="bd" x="30" y="862">different starts, one single answer.</text>
+
+<text class="hd" x="30" y="916">A backwards computer needs a spare wire</text>
+<text class="bd" x="30" y="952">Two wires in and two wires out cannot carry</text>
+<text class="bd" x="30" y="984">the answer and the leftovers at once. Three</text>
+<text class="bd" x="30" y="1016">wires can, and the third one holds the</text>
+<text class="bd" x="30" y="1048">leftovers. Count the arrows: it is not a</text>
+<text class="bd" x="30" y="1080">matter of taste, it is a matter of counting.</text>
+
+<text class="hd" x="30" y="1134">Forgetting makes heat</text>
+<text class="bd" x="30" y="1170">Every bit you throw away warms the room by at</text>
+<text class="bd" x="30" y="1202">least a tiny amount. Nobody gets out of paying.</text>
+</svg>

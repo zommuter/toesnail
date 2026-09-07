@@ -15,11 +15,17 @@ Two things a naive extraction gets wrong, both handled here:
      browser serves the file as XML and shows a parse tree instead of a picture.
      This script adds it where missing.
 
-Output (all git-tracked, all openable with file://):
-  docs/dreamed/figures/<page-slug>-NN.svg   one file per figure
-  docs/dreamed/figures/index.html           every figure inline, no external assets
+Handles two page sets, selected by the prefix argument:
+  fig-     the dense infographics       -> docs/dreamed/figures/
+  poster-  the ELI12 posters            -> docs/dreamed/posters/
 
-Run:  docs/dreamed/capped.sh -m 2G -c 100 -t 300 -- python3 docs/dreamed/figures/build-figures.py
+Output (all git-tracked, all openable with file://):
+  <outdir>/<page-slug>-NN.svg   one file per figure
+  <outdir>/index.html           every figure inline, no external assets
+
+Run:
+  docs/dreamed/capped.sh -m 2G -c 100 -t 300 -- python3 docs/dreamed/figures/build-figures.py fig-
+  docs/dreamed/capped.sh -m 2G -c 100 -t 300 -- python3 docs/dreamed/figures/build-figures.py poster-
 """
 
 import html
@@ -65,13 +71,30 @@ def inject_style(svg, css):
     return svg[: m.end()] + "\n" + block + svg[m.end() :]
 
 
+SETS = {
+    "fig-": ("figures", "Dreamed infographics",
+             "extracted so they open <strong>without Jekyll and without a server</strong>"),
+    "poster-": ("posters", "Dreamed posters (ELI12)",
+                "plain-language posters, no maths background needed, opening "
+                "<strong>without Jekyll and without a server</strong>"),
+}
+
+
 def main():
+    prefix = sys.argv[1] if len(sys.argv) > 1 else "fig-"
+    if prefix not in SETS:
+        print("usage: build-figures.py [fig-|poster-]", file=sys.stderr)
+        return 2
+    subdir, heading, lede_tail = SETS[prefix]
+    outdir = os.path.join(DREAMED, subdir)
+    os.makedirs(outdir, exist_ok=True)
+
     pages = sorted(
         p for p in os.listdir(DREAMED)
-        if p.startswith("fig-") and p.endswith(".md")
+        if p.startswith(prefix) and p.endswith(".md")
     )
     if not pages:
-        print("no fig-*.md pages found", file=sys.stderr)
+        print("no {}*.md pages found".format(prefix), file=sys.stderr)
         return 1
 
     gallery = []
@@ -101,7 +124,7 @@ def main():
             standalone = ensure_xmlns(svg)
 
             name = "{}-{:02d}.svg".format(slug, i)
-            with open(os.path.join(HERE, name), "w", encoding="utf-8") as fh:
+            with open(os.path.join(outdir, name), "w", encoding="utf-8") as fh:
                 fh.write('<?xml version="1.0" encoding="UTF-8"?>\n')
                 fh.write(standalone)
                 fh.write("\n")
@@ -130,13 +153,14 @@ def main():
     )
 
     doc = DOC_TEMPLATE.format(
-        npages=len(pages), nfigs=total, toc=toc, body="\n".join(gallery)
+        npages=len(pages), nfigs=total, toc=toc, body="\n".join(gallery),
+        heading=html.escape(heading), lede_tail=lede_tail,
     )
-    with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(outdir, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(doc)
 
     print("wrote {} standalone SVG files from {} pages".format(total, len(pages)))
-    print("wrote " + os.path.join(HERE, "index.html"))
+    print("wrote " + os.path.join(outdir, "index.html"))
     return 0
 
 
@@ -145,7 +169,7 @@ DOC_TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dreamed infographics</title>
+<title>{heading}</title>
 <style>
   :root {{ color-scheme: light; }}
   body {{ margin: 0 auto; padding: 2rem 1.25rem 5rem; max-width: 60rem;
@@ -172,10 +196,9 @@ DOC_TEMPLATE = """<!doctype html>
 </style>
 </head>
 <body>
-<h1>Dreamed infographics</h1>
-<p class="lede">{nfigs} figures from {npages} pages, extracted so they open
-<strong>without Jekyll and without a server</strong>. Everything below is inline: no
-CDN, no scripts, no external assets. Each figure also exists as its own
+<h1>{heading}</h1>
+<p class="lede">{nfigs} figures from {npages} pages, {lede_tail}. Everything below is
+inline: no CDN, no scripts, no external assets. Each figure also exists as its own
 <code>.svg</code> file in this directory.</p>
 
 <nav><ul>

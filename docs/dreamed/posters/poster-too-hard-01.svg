@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1280" role="img" aria-labelledby="p1-title">
+<title id="p1-title">Poster: two safe ingredients, one dangerous mixture. Adding alone is safe, multiplying alone is safe, and adding together with multiplying produces questions that can never be answered. A twist panel adds that adding plus the single question is this number a perfect square already tips it over.</title>
+<defs>
+<marker id="p1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#3a3a3a"/>
+</marker>
+<pattern id="p1hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+<rect width="12" height="12" fill="#f6ebe4"/>
+<line x1="0" y1="0" x2="0" y2="12" stroke="#c98d6a" stroke-width="4"/>
+</pattern>
+</defs>
+
+<rect x="0" y="0" width="700" height="1280" fill="#fbfaf8"/>
+<g font-family="Georgia, 'Times New Roman', serif" fill="#1a1a1a">
+
+<rect x="0" y="0" width="700" height="190" fill="#efeae2"/>
+<text x="350" y="74" font-size="46" text-anchor="middle" font-weight="bold">TWO SAFE INGREDIENTS.</text>
+<text x="350" y="128" font-size="46" text-anchor="middle" font-weight="bold">ONE DANGEROUS MIXTURE.</text>
+<text x="350" y="168" font-size="25" text-anchor="middle" fill="#4a4a4a">Where maths runs out of answers.</text>
+
+<text x="190" y="234" font-size="28" text-anchor="middle" font-weight="bold">ADDING</text>
+<rect x="115" y="250" width="150" height="150" rx="12" fill="#ffffff" stroke="#2f6b3f" stroke-width="4"/>
+<rect x="123" y="330" width="134" height="62" fill="#e2efe5"/>
+<text x="190" y="352" font-size="76" text-anchor="middle" font-weight="bold">+</text>
+<text x="190" y="440" font-size="27" text-anchor="middle" font-weight="bold" fill="#2f6b3f">SAFE</text>
+<text x="190" y="472" font-size="24" text-anchor="middle">It can answer every</text>
+<text x="190" y="500" font-size="24" text-anchor="middle">question about adding.</text>
+
+<text x="510" y="234" font-size="28" text-anchor="middle" font-weight="bold">MULTIPLYING</text>
+<rect x="435" y="250" width="150" height="150" rx="12" fill="#ffffff" stroke="#2f6b3f" stroke-width="4"/>
+<rect x="443" y="330" width="134" height="62" fill="#e2efe5"/>
+<text x="510" y="352" font-size="76" text-anchor="middle" font-weight="bold">&#215;</text>
+<text x="510" y="440" font-size="27" text-anchor="middle" font-weight="bold" fill="#2f6b3f">SAFE</text>
+<text x="510" y="472" font-size="24" text-anchor="middle">It can answer every</text>
+<text x="510" y="500" font-size="24" text-anchor="middle">question about times.</text>
+
+<line x1="190" y1="520" x2="298" y2="576" stroke="#3a3a3a" stroke-width="3" marker-end="url(#p1arrow)"/>
+<line x1="510" y1="520" x2="402" y2="576" stroke="#3a3a3a" stroke-width="3" marker-end="url(#p1arrow)"/>
+
+<rect x="185" y="586" width="330" height="210" rx="16" fill="url(#p1hatch)" stroke="#8a3d12" stroke-width="5"/>
+<text x="350" y="634" font-size="30" text-anchor="middle" font-weight="bold">BOTH TOGETHER</text>
+<text x="350" y="710" font-size="52" text-anchor="middle" font-weight="bold">+  and  &#215;</text>
+<text x="350" y="768" font-size="28" text-anchor="middle" font-weight="bold" fill="#8a3d12">NOT SAFE</text>
+
+<text x="350" y="842" font-size="30" text-anchor="middle" font-weight="bold">Now there are questions it can</text>
+<text x="350" y="878" font-size="30" text-anchor="middle" font-weight="bold">NEVER answer.</text>
+<text x="350" y="918" font-size="24" text-anchor="middle">Not "nobody has managed it yet".</text>
+<text x="350" y="948" font-size="24" text-anchor="middle">Proved impossible, back in the 1930s.</text>
+
+<rect x="40" y="980" width="620" height="232" rx="10" fill="#ffffff" stroke="#2d5c8a" stroke-width="3"/>
+<text x="64" y="1024" font-size="30" font-weight="bold" fill="#2d5c8a">THE TWIST</text>
+<text x="64" y="1062" font-size="24">You do not even need multiplying.</text>
+<text x="64" y="1092" font-size="24">Adding, plus one extra question you may ask,</text>
+<text x="64" y="1122" font-size="24">"is this number a perfect square?", already</text>
+<text x="64" y="1152" font-size="24">brings multiplying back. One innocent little</text>
+<text x="64" y="1182" font-size="24">question tips the whole thing over the edge.</text>
+
+<text x="350" y="1240" font-size="19" text-anchor="middle" fill="#5c5c5c">What we skipped: the real names (Presburger, Skolem, Goedel, Church),</text>
+<text x="350" y="1264" font-size="19" text-anchor="middle" fill="#5c5c5c">and exactly what counts as a question a machine is allowed to ask.</text>
+</g>
+</svg>

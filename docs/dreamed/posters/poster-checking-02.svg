@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 700 1170" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Poster: how to find out you were wrong, and why several agreements can be one fact wearing hats</title>
+<desc>Left panel, five separate dots each arrow into one claim, which looks like five independent reasons. Right panel, the same five dots all trace back up to a single source box, so it is one reason told five ways. Below, three rows show counts collapsing: five to two, four to one, two to one. Then a badge reading I was wrong, next to the note that six write-ups here killed their own idea and one killed the very idea it was created to support.</desc>
+<rect x="0" y="0" width="700" height="1170" fill="#fdfcf9"/>
+<rect x="0" y="0" width="700" height="10" fill="#7a3d8f"/>
+<g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+
+<text x="40" y="90" font-size="46" font-weight="700" fill="#10233a">How to find out</text>
+<text x="40" y="140" font-size="46" font-weight="700" fill="#10233a">you were wrong</text>
+
+<text x="40" y="184" font-size="26" fill="#46535f">Five people agreeing is not five reasons</text>
+<text x="40" y="216" font-size="26" fill="#46535f">if they all heard it from one person.</text>
+
+<rect x="36" y="250" width="300" height="250" rx="10" fill="#ffffff" stroke="#b9b5ab" stroke-width="2"/>
+<text x="186" y="286" font-size="25" font-weight="600" fill="#10233a" text-anchor="middle">looks like 5 reasons</text>
+<circle cx="86" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="136" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="186" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="236" cy="340" r="13" fill="#7a3d8f"/>
+<circle cx="286" cy="340" r="13" fill="#7a3d8f"/>
+<line x1="86" y1="356" x2="86" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="136" y1="356" x2="136" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="186" y1="356" x2="186" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="236" y1="356" x2="236" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<line x1="286" y1="356" x2="286" y2="400" stroke="#7a3d8f" stroke-width="3"/>
+<polygon points="78,400 94,400 86,412" fill="#7a3d8f"/>
+<polygon points="128,400 144,400 136,412" fill="#7a3d8f"/>
+<polygon points="178,400 194,400 186,412" fill="#7a3d8f"/>
+<polygon points="228,400 244,400 236,412" fill="#7a3d8f"/>
+<polygon points="278,400 294,400 286,412" fill="#7a3d8f"/>
+<rect x="66" y="418" width="240" height="48" rx="8" fill="#eae4f0" stroke="#7a3d8f" stroke-width="2"/>
+<text x="186" y="450" font-size="25" fill="#10233a" text-anchor="middle">the claim</text>
+
+<rect x="364" y="250" width="300" height="250" rx="10" fill="#ffffff" stroke="#b9b5ab" stroke-width="2"/>
+<text x="514" y="286" font-size="25" font-weight="600" fill="#b0521a" text-anchor="middle">really 1 reason, 5 hats</text>
+<rect x="444" y="298" width="140" height="42" rx="8" fill="#f6e3d5" stroke="#b0521a" stroke-width="2"/>
+<text x="514" y="326" font-size="23" fill="#10233a" text-anchor="middle">one source</text>
+<line x1="514" y1="340" x2="414" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="464" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="514" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="564" y2="372" stroke="#b0521a" stroke-width="3"/>
+<line x1="514" y1="340" x2="614" y2="372" stroke="#b0521a" stroke-width="3"/>
+<circle cx="414" cy="384" r="13" fill="#b0521a"/>
+<circle cx="464" cy="384" r="13" fill="#b0521a"/>
+<circle cx="514" cy="384" r="13" fill="#b0521a"/>
+<circle cx="564" cy="384" r="13" fill="#b0521a"/>
+<circle cx="614" cy="384" r="13" fill="#b0521a"/>
+<polygon points="406,400 422,400 414,412" fill="#b0521a"/>
+<polygon points="456,400 472,400 464,412" fill="#b0521a"/>
+<polygon points="506,400 522,400 514,412" fill="#b0521a"/>
+<polygon points="556,400 572,400 564,412" fill="#b0521a"/>
+<polygon points="606,400 622,400 614,412" fill="#b0521a"/>
+<rect x="394" y="418" width="240" height="48" rx="8" fill="#f6e3d5" stroke="#b0521a" stroke-width="2"/>
+<text x="514" y="450" font-size="25" fill="#10233a" text-anchor="middle">the same claim</text>
+
+<text x="40" y="550" font-size="28" font-weight="700" fill="#10233a">It happened three times here.</text>
+
+<rect x="44" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="104" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="134" y="585" width="22" height="22" fill="#7a3d8f"/>
+<rect x="164" y="585" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="596" x2="238" y2="596" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,588 256,596 238,604" fill="#6b6a63"/>
+<rect x="272" y="585" width="22" height="22" fill="#b0521a"/>
+<rect x="302" y="585" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="639" font-size="24" fill="#46535f">five reasons to drop an idea, really two</text>
+
+<rect x="44" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="104" y="665" width="22" height="22" fill="#7a3d8f"/>
+<rect x="134" y="665" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="676" x2="238" y2="676" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,668 256,676 238,684" fill="#6b6a63"/>
+<rect x="272" y="665" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="719" font-size="24" fill="#46535f">four write-ups agreeing, all quoting one</text>
+
+<rect x="44" y="745" width="22" height="22" fill="#7a3d8f"/>
+<rect x="74" y="745" width="22" height="22" fill="#7a3d8f"/>
+<line x1="200" y1="756" x2="238" y2="756" stroke="#6b6a63" stroke-width="4"/>
+<polygon points="238,748 256,756 238,764" fill="#6b6a63"/>
+<rect x="272" y="745" width="22" height="22" fill="#b0521a"/>
+<text x="44" y="799" font-size="24" fill="#46535f">two hard questions, the same one twice</text>
+
+<circle cx="112" cy="900" r="64" fill="#ffffff" stroke="#2f6b35" stroke-width="6"/>
+<circle cx="112" cy="900" r="52" fill="none" stroke="#2f6b35" stroke-width="2"/>
+<text x="112" y="893" font-size="24" font-weight="700" fill="#2f6b35" text-anchor="middle">I WAS</text>
+<text x="112" y="923" font-size="24" font-weight="700" fill="#2f6b35" text-anchor="middle">WRONG</text>
+<polygon points="88,955 112,975 136,955 136,1000 112,984 88,1000" fill="#2f6b35"/>
+<text x="205" y="864" font-size="26" fill="#10233a">Six write-ups here killed</text>
+<text x="205" y="896" font-size="26" fill="#10233a">their own idea, out loud.</text>
+<text x="205" y="940" font-size="26" font-weight="700" fill="#10233a">One killed the very idea</text>
+<text x="205" y="972" font-size="26" font-weight="700" fill="#10233a">it was created to support.</text>
+
+<text x="40" y="1036" font-size="30" font-weight="700" fill="#10233a">Checking your own answer is</text>
+<text x="40" y="1074" font-size="30" font-weight="700" fill="#10233a">not failure. It is the job.</text>
+
+<text x="40" y="1118" font-size="24" fill="#6b6a63">What we skipped: which claims these were,</text>
+<text x="40" y="1146" font-size="24" fill="#6b6a63">and all the maths. Details in the grown-up pages.</text>
+</g>
+</svg>

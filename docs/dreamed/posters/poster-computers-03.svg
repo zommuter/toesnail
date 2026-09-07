@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="tspost" viewBox="0 0 700 1340" role="img" aria-labelledby="p2t p2d">
+<style>
+.tspost{display:block;width:100%;height:auto;max-width:640px;margin:0 auto;background:#fcfcfb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tspost text{fill:#26251f}
+.tspost .hl{fill:#0b0b0b;font-size:52px;font-weight:700}
+.tspost .sub{fill:#4a4944;font-size:28px}
+.tspost .hd{fill:#0b0b0b;font-size:30px;font-weight:700}
+.tspost .bd{fill:#26251f;font-size:26px}
+.tspost .sm{fill:#6b6a66;font-size:24px}
+.tspost .m{text-anchor:middle}
+.tspost .e{text-anchor:end}
+.tspost .box{fill:#f2f1ec;stroke:#26251f;stroke-width:3}
+.tspost .out{fill:#ffffff;stroke:#26251f;stroke-width:3}
+.tspost .big{fill:#0b0b0b;font-size:34px;font-weight:700}
+.tspost .huge{fill:#0b0b0b;font-size:60px;font-weight:700}
+.tspost .arw{fill:none;stroke:#26251f;stroke-width:3}
+.tspost .rule{stroke:#c9c8c0;stroke-width:2}
+.tspost .barA{fill:#2a78d6}
+.tspost .barB{fill:#eb6834}
+.tspost .empty{fill:none;stroke:#6b6a66;stroke-width:3;stroke-dasharray:10 8}
+</style>
+
+<title id="p2t">Doing maths inside a locked box</title>
+<desc id="p2d">A poster. A sealed box with a padlock holds a secret number. Two gloves reach in from outside so a stranger can work on the number without opening the box. The stranger does the sum, hands the box back, and the owner unlocks it to find the right answer, while the stranger never saw the number or the answer. Underneath, three bars compare speed: a normal computer takes a blink, the same job inside the box takes minutes, and the third lane is drawn empty because nobody has yet run the biggest AI models all the way inside the box.</desc>
+
+<text class="hl" x="30" y="72">Maths inside</text>
+<text class="hl" x="30" y="128">a locked box.</text>
+<text class="sub" x="30" y="180">A stranger does your sums for you without</text>
+<text class="sub" x="30" y="214">ever seeing your number, or the answer.</text>
+
+<rect class="box" x="170" y="262" width="360" height="250" rx="16"/>
+<rect class="out" x="200" y="292" width="300" height="126"/>
+<text class="huge m" x="350" y="378">7</text>
+<text class="sm m" x="350" y="404">your secret number</text>
+<path class="arw" d="M478,286 a14,14 0 0 1 28,0 l0,12" fill="none"/>
+<rect x="472" y="298" width="40" height="30" rx="5" fill="#f2f1ec" stroke="#26251f" stroke-width="3"/>
+<text class="sm" x="524" y="322">locked</text>
+<circle class="out" cx="270" cy="482" r="28"/>
+<circle class="out" cx="430" cy="482" r="28"/>
+<path d="M40,572 Q150,566 268,502" fill="none" stroke="#6b6a66" stroke-width="24" stroke-linecap="round"/>
+<path d="M660,572 Q550,566 432,502" fill="none" stroke="#6b6a66" stroke-width="24" stroke-linecap="round"/>
+<text class="sm" x="30" y="612">the stranger reaches in, but the box never opens</text>
+
+<text class="hd" x="30" y="666">Hand it over, get it back, unlock it</text>
+<text class="bd" x="30" y="702">Lock your number in the box. Give the box to</text>
+<text class="bd" x="30" y="734">a stranger. They do maths on what is inside</text>
+<text class="bd" x="30" y="766">without opening it, and hand the box back.</text>
+<text class="bd" x="30" y="798">You unlock it. The answer is correct.</text>
+
+<text class="hd" x="30" y="852">That sounds impossible. It is real.</text>
+<text class="bd" x="30" y="888">They never saw your number and they never</text>
+<text class="bd" x="30" y="920">saw the answer. They only shuffled the box.</text>
+
+<text class="hd" x="30" y="974">The catch. It is enormously slow.</text>
+<text class="sm" x="30" y="1010">a normal computer, out in the open</text>
+<rect class="barA" x="30" y="1020" width="9" height="34"/>
+<text class="bd" x="55" y="1048">a blink</text>
+<text class="sm" x="30" y="1094">the very same job, inside the locked box</text>
+<rect class="barB" x="30" y="1104" width="560" height="34"/>
+<text class="bd e" x="670" y="1132">minutes</text>
+<text class="sm" x="30" y="1178">the biggest AI models, all the way inside the box</text>
+<rect class="empty" x="30" y="1188" width="640" height="34" rx="6"/>
+<text class="bd m" x="350" y="1214">nobody has managed it yet</text>
+<text class="sm" x="30" y="1264">A longer bar means slower. The empty lane is empty because</text>
+<text class="sm" x="30" y="1294">the record is empty, not because the number is small. Reading</text>
+<text class="sm" x="30" y="1324">a gap in a chart is a skill worth having.</text>
+</svg>
