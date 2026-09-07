@@ -153,6 +153,16 @@
     but not origination; differential testing recommended for fidelity).
   Deciding what (if anything) to promote from `docs/dreamed/` into `physics/` or `essays/` remains
   owner-only theory direction. Nothing there was promoted, and no physics file was edited.
+- [ ] **[OWNER] Triage the nine dreamed infographics** (`docs/dreamed/fig-*.md`, 2026-09-07) <!-- id:ff4c -->
+  The neutral pointer `CLAUDE.md`'s dreamed convention requires, added by the 2026-09-07 16:26 relay
+  review because the batch that published them did not write one (`REVIEW_ME` `id:a4bc`). Nine
+  hand-authored inline-SVG pages drawing all three Bloch Truth waves, each `permalink:`-ed and
+  therefore LIVE on the public site: `fig-the-object`, `fig-cluster-map`, `fig-boundary-and-big-five`,
+  `fig-results`, `fig-wirohsh`, `fig-fhe`, `fig-thermo-laser`, `fig-spine`, `fig-wings-and-corpus`.
+  Indexed at `docs/dreamed/README.md:74-82`; all nine pass the advisory render tier under MathJax and
+  KaTeX. UNRATIFIED like everything else under `docs/dreamed/`; nothing here is adopted and no verdict
+  is filed. One of them, `fig-wirohsh.md`, produced a finding rather than a picture and that finding
+  was already annotated onto `id:ff32` by its own batch, so it is not waiting on this pointer.
 - [ ] **[OWNER] Triage the dreamed Bloch Truth cluster, THIRD WAVE (SPECULATIVE MODE)** (`docs/dreamed/`, 4 essays + 4 Lean files, 2026-09-07) <!-- id:e50c -->
   Owner-instructed mode: *"have some more agents dream on creatively, also hallucinate a bit
   intentionally with then again sound logic for the investigations"*. These four essays deliberately

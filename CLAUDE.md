@@ -84,12 +84,17 @@ decides every resolution.
   `bundle install` (Gemfile pins jekyll 4 + minima + plugins; `vendor/`, `_site/` gitignored). Then
   `bundle exec jekyll serve` → `http://localhost:4000/`. The live site builds remotely on GitHub Pages.
 - **Tests (`tests/`):** relay-style TDD discipline (tests are the spec; never weaken a test to pass).
-  `bash tests/run.sh` runs `test_verify.sh` (SymPy verdicts + `verified:` attestation
-  non-drift, needs `uv`), `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without Ruby), and
-  `test_mathjax.cjs` (renders every equation through MathJax 3 **and** KaTeX — the client-side check HTML-grep
-  can't do; needs `npm install`, SKIPs without it). `tests/HUMAN-integration.md` holds the residual `[HUMAN]`
-  visual checks. **Lesson:** HTML-grep gave false confidence (the `\gdef` bug rendered fine in source) — test
-  the actual render.
+  **The authoritative tier list is `tests/run.sh`'s own loop** — 14 blocking tiers as of 2026-09-07, not the
+  three this bullet used to name as if they were the whole suite; `tests/README.md` documents them. The three
+  worth knowing here are `test_verify.sh` (SymPy verdicts + `verified:` attestation non-drift, needs `uv`),
+  `test_render.sh` (Jekyll build + HTML/MathJax invariants, SKIPs without Ruby) and `test_mathjax.cjs`
+  (renders every equation through MathJax 3 **and** KaTeX — the client-side check HTML-grep can't do; needs
+  `npm install`, SKIPs without it). Two tiers sit outside the blocking set on purpose:
+  `test_dreamed_render.cjs` is **advisory** (it reports `docs/dreamed/` render breaks and always exits 0, so
+  an unratified essay can never fail `make test` — `id:8b1c`, owner ruling option (c)), and
+  `test_verify_entropy.sh` is the still-RED spec for the gated seam `id:76e5`, deliberately not in the loop.
+  `tests/HUMAN-integration.md` holds the residual `[HUMAN]` visual checks. **Lesson:** HTML-grep gave false
+  confidence (the `\gdef` bug rendered fine in source) — test the actual render.
 
 ## Verify commit-hook (relay-aware, two-tier) — v1 HARD tier
 Design: `docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md` (decisions D1–D6) and

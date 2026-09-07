@@ -308,4 +308,66 @@ recorded as chosen. Full argument + weaknesses in each essay.
   (c) Cover it non-blockingly: a separate advisory tier that reports dreamed render breaks without
   failing `make test`. Note (b) and (c) both also want `test_page_coverage.sh` changed from a name list
   to a directory scan, or the allowlist-checking-itself shape survives whichever you pick. Grew by 4
-  pages this window (the Bloch Truth cluster, `id:c454`) and by 32 the week before. **RESOLVED 2026-09-07 (owner ruling: option (c), advisory tier).** Built: `tests/test_dreamed_render.cjs` renders every `docs/dreamed/` page through MathJax AND KaTeX and reports breaks LOUDLY while exiting 0, so an unratified essay can never fail `make test`. `tests/test_page_coverage.sh` rewritten from the 5-name self-checking allowlist to a DIRECTORY SCAN keyed on front-matter `permalink:`, and it additionally asserts no dreamed page has leaked into the blocking array, so option (b) cannot creep back by accident. Macro table extracted to `tests/lib/macros.cjs` so both tiers share one copy instead of creating the drift the existing drift guard exists to catch. Scope split: BLOCKING for `physics/`, `essays/`, `crypto/`, root; ADVISORY for `docs/dreamed/`. The rewritten scan immediately found FOUR ratified pages the old allowlist never noticed were uncovered (`physics/acoustics.md`, `physics/lasercool.md`, `essays/Narrativium.md`, `README.md`); they are now in the blocking array. Proven to fire, not merely asserted: four seeded defects on a scratch page were all reported with page and line, the suite still exited 0, and the scratch was removed. **It found a real six-day-old public break on its first run**: `docs/dreamed/photon-localizability.md` carried two veq handles in one display block, each expanding to a tag, which both engines reject, broken since 2026-09-01. Fixed by the repo's documented two-block split (same shape as `id:3b4c`) and recorded inline. All 68 dreamed pages now scan clean and `tests/run.sh` is `SUITE: PASS`. <!-- id:8b1c -->
+  pages this window (the Bloch Truth cluster, `id:c454`) and by 32 the week before. **RESOLVED 2026-09-07 (owner ruling: option (c), advisory tier).** Built: `tests/test_dreamed_render.cjs` renders every `docs/dreamed/` page through MathJax AND KaTeX and reports breaks LOUDLY while exiting 0, so an unratified essay can never fail `make test`. `tests/test_page_coverage.sh` rewritten from the 5-name self-checking allowlist to a DIRECTORY SCAN keyed on front-matter `permalink:`, and it additionally asserts no dreamed page has leaked into the blocking array, so option (b) cannot creep back by accident. Macro table extracted to `tests/lib/macros.cjs` so both tiers share one copy instead of creating the drift the existing drift guard exists to catch. Scope split: BLOCKING for `physics/`, `essays/`, `crypto/`, root; ADVISORY for `docs/dreamed/`. The rewritten scan immediately found FOUR ratified pages the old allowlist never noticed were uncovered (`physics/acoustics.md`, `physics/lasercool.md`, `essays/Narrativium.md`, `README.md`); they are now in the blocking array. Proven to fire, not merely asserted: four seeded defects on a scratch page were all reported with page and line, the suite still exited 0, and the scratch was removed. **It found a real six-day-old public break on its first run**: `docs/dreamed/photon-localizability.md` carried two veq handles in one display block, each expanding to a tag, which both engines reject, broken since 2026-09-01. Fixed by the repo's documented two-block split (same shape as `id:3b4c`) and recorded inline. All 68 dreamed pages now scan clean and `tests/run.sh` is `SUITE: PASS`. **VERIFIED INDEPENDENTLY by the 2026-09-07 16:26 relay review, not taken on report:** all 14 blocking tiers plus the advisory tier re-run here green with zero skips; the PRE-rewrite `test_page_coverage.sh` and `test_mathjax.cjs`, restored from `relay-ckpt-20260907-1148`, both still PASS against the new tree, so the rewrite strengthened the spec rather than relaxing it; `gaming-scan.sh` is clean. **The box stays UNTICKED on purpose** — this file's own header defines a ticked box as *"owner confirms this interpretation/correction"*, so the tick is yours and a review may not take it for you. The delivery is verified; only your confirmation is outstanding. <!-- id:8b1c -->
+
+## Relay review 2026-09-07 16:26 (window `relay-ckpt-20260907-1148`..HEAD, 5 commits)
+
+- [ ] **`docs/dreamed/lean/` is 56 Lean files with ZERO automated verification, and this window's
+  headline results rest on them.** This is `id:8b1c` one layer over, for proofs instead of rendering,
+  and it is stated as a disposition question for exactly the same reason. The facts, measured not
+  assumed: `verify/lakefile.toml` declares `defaultTargets = ["Resogram"]` and one `lean_lib`, so no
+  dreamed Lean file ever enters `make test`; `CLAUDE.md:50` already records this and says each file is
+  "verified ad hoc instead". The ad-hoc record is a sentence in a commit message. **What this review
+  did about it, so the gap is sized rather than merely named:** every one of the 56 files was grepped
+  for `sorry` (8 hits, all inside comments or docstrings — zero real proof debt), and four files were
+  re-elaborated from `verify/` under `capped.sh` — `LogicComplementarity` (the third wave's headline
+  `no_logical_complementarity`), `LogicBPI` and `LogicModels` (the two D4 discharges) and
+  `LogicBoundary` — all four exit 0 with no diagnostics; `LogicBPI` prints `#print axioms` output
+  naming only `propext`, `Classical.choice`, `Quot.sound`, with no `sorryAx`. So the claim is TRUE
+  today and was checked, not believed. What is missing is that nothing re-checks it tomorrow: a
+  Mathlib bump silently rots 56 published "machine-checked" claims. Your call, and the third option
+  is not free. (a) Leave it ad hoc, and accept that the public pages' proof claims decay unnoticed.
+  (b) Blocking tier — wrong for the same reason (b) was wrong for rendering: unratified work would
+  fail your `make test`. (c) An advisory Lean tier mirroring `test_dreamed_render.cjs`. **Note the
+  cost asymmetry that makes (c) a different decision here:** the render tier is source-level and
+  costs ~2 s on 68 pages, whereas elaborating 56 Mathlib-importing files is minutes to tens of
+  minutes, so (c) probably wants to be opt-in or nightly rather than "always on" — which is a
+  genuinely different shape from the ruling you already gave, not a rubber stamp of it. <!-- id:ef6b -->
+
+- [ ] **A rule and the commit that wrote it contradicted each other, and I narrowed the rule rather
+  than leave it.** `tests/README.md` gained the line *"Do not 'fix' a dreamed finding to silence it:
+  that content is the owner's, and a finding is surfaced, never edited away"* in commit `8019373` —
+  the same commit that repaired `docs/dreamed/photon-localizability.md`. Both acts were right; the
+  absolute wording was not. I rewrote that bullet to draw the line the practice actually follows: a
+  PURE RENDER repair (block split, blank line) that changes no symbol, number or word and carries an
+  inline comment saying what moved is allowed, because leaving a public page broken preserves nothing
+  the comment does not; a CONTENT or MATH edit to silence a finding never is. Two things for you.
+  First, confirm or move that line — it is a rule about your material and I am proposing, not
+  settling, where it sits. Second, the stated JUSTIFICATION may be wrong independently of the rule:
+  it says the dreamed content "is the owner's", while `TODO.md id:c454` describes the same tree as
+  "AI-generated by four delegated agents, owner-seeded, UNREVIEWED". If the intended sense is "yours
+  to rule on" rather than "written by you", the wording invites a future reader to protect AI prose
+  as though it were authored material. <!-- id:bcc6 -->
+
+- [ ] **Nine new pages went live on the public site with no `[OWNER]` triage pointer.** `CLAUDE.md`'s
+  dreamed convention is explicit: a batch "gets ONE neutral `[OWNER]` triage pointer in `TODO.md` and
+  nothing more". The three essay waves each got one (`id:c454`, `id:352a`, `id:e50c`); the nine
+  infographics added in `8019373` (`fig-the-object` … `fig-wings-and-corpus`) got none. They are
+  indexed in `docs/dreamed/README.md` and covered by the advisory render tier, so they are not
+  invisible to tooling — they were invisible to YOUR LEDGER, which is what the convention protects.
+  This review added the missing neutral pointer as `TODO.md id:ff4c`; it files no verdict and adopts
+  nothing. Flagged here rather than fixed silently because restoring a convention on someone else's
+  batch is still a write to your triage queue. <!-- id:a4bc -->
+
+- [ ] **`id:9d8c` carries gate vocabulary but no typed `gated-on:` edge** (`orphan-scan.sh --shipped`
+  UNMARKED-GATE, the window's only such finding). The ROADMAP line is the FORWARD-FLAG CI
+  Lean/Mathlib build, held by `<!-- owner-hold:local-lake-build-gate-suffices -->`. No typed edge was
+  added because the hold is an owner judgement ("the local lake build gate suffices"), not a
+  dependency on another item, and `gated-on:` needs a target id — so inventing one would encode a
+  dependency that does not exist. Either confirm the hold stands (and the scanner finding is
+  permanent noise for this item) or name what would lift it. <!-- id:9d8c -->
+
+- [ ] **This file holds 31 open boxes against its own stated `Max ~10`, and none is ticked.** Not a
+  new defect, but it is now 3x the budget and the header calls itself a 15-minute queue, which it
+  demonstrably is not. Zero boxes are `[x]`, so `REVIEW_ME.archive.md` cannot drain any of them —
+  the queue only shrinks when you tick. Worth one pass deciding which are genuinely still live.

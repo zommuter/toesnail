@@ -41,8 +41,19 @@ blocking**:
   earlier in the run, greps the built HTML for a handle that landed in an inline `kdmath`
   span. It prints a loud, boxed `ADVISORY` block naming each page and line.
 - It **always exits 0**, and `tests/run.sh` calls it with `|| true`, so an unratified essay
-  can never break the owner's `make test`. Do not "fix" a dreamed finding to silence it:
-  that content is the owner's, and a finding is surfaced, never edited away.
+  can never break the owner's `make test`.
+- **What may and may not be "fixed" when this tier reports something** (narrowed by the
+  2026-09-07 relay review, `REVIEW_ME` `id:bcc6`, because the original absolute wording —
+  *"a finding is surfaced, never edited away"* — was contradicted by the very commit that
+  wrote it, which repaired `photon-localizability.md`). The line the review drew, for the
+  owner to confirm or move:
+  - **A pure RENDER repair is allowed** — splitting a display block, restoring a blank line
+    after `$$`, and nothing else. It must change no symbol, number, claim or word of the
+    prose, and it must carry an inline HTML comment saying what was moved and why, exactly
+    as `photon-localizability.md:120` does. Leaving a public page broken to preserve a
+    finding serves nobody: the finding survives in the comment.
+  - **A CONTENT or MATH edit is never allowed** to silence a finding. That content is the
+    owner's to rule on, and an edit there is a decision taken on his behalf. Surface it.
 - Always on, not opt-in: it is source-level plus one optional grep (no Jekyll build of its
   own), so it costs about 2 s on 57 pages.
 
