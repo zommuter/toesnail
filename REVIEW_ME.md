@@ -289,3 +289,23 @@ recorded as chosen. Full argument + weaknesses in each essay.
   genuinely process-blocking, so I LEFT the strength at **strong** rather than re-ranking on my own
   judgment — but it is now a one-legged **strong**, and `docs/dependencies.md` says the map is reviewed
   at the parked `id:921b` scoping session. Re-rank it there, or say now whether one leg carries strong.
+
+## Relay review 2026-09-07 11:42 (window `relay-ckpt-20260907-1107`..HEAD)
+
+- [ ] **43 `docs/dreamed/` pages are PUBLISHED on the public site with ZERO render coverage, and the
+  coverage guard is a hardcoded allowlist that can never notice.** Verified, not assumed: every one of
+  the 44 files in `docs/dreamed/` carries a `permalink: /dreamed/<slug>` and `_config.yml`'s `exclude:`
+  lists only the three `crypto/fhe.*` companions, so the whole tree renders on GH Pages. Meanwhile
+  `tests/test_mathjax.cjs` walks a hardcoded 7-entry `DOCS` array (`physics/Resogram|toesnail|entropy|
+  wirohsh|photon`, `crypto/fhe`, `essays/supertool`) and `tests/test_page_coverage.sh` only asserts that
+  5 named pages appear in that array. Adding a page therefore never trips anything: the guard checks a
+  list against itself. The dreamed essays are the math-heaviest prose in the repo (density matrices,
+  Bloch decompositions, `\eqref` chains), so a kramdown/MathJax break there is silent and public.
+  **This is a disposition question, not a bug to fix, which is why it is here and not in ROADMAP:** the
+  tree is UNRATIFIED exploration by design, so gating `make test` on it may be exactly wrong. Three
+  options, your call. (a) Leave it: accept that `/dreamed/*` renders unverified. (b) Cover it: extend
+  `DOCS` to glob `docs/dreamed/*.md`, which makes the suite fail on an essay nobody has ratified.
+  (c) Cover it non-blockingly: a separate advisory tier that reports dreamed render breaks without
+  failing `make test`. Note (b) and (c) both also want `test_page_coverage.sh` changed from a name list
+  to a directory scan, or the allowlist-checking-itself shape survives whichever you pick. Grew by 4
+  pages this window (the Bloch Truth cluster, `id:c454`) and by 32 the week before. <!-- id:8b1c -->
