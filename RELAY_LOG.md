@@ -353,3 +353,58 @@ skip/status-formatting structure; no new duplication introduced.
 ## 2026-09-07 11:07 — executor (sonnet, relay-loop)
 
 id:ac7b: hooks/post-commit now diffs the mirror against the parent commit and runs stale_after_edit on the real before/after instead of a constant simulated probe; findings are a function of the commit. [id:ac7b]
+
+## 2026-09-07 11:42 — reviewer (claude-opus-5, relay-loop)
+
+Review of window `relay-ckpt-20260907-1107`..HEAD (2 commits, both owner/coordinator-attributed, no
+executor unit ran). `59f07e6` added the dreamed "Bloch Truth" cluster (4 essays + 4 Lean files);
+`11fa873` archived one aged done TODO entry. Nothing was closed, so no item was verified green and none
+was reopened.
+
+Trust-but-verify: `gaming-scan.sh` clean (no DELETED_TEST / ADDED_SKIP / REMOVED_ASSERT). No file under
+`tests/` or `verify/` was touched in the window, so the resurrection and fixture-special-casing checks
+have no candidates. Provenance greps found no `@owner-accepted:` / `@owner-answered:` / `answer-src:`
+introduced or removed. §2d over-reach does not apply: no ROADMAP item closed this window.
+
+Three claims in `59f07e6`'s message were re-derived rather than taken on report. Zero `sorry` in all
+four new Lean files: confirmed by grep, 0/0/0/0. "Outside the lake targets, so `make test` is
+unaffected": confirmed, `verify/lakefile.toml` has `defaultTargets = ["Resogram"]` and one `lean_lib`.
+The index's 39 -> 43 count: confirmed, 43 essays and 43 Lean files on disk.
+
+Test tiers (id:f032), all enumerated from `Makefile`, `package.json` and `.github/workflows/ci.yml`:
+`make test` -> `tests/run.sh`, 14 tiers, ALL RAN, ALL PASS, zero skips. The Lean tier really built
+(8314 lake jobs, mathlib cache hit), not a toolchain skip. `npm run test:math` and the 3 CI steps are
+proper subsets of run.sh and ran inside it. One tier is deliberately NOT wired and stayed that way:
+`tests/test_verify_entropy.sh` (`# roadmap:7306`) is the still-RED spec for the gated `id:76e5`/`id:5d31`
+seams, documented as such in ROADMAP.md and the archives. Manual tier `tests/HUMAN-integration.md`
+remains a human pass (irreducibly visual, MathJax runs client-side); NOT counted green.
+
+Spec drift (§4), fixed inline: `docs/dreamed/` was absent from `CLAUDE.md`'s Structure list, from
+`README.md` and from `ARCHITECTURE.md` -- 43 essays, 43 Lean files, 2 runnable suites and a bespoke
+`capped.sh` runner with no durable description anywhere. Added a `CLAUDE.md` bullet carrying the three
+facts a contributor would otherwise re-derive: nothing there is ratified (one neutral `[OWNER]` TODO
+pointer per batch, never a ROADMAP/REVIEW_ME filing); the tree IS published at `/dreamed/<slug>`; its
+Lean sits outside the lake targets; and its Lean/Python run under `capped.sh` (systemd scope,
+`MemoryMax`, `MemorySwapMax=0`, `CPUQuota`), with exit 137 meaning the cap fired. Conventions only, no
+status.
+
+Reverse-handoff (§5b): the one new open item this window, `id:c454`, is an `[OWNER]` triage pointer for
+the dreamed batch. Owner-only theory direction with pending rulings, explicitly not self-settling, so it
+is correctly NOT promoted to ROADMAP and was left as a TODO item per §5b's design-judgment branch.
+
+relay-doctor: cross-ledger drift clean; `roadmap-lint` clean (every open item carries a recognized lane
+tag + id). `todo-conformance` reports many `grammar-continuation` plus 3 `shape-prose` and 1
+`grammar-item-title-long` findings, all pre-existing and all the known ledger line-shrink class
+(dotclaude-skills `id:55f6`/`id:0d7c`); no new box filed, the tooling for that lands upstream.
+`orphan-scan --shipped` reports two UNMARKED-GATE items, `id:9d8c` and `id:4bb2`; both ALREADY have open
+REVIEW_ME boxes (lines 200 and 212), so no duplicate was added.
+
+One new REVIEW_ME box, `id:8b1c`: the 43 published `/dreamed/*` pages have zero render coverage, and the
+coverage guard cannot notice, because `test_mathjax.cjs` walks a hardcoded 7-entry `DOCS` array and
+`test_page_coverage.sh` merely asserts 5 named pages appear in that same array -- the list is checked
+against itself. Surfaced with three dispositions rather than fixed: gating `make test` on unratified
+exploration prose may be exactly the wrong answer, and that is the owner's call.
+
+0 open [ROUTINE] after re-derivation. The single `[ROUTINE]` substring in ROADMAP.md is prose inside
+`id:8807`'s `@container` line describing how its TODO twin was historically tagged, not a lane tag.
+[id:8b1c]

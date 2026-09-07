@@ -39,6 +39,21 @@ decides every resolution.
 - `docs/rigor-debt.md` — the tier-tagged inventory of hand-waved / unchecked claims (triage menu).
 - `docs/dependencies.md` — how toesnail, `.mw`, and collAIb depend on each other and how strongly.
 - `docs/meeting-notes/` — design-decision records.
+- `docs/dreamed/` — AI-generated, owner-seeded exploration essays with Lean companions, indexed by
+  `docs/dreamed/README.md`. **Nothing here is ratified.** Every finding is a recommendation awaiting the
+  owner's ruling, so a batch never files into `ROADMAP.md`/`REVIEW_ME.md` on its own: it gets ONE neutral
+  `[OWNER]` triage pointer in `TODO.md` and nothing more. Three durable facts a contributor would
+  otherwise have to re-derive:
+  - **It is PUBLISHED.** Every file carries `permalink: /dreamed/<slug>` and `_config.yml` excludes none
+    of them, so the tree renders on the public GH Pages site. Write it as public-facing prose.
+  - **Its Lean is OUTSIDE the lake targets.** `verify/lakefile.toml` declares `defaultTargets =
+    ["Resogram"]` and a single `lean_lib`, so `docs/dreamed/lean/*.lean` never enters `make test`.
+    Each file is verified ad hoc instead (`exit 0`, zero `sorry`), re-run rather than taken on report.
+  - **Run its Lean and Python under `docs/dreamed/capped.sh`**, at the owner's standing instruction.
+    It is a systemd user scope with `MemoryMax` + `MemorySwapMax=0` + `CPUQuota`, so a runaway Lean
+    elaboration or search is OOM-killed inside the scope and the machine stays responsive. Exit 137
+    means the cap fired, which is the guard working. See the script's own header for why neither
+    `nice` nor `ulimit -v` substitutes.
 
 ## Authoring conventions (see `CONVENTIONS.md` for detail)
 - **Equation handles:** stable content-meaningful ids via `\ltag{…}` / `\eqref{…}` (KaTeX macros in README).
