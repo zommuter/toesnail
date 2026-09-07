@@ -280,3 +280,64 @@
     full `bash tests/run.sh` green (incl. `test_mathjax.cjs` with the synced mirrors). A config
     change here re-triggers the `tests/HUMAN-integration.md` visual re-walk (note it in the log).
   - **Context**: REVIEW_ME id:e0b7 rounds 4–5 (the `\veqs` design history); TODO id:9c41.
+
+### Inline-render polish (owner directives 2026-06-18; laned 2026-07-02 apex/human batch, promoted same-id by the 2026-07-02 review)
+- [x] [HARD] Colour-code the verification-tier badges — AUTHOR half only (author-then-run) <!-- id:b7e5 -->
+  - **AUTHOR HALF DONE 2026-07-04** (relay HARD child): three accessibility-checked palette options
+    (`docs/palette-preview/README.md`) mapping the whole badge family + open-debt `\<tier>c` variants to
+    colour, each with measured WCAG contrast on the minima light bg (`#fdfdfd`, all ≥4.75:1) and Machado-2009
+    deuteranopia/protanopia separation numbers; a self-contained per-option preview render
+    (`docs/palette-preview/index.html`, light + future-proof dark strip); and per-engine (KaTeX `\htmlClass`/
+    `\textcolor` + trust caveat, MathJax `\class`/`\color`) implementation notes for the run half. Owner-pick
+    box filed to `REVIEW_ME.md`. **NO engine config changed** — `git diff` touches only `docs/palette-preview/`,
+    `REVIEW_ME.md`, `RELAY_LOG.md`, `ROADMAP.md` (author-then-run split honored). The RUN half re-queues as
+    `[ROUTINE]` once the owner ratifies a palette (see the gated sub-note below).
+  - **Why**: owner render directive 2026-06-18; laned `[HARD — pool]` with an explicit
+    author-then-run split by the 2026-07-02 human-answer batch (TODO id:b7e5, same token). The pool
+    AUTHORS the proposal; the owner RATIFIES the pick; only then is the run half implemented. The
+    relay never auto-implements a palette the owner hasn't picked.
+  - **Author-half deliverable**: 2–3 accessibility-checked palette options (contrast against the
+    site background, colour-blind-safe check) mapping the whole badge family (`\sorry`/`\sympy`/
+    `\numeric`/`\lean`/`\sympylean` + the `\<tier>c` open-debt variants) to colours (strawman:
+    `\sorry` red, `\sympy`/`\sympyc` amber, `\numeric` blue, `\lean` green, `\sympylean`
+    deep-green), plus a PREVIEW render per option (a static HTML page rendering sample badges under
+    each palette), and per-engine implementation notes: KaTeX prefers `\htmlClass` + CSS over raw
+    `\color` (metric warnings; check the `trust` option requirement), MathJax CSS class/`\color`.
+    Lands as a REVIEW_ME owner-pick box + preview files (e.g. `docs/palette-preview/`) — NO engine
+    config is changed in the author half.
+  - **Run half (GATED on the owner's pick)**: implement the ratified palette in both engines +
+    `test_mathjax.cjs` coverage; re-queue as `[ROUTINE]` once the pick exists.
+  - **Done-check (author half)**: the REVIEW_ME owner-pick box with option + preview paths exists;
+    `git diff` shows NO change to `_includes/custom-head.html` / `.vscode/settings.json`.
+  - **Context**: TODO id:b7e5; relates to R2/R3 (id:445e); REVIEW_ME id:e0b7 history.
+
+- [x] [ROUTINE] Colour-code the verification-tier badges — RUN half (implement Option C) <!-- id:c7d6 -->
+  - **Owner pick 2026-07-11 (relay human)**: Option C — assurance-ramp + amber accent
+    (grey→blue→green→deep-green ordinal over the CONVENTIONS.md §2 assurance ladder; `\numeric` an
+    off-ramp amber counter-indicator). Best colour-blind separation (deut 50.4). RUN half of the
+    author-then-run split; author half shipped as id:b7e5 (`docs/palette-preview/`).
+  - **Do**: implement the Option C hexes (from `docs/palette-preview/README.md`) in
+    `_includes/custom-head.html` + `.vscode/settings.json` + `tests/test_mathjax.cjs`, per the README's
+    per-engine notes (KaTeX `\htmlClass`/`\textcolor` + `trust` caveat; MathJax `\class`/`\color`).
+    Colour is REINFORCEMENT — the glyph `? ∘ △ ✓ ✓✓` stays the primary channel; the open-debt `\<tier>c`
+    variants reuse the SAME hue as their discharged tier (distinguished by the superscript `?` glyph).
+    Then re-walk `tests/HUMAN-integration.md`.
+  - **Context**: TODO id:b7e5 (same directive, run half); REVIEW_ME palette-pick box (ticked 2026-07-11).
+
+- [x] [ROUTINE] Badge-macro drift guard: assert `_includes/custom-head.html` matches `test_mathjax.cjs`'s mirror <!-- id:0030 -->
+  - **Why**: `test_mathjax.cjs` defines `MJ_MACROS`/`KX_MACROS` as a HARDCODED MIRROR of the badge macros
+    in `_includes/custom-head.html` (line 34 "MJ_MACROS mirrors _includes/custom-head.html macros"). Only the
+    `\ltag` macro has a drift guard (l.128 reads custom-head.html and asserts it). The badge family
+    (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` + `\<tier>c`) has NONE — so the id:c7d6 colour
+    assertions verify the test's OWN copy carries each `\textcolor{hex}`, NOT that custom-head.html does. A
+    future edit that drops `\textcolor` from custom-head.html would render badges colourless yet leave the
+    suite green (false-green). Surfaced by the id:c7d6 review 2026-07-11 (colour DID land correctly this
+    turn — verified live under both engines; this guards against future silent drift).
+  - **Do**: extend the existing l.128 drift-guard pattern to the badge family — for each badge macro, read
+    `_includes/custom-head.html`, extract its macro string, and assert it equals the `MJ_MACROS` mirror entry
+    (hex included). Mirror the same guard for `.vscode/settings.json`'s KaTeX macro block if it also carries
+    the colours.
+  - **Done-check**: a deliberately-mutated custom-head.html badge macro (drop one `\textcolor`) makes
+    `node tests/test_mathjax.cjs` FAIL; unmutated ⇒ full `bash tests/run.sh` exits 0. (Spec is red until the
+    guard exists: today dropping `\textcolor` in custom-head.html does NOT fail the suite.)
+  - **Context**: latent pre-existing mirror pattern (predates c7d6; c7d6 merely added colour to the mirror).
