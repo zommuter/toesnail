@@ -349,3 +349,7 @@ refactor: none needed — the fix replaces the probe body in place, reusing the 
 skip/status-formatting structure; no new duplication introduced.
 0 open [ROUTINE] after re-derivation.
 [id:ac7b]
+
+## 2026-09-07 11:07 — executor (sonnet, relay-loop)
+
+id:ac7b: hooks/post-commit now diffs the mirror against the parent commit and runs stale_after_edit on the real before/after instead of a constant simulated probe; findings are a function of the commit. [id:ac7b]
