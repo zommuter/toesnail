@@ -222,3 +222,7 @@ refactor: none needed -- one bullet + two table rows added to an existing doc, n
 
 2 open [ROUTINE] after re-derivation (id:17ee, id:ac7b) -- id:3381 closed this session; both remaining items are untouched by this change (docs/se-corpus.md corpus-row fix and the verify commit-hook diff-awareness item).
 [id:3381]
+
+## 2026-09-07 10:39 — executor (sonnet, relay-loop)
+
+Added dotclaude-skills as a fourth node (+2 edge rows) to docs/dependencies.md (id:3381); full 12/12-tier suite green [id:3381]
