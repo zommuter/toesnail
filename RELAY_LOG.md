@@ -201,3 +201,7 @@ refactor: none needed — this unit wrote only ledger and doc lines; no code sur
 4 open [ROUTINE] after re-derivation (id:3381, id:17ee, id:ac7b, id:0183) — all four newly dispatchable, three
 of them only because the placement damage above was repaired.
 [id:ac7b, id:17ee, id:3381, id:0183, id:9d8c, id:7f2f]
+
+## 2026-09-07 10:27 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review(toesnail): un-parked 3 [ROUTINE] items md-merge had filed under a gated heading with stacked bodies (ac7b/17ee/3381); fixed id:9d8c's non-parsing gated-on edge; filed id:0183 (2 test tiers never run); 12/12 tiers green, zero skips [id:ac7b,17ee,3381,0183,9d8c,7f2f]
