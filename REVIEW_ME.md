@@ -136,6 +136,47 @@ decides. **None was fixed.** Batch pointer: `TODO.md id:2460`.
   (a one-line epistemic-status aside rather than a caution section or silence) in
   `docs/dreamed/photon-localizability.md`. <!-- id:25a0 -->
 
+## Dreamed-batch located findings (2026-09-07, Bloch Truth cluster, id:c454)
+
+Surfaced by the 2026-09-07 owner-seeded dreaming session (4 essays, `docs/dreamed/README.md`).
+Both were **re-verified by the coordinator against the cited source**, not merely reported by an
+agent. **Neither was fixed.** Batch pointer: `TODO.md id:c454`. Note these differ from the
+`id:8e64` findings above in one way the owner should know: the cited source is NOT a file in this
+repo. It is the owner's own idea-pool and chat material, so there is nothing here to edit in
+`physics/` -- the ruling needed is whether the reasoning is amended going forward.
+
+- [ ] **"Core layer should only be complete, e.g. ZF without C" does not hold.** Source:
+  `~/knowledge/sessions/claude-ai/2025-08-05_breaking_project_paralysis_cbae6cd6.md:1334`, the
+  owner's turn of 2025-08-08 07:22 UTC, which is the ORIGIN quote of the "Bloch Truth" project
+  and its layered-logic architecture: *"the Bloch Truth (might need a better name) might be useful
+  for the AI logic core in the second (ZFC?) layer where incompleteness applies (core layer should
+  only be complete, e.g. ZF without C)"*. Dropping the axiom of choice buys no completeness. ZF
+  interprets Robinson arithmetic, so Goedel I applies to ZF exactly as it applies to ZFC: ZF is
+  incomplete if consistent, and Goedel I never mentions AC. Worse for the premise as a choice of
+  core, AC's independence from ZF (Goedel 1938, constructible universe; Cohen 1963, forcing) IS an
+  instance of ZF's incompleteness, so the chosen core's most famous undecided sentence is precisely
+  the axiom that was dropped to obtain it. **The architecture survives with the boundary redrawn**:
+  genuinely complete or decidable theories exist on other grounds (Presburger arithmetic, real
+  closed fields, Tarski's elementary geometry, propositional logic), and what they have in common
+  is not lacking AC but not interpreting enough arithmetic. Two essays reached this independently
+  and file it once: `docs/dreamed/logic-bloch-poles.md` section 7.1 (which also tabulates the
+  candidate cores) and `docs/dreamed/logic-qutrit-su3.md` finding 7.
+  `docs/dreamed/weltformel-impossibility.md` adds that this is the SAME error shape it audits in
+  the Faizal papers: a restriction that touches none of the hypotheses the theorem actually uses.
+  The owner accepts, amends or rejects. <!-- id:251e -->
+- [ ] **`(2^2)! = 24`, not 12 -- a transient slip, already superseded downstream, filed only for
+  completeness.** Source: the owner's claude.ai thread "Invertible Functions Bit Mapping Problem"
+  (2025-09-09), his turn: *"But only (2**2)!=12 of them are actually invertible - I wonder if all of
+  them can be expressed via the TOFFOLI gate?"*. `2^2 = 4` and `4! = 24`. The likely cause is
+  visible in the same sentence, which applies an up-to-inversion halving to the preceding count,
+  and 12 is exactly 24 halved. **Low severity and arguably self-resolved**: the owner uses 24
+  correctly later in the same thread (`(1/24)^(1/2) = 20%` per bit), so the working value was right
+  where it mattered. The 2-bit function census in the same message (16 outputs, 10 real functions,
+  5 up to inversion, 256 two-output functions) is correct. See `docs/dreamed/logic-bloch-gates.md`,
+  which also answers the trailing question: yes at 2 bits, but uninterestingly, since CNOT and NOT
+  alone already generate all 24 (`AGL(2,2) = S_4`, machine-checked); Toffoli only earns its keep at
+  3 bits, where 1344 of 40320 are affine. <!-- id:4787 -->
+
 ### Recommendations awaiting ratification (NOT decided)
 
 These are agent RECOMMENDATIONS. A delegated agent's verdict is never self-settling, so none is
