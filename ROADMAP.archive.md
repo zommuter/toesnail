@@ -357,3 +357,9 @@
     `test_verify_entropy_routine.sh`. `tests/probe_status_macros.cjs` is a probe, not a tier.
   - **Done-check**: `bash tests/run.sh` prints `RUN test_ci.sh` and `RUN test_make.sh` and exits 0.
   - **Context**: relay review 2026-09-07, review.md §3(a) tier enumeration. Tooling only.
+
+- [x] [ROUTINE] `docs/dependencies.md`: add the missing `dotclaude-skills` node <!-- id:3381 -->
+  - **Why (located 2026-09-01, coordinator-verified: grep count for dotclaude-skills in `docs/dependencies.md` is 0)**: the file is the canonical three-node map (toesnail / `.mw` / collAIb), but the relay, the hooks, the ledger helpers and the commit-hook design all live in `~/src/dotclaude-skills`, which the map never mentions. `~/src/inflownistration`'s `instances.md` independently alleges the same gap. A dependency map missing a load-bearing dependency is the derived-doc-drift class `CLAUDE.md` warns about.
+  - **Do**: add the node and its edges (which direction the dependency runs, and how strongly), matching the file's existing format. Documentation only, no code.
+  - **Done-check**: the node exists with at least one typed edge; `bash tests/run.sh` exits 0.
+  - **Context**: `docs/dreamed/inflownistration.md`; batch pointer TODO twin id:2460.
