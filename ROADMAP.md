@@ -102,7 +102,7 @@ guard at the top of this file still binds.
 
 ### Test-suite tier coverage (surfaced by the relay review 2026-09-07, §3 tier enumeration)
 
-- [ ] [ROUTINE] Wire `tests/test_ci.sh` and `tests/test_make.sh` into `tests/run.sh` <!-- id:0183 -->
+- [x] [ROUTINE] Wire `tests/test_ci.sh` and `tests/test_make.sh` into `tests/run.sh` <!-- id:0183 -->
   - **Why (measured 2026-09-07)**: `tests/run.sh` runs 10 `.sh` tiers + 2 `.cjs` tiers. `test_ci.sh`
     (`# roadmap:9868`) and `test_make.sh` (`# roadmap:fca7`) are in `tests/` but in NO tier list, so
     `bash tests/run.sh` — this repo's stated definition-of-done — never runs them. Both items are CLOSED
