@@ -81,7 +81,7 @@ guard at the top of this file still binds.
 > stacked-body damage that `584e93e` repaired in `TODO.md` for `id:2460`/`id:6646`. Moved here
 > and re-attached to their own head lines; no text was changed, added or dropped.
 
-- [ ] [ROUTINE] `docs/dependencies.md`: add the missing `dotclaude-skills` node <!-- id:3381 -->
+- [x] [ROUTINE] `docs/dependencies.md`: add the missing `dotclaude-skills` node <!-- id:3381 -->
   - **Why (located 2026-09-01, coordinator-verified: grep count for dotclaude-skills in `docs/dependencies.md` is 0)**: the file is the canonical three-node map (toesnail / `.mw` / collAIb), but the relay, the hooks, the ledger helpers and the commit-hook design all live in `~/src/dotclaude-skills`, which the map never mentions. `~/src/inflownistration`'s `instances.md` independently alleges the same gap. A dependency map missing a load-bearing dependency is the derived-doc-drift class `CLAUDE.md` warns about.
   - **Do**: add the node and its edges (which direction the dependency runs, and how strongly), matching the file's existing format. Documentation only, no code.
   - **Done-check**: the node exists with at least one typed edge; `bash tests/run.sh` exits 0.
