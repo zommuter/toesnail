@@ -229,3 +229,22 @@ recorded as chosen. Full argument + weaknesses in each essay.
   half may not be covered there and is worth checking when 4f0f is worked: 4f0f is about EDITING an
   existing wrapped item, whereas this incident was INSERTING three new ones, where the failure was
   PLACEMENT — all three head lines landed under a heading whose semantics silently disqualified them.
+
+## Relay review 2026-09-07 10:48 (chain-end, window `relay-ckpt-20260907-1027`..HEAD)
+
+- [ ] **`docs/dependencies.md`: the new `dotclaude-skills → toesnail` edge was ranked strong on three
+  legs, one of which is FALSE. I corrected the false leg inline; the STRENGTH re-rank is yours.**
+  `id:3381` (closed today) justified **strong** by: (1) the relay executes/reviews this repo's ROADMAP
+  items, (2) "its git hooks (relay-aware commit-hook design, id:d8bf) gate toesnail's commit workflow",
+  (3) shared ledger helpers are the intended substrate. Leg (2) is wrong twice over, verified not
+  assumed: `id:d8bf` is a **toesnail** id whose meeting note is
+  `docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md` **in this repo**, and the hook it
+  produced is this repo's own `hooks/post-commit`; and this repo sets `core.hooksPath=hooks`, which
+  means dotclaude-skills' global hooks (privacy pre-push gate, lane-vocab pre-commit) **do not run here
+  at all** — `relay-doctor` classifies the shadowing as DELIBERATE, an owner call. So the map, whose own
+  filing reason was derived-doc drift, was itself asserting a dependency that does not exist and
+  crediting another repo with an artifact this one owns. Corrected in both the node bullet and the edge
+  row this pass; leg (3) says "intended", which is honest. **What is left for you:** leg (1) alone is
+  genuinely process-blocking, so I LEFT the strength at **strong** rather than re-ranking on my own
+  judgment — but it is now a one-legged **strong**, and `docs/dependencies.md` says the map is reviewed
+  at the parked `id:921b` scoping session. Re-rank it there, or say now whether one leg carries strong.

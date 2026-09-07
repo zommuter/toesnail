@@ -1,14 +1,23 @@
 # `tests/` — relay-style TDD for toesnail
 
-This repo is **not** under `/relay` handoff (no executor sessions, no `ROADMAP.md`/
-`RELAY_LOG.md`, no executor `CLAUDE.md`). It borrows only relay's **TDD discipline**:
+This repo **is** under `/relay` handoff — `ROADMAP.md`, `RELAY_LOG.md` and the
+`## Relay contract` pointer in `CLAUDE.md` are all live, and 28 executor sessions are on
+the log (corrected 2026-09-07 review; the original sentence claimed the opposite and had
+been false since the repo was onboarded). The **TDD discipline** below is the part that
+has always governed here, and it still does:
 
 > **Tests are the spec. Definition of done = the suite is green. Never weaken, skip, or
 > rewrite a test to make it pass** — fix the code (or, if the contract genuinely changed,
 > change the test deliberately and say so).
 
-Two layers, mirroring how relay separates machine-checkable `[ROUTINE]` work from
-`[HUMAN]` judgement:
+**The authoritative tier list is `tests/run.sh`'s own loop, not this table** — it stands at
+**14 automated tiers** as of 2026-09-07 (`test_verify`, `test_verify_entropy_routine`,
+`test_render`, `test_verify_hook`, `test_mw_mirror`, `test_lean`, `test_page_coverage`,
+`test_crypto_exclude`, `test_conventions_ladder`, `test_toolchain_pointer`, `test_ci`,
+`test_make`, `test_mathjax.cjs`, `test_veqs_inline.cjs`). `tests/test_verify_entropy.sh` is
+deliberately **outside** the loop: it is the still-RED spec for the gated seam `id:76e5`.
+The table below details only the original layers, which mirror how relay separates
+machine-checkable `[ROUTINE]` work from `[HUMAN]` judgement:
 
 | file | tag | what it pins |
 |---|---|---|

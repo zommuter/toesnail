@@ -238,3 +238,79 @@ refactor: none needed -- two table-row edits in an existing markdown file, no ne
 ## 2026-09-07 10:46 — executor (sonnet, relay-loop)
 
 Fixed the two misattributed docs/se-corpus.md rows (id:17ee): split 337971 out of row M-1 into its own row M-1b with its real subject, and restated P-C's mechanism as variational instead of eigenvalue-based, recording both SE answers. [id:17ee]
+
+## 2026-09-07 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+Chain-end review of the three executor units this run. **Window note, stated because it changes what
+was audited:** the literal latest checkpoint (`relay-ckpt-20260907-1046`) is this run's OWN last
+executor tag and yields ZERO commits, so a mechanical `$LAST`..HEAD would have reviewed nothing and
+returned a vacuous green. Audited `relay-ckpt-20260907-1027`..HEAD instead -- the last REVIEW
+checkpoint, which is the window that actually contains the chain (14 commits: id:0183, id:3381,
+id:17ee, plus their merges/ticks/archives).
+
+test-integrity: `gaming-scan.sh` emitted NOTHING -- zero DELETED_TEST, zero ADDED_SKIP, zero
+REMOVED_ASSERT. `tests/` changed by exactly one line in the whole window (`run.sh`'s loop, id:0183's
+deliverable), so §2b's resurrection and fixture-special-casing checks have no candidates: no test file
+was modified, so no original version can have been weakened. Provenance greps over every commit for
+`@owner-accepted:`, `@owner-answered:` and `<!-- answer-src:`: zero hits, added or modified. No
+`[host:]` tags, so §2c does not apply. Faked-clean-tree (§2b.5): no stash/reset/checkout language in
+any commit or log entry, and each item's acceptance behaviour is present in its diff. `refactor:`
+lines present on all three, each `none needed` with a stated reason, and each diff genuinely is a
+one-liner or two table rows -- no contradicted claim.
+
+tiers (§3, all named, none skipped): `bash tests/run.sh` ran **14** tiers GREEN, exit 0 (SUITE: PASS)
+-- test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror, test_lean,
+test_page_coverage, test_crypto_exclude, test_conventions_ladder, test_toolchain_pointer, **test_ci,
+test_make**, test_mathjax.cjs, test_veqs_inline.cjs. Zero skip-records: Ruby, node_modules and the
+lake toolchain were all present (test_lean ran a real `lake build` at load ~18-21, hence the wall
+time). The count going 12 -> 14 IS id:0183's observable close. `tests/test_verify_entropy.sh` re-checked
+independently rather than inherited from last review's claim: still RED (exit 1, `crypto/fhe.toml:
+missing`), correctly outside the loop as the gated id:76e5 spec. Both newly-wired tests read and
+confirmed substantive (real asserts on live repo state, not placeholders). Residual manual tier
+unchanged: `tests/HUMAN-integration.md`.
+
+**Finding (§2d over-reach / §4 accuracy) -- id:3381's diff asserts a dependency that does not exist.**
+The new `dotclaude-skills -> toesnail` edge was ranked **strong** on three legs; leg (2), "its git
+hooks (relay-aware commit-hook design, id:d8bf) gate toesnail's commit workflow", is wrong twice over.
+`id:d8bf` is a TOESNAIL id: its meeting note is `docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md`
+IN THIS REPO (the path in the node bullet resolves here, not in dotclaude-skills), and the hook it
+produced is this repo's own `hooks/post-commit`. And this repo sets `core.hooksPath=hooks`, so
+dotclaude-skills' global hooks do not run here AT ALL -- `relay-doctor` classifies the shadowing as
+DELIBERATE, an owner call. A map whose own filing reason was derived-doc drift had therefore acquired
+a drifted row. NOT gaming and not a scope superset: the item authorised "add the node and its edges",
+which is exactly what landed, so id:3381 stays CLOSED. Corrected inline in both the node bullet and
+the edge row. What I did NOT do on my own judgment: re-rank the strength. Leg (1) (the relay itself)
+is genuinely process-blocking, so **strong** still stands on one leg -- surfaced to REVIEW_ME for the
+owner to re-rank at the parked `id:921b` scoping session, which `docs/dependencies.md` itself names as
+the review venue.
+
+spec-drift (§4): `tests/README.md` opened with "This repo is **not** under `/relay` handoff (no
+executor sessions, no `ROADMAP.md`/`RELAY_LOG.md`...)" -- false, and verified false rather than assumed:
+both files exist and 28 executor sessions sit on the log across `RELAY_LOG.md`+`.archive.md`. Its tier
+table also listed 4 files against a 14-tier suite, a gap this window widened by two. Fixed both: the
+framing sentence now states the repo IS relay-managed, and the tier list now points at `run.sh`'s loop
+as authoritative (naming all 14, plus why `test_verify_entropy.sh` is deliberately outside it) while
+leaving the original table as the per-layer detail it accurately is. `CLAUDE.md`'s `## Relay contract`
+pointer is v18, matching the canonical marker -- no refresh needed. README/ARCHITECTURE otherwise
+describe what shipped; the window added no user-facing surface.
+
+relay-doctor: cross-ledger drift clean; roadmap-lint clean (every open item carries a recognized lane
+tag + id); mechanical-orphan clean; TODO conformance reports only the advisory id:0d7c line-shrink
+classes (grammar-continuation / shape-prose / decided-left-open), report-only, untouched.
+`orphan-scan --shipped` reports the same two UNMARKED-GATE hits as last review, id:9d8c and id:4bb2,
+both already carrying open REVIEW_ME boxes -- nothing new filed, no duplicate box. Fleet-level doctor
+findings (relay-core shadow mismatches, etc.) are not toesnail's and were not written here.
+
+reverse-handoff §5b: zero newly-added open TODO/ROADMAP items in the window (`git diff` for added
+`- [ ]` lines returns nothing) -- the window is executor-only, so there is nothing to qualify.
+
+roadmap re-derivation: id:0183, id:3381 and id:17ee verified genuinely green and already ticked by
+their executors; no item reopened. **1 open [ROUTINE] remains, id:ac7b** (verify commit-hook reads the
+actual commit diff + note lifecycle) -- fully specified with acceptance, tests and a done-check, so it
+is dispatchable now, not underspecified. Note `ROADMAP.md:212` still wears the retired `[HARD - hands]`
+spelling; it sits under `## Human-only -- NOT in the executor queue`, so lint exempts it and the
+delimiter migration says never to hand-swap one in isolation -- left alone deliberately.
+
+refactor: none needed -- this unit wrote ledger, doc and log lines only; no code surface to clean up.
+1 open [ROUTINE] after re-derivation (id:ac7b).
+[id:0183, id:3381, id:17ee, id:ac7b]

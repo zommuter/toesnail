@@ -13,8 +13,8 @@ toesnail (the hub of the relationship); review and update it at that session.
   non-intrusive side-panel observations ("calm co-author over your shoulder").
 - **dotclaude-skills** (`~/src/dotclaude-skills`) — the public toolkit of Claude Code skills, hooks, and the
   relay reviewer/executor workflow that manages toesnail's *engineering process*, not its physics content:
-  the relay executor contract this repo's ROADMAP.md is worked under, the relay-aware commit-hook design
-  (`docs/meeting-notes/2026-06-16-0635-relay-aware-commit-hook.md`), and the ledger/append helpers this
+  the relay executor contract this repo's ROADMAP.md is worked under, the relay skill that dispatches and
+  reviews those items, and the ledger/append helpers this
   repo's tooling items reuse rather than reinvent. Located 2026-09-01 (dreamed batch id:8e64, TODO twin
   id:2460): the map previously omitted it despite `~/src/inflownistration`'s `instances.md` independently
   alleging the same gap.
@@ -32,7 +32,7 @@ B being absent stop A today?
 | collAIb → toesnail | **none** | n/a | collAIb is a general writing tool; toesnail is just one possible document it could observe. |
 | `.mw` ↔ collAIb (content layer) | **weak — RESOLVED (siblings)** | no | Resolved at the scoping session (2026-06-15, `id:921b`). They do **not** integrate directly; both are independent *consumers* of toesnail's plain-text **marker/handle/tier schema** (toesnail owns it, in `CONVENTIONS.md`). *Share data, not UI* — a shared UI component across the PWA/VS-Code platform line was rejected. |
 | `.mw` ↔ collAIb (runtime layer) | **PARKED — not decided** | no | Three couplings flagged as *questions* to the owners, **not** decisions toesnail imposes (see "Parked runtime questions" below). Only one coherent direction emerged: `.mw` owns a headless protocol-driven verification core; collAIb's PWA *could* be an alternate selectable front-end. **Parked ≠ chosen** — none is committed; revisit on the tripwire below. |
-| dotclaude-skills → toesnail | **strong** | no (process, not content) | dotclaude-skills' relay executes and reviews toesnail's `[ROUTINE]`/`[HARD]` ROADMAP items, its git hooks (relay-aware commit-hook design, id:d8bf) gate toesnail's commit workflow, and its shared ledger helpers (`append.sh` etc.) are the intended substrate for toesnail's own ledger upkeep. toesnail's *engineering process* leans on it; the physics content does not. |
+| dotclaude-skills → toesnail | **strong** | no (process, not content) | dotclaude-skills' relay executes and reviews toesnail's `[ROUTINE]`/`[HARD]` ROADMAP items against its versioned executor contract, and its shared ledger helpers (`append.sh` etc.) are the intended substrate for toesnail's own ledger upkeep. toesnail's *engineering process* leans on it; the physics content does not. **NOT a git-hook dependency** (corrected 2026-09-07 review): the relay-aware commit-hook design `id:d8bf` and `hooks/post-commit` are **toesnail's own** — the note lives in this repo's `docs/meeting-notes/`, and this repo sets `core.hooksPath=hooks`, which deliberately *shadows* dotclaude-skills' global hooks so none of them run here. |
 | toesnail → dotclaude-skills | **weak** | no | toesnail is one of many repos dotclaude-skills manages generically; it feeds back no toesnail-specific requirement the way it drives `.mw`'s design. Authorship of the physics content is fully independent of dotclaude-skills' existence. |
 
 ## Picture
