@@ -388,3 +388,29 @@ guard at the top of this file still binds.
   - **Tests**: extend `tests/test_verify_hook.sh` so that (1) two commits touching DIFFERENT sections produce DIFFERENT findings strings, and (2) a commit touching nothing relevant produces no finding or an explicit empty one. Currently RED: today every commit yields the same string.
   - **Done-check**: the two new assertions pass, then full `bash tests/run.sh` exits 0.
   - **Context**: surfaced by the 2026-09-01 dreamed batch (TODO twin id:2460). The existing 164 notes are local-only and lossy-on-rebase by design, so no migration is needed.
+
+### Dreamed-lean drift guard (owner ruling 2026-09-08 via `/relay human`; promoted by review 2026-09-08)
+- [x] [ROUTINE] Pinned-good hashes + pinned Mathlib/toolchain for `docs/dreamed/lean/` <!-- id:0720 -->
+  - **Acceptance** (the owner's three, unchanged -- do NOT close on a subset): (a) a recorded good hash
+    per `docs/dreamed/lean/*.lean` file (56 today; the count is NOT hardcoded -- the tree is the source of
+    truth); (b) re-verification FIRES when a file's hash OR the recorded Mathlib/toolchain pin changes --
+    the pin is a TRIGGER, not documentation; (c) the pinned Mathlib rev + toolchain are recorded where a
+    reader of the published claims can find them, because "machine-checked" is only true relative to a
+    stated toolchain. A guard with hashes and no pin, or a pin with no trigger, does NOT close this.
+  - **Tests**: `tests/test_dreamed_lean_pin.sh` (`# roadmap:0720`) -- currently RED. Asserts the manifest
+    exists and covers every `docs/dreamed/lean/*.lean`, that the recorded pin matches
+    `verify/lean-toolchain` + the Mathlib rev in `verify/lake-manifest.json`, that a mutated file and a
+    mutated pin each make the checker exit NON-ZERO naming the drifted item, and that the pin is stated
+    in reader-facing prose (`docs/dreamed/README.md`).
+  - **Done-check**: `bash tests/test_dreamed_lean_pin.sh` then full `bash tests/run.sh` (both exit 0),
+    after wiring the new test into `tests/run.sh`.
+  - **Context**: scope is the DETECTOR, not a bulk re-verification -- the owner explicitly rejected
+    nightly re-verification on cost, so the guard must be a pure hash/pin comparison that runs without
+    `lake` and reports the drifted subset. Actually re-elaborating a drifted file stays an ad-hoc run
+    under `docs/dreamed/capped.sh` (CLAUDE.md standing instruction), on the reported subset only, never
+    on all 56. `docs/dreamed/lean/*.lean` is outside `verify/lakefile.toml`'s `defaultTargets`
+    (`["Resogram"]`) -- that exclusion is the whole reason this gap exists and must not be "fixed" by
+    adding them to the lake targets (that is id:9d8c's parked ~60-min cold-build cost). TOOLING ONLY:
+    the guard touches `tests/`, a manifest file and `docs/dreamed/README.md`'s pin statement -- it never
+    edits a `.lean` proof or any physics prose (scope guard). TODO twin: `TODO.md` `id:0720` -- tick both
+    on close.
