@@ -672,6 +672,16 @@ rather than from convex geometry.
 
 ## 6.3 C-1 is refuted, and the refutation does not need a candidate pair
 
+> **WITHDRAWN 2026-09-07, and NOT propagated here until 2026-09-08.** The whole of this section is
+> the argument retracted in the inventory as item 5 (see the top of this file). It is kept, rather
+> than deleted, because the retraction is the interesting part and a silently vanished section
+> cannot be audited. **The inference does not hold:** broadcastability is a property of a SET of
+> states, and a set of mutually *orthogonal* quantum states can be cloned perfectly. "Proved true"
+> and "proved false" are the poles, hence orthogonal, so copying a published proof exhibits exactly
+> the case quantum theory also permits, and separates nothing. Everything below this line, up to and
+> including the "new to the cluster" novelty claim, is superseded; §8's items 1 and 3 carry the same
+> defect and the same banner. Read it as a record of a mistake, not as a result.
+
 The same theorem gives **(NB3)**: a non-simplex state space is one in which states cannot be
 broadcast, that is, cannot be copied to two parties such that each holds the original state. The
 general no-broadcasting theorem for such theories is **Barnum, Barrett, Leifer and Wilce**,
@@ -703,8 +713,9 @@ of that form; that is what makes GPTs interesting.
 What this essay establishes is that **nothing in logic supplies a non-classical something**. Nine
 candidates were tried and each collapsed to functions on a set. The one construction built
 specifically to avoid it (§5) put its non-commutativity in the dynamics, where it is free and
-useless. And two independent operational tests (no uncertainty relation, broadcastability of proof)
-say the object behaves classically.
+useless. And an operational test, the absence of any uncertainty relation, says the object behaves
+classically. (This sentence claimed TWO such tests until 2026-09-08; the second, broadcastability of
+proof, was withdrawn as invalid on 2026-09-07 and the count was never updated. See §6.3.)
 
 That is not a proof that no such thing exists. It is a strong prior, three independent
 confirmations, and a precise statement of what would have to be produced.
@@ -739,9 +750,12 @@ essay recommends recording that as closed.**
 
 The recommendation, with the reasons ranked by how much they would cost to overturn:
 
-1. **Hardest to overturn.** Proofs are broadcastable, and a non-simplex state space is exactly one
-   whose states are not. This is a single operational fact against a published equivalence, needs no
-   candidate pair, and would require denying that a proof can be copied.
+1. **WITHDRAWN 2026-09-07 (banner added 2026-09-08); it read "hardest to overturn" and was in fact
+   invalid.** It read: proofs are broadcastable, and a non-simplex state space is exactly one whose
+   states are not, a single operational fact against a published equivalence, needing no candidate
+   pair. It fails because broadcastability is a property of a SET of states and orthogonal quantum
+   states clone perfectly; see item 5 of the inventory and §6.3. **The ranking below is therefore
+   headed by a retracted item: item 2 is the strongest surviving reason.**
 2. **Very hard.** No pair of two-valued questions about a sentence can lack a joint distribution, and
    no pair can support an uncertainty relation, both machine-checked. Overturning requires a question
    about a sentence that is not a function of the sentence, and §3.4's most promising attempt at one
@@ -784,11 +798,14 @@ verdict is a recommendation, never self-settling.
    corrected before any of it is promoted, because it currently reads as though the pair were
    evidence for the ball rather than identical to it.**
 
-3. **A refutation of the ball that needs no candidate pair: proofs are broadcastable.** Located:
-   §6.3, on Barnum-Barrett-Leifer-Wilce (PRL 99, 240501, 2007) and Theorem 7.7 (NB3, NB4) of the
-   review. A ball asserts a sentence's status cannot be copied; publishing a proof copies it. **No
-   prior art found for this application, and it is the finding this essay would most want ratified
-   or shot down.**
+3. **WITHDRAWN 2026-09-07 (banner added 2026-09-08). It read: a refutation of the ball that needs
+   no candidate pair, because proofs are broadcastable.** Located: §6.3, on
+   Barnum-Barrett-Leifer-Wilce (PRL 99, 240501, 2007) and Theorem 7.7 (NB3, NB4) of the review. The
+   argument was that a ball asserts a sentence's status cannot be copied while publishing a proof
+   copies it. It is invalid: broadcastability constrains a SET of states, and orthogonal states
+   clone perfectly, so the poles "proved true" and "proved false" exhibit the permitted case. The
+   citation is accurate; its scope was misused. Located by a Fable review pass
+   (`review-essays.md`, HIGH 1). **No ruling is needed on it; it asks for none.**
 
 4. **The escape route is real non-commutativity on the wrong object.** Located: §4.3, §5.4,
    `escape_route_closed`. Order-dependence of update is not order-dependence of evaluation; quantum

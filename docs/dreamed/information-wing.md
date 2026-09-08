@@ -23,7 +23,9 @@ information wing's name/ancestor".
 
 **The wing coheres, and it coheres around one quantity: the logarithm of a count.** Not around the
 word "entropy", which appears in the three candidate members in three different grammatical roles.
-$\log W$ is literally the same object in all three: Boltzmann's $S = k_B\ln W$, Hartley's measure,
+$\log W$ is the same object in all three **up to a base and units factor**, which is not a quibble:
+$\ln$ and $\log_2$ differ by $1/\ln 2$, and `fhe-counting.md` shows that conflating them is exactly
+what produced its 0.4068-bit offset. Boltzmann's $S = k_B\ln W$, Hartley's measure,
 the owner's own "these functions can be enumerated using $m2^n$ bits" (`crypto/fhe.md` l.8), and the
 $\ln Z_B$ his Lagrange calculation in `physics/entropy.md` maximizes. Shannon and Gibbs generalize
 $\log W$ to a non-uniform measure; Jaynes argues that generalization is an inference principle rather

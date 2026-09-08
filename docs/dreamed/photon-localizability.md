@@ -233,7 +233,8 @@ $$ \partial_t(\vec E + i\vec B) = -ic\,\nabla\times(\vec E + i\vec B),\qquad
 
 **Is the $i$ in $\vec E + i\vec B$ the same $i$ as the WiRoHSH holomorphic split?** No, and saying so
 plainly is worth more than the analogy. In WiRoHSH the complexification is a *Wick rotation of a
-coordinate*, $z \to iz$, which makes a propagation direction null and is why an arbitrary
+coordinate*, $z \to iz$, which makes a propagation direction isotropic (its bilinear self-product
+vanishes, though the vector does not) and is why an arbitrary
 $a_\phi(x_\phi + iz)$ is harmonic. In Riemann-Silberstein the complexification is of the *field
 values*, pairing two real three-vectors on the same real spacetime; no coordinate is rotated. The
 shared feature is real and shallow: both use $i$ to encode a **duality rotation** in a

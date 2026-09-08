@@ -172,7 +172,7 @@ with the Cauchy-Riemann remark (`wirohsh.md:72-76`); the complexified argument
 $a_\phi(x_\phi+iz)$ of the 3D reduction (`wirohsh.md:173`). Plus a corpus row that already carries
 the literal name: `docs/se-corpus.md:48` files the owner's 28-vote $e^{ix}$ trig-identity answer
 (math.SE a/1297) as a ready-made **"C pays rent" demo** for spine step 2. Four dreamed essays lean
-on it (the $z=e^w$ cylinder map, the annulus-strip unwrap, Fresnel as Schwarz reflection, the null
+on it (the $z=e^w$ cylinder map, the annulus-strip unwrap, Fresnel as Schwarz reflection, the isotropic
 direction of the splats NO-GO). Cost paragraph writes itself: [`spine.md`](spine.md) located the
 clash where `toesnail.md:79` says complex numbers cannot be ordered and `:89` then writes
 $\braket{\Psi\vert\Psi}>0$ for one; a named C-theme obliges the book to resolve exactly that kind

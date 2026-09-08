@@ -103,7 +103,7 @@ which is a different question from what its headline claims.
   <g font-size="13">
     <rect x="16" y="30" width="360" height="64" rx="5" fill="#ffffff" stroke="#17696b" stroke-width="2"/>
     <text x="30" y="52" font-size="14" font-weight="bold">wirohsh-splats</text>
-    <text x="30" y="72">Wick rotation makes the direction null, so the</text>
+    <text x="30" y="72">Wick rotation makes the direction isotropic, so the</text>
     <text x="30" y="88">b_phi family is redundant. Result is Whittaker 1903.</text>
 
     <rect x="16" y="112" width="360" height="64" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.4" stroke-dasharray="5 4"/>

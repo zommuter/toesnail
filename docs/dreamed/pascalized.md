@@ -9,6 +9,17 @@ permalink: /dreamed/pascalized
 > (not its topic) by repeated distillation until the next cut would remove the claim rather than its
 > packaging (`TODO.md id:a1aa`, Pascal, Letter XVI). Where a claim did not survive later checking,
 > the same sentence says so. Figures, posters and reviews are out of scope.
+>
+> **AUDITED 2026-09-08, and it needed it.** All 58 bullets were checked back against their essays by
+> four independent passes, because this file was written by the same agent that wrote or coordinated
+> the essays and nothing had ever verified that a one-liner still says what its source established.
+> **48 were faithful; 10 were not**, and the defects were not evenly spread: three misattributions
+> (a sibling's conclusion filed under the wrong essay), two claims reported as settled that their
+> essays leave open as *Ruling needed*, one withdrawn argument still presented as live, one dropped
+> exception that inverted a verdict, two expired cross-repo measurements, and one term
+> ("null vector") that a German-speaking reader correctly reads as false. All ten are corrected
+> above. Two proposed corrections were themselves rejected as wrong, so treat this notice as
+> evidence the file has been checked once, not as a guarantee.
 
 ## The tree in one paragraph
 
@@ -51,19 +62,19 @@ rounds; those still improving at three are shown, since their essays never found
 
 ### Bloch Truth, second wave
 
-- **logic-models-ensemble.** A state over models is a measure on Cantor space; every such state is diagonal, so the ball collapses to |z| = r and a simplex is forced. Fatal, self-reported: theorems get probability 1, so (i) has independence, never ignorance.
-- **logic-epistemic-state.** Four statuses put the corners at poles, circle and origin with |z| <= r derived. Against itself: (0, 1) also holds Ellsberg's fair coin, and no quantum structure is needed. Its Josang identification was wrong (u = ind + open).
-- **logic-models-vs-epistemic.** Build on (ii) in the triangle {|z| <= r <= 1}, the ball's exact (z, r) shadow, and re-type (i) as soundness semantics. The encoding-(b) convergence is not real; the simplex convergence is one theorem four times. Ratified D1/D2.
+- **logic-models-ensemble.** A state over models is a measure on Cantor space; every such state is diagonal, so the ball collapses to |z| = r and a simplex is forced. Self-reported: theorems get probability 1, so (i) has independence, never ignorance. (The essay recommends (i) with a substitution and leaves usability open; it never calls this fatal.)
+- **logic-epistemic-state.** Four statuses put the corners at poles, circle and origin with |z| <= r derived. Against itself: (0, 1) also holds Ellsberg's fair coin, and no quantum structure is needed. Its Josang u = 1 - r was wrong; the correction is u = ind + open.
+- **logic-models-vs-epistemic.** Build on (ii) in the triangle {|z| <= r <= 1}, the ball's exact (z, r) shadow, and re-type (i) as soundness semantics. The encoding-(b) convergence is not real; the simplex convergence is one theorem four times. D1 ratified the triangle as the object; the (i)/(ii) fork this essay adjudicates is deliberately left open.
 - **logic-bloch-phase.** Provability cannot be the phase: box distributes over idempotent conjunction and an idempotent group element is 1 (K unused, so no modality repairs it); GL frames have no cycles. Proof-relevance wins but yields Z, blind to the roots of unity. Its "look for Z2" was refuted by its child.
-- **logic-beyond-su3.** Equal-trace density matrices are Loewner-incomparable, so the Bloch body is an antichain: values, no connectives. Ranked: Heyting plus Kripke, GL beside as the decidable metalayer. Corrected: four vertices cost three reals, a Bloch vector's price.
+- **logic-beyond-su3.** Equal-trace density matrices are Loewner-incomparable, so the Bloch body is an antichain: values, no connectives. Ranked: Heyting plus Kripke, GL beside as the decidable metalayer. Its own alternative is a filled triangle: three vertices in two reals, against the qutrit's eight.
 - **logic-simplex.** The conflation is forced by mixing alone (the ball's centre is the even mixture of its poles). Connectives exist but indep AND indep = open, so no lattice; the three-status fragment is K3 relabelled and the novelty is one cell. Learning is an irreversible monoid, so the gates are lost at no cost.
-- **logic-z2-grading.** A group-valued invariant multiplicative over an idempotent operation is trivial, so Z2 dies as U(1) did; a Boolean ring has no odd part. Survivor: the sign of a proof's atom-occurrence permutation. Its BPI convergence later dissolved.
+- **logic-z2-grading.** A group-valued invariant multiplicative over an idempotent operation is trivial, so Z2 dies as U(1) did; a Boolean ring has no odd part. Survivor: the sign of a proof's atom-occurrence permutation. Its separate BPI-obstruction lead, never the survivor, later dissolved.
 - **logic-layered-core.** A quantifier-free report calculus is complete because too weak to describe itself. A core certificate is never a shortcut (Loeb), exact reports would decide theoremhood, and no truth-functional conjunction on reports exists. Not new: proof-carrying code, Milawa, partial reflection.
 - **citation-audit.** 28 of 37 confirmed, 5 wrong. Sperling and Walmsley 2018 publish the geometry (true/false poles, undecidable equator, double cone); the logic is not published. That sentence became D2. A silent abstract plus an unreadable PDF is evidence of nothing.
 
 ### Bloch Truth, speculative wave
 
-- **logic-complementarity.** No pair of questions about a sentence is complementary: two functions of one point always have a joint, the meet. "Name a pair" and "justify the ball" are one demand. Needing no pair: proofs can be copied, and non-simplex states cannot.
+- **logic-complementarity.** No pair of questions about a sentence is complementary: two functions of one point always have a joint, the meet. "Name a pair" and "justify the ball" are one demand. Its proofs-are-broadcastable clincher, once ranked hardest to overturn, was withdrawn as invalid: orthogonal states clone.
 - **logic-counterfactual-boundary.** Addition and multiplication are each harmless (Presburger, Skolem); the pair is fatal, through pairing. Addition plus the bare set of squares already defines multiplication: the cliff is a set, not an operation. A core that cannot interpret arithmetic cannot represent a proof: a dashboard, not a supervisor.
 - **logic-proof-gauge.** A discrete connection is flat iff exact, and confluent normalisation supplies the potential, so the gauge theory of proofs is exactly flat: the sibling's sign is a potential, not a holonomy (the braiding is a second vertex). Non-confluent classical cut collapses all proofs (Lafont).
 - **logic-thermodynamics.** A partition function over proofs exists iff beta > log a (Hagedorn), but a is a constant of the proof system, equal for one theorem and for all, so the temperature has no goal. r is not an order parameter; z is what sharpens at the SAT threshold. Landauer is 10^11 to 10^22 from binding.
@@ -82,10 +93,10 @@ rounds; those still improving at three are shown, since their essays never found
 
 ### WiRoHSH (2026-09-01)
 
-- **wirohsh-splats.** The reduction closes because the Wick rotation makes the direction null, so any profile is harmonic: Whittaker 1903, the b family redundant. NO-GO on id:ff32: one-sided splats, no wave equation, wrong domain, wrong compression direction.
+- **wirohsh-splats.** The reduction closes because the Wick rotation makes the direction isotropic (sum n_i^2 = 0, bilinear, not the Hermitian norm, and not the zero vector), so any profile is harmonic: Whittaker 1903, the b family redundant. NO-GO on id:ff32: one-sided splats, no wave equation, wrong domain, wrong compression direction.
 - **wirohsh-discontinuities.** Non-holomorphic data survives as a hyperfunction boundary value once the common annulus is dropped. The line is analytic versus not, and a smooth bump is on the shock's side, so wirohsh.md:82 is false as written.
 - **wirohsh-refraction.** In 1+1 the conformal class survives any index (rays, Snell) but harmonicity dies to a drift; the gauge w = sqrt(n) f leaves a potential vanishing iff n is constant or A/(x - x0)^2. Fresnel is the two-phase Schwarz reflection principle.
-- **wirohsh-ladder.** The ladder's parity is not Huygens: d = 1 is the ladder's best floor and Huygens' exception. Each rung hands back the continuous parameter the rotation was meant to remove; the payoff belongs to the Fourier relabelling.
+- **wirohsh-ladder.** The ladder's parity is not Huygens: d = 1 is the ladder's best floor and Huygens' exception. Every rung is overdetermined by exactly one variable, hands back a continuum, and worsens locality; it is free only where symmetry collapses the direction integral, as in the radial case. The payoff belongs to the Fourier relabelling, not the descent: a structural result, not an algorithm.
 - **wirohsh-approximation.** The missing cell in Fourier : transform :: Laurent : ? is the two-sided Laplace (Mellin) transform. A real-analytic function has no compact support, so the basis can never localise: a fifth NO-GO. Gibbs is 8.95 % in both bases.
 
 ### Spine and standing questions (2026-09-01)
@@ -93,7 +104,7 @@ rounds; those still improving at three are shown, since their essays never found
 - **spine.** Before l.126 the maths arrives before the question; after it the questions arrive and no maths does. l.79 calls complex numbers unorderable and l.89 writes an inner product > 0. l.105's equality case is real; over C it is the unit circle, which is rays.
 - **time-and-operators.** Three questions the reader would ask force a one-parameter unitary group; Stone then derives H and Schroedinger, and without the i evolution is diffusion. Equation t1 can come from no U(t) unless p is 0 or 1.
 - **measurement-routes.** POVM first, decoherence second (it needs the unpaid dynamics), reversing spine.md. POVMs contain the projective postulate as a theorem and generalise Born rather than derive it; Gleason excludes the coin; decoherence explains the basis, never the outcome.
-- **omniscience.** Omniscience fails by arity, not capacity: a knower inside the known has shape A to (A to B), and Lawvere forbids point-surjection. Goedel I does not apply to the ket 42. Corrected: for a world formula Tarski outranks Lawvere, needing no effectivity.
+- **omniscience.** Omniscience fails by arity, not capacity: a knower inside the known has shape A to (A to B), and Lawvere forbids point-surjection. Goedel I does not apply to the ket 42. (Its Tarski ranking is DISPUTED by weltformel-impossibility, which argues Tarski needs no effectivity and so outranks Goedel I for a world formula. Ruling needed, not settled.)
 - **q2-galilei-vs-poincare.** In 1+1 Galilei's boost-translation charge is a nontrivial class (mass) while Poincare's is a coboundary; dim H^2(Poincare) is 1 there, not 0. Galilei-first must teach cohomology at step 3, the corpus gap; recommends the on-ramp hybrid.
 - **information-wing.** The wing coheres around log W, not "entropy". fhe.md contains no FHE, and FHE has no information-theoretic content; its OTP line is Shannon's H(K) >= H(M).
 - **methodology-themes.** "Move the problem, solve, move back" has about eight owner instances; "reversibility is sacred" has one and no owner file contains "revers": a slogan. Missed: "the complex plane pays rent".
@@ -106,7 +117,7 @@ rounds; those still improving at three are shown, since their essays never found
 - **lasercool.** An atom sheds at most 4 omega_rec/Gamma k_B per photon against 2 k_B per fluorescence photon: margin 10^3, not 10^7. A laser cannot be the exhaust: the brightness that makes it a laser empties it of entropy. Reabsorption is a rate problem.
 - **five-level-laser.** The gain numerator's only positive term needs Q < 0, so inversion and cooling are exclusive at any pump strength and intensity: the second law as algebra. The dictated "relax 2 to 3" plus cooling is inconsistent; the step must run uphill.
 - **photon-energy-scaling.** No COP-optimal photon energy exists (Carnot is the supremum at every frequency). A power optimum exists because A goes as nu^3, at 3.92 k_B T (Wien with exponent 4, 12 µm at 300 K). Only the k_B T B wall survives a cavity.
-- **wick-entropy.** The Laurent and Matsubara indices are one basis under z = exp(w); reading the polar angle as the thermal circle forces Unruh: the owner compactified the wrong circle, the interesting one. N = 2 equals antiperiodic at two points only.
+- **wick-entropy.** The Laurent and Matsubara indices are one basis under z = exp(w); reading the polar angle as the thermal circle forces Unruh: the owner compactified the wrong circle, the interesting one. Truncation matches antiperiodic as values at N = 2 and N = infinity, never as a family: the twist shifts the pole, it never truncates.
 - **lambertw-statistics.** The bosonic inversion needs W_{-1}; every CAS default returns beta E_1 = 0 identically. The fermionic one always exists and is two-valued. The N family is Gentile statistics, not anyons.
 - **acoustics.** acoustics.md never derives the wave equation and states its adiabatic assumption only through the notation c^2/gamma. Sound can bend without echoing; light cannot, since Z = Z_0/n ties reflection to refraction.
 
@@ -118,11 +129,11 @@ rounds; those still improving at three are shown, since their essays never found
 
 ### Other repos, dreamed here
 
-- **mw-collaib-triad.** A DAG catches propagation, never origination: it would have flagged the edot incident's four downstream items and not the sign error. collAIb is dormant 43 days; toesnail's hook runs a constant probe, 158 notes all pending.
+- **mw-collaib-triad.** A DAG catches propagation, never origination: it would have flagged the edot incident's four downstream items and not the sign error. collAIb has been dormant since 2026-07-20; toesnail's hook runs a constant probe, every note still pending (158 on 2026-09-01, 218 on 2026-09-08).
 - **inflownistration.** The 2017 thesis is an arity error: "processes information" is three-place and the sentence supplies one argument; the 2026 grammar's T is the missing decoder. Friston's FEP repeats the failure.
 - **essay-wing.** The archive is one evening; the concept is thin and the lineage to .mw runs through a task-list parenthesis about annotations rotting. The essay wing is a genus (descriptions failing their subject), not a quantity.
 - **zelegator-helferli.** Ten tools cap the router at 3.32 bits and the 50-case eval at 100 % carries all of them: the instrument is saturated. Silicon clears; data binds. "helferli is zelegator-compatible" has no artifact. The edge's energy case is the radio.
-- **loderite-lodelore.** Cubic-26 beats BCC-14 on weighted path stretch (1.128 vs 1.239); BCC-14 buys real faces. Greedy meshing is void on whole cells, contra ARCHITECTURE.md:76. The ff32 salvage gate is unmet.
+- **loderite-lodelore.** Cubic-26 beats BCC-14 on weighted path stretch (1.128 vs 1.239); BCC-14 buys real faces. Greedy meshing is void on whole cells; loderite's ARCHITECTURE.md carried the opposite and corrected itself 2026-09-01 (routed:c050). The ff32 salvage gate is unmet.
 - **resogram-library.** The resogram is exactly |CWT|^2 for a causal order-1 gammatone; the owner's contributions are the route and the ebar kernel. Causality is its win, Lorentzian skirts its cost. Resogram.md:118's plus sign leaves a ripple the minus sign cancels exactly.
 
 ### Speculation (owner-authorised, results required sound)

@@ -231,7 +231,7 @@ ladder, not of the owner's. Worth keeping regardless: it is what the owner's con
 
 At rung `d` the transform's input is a direction `e` over `S^{d-2}`, so `d-2` continuous parameters,
 and for each `e` a profile which, after `x -> x + i z e`, is an arbitrary function of **one complex
-variable** (round 1 §1.3: the Wick rotation makes the direction null, so the transverse condition
+variable** (round 1 §1.3: the Wick rotation makes the direction isotropic, so the transverse condition
 evaporates in that coordinate). Total input: a function of `(d-2) + 2 = d` real variables. The
 target, a harmonic function on a ball in `R^d`, is fixed by its boundary values on `S^{d-1}`, a
 function of `d-1` real variables.
