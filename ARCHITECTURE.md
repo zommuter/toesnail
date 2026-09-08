@@ -63,8 +63,11 @@ fixed and pinned by a test. They are the cautionary tale for why `tests/` builds
 
 ## 3. Test layers (relay-style TDD, no theory in the loop)
 
-`tests/run.sh` = three layers, each a `[ROUTINE]` spec an executor may extend — none of
-which assert anything about the *correctness of the physics* (that's human-only):
+Every tier is a `[ROUTINE]` spec an executor may extend, and none of them assert anything
+about the *correctness of the physics* (that's human-only). The three layers below are the
+FOUNDING ones, documented here for their rationale; **the authoritative tier list is
+`tests/run.sh`'s own loop** (see `tests/README.md`), which has grown well past three. Do not
+read this table as a census:
 
 | layer | engine | pins |
 |---|---|---|
