@@ -448,3 +448,19 @@ refactor: none needed -- this unit added a promotion, a RED spec and two review 
 ## 2026-09-08 18:07 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review: 15 owner-session commits audited clean (gaming-scan zero, no provenance markers, 14 blocking + 2 advisory tiers green with zero SKIPs); promoted id:0720 to [ROUTINE] with a RED spec; 2 REVIEW_ME boxes; nothing reopened [id:0720]
+
+## 2026-09-08 — executor (claude-sonnet-5)
+
+Worked id:0720 -- implemented the pinned-good hash + Mathlib/toolchain drift guard for
+`docs/dreamed/lean/*.lean`: `verify/dreamed_lean_pin.sh` (pure hash/pin comparison, no
+`lake` on PATH needed) checked against a new baseline `docs/dreamed/lean-pins.json` (56
+recorded hashes + the current toolchain/Mathlib rev pin), with the pin restated in
+`docs/dreamed/README.md` for a reader of the "machine-checked" claims. Wired
+`tests/test_dreamed_lean_pin.sh` into `tests/run.sh`'s blocking tier and updated its
+now-stale RED-spec header comment. `bash tests/test_dreamed_lean_pin.sh` and the full
+`bash tests/run.sh` both exit 0.
+Friction: none -- the RED spec's four sub-assertions ((a) hash coverage, (b) both file-
+and pin-drift trigger non-zero and name the file, (c) the pin is reader-facing, and the
+no-`lake`-needed constraint) fully determined the implementation; no ambiguity.
+refactor: none needed -- new detector + baseline file, wiring into run.sh's existing
+list is the only change to prior code.
