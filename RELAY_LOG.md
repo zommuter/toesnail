@@ -444,3 +444,7 @@ Findings: 2 REVIEW_ME boxes (the `[REFUSED: …]` marker in test_carryback.sh is
 exemption, safe only while the tier is advisory; `id:e562`'s unmarked gate). relay-doctor: no
 toesnail-specific finding.
 refactor: none needed -- this unit added a promotion, a RED spec and two review boxes; nothing to unify.
+
+## 2026-09-08 18:07 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: 15 owner-session commits audited clean (gaming-scan zero, no provenance markers, 14 blocking + 2 advisory tiers green with zero SKIPs); promoted id:0720 to [ROUTINE] with a RED spec; 2 REVIEW_ME boxes; nothing reopened [id:0720]
