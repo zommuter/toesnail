@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # roadmap:0720
 #
-# RED SPEC -- deliberately OUTSIDE tests/run.sh until id:0720 lands (same pattern as
-# tests/test_verify_entropy.sh, which is the still-RED spec for the gated seam id:76e5).
-# Wire it into run.sh in the SAME commit that makes it green.
+# id:0720 has landed; wired into tests/run.sh in the same commit that made this green.
 #
 # What it specs
 # -------------
