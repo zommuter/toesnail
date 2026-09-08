@@ -31,6 +31,14 @@ and nothing here has any authority.
   `capped.sh` puts the run in a systemd user scope with a hard cgroup memory limit and
   no swap: a breach OOM-kills that scope alone. Do NOT substitute `ulimit -v` for Lean --
   it caps address space, and Mathlib mmaps its `.olean` files.
+- **Pinned toolchain (id:0720):** every "machine-checked, exit 0, zero `sorry`" claim
+  below is only true relative to a stated toolchain and Mathlib revision, both pinned in
+  `docs/dreamed/lean-pins.json`: toolchain `leanprover/lean4:v4.30.0-rc2`, against the
+  Mathlib revision recorded in `verify/lake-manifest.json`. `verify/dreamed_lean_pin.sh`
+  is a cheap hash/pin drift guard (no `lake` needed) that re-checks on touch -- if either
+  a `.lean` file's hash or the recorded pin drifts from the tree, it reports the drifted
+  item and exits non-zero. Re-elaboration of a reported file stays an ad-hoc run under
+  `capped.sh`, never a bulk nightly re-verification (cost, owner ruling 2026-09-08).
 
 ## Provenance
 
