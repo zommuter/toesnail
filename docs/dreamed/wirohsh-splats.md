@@ -15,8 +15,10 @@ permalink: /dreamed/wirohsh-splats
 ## 0. Headline
 
 The 3D reduction closes, and it closes for a reason the draft does not yet name: after the Wick
-rotation the propagation direction becomes the **null** vector $\vec n_\phi=(\cos\phi,\sin\phi,i)$
-with $\vec n_\phi\cdot\vec n_\phi=0$, so *any* twice-differentiable $a_\phi$ gives a harmonic
+rotation the propagation direction becomes **isotropic**, $\vec n_\phi=(\cos\phi,\sin\phi,i)$ with
+$\vec n_\phi\cdot\vec n_\phi=\sum_i n_i^2=0$ under the complex-bilinear extension of the Euclidean
+form (NOT the Hermitian one, under which $\sum_i|n_i|^2=2$; and $\vec n_\phi$ is emphatically not the
+zero vector, see §1.3 and §1.6), so *any* twice-differentiable $a_\phi$ gives a harmonic
 $a_\phi(x_\phi+iz)$ with no further constraint. The completed formula is Whittaker's 1903
 representation of harmonic functions, i.e. classical; the owner's *framing* (Wick rotation as a
 device to trade continuous $\omega$ for discrete $m$) is his, and I could not find it stated that
@@ -54,6 +56,17 @@ with $a_\phi,b_\phi:\mathbb C\to\mathbb C$ twice differentiable in their (single
 and measurably dependent on $\phi$. **No further constraint is needed.**
 
 ### 1.3 Why: the null direction
+
+**Which product, and why there is no conjugate in it.** "Null" here is *isotropic*, not zero:
+$\vec n_\phi=(\cos\phi,\sin\phi,i)$ is a perfectly ordinary nonzero vector. The form it annihilates
+is the complex-**bilinear** extension of the Euclidean one, $Q(\vec n)=\sum_i n_i^2$, written
+$\vec n\cdot\vec n$ throughout this essay. The Hermitian norm is $\sum_i|n_i|^2=2\neq0$, and it plays
+no role: nothing conjugates in a chain rule, so the quantity that multiplies $a''$ below is $\sum_i
+(\partial_i u)^2$ and can be nothing else. Both statements hold at once, with no contradiction,
+because on a complex vector space the bilinear quadratic form and the Hermitian form are different
+objects; the isotropic vectors of the first are the null cone that Whittaker's and Bateman's
+representations run on. Read as a Hermitian claim the sentence would be false, and read as
+*Nullvektor* it would be absurd, so neither reading is meant. See also the naming snag in §5.
 
 Write $u:=x_\phi+iz=x\cos\phi+y\sin\phi+iz$. Then
 
@@ -121,6 +134,16 @@ Located and reported per the working contract; the owner decides every resolutio
   shows that collision is load-bearing (the angular $\partial_\phi$ is what collapses the
   $b$-family). Suggest $\partial_{x_\phi}$ or $(\vec e_\phi\cdot\vec\nabla)$ for the directional
   one.
+- **This essay's own snag, added 2026-09-08 after the owner read it: "null vector".** In English
+  usage it means *isotropic*, self-orthogonal under a quadratic form; in German **`Nullvektor` is
+  the zero vector**, so the sentence "the direction becomes the null vector $(\cos\phi,\sin\phi,i)$"
+  reads to a German speaker as a claim that a manifestly nonzero vector is zero. The second reading
+  available, that a vector of nonzero length is perpendicular to itself, is false too and is what
+  the phrase invites if the product is taken to be Hermitian. Both misreadings were reported by the
+  owner on first contact with the sentence, which makes them the likely reading, not an edge case.
+  §1.3 now names the bilinear form explicitly. **Suggest "isotropic direction" or "null direction of
+  the complexified Euclidean form" wherever the shorter phrase appears**, here and in any prose the
+  draft later grows.
 
 ---
 

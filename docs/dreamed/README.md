@@ -162,7 +162,7 @@ Monte-Carlo experiments are seeded and labelled as such.
 
 | Essay | Headline claim (UNRATIFIED) |
 |---|---|
-| [`wirohsh-splats`](dreamed/wirohsh-splats.html) | The truncated 3D reduction closes: the Wick rotation makes the direction **null**, so the `b_φ` family is redundant and the result is Whittaker 1903. Recommends **NO-GO on `id:ff32`**. |
+| [`wirohsh-splats`](dreamed/wirohsh-splats.html) | The truncated 3D reduction closes: the Wick rotation makes the direction **isotropic** (`Σ nᵢ² = 0` under the complex-bilinear form, not the Hermitian one, and not the zero vector), so the `b_φ` family is redundant and the result is Whittaker 1903. Recommends **NO-GO on `id:ff32`**. |
 | [`wirohsh-discontinuities`](dreamed/wirohsh-discontinuities.html) | Nothing is lost to non-holomorphy: the data returns as a **Sato hyperfunction boundary value**. `wirohsh.md:82` is false as written -- the line is analytic vs non-analytic, and a `C^∞` bump is on the wrong side. |
 | [`wirohsh-refraction`](dreamed/wirohsh-refraction.html) | The 1+1 conformal-flatness hope is **half true**: rays, Fermat and Snell survive any profile, but a drift `(n'/n)∂_x` kills harmonicity except for `n = A/(x−x₀)²`. Snell/Fresnel **is** the Schwarz reflection principle. |
 | [`wirohsh-ladder`](dreamed/wirohsh-ladder.html) | The ladder's parity is **not** Huygens: `d=1` is the ladder's best floor and Huygens' exception. The descent buys nothing and returns `d−2` continuous parameters. |
