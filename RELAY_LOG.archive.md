@@ -447,3 +447,147 @@ review: id:9c41 inline-\veqs verified genuine (gaming-scan clean; test_veqs_inli
 
 b7e5 badge-colour palette author half: 3 accessibility-checked options + preview + owner-pick box (no engine config changed) [id:b7e5]
 
+
+## 2026-07-07 18:51 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: verify green window since relay-ckpt-20260704-1759 (docs+ledger+unwired probe; 11/11 tiers green, gaming-scan clean); id:b7e5 drift legit author-then-run; routine_open=0
+
+
+## 2026-07-07 19:05 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: window since relay-ckpt-20260704-1759 re-verified green (11/11 tiers PASS, gaming-scan clean); b7e5 drift = legit author-then-run split; contract v6 current; routine_open=0 [id:b7e5,57e2]
+
+
+## 2026-07-08 11:28 — reviewer (claude-fable-5, relay-next)
+
+SE-corpus mining + lasercool deep dive session reviewed: 4 docs commits audited (scope-guard clean, suite green); Q13-Q15 ratified, Q16 → REVIEW_ME; id:b7e5 drift = known author-then-run split
+
+
+## 2026-07-08 11:37 — reviewer (claude-fable-5, relay-next)
+
+lane-grammar fix: id:e552 → conforming [HARD — hands] checkbox item (owner-flagged violation); id:c9d4 Lean entropy-bound forward-flag added
+
+
+## 2026-07-08 11:52 — reviewer (claude-fable-5)
+
+owner closing thought (photon-energy scaling / maser cooling) recorded as findings addendum 5d + id:e552 extension; citations agent-verified (Albanese 2020 correction applied)
+
+
+## 2026-07-10 17:30 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+toesnail review: diff-window clean (gaming-scan OK, suite PASS); promoted id:318f lean-toolchain pointer [ROUTINE]+red spec, @container'd decomposed id:7306 [id:318f,7306]
+
+
+## 2026-07-10 — executor (sonnet)
+
+Worked id:318f — added the lean-toolchain provenance pointer to CLAUDE.md 'Related projects' section (cache/derived value, toesnail as rev-bump decider, mathematical-writing as fleet-value publisher); test_toolchain_pointer.sh green, full suite green.
+Friction: none.
+
+
+## 2026-07-10 18:21 — executor (sonnet, relay-loop)
+
+Documented the lean-toolchain provenance pointer in CLAUDE.md (id:318f) — closes the routed:89d0 inbound item; full test suite green. [id:318f]
+
+
+## 2026-07-10 19:16 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+toesnail review: id:318f lean-toolchain pointer verified green (spec unchanged, gaming-scan clean, suite PASS); no reopens, 0 open ROUTINE [id:318f]
+
+
+## 2026-07-11 — executor (sonnet, relay-loop)
+
+Worked id:c7d6 — implemented the RUN half of the badge-colour split (owner-picked Option C,
+REVIEW_ME 2026-07-11): added a hardcoded `\textcolor{<hex>}{...}` wrapper per verification-tier
+badge macro in both `_includes/custom-head.html` and `.vscode/settings.json` (grey `\sorry`,
+blue `\sympy`, amber `\numeric`, green `\lean`, deep-green `\sympylean`; the four `\<tier>c`
+open-debt variants reuse their discharged tier's hue). Chose the plain-\textcolor route over
+the CSS-\htmlClass route per the README's own "trust may be unavailable" fallback — no `trust`
+config needed in either engine. Extended `tests/test_mathjax.cjs` with a dedicated "badge
+colour" section asserting each tier's ratified hex actually appears in BOTH engines' rendered
+output (not just "renders without error"), synced the `MJ_MACROS`/`KX_MACROS` mirrors, and
+ticked TODO id:b7e5 (now that both author and run halves are done) alongside ROADMAP id:c7d6.
+Full `bash tests/run.sh` SUITE: PASS (real Lean build, real Jekyll build, real npm-installed
+mathjax-full/katex — no SKIPs this session).
+Friction: two real gotchas surfaced and are now commented in the source at point of use —
+(1) KaTeX's own macro-arity scanner misparses a literal hex starting `#1…` (e.g. `#15803d`,
+`#14532d`) as an argument placeholder ("#1"), corrupting the render with "Unexpected end of
+input in a macro argument"; fixed by dropping the leading `#` everywhere (both KaTeX and
+MathJax accept a bare 6-digit hex — confirmed empirically, not just per KaTeX's own docs).
+(2) `_includes/custom-head.html` is rendered through Jekyll's Liquid engine before it ever
+reaches MathJax, so the `\sympyleanc` macro's `{{\checkmark...` (two adjacent literal braces
+from wrapping an already-grouped TeX expression in `\textcolor{}{}`) was read as a Liquid
+`{{ variable }}` tag and broke the site build (`test_render.sh`, silently truncated out of an
+initial `tail -80` capture of the suite output — re-ran the full log to find it). Fixed with a
+single space between the two braces (harmless in both TeX engines). Re-walking
+`tests/HUMAN-integration.md` for the visual check is `[HUMAN]` — not done by this session.
+
+
+## 2026-07-11 13:17 — executor (sonnet, relay-loop)
+
+Implemented ROADMAP id:c7d6 (badge-colour RUN half, Option C) — hardcoded \textcolor per verification-tier badge macro in both engines, extended test_mathjax.cjs with colour assertions, ticked TODO id:b7e5 + ROADMAP id:c7d6; full suite PASS (real Lean/Jekyll/npm, no SKIPs). [id:c7d6,b7e5]
+
+
+## 2026-07-11 13:42 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+Reviewed toesnail: id:c7d6 badge-colour RUN half verified genuinely green (live under both engines); filed id:0030 drift-guard [ROUTINE] + colour visual re-walk REVIEW_ME box [id:c7d6,0030]
+
+
+## 2026-07-11 — executor (sonnet, relay-loop)
+
+Worked id:0030 — extended `tests/test_mathjax.cjs`'s source-guard block with a drift check for
+the whole badge-macro family (`\sorry`/`\sympy`/`\numeric`/`\lean`/`\sympylean` +
+`\<tier>c` open-debt variants): for each macro, extract its raw definition from BOTH
+`_includes/custom-head.html` (MathJax) and `.vscode/settings.json` (KaTeX) and assert it is
+byte-identical to this test's own `MJ_MACROS`/`KX_MACROS` mirror (colour hex included) — the
+existing `\ltag` guard only covered one macro. Verified the guard actually catches drift by
+temporarily dropping `\textcolor` from `leanc` in each config file in turn (both mutations
+made `node tests/test_mathjax.cjs` FAIL as required by the done-check) then restoring the
+originals; full `bash tests/run.sh` is green (real Lean/Jekyll/npm run, no SKIPs — symlinked
+`node_modules` from the main checkout since the worktree started without it). Ticked ROADMAP
+id:0030.
+Friction: none.
+
+
+## 2026-07-11 14:07 — executor (sonnet, relay-loop)
+
+Closed ROADMAP id:0030 — extended test_mathjax.cjs's drift guard to the whole verification-tier badge macro family (custom-head.html + .vscode/settings.json vs mirror), verified it catches a dropped \textcolor in either file, full suite green. [id:0030]
+
+
+## 2026-07-11 14:32 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+Reviewed toesnail: id:0030 badge-macro drift guard verified genuinely green (gaming-scan clean, guard fires on dropped \textcolor, full suite PASS no SKIPs); ticked TODO twin, surfaced id:9d8c unmarked-gate advisory [id:0030]
+
+
+## 2026-07-13 13:25 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+review: toesnail green (9 shell + Lean tiers pass, node math tiers skip-recorded); gaming-scan clean; doctor+lint clean; 0 open ROUTINE
+
+
+## 2026-07-16 13:20 — reviewer (claude-opus-4-8, relay-loop)
+
+review: toesnail — diff window relay-ckpt-20260713-1325..HEAD held exactly ONE substantive commit (c1d980d, a
+one-line inbox ingest of routed:b0c5 → TODO id:ff32); no executor code work to trust-but-verify, so no item was
+verified-green and none reopened. gaming-scan clean (0 DELETED_TEST/ADDED_SKIP/REMOVED_ASSERT); relay-doctor
+clean (0 issues); roadmap-lint + todo-conformance + cross-ledger all clean. ALL 12 declared tiers RAN GREEN, no
+skips: test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror, test_lean (lake
+build + no-sorry), test_page_coverage, test_crypto_exclude, test_conventions_ladder, test_toolchain_pointer,
+test_mathjax.cjs, test_veqs_inline.cjs. The last two had been SKIP-recorded by the previous two reviews for a
+missing node_modules — `npm ci` in the worktree un-skipped them (lock stayed clean, node_modules is gitignored)
+and both pass, closing the isochrone-class silent-tier gap (review.md §3) rather than re-recording the skip.
+Residual manual tier: tests/HUMAN-integration.md (irreducibly-visual MathJax checks) — human pass, unchanged.
+spec-drift: CLAUDE.md `## Relay contract` pointer refreshed v6 → v9 (canonical marker in
+dotclaude-skills/relay/references/executor-contract.md); pointer body already current, marker only. README +
+ARCHITECTURE describe what shipped — no drift (window shipped no user-facing surface).
+reverse-handoff §5b: id:ff32 (the one newly-added open item) qualified `[INPUT — meeting]`, NOT promoted to
+ROADMAP and NOT executor work — it is an owner-direction physics research question (T-matrix ↔ Gaussian-splat ↔
+WiRoHSH) with no observable done-state, and this repo's hard constraint reserves theory direction to the owner;
+reused its existing id, no duplicate minted.
+0 open [ROUTINE] after re-derivation (all 6 open ROADMAP items are gated/container/[INPUT]/[HARD — hands]).
+refactor: none needed — this unit wrote only ledger/doc lines (no code surface to clean up).
+[id:ff32]
+
+
+## 2026-07-16 13:20 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
+
+Reviewed toesnail: window held only a 1-line inbox ingest (no executor work to verify); all 12 tiers ran green with ZERO skips (npm ci un-skipped the 2 node math tiers the prior 2 reviews skip-recorded); gaming-scan/doctor/lint clean; pointer v6→v9; qualified id:ff32 [INPUT — meeting]; 0 open ROUTINE [id:ff32]
+
