@@ -367,6 +367,25 @@ recorded as chosen. Full argument + weaknesses in each essay.
   dependency that does not exist. Either confirm the hold stands (and the scanner finding is
   permanent noise for this item) or name what would lift it. <!-- id:9d8c -->
 
+## Surfaced by `/relay review` 2026-09-08 (window `relay-ckpt-20260907-1635`..HEAD)
+
+- [ ] **`tests/test_carryback.sh`'s `[REFUSED: …]` marker is a self-granted exemption, and only the
+  advisory tier keeps that safe.** The parser checks for `[REFUSED: …]` in the item text BEFORE it
+  extracts the target sentence, so a refused item is never compared against its essay at all. Whoever
+  edits `docs/dreamed/pascalized.md` can therefore convert any unapplied carry-back from MISSING to
+  discharged by writing a reason next to it -- the mechanism cannot distinguish "we decided not to
+  carry this back" from "we could not". That is defensible here (the tier always exits 0, so nothing
+  is being gated open or shut, and both current refusals were escalated to you as decisions, TODO
+  `id:ed2b`), but it stops being defensible the moment anyone proposes making this tier blocking.
+  Nothing to fix today; the note exists so the next person who wants to gate on this count knows the
+  count is author-controlled.
+
+- [ ] **`id:e562` carries gate vocabulary but no typed `gated-on:` edge** (`orphan-scan --shipped`
+  UNMARKED-GATE). The item says the dedicated `/meeting` is deliberately NOT now, which is exactly the
+  clause a later sweep would misread as "pick this up when convenient". A typed edge would make the
+  not-now machine-visible instead of prose-visible. `id:9d8c` has the same shape and has carried it
+  since 2026-07; both are advisory, neither blocks. Your call whether the edge is worth the marker.
+
 - [ ] **This file holds 31 open boxes against its own stated `Max ~10`, and none is ticked.** Not a
   new defect, but it is now 3x the budget and the header calls itself a 15-minute queue, which it
   demonstrably is not. Zero boxes are `[x]`, so `REVIEW_ME.archive.md` cannot drain any of them —

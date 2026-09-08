@@ -416,3 +416,31 @@ review: window clean (no executor unit ran); 14/14 tiers green incl. real Lean b
 ## 2026-09-07 16:35 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review: 5 Bloch Truth commits verified green (14/14 tiers, zero skips; id:c086 numbers reproduced, 4 dreamed Lean files re-elaborated); no gaming; 5 findings surfaced, nothing reopened [id:8b1c,c086,987e,0fba,ef6b,bcc6,a4bc,ff4c,9d8c]
+
+## 2026-09-08 -- reviewer (claude-opus-5, relay-loop)
+
+review: 15 commits since relay-ckpt-20260907-1635, all foreground/owner-session work (pascalized
+carry-back, an 58-distillation audit, the null-vector fix, three `/relay human` rulings). No executor
+unit ran, so no ROADMAP item was closed and none was reopened. Test integrity: gaming-scan.sh clean
+(zero DELETED_TEST/ADDED_SKIP/REMOVED_ASSERT), no test file modified (only additive: new advisory
+tier `test_carryback.sh` + its `run.sh` wiring), so no resurrection case to run; no `@owner-accepted`
+or `@owner-answered` anywhere in the diff. Tiers: 14 blocking + 2 advisory all RAN and passed, zero
+SKIPs (test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror,
+test_lean incl. a real `lake build`, test_page_coverage, test_crypto_exclude, test_conventions_ladder,
+test_toolchain_pointer, test_ci, test_make, test_mathjax.cjs, test_veqs_inline.cjs; advisory
+test_dreamed_render.cjs 84 pages, test_carryback.sh 8 present / 0 missing / 2 refused). CI declares
+only a subset of these and is covered by test_ci. `test_verify_entropy.sh` stays deliberately outside
+the loop (RED spec for gated id:76e5). roadmap-lint clean, orphan-scan --cross-ledger clean,
+todo-conformance has no missing-id/orphan class (its 296 continuation + 33 shape-prose findings are
+the pre-existing dotclaude-skills id:0d7c line-shrink class, not new).
+Reverse-handoff (review.md 5b): six items were added to TODO.md this window. `id:0720` was the only
+execution-ready one and is PROMOTED to ROADMAP.md as `[ROUTINE]`, reusing its token, with acceptance
+transcribed from the owner's ruling unchanged and a RED spec `tests/test_dreamed_lean_pin.sh`
+(`# roadmap:0720`) whose load-bearing assertions are that a mutated `.lean` file AND a mutated
+toolchain pin each drive the checker non-zero -- the ruling's own "the pin is a trigger, not just
+documentation". `id:e029` `[INPUT - decision]`, `id:e562` `[INPUT - meeting]` and the four `[OWNER]`
+triage items (`a1aa`, `ed2b`, `781e`, `52ea`) are owner judgement and correctly stay out of the queue.
+Findings: 2 REVIEW_ME boxes (the `[REFUSED: …]` marker in test_carryback.sh is an author-controlled
+exemption, safe only while the tier is advisory; `id:e562`'s unmarked gate). relay-doctor: no
+toesnail-specific finding.
+refactor: none needed -- this unit added a promotion, a RED spec and two review boxes; nothing to unify.
