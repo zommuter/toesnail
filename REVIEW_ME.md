@@ -332,7 +332,20 @@ recorded as chosen. Full argument + weaknesses in each essay.
   cost asymmetry that makes (c) a different decision here:** the render tier is source-level and
   costs ~2 s on 68 pages, whereas elaborating 56 Mathlib-importing files is minutes to tens of
   minutes, so (c) probably wants to be opt-in or nightly rather than "always on" — which is a
-  genuinely different shape from the ruling you already gave, not a rubber stamp of it. <!-- id:ef6b -->
+  genuinely different shape from the ruling you already gave, not a rubber stamp of it.
+  **ANSWERED 2026-09-08 (`/relay human`) and DELIVERED 2026-09-08 (`id:0720`).** You ruled a FOURTH
+  option rather than (a)/(b)/(c): pinned-good hashes plus a pinned Mathlib/toolchain, with the pin as
+  a TRIGGER and not documentation. Shipped: `verify/dreamed_lean_pin.sh` (a pure hash/pin comparison
+  that runs with no `lake` on PATH), the baseline `docs/dreamed/lean-pins.json` (56 hashes + toolchain
+  `leanprover/lean4:v4.30.0-rc2` + the Mathlib rev from `verify/lake-manifest.json`), the pin restated
+  for readers in `docs/dreamed/README.md`, wired into `tests/run.sh`'s BLOCKING tier. Your ruling
+  answers this box's cost asymmetry by refusing re-elaboration entirely: a drifted file is REPORTED
+  and re-elaborating it stays an ad-hoc `capped.sh` run on the reported subset only. **VERIFIED
+  INDEPENDENTLY by the 2026-09-08 18:52 relay review, not taken on report:** all four acceptance
+  assertions fire (a mutated `.lean` file and a mutated toolchain pin each drive the checker non-zero
+  and name the drifted item), and 15 blocking + 2 advisory tiers re-ran green here with zero skips.
+  **The box stays UNTICKED on purpose** — per this file's header a tick is your confirmation, and a
+  review may not take it for you. Only that confirmation is outstanding. <!-- id:ef6b -->
 
 - [ ] **A rule and the commit that wrote it contradicted each other, and I narrowed the rule rather
   than leave it.** `tests/README.md` gained the line *"Do not 'fix' a dreamed finding to silence it:
@@ -390,3 +403,24 @@ recorded as chosen. Full argument + weaknesses in each essay.
   new defect, but it is now 3x the budget and the header calls itself a 15-minute queue, which it
   demonstrably is not. Zero boxes are `[x]`, so `REVIEW_ME.archive.md` cannot drain any of them —
   the queue only shrinks when you tick. Worth one pass deciding which are genuinely still live.
+
+## Relay review 2026-09-08 18:52 (window `relay-ckpt-20260908-1807`..HEAD, 6 commits)
+
+- [ ] **The new `id:0720` drift guard is in `make test` but NOT in CI, and CI is where the drift it
+  guards would arrive.** Measured, not assumed: `.github/workflows/ci.yml` runs three named tests
+  (`tests/test_verify.sh`, `tests/test_render.sh`, `tests/test_mathjax.cjs`) and never calls
+  `tests/run.sh`, so `test_dreamed_lean_pin.sh` -- and the nine other blocking tiers -- do not run on
+  push or pull_request. `tests/test_ci.sh` only asserts that CI *references* those three, so it passes
+  and will keep passing. That subset is deliberate and predates this window, so this is not a
+  regression and nothing here is red. The reason it is worth your ruling NOW rather than as generic
+  CI debt: your 2026-09-08 ruling framed the whole point of `id:0720` as catching a Mathlib bump that
+  would *silently* rot 56 published claims, and the mechanism it uses is a pinned rev in
+  `verify/lake-manifest.json`. A bump reaches this tree as a commit -- which is precisely the moment
+  CI looks and `make test` may not have been run. As it stands the guard fires only for whoever runs
+  the full suite locally before pushing. **Your call**, and the middle option is real: (a) leave it,
+  accepting that the guard is a local-discipline guard; (b) have CI run `bash tests/run.sh`, which
+  pulls in `test_lean.sh`'s real `lake build` and its cold Mathlib cost into every push -- the cost
+  `id:9d8c` is parked on, so this is not free and is arguably a different decision; (c) add just
+  `verify/dreamed_lean_pin.sh` as its own CI step, which needs no `lake`, no Ruby and no Node and
+  costs about a second -- the cheap half of (b) without the parked cost. Tooling only; no `.lean`
+  proof or physics prose is involved. <!-- id:0720 -->

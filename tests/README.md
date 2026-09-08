@@ -11,14 +11,14 @@ has always governed here, and it still does:
 > change the test deliberately and say so).
 
 **The authoritative tier list is `tests/run.sh`'s own loop, not this table** — it stands at
-**14 automated tiers** as of 2026-09-07 (`test_verify`, `test_verify_entropy_routine`,
+**15 automated tiers** as of 2026-09-08 (`test_verify`, `test_verify_entropy_routine`,
 `test_render`, `test_verify_hook`, `test_mw_mirror`, `test_lean`, `test_page_coverage`,
 `test_crypto_exclude`, `test_conventions_ladder`, `test_toolchain_pointer`, `test_ci`,
-`test_make`, `test_mathjax.cjs`, `test_veqs_inline.cjs`). `tests/test_verify_entropy.sh` is
-deliberately **outside** the loop: it is the still-RED spec for the gated seam `id:76e5`.
-`tests/test_dreamed_lean_pin.sh` is outside the loop for the same reason: it is the still-RED
-spec for `id:0720` (pinned-good hashes + a pinned Mathlib/toolchain for `docs/dreamed/lean/`).
-Wire each into `run.sh` in the same commit that makes it green.
+`test_make`, `test_dreamed_lean_pin`, `test_mathjax.cjs`, `test_veqs_inline.cjs`).
+`tests/test_verify_entropy.sh` is deliberately **outside** the loop: it is the still-RED spec
+for the gated seam `id:76e5`. `tests/test_dreamed_lean_pin.sh` was outside it for the same
+reason until `id:0720` landed (2026-09-08); it is now blocking. Wire each remaining RED spec
+into `run.sh` in the same commit that makes it green.
 `tests/test_dreamed_render.cjs` and `tests/test_carryback.sh` run in the loop but are
 **advisory, not blocking** (see below).
 The table below details only the original layers, which mirror how relay separates

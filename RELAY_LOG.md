@@ -468,3 +468,58 @@ list is the only change to prior code.
 ## 2026-09-08 18:15 — executor (sonnet, relay-loop)
 
 Closed id:0720: pinned-good hash + Mathlib/toolchain drift guard for docs/dreamed/lean/*.lean (verify/dreamed_lean_pin.sh + docs/dreamed/lean-pins.json), wired into tests/run.sh; full suite green. [id:0720]
+
+## 2026-09-08 18:52 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: window `relay-ckpt-20260908-1807`..HEAD, 6 commits, one executor unit (`id:0720`). The
+latest tag at dispatch was the EXECUTOR's own checkpoint `relay-ckpt-20260908-1815` at HEAD, so
+the literal review.md §1 window is empty; the honest audit window is the previous REVIEWER
+checkpoint, and that is what was used. Test-integrity: `gaming-scan.sh` clean (zero
+DELETED_TEST/ADDED_SKIP/REMOVED_ASSERT). One test file was modified, `tests/test_dreamed_lean_pin.sh`
+-- resurrection check RUN and it is comment-only: `diff` of the pre-window body against the current
+body beyond the header block is byte-identical, so no assertion moved. No `@owner-accepted`,
+`@owner-answered` or `answer-src:` introduced anywhere in the diff, and no line already carrying one
+was modified. No `[host:` tag, so §2c does not apply.
+Tiers (§3, run-or-record-skip): 15 blocking + 2 advisory all RAN and passed, ZERO skips --
+test_verify, test_verify_entropy_routine, test_render, test_verify_hook, test_mw_mirror, test_lean
+(a real `lake build`), test_page_coverage, test_crypto_exclude, test_conventions_ladder,
+test_toolchain_pointer, test_ci, test_make, test_dreamed_lean_pin (NEW this window),
+test_mathjax.cjs, test_veqs_inline.cjs; advisory test_dreamed_render.cjs (84 pages, no breaks) and
+test_carryback.sh. `SUITE: PASS`. `test_verify_entropy.sh` stays deliberately outside the loop (RED
+spec for gated `id:76e5`). Load context for the timing: `uptime` load average 5.00 at the start of
+the run.
+`id:0720` VERIFIED GREEN, not taken on report: all four acceptance assertions were watched firing --
+56/56 recorded hashes matching the tree, the recorded toolchain and Mathlib rev matching
+`verify/lean-toolchain` and `verify/lake-manifest.json`, a mutated `.lean` file driving the checker
+non-zero AND naming the drifted file, a mutated toolchain pin driving it non-zero (the ruling's own
+"the pin is a trigger, not just documentation"), and the checker running on a minimal PATH with no
+`lake`. §2d over-reach: the cited ratified source is the owner's 2026-09-08 `/relay human` ruling,
+re-read at its TODO `id:0720` transcription rather than at the ROADMAP restatement; the diff is not
+a superset of it -- nothing re-elaborates, which is precisely the half the owner rejected on cost.
+§2b.6 refactor claim (`none needed`) is consistent with the diff: a new detector, a new baseline
+file, and one wiring line.
+Spec drift (§4), both FIXED here: `tests/README.md` still called the tier list "14 automated tiers"
+and listed `test_dreamed_lean_pin.sh` as a still-RED spec deliberately outside `run.sh` -- false as
+of this window's own commit, now 15 and blocking. `ARCHITECTURE.md` §3 opened "`tests/run.sh` =
+three layers", a count that has been wrong for longer; reworded to name the three as the FOUNDING
+layers and point at `run.sh`'s loop as authoritative, rather than minting a new number that rots
+the same way. The `## Relay contract` pointer is v18 and matches the canonical marker -- no refresh.
+Findings: ONE new REVIEW_ME box -- the new guard is in `make test` but NOT in CI, which runs three
+named tests and never `tests/run.sh`; since the drift it guards arrives as a commit, the guard today
+only fires for whoever runs the full suite locally. Three options offered with their costs, the
+middle one (CI runs `run.sh`) deliberately priced because it drags `test_lean`'s cold Mathlib build
+into every push, the cost `id:9d8c` is parked on. Box `id:ef6b` (the question `id:0720` answers) was
+annotated ANSWERED + DELIVERED + independently verified, and left UNTICKED on purpose: this file's
+header defines a tick as the owner's confirmation, the same call the `id:8b1c` box records.
+relay-doctor: no toesnail-specific finding (0 issues for this repo; the parked orphans and
+relay-core shadow mismatches it reports belong to other repos). roadmap-lint clean, `--strict`
+clean. orphan-scan `--cross-ledger` clean; `--shipped` reports the two known UNMARKED-GATEs
+(`id:9d8c`, `id:e562`), both already carrying REVIEW_ME boxes, no TICK-READY items.
+todo-conformance has no missing-id and no orphan class -- its 296 continuation + 33 shape-prose +
+20 long-title findings are the pre-existing dotclaude-skills `id:0d7c` line-shrink class, unchanged.
+Reverse-handoff (§5b): NO open item was added to TODO.md or ROADMAP.md in this window, so there was
+nothing to qualify. `routine_open` = 0 -- every one of the 13 open ROADMAP items is GATED, `[INPUT
+- meeting]`, `[INPUT - decision]` or `[HARD - hands]`; there is no executor work left in the queue.
+Nothing reopened.
+refactor: none needed -- this unit corrected two stale doc claims and wrote one review box; there is
+no code here to unify.
