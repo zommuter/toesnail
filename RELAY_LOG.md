@@ -464,3 +464,7 @@ and pin-drift trigger non-zero and name the file, (c) the pin is reader-facing, 
 no-`lake`-needed constraint) fully determined the implementation; no ambiguity.
 refactor: none needed -- new detector + baseline file, wiring into run.sh's existing
 list is the only change to prior code.
+
+## 2026-09-08 18:15 — executor (sonnet, relay-loop)
+
+Closed id:0720: pinned-good hash + Mathlib/toolchain drift guard for docs/dreamed/lean/*.lean (verify/dreamed_lean_pin.sh + docs/dreamed/lean-pins.json), wired into tests/run.sh; full suite green. [id:0720]
