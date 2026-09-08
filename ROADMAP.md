@@ -68,7 +68,7 @@ its marker-split is an owner content decision, not this item.
 
 ### Dreamed-lean drift guard (owner ruling 2026-09-08 via `/relay human`; promoted by review 2026-09-08)
 
-- [ ] [ROUTINE] Pinned-good hashes + pinned Mathlib/toolchain for `docs/dreamed/lean/` <!-- id:0720 -->
+- [x] [ROUTINE] Pinned-good hashes + pinned Mathlib/toolchain for `docs/dreamed/lean/` <!-- id:0720 -->
   - **Acceptance** (the owner's three, unchanged -- do NOT close on a subset): (a) a recorded good hash
     per `docs/dreamed/lean/*.lean` file (56 today; the count is NOT hardcoded -- the tree is the source of
     truth); (b) re-verification FIRES when a file's hash OR the recorded Mathlib/toolchain pin changes --
