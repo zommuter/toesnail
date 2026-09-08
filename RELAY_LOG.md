@@ -397,3 +397,7 @@ nothing to qualify. `routine_open` = 0 -- every one of the 13 open ROADMAP items
 Nothing reopened.
 refactor: none needed -- this unit corrected two stale doc claims and wrote one review box; there is
 no code here to unify.
+
+## 2026-09-08 19:02 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: id:0720 verified genuinely green (all 4 acceptance assertions watched firing, 15 blocking + 2 advisory tiers, zero skips); gaming-scan clean, resurrection check comment-only; fixed tier-count drift in tests/README.md + ARCHITECTURE.md; 1 REVIEW_ME box (guard not in CI); nothing reopened; routine_open=0 [id:0720,ef6b]
