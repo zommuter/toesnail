@@ -306,6 +306,9 @@ compact support. The systematic treatment is theirs; this is only the initial-da
 
 Not an edit. A candidate, offered for his judgement:
 
+**The line is analytic versus not, and a smooth bump is on the shock's side; non-analytic data
+returns as a boundary value, at the price of a common annulus.**
+
 > While this solution is valid for any function, even discontinuous ones, the detour through the
 > discrete Laurent series imposed holomorphy on the two waves. The dividing line is not smooth
 > versus discontinuous but **analytic versus non-analytic**: a $C^\infty$ bump of compact support is

@@ -397,12 +397,13 @@ Each item is a located claim plus the ruling it needs. Nothing here has been wri
 `TODO.md`, `ROADMAP.md` or `REVIEW_ME.md`, and a delegated agent's verdict is a recommendation,
 never a settled decision.
 
-1. **The fork's practical content is smaller than the cluster has been saying, and it is a purchase
-   rather than a distinction.** Located: §2, first table. Readings (i) and (ii) agree to every digit
-   at every independent fraction until someone pays for an independence proof, because until then an
-   independent sentence reports $(0,0)$ under both. **Ruling needed: does the project accept that
-   the fork's operational content is entirely "is an independence proof worth buying", or does it
-   claim some further difference that this prototype failed to model?**
+1. **Reading (ii) is reading (i) plus a purchase, and at any plausible price for forcing the
+   purchase loses.** The fork's practical content is smaller than the cluster has been saying.
+   Located: §2, first table. Readings (i) and (ii) agree to every digit at every independent
+   fraction until someone pays for an independence proof, because until then an independent
+   sentence reports $(0,0)$ under both. **Ruling needed: does the project accept that the fork's
+   operational content is entirely "is an independence proof worth buying", or does it claim some
+   further difference that this prototype failed to model?**
 
 2. **Break-even says reading (ii) does not pay at any plausible price for forcing.** Located: §3,
    12 to 29 units against a mean ordinary proof cost of 40. Every essay in this cluster has assumed

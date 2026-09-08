@@ -45,6 +45,12 @@ else
 fi
 echo
 echo "============================================================"
+echo "RUN test_carryback.sh  [ADVISORY: never fails the suite]"
+echo "============================================================"
+bash "$here/test_carryback.sh" || true
+echo
+
+echo "============================================================"
 if [ "$rc" -eq 0 ]; then
   echo "SUITE: PASS"
 else

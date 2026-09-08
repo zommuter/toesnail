@@ -302,10 +302,10 @@ $$
 \veq{models-collapse}\lean
 $$
 
-`models_z_zero_forces_origin`. Under (i), unproved forces maximally-ignorant, so the scheduler's two
-cases are the same point; under (ii) they are the two ends of the $z=0$ radius
-(`status_z_zero_free`). Judged against the owner's stated application that is decisive, by a theorem
-rather than by taste.
+**A theory determines independence; only a search has ignorance.** `models_z_zero_forces_origin`.
+Under (i), unproved forces maximally-ignorant, so the scheduler's two cases are the same point;
+under (ii) they are the two ends of the $z=0$ radius (`status_z_zero_free`). Judged against the
+owner's stated application that is decisive, by a theorem rather than by taste.
 
 The honest counterweight, which deserves its weight: **(i) has the better account of what $z$
 means.** Under (i), $z = 2\mu([\varphi]) - 1$ is a measure of a set of completions, and $z = \pm 1$ is
@@ -593,11 +593,12 @@ into `TODO.md`, `ROADMAP.md` or `REVIEW_ME.md`.**
    favour of (i), or rule that both are kept as two objects with two jobs and a soundness map between
    them. The last is the option this file thinks most likely right if the recommendation is wrong.
 
-2. **The decisive fact against (i) for the stated application.** Located: §2.3,
-   `models_z_zero_forces_origin`. Under (i), $z=0$ forces $r=0$, so "I proved this is undecidable
-   here" and "I have got nowhere yet" are the same point. **Ruling needed:** confirm that the layered
-   core's scheduler genuinely needs that distinction. If it does not, the strongest argument in this
-   file evaporates and (i)'s exactness becomes the better buy.
+2. **A theory determines independence; only a search has ignorance.** The decisive fact against
+   (i) for the stated application. Located: §2.3, `models_z_zero_forces_origin`. Under (i), $z=0$
+   forces $r=0$, so "I proved this is undecidable here" and "I have got nowhere yet" are the same
+   point. **Ruling needed:** confirm that the layered core's scheduler genuinely needs that
+   distinction. If it does not, the strongest argument in this file evaporates and (i)'s exactness
+   becomes the better buy.
 
 3. **The claimed encoding-(b) convergence is not real, and two documents should be corrected.**
    Located: §3. Under (i) the south pole is `refutable`, under (ii) `refuted`; neither conflates

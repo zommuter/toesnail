@@ -24,11 +24,12 @@ an ideal gas $p/\rho = RT/M$ equals $c^2/\gamma$ precisely when $c^2 = \gamma p/
 $\gamma$ in the notation presupposes Laplace's correction without the adiabatic assumption ever being
 stated. **Second**, the derivation chain classifies cleanly into identities (SymPy-dischargeable),
 approximations with a nameable small parameter, and modeling assumptions (owner-territory); the
-classification is the candidate marking inventory of §2, twelve rows. **Third**, the acoustic Fresnel
-problem at normal incidence gives $r = (Z_2-Z_1)/(Z_2+Z_1)$ with $Z = \rho c$, and because $\rho$ and
-$c$ are independent material knobs, **an impedance-matched interface with $c_1 \neq c_2$ reflects
-nothing while still refracting**. Optics at normal incidence cannot do this: for nonmagnetic media
-$Z = Z_0/n$, so matching the impedance forces matching the index. All of §3-§4 is Lean-attested
+classification is the candidate marking inventory of §2, twelve rows. **Third, sound can bend
+without echoing; light cannot, because $Z = Z_0/n$ ties reflection to refraction.** The acoustic
+Fresnel problem at normal incidence gives $r = (Z_2-Z_1)/(Z_2+Z_1)$ with $Z = \rho c$, and because
+$\rho$ and $c$ are independent material knobs, an impedance-matched interface with $c_1 \neq c_2$
+reflects nothing while still refracting. Optics at normal incidence cannot do this: for nonmagnetic
+media $Z = Z_0/n$, so matching the impedance forces matching the index. All of §3-§4 is Lean-attested
 (six theorems, zero sorries, attestation at the end).
 
 ## 1. The chain `physics/acoustics.md` actually asserts

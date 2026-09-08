@@ -75,7 +75,8 @@ non-payment, a demand posed in full and given nothing, not even a deferral with 
 
 ### 1.5 Headline
 
-The spine's method fails **asymmetrically**, with a boundary at l.126. Before it, mathematics
+Before l.126 the maths arrives before the question; after it the questions arrive and no maths
+does. The spine's method fails **asymmetrically**, with a boundary at l.126. Before it, mathematics
 runs *ahead* of demand: `⊗`, ℂ, conjugate symmetry and positive-definiteness all arrive
 before a question needs them, four such introductions against four clean ones. After it the
 pattern inverts completely, two demands posed and nothing supplied. The file therefore does

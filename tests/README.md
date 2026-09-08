@@ -16,7 +16,8 @@ has always governed here, and it still does:
 `test_crypto_exclude`, `test_conventions_ladder`, `test_toolchain_pointer`, `test_ci`,
 `test_make`, `test_mathjax.cjs`, `test_veqs_inline.cjs`). `tests/test_verify_entropy.sh` is
 deliberately **outside** the loop: it is the still-RED spec for the gated seam `id:76e5`.
-`tests/test_dreamed_render.cjs` runs in the loop but is **advisory, not blocking** (see below).
+`tests/test_dreamed_render.cjs` and `tests/test_carryback.sh` run in the loop but are
+**advisory, not blocking** (see below).
 The table below details only the original layers, which mirror how relay separates
 machine-checkable `[ROUTINE]` work from `[HUMAN]` judgement:
 
@@ -57,6 +58,29 @@ blocking**:
 - Always on, not opt-in: it is source-level plus one optional grep (no Jekyll build of its
   own), so it costs about 2 s on 57 pages.
 
+## The advisory tier: `test_carryback.sh`
+
+`docs/dreamed/pascalized.md` ends with a "## Carry-back list": numbered items naming a
+sharper formulation and the essay it was meant to be written back into ("`lasercool.md` §4
+and §9: ... becomes \"A laser cannot be the exhaust: ...\""). That list was a promise with no
+enforcement -- 9 of the first 10 items were found unapplied by inspection, and nothing had
+caught it.
+
+- `tests/test_carryback.sh` parses the "## Carry-back list" section, extracting per item the
+  target file (the first backtick-quoted `*.md` token, resolved relative to `docs/dreamed/`)
+  and the replacement sentence (the trailing double-quoted string). It then greps the
+  target file for that sentence, whitespace-normalised so a reflowed sentence still matches,
+  and reports each item PRESENT or MISSING, plus a running count.
+- An item that does not match the expected shape is reported **UNPARSEABLE** and the scan
+  continues -- it is never silently dropped.
+- It does **not** hardcode the current item list or count; the "## Carry-back list" section
+  itself is the source of truth, so the test stays correct as items are added, resolved, or
+  removed.
+- **Always exits 0** and `tests/run.sh` calls it with `|| true`, same as `test_dreamed_render.cjs`:
+  an unapplied carry-back is information for the owner, not a build break. Applying one is a
+  content edit into `docs/dreamed/`, which is human-only per this repo's scope guard (CLAUDE.md
+  "Relay contract" -- executors never touch the theory) -- this tier only ever reports.
+
 **Blocking versus advisory scope split** (stated in both files' headers):
 
 | directory | tier | blocks the suite? |
@@ -79,6 +103,7 @@ bash tests/test_verify.sh    # SymPy + attestation layer (needs uv)
 bash tests/test_render.sh    # Jekyll build + HTML asserts (needs the Ruby toolchain; SKIPs without it)
 node tests/test_mathjax.cjs  # MathJax + KaTeX render (needs `npm install`; SKIPs without it)
 node tests/test_dreamed_render.cjs  # ADVISORY docs/dreamed/ render report (always exits 0)
+bash tests/test_carryback.sh # ADVISORY pascalized.md carry-back coverage report (always exits 0)
 ```
 
 Then walk `HUMAN-integration.md` after any rendering-related change.

@@ -102,10 +102,11 @@ mode rather than spontaneously into $4\pi$. The obstruction is one line:
 
 $$ \frac{R_\mathrm{stim}}{R_\mathrm{spon}} = \bar n \ \text{(Einstein)},\qquad \frac{s(\bar n)}{\bar n}\Big|_{\bar n=1} = 1.386\,k_B,\qquad \frac{s(\bar n)}{\bar n} = 1 \ \text{at}\ \bar n = 1.84 \veq{crossover}\sorry $$
 
-**The threshold at which stimulated emission starts to dominate and the threshold at which the
-exhaust stops carrying $k_B$-scale entropy per photon are the same threshold, $\bar n \approx 1$.**
-These are not two facts to balance; they are one fact. To make stimulated relaxation dominate by a
-factor $R$ you must set $\bar n = R$, and thereby divide the exhaust entropy per photon by
+**A laser cannot be the exhaust: the brightness that makes it a laser is what empties it of
+entropy.** The threshold at which stimulated emission starts to dominate and the threshold at
+which the exhaust stops carrying $k_B$-scale entropy per photon are the same threshold, $\bar n
+\approx 1$: these are not two facts to balance, they are one fact. To make stimulated relaxation
+dominate by a factor $R$ you must set $\bar n = R$, and thereby divide the exhaust entropy per photon by
 $R/(1+\ln R)$. Energy conservation caps the exhaust at about one photon per absorbed photon, so
 nothing buys the factor back. Rb87 needs $2.5\times10^{-3}\,k_B$ per exhaust photon, capping
 $\bar n$ at $3\times10^3$; a solid needing $\sim k_B$ per photon caps $\bar n$ near 3. A "laser"
@@ -251,7 +252,8 @@ prohibition needs one more premise, and it is energy conservation:** at most abo
 photon leaves per absorbed photon, so the per-photon comparison is the whole comparison. Adding
 that sentence turns an assertion into an argument.
 
-**Missing, and the best thing you could add: §4's $\bar n\approx1$ coincidence.** Stimulated
+**Missing, and the best thing you could add: §4's $\bar n\approx1$ coincidence.** A laser cannot be
+the exhaust: the brightness that makes it a laser is what empties it of entropy. Stimulated
 emission dominates iff $\bar n>1$; the exhaust drops below $k_B$ per photon iff $\bar n>1.84$. Your
 question's central intuition, relaxing via the resonance a laser provides instead of
 spontaneously, is self-defeating at exactly the point where it starts to work. That is one line

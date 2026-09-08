@@ -439,7 +439,7 @@ constructive proof that transforms proofs into primitive recursive functions.
 <div style="overflow-x:auto">
 
 <svg viewBox="0 0 860 320" role="img" aria-labelledby="cons-title">
-<title id="cons-title">Conservativity as a layered architecture: WKL-zero sits above RCA-zero, which sits above primitive recursive arithmetic, and each stronger layer is conservative over the one below for a stated class of sentences</title>
+<title id="cons-title">Conservativity as a layered architecture: WKL-zero sits above RCA-zero, which sits above primitive recursive arithmetic, and each stronger layer is conservative over the one below for a stated class of sentences. Read plainly, it is two two-storey houses stacked: borrow all you like upstairs, and the floor below proves exactly what it proved before.</title>
 <defs>
 <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
 <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6b3f"/>
@@ -452,13 +452,22 @@ constructive proof that transforms proofs into primitive recursive functions.
 <text x="250" y="58" font-size="16" text-anchor="middle" font-weight="bold">WKL₀</text>
 <text x="250" y="80" font-size="12.5" text-anchor="middle" fill="#8a3d12">strong: compactness, Heine-Borel, completeness, Brouwer</text>
 
+<rect x="40" y="105" width="420" height="8" fill="#3a3a3a"/>
+
 <rect x="40" y="126" width="420" height="66" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2.5"/>
 <text x="250" y="154" font-size="16" text-anchor="middle" font-weight="bold">RCA₀</text>
 <text x="250" y="176" font-size="12.5" text-anchor="middle" fill="#2f6b3f">weak: computable mathematics only</text>
 
+<rect x="40" y="201" width="420" height="8" fill="#3a3a3a"/>
+
 <rect x="40" y="222" width="420" height="66" fill="#e8f0e9" stroke="#2f6b3f" stroke-width="2.5"/>
 <text x="250" y="250" font-size="16" text-anchor="middle" font-weight="bold">PRA</text>
 <text x="250" y="272" font-size="12.5" text-anchor="middle" fill="#2f6b3f">primitive recursive arithmetic: finitist</text>
+
+<text x="578" y="250" font-size="12.5" fill="#5c5c5c" font-style="italic">Plainly: two two-storey houses,</text>
+<text x="578" y="268" font-size="12.5" fill="#5c5c5c" font-style="italic">stacked. Borrow upstairs freely;</text>
+<text x="578" y="286" font-size="12.5" fill="#5c5c5c" font-style="italic">the floor below proves exactly</text>
+<text x="578" y="304" font-size="12.5" fill="#5c5c5c" font-style="italic">what it did before.</text>
 
 <path d="M 476 62 C 560 62, 560 158, 480 158" fill="none" stroke="#2f6b3f" stroke-width="2.5" marker-end="url(#arrG)"/>
 <text x="578" y="52" font-size="13.5" font-weight="bold">Π¹₁-conservative over RCA₀</text>
@@ -482,7 +491,9 @@ The reading matters. Conservativity is not "the strong layer is useless"; WKL₀
 RCA₀ does not. It is the exact statement that for a stated class of consequences, borrowing the
 strong layer's power costs the weak layer nothing. A layered design that wants "the upper layer may
 be powerful, and must not contaminate the trusted lower one" is asking for a conservativity result,
-and here two of them already exist, with the classes spelled out.
+and here two of them already exist, with the classes spelled out. Put plainly: this is two
+two-storey houses stacked, one on top of the other. Borrow all you like upstairs; the floor below
+proves exactly what it proved before you climbed the stairs.
 
 ---
 

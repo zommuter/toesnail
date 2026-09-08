@@ -134,11 +134,13 @@ rather than the asymptotic $1.44$, so the measured ratio overshoots and descends
 said "from below", which its own table contradicts.
 
 That is the good case, and it is good only because Euclid's worst case is known and tight. The
-general statement is worse in a way no engineering fixes: for an arbitrary program the trip count
-is not computable, so **there is no worst case to pad to**. An encrypted algorithm is therefore
-always an encrypted *circuit* of fixed size, which is why the FHE literature speaks of circuits and
-never of programs. The seed's "more general algorithm" has a precise ceiling: general up to
-choosing a bound, and not one step past it.
+general statement is worse in a way no engineering fixes.
+
+**An encrypted program cannot branch on its data, so it is a circuit, and a general program has no
+worst case to pad to.** For an arbitrary program the trip count is not computable, which is why the
+padding bound does not exist. An encrypted algorithm is therefore always an encrypted *circuit* of fixed
+size, which is why the FHE literature speaks of circuits and never of programs. The seed's "more
+general algorithm" has a precise ceiling: general up to choosing a bound, and not one step past it.
 
 ## 4. The three problems, kept apart
 

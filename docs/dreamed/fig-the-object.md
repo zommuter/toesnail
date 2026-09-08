@@ -63,6 +63,48 @@ encodes false as $e^{i\pi}\lvert 1\rangle$: global phase is unobservable, so it 
 
 ---
 
+## 1a. The playground version, and why it is not the same trick
+
+<div style="overflow-x:auto">
+<svg viewBox="0 0 700 310" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The real Goedel sentence next to the playground liar sentence, side by side, so the difference between an unprovable truth and a genuine paradox is visible rather than assumed</title>
+<g font-family="system-ui, sans-serif" text-anchor="middle" fill="#1f2430">
+  <rect x="40" y="40" width="290" height="220" rx="10" fill="#dce8f2" stroke="#2b5d8a" stroke-width="3"/>
+  <text x="185" y="70" font-size="19" font-weight="700" fill="#2b5d8a">THE REAL ONE</text>
+  <text x="185" y="100" font-size="16" font-style="italic">&#8220;This sentence</text>
+  <text x="185" y="122" font-size="16" font-style="italic">cannot be proved.&#8221;</text>
+  <text x="185" y="154" font-size="13.5">If it were provable, it would</text>
+  <text x="185" y="176" font-size="13.5">be false: a contradiction. So</text>
+  <text x="185" y="198" font-size="13.5">it is not provable, and that</text>
+  <text x="185" y="220" font-size="13.5">very fact makes it true.</text>
+  <text x="185" y="244" font-size="13.5" font-weight="700">Unprovable and true, together.</text>
+
+  <rect x="370" y="40" width="290" height="220" rx="10" fill="#f6e2d8" stroke="#b04a25" stroke-width="3"/>
+  <text x="515" y="70" font-size="19" font-weight="700" fill="#b04a25">THE PLAYGROUND VERSION</text>
+  <text x="515" y="100" font-size="16" font-style="italic">&#8220;This sentence</text>
+  <text x="515" y="122" font-size="16" font-style="italic">is a lie.&#8221;</text>
+  <text x="515" y="154" font-size="13.5">If it is true, it is a lie,</text>
+  <text x="515" y="176" font-size="13.5">so it is false. If it is false,</text>
+  <text x="515" y="198" font-size="13.5">it told the truth, so it is</text>
+  <text x="515" y="220" font-size="13.5">true. No value survives.</text>
+  <text x="515" y="244" font-size="13.5" font-weight="700">A genuine paradox, not Goedel's.</text>
+
+  <text x="350" y="288" font-size="14.5" fill="#4a4944">Goedel built the left sentence. The right one is the popular explainer, borrowed to</text>
+  <text x="350" y="306" font-size="14.5" fill="#4a4944">make it vivid, and the two do not behave the same way: only one of them is a contradiction.</text>
+</g>
+</svg>
+</div>
+
+The left box is the sentence panel 1's right-hand failure actually uses: Goedel's own $G$,
+provable-vs-true, no paradox once provability and truth are told apart. The right box is the liar,
+which does not appeal to any formal system at all and is paradoxical under ordinary two-valued
+truth regardless of Goedel. Reaching for the liar to explain incompleteness is a common shortcut,
+and it smuggles in a contradiction that the real theorem does not have. That precision is the
+entire content of this page's "NOT EXCLUSIVE: FAILS" panel above, stated once more without the
+Bloch-ball apparatus.
+
+---
+
 ## 2. Three coordinates, and what each one is worth
 
 <div style="overflow-x:auto">

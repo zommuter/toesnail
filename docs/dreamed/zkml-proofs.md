@@ -107,11 +107,12 @@ existential collapses and the proof does certify identity:
 
 $$ \mathrm{Admissible} = \{w_0\} \ \wedge\ \exists w \in \mathrm{Admissible},\ \mathrm{eval}(w,i)=o \implies \mathrm{eval}(w_0,i)=o \veq{zkpin-dreamed}\lean $$
 
-**So the zero-knowledge property over the weights is precisely what costs you the identity
-guarantee.** It is not an incidental feature: zkGPT's own introduction gives the motive plainly
-("the model parameters are trade secrets"). A provider that will publish its weights can prove it
-ran them. A provider that will not, cannot -- and no improvement in prover speed changes that,
-because the obstruction is a quantifier, not a cost.
+**You can prove you ran your model only by publishing it.** That is the same fact as the zero-knowledge
+property over the weights costing you the identity guarantee, and it is not an incidental feature:
+zkGPT's own introduction gives the motive plainly ("the model parameters are trade secrets"). A
+provider that will publish its weights can prove it ran them. A provider that will not, cannot --
+and no improvement in prover speed changes that, because the obstruction is a quantifier, not a
+cost.
 
 This is the answer to the seed's question that I did not expect to be writing. The batch has spent
 two essays treating zkML as the expensive-but-sound endpoint of integrity. For **open-weights**

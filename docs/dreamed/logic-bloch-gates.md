@@ -338,6 +338,12 @@ function of any kind is injective:
 $$ \forall f : \{0,1\}^2 \to \{0,1\},\quad f \text{ is not injective}
    \qquad\big(4 > 2\big) \veq{ancilla}\lean $$
 
+Four ways in. Two ways out. Something got lost. That is the whole counting argument, and it is
+checkable by counting arrows: draw the four inputs, draw the two outputs, draw where each input's
+AND value sends it, and see that some output box has more than one arrow pointing at it. No
+injective map survives that many-to-one landing, so no two-input one-output gate can be run
+backwards.
+
 That much the prior AI turn had. Here is the part it did not. **Widening the output to two bits
 does not rescue it.** One might hope to reuse the second wire, emitting
 $(\text{something}, a \wedge b)$ reversibly. Three of the four inputs have conjunction 0, so they

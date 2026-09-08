@@ -41,6 +41,7 @@ each chart carry the same figures as text.
 .tsfig .s2k{stroke:#eb6834}
 .tsfig .s3k{stroke:#1baf7a}
 .tsfig .zone{fill:#f0efec}
+.tsfig .empty{fill:none;stroke:#6b6a66;stroke-width:2;stroke-dasharray:8 6}
 </style>
 
 ## 1. The scissors
@@ -52,9 +53,9 @@ purchase stops paying, divided by the 40-unit mean cost of an ordinary proof.
 
 <div style="overflow-x:auto">
 
-<svg class="tsfig" viewBox="0 0 760 664" role="img" aria-labelledby="c1t c1d">
+<svg class="tsfig" viewBox="0 0 760 984" role="img" aria-labelledby="c1t c1d">
 <title id="c1t">The scissors: the gain from the independence distinction is largest exactly where an independence proof must be cheapest</title>
-<desc id="c1d">Two panels share an x-axis of independent-sentence fraction. Top, the per cent gain of reading (ii) at zero purchase cost over reading (i). Bottom, the break-even price of one independence attempt divided by the mean ordinary proof cost of 40 units. As budget rises from 1500 to 4000 the gain collapses while the affordable price rises past parity. Full figures in the table below.</desc>
+<desc id="c1d">Two panels share an x-axis of independent-sentence fraction. Top, the per cent gain of reading (ii) at zero purchase cost over reading (i). Bottom, the break-even price of one independence attempt divided by the mean ordinary proof cost of 40 units. As budget rises from 1500 to 4000 the gain collapses while the affordable price rises past parity. Full figures in the table below. A third panel collapses both quantities to their per-budget mean on one shared frame: the gain line falls, the break-even line rises, and they cross once. An open circle marks the corner where both would be high at once; no data point sits there.</desc>
 <text class="hd" x="14" y="26">Gain from the distinction, best case: reading (ii) told free which sentences are independent</text>
 <text x="14" y="46">per cent more sentences settled than reading (i), same corpus, same budget, 40 seeds</text>
 <text class="warn" x="14" y="66">as budget rises the gain collapses ...</text>
@@ -109,9 +110,46 @@ purchase stops paying, divided by the 40-unit mean cost of an ordinary proof.
 <text class="mu m" x="438" y="620">0.40</text>
 <text class="mu m" x="552" y="620">0.50</text>
 <text class="m" x="324" y="644">fraction of the 50-sentence corpus that is independent</text>
+
+<text class="hd" x="14" y="672">Same shape, one panel: the two budget-mean curves cross once</text>
+<text x="14" y="690" font-size="12" fill="#6b6a66">mean gain and mean break-even price across the five independent-fraction rows, per budget</text>
+<text class="m" x="306" y="706" font-weight="700">You would want to be up here.</text>
+<text class="m" x="306" y="720">Nobody is.</text>
+<circle class="empty" cx="306" cy="756" r="9"/>
+<line class="empty" x1="306" y1="765" x2="306" y2="826"/>
+<line class="ax" x1="96" y1="884" x2="552" y2="884"/>
+<line class="g" x1="96" y1="814" x2="552" y2="814"/>
+<line class="g" x1="96" y1="744" x2="552" y2="744"/>
+<text class="mu e" x="86" y="888">0%</text>
+<text class="mu e" x="86" y="818">20%</text>
+<text class="mu e" x="86" y="748">40%</text>
+<text class="mu" x="562" y="888">0.0</text>
+<text class="mu" x="562" y="818">0.8</text>
+<text class="mu" x="562" y="748">1.6</text>
+<polyline class="ln s1k" points="150,772.35 324,839.06 498,876.86"/>
+<g class="mk s1"><circle cx="150" cy="772.35" r="4.5"/><circle cx="324" cy="839.06" r="4.5"/><circle cx="498" cy="876.86" r="4.5"/></g>
+<polyline class="ln s2k" points="150,865.98 324,828.17 498,775.5" stroke-dasharray="10 6"/>
+<g class="mk s2"><rect x="146" y="861.98" width="8" height="8"/><rect x="320" y="824.17" width="8" height="8"/><rect x="494" y="771.5" width="8" height="8"/></g>
+<circle cx="306" cy="832" r="3" fill="#0b0b0b"/>
+<text class="mu m" x="150" y="902">budget 1500</text>
+<text class="mu m" x="324" y="902">budget 2500</text>
+<text class="mu m" x="498" y="902">budget 4000</text>
+<rect class="s1" x="118" y="916" width="14" height="14" rx="3"/>
+<text x="138" y="928">mean gain, left axis, per cent</text>
+<rect class="s2" x="118" y="936" width="14" height="14" rx="3"/>
+<text x="138" y="948">mean break-even price / 40, right axis, dashed</text>
 </svg>
 
 </div>
+
+The third panel adds no data: it is the same fifteen rows from the table below, averaged over the
+five independent fractions at each budget, so that the fall of one quantity and the rise of the
+other sit on one frame instead of two. Budget 1500 means 31.9 % gain against a break-even of 0.206;
+budget 4000 means 2.04 % gain against 1.24. The open circle marks the corner where the gain stayed
+high **and** the price stayed affordable at once. Nobody is there: the two lines do cross, between
+budget 1500 and budget 2500, but at a modest gain and a break-even still under parity, well short of
+the marked corner. That is the same fact the two-panel figures above already state twice, once per
+panel; this panel just puts it in one place.
 
 Read one budget at a time and the two panels swap rank. At budget 1500 the blue line is at the top
 of the upper panel (up to **+52.9 %**) and at the bottom of the lower panel (**0.11**, so an
