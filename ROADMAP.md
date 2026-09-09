@@ -42,7 +42,7 @@ inside the `\veq{…}` — only the badge arg once its instrument is green. The 
 (`physics/entropy.md:59`, now `\leanc`) is OUT of scope — it belongs to the Lean bucket (id:37cc) and
 its marker-split is an owner content decision, not this item.
 
-- [ ] [INPUT — decision] Build the entropy + FHE-Stirling SymPy instruments + sidecars @container — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
+- [ ] [INPUT - decision] Build the entropy + FHE-Stirling SymPy instruments + sidecars @container — 🚧 GATED (auto, id:3801; route:hard-split): DECOMPOSED into seams id:e9e9, id:76e5 — pick those, not this. fhe.md `stirling` claim's constant term (ln√(2π)) is a natural-log/log2 unit mismatch — Stirling's series requires log2√(2π); confirmed by SymPy asymptotic series + independent float check (offset doesn't shrink with n). Blocks 1 of 4 instruments; the other 3 (meanE/be/fd) verify cleanly and can ship as their own seam. <!-- id:7306 -->
   - **Why**: four owner-placed `\sympyc` (open-debt "desired SymPy, not yet verified") badges exist with
     no instrument behind them — `physics/entropy.md` `meanE` (l.22 mean-energy closed form),
     `be` (l.27 Bose–Einstein N→∞ limit), `fd` (l.35 Fermi–Dirac N=2), and `crypto/fhe.md` `stirling`
@@ -106,7 +106,7 @@ its marker-split is an owner content decision, not this item.
     (Re-laned from the auto-emitted `[HARD — strong model]` — not a recognized lane — by the 2026-07-02
     review; the blocking step is owner judgment, not model strength.)
 
-- [ ] [INPUT — meeting] Lean claims — queued individually <!-- id:37cc -->
+- [ ] [INPUT - meeting] Lean claims — queued individually <!-- id:37cc -->
   - **Gate (decision-gate)**: NOT executor-ready. Each of the five `\leanc` claims — `ocount`
     (`Fintype.card_fun`), `bij24` (`Fintype.card_perm`), `semidestr`-count (`Nat.choose`),
     `semidestr`-identification (balanced⟺semi-destructive, owner modelling), `lambertw`-branch/domain —
@@ -125,19 +125,19 @@ disposition `laned`) — none are executor-ready; each needs a scoping `/meeting
 Promoted here (same id, TODO/design ledger stays the "why") purely so they stop being
 invisible to `/relay human`'s gather, which reads ROADMAP.md + REVIEW_ME.md, not TODO.md.
 
-- [ ] [INPUT — meeting] (MEETING candidate) Better workflow for math/Lean-formalization design sessions <!-- id:2f99 -->
+- [ ] [INPUT - meeting] (MEETING candidate) Better workflow for math/Lean-formalization design sessions <!-- id:2f99 -->
   — e.g. meeting-rpg with in-session formula rendering (so equation-heavy decisions like
   id:b9bc's HasDerivAt signature are legible during discussion), or possibly a collAIb
   regime instead. To be scoped in a dedicated `/meeting`.
 
-- [ ] [INPUT — meeting] Wishlist: automated subequation dot-numbering <!-- id:d2f4 -->
+- [ ] [INPUT - meeting] Wishlist: automated subequation dot-numbering <!-- id:d2f4 -->
   — derive `(edot.1)…(edot.4)` handles from a parent handle so per-line tags render;
   also re-attaches the `[edot]` verify marker to an active `\ltag`. Relates to R2/R3
   (id:445e) + `.mw`. OPTION (owner obs 2026-06-18, entropy.md): let amsmath's native
   auto-enumeration number ephemeral steps for free instead of hand-inventing per-line
   subhandles; auto-numbers are NOT `\eqref`-able though. Needs scoping `/meeting`.
 
-- [ ] [INPUT — meeting] Cross-project (triad): add the owner's Diplomarbeit `.git` repo <!-- id:6ab8 -->
+- [ ] [INPUT - meeting] Cross-project (triad): add the owner's Diplomarbeit `.git` repo <!-- id:6ab8 -->
   — a fully finished LaTeX project — as a second acceptance/test corpus for the
   `.mw`/toesnail/collAIb triad (N=2 beyond toesnail's north-star physics docs; exercises
   `.mw` ingest + verification on real finished LaTeX). **MIRRORED in
@@ -145,14 +145,14 @@ invisible to `/relay human`'s gather, which reads ROADMAP.md + REVIEW_ME.md, not
   MANUALLY (no automated cross-project sync); tick the twin wherever it's worked/closed.
   Likely resolved in a manual `/meeting`.
 
-- [ ] [INPUT — meeting] Cross-project (triad): connecting dots between zkm infrastructure and the triad <!-- id:4159 -->
+- [ ] [INPUT - meeting] Cross-project (triad): connecting dots between zkm infrastructure and the triad <!-- id:4159 -->
   — discuss embeddings/semantic-retrieval/knowledge-mgmt vs the `.mw`/toesnail/collAIb
   triad. toesnail is the documented hub (`docs/dependencies.md`); this would extend the
   dependency map with a zkm node. **MIRRORED in `zkm/TODO.md` under the same id:4159** —
   keep both copies in sync MANUALLY; tick the twin wherever closed. Likely a manual
   `/meeting`.
 
-- [ ] [INPUT — meeting] Comment / annotation system for the GH Pages site <!-- id:d973 -->
+- [ ] [INPUT - meeting] Comment / annotation system for the GH Pages site <!-- id:d973 -->
   — idea salvaged from the archived `gtnsd` repo (see `gtnsd-archive` branch).
   Candidates: hypothes.is annotation overlay, staticman, `ghpages-ghcomments`, or a
   Jekyll static-comments recipe. Ties into collAIb's "live `verify:` assist UI"
@@ -161,7 +161,7 @@ invisible to `/relay human`'s gather, which reads ROADMAP.md + REVIEW_ME.md, not
   is the inflownistration/staleness problem (`.mw` id:aae4). Design before wiring, low
   priority.
 
-- [ ] [INPUT — meeting] [INBOUND routed:b0c5 from loderite] T-matrix ↔ Gaussian-splat ↔ WiRoHSH relationship <!-- id:ff32 -->
+- [ ] [INPUT - meeting] [INBOUND routed:b0c5 from loderite] T-matrix ↔ Gaussian-splat ↔ WiRoHSH relationship <!-- id:ff32 -->
   — can a precomputed per-geometry response basis (T-matrix analogy) represent Gaussian
   splats compactly via WiRoHSH (Wick-rotated hyper-spherical harmonics)? loderite may
   become a showcase if applicable. **NB 2026-07-16 (relay review, reverse-handoff §5b):**
