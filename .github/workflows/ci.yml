@@ -36,3 +36,10 @@ jobs:
 
       - name: Run test_mathjax
         run: node tests/test_mathjax.cjs
+
+      # id:0720 -- pin/hash drift guard for docs/dreamed/lean/*.lean. Runs the script
+      # DIRECTLY, not via tests/run.sh: run.sh would drag test_lean.sh's real `lake
+      # build` and a cold Mathlib into every push, which is the cost id:9d8c is parked
+      # on. This guard needs no lake, no Ruby and no Node, and takes about a second.
+      - name: Run dreamed_lean_pin drift guard
+        run: bash verify/dreamed_lean_pin.sh
