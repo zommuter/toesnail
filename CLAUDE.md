@@ -145,7 +145,7 @@ non-blocking `post-commit` hook; the LLM/SOFT tier lives in `/relay review`, nev
   triggers; a bump lands here first. `mathematical-writing` PUBLISHES the resulting derived fleet value at
   its own repo root, which is the value `relay-doctor`'s id:50c4 drift-check treats as canonical downstream.
 
-## Relay contract <!-- relay-executor contract v18 -->
+## Relay contract <!-- relay-executor contract v19 -->
 
 This repo is managed by a reviewer/executor relay. Load `/relay executor` before
 working on any item, then follow its rules exactly.

@@ -7,7 +7,14 @@
 #
 # Contract (relay-TDD: never weaken a test to make it pass):
 #   • .github/workflows/ci.yml exists and is valid YAML;
-#   • it references all three test layers so CI runs the full suite.
+#   • it references all three test layers so CI runs the full suite;
+#   • it runs the id:0720 `verify/dreamed_lean_pin.sh` drift guard as its own step
+#     (owner ruling 2026-09-10, option (c) — REVIEW_ME id:0720). Pinned here because
+#     that guard exists to fire in CI and nothing asserted it was there: this file
+#     PASSed identically before and after the step was added, so a later workflow
+#     edit could drop it in silence. Asserted as the SCRIPT PATH, not the step name,
+#     so renaming the step's label does not break the test while removing the guard
+#     does.
 set -u
 cd "$(dirname "$0")/.." || exit 2
 fail=0
@@ -30,6 +37,13 @@ echo "[test_ci] runs all three test layers"
 for ref in test_verify test_render test_mathjax; do
   if grep -q "$ref" "$W"; then pass "references $ref"; else bad "CI does not run $ref"; fi
 done
+
+echo "[test_ci] runs the id:0720 dreamed-lean pin drift guard"
+if grep -q 'verify/dreamed_lean_pin\.sh' "$W"; then
+  pass "references verify/dreamed_lean_pin.sh"
+else
+  bad "CI does not run verify/dreamed_lean_pin.sh (id:0720 guard dropped from ci.yml)"
+fi
 
 [ "$fail" -eq 0 ] && echo "[test_ci] PASS" || echo "[test_ci] FAIL"
 exit "$fail"

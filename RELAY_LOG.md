@@ -401,3 +401,48 @@ no code here to unify.
 ## 2026-09-08 19:02 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review: id:0720 verified genuinely green (all 4 acceptance assertions watched firing, 15 blocking + 2 advisory tiers, zero skips); gaming-scan clean, resurrection check comment-only; fixed tier-count drift in tests/README.md + ARCHITECTURE.md; 1 REVIEW_ME box (guard not in CI); nothing reopened; routine_open=0 [id:0720,ef6b]
+
+## 2026-09-11 — reviewer (claude-opus-5, relay-loop)
+
+Reviewed `relay-ckpt-20260908-1902`..HEAD, 2 commits, BOTH owner-authored -- so there was no executor
+work to trust-but-verify and the pass is a doc/test-integrity audit rather than an anti-gaming one.
+`gaming-scan.sh` clean (no DELETED_TEST / ADDED_SKIP / REMOVED_ASSERT). No file under `tests/` or
+`verify/` was touched by the window, so the resurrection and fixture-special-casing checks have no
+candidates. No `@owner-accepted`, `@owner-answered` or `answer-src:` marker was introduced or
+modified. Tiers run: `tests/run.sh` -- 13 blocking bash + 2 blocking node (`test_mathjax.cjs`,
+`test_veqs_inline.cjs`) all PASS, including `test_lean.sh` with a REAL `lake build` (8314 jobs, cache
+hit), plus the 2 advisory tiers (`test_dreamed_render.cjs`, `test_carryback.sh`) which by design never
+gate. Zero skipped tiers; `npm run test:math` and the four CI steps are subsets of that run. No
+`verify-negative-cases.py` tier exists in this repo, so §3(d) does not apply.
+
+Two findings, both filed as REVIEW_ME boxes. `id:9772`: the `id:0720` CI step landed with nothing
+asserting it stays there. `tests/test_ci.sh` asserted exactly three references and PASSed
+byte-identically before and after the step was added, so the owner's resolution note citing that PASS
+as verification was citing a test that could not distinguish the two states. Fixed here -- the file now
+asserts the workflow references `verify/dreamed_lean_pin.sh`, keyed on the script path and not the
+step label, and the assertion was proved discriminating by negative control (strip the step from a
+scratch copy of `ci.yml`: fails at exactly the new assertion, nowhere earlier). `id:9c03`: the stated
+rationale for ROADMAP's "Meeting-gated backlog" section -- that `/relay human`'s gather "reads
+ROADMAP.md + REVIEW_ME.md, not TODO.md" -- was true in 2026-07-20 and is false since `id:4e67` added a
+TODO.md human-lane scan with dedup. Verified live, not inferred: the gather emits `id:c9d4`, `id:e029`
+and `id:e562`, all TODO-only. Nothing is double-counted (each mirrored id appears once), so this is a
+lapsed rationale rather than a live defect, and retiring the seven mirror lines is the owner's call.
+
+The window's lane-delimiter conversion was verified rather than assumed: `roadmap-lint.sh` reports
+every open item as carrying a recognized lane, and `gather-human-backlog.sh` resolves both the new
+ASCII-hyphen `[INPUT - meeting]` lines (`hard_meeting`) and the still-em-dash venue-keyed `hands` line
+at `ROADMAP.md:190` (`hard_hands`), so no lane went invisible to dispatch. That surviving tag is
+deliberate and documented in `10b9ca3`: `lane-convert.sh` never auto-converts it. Refreshed the
+`CLAUDE.md` relay-contract pointer v18 -> v19. relay-doctor: 0 repo-scoped issues -- cross-ledger
+clean, roadmap-lint clean, mechanical-orphan clean, main-checkout residue clean, 0 missing-id and 0
+orphan TODO lines; the 296 continuation / 33 shape-prose / 20 long-title findings are the unchanged
+dotclaude-skills `id:0d7c` line-shrink class. `orphan-scan --shipped` reports the same two known
+UNMARKED-GATEs (`id:9d8c`, `id:e562`) as last pass, no TICK-READY items. Reverse-handoff (§5b): the
+window added no open TODO/ROADMAP item, so there was nothing to qualify. Over-reach check (§2d):
+nothing was closed this pass, and the one behaviour change (the CI step) matches the owner's ratified
+option (c) exactly -- one step invoking one script, not a `tests/run.sh` wiring, so it is not a
+superset. `routine_open` = 0; all 13 open ROADMAP items are GATED, `[INPUT - meeting]`,
+`[INPUT - decision]` or the venue-keyed `hands` line. Nothing reopened.
+Friction: none.
+refactor: none needed -- the only code change is one added assertion in an existing test, with no
+duplication introduced and nothing to extract.
