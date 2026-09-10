@@ -404,29 +404,6 @@ recorded as chosen. Full argument + weaknesses in each essay.
   demonstrably is not. Zero boxes are `[x]`, so `REVIEW_ME.archive.md` cannot drain any of them —
   the queue only shrinks when you tick. Worth one pass deciding which are genuinely still live.
 
-## Relay review 2026-09-08 18:52 (window `relay-ckpt-20260908-1807`..HEAD, 6 commits)
-
-- [x] **The new `id:0720` drift guard is in `make test` but NOT in CI, and CI is where the drift it
-  guards would arrive.** Measured, not assumed: `.github/workflows/ci.yml` runs three named tests
-  (`tests/test_verify.sh`, `tests/test_render.sh`, `tests/test_mathjax.cjs`) and never calls
-  `tests/run.sh`, so `test_dreamed_lean_pin.sh` -- and the nine other blocking tiers -- do not run on
-  push or pull_request. `tests/test_ci.sh` only asserts that CI *references* those three, so it passes
-  and will keep passing. That subset is deliberate and predates this window, so this is not a
-  regression and nothing here is red. The reason it is worth your ruling NOW rather than as generic
-  CI debt: your 2026-09-08 ruling framed the whole point of `id:0720` as catching a Mathlib bump that
-  would *silently* rot 56 published claims, and the mechanism it uses is a pinned rev in
-  `verify/lake-manifest.json`. A bump reaches this tree as a commit -- which is precisely the moment
-  CI looks and `make test` may not have been run. As it stands the guard fires only for whoever runs
-  the full suite locally before pushing. **Your call**, and the middle option is real: (a) leave it,
-  accepting that the guard is a local-discipline guard; (b) have CI run `bash tests/run.sh`, which
-  pulls in `test_lean.sh`'s real `lake build` and its cold Mathlib cost into every push -- the cost
-  `id:9d8c` is parked on, so this is not free and is arguably a different decision; (c) add just
-  `verify/dreamed_lean_pin.sh` as its own CI step, which needs no `lake`, no Ruby and no Node and
-  costs about a second -- the cheap half of (b) without the parked cost. Tooling only; no `.lean`
-  proof or physics prose is involved. <!-- id:0720 -->
-
-  Owner ruled option (c) on 2026-09-10: `verify/dreamed_lean_pin.sh` is now its own CI step ("Run dreamed_lean_pin drift guard") in `.github/workflows/ci.yml`, after the three existing test steps. It needs no lake, no Ruby and no Node; measured locally at 0.02s. Option (b) was explicitly NOT taken -- `tests/run.sh` stays out of CI, so `test_lean.sh`'s real `lake build` and a cold Mathlib never enter a push, which is the cost `id:9d8c` is parked on. YAML re-parsed after the edit (9 steps) and `tests/test_ci.sh` PASSes. Still unverified on GitHub Actions itself until a push runs.
-
 ## Relay review 2026-09-11 (window `relay-ckpt-20260908-1902`..HEAD, 2 commits)
 
 
