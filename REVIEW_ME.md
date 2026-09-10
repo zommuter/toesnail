@@ -426,3 +426,54 @@ recorded as chosen. Full argument + weaknesses in each essay.
   proof or physics prose is involved. <!-- id:0720 -->
 
   Owner ruled option (c) on 2026-09-10: `verify/dreamed_lean_pin.sh` is now its own CI step ("Run dreamed_lean_pin drift guard") in `.github/workflows/ci.yml`, after the three existing test steps. It needs no lake, no Ruby and no Node; measured locally at 0.02s. Option (b) was explicitly NOT taken -- `tests/run.sh` stays out of CI, so `test_lean.sh`'s real `lake build` and a cold Mathlib never enter a push, which is the cost `id:9d8c` is parked on. YAML re-parsed after the edit (9 steps) and `tests/test_ci.sh` PASSes. Still unverified on GitHub Actions itself until a push runs.
+
+## Relay review 2026-09-11 (window `relay-ckpt-20260908-1902`..HEAD, 2 commits)
+
+
+Both commits in this window are owner-authored, so there was no executor work to trust-but-verify.
+`gaming-scan.sh` clean; no test or `verify/` file was touched by the window; no `@owner-accepted` or
+`@owner-answered` marker was introduced or modified. All 15 blocking test tiers plus the 2 advisory
+tiers PASS, `test_lean.sh` included with a real `lake build` (8314 jobs). The two boxes below are
+findings from this pass, not executor defects.
+
+- [ ] **The `id:0720` CI step landed with nothing asserting it stays there, and `tests/test_ci.sh`
+  PASSing was not evidence that it does.** The owner's own resolution note on the `id:0720` box
+  records "`tests/test_ci.sh` PASSes" as part of the verification. Measured: that file asserted
+  exactly three references (`test_verify`, `test_render`, `test_mathjax`) and nothing else, so it
+  PASSed byte-identically before and after the guard step was added -- it could not have
+  distinguished the two states. A later workflow edit could have dropped the step in silence, which
+  is the same silent-no-op class the guard itself exists to prevent, one layer up. FIXED in this
+  review: `tests/test_ci.sh` now also asserts the workflow references `verify/dreamed_lean_pin.sh`,
+  keyed on the SCRIPT PATH rather than the step's display name so relabelling the step does not
+  break the test while removing the guard does. Recorded here as a green-from-birth regression guard
+  (review.md 2b.3): it pins behaviour the owner ratified on 2026-09-10, so it is pinning a decision
+  rather than freezing an accident. Verified by negative control, not by exit status alone -- with
+  the step stripped from a scratch copy of `ci.yml` the file fails at exactly the new assertion and
+  nowhere earlier. Still true, and unchanged by this: the CI run itself is unverified until a push
+  actually exercises GitHub Actions. <!-- id:9772 -->
+
+- [ ] **The stated reason the "Meeting-gated backlog" section exists is no longer true -- and it is a
+  claim about tool behaviour, so nothing tested it.** `ROADMAP.md:125` justifies mirroring seven
+  `[INPUT - meeting]` TODO items into ROADMAP.md as being "purely so they stop being invisible to
+  `/relay human`'s gather, which reads ROADMAP.md + REVIEW_ME.md, not TODO.md". That was true when
+  written (2026-07-20). It is false now: `gather-human-backlog.sh` grew a TODO.md human-lane scan
+  plus dedup under `id:4e67` (`scan_repo` passes TODO.md to the same helper, script line ~841). Run
+  live against toesnail this review, the gather emits `id:c9d4`, `id:e029` and `id:e562` -- all three
+  TODO-only, no ROADMAP twin -- so TODO.md is demonstrably reached. The dedup half also works: each
+  of the seven mirrored ids appears exactly once in the output, so nothing is double-counted today
+  and there is no live breakage. What is stale is the RATIONALE, which is the load-bearing part: the
+  section is now seven hand-maintained duplicate lines whose stated justification has lapsed, and a
+  reader re-deriving the roadmap from that sentence would keep adding mirrors that buy nothing.
+  Whether to retire the mirrors or keep them for a different reason is the owner's call, not a
+  reviewer's -- surfaced, not acted on. Note `id:e552` is a genuinely separate case: it is a real
+  ROADMAP item under "Human-only", not one of these mirrors. <!-- id:9c03 -->
+
+Two smaller notes, no box needed. (1) `orphan-scan.sh --shipped` reports UNMARKED-GATE for `id:9d8c`
+and `id:e562`; `id:9d8c` already has an open box above, and `id:e562`'s gate is the owner's own
+"deliberately NOT now" ruling, which has no external dependency to express as a typed `gated-on:`
+edge -- the same shape the existing `id:4bb2` box already describes. (2) `ROADMAP.md:190` still
+carries the retired venue-keyed `hands` lane tag, still spelled with the old em-dash delimiter. That
+is deliberate and documented in commit `10b9ca3`: `lane-convert.sh` never auto-converts `hands`,
+because it fragments across four destinations by human judgment. Verified not to be a dispatch
+hazard -- `gather-human-backlog.sh` reads that line as `hard_hands`, and reads the newly
+ASCII-hyphenated `[INPUT - meeting]` lines as `hard_meeting`, so both spellings resolve.
