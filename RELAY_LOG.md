@@ -446,3 +446,7 @@ superset. `routine_open` = 0; all 13 open ROADMAP items are GATED, `[INPUT - mee
 Friction: none.
 refactor: none needed -- the only code change is one added assertion in an existing test, with no
 duplication introduced and nothing to extract.
+
+## 2026-09-11 00:09 — reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: window owner-authored only; gaming-scan clean, 15 blocking + 2 advisory tiers green (real lake build, zero skips); pinned the id:0720 CI guard in test_ci.sh (proved by negative control); 2 REVIEW_ME boxes (id:9772 unpinned CI step, id:9c03 lapsed meeting-gated-backlog rationale); contract pointer v18->v19; nothing reopened; routine_open=0 [id:0720,9772,9c03]
