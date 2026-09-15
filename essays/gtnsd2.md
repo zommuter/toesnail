@@ -40,7 +40,7 @@ To make matters worse, there is no single obvious implementation. The Fibonacci 
 
 $$\textrm{implementation}\in \bigcap \textrm{solutions}(\textrm{requirement})$$
 
-where $\bigcap$ denotes intersection. That formulation also has the nice effect of showing that non-intersecting solutions cannot be implemented. The "fulfills" ("is a member ($\in$) of the solution space $\textrm{solutions}$ of the $\textrm{requirement}$") needs an actual implementation itself - don't I love it when things get meta? (spoiler: yes I do) In the Fibonacci example that would ideally be a Lean4 proof or at least a sufficiently good unit test. And proofing _that_ corresponds to fulfilling the requirement is again part of Inflownistration - linking the requirement semantics to a more mathematical or programmatic formulation.
+where $\bigcap$ denotes intersection. That formulation also has the nice effect of showing that non-intersecting solutions cannot be implemented. The "fulfills" ("is a member ($\in$) of the solution space $\textrm{solutions}$ of the $\textrm{requirement}$") needs an actual implementation itself - don't I love it when things get meta? (spoiler: yes I do) In the Fibonacci example that would ideally be a Lean4 proof or at least a sufficiently good unit test. And proving _that_ corresponds to fulfilling the requirement is again part of Inflownistration - linking the requirement semantics to a more mathematical or programmatic formulation.
 
 We're touching the v-Model here: Top level requirements (be that from the business case, the user requirements specification (URS) or deeper down) are usually vague enough for the next layer to have some wiggle room for the details - but barring hopefully avoidable exceptions like contradictions, those "filled gaps" should never violate the origal requirements. In theory. And it does probably make sense - the project initiator most likely won't even _know_ the project needs Fibonacci numbers let alone have the competence to decide that a recursive approach may not be ideal. And similarly it shouldn't be too big a surprise that multiple AI agents (even the same model) can implement your task in different ways that may be more or less adequate.
 
@@ -53,3 +53,11 @@ $$\begin{align*}
 
 with the restriction to actually true observations and actually confirmed theories. TODO: formulate better, dive deeper
 
+---
+
+What else did I want to write about here but am distracted from by my Claude Code quota being refreshed?
+
+- DAG/CRDT for the issue tracking
+- (un)biased embeddings
+- tokenization and embedding/transformer meaning propagation visualized
+- a "dispatch AI agents" idle-clicker like mockup (cf. proj ideas ca75)
