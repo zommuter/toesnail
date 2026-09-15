@@ -26,4 +26,10 @@ In contrast to an idle clicker game, the actual costs and results of letting you
 
 Hm, so a neat tool for writing this very document would now provide the neat animations or illustrations a good essay (or whatever this actually is). Imagine an idle-clicker like interface where you just clicked the "create neat illustration" task, with either some AI token budget or a human's time/salary required. Maybe the item actually has some options, like which AI model and token budget you want to alot, or which expertise level of human work you request. And in a pilot phase you may want to try multiple configurations to compare the results vs costs.
 
-So you've dispatched a task, neat. Again unlike a game, you don't have an accurate progress bar. Maybe your colleague told you they'll have it done in twenty minutes (or [6-8 weeks](https://meta.stackexchange.com/a/19514/146482) if your task isn't that well-structured), which is hopefully less jumpy than the [Windows installation progress bar](https://store.steampowered.com/app/1304550/Progressbar95/) (suit yourself, I use Linux anyway). And if you've ever watched an AI agent code, you know that sometimes you really want to intervene, or wish you'd made a better prompt etc. 
+So you've dispatched a task, neat. Again unlike a game, you don't have an accurate progress bar. Maybe your colleague told you they'll have it done in twenty minutes (or [6-8 weeks](https://meta.stackexchange.com/a/19514/146482) if your task isn't that well-structured), which is hopefully less jumpy than the [Windows installation progress bar](https://store.steampowered.com/app/1304550/Progressbar95/) (suit yourself, I use Linux anyway). And if you've ever watched an AI agent code, you know that sometimes you really want to intervene, or wish you'd made a better prompt etc. But anyway, let's say the task is "done" (whatever that means, we haven't discussed workflows like TDD, reviews, pull-requests etc. yet).
+
+
+
+---
+
+(side-not for later on semantics: "TAGOGAT - test a game, or game a test?" as alternative to the "watch a play / play on a watch" example)
