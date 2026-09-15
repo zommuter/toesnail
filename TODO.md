@@ -109,6 +109,8 @@
   a README banner pointing readers to the live site for math; a GitHub-compatible macro fallback (hard — no
   per-repo macro config); or swap `\operatorname{…}`→`\mathrm{…}` where owner-content allows. Low priority.
 - [ ] [OWNER] **Triage AI feedback on `essays/gtnsd2.md`** (2026-09-15, unratified): `docs/feedback/2026-09-15-gtnsd2.md`. Open: two broken links (`supertool.md`, `../../dotclaude-skills/`), link Part I (`gtnsd-archive`), Galois-connection/refinement framing of the two formulas, BGE-M3 probe showing role swaps score above paraphrases (instrument alongside), Coordinator follow-ups (Suchman, DEMO, Ahoy, Last Planner), possible `~/src/isochrone` single-origin-warp link. <!-- id:68f7 -->
+- [ ] [OWNER] **Investigate embeddings vs NLI for TAGOGAT + conversation threading** (gtnsd2 section 4; home candidate linguistic-universals, inbox f091): `docs/feedback/2026-09-15-gtnsd2-nli.md` <!-- id:1ecc -->
+- [ ] [OWNER] **Record isochrone relationship** (semantic task maps = single-origin warp vs non-flat all-pairs metric; embed_spectrum reuse; inbox 55d1): `docs/feedback/2026-09-15-gtnsd2.md` section 6 <!-- id:47f9 -->
 - [ ] [INPUT - meeting] **Comment / annotation system for the GH Pages site** (idea salvaged from the archived `gtnsd` repo, <!-- id:d973 -->
   see `gtnsd-archive` branch). Candidates: hypothes.is annotation overlay, staticman, `ghpages-ghcomments`,
   or a Jekyll static-comments recipe. Ties into collAIb's "live `verify:` assist UI" (annotation = surfacing
