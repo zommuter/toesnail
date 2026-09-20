@@ -67,3 +67,8 @@ What else did I want to write about here but am distracted from by my Claude Cod
 - (un)biased embeddings
 - tokenization and embedding/transformer meaning propagation visualized
 - a "dispatch AI agents" idle-clicker like mockup (cf. proj ideas ca75)
+
+## 20260920
+
+While I had Claude Code provide some feedback on this so far, I haven't read it all, except the part that embeddings can't handle TAGOGAT and NLI is needed instead, okay.
+
