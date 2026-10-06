@@ -506,3 +506,7 @@ than to execute. Nothing reopened, no gaming flag raised. 3 REVIEW_ME boxes writ
 Friction: none.
 refactor: none needed -- the only code change is one entry added to an existing array, with its
 rationale as a comment; nothing to extract and no duplication introduced.
+
+## 2026-10-06 11:01 -- reviewer (claude-opus-5, fable-standin, relay-loop)
+
+review: test_page_coverage was RED since e164b2d -- essays/gtnsd2.md published with permalink but uncovered; added to test_mathjax DOCS, suite now green (id:09f8); routed:57e2 qualified as [INPUT - access] id:89a2; pointer v19->v22; routine_open=0 [id:09f8,89a2,f60f]
