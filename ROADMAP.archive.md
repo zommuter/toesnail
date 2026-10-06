@@ -414,3 +414,13 @@ guard at the top of this file still binds.
     the guard touches `tests/`, a manifest file and `docs/dreamed/README.md`'s pin statement -- it never
     edits a `.lean` proof or any physics prose (scope guard). TODO twin: `TODO.md` `id:0720` -- tick both
     on close.
+
+### Recovered-pages infrastructure (recovery merge `c1e20b4`, 2026-06-16)
+- [x] [ROUTINE] Cover `essays/gtnsd2.md` in the blocking render tier (closed by `/relay review`
+  2026-10-06). The owner published the essay in `e164b2d` by adding `permalink: /gtnsd2`, which is
+  exactly the trigger `tests/test_page_coverage.sh` (id:7fd7/id:8b1c) exists to catch: a ratified page
+  reaching GitHub Pages with zero render verification. The tier went RED as designed and had stayed red
+  through the whole window. Remedy was coverage, not content -- the page carries 2 display blocks and no
+  `\veq`/`\eqref` handles, and renders clean under MathJax 3 and KaTeX, so `essays/gtnsd2.md` joined
+  `test_mathjax.cjs`'s `DOCS`. Done-check: `bash tests/test_page_coverage.sh` and
+  `node tests/test_mathjax.cjs` both PASS. <!-- id:09f8 -->
