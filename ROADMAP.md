@@ -32,6 +32,15 @@ physics/maths/narrative prose. The proof is of an *owner-stated, SymPy-confirmed
 
 ### Recovered-pages infrastructure (recovery merge `c1e20b4`, 2026-06-16)
 
+- [x] [ROUTINE] Cover `essays/gtnsd2.md` in the blocking render tier (closed by `/relay review`
+  2026-10-06). The owner published the essay in `e164b2d` by adding `permalink: /gtnsd2`, which is
+  exactly the trigger `tests/test_page_coverage.sh` (id:7fd7/id:8b1c) exists to catch: a ratified page
+  reaching GitHub Pages with zero render verification. The tier went RED as designed and had stayed red
+  through the whole window. Remedy was coverage, not content -- the page carries 2 display blocks and no
+  `\veq`/`\eqref` handles, and renders clean under MathJax 3 and KaTeX, so `essays/gtnsd2.md` joined
+  `test_mathjax.cjs`'s `DOCS`. Done-check: `bash tests/test_page_coverage.sh` and
+  `node tests/test_mathjax.cjs` both PASS. <!-- id:09f8 -->
+
 ### Entropy + FHE SymPy verify-instrument bucket (/meeting id:3d2a D1/D3, promoted 2026-07-01)
 
 Design spec: `docs/meeting-notes/2026-06-21-2129-lean-formalization-strategy.md` (D1/D3). The
@@ -187,6 +196,15 @@ The research itself is the owner's. These are tracked in `TODO.md` (design ledge
   for *owner-marked* claims can become `[ROUTINE]` once the claims are marked).
 - **The toesnail spine's `verify:lean` targets** (Cauchy–Schwarz, inner-product axioms,
   zero-vector uniqueness) and any narrative/topic direction — `docs/rigor-debt.md`.
+- [ ] [INPUT - access] Migrate the 74 legacy checkpoint tags out of `refs/tags` (TODO id:89a2 twin — tick both) <!-- id:89a2 -->
+  — reverse-handoff qualification, `/relay review` 2026-10-06 (review.md §5b). Inbound as `routed:57e2`
+  from dotclaude-skills; the TODO line carries the full recipe. Premise VERIFIED here:
+  `git for-each-ref 'refs/tags/relay-ckpt-*' 'refs/tags/fable-ckpt-*'` counts exactly **74**, so
+  `git describe --tags` in this repo reports a checkpoint rather than a release. Lane is `access`, not
+  `[ROUTINE]`: the second half of the recipe deletes those tags on the `github` remote, and a relay child
+  never pushes (conventions.md "Children NEVER push"), so the apply step is the owner's. The local
+  `ckpt-migrate.sh <repo>` dry run is safe for anyone to read. Done-check: that `for-each-ref` prints
+  nothing, locally and on `github`.
 - [ ] [INPUT - author] Author the promoted SE subjects + ratified lasercool anchors (TODO id:e552 twin — tick both) <!-- id:e552 -->
   — Q13/Q14 ratified 2026-07-08 (`docs/meeting-notes/2026-07-08-1056-…` §5b): P-C Casimir→field-equations,
   P-A discrete-Noether, M-1+M-2 generators/matrix-exp, and the three lasercool.md section skeletons.

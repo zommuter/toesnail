@@ -454,3 +454,41 @@ is deliberate and documented in commit `10b9ca3`: `lane-convert.sh` never auto-c
 because it fragments across four destinations by human judgment. Verified not to be a dispatch
 hazard -- `gather-human-backlog.sh` reads that line as `hard_hands`, and reads the newly
 ASCII-hyphenated `[INPUT - meeting]` lines as `hard_meeting`, so both spellings resolve.
+
+## Relay review 2026-10-06 (window `relay-ckpt-20260911-0009`..HEAD, 13 commits)
+
+Window content: owner essay work on `essays/gtnsd2.md` (published with `permalink: /gtnsd2`), two
+AI-feedback write-ups plus their probe scripts under `docs/feedback/`, three `[OWNER]` TODO triage
+items, three inbox ingests, one owner re-lane, one archive sweep. **No ROADMAP item was closed by an
+executor in this window, so there was no executor green to audit.** Mechanical gaming scan clean (0
+`DELETED_TEST` / `ADDED_SKIP` / `REMOVED_ASSERT`); no `@owner-accepted` or `@owner-answered` marker was
+introduced or modified anywhere in the window. Tiers run: all 14 blocking tiers plus both advisory
+tiers, nothing skipped (`verify/.lake` was seeded into the worktree with `cp -a --reflink=always`, 0 B
+exclusive, so `test_lean.sh` ran a real `lake build` instead of being recorded as a skip).
+
+- [ ] **Link `essays/gtnsd2.md` from the README essays index, or deliberately leave it unlisted?**
+  The page is PUBLISHED (`permalink: /gtnsd2`, renders with layout + MathJax since `e164b2d`) but
+  `README.md` §"Essays" lists only `Narrativium` and `supertool`, so the only route to it is the bare
+  URL. Normally that is plain §4 doc drift and a reviewer fixes it inline. Not fixed here, for one
+  reason: the essay is visibly mid-draft -- `essays/gtnsd2.md:60` still reads "TODO: formulate better,
+  dive deeper" -- so whether to advertise it from the site portal is an editorial call about owner
+  content, which the scope guard reserves. Say the word and the link is a one-liner. <!-- id:f60f -->
+- [ ] `id:ed2b` -- GATE-STALE: `orphan-scan.sh --shipped` reports its line as 27 days old against a
+  14-day threshold, so its gating clause may have lapsed. It is the `[OWNER]` pair of carry-back
+  rulings (merged-distillation target naming; whether `wirohsh-ladder.md` §5 gets a short form).
+  Advisory only -- nothing was auto-ticked. A re-check, not a defect.
+- [ ] `TODO.md` grammar/length non-conformance census, surfaced not fixed:
+  `todo-conformance.sh` reports 296 `grammar-continuation`, 38 `shape-new`, 23
+  `grammar-item-title-long`, 13 `length-over-budget`, 5 `length-unshrinkable`, 1
+  `grammar-heading-no-blank`, 1 `decided-left-open`. None is in the safe `missing-id` auto-fix class, so
+  `--fix` would change nothing; the bulk sits in the legacy `## Done` block. The one NEW offender is the
+  `routed:57e2` ingest at `TODO.md:327` (1189-char title). Resolving these means relocating prose into
+  per-item notes, which is a ledger-shrink project this repo has not adopted -- a decision, not a
+  review-turn edit.
+
+Two notes that need no box. (1) The previous section's point (2) -- "`ROADMAP.md:190` still carries the
+retired venue-keyed `hands` lane" -- is now DISCHARGED: the owner re-laned that line to
+`[INPUT - author]` himself in `4667ed4` (2026-10-01), and `roadmap-lint.sh` is clean on this tree.
+(2) `relay-doctor.sh` reports zero per-repo findings for toesnail; its `core.hooksPath=hooks` hit is
+classified DELIBERATE (real tracked repo-local hook), and its two inbox dead-letters both target
+`dotclaude-skills`, not this repo.

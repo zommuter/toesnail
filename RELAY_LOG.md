@@ -450,3 +450,63 @@ duplication introduced and nothing to extract.
 ## 2026-09-11 00:09 — reviewer (claude-opus-5, fable-standin, relay-loop)
 
 review: window owner-authored only; gaming-scan clean, 15 blocking + 2 advisory tiers green (real lake build, zero skips); pinned the id:0720 CI guard in test_ci.sh (proved by negative control); 2 REVIEW_ME boxes (id:9772 unpinned CI step, id:9c03 lapsed meeting-gated-backlog rationale); contract pointer v18->v19; nothing reopened; routine_open=0 [id:0720,9772,9c03]
+
+## 2026-10-06 — reviewer (claude-opus-5, relay-loop)
+
+Review window `relay-ckpt-20260911-0009`..HEAD, 13 commits, all owner-attributed -- **no executor
+touched this repo in the window, so there was no executor green to audit for gaming.** `gaming-scan.sh`
+clean (0 `DELETED_TEST` / `ADDED_SKIP` / `REMOVED_ASSERT`); the §2b.7/.9/.10 provenance greps found no
+`@owner-accepted:`, `@owner-answered:` or `<!-- answer-src:` marker introduced OR modified anywhere in
+the window. §2b.5 faked-clean-tree: no stash/reset/checkout residue, nothing half-removed. §2c
+host-gate: no item carries a `[host:…]` tag. §2d over-reach: nothing was closed by the window, so there
+is no implementation to score against a ratified source.
+
+**Tiers (§3): all 14 blocking tiers in `tests/run.sh` plus both advisory tiers RAN -- ZERO
+recorded skips.** `verify/.lake` is absent from a fresh worktree, which would normally make
+`test_lean.sh` either a recorded skip or a ~7 GB cold Mathlib extraction; it was seeded instead with
+`cp -a --reflink=always` from the main checkout (`btrfs filesystem du -s` confirms 0.00 B Exclusive on
+6.69 GiB), so `lake build` ran for real: 8314 jobs, "No files to download", zero `sorry`.
+
+**The window's one real finding, and it was RED on arrival:** `test_page_coverage.sh` FAILED --
+`NOT in test_mathjax.cjs DOCS: essays/gtnsd2.md`. The owner published that essay in `e164b2d`
+(2026-09-15) by adding `permalink: /gtnsd2`, and `permalink` is precisely the predicate the id:8b1c
+directory scan uses for "ratified published page", so the guard fired exactly as specced and the suite
+had been red for three weeks. The page carries 2 display blocks and no `\veq`/`\eqref` handles, so the
+remedy was coverage rather than content: `essays/gtnsd2.md` added to `DOCS`, after which
+`test_page_coverage.sh` and `test_mathjax.cjs` both PASS (and the page renders clean under BOTH MathJax
+3 and KaTeX). Closed as `id:09f8` under "Recovered-pages infrastructure". Nothing in the physics or the
+essay prose was touched -- the scope guard was not approached.
+
+**Reverse-handoff (§5b)** -- the window added six open ledger items; one qualified, five correctly did
+not. Qualified: `id:89a2` (`routed:57e2`, the 74 legacy checkpoint tags) promoted to `ROADMAP.md` as
+`[INPUT - access]`, TODO twin kept under the same token. Its premise was VERIFIED here rather than
+taken on report: `git for-each-ref 'refs/tags/relay-ckpt-*' 'refs/tags/fable-ckpt-*'` counts exactly 74.
+The lane is `access` and not `[ROUTINE]` because the recipe's second half deletes those tags on the
+`github` remote and a relay child never pushes. Skipped, with reasons: `id:68f7`, `id:1ecc`, `id:47f9`
+are `[OWNER]` triage pointers into unratified AI feedback (design judgment, not execution); `id:9ca5` is
+gated on `~/src/aidle` slice 1 existing; `id:8656` is prior-art intelligence explicitly offered as
+"react or discard".
+
+**Spec drift (§4):** contract pointer refreshed v19 -> v22. `README.md` §"Essays" does not list the
+newly published `gtnsd2` page -- normally a reviewer fixes that inline, but the essay still carries
+`TODO: formulate better, dive deeper` at line 60, so whether to advertise a mid-draft page from the
+site portal is an editorial call on owner content and it went to `REVIEW_ME.md` as `id:f60f` instead of
+being decided here. `ARCHITECTURE.md` needs no change: the window added no dependency and restructured
+nothing.
+
+**Relay health (§4b):** `relay-doctor.sh` reports ZERO per-repo findings for toesnail. Its
+`core.hooksPath=hooks` hit is classified DELIBERATE (real tracked repo-local hook); both inbox
+dead-letters target `dotclaude-skills`. `roadmap-lint.sh` clean, including after my two new lines.
+`orphan-scan --cross-ledger` clean -- no TODO/ROADMAP checkbox drift. `orphan-scan --shipped` reports no
+TICK-READY items and three advisories, two of which (`id:9d8c`, `id:e562` UNMARKED-GATE) already have
+boxes from the previous pass and were not re-filed; the third, `id:ed2b` GATE-STALE at 27 days, got a
+box. Also recorded: the previous section's note that `ROADMAP.md:190` still wore the retired `hands`
+lane is now DISCHARGED -- the owner re-laned it to `[INPUT - author]` himself in `4667ed4`.
+
+`routine_open` = 0. All 14 open ROADMAP items are `@container`/GATED, `[INPUT - meeting]`,
+`[INPUT - decision]`, `[INPUT - author]` or the new `[INPUT - access]`; there is no `[ROUTINE]` or
+bare `[HARD]` work for an executor to pick up, which is why this repo keeps returning to review rather
+than to execute. Nothing reopened, no gaming flag raised. 3 REVIEW_ME boxes written.
+Friction: none.
+refactor: none needed -- the only code change is one entry added to an existing array, with its
+rationale as a comment; nothing to extract and no duplication introduced.

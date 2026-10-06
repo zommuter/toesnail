@@ -32,6 +32,10 @@ const DOCS = [
   // remaining ratified pages, added when test_page_coverage.sh became a directory scan
   // instead of a self-checking allowlist (id:8b1c). All render clean under both engines.
   'physics/acoustics.md', 'physics/lasercool.md', 'essays/Narrativium.md', 'README.md',
+  // essays/gtnsd2.md gained `permalink: /gtnsd2` in e164b2d (2026-09-15), which published it
+  // and turned test_page_coverage.sh RED by design. It renders clean under MathJax 3 + KaTeX
+  // (2 display blocks, no \veq/\eqref handles), so the remedy is coverage, not a content edit.
+  'essays/gtnsd2.md',
 ];
 // docs/dreamed/ is deliberately NOT here: it is unratified exploration, covered by the
 // NON-BLOCKING tests/test_dreamed_render.cjs instead (id:8b1c, owner ruling option (c)).
