@@ -5,10 +5,6 @@
 Worked id:0183 -- wired `test_ci.sh` and `test_make.sh` into `tests/run.sh`'s tier loop. Both tests already existed and passed standalone but were armed nowhere, so `bash tests/run.sh` never ran them (the id:d35a silent-no-op class); one-line addition, nothing else touched. Verified both individually (exit 0 each) and via a full `bash tests/run.sh` run (SUITE: PASS, exit 0) which now includes them. Friction: the full suite's `test_lean.sh` tier does a real `lake exe cache get` + build under high host load (load average ~20, swap-heavy), so the run took well over the 120s foreground timeout and had to be backgrounded -- unrelated to this item, just noting the wall-clock cost of the definition-of-done check on this repo.
 refactor: none needed -- one-line addition to an existing loop, no new duplication.
 
-## 2026-07-17 18:35 — reviewer (claude-opus-4-8, fable-standin, relay-loop)
-
-Handoff toesnail: reconciled id:8807 verify-pilot parent as a gated @container ROADMAP twin (executor work already fully decomposed into seams e9e9/76e5/5d31/37cc); no new promotable work; unpromoted-scan promote=0, roadmap-lint --strict clean. [id:8807]
-
 ## 2026-09-07 10:06 — reviewer (claude-opus-5, relay-loop)
 
 Reviewed toesnail over `relay-ckpt-20260717-1835`..HEAD (33 commits, 109 files, +27,723 lines). The window
